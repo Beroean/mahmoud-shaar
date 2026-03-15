@@ -102,7 +102,7 @@ function App() {
               label: "Background",
               value: "Syrian-American",
               sub: "Based in Houston, TX",
-              icon: "🇸🇾",
+              icon: "🌍",
             },
             {
               label: "Profession",
@@ -113,7 +113,7 @@ function App() {
             {
               label: "Education",
               value: "CS + MBA",
-              sub: "Graduating May 2025",
+              sub: "University of Houston and Lawrence University",
               icon: "🎓",
             },
           ].map((card) => (
