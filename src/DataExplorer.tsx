@@ -109,6 +109,7 @@ export default function DataExplorer() {
   const [error, setError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("bar");
   const [topN, setTopN] = useState(30);
+  const [sortAsc, setSortAsc] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Load indicator list on mount
@@ -171,7 +172,10 @@ export default function DataExplorer() {
     [indicators, search]
   );
 
-  const chartData = useMemo(() => rawData.slice(0, topN), [rawData, topN]);
+  const chartData = useMemo(() => {
+    const sorted = sortAsc ? [...rawData].reverse() : rawData;
+    return sorted.slice(0, topN);
+  }, [rawData, topN, sortAsc]);
   const indicatorLabel = rawData[0]?.indicator?.value || selectedIndicator?.name || "";
   const latestYear = rawData[0]?.date ?? "";
 
@@ -393,6 +397,13 @@ export default function DataExplorer() {
                     </button>
                   ))}
                 </div>
+
+                <button
+                  onClick={() => setSortAsc((a) => !a)}
+                  className="flex items-center gap-2 border border-[#e8e4dc]/10 px-3 py-2 text-xs text-[#e8e4dc]/40 hover:text-[#e8e4dc] hover:border-[#e8e4dc]/30 transition-colors duration-150 tracking-widest uppercase"
+                >
+                  {sortAsc ? "↑ Asc" : "↓ Desc"}
+                </button>
 
                 <div className="flex border border-[#e8e4dc]/10">
                   <button
