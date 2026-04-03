@@ -12,7 +12,14 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -46,7 +53,7 @@ async function fetchIndicators(): Promise<Indicator[]> {
   let totalPages = Infinity;
   while (page <= totalPages) {
     const res = await fetch(
-      `${WB_API}/indicator?source=2&format=json&per_page=1000&page=${page}`
+      `${WB_API}/indicator?source=2&format=json&per_page=1000&page=${page}`,
     );
     if (!res.ok) throw new Error(`Status ${res.status}`);
     const json = await res.json();
@@ -67,7 +74,7 @@ async function fetchIndicatorData(indicatorId: string): Promise<WBDataPoint[]> {
   let totalPages = Infinity;
   while (page <= totalPages) {
     const res = await fetch(
-      `${WB_API}/country/all/indicator/${indicatorId}?format=json&mrv=1&per_page=1000&page=${page}`
+      `${WB_API}/country/all/indicator/${indicatorId}?format=json&mrv=1&per_page=1000&page=${page}`,
     );
     if (!res.ok) throw new Error(`Status ${res.status}`);
     const json = await res.json();
@@ -103,7 +110,9 @@ export default function DataExplorer() {
   const [loadingIndicators, setLoadingIndicators] = useState(true);
   const [search, setSearch] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [selectedIndicator, setSelectedIndicator] = useState<Indicator | null>(null);
+  const [selectedIndicator, setSelectedIndicator] = useState<Indicator | null>(
+    null,
+  );
   const [rawData, setRawData] = useState<WBDataPoint[]>([]);
   const [loadingData, setLoadingData] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -120,20 +129,26 @@ export default function DataExplorer() {
         const data = await fetchIndicators();
         if (!cancelled) setIndicators(data);
       } catch (e) {
-        if (!cancelled) setError("Failed to load indicators. " + (e as Error).message);
+        if (!cancelled)
+          setError("Failed to load indicators. " + (e as Error).message);
       } finally {
         if (!cancelled) setLoadingIndicators(false);
       }
     }
     load();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Close dropdown on outside click — use pointerdown so it doesn't race with
   // the item's onClick (which fires on pointerup/click, after this handler)
   useEffect(() => {
     const handler = (e: PointerEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     };
@@ -153,13 +168,16 @@ export default function DataExplorer() {
         const data = await fetchIndicatorData(selectedIndicator!.id);
         if (!cancelled) setRawData(data);
       } catch (e) {
-        if (!cancelled) setError("Failed to fetch data. " + (e as Error).message);
+        if (!cancelled)
+          setError("Failed to fetch data. " + (e as Error).message);
       } finally {
         if (!cancelled) setLoadingData(false);
       }
     }
     load();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [selectedIndicator]);
 
   const filtered = useMemo(
@@ -167,16 +185,17 @@ export default function DataExplorer() {
       indicators.filter(
         (i) =>
           i.name.toLowerCase().includes(search.toLowerCase()) ||
-          i.id.toLowerCase().includes(search.toLowerCase())
+          i.id.toLowerCase().includes(search.toLowerCase()),
       ),
-    [indicators, search]
+    [indicators, search],
   );
 
   const chartData = useMemo(() => {
     const sorted = sortAsc ? [...rawData].reverse() : rawData;
     return sorted.slice(0, topN);
   }, [rawData, topN, sortAsc]);
-  const indicatorLabel = rawData[0]?.indicator?.value || selectedIndicator?.name || "";
+  const indicatorLabel =
+    rawData[0]?.indicator?.value || selectedIndicator?.name || "";
   const latestYear = rawData[0]?.date ?? "";
 
   const chartJsData = useMemo(
@@ -196,7 +215,7 @@ export default function DataExplorer() {
         },
       ],
     }),
-    [chartData, indicatorLabel]
+    [chartData, indicatorLabel],
   );
 
   const chartOptions: ChartOptions<"bar"> = useMemo(
@@ -242,14 +261,13 @@ export default function DataExplorer() {
         },
       },
     }),
-    []
+    [],
   );
 
   const chartHeight = Math.max(400, chartData.length * 28);
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-[#e8e4dc] font-['IBM_Plex_Mono',monospace] overflow-x-hidden">
-
       {/* Grid background */}
       <div
         className="fixed inset-0 pointer-events-none opacity-[0.03]"
@@ -273,7 +291,6 @@ export default function DataExplorer() {
       </header>
 
       <main className="relative z-10 px-8 pt-16 pb-24">
-
         {/* Page title */}
         <div className="flex items-center gap-4 mb-6">
           <div className="h-px w-12 bg-[#c9a96e]" />
@@ -288,7 +305,9 @@ export default function DataExplorer() {
         </h1>
         <p className="text-sm text-[#e8e4dc]/40 mb-12 max-w-lg leading-relaxed">
           Select any indicator from the World Bank WDI dataset to visualize a
-          cross-country comparison using the most recent available data.
+          cross-country comparison using the most recent available data. Note:
+          I'm on a free trial of the World Bank API, which has a rate limit! If
+          you see an error, please wait a minute and try again.
         </p>
 
         {/* ── Indicator Selector ─────────────────────────────────────────── */}
@@ -301,7 +320,11 @@ export default function DataExplorer() {
             <div className="flex items-center gap-3 border border-[#e8e4dc]/10 px-4 py-3 bg-[#0d0d0d]">
               <div className="w-4 h-4 border border-[#c9a96e]/40 border-t-[#c9a96e] rounded-full animate-spin" />
               <span className="text-xs text-[#e8e4dc]/30 tracking-widest">
-                Loading{indicators.length > 0 ? ` ${indicators.length.toLocaleString()}` : ""} indicators…
+                Loading
+                {indicators.length > 0
+                  ? ` ${indicators.length.toLocaleString()}`
+                  : ""}{" "}
+                indicators…
               </span>
             </div>
           ) : (
@@ -313,9 +336,16 @@ export default function DataExplorer() {
                 <input
                   type="text"
                   className="flex-1 bg-transparent px-4 py-3 text-sm text-[#e8e4dc] placeholder-[#e8e4dc]/20 outline-none"
-                  placeholder={selectedIndicator ? selectedIndicator.name : "Search indicators…"}
+                  placeholder={
+                    selectedIndicator
+                      ? selectedIndicator.name
+                      : "Search indicators…"
+                  }
                   value={search}
-                  onChange={(e) => { setSearch(e.target.value); setDropdownOpen(true); }}
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                    setDropdownOpen(true);
+                  }}
                   onFocus={() => setDropdownOpen(true)}
                 />
                 <span className="px-4 text-[#e8e4dc]/20 text-xs select-none">
@@ -369,7 +399,6 @@ export default function DataExplorer() {
         {/* ── Chart / Table ──────────────────────────────────────────────── */}
         {!loadingData && chartData.length > 0 && (
           <div className="animate-fade-in">
-
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
               <div>
                 <h2 className="font-['DM_Serif_Display',serif] text-xl text-[#e8e4dc] mb-1">
@@ -384,13 +413,17 @@ export default function DataExplorer() {
 
               <div className="flex items-center gap-3 flex-wrap">
                 <div className="flex items-center gap-2 border border-[#e8e4dc]/10 px-3 py-2">
-                  <span className="text-xs text-[#e8e4dc]/30 tracking-widest uppercase">Top</span>
+                  <span className="text-xs text-[#e8e4dc]/30 tracking-widest uppercase">
+                    Top
+                  </span>
                   {[20, 30, 50, 100].map((n) => (
                     <button
                       key={n}
                       onClick={() => setTopN(n)}
                       className={`text-xs px-2 py-1 transition-colors duration-150 ${
-                        topN === n ? "bg-[#c9a96e] text-[#0a0a0a]" : "text-[#e8e4dc]/40 hover:text-[#e8e4dc]"
+                        topN === n
+                          ? "bg-[#c9a96e] text-[#0a0a0a]"
+                          : "text-[#e8e4dc]/40 hover:text-[#e8e4dc]"
                       }`}
                     >
                       {n}
@@ -409,7 +442,9 @@ export default function DataExplorer() {
                   <button
                     onClick={() => setViewMode("bar")}
                     className={`text-xs px-4 py-2 tracking-widest uppercase transition-colors duration-150 ${
-                      viewMode === "bar" ? "bg-[#c9a96e]/10 text-[#c9a96e]" : "text-[#e8e4dc]/30 hover:text-[#e8e4dc]"
+                      viewMode === "bar"
+                        ? "bg-[#c9a96e]/10 text-[#c9a96e]"
+                        : "text-[#e8e4dc]/30 hover:text-[#e8e4dc]"
                     }`}
                   >
                     Chart
@@ -417,7 +452,9 @@ export default function DataExplorer() {
                   <button
                     onClick={() => setViewMode("table")}
                     className={`text-xs px-4 py-2 tracking-widest uppercase transition-colors duration-150 border-l border-[#e8e4dc]/10 ${
-                      viewMode === "table" ? "bg-[#c9a96e]/10 text-[#c9a96e]" : "text-[#e8e4dc]/30 hover:text-[#e8e4dc]"
+                      viewMode === "table"
+                        ? "bg-[#c9a96e]/10 text-[#c9a96e]"
+                        : "text-[#e8e4dc]/30 hover:text-[#e8e4dc]"
                     }`}
                   >
                     Table
@@ -440,11 +477,21 @@ export default function DataExplorer() {
                 <table className="w-full text-xs">
                   <thead>
                     <tr className="border-b border-[#e8e4dc]/10 bg-[#0d0d0d]">
-                      <th className="text-left px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal w-8">#</th>
-                      <th className="text-left px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">Country</th>
-                      <th className="text-left px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">ISO3</th>
-                      <th className="text-right px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">Value</th>
-                      <th className="text-right px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">Year</th>
+                      <th className="text-left px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal w-8">
+                        #
+                      </th>
+                      <th className="text-left px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">
+                        Country
+                      </th>
+                      <th className="text-left px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">
+                        ISO3
+                      </th>
+                      <th className="text-right px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">
+                        Value
+                      </th>
+                      <th className="text-right px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">
+                        Year
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -454,12 +501,20 @@ export default function DataExplorer() {
                         className="border-b border-[#e8e4dc]/5 hover:bg-[#e8e4dc]/[0.02] transition-colors"
                       >
                         <td className="px-5 py-3 text-[#e8e4dc]/20">{i + 1}</td>
-                        <td className="px-5 py-3 text-[#e8e4dc]/80">{d.country.value}</td>
-                        <td className="px-5 py-3 text-[#c9a96e]">{d.countryiso3code}</td>
-                        <td className="px-5 py-3 text-right text-[#e8e4dc]/80 tabular-nums">
-                          {(d.value ?? 0).toLocaleString(undefined, { maximumFractionDigits: 3 })}
+                        <td className="px-5 py-3 text-[#e8e4dc]/80">
+                          {d.country.value}
                         </td>
-                        <td className="px-5 py-3 text-right text-[#e8e4dc]/30">{d.date}</td>
+                        <td className="px-5 py-3 text-[#c9a96e]">
+                          {d.countryiso3code}
+                        </td>
+                        <td className="px-5 py-3 text-right text-[#e8e4dc]/80 tabular-nums">
+                          {(d.value ?? 0).toLocaleString(undefined, {
+                            maximumFractionDigits: 3,
+                          })}
+                        </td>
+                        <td className="px-5 py-3 text-right text-[#e8e4dc]/30">
+                          {d.date}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -468,7 +523,8 @@ export default function DataExplorer() {
             )}
 
             <p className="text-xs text-[#e8e4dc]/20 mt-4">
-              Source: World Bank World Development Indicators · api.worldbank.org/v2 · CC BY 4.0
+              Source: World Bank World Development Indicators ·
+              api.worldbank.org/v2 · CC BY 4.0
             </p>
           </div>
         )}
