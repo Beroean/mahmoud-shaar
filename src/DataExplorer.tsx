@@ -46,6 +46,17 @@ const WB_API = "https://api.worldbank.org/v2";
 
 // ─── API helpers ──────────────────────────────────────────────────────────────
 
+// Fetches the set of ISO3 codes that are real countries (region.id !== "NA")
+async function fetchCountryCodes(): Promise<Set<string>> {
+  const res = await fetch(`${WB_API}/country?format=json&per_page=300`);
+  if (!res.ok) return new Set();
+  const json = await res.json();
+  const data: Array<{ id: string; region: { id: string } }> = json[1] ?? [];
+  return new Set(
+    data.filter((c) => c.region?.id && c.region.id !== "NA").map((c) => c.id),
+  );
+}
+
 // source=2 is the WDI dataset. Paginates through all pages.
 async function fetchIndicators(): Promise<Indicator[]> {
   const all: Indicator[] = [];
@@ -119,6 +130,8 @@ export default function DataExplorer() {
   const [viewMode, setViewMode] = useState<ViewMode>("bar");
   const [topN, setTopN] = useState(30);
   const [sortAsc, setSortAsc] = useState(false);
+  const [countriesOnly, setCountriesOnly] = useState(true);
+  const [countryCodes, setCountryCodes] = useState<Set<string>>(new Set());
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Load indicator list on mount
@@ -139,6 +152,14 @@ export default function DataExplorer() {
     return () => {
       cancelled = true;
     };
+  }, []);
+
+  // Fetch real country codes once on mount
+  useEffect(() => {
+    fetchCountryCodes().then((codes) => {
+      console.log(codes);
+      setCountryCodes(codes);
+    });
   }, []);
 
   // Close dropdown on outside click — use pointerdown so it doesn't race with
@@ -191,9 +212,13 @@ export default function DataExplorer() {
   );
 
   const chartData = useMemo(() => {
-    const sorted = sortAsc ? [...rawData].reverse() : rawData;
+    const filtered =
+      countriesOnly && countryCodes.size > 0
+        ? rawData.filter((d) => countryCodes.has(d.countryiso3code))
+        : rawData;
+    const sorted = sortAsc ? [...filtered].reverse() : filtered;
     return sorted.slice(0, topN);
-  }, [rawData, topN, sortAsc]);
+  }, [rawData, topN, sortAsc, countriesOnly, countryCodes]);
   const indicatorLabel =
     rawData[0]?.indicator?.value || selectedIndicator?.name || "";
   const latestYear = rawData[0]?.date ?? "";
@@ -405,8 +430,12 @@ export default function DataExplorer() {
                   {indicatorLabel}
                 </h2>
                 <p className="text-xs text-[#e8e4dc]/30 tracking-wider">
-                  {rawData.length} countries · Most recent value (
-                  <span className="text-[#c9a96e]">{latestYear}</span>) ·{" "}
+                  {countriesOnly && countryCodes.size > 0
+                    ? rawData.filter((d) => countryCodes.has(d.country.id))
+                        .length
+                    : rawData.length}{" "}
+                  {countriesOnly ? "countries" : "entries"} · Most recent value
+                  (<span className="text-[#c9a96e]">{latestYear}</span>) ·{" "}
                   {selectedIndicator?.id}
                 </p>
               </div>
@@ -436,6 +465,17 @@ export default function DataExplorer() {
                   className="flex items-center gap-2 border border-[#e8e4dc]/10 px-3 py-2 text-xs text-[#e8e4dc]/40 hover:text-[#e8e4dc] hover:border-[#e8e4dc]/30 transition-colors duration-150 tracking-widest uppercase"
                 >
                   {sortAsc ? "↑ Asc" : "↓ Desc"}
+                </button>
+
+                <button
+                  onClick={() => setCountriesOnly((v) => !v)}
+                  className={`flex items-center gap-2 border px-3 py-2 text-xs tracking-widest uppercase transition-colors duration-150 ${
+                    countriesOnly
+                      ? "border-[#c9a96e]/50 text-[#c9a96e] bg-[#c9a96e]/5"
+                      : "border-[#e8e4dc]/10 text-[#e8e4dc]/40 hover:text-[#e8e4dc] hover:border-[#e8e4dc]/30"
+                  }`}
+                >
+                  {countriesOnly ? "🌍 Countries" : "⊕ All Entries"}
                 </button>
 
                 <div className="flex border border-[#e8e4dc]/10">
