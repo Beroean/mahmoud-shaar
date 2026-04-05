@@ -431,7 +431,7 @@ export default function DataExplorer() {
                 </h2>
                 <p className="text-xs text-[#e8e4dc]/30 tracking-wider">
                   {countriesOnly && countryCodes.size > 0
-                    ? rawData.filter((d) => countryCodes.has(d.country.id))
+                    ? rawData.filter((d) => countryCodes.has(d.countryiso3code))
                         .length
                     : rawData.length}{" "}
                   {countriesOnly ? "countries" : "entries"} · Most recent value
