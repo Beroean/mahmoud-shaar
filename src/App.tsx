@@ -102,7 +102,7 @@ function Home() {
           {[
             {
               label: "Background",
-              value: "Syrian-American",
+              value: "Syrian Living in the US",
               sub: "Based in Houston, TX",
               icon: "🌍",
             },
