@@ -29,7 +29,7 @@ interface Indicator {
   name: string;
 }
 
-// Shape returned by api.worldbank.org/v2
+// One ranked row, in the shape the chart and table use.
 interface WBDataPoint {
   countryiso3code: string;
   country: { id: string; value: string };
@@ -40,66 +40,58 @@ interface WBDataPoint {
 
 type ViewMode = "bar" | "table";
 
-// ─── Constants ────────────────────────────────────────────────────────────────
+/** public/data/wdi/meta.json */
+interface WdiMeta {
+  sourceDate: string;
+  builtAt: string;
+  indicators: number;
+}
 
-// api.worldbank.org/v2 has CORS headers enabled natively — no proxy needed
-const WB_API = "https://api.worldbank.org/v2";
+// ─── Data ─────────────────────────────────────────────────────────────────────
+// Static files built from the World Bank's WDI bulk download (tools/wdi/build.ts, refreshed weekly
+// in CI). The live API at api.worldbank.org often takes 60s+ or fails for uncached data requests,
+// so the page never calls it.
 
-// ─── API helpers ──────────────────────────────────────────────────────────────
+const DATA = "/data/wdi";
 
-// Fetches the set of ISO3 codes that are real countries (region.id !== "NA")
+async function getJson<T>(path: string): Promise<T> {
+  const res = await fetch(`${DATA}/${path}`);
+  if (!res.ok) throw new Error(`Status ${res.status}`);
+  return res.json() as Promise<T>;
+}
+
+type CountryRow = { id: string; name: string; agg: boolean };
+let countriesPromise: Promise<CountryRow[]> | null = null;
+const loadCountries = () => (countriesPromise ??= getJson<CountryRow[]>("countries.json"));
+
+/** ISO3 codes of real countries (aggregates such as "World" or "High income" excluded). */
 async function fetchCountryCodes(): Promise<Set<string>> {
-  const res = await fetch(`${WB_API}/country?format=json&per_page=300`);
-  if (!res.ok) return new Set();
-  const json = await res.json();
-  const data: Array<{ id: string; region: { id: string } }> = json[1] ?? [];
-  return new Set(
-    data.filter((c) => c.region?.id && c.region.id !== "NA").map((c) => c.id),
-  );
+  const countries = await loadCountries();
+  return new Set(countries.filter((c) => !c.agg).map((c) => c.id));
 }
 
-// source=2 is the WDI dataset. Paginates through all pages.
 async function fetchIndicators(): Promise<Indicator[]> {
-  const all: Indicator[] = [];
-  let page = 1;
-  let totalPages = Infinity;
-  while (page <= totalPages) {
-    const res = await fetch(
-      `${WB_API}/indicator?source=2&format=json&per_page=1000&page=${page}`,
-    );
-    if (!res.ok) throw new Error(`Status ${res.status}`);
-    const json = await res.json();
-    const meta = json[0];
-    const data: Array<{ id: string; name: string }> = json[1] ?? [];
-    totalPages = meta.pages;
-    all.push(...data.map((i) => ({ id: i.id, name: i.name })));
-    page++;
-  }
-  return all.sort((a, b) => a.name.localeCompare(b.name));
+  return getJson<Indicator[]>("indicators.json");
 }
 
-// mrv=1 returns the single most-recent value per country.
-// Filters to real ISO3 country codes to drop aggregates/regions.
+const fetchMeta = () => getJson<WdiMeta>("meta.json");
+
+/** Most recent value per country/aggregate, sorted descending. */
 async function fetchIndicatorData(indicatorId: string): Promise<WBDataPoint[]> {
-  const all: WBDataPoint[] = [];
-  let page = 1;
-  let totalPages = Infinity;
-  while (page <= totalPages) {
-    const res = await fetch(
-      `${WB_API}/country/all/indicator/${indicatorId}?format=json&mrv=1&per_page=1000&page=${page}`,
-    );
-    if (!res.ok) throw new Error(`Status ${res.status}`);
-    const json = await res.json();
-    const meta = json[0];
-    const data: WBDataPoint[] = json[1] ?? [];
-    totalPages = meta?.pages ?? 1;
-    all.push(...data);
-    page++;
-    if (data.length < 1000) break;
-  }
-  return all
-    .filter((d) => d.value !== null && /^[A-Z]{3}$/.test(d.countryiso3code))
-    .sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
+  const [doc, countries] = await Promise.all([
+    getJson<{ id: string; name: string; rows: [string, number, number][] }>(
+      `ind/${encodeURIComponent(indicatorId)}.json`,
+    ),
+    loadCountries(),
+  ]);
+  const names = new Map(countries.map((c) => [c.id, c.name]));
+  return doc.rows.map(([code, value, year]) => ({
+    countryiso3code: code,
+    country: { id: code, value: names.get(code) ?? code },
+    date: String(year),
+    value,
+    indicator: { id: doc.id, value: doc.name },
+  }));
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -133,6 +125,7 @@ export default function DataExplorer() {
   const [sortAsc, setSortAsc] = useState(false);
   const [countriesOnly, setCountriesOnly] = useState(true);
   const [countryCodes, setCountryCodes] = useState<Set<string>>(new Set());
+  const [meta, setMeta] = useState<WdiMeta | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Load indicator list on mount
@@ -155,9 +148,14 @@ export default function DataExplorer() {
     };
   }, []);
 
-  // Fetch real country codes once on mount
+  // Fetch real country codes and the data date once on mount
   useEffect(() => {
-    fetchCountryCodes().then(setCountryCodes);
+    fetchCountryCodes()
+      .then(setCountryCodes)
+      .catch(() => {});
+    fetchMeta()
+      .then(setMeta)
+      .catch(() => {});
   }, []);
 
   // Close dropdown on outside click — use pointerdown so it doesn't race with
@@ -310,9 +308,8 @@ export default function DataExplorer() {
         </h1>
         <p className="text-sm text-paper/40 mb-12 max-w-lg leading-relaxed">
           Select any indicator from the World Bank WDI dataset to visualize a
-          cross-country comparison using the most recent available data. Note:
-          I'm on a free trial of the World Bank API, which has a rate limit! If
-          you see an error, please wait a minute and try again.
+          cross-country comparison using the most recent available data for
+          each country.
         </p>
 
         {/* ── Indicator Selector ─────────────────────────────────────────── */}
@@ -551,8 +548,9 @@ export default function DataExplorer() {
             )}
 
             <p className="text-xs text-paper/20 mt-4">
-              Source: World Bank World Development Indicators ·
-              api.worldbank.org/v2 · CC BY 4.0
+              Source: World Bank, World Development Indicators (CC BY 4.0)
+              {meta &&
+                ` · data as of ${new Date(meta.sourceDate).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" })}`}
             </p>
           </div>
         )}

@@ -17,7 +17,8 @@
     "queue:check": "tsx tools/shakkil/queue.ts",
     "schedule": "tsx tools/shakkil/schedule.ts",
     "og": "tsx tools/og.ts",
-    "pattern": "tsx tools/pattern.ts"
+    "pattern": "tsx tools/pattern.ts",
+    "wdi": "tsx tools/wdi/build.ts"
   },
   "dependencies": {
     "@fontsource/amiri": "^5.3.0",
@@ -37,9 +38,11 @@
     "@types/node": "^24.12.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@types/yauzl": "^3.4.0",
     "@vitejs/plugin-react": "^6.0.0",
     "autoprefixer": "^10.4.27",
     "babel-plugin-react-compiler": "^1.0.0",
+    "csv-parse": "^7.0.3",
     "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
@@ -51,6 +54,7 @@
     "typescript-eslint": "^8.56.1",
     "vite": "^8.0.0",
     "vitest": "^5.1.0",
-    "yaml": "^2.9.1"
+    "yaml": "^2.9.1",
+    "yauzl": "^3.4.0"
   }
 }
