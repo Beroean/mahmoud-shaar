@@ -39,6 +39,19 @@ npm test
 npm run build && npm run preview
 ```
 
+## شَكِّل (Shakkil) puzzles
+
+Puzzles live in `content/shakkil/puzzles/`, one YAML file per puzzle. The file number is the puzzle's place in the daily schedule (`0001.yaml` is day 1), so new puzzles are always appended.
+
+```bash
+npm run puzzle:new -- "ذَهَبَ الْوَلَدُ إِلَى الْمَدْرَسَةِ"   # scaffold the next file
+npm run puzzle:check -- 0005.yaml                      # validate it and preview grading
+npm run puzzle:check -- --text "هٰذَا كِتَابٌ"            # try a sentence without a file
+npm run puzzle:check                                   # validate everything
+```
+
+The game logic (parsing, leniency rules, grading, schedule, stats, share text) is in `src/pages/shakkil/core/`. The grading rules and their switches are in `rules.ts`.
+
 ## Deploy
 
 Pushing to `main` runs `.github/workflows/deploy.yml`: lint → test → build → deploy to GitHub Pages. Pull requests run everything except the deploy. The custom domain comes from `public/CNAME`.
