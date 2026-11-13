@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { loadAll, normalizeId, parseSchedule, resolveOrder } from "./content";
+import { loadAll, normalizeId, parseSchedule, readRejected, resolveOrder } from "./content";
 import { buildReport } from "./pr-report";
 import { dateOfDay, moveTo } from "./schedule";
 
@@ -59,5 +59,11 @@ describe("PR report locking", () => {
     const ctx = { baseOrder: ids, locked: 3 };
     expect(buildReport([{ status: "deleted", file: `${ids[5]}.yaml` }], results, setErrors, ctx).ok).toBe(true);
     expect(buildReport([{ status: "deleted", file: `${ids[1]}.yaml` }], results, setErrors, ctx).ok).toBe(false);
+  });
+});
+
+describe("rejected sentences", () => {
+  it("reserves the link-preview tagline", () => {
+    expect(readRejected().has("شَكِّلْ تَفُزْ".normalize("NFC"))).toBe(true);
   });
 });

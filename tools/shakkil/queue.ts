@@ -14,10 +14,9 @@ import { basename, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { parse, stringify } from "yaml";
 import { compilePuzzle } from "../../src/pages/shakkil/core/puzzle";
-import { FILE_RE, PUZZLE_DIR, puzzleFiles } from "./content";
+import { FILE_RE, PUZZLE_DIR, REJECTED_FILE, puzzleFiles } from "./content";
 
 export const QUEUE_DIR = resolve(import.meta.dirname, "../../content/shakkil/queue");
-export const REJECTED_FILE = resolve(import.meta.dirname, "../../content/shakkil/rejected.yaml");
 
 export interface Candidate {
   text: string;
@@ -106,9 +105,16 @@ export function approve(id: string, edited: Candidate): { number: number; file: 
 
 export function reject(id: string, reason: string): void {
   const item = removeFromQueue(id);
-  const list = existsSync(REJECTED_FILE) ? (parse(readFileSync(REJECTED_FILE, "utf8")) ?? []) : [];
+  const raw = existsSync(REJECTED_FILE) ? readFileSync(REJECTED_FILE, "utf8") : "";
+  // Keep the file's comment header; yaml.stringify would drop it.
+  const header = raw
+    .split(/\r?\n/)
+    .filter((l) => l.startsWith("#"))
+    .join("\n");
+  const list = (parse(raw) as unknown[] | null) ?? [];
   list.push({ text: item.text, reason: reason.trim() || undefined });
-  writeFileSync(REJECTED_FILE, stringify(list, { lineWidth: 0 }), "utf8");
+  const body = stringify(list, { lineWidth: 0 });
+  writeFileSync(REJECTED_FILE, header ? `${header}\n${body}` : body, "utf8");
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
