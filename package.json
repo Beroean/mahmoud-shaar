@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "puzzle:check": "tsx tools/shakkil/check.ts",
+    "puzzle:new": "tsx tools/shakkil/new.ts"
   },
   "dependencies": {
     "@fontsource/amiri": "^5.3.0",
@@ -38,9 +40,11 @@
     "globals": "^17.4.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^3.4.19",
+    "tsx": "^4.23.15",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.56.1",
     "vite": "^8.0.0",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.0",
+    "yaml": "^2.9.1"
   }
 }
