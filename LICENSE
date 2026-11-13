@@ -1,0 +1,11 @@
+Copyright (c) 2026 Mahmoud Shaar. All rights reserved.
+
+The source code in this repository is published for viewing only. No permission is granted to
+copy, modify, distribute, sublicense, or use it, in whole or in part, without prior written
+permission from the copyright holder.
+
+Exceptions:
+- The شَكِّل (Shakkil) puzzle content in content/shakkil/ is licensed separately under
+  CC BY-NC 4.0; see content/shakkil/LICENSE.
+- Third-party components (npm dependencies, the fonts under @fontsource, and data from the
+  World Bank) remain under their own licenses.

@@ -2,7 +2,7 @@ import { type ReactNode, useEffect, useReducer, useState } from "react";
 import { FlagIcon, HelpIcon, StatsIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
-import { isLaunched, puzzleNumber, scheduledIndex } from "./core/daily";
+import { isLaunched, puzzleNumber } from "./core/daily";
 import type { Guess } from "./core/grade";
 import { type Puzzle, type PuzzleSource, compilePuzzle } from "./core/puzzle";
 import { GAME_NAME, toArabicDigits } from "./core/share";
@@ -35,9 +35,15 @@ function compile(src: PuzzleSource): Puzzle {
   return puzzle;
 }
 
-function dailySession(all: PuzzleSource[]): Session {
+/**
+ * Today's puzzle, or null if this build doesn't include it yet. The site only ships puzzles up to
+ * tomorrow (rebuilt nightly), so this only happens if the nightly deploy is late.
+ */
+function dailySession(all: PuzzleSource[]): Session | null {
   const number = puzzleNumber();
-  const puzzle = compile(all[scheduledIndex(number, all.length)]);
+  const src = all.find((p) => p.number === number);
+  if (!src) return null;
+  const puzzle = compile(src);
   const saved = load().daily;
   // Restore only if it's the same puzzle (a saved game from before a schedule change is dropped).
   const same = saved?.puzzle === number && (!saved.id || saved.id === puzzle.id);
@@ -218,12 +224,20 @@ export default function Shakkil() {
   const [all, setAll] = useState<PuzzleSource[] | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [error, setError] = useState<string | null>(null);
+  /** Today's puzzle isn't in this build yet (nightly deploy pending). */
+  const [waiting, setWaiting] = useState(false);
+
+  function showDaily(list: PuzzleSource[]) {
+    const s = dailySession(list);
+    setSession(s);
+    setWaiting(!s);
+  }
 
   useEffect(() => {
     import("virtual:shakkil-puzzles")
       .then((m) => {
         setAll(m.default);
-        setSession(dailySession(m.default));
+        showDaily(m.default);
       })
       .catch((e: Error) => setError(e.message));
   }, []);
@@ -240,13 +254,25 @@ export default function Shakkil() {
       >
         <main className="relative z-10 mx-auto max-w-2xl px-4 pt-8 pb-4">
           {error && <p className="text-rose-300">تعذّر تحميل اللعبة: {error}</p>}
-          {!session && !error && <p className="text-paper/40 py-24 text-center">جارٍ التحميل…</p>}
+          {!session && !error && !waiting && <p className="text-paper/40 py-24 text-center">جارٍ التحميل…</p>}
+          {waiting && !session && all && (
+            <div className="py-24 text-center space-y-6">
+              <p className="text-paper/70">جملة اليوم في الطريق. حدّث الصفحة بعد قليل.</p>
+              <button
+                type="button"
+                onClick={() => setSession(practiceSession(all))}
+                className="px-5 py-3 rounded-md border border-paper/20 hover:border-paper/50"
+              >
+                جملة للتدريب
+              </button>
+            </div>
+          )}
           {session && all && (
             <Game
               key={session.id}
               session={session}
               onPractice={() => setSession(practiceSession(all, session.mode === "practice" ? session.number : undefined))}
-              onDaily={() => setSession(dailySession(all))}
+              onDaily={() => showDaily(all)}
             />
           )}
         </main>

@@ -62,6 +62,10 @@ source: original
 - لها تشكيل واحد واضح، أو اذكر البدائل الصحيحة في `alts`.
 - بلا محتوى سياسي أو ديني خلافي أو مسيء.
 
+## الترخيص
+
+تُنشر الجمل وإعرابها بترخيص [CC BY-NC 4.0](content/shakkil/LICENSE): يجوز مشاركتها وتعديلها لأغراض غير تجارية مع ذكر المصدر. بإرسالك جملة توافق على نشرها بهذا الترخيص. أما شيفرة الموقع فجميع حقوقها محفوظة ([LICENSE](LICENSE)).
+
 ## للمطوّرين
 
 ```bash
@@ -102,6 +106,10 @@ Puzzles that have already been played are locked: the check fails if a PR delete
 - The player may leave out a word-internal sukun and the vowel before a long-vowel letter. Shadda and every word ending (including a final sukun) are required.
 - Tanween fath before a final alif can be written on the letter or on the alif.
 - `alts` lists other fully valid diacritizations; a guess matching any of them wins.
+
+### License
+
+Puzzle content (sentences, diacritization, i'rab) is published under [CC BY-NC 4.0](content/shakkil/LICENSE); by contributing you agree to that. The site's code is all rights reserved ([LICENSE](LICENSE)).
 
 ### Local tooling
 
