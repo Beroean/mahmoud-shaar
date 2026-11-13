@@ -105,19 +105,14 @@ export default function Home() {
         </nav>
       }
       footer={
-        <>
-          <span className="text-xs text-paper/20 tracking-widest">
-            Built on 3-15-2026 because I was sick and bored.
-          </span>
-          <span className="text-xs text-paper/20">
-            {new Date().getFullYear()}
-          </span>
-        </>
+        <span className="mx-auto text-xs text-paper/20">
+          {new Date().getFullYear()}
+        </span>
       }
     >
-      <main className="relative z-10 px-6 sm:px-8 pt-24 pb-16">
+      <main className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 pt-24 pb-16 text-center">
         <div className="mb-10 animate-fade-in">
-          <Overline>Houston, TX · Software Engineer</Overline>
+          <Overline center>Houston, TX · Software Engineer</Overline>
         </div>
 
         <h1 className="font-serif text-[clamp(3rem,8vw,6.5rem)] leading-[1.05] tracking-tight mb-10 animate-slide-up">
@@ -128,13 +123,12 @@ export default function Home() {
           of the internet.
         </h1>
 
-        <p className="text-sm leading-[1.9] text-paper/60 max-w-xl mb-16 animate-slide-up-delay">
+        <p className="text-sm leading-[1.9] text-paper/60 max-w-xl mx-auto mb-16 animate-slide-up-delay">
           I'm using this space to experiment with new tech stacks in my free
-          time. I got sick and was stuck at home for a weekend so I decided to
-          build this.
+          time.
         </p>
 
-        <div className="flex flex-wrap gap-4 mb-32 animate-slide-up-delay-2">
+        <div className="flex flex-wrap justify-center gap-4 mb-32 animate-slide-up-delay-2">
           <a
             href={LINKEDIN}
             target="_blank"
@@ -165,7 +159,7 @@ export default function Home() {
               key={card.label}
               className="bg-ink p-8 hover:bg-ink-2 transition-colors duration-300"
             >
-              <div className="text-gold/80 mb-5">{card.icon}</div>
+              <div className="flex justify-center text-gold/80 mb-5">{card.icon}</div>
               <div className="text-xs tracking-widest uppercase text-paper/30 mb-2">
                 {card.label}
               </div>
@@ -186,7 +180,7 @@ export default function Home() {
               href={x.href}
               className="bg-ink p-8 group hover:bg-ink-2 transition-colors duration-300 block"
             >
-              <div className="text-gold/80 group-hover:text-gold mb-5 transition-colors duration-300">
+              <div className="flex justify-center text-gold/80 group-hover:text-gold mb-5 transition-colors duration-300">
                 {x.icon}
               </div>
               <div className="text-xs tracking-widest uppercase text-paper/30 mb-2">
@@ -195,10 +189,10 @@ export default function Home() {
               <div className="font-serif text-xl mb-2 group-hover:text-gold transition-colors duration-300">
                 {x.title}
               </div>
-              <div className="text-xs text-paper/40 leading-relaxed">
+              <div className="text-xs text-paper/40 leading-relaxed max-w-md mx-auto">
                 {x.blurb}
               </div>
-              <div className="mt-6 flex items-center gap-2 text-xs tracking-widest uppercase text-gold/60 group-hover:text-gold transition-colors duration-300">
+              <div className="mt-6 flex items-center justify-center gap-2 text-xs tracking-widest uppercase text-gold/60 group-hover:text-gold transition-colors duration-300">
                 {x.cta}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   <ArrowIcon />

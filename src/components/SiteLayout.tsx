@@ -56,13 +56,15 @@ export function HomeLink({ label = "← Home" }: { label?: string }) {
   );
 }
 
-export function Overline({ children }: { children: ReactNode }) {
+export function Overline({ children, center = false }: { children: ReactNode; center?: boolean }) {
   return (
-    <div className="flex items-center gap-4">
-      <div className="h-px w-12 bg-gold" />
+    <div className={`flex items-center gap-4 ${center ? "justify-center text-center" : ""}`}>
+      {/* Centred: the rules only show when there's room, so a wrapped label isn't squeezed. */}
+      <div className={`h-px w-12 bg-gold shrink-0 ${center ? "hidden sm:block" : ""}`} />
       <span className="text-xs tracking-[0.4em] uppercase text-gold">
         {children}
       </span>
+      {center && <div className="h-px w-12 bg-gold shrink-0 hidden sm:block" />}
     </div>
   );
 }

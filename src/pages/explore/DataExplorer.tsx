@@ -296,24 +296,24 @@ export default function DataExplorer() {
         </span>
       }
     >
-      <main className="relative z-10 px-6 sm:px-8 pt-16 pb-24">
+      <main className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 pt-16 pb-24 text-center">
         {/* Page title */}
         <div className="mb-6">
-          <Overline>Data Explorer</Overline>
+          <Overline center>Data Explorer</Overline>
         </div>
         <h1 className="font-serif text-[clamp(2rem,5vw,4rem)] leading-[1.1] mb-3">
           World Development
           <br />
           <span className="italic text-gold">Indicators</span>
         </h1>
-        <p className="text-sm text-paper/40 mb-12 max-w-lg leading-relaxed">
+        <p className="text-sm text-paper/40 mb-12 max-w-lg mx-auto leading-relaxed">
           Select any indicator from the World Bank WDI dataset to visualize a
           cross-country comparison using the most recent available data for
           each country.
         </p>
 
         {/* ── Indicator Selector ─────────────────────────────────────────── */}
-        <div className="mb-10 max-w-2xl" ref={dropdownRef}>
+        <div className="mb-10 max-w-2xl mx-auto text-left" ref={dropdownRef}>
           <label className="block text-xs tracking-widest uppercase text-paper/40 mb-3">
             Select Indicator
           </label>
@@ -390,7 +390,7 @@ export default function DataExplorer() {
 
         {/* ── Error ──────────────────────────────────────────────────────── */}
         {error && (
-          <div className="border border-red-800/50 bg-red-900/10 px-6 py-4 text-sm text-red-400 max-w-2xl mb-8">
+          <div className="border border-red-800/50 bg-red-900/10 px-6 py-4 text-sm text-red-400 max-w-2xl mx-auto mb-8">
             {error}
           </div>
         )}
@@ -401,7 +401,7 @@ export default function DataExplorer() {
         {/* ── Chart / Table ──────────────────────────────────────────────── */}
         {!loadingData && chartData.length > 0 && (
           <div className="animate-fade-in">
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <div className="flex flex-col items-center gap-4 mb-6">
               <div>
                 <h2 className="font-serif text-xl text-paper mb-1">
                   {indicatorLabel}
@@ -417,7 +417,7 @@ export default function DataExplorer() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex items-center justify-center gap-3 flex-wrap">
                 <div className="flex items-center gap-2 border border-paper/10 px-3 py-2">
                   <span className="text-xs text-paper/30 tracking-widest uppercase">
                     Top
@@ -557,7 +557,7 @@ export default function DataExplorer() {
 
         {/* Empty state */}
         {!loadingData && !loadingIndicators && !selectedIndicator && !error && (
-          <div className="border border-paper/5 bg-ink-1 px-10 py-16 text-center max-w-lg">
+          <div className="border border-paper/5 bg-ink-1 px-10 py-16 text-center max-w-lg mx-auto">
             <div className="font-serif text-2xl text-paper/20 mb-3 italic">
               Pick an indicator above
             </div>
