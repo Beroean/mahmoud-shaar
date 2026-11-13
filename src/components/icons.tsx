@@ -90,9 +90,9 @@ export function BarsIcon({ className }: IconProps) {
 export function HarakaIcon({ className }: IconProps) {
   return (
     <LineIcon className={className}>
-      <path d="M3.5 12.5c0 3.4 3.8 5 8.5 5s8.5-1.6 8.5-5" />
-      <circle cx="12" cy="21" r="0.6" fill="currentColor" />
-      <path d="M9.5 8.5 15 6" />
+      <path d="M20.5 9v4.5a3 3 0 0 1-3 3h-11a3 3 0 0 1-3-3V12" />
+      <circle cx="12" cy="20.5" r="0.9" fill="currentColor" stroke="none" />
+      <path d="M9.5 7 15 4.5" />
     </LineIcon>
   );
 }
