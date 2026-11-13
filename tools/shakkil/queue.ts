@@ -10,7 +10,7 @@
  */
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { basename, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { parse, stringify } from "yaml";
 import { compilePuzzle } from "../../src/pages/shakkil/core/puzzle";
@@ -58,9 +58,18 @@ function validate(c: Candidate): string[] {
 }
 
 export function loadQueue(): QueuedCandidate[] {
-  return queueFiles().flatMap((path) =>
-    readList(path).map((c) => ({ ...c, id: idOf(c.text), file: path, errors: validate(c) })),
-  );
+  return queueFiles().flatMap((path): QueuedCandidate[] => {
+    let list: Candidate[];
+    try {
+      list = readList(path);
+    } catch (e) {
+      // Surface a broken file as one invalid entry instead of failing the whole queue.
+      const firstLine = (e as Error).message.split(/\r?\n/)[0];
+      const msg = `YAML غير صالح / invalid YAML in ${basename(path)}: ${firstLine}`;
+      return [{ text: "", irab: [], id: idOf(path), file: path, errors: [msg] }];
+    }
+    return list.map((c) => ({ ...c, id: idOf(c.text), file: path, errors: validate(c) }));
+  });
 }
 
 function removeFromQueue(id: string): QueuedCandidate {
