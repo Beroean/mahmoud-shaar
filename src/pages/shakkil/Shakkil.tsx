@@ -2,7 +2,7 @@ import { type ReactNode, useEffect, useReducer, useState } from "react";
 import { FlagIcon, HelpIcon, StatsIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
-import { puzzleNumber, scheduledIndex } from "./core/daily";
+import { isLaunched, puzzleNumber, scheduledIndex } from "./core/daily";
 import type { Guess } from "./core/grade";
 import { type Puzzle, type PuzzleSource, compilePuzzle } from "./core/puzzle";
 import { GAME_NAME, toArabicDigits } from "./core/share";
@@ -129,7 +129,7 @@ function Game({
         <div>
           <h1 className="font-naskh text-4xl text-gold leading-tight">{GAME_NAME}</h1>
           <p className="text-sm text-paper/50">
-            {daily ? `جملة اليوم #${toArabicDigits(number)}` : "تدريب"}
+            {daily ? `${isLaunched() ? "جملة اليوم" : "معاينة · جملة"} #${toArabicDigits(number)}` : "تدريب"}
             {state.status === "playing" && ` · بقي ${toArabicDigits(remaining)} من ${toArabicDigits(MAX_ATTEMPTS)}`}
           </p>
         </div>

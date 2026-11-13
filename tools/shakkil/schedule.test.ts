@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { loadAll, normalizeId, parseSchedule, readRejected, resolveOrder } from "./content";
 import { buildReport } from "./pr-report";
+import { LAUNCH_DATE } from "../../src/pages/shakkil/core/daily";
 import { dateOfDay, moveTo } from "./schedule";
 
 describe("schedule", () => {
@@ -32,8 +33,10 @@ describe("schedule", () => {
   });
 
   it("dates days from the launch date", () => {
-    expect(dateOfDay(1)).toBe("2026-12-01");
-    expect(dateOfDay(32)).toBe("2027-01-01");
+    expect(dateOfDay(1)).toBe(LAUNCH_DATE);
+    const d = new Date(`${LAUNCH_DATE}T00:00:00Z`);
+    d.setUTCDate(d.getUTCDate() + 31);
+    expect(dateOfDay(32)).toBe(d.toISOString().slice(0, 10));
   });
 });
 
