@@ -2,12 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mahmoud-shaar</title>
+    <title>Mahmoud Shaar</title>
+    <meta name="description" content="Mahmoud Shaar, a software engineer in Houston, TX. Side projects and experiments." />
+    <link rel="canonical" href="https://mahmoudshaar.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mahmoud Shaar" />
+    <meta property="og:title" content="Mahmoud Shaar" />
+    <meta property="og:description" content="Software engineer in Houston, TX. Side projects and experiments." />
+    <meta property="og:url" content="https://mahmoudshaar.com/" />
+    <meta name="twitter:card" content="summary" />
+    <script>
+      // The site used to be a HashRouter SPA. Send old /#/explore links to the new path.
+      if (location.hash.indexOf("#/explore") === 0) location.replace("/explore/");
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/pages/home/main.tsx"></script>
   </body>
 </html>

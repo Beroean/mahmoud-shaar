@@ -1,75 +1,44 @@
-# React + TypeScript + Vite
+# mahmoudshaar.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal site and a place for side experiments. Live at <https://mahmoudshaar.com>.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Vite (multi-page app), React 19 with the React Compiler, TypeScript
+- Tailwind CSS 3 with shared design tokens (`ink`, `paper`, `gold`; `font-serif`, `font-mono`, `font-naskh`) in `tailwind.config.js`
+- Self-hosted fonts via `@fontsource`
+- Vitest for tests
+- GitHub Pages, deployed by GitHub Actions
+- GoatCounter analytics (cookieless), configured in `site.config.ts`
 
-## React Compiler
+## Layout
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```
+index.html, explore/index.html, 404.html   HTML entries (one per page, each with its own <head>)
+src/pages/<page>/main.tsx                  page entry points
+src/components/                            shared layout (SiteLayout, Overline, SectionDivider, icons)
+src/lib/                                   small shared helpers
+src/styles/base.css                        Tailwind + fonts + base styles
+site.config.ts                             site URL and analytics code
+public/                                    copied verbatim (CNAME, robots.txt, sitemap.xml, favicon)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Adding a page
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+1. Create `<page>/index.html` with its own `<title>`, description, canonical and OG tags, loading `/src/pages/<page>/main.tsx`.
+2. Create `src/pages/<page>/main.tsx` that calls `mount(<YourPage />)`.
+3. Register the HTML file in `pages` in `vite.config.ts` and add the URL to `public/sitemap.xml`.
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+## Development
+
+```bash
+npm install
+npm run dev        # http://localhost:5173
+npm run lint
+npm test
+npm run build && npm run preview
 ```
+
+## Deploy
+
+Pushing to `main` runs `.github/workflows/deploy.yml`: lint → test → build → deploy to GitHub Pages. Pull requests run everything except the deploy. The custom domain comes from `public/CNAME`.
