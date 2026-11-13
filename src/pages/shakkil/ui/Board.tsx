@@ -87,7 +87,7 @@ function EditRow({
                   aria-label={`الحرف ${l.char}${editable ? "" : "، صحيح"}`}
                   aria-current={active ? "true" : undefined}
                   className={`inline-block min-w-[1.75rem] border-b-[3px] rounded-t-md transition-colors ${tone} ${
-                    active ? "!bg-gold/25 !border-gold ring-1 ring-gold/60" : ""
+                    active ? "!bg-paper/15 ring-2 ring-paper ring-offset-2 ring-offset-ink" : ""
                   } ${editable ? "hover:bg-paper/10 cursor-pointer" : "cursor-default"}`}
                 >
                   {text}
