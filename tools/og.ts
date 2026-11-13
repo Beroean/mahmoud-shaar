@@ -117,10 +117,12 @@ const IMAGES: Record<string, string> = {
   <text x="80" y="480" font-family="${MONO}" font-size="26" fill="${PAPER}" fill-opacity="0.6">1,400+ World Bank indicators · every country ranked</text>
   ${footer("mahmoudshaar.com/explore", "World Bank WDI")}`),
 
+  // The sample line must never be a real puzzle (it would spoil it); it is reserved in
+  // content/shakkil/rejected.yaml.
   shakkil: frame(`
   <text x="1120" y="215" text-anchor="end" font-family="Amiri" font-weight="700" font-size="160" fill="${GOLD}">شَكِّل</text>
   <text x="1120" y="372" text-anchor="end" font-family="Amiri" font-size="48" fill="${PAPER}" fill-opacity="0.85">لعبة التشكيل اليومية</text>
-  <text x="1120" y="485" text-anchor="end" font-family="Amiri" font-size="58" fill="${PAPER}">ذَهَبَ الْوَلَدُ إِلَى الْمَدْرَسَةِ</text>
+  <text x="1120" y="485" text-anchor="end" font-family="Amiri" font-size="64" fill="${PAPER}">«شَكِّلْ تَفُزْ»</text>
   <g>
     <rect x="80" y="430" width="56" height="56" rx="6" fill="#10b981" fill-opacity="0.85"/>
     <rect x="148" y="430" width="56" height="56" rx="6" fill="#f59e0b" fill-opacity="0.85"/>
