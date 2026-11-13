@@ -61,6 +61,17 @@ Outside contributors: see [CONTRIBUTING.md](CONTRIBUTING.md) (Arabic and English
 
 The game logic (parsing, leniency rules, grading, schedule, stats, share text) is in `src/pages/shakkil/core/`. The grading rules and their switches are in `rules.ts`.
 
+## WDI explorer data
+
+The explorer (`/explore/`) never calls the World Bank API at runtime (its uncached data requests often hang for 60s+). Instead `npm run wdi` (`tools/wdi/build.ts`) reads the World Bank's bulk download `WDI_CSV.zip` (~280 MB) and writes small static files to `public/data/wdi/` (gitignored): `indicators.json`, `countries.json`, `meta.json` and one `ind/<id>.json` per indicator with the latest value per country.
+
+```bash
+npm run wdi              # uses .cache/wdi/WDI_CSV.zip, downloading it if missing
+npm run wdi -- --fresh   # force a fresh download
+```
+
+CI builds this before every deploy (the zip is cached until the World Bank publishes a new one) and redeploys every Monday so new data shows up.
+
 ## Deploy
 
 Pushing to `main` runs `.github/workflows/deploy.yml`: lint → test → build → deploy to GitHub Pages. Pull requests run everything except the deploy. The custom domain comes from `public/CNAME`.
