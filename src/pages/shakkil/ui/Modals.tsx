@@ -136,7 +136,7 @@ export function ResultModal({
   const variant = puzzle.variants[results[results.length - 1]?.variant ?? 0] ?? puzzle.variants[0];
   const text = shareText(number, results.map((r) => r.letters), won);
   return (
-    <Modal title={won ? "أحسنت! 🎉" : "انتهت المحاولات"} onClose={onClose}>
+    <Modal title={won ? "أحسنت!" : "انتهت المحاولات"} onClose={onClose}>
       <p className="text-paper/70 mb-4">
         {won
           ? `شكّلتها في ${toArabicDigits(results.length)} من ${toArabicDigits(MAX_ATTEMPTS)}.`

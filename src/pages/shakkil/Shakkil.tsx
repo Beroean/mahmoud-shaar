@@ -1,4 +1,5 @@
-import { useEffect, useReducer, useState } from "react";
+import { type ReactNode, useEffect, useReducer, useState } from "react";
+import { FlagIcon, HelpIcon, StatsIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
 import { puzzleNumber, scheduledIndex } from "./core/daily";
@@ -133,9 +134,17 @@ function Game({
           </p>
         </div>
         <nav className="flex items-center gap-1">
-          <IconButton label="كيف تلعب" onClick={() => setDialog("help")}>؟</IconButton>
-          <IconButton label="الإحصاءات" onClick={() => setDialog("stats")}>📊</IconButton>
-          {finished && <IconButton label="النتيجة" onClick={() => setDialog("result")}>🏁</IconButton>}
+          <IconButton label="كيف تلعب" onClick={() => setDialog("help")}>
+            <HelpIcon className="w-5 h-5" />
+          </IconButton>
+          <IconButton label="الإحصاءات" onClick={() => setDialog("stats")}>
+            <StatsIcon className="w-5 h-5" />
+          </IconButton>
+          {finished && (
+            <IconButton label="النتيجة" onClick={() => setDialog("result")}>
+              <FlagIcon className="w-5 h-5 rtl:-scale-x-100" />
+            </IconButton>
+          )}
           <button
             type="button"
             onClick={daily ? onPractice : onDaily}
@@ -191,14 +200,14 @@ function Game({
   );
 }
 
-function IconButton({ label, onClick, children }: { label: string; onClick: () => void; children: string }) {
+function IconButton({ label, onClick, children }: { label: string; onClick: () => void; children: ReactNode }) {
   return (
     <button
       type="button"
       onClick={onClick}
       title={label}
       aria-label={label}
-      className="w-10 h-10 rounded-md border border-paper/15 hover:border-paper/40 text-lg"
+      className="w-10 h-10 grid place-items-center rounded-md border border-paper/15 text-paper/70 hover:text-gold hover:border-gold/50 transition-colors"
     >
       {children}
     </button>

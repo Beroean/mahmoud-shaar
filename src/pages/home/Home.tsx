@@ -1,9 +1,19 @@
+import type { ReactNode } from "react";
 import {
   Overline,
   SectionDivider,
   SiteLayout,
 } from "../../components/SiteLayout";
-import { GitHubIcon, LinkedInIcon } from "../../components/icons";
+import {
+  ArrowIcon,
+  BarsIcon,
+  CandlesIcon,
+  CapIcon,
+  GitHubIcon,
+  GlobeIcon,
+  HarakaIcon,
+  LinkedInIcon,
+} from "../../components/icons";
 
 const LINKEDIN = "https://www.linkedin.com/in/mahmoud-shaar/";
 const GITHUB = "https://github.com/Beroean";
@@ -13,27 +23,27 @@ const ABOUT = [
     label: "Background",
     value: "Syrian Living in the US",
     sub: "Based in Houston, TX",
-    icon: "🌍",
+    icon: <GlobeIcon />,
   },
   {
     label: "Profession",
     value: "Software Engineer",
     sub: "Commodity Trading",
-    icon: "⚡",
+    icon: <CandlesIcon />,
   },
   {
     label: "Education",
     value: "CS + MBA",
     sub: "University of Houston and Lawrence University",
-    icon: "🎓",
+    icon: <CapIcon />,
   },
 ];
 
 type Experiment = {
   href: string;
-  icon: string;
+  icon: ReactNode;
   kicker: string;
-  title: string;
+  title: ReactNode;
   blurb: string;
   cta: string;
 };
@@ -41,12 +51,28 @@ type Experiment = {
 const EXPERIMENTS: Experiment[] = [
   {
     href: "/explore/",
-    icon: "📊",
+    icon: <BarsIcon />,
     kicker: "Data Explorer",
     title: "World Bank WDI",
     blurb:
       "Browse and visualize 1,400+ World Development Indicators across every country. Pick a metric, see the world ranked.",
-    cta: "Open Explorer →",
+    cta: "Open Explorer",
+  },
+  {
+    href: "/shakkil/",
+    icon: <HarakaIcon />,
+    kicker: "Daily Puzzle · Arabic",
+    title: (
+      <>
+        <span lang="ar" className="font-naskh">
+          شَكِّل
+        </span>{" "}
+        · Shakkil
+      </>
+    ),
+    blurb:
+      "A daily Arabic diacritics puzzle: put the right harakat on a short sentence in six tries, then see the i'rab of every word.",
+    cta: "Play today's puzzle",
   },
 ];
 
@@ -139,7 +165,7 @@ export default function Home() {
               key={card.label}
               className="bg-ink p-8 hover:bg-ink-2 transition-colors duration-300"
             >
-              <div className="text-2xl mb-4">{card.icon}</div>
+              <div className="text-gold/80 mb-5">{card.icon}</div>
               <div className="text-xs tracking-widest uppercase text-paper/30 mb-2">
                 {card.label}
               </div>
@@ -153,14 +179,16 @@ export default function Home() {
           <SectionDivider label="Experiments" />
         </div>
 
-        <div className="grid grid-cols-1 gap-px bg-paper/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-paper/10">
           {EXPERIMENTS.map((x) => (
             <a
               key={x.href}
               href={x.href}
               className="bg-ink p-8 group hover:bg-ink-2 transition-colors duration-300 block"
             >
-              <div className="text-2xl mb-4">{x.icon}</div>
+              <div className="text-gold/80 group-hover:text-gold mb-5 transition-colors duration-300">
+                {x.icon}
+              </div>
               <div className="text-xs tracking-widest uppercase text-paper/30 mb-2">
                 {x.kicker}
               </div>
@@ -170,8 +198,11 @@ export default function Home() {
               <div className="text-xs text-paper/40 leading-relaxed">
                 {x.blurb}
               </div>
-              <div className="mt-6 text-xs tracking-widest uppercase text-gold/60 group-hover:text-gold transition-colors duration-300">
+              <div className="mt-6 flex items-center gap-2 text-xs tracking-widest uppercase text-gold/60 group-hover:text-gold transition-colors duration-300">
                 {x.cta}
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  <ArrowIcon />
+                </span>
               </div>
             </a>
           ))}

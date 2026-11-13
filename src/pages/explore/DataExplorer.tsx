@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { HomeLink, Overline, SiteLayout } from "../../components/SiteLayout";
+import { ChevronIcon, GlobeIcon, LayersIcon } from "../../components/icons";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -352,8 +353,8 @@ export default function DataExplorer() {
                   }}
                   onFocus={() => setDropdownOpen(true)}
                 />
-                <span className="px-4 text-paper/20 text-xs select-none">
-                  {dropdownOpen ? "▲" : "▼"}
+                <span className="px-4 text-paper/40 select-none">
+                  <ChevronIcon className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
                 </span>
               </div>
 
@@ -454,7 +455,15 @@ export default function DataExplorer() {
                       : "border-paper/10 text-paper/40 hover:text-paper hover:border-paper/30"
                   }`}
                 >
-                  {countriesOnly ? "🌍 Countries" : "⊕ All Entries"}
+                  {countriesOnly ? (
+                    <>
+                      <GlobeIcon className="w-4 h-4" /> Countries
+                    </>
+                  ) : (
+                    <>
+                      <LayersIcon className="w-4 h-4" /> All Entries
+                    </>
+                  )}
                 </button>
 
                 <div className="flex border border-paper/10">
