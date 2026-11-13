@@ -4,8 +4,10 @@ import { specsFor } from "./rules";
 
 /** A puzzle as authored in content/shakkil/puzzles/NNNN.yaml (plus its number). */
 export interface PuzzleSource {
-  /** 1-based puzzle number = position in the daily schedule (from the file name). */
+  /** 1-based puzzle number = day in the schedule (content/shakkil/schedule.yaml). */
   number: number;
+  /** Permanent ID (the puzzle's file name, e.g. "0042"). Stays the same when the schedule changes. */
+  id?: string;
   /** Fully diacritized reference sentence. */
   text: string;
   /** One short i'rab note per word, same order as the words. */

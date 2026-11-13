@@ -59,6 +59,13 @@ describe("rules: which letters are graded", () => {
     expect(w[1]).toMatchObject({ emptyOk: true, rule: "before-madd" });
   });
 
+  it("keeps a prefix vowel before the alif of ال required", () => {
+    const [w1, w2, w3] = specs("كَالسَّيْفِ وَالْبَيْتِ قَالَ");
+    expect(w1[0]).toMatchObject({ emptyOk: false, rule: "required" });
+    expect(w2[0]).toMatchObject({ emptyOk: false, rule: "required" });
+    expect(w3[0]).toMatchObject({ emptyOk: true, rule: "before-madd" }); // real long vowel
+  });
+
   it("requires shadda and the case ending", () => {
     const [w1, w2] = specs("إِنَّ الْعِلْمَ");
     expect(w1[1]).toMatchObject({ emptyOk: false, rule: "required" });

@@ -12,7 +12,7 @@
 
 ## الطريقة الثانية: إضافة الملف بنفسك
 
-كل جملة ملف في المجلد [`content/shakkil/puzzles`](content/shakkil/puzzles)، واسمه رقم من أربع خانات: `0001.yaml` و`0002.yaml`… **الرقم هو يوم ظهور الجملة**، لذلك تُضاف الجمل الجديدة دائمًا في آخر القائمة.
+كل جملة ملف في المجلد [`content/shakkil/puzzles`](content/shakkil/puzzles)، واسمه رقم من أربع خانات: `0001.yaml` و`0002.yaml`… **الرقم معرّف ثابت للجملة، وليس يوم ظهورها**. يحدد المشرف ترتيب الأيام في [`content/shakkil/schedule.yaml`](content/shakkil/schedule.yaml).
 
 1. افتح المجلد على GitHub واختر **Add file ← Create new file**.
 2. سمِّ الملف بالرقم التالي لآخر ملف موجود (إن كان آخر ملف `0042.yaml` فسمِّه `0043.yaml`).
@@ -69,6 +69,7 @@ npm install
 npm run puzzle:new -- "ذَهَبَ الْوَلَدُ إِلَى الْمَدْرَسَةِ"   # ينشئ الملف التالي
 npm run puzzle:check -- 0043.yaml                      # يفحص الملف ويعرض طريقة التصحيح
 npm run puzzle:check -- --text "هٰذَا كِتَابٌ"            # يجرّب جملة دون ملف
+npm run schedule                                       # يعرض ترتيب الأيام
 npm test
 ```
 
@@ -87,13 +88,13 @@ Open the [sentence suggestion form](https://github.com/Beroean/mahmoud-shaar/iss
 ## Option 2: open a pull request
 
 1. In [`content/shakkil/puzzles`](content/shakkil/puzzles), choose **Add file → Create new file**.
-2. Name it with the next number after the last file (`0042.yaml` → `0043.yaml`). **The number is the day the puzzle runs**, so puzzles are only ever appended.
+2. Name it with the next number after the last file (`0042.yaml` → `0043.yaml`). **The number is a permanent ID, not the day it runs**: the maintainer sets the order in [`content/shakkil/schedule.yaml`](content/shakkil/schedule.yaml).
 3. Paste and edit the template above (`text`, `irab`, optional `alts`, `author`, `source`).
 4. Propose the file and open a pull request.
 5. The **Puzzle check** workflow validates the file and comments on the PR with a per-word table of required (●) and optional (○) marks, or with the errors to fix. Push fixes to rerun it.
 6. Once the maintainer approves the i'rab and merges, the site redeploys within minutes.
 
-Deleting a puzzle fails the check, and editing an existing one is flagged, because both change what past or upcoming players see.
+Puzzles that have already been played are locked: the check fails if a PR deletes one or moves it to another day, and editing one is flagged.
 
 ### Rules in short
 
@@ -104,4 +105,4 @@ Deleting a puzzle fails the check, and editing an existing one is flagged, becau
 
 ### Local tooling
 
-`npm run puzzle:new`, `npm run puzzle:check` (validation and grading preview) and `npm test`. The grading rules live in `src/pages/shakkil/core/rules.ts`.
+`npm run puzzle:new`, `npm run puzzle:check` (validation and grading preview), `npm run schedule` (run order) and `npm test`. The grading rules live in `src/pages/shakkil/core/rules.ts`.

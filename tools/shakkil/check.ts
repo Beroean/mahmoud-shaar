@@ -71,7 +71,7 @@ if (textIdx >= 0) {
   // Ad-hoc check: fill in i'rab placeholders so only the diacritization is validated.
   const words = text.trim().split(/\s+/);
   const { puzzle, errors } = compilePuzzle({ number: 0, text, irab: words.map(() => "-") });
-  ok = report({ file: "--text", number: 0, source: { number: 0, text, irab: [] }, puzzle, errors });
+  ok = report({ file: "--text", id: "--text", number: 0, source: { number: 0, text, irab: [] }, puzzle, errors });
 } else {
   const files = args.filter((a) => !a.startsWith("--"));
   if (files.length) {

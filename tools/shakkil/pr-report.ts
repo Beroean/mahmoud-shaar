@@ -11,7 +11,8 @@ import { writeFileSync } from "node:fs";
 import { basename } from "node:path";
 import { pathToFileURL } from "node:url";
 import { VOWEL_NAMES_AR, type Word, letterToString, wordToString } from "../../src/pages/shakkil/core/arabic";
-import { type FileResult, FILE_RE, loadAll } from "./content";
+import { type FileResult, FILE_RE, idOfFile, loadAll, parseSchedule, resolveOrder } from "./content";
+import { dateOfDay, lockedDays } from "./schedule";
 
 export const MARKER = "<!-- shakkil-puzzle-report -->";
 
@@ -31,6 +32,27 @@ function changedPuzzles(base: string): Change[] {
       const status = code === "A" ? "added" : code === "D" ? "deleted" : "modified";
       return { status, file: basename(path) } as Change;
     });
+}
+
+/** The day order on the base branch (what is live now). */
+function baseOrder(base: string): string[] {
+  const git = (...args: string[]) => execFileSync("git", args, { encoding: "utf8" });
+  const ids = git("ls-tree", "--name-only", base, "--", "content/shakkil/puzzles/")
+    .split(/\r?\n/)
+    .filter((f) => FILE_RE.test(basename(f)))
+    .map(idOfFile);
+  let schedule: string | null = null;
+  try {
+    schedule = git("show", `${base}:content/shakkil/schedule.yaml`);
+  } catch {
+    /* no schedule on base */
+  }
+  return resolveOrder(parseSchedule(schedule), ids).order;
+}
+
+function scheduleChanged(base: string): boolean {
+  const out = execFileSync("git", ["diff", "--name-only", `${base}...HEAD`, "--", "content/shakkil/schedule.yaml"], { encoding: "utf8" });
+  return out.trim().length > 0;
 }
 
 /** Markdown-safe cell text. */
@@ -62,21 +84,52 @@ function wordTable(r: FileResult): string {
   ].join("\n");
 }
 
-export function buildReport(changes: Change[], results: FileResult[], setErrors: string[]) {
+export interface ScheduleContext {
+  /** Day order currently live (base branch). */
+  baseOrder: string[];
+  /** Days that have been played (today included); they must not change. */
+  locked: number;
+  scheduleChanged?: boolean;
+}
+
+export function buildReport(
+  changes: Change[],
+  results: FileResult[],
+  setErrors: string[],
+  ctx: ScheduleContext = { baseOrder: results.map((r) => r.id), locked: 0 },
+) {
   const byFile = new Map(results.map((r) => [r.file, r]));
-  const maxNumber = results.reduce((m, r) => Math.max(m, Number.isFinite(r.number) ? r.number : 0), 0);
+  const lockedIds = new Set(ctx.baseOrder.slice(0, ctx.locked));
   const lines: string[] = [MARKER, "## شَكِّل · فحص الجمل / puzzle check", ""];
   let ok = setErrors.length === 0;
   const warnings: string[] = [];
 
-  if (!changes.length) {
+  // Played days are locked: their puzzles must stay on the same days.
+  const headOrder = results.map((r) => r.id);
+  const moved = ctx.baseOrder.slice(0, ctx.locked).filter((id, k) => headOrder[k] !== id);
+  if (moved.length) {
+    ok = false;
+    lines.push(
+      "### ✗ ترتيب الأيام المنشورة / played days",
+      "",
+      `لا يجوز تغيير جمل الأيام التي نُشرت (من ١ إلى ${ctx.locked}). / Days 1–${ctx.locked} have been played and can't change: ${moved.join(", ")}`,
+      "",
+    );
+  }
+
+  if (!changes.length && !ctx.scheduleChanged) {
     lines.push("لا تغييرات على الجمل في هذا الطلب. / No puzzle changes in this PR.", "");
   }
 
   for (const c of changes) {
     if (c.status === "deleted") {
-      ok = false;
-      lines.push(`### ✗ \`${c.file}\``, "", "حذف جملة منشورة غير مسموح. / Deleting a puzzle is not allowed (it would shift the schedule).", "");
+      const id = idOfFile(c.file);
+      if (lockedIds.has(id)) {
+        ok = false;
+        lines.push(`### ✗ \`${c.file}\``, "", "لا يجوز حذف جملة نُشرت. / This puzzle has been played and can't be deleted.", "");
+      } else {
+        lines.push(`### 🗑 \`${c.file}\``, "", "حُذفت من الجمل القادمة. / Removed from the upcoming puzzles.", "");
+      }
       continue;
     }
     if (!FILE_RE.test(c.file)) {
@@ -88,11 +141,14 @@ export function buildReport(changes: Change[], results: FileResult[], setErrors:
     if (!r) continue;
     const valid = r.errors.length === 0;
     ok &&= valid;
-    lines.push(`### ${valid ? "✓" : "✗"} \`${c.file}\` ${c.status === "modified" ? "(تعديل / modified)" : "(جديد / new)"}`, "");
+    lines.push(
+      `### ${valid ? "✓" : "✗"} \`${c.file}\` ${c.status === "modified" ? "(تعديل / modified)" : "(جديد / new)"} · اليوم ${r.number} (${dateOfDay(r.number)}) / day ${r.number}`,
+      "",
+    );
     if (r.source?.text) lines.push(`> ${cell(r.source.text)}`, "");
-    if (c.status === "modified") {
+    if (c.status === "modified" && lockedIds.has(r.id)) {
       warnings.push(
-        `\`${c.file}\`: يعدّل جملة موجودة. إن كانت قد نُشرت فقد يتغيّر جواب لاعبين سابقين. / modifies an existing puzzle; if it has already been published, past players' answers may change.`,
+        `\`${c.file}\`: يعدّل جملة نُشرت، وقد يتغيّر جواب من لعبها. / edits a puzzle that has already been played; past answers may change.`,
       );
     }
     if (valid) {
@@ -112,6 +168,16 @@ export function buildReport(changes: Change[], results: FileResult[], setErrors:
     }
   }
 
+  if (ctx.scheduleChanged) {
+    const upcoming = results.slice(ctx.locked, ctx.locked + 10);
+    lines.push(
+      "### 📅 الترتيب الجديد / new order",
+      "",
+      ...upcoming.map((r) => `- اليوم ${r.number} (${dateOfDay(r.number)}): \`${r.id}\` ${cell(r.source?.text ?? "")}${r.source?.author ? ` · ${cell(r.source.author)}` : ""}`),
+      "",
+    );
+  }
+
   if (setErrors.length) {
     lines.push("### ✗ مجموعة الجمل / puzzle set", "", ...setErrors.map((e) => `- ${e}`), "");
   }
@@ -119,7 +185,7 @@ export function buildReport(changes: Change[], results: FileResult[], setErrors:
   lines.push(
     "---",
     ok
-      ? `✓ كل شيء سليم. عدد الجمل بعد الدمج: ${maxNumber}. / All good: ${maxNumber} puzzles after merge.`
+      ? `✓ كل شيء سليم. عدد الجمل بعد الدمج: ${results.length}. / All good: ${results.length} puzzles after merge.`
       : "✗ يوجد أخطاء. عدّل الملفات ثم ادفع التغييرات وسيُعاد الفحص تلقائيًا. / Errors found: fix the files and push; this check reruns automatically.",
     "",
     "<sub>● مطلوب، ○ يجوز تركه بلا تشكيل. حروف المد وألف «ال» لا تُشكَّل. / ● required, ○ may be left bare; long-vowel letters and the alif of ال are not graded.</sub>",
@@ -130,7 +196,11 @@ export function buildReport(changes: Change[], results: FileResult[], setErrors:
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const [base = "origin/main", out] = process.argv.slice(2);
   const { results, setErrors } = loadAll();
-  const { ok, markdown } = buildReport(changedPuzzles(base), results, setErrors);
+  const { ok, markdown } = buildReport(changedPuzzles(base), results, setErrors, {
+    baseOrder: baseOrder(base),
+    locked: lockedDays(),
+    scheduleChanged: scheduleChanged(base),
+  });
   if (out) writeFileSync(out, markdown, "utf8");
   else console.log(markdown);
   process.exit(ok ? 0 : 1);
