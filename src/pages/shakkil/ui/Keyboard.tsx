@@ -1,7 +1,7 @@
-import { type Mark, type Vowel, SHADDA, VOWEL_CHAR, VOWEL_NAMES_AR } from "../core/arabic";
+import type { ReactNode } from "react";
+import { type Mark, type Vowel, VOWEL_NAMES_AR } from "../core/arabic";
 import type { Action, MarkOp } from "../game";
-
-const CARRIER = "ـ"; // tatweel: shows a lone diacritic in the Arabic font (Amiri has no ◌)
+import { HarakaGlyph } from "./HarakaGlyph";
 
 const VOWEL_ROWS: Vowel[][] = [
   ["a", "u", "i", "o"],
@@ -16,7 +16,7 @@ function Key({
   className = "",
   disabled,
 }: {
-  label: string;
+  label: ReactNode;
   title: string;
   active?: boolean;
   onClick: () => void;
@@ -31,7 +31,7 @@ function Key({
       aria-pressed={active}
       disabled={disabled}
       onClick={onClick}
-      className={`h-14 rounded-md border text-base transition-colors select-none disabled:opacity-30 disabled:cursor-not-allowed ${
+      className={`h-[4.5rem] grid place-items-center rounded-md border text-base transition-colors select-none disabled:opacity-30 disabled:cursor-not-allowed ${
         active
           ? "border-gold bg-gold/20 text-gold"
           : "border-paper/15 bg-ink-2 text-paper/90 hover:border-paper/40 active:bg-paper/10"
@@ -61,22 +61,20 @@ export function Keyboard({
           {row.map((v) => (
             <Key
               key={v}
-              label={CARRIER + VOWEL_CHAR[v]}
+              label={<HarakaGlyph name={v} />}
               title={VOWEL_NAMES_AR[v]}
               active={mark?.vowel === v}
               disabled={!hasCursor}
               onClick={op({ type: "vowel", vowel: v })}
-              className="font-naskh text-4xl leading-none"
             />
           ))}
           {r === 1 && (
             <Key
-              label={CARRIER + SHADDA}
+              label={<HarakaGlyph name="shadda" />}
               title="شدة"
               active={mark?.shadda}
               disabled={!hasCursor}
               onClick={op({ type: "shadda" })}
-              className="font-naskh text-4xl leading-none"
             />
           )}
         </div>
