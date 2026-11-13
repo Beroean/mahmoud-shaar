@@ -1,0 +1,45 @@
+# Validates puzzle changes in a pull request and prepares a report.
+# Runs with a read-only token (safe for PRs from forks); the comment is posted by
+# puzzle-comment.yml, which never runs PR code.
+name: Puzzle check
+
+on:
+  pull_request:
+    paths:
+      - "content/shakkil/**"
+      - "tools/shakkil/**"
+      - "src/pages/shakkil/core/**"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build report
+        id: report
+        run: |
+          set +e
+          npx tsx tools/shakkil/pr-report.ts "origin/${{ github.base_ref }}" report.md
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+          mkdir -p out && mv report.md out/ && echo "${{ github.event.pull_request.number }}" > out/pr-number.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: puzzle-report
+          path: out/
+          retention-days: 7
+      - name: Fail on invalid puzzles
+        if: steps.report.outputs.exit != '0'
+        run: |
+          echo "::error::Invalid puzzles. See the job summary or the PR comment."
+          exit 1

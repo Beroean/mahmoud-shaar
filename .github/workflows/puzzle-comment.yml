@@ -1,0 +1,46 @@
+# Posts (or updates) the puzzle report from puzzle-check.yml as a PR comment.
+# Runs in the base repository's context so it can comment on PRs from forks. It only reads the
+# report artifact as text and never checks out or runs PR code.
+name: Puzzle comment
+
+on:
+  workflow_run:
+    workflows: ["Puzzle check"]
+    types: [completed]
+
+permissions:
+  actions: read
+  pull-requests: write
+
+jobs:
+  comment:
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion != 'cancelled'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: puzzle-report
+          path: out
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const MARKER = "<!-- shakkil-puzzle-report -->";
+            const num = fs.readFileSync("out/pr-number.txt", "utf8").trim();
+            if (!/^\d+$/.test(num)) throw new Error(`bad PR number: ${num}`);
+            const { owner, repo } = context.repo;
+            const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number: Number(num) });
+            // The artifact must belong to this PR's current head commit.
+            if (pr.head.sha !== context.payload.workflow_run.head_sha) {
+              core.info("Report is for an older commit; skipping.");
+              return;
+            }
+            let body = fs.readFileSync("out/report.md", "utf8");
+            if (!body.startsWith(MARKER)) throw new Error("unexpected report format");
+            if (body.length > 60000) body = body.slice(0, 60000) + "\n\n…";
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number: pr.number });
+            const mine = comments.find((c) => c.user?.type === "Bot" && c.body?.startsWith(MARKER));
+            if (mine) await github.rest.issues.updateComment({ owner, repo, comment_id: mine.id, body });
+            else await github.rest.issues.createComment({ owner, repo, issue_number: pr.number, body });

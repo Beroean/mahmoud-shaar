@@ -50,6 +50,8 @@ npm run puzzle:check -- --text "هٰذَا كِتَابٌ"            # try a se
 npm run puzzle:check                                   # validate everything
 ```
 
+Outside contributors: see [CONTRIBUTING.md](CONTRIBUTING.md) (Arabic and English). Pull requests that touch puzzles get an automatic report comment from `.github/workflows/puzzle-check.yml` + `puzzle-comment.yml`.
+
 The game logic (parsing, leniency rules, grading, schedule, stats, share text) is in `src/pages/shakkil/core/`. The grading rules and their switches are in `rules.ts`.
 
 ## Deploy

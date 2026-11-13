@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "دليل المساهمة / Contributing guide"
+    url: https://github.com/Beroean/mahmoud-shaar/blob/main/CONTRIBUTING.md
+    about: "كيف تضيف جملة بنفسك عبر طلب دمج / How to add a sentence yourself with a pull request"
