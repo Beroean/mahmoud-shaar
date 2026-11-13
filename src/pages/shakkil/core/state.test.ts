@@ -135,3 +135,13 @@ describe("share", () => {
     expect(toArabicDigits(2026)).toBe("٢٠٢٦");
   });
 });
+
+describe("launch", () => {
+  it("counts down to launch before it and reports launched after", async () => {
+    const { isLaunched, msUntilLaunch } = await import("./daily");
+    expect(isLaunched(launch - 1)).toBe(false);
+    expect(msUntilLaunch(launch - H)).toBe(H);
+    expect(isLaunched(launch)).toBe(true);
+    expect(msUntilLaunch(launch + H)).toBe(0);
+  });
+});

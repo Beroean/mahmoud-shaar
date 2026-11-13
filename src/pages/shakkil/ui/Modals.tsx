@@ -1,6 +1,6 @@
 import { type ReactNode, useEffect, useState } from "react";
 import { type Word, sentenceToString, wordToString } from "../core/arabic";
-import { msUntilNext } from "../core/daily";
+import { isLaunched, msUntilLaunch, msUntilNext } from "../core/daily";
 import { shareText, toArabicDigits } from "../core/share";
 import { MAX_ATTEMPTS, type Stats, currentStreak } from "../core/storage";
 import type { GameState } from "../game";
@@ -105,15 +105,26 @@ export function StatsModal({ stats, today, onClose }: { stats: Stats; today: num
   );
 }
 
+/** Before launch, count down to puzzle #1; after, to the next daily puzzle. */
+const untilNext = () => (isLaunched() ? msUntilNext() : msUntilLaunch());
+
 function Countdown() {
-  const [ms, setMs] = useState(() => msUntilNext());
+  const [ms, setMs] = useState(untilNext);
   useEffect(() => {
-    const id = setInterval(() => setMs(msUntilNext()), 1000);
+    const id = setInterval(() => setMs(untilNext()), 1000);
     return () => clearInterval(id);
   }, []);
   const s = Math.floor(ms / 1000);
-  const hms = [Math.floor(s / 3600), Math.floor((s % 3600) / 60), s % 60].map((n) => String(n).padStart(2, "0")).join(":");
-  return <span className="tabular-nums" dir="ltr">{toArabicDigits(hms)}</span>;
+  const days = Math.floor(s / 86400);
+  const hms = [Math.floor((s % 86400) / 3600), Math.floor((s % 3600) / 60), s % 60]
+    .map((n) => String(n).padStart(2, "0"))
+    .join(":");
+  return (
+    <span className="tabular-nums">
+      {days > 0 && `${toArabicDigits(days)} ${days === 1 ? "يوم" : "أيام"} و`}
+      <span dir="ltr">{toArabicDigits(hms)}</span>
+    </span>
+  );
 }
 
 export function ResultModal({
@@ -175,7 +186,7 @@ export function ResultModal({
       </div>
       {daily && (
         <p className="text-sm text-paper/50 mt-5">
-          الجملة التالية بعد <Countdown />
+          {isLaunched() ? "الجملة التالية بعد" : "تبدأ اللعبة رسميًا بعد"} <Countdown />
         </p>
       )}
     </Modal>
