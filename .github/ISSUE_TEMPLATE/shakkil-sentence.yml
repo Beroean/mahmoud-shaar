@@ -1,0 +1,54 @@
+name: "اقتراح جملة لـ«شَكِّل»"
+description: "اقترح جملة مشكولة مع إعرابها لتظهر في لعبة شَكِّل اليومية. Suggest a sentence for the Shakkil game."
+title: "[شَكِّل] جملة جديدة: "
+labels: ["shakkil", "sentence"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        شكرًا لمساهمتك! 🌟
+        - الجملة من **كلمتين إلى أربع كلمات**، واضحة المعنى بنفسها.
+        - شكّلها **تشكيلًا كاملًا**: كل حرف عليه حركته، والشدة، وعلامة الإعراب. لا داعي لتشكيل حروف المد (ا و ي) ولا ألف «ال».
+        - تنوين الفتح يمكن وضعه على الحرف (كِتَابًا) أو على الألف (كِتَاباً).
+        - اكتب إعرابًا مختصرًا لكل كلمة، بالترتيب، كل كلمة في سطر.
+
+        سنراجع الجملة ونضيفها إلى قائمة الجمل، وسيظهر اسمك في نتيجة اللعبة إن أردت.
+
+        *English: one fully diacritized sentence of 2–4 words, plus a short i'rab note per word (one per line). See CONTRIBUTING.md.*
+  - type: input
+    id: sentence
+    attributes:
+      label: "الجملة مشكولة"
+      description: "مثال: ذَهَبَ الْوَلَدُ إِلَى الْمَدْرَسَةِ"
+      placeholder: "ذَهَبَ الْوَلَدُ إِلَى الْمَدْرَسَةِ"
+    validations:
+      required: true
+  - type: textarea
+    id: irab
+    attributes:
+      label: "الإعراب (كلمة في كل سطر)"
+      description: "بالترتيب نفسه لكلمات الجملة."
+      placeholder: |
+        فعل ماضٍ مبني على الفتح
+        فاعل مرفوع وعلامة رفعه الضمة الظاهرة
+        حرف جر مبني على السكون
+        اسم مجرور وعلامة جره الكسرة الظاهرة
+    validations:
+      required: true
+  - type: textarea
+    id: alts
+    attributes:
+      label: "تشكيلات أخرى صحيحة (اختياري)"
+      description: "إن كانت الجملة تحتمل تشكيلًا آخر صحيحًا تمامًا، اكتبه هنا، كل تشكيل في سطر."
+  - type: input
+    id: author
+    attributes:
+      label: "اسمك كما تحب أن يظهر (اختياري)"
+      description: "يظهر في نتيجة اللعبة: «الجملة من: …». اتركه فارغًا إن لم ترغب."
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: "تأكيد"
+      options:
+        - label: "الجملة من تأليفي أو من مصدر يجوز نشره، وأوافق على نشرها في اللعبة."
+          required: true
