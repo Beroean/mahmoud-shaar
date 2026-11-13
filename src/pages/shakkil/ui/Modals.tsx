@@ -1,5 +1,5 @@
 import { type ReactNode, useEffect, useState } from "react";
-import { type Word, letterToString, sentenceToString } from "../core/arabic";
+import { type Word, sentenceToString, wordToString } from "../core/arabic";
 import { msUntilNext } from "../core/daily";
 import { shareText, toArabicDigits } from "../core/share";
 import { MAX_ATTEMPTS, type Stats, currentStreak } from "../core/storage";
@@ -148,7 +148,7 @@ export function ResultModal({
         {puzzle.words.map((w, k) => (
           <div key={k} className="flex gap-3 items-baseline">
             <dt className="font-naskh text-xl text-gold shrink-0">
-              {w.letters.map((l) => letterToString(l)).join("")}
+              {wordToString(w)}
             </dt>
             <dd className="text-sm text-paper/80 leading-relaxed">{puzzle.irab[k]}</dd>
           </div>

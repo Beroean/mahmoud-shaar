@@ -10,7 +10,7 @@
  */
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { VOWEL_NAMES_AR, letterToString, type Word } from "../../src/pages/shakkil/core/arabic";
+import { VOWEL_NAMES_AR, letterToString, wordToString, type Word } from "../../src/pages/shakkil/core/arabic";
 import { RULE_LABELS, type Spec } from "../../src/pages/shakkil/core/rules";
 import { compilePuzzle } from "../../src/pages/shakkil/core/puzzle";
 import { PUZZLE_DIR, loadAll, loadPuzzleFile, type FileResult } from "./content";
@@ -36,7 +36,7 @@ function describeMark(spec: Spec, word: Word, i: number): string {
 
 function preview(words: Word[], specs: Spec[][]) {
   words.forEach((word, w) => {
-    console.log(`  ${bold(`word ${w + 1}`)}  ${word.letters.map((l) => letterToString(l)).join("")}`);
+    console.log(`  ${bold(`word ${w + 1}`)}  ${wordToString(word)}`);
     word.letters.forEach((l, i) => {
       const spec = specs[w][i];
       const label = RULE_LABELS[spec.rule];
