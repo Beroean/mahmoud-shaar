@@ -41,13 +41,20 @@ npm run build && npm run preview
 
 ## شَكِّل (Shakkil) puzzles
 
-Puzzles live in `content/shakkil/puzzles/`, one YAML file per puzzle. The file number is the puzzle's place in the daily schedule (`0001.yaml` is day 1), so new puzzles are always appended.
+- `content/shakkil/puzzles/NNNN.yaml`: one puzzle per file. `NNNN` is a permanent ID.
+- `content/shakkil/schedule.yaml`: the run order (day 1 = first entry). Unlisted puzzles run after the listed ones in ID order. Days already played are locked; CI fails if a PR changes them.
+- `content/shakkil/queue/*.yaml`: candidates waiting for review. `content/shakkil/rejected.yaml`: rejected candidates (so they aren't drafted again).
 
 ```bash
-npm run puzzle:new -- "ذَهَبَ الْوَلَدُ إِلَى الْمَدْرَسَةِ"   # scaffold the next file
-npm run puzzle:check -- 0005.yaml                      # validate it and preview grading
+npm run puzzle:new -- "ذَهَبَ الْوَلَدُ إِلَى الْمَدْرَسَةِ"   # scaffold the next ID
+npm run puzzle:check                                   # validate everything, preview grading
 npm run puzzle:check -- --text "هٰذَا كِتَابٌ"            # try a sentence without a file
-npm run puzzle:check                                   # validate everything
+npm run review                                         # local review page for the queue (dev only)
+npm run queue:check                                    # validate queued candidates
+npm run schedule                                       # list the run order with dates
+npm run schedule -- next 0042 0057                     # run these next, right after today
+npm run schedule -- author "Name"                      # run all upcoming puzzles by Name next
+npm run schedule -- move 0042 15                       # put 0042 on day 15
 ```
 
 Outside contributors: see [CONTRIBUTING.md](CONTRIBUTING.md) (Arabic and English). Pull requests that touch puzzles get an automatic report comment from `.github/workflows/puzzle-check.yml` + `puzzle-comment.yml`.

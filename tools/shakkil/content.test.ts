@@ -16,7 +16,7 @@ describe("content/shakkil/puzzles", () => {
     expect(results.length).toBeGreaterThan(0);
   });
 
-  it("numbers files consecutively with no duplicate sentences", () => {
+  it("has a valid schedule and no duplicate sentences", () => {
     expect(setErrors).toEqual([]);
   });
 

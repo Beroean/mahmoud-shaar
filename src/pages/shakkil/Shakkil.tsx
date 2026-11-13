@@ -38,7 +38,9 @@ function dailySession(all: PuzzleSource[]): Session {
   const number = puzzleNumber();
   const puzzle = compile(all[scheduledIndex(number, all.length)]);
   const saved = load().daily;
-  return { id: ++sessionIds, mode: "daily", number, puzzle, attempts: saved?.puzzle === number ? saved.attempts : [] };
+  // Restore only if it's the same puzzle (a saved game from before a schedule change is dropped).
+  const same = saved?.puzzle === number && (!saved.id || saved.id === puzzle.id);
+  return { id: ++sessionIds, mode: "daily", number, puzzle, attempts: same ? saved.attempts : [] };
 }
 
 /** A random past puzzle (never today's or a future one, so practice can't spoil a daily). */
@@ -77,13 +79,13 @@ function Game({
     if (!daily || !state.attempts.length) return;
     const data = load();
     const already = data.daily?.puzzle === number && data.daily.status !== "playing";
-    data.daily = { puzzle: number, attempts: state.attempts, status: state.status };
+    data.daily = { puzzle: number, id: session.puzzle.id, attempts: state.attempts, status: state.status };
     if (state.status !== "playing" && !already) {
       data.stats = recordResult(data.stats, number, state.status === "won", state.attempts.length);
       trackEvent(state.status === "won" ? `shakkil/solved-${state.attempts.length}` : "shakkil/failed");
     }
     save(data);
-  }, [daily, number, state.attempts, state.status]);
+  }, [daily, number, session.puzzle.id, state.attempts, state.status]);
 
   useEffect(() => {
     if (state.attempts.length === 1) trackEvent(daily ? "shakkil/start" : "shakkil/practice");

@@ -8,6 +8,8 @@ export type GameStatus = "playing" | "won" | "lost";
 
 export interface GameRecord {
   puzzle: number;
+  /** Permanent puzzle ID played that day; guards against the schedule changing under a saved game. */
+  id?: string;
   attempts: Guess[];
   status: GameStatus;
 }

@@ -57,6 +57,16 @@ function next(word: Word, i: number): Letter | undefined {
   return word.letters[i + 1];
 }
 
+/**
+ * True if the alif at index k is the alif of ال after a one-letter prefix (وَالْ، فَالْ، كَالْ،
+ * بِالْ): it is not a long vowel, so the prefix's vowel stays required. Told apart from a real madd
+ * (قَالَ) by the lam after it, which is bare or carries sukun.
+ */
+function isArticleAlif(word: Word, k: number): boolean {
+  const lam = word.letters[k + 1];
+  return k === 1 && word.letters[k].char === "ا" && lam?.char === "ل" && (lam.mark.vowel === null || lam.mark.vowel === "o") && !lam.mark.shadda;
+}
+
 /** Why a bare letter is allowed to be bare, or null if it must carry a mark. */
 function bareReason(word: Word, i: number): RuleId | null {
   const l = word.letters[i];
@@ -111,7 +121,8 @@ export function specsFor(words: Word[]): Spec[][] {
         n &&
         isEmptyMark(n.mark) &&
         MADD_FOR[n.char] !== undefined &&
-        MADD_FOR[n.char] === l.mark.vowel
+        MADD_FOR[n.char] === l.mark.vowel &&
+        !isArticleAlif(word, i + 1)
       ) {
         return { graded: true, expected: l.mark, emptyOk: true, alsoAccept: [], rule: "before-madd" };
       }

@@ -1,0 +1,15 @@
+# ترتيب ظهور الجمل: السطر الأول هو اليوم الأول. لتغيير الترتيب انقل الأسطر.
+# الجمل غير المذكورة هنا تظهر بعدها بترتيب أرقامها.
+# الأيام التي نُشرت مقفلة: يرفض الفحص أي تغيير عليها.
+# Run order: first entry = day 1. Move lines to reorder upcoming days; unlisted puzzles run after,
+# in ID order. Days already played are locked. See `npm run schedule`.
+- "0001"
+- "0002"
+- "0003"
+- "0004"
+- "0005"
+- "0006"
+- "0007"
+- "0008"
+- "0009"
+- "0010"
