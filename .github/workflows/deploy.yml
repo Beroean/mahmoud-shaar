@@ -5,9 +5,11 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
-  # Weekly rebuild so the WDI explorer picks up new World Bank data (Mondays 06:00 UTC).
+  # Nightly rebuild at 20:30 UTC, 30 minutes before Shakkil's daily rollover (midnight Mecca time =
+  # 21:00 UTC). Each build ships puzzles only up to the next day (vite.config.ts), so future answers
+  # never sit on the site; it also refreshes the WDI explorer data.
   schedule:
-    - cron: "0 6 * * 1"
+    - cron: "30 20 * * *"
 
 permissions:
   contents: read

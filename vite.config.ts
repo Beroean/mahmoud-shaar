@@ -4,6 +4,14 @@ import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
 import { GOATCOUNTER_CODE } from "./site.config";
 import { PUZZLE_DIR, SCHEDULE_FILE, loadAll } from "./tools/shakkil/content";
+import { puzzleNumber } from "./src/pages/shakkil/core/daily";
+
+/**
+ * Shakkil ships only puzzles up to this many days after the build day, so future answers aren't
+ * readable from the site. 1 = tomorrow's is included, so the midnight rollover works even if the
+ * nightly rebuild (deploy.yml) runs late. The full set is still validated.
+ */
+const SHAKKIL_DAYS_AHEAD = 1;
 import { approve, loadQueue, reject } from "./tools/shakkil/queue";
 
 /** Injects tags every page shares (favicon, analytics) so each HTML entry stays small. */
@@ -58,7 +66,9 @@ function shakkilPuzzles(): Plugin {
         ...results.flatMap((r) => r.errors.map((e) => `${r.file}: ${e}`)),
       ];
       if (errors.length) this.error(`Invalid Shakkil puzzles:\n${errors.join("\n")}`);
-      return `export default ${JSON.stringify(results.map((r) => r.source))};`;
+      const lastDay = puzzleNumber() + SHAKKIL_DAYS_AHEAD;
+      const shipped = results.filter((r) => r.number <= lastDay).map((r) => r.source);
+      return `export default ${JSON.stringify(shipped)};`;
     },
     configureServer(server) {
       server.watcher.add([PUZZLE_DIR, SCHEDULE_FILE]);
