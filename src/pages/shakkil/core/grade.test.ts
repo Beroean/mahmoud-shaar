@@ -47,6 +47,13 @@ describe("rules: which letters are graded", () => {
     expect(w[1]).toMatchObject({ graded: true, emptyOk: true, rule: "sukun" });
   });
 
+  it("still requires a word-final sukun (jazm / mabni)", () => {
+    const [w1, w2] = specs("لَمْ يَذْهَبْ");
+    expect(w1[1]).toMatchObject({ emptyOk: false, rule: "required" });
+    expect(w2[1]).toMatchObject({ emptyOk: true, rule: "sukun" });
+    expect(w2[3]).toMatchObject({ emptyOk: false, rule: "required" });
+  });
+
   it("makes a vowel before its long-vowel letter optional", () => {
     const [w] = specs("كِتَابًا مُفِيدًا");
     expect(w[1]).toMatchObject({ emptyOk: true, rule: "before-madd" });

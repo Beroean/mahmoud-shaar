@@ -16,7 +16,10 @@ export const RULES = {
    * Off: the full case ending is the point of the game.
    */
   pausalFinal: false,
-  /** Sukun may be left out (empty == sukun). */
+  /**
+   * Sukun inside a word may be left out (empty == sukun). A word-final sukun is still required:
+   * there it is a grammatical sign (jussive لا تتأخرْ, or the fixed ending of مِنْ / لَمْ).
+   */
   sukunOptional: true,
   /** A vowel right before its matching long vowel letter (fatha+ا/ى, damma+و, kasra+ي) may be left out. */
   vowelBeforeMaddOptional: true,
@@ -97,7 +100,8 @@ export function specsFor(words: Word[]): Spec[][] {
           rule: "pausal",
         };
       }
-      if (l.mark.vowel === "o" && !l.mark.shadda && RULES.sukunOptional) {
+      const isWordFinal = i === word.letters.length - 1;
+      if (l.mark.vowel === "o" && !l.mark.shadda && RULES.sukunOptional && !isWordFinal) {
         return { graded: true, expected: l.mark, emptyOk: true, alsoAccept: [], rule: "sukun" };
       }
       const n = next(word, i);

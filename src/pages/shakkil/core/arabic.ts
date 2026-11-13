@@ -110,11 +110,7 @@ export function letterToString(l: Letter, mark: Mark = l.mark): string {
 }
 
 export function wordToString(w: Word, marks?: Mark[]): string {
-  return (
-    w.prefix +
-    w.letters.map((l, i) => letterToString(l, marks ? marks[i] : l.mark)).join("") +
-    w.suffix
-  );
+  return w.prefix + letterTexts(w, marks).join("") + w.suffix;
 }
 
 export function sentenceToString(words: Word[]): string {
@@ -184,7 +180,63 @@ function parseWord(token: string, index: number): Word {
   if (letters.length === 0) {
     throw new ArabicParseError(`${where}: لا توجد حروف / no letters`, index);
   }
+  moveAlifTanweenToCarrier(letters, where, index);
   return { letters, prefix, suffix };
+}
+
+/**
+ * Tanween fath before a final alif is written two ways: بَارِدًا (on the letter) and بَارِداً (on
+ * the alif). Internally it always belongs to the letter before the alif, which is the letter that
+ * carries the case ending, so both spellings parse identically.
+ */
+function moveAlifTanweenToCarrier(letters: Letter[], where: string, index: number) {
+  const k = letters.length - 1;
+  const alif = letters[k];
+  if (k < 1 || alif.char !== "ا" || alif.mark.vowel !== "an" || alif.mark.shadda) return;
+  const carrier = letters[k - 1];
+  if (carrier.mark.vowel !== null) {
+    throw new ArabicParseError(
+      `${where}: تنوين الفتح على الألف والحرف قبلها مُشكَّل أيضًا / fathatan on the alif, but «${carrier.char}» already has a vowel`,
+      index,
+    );
+  }
+  carrier.mark.vowel = "an";
+  alif.mark.vowel = null;
+}
+
+/**
+ * Display convention for tanween fath before a final alif: true renders بارداً (mark on the alif),
+ * false renders باردًا (mark on the letter). Only affects rendering; parsing accepts both.
+ */
+export const TANWEEN_FATH_ON_ALIF = true;
+
+/** True if letter i is the bare final alif that displays the previous letter's tanween fath. */
+function isTanweenAlif(word: Word, i: number): boolean {
+  return (
+    i === word.letters.length - 1 &&
+    i > 0 &&
+    word.letters[i].char === "ا" &&
+    isEmptyMark(word.letters[i].mark)
+  );
+}
+
+/**
+ * The text to draw for each letter of a word given a set of marks (defaults to the word's own),
+ * applying {@link TANWEEN_FATH_ON_ALIF}.
+ */
+export function letterTexts(word: Word, marks: Mark[] = word.letters.map((l) => l.mark)): string[] {
+  const out = word.letters.map((l, i) => letterToString(l, marks[i]));
+  const k = word.letters.length - 1;
+  if (TANWEEN_FATH_ON_ALIF && isTanweenAlif(word, k) && marks[k - 1]?.vowel === "an") {
+    out[k - 1] = letterToString(word.letters[k - 1], { ...marks[k - 1], vowel: null });
+    out[k] = word.letters[k].char + VOWEL_CHAR.an;
+  }
+  return out;
+}
+
+/** For a bare final alif, the index of the letter whose tanween fath it can display; else null. */
+export function tanweenCarrierOf(word: Word, i: number): number | null {
+  return TANWEEN_FATH_ON_ALIF && isTanweenAlif(word, i) ? i - 1 : null;
 }
 
 /** Parses diacritized (or bare) Arabic text into words. Throws {@link ArabicParseError}. */

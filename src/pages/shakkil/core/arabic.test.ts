@@ -5,8 +5,11 @@ import {
   FATHA,
   SHADDA,
   parseSentence,
+  letterTexts,
   sentenceToString,
   skeleton,
+  tanweenCarrierOf,
+  wordToString,
 } from "./arabic";
 
 describe("parseSentence", () => {
@@ -29,6 +32,32 @@ describe("parseSentence", () => {
   it("parses tanween", () => {
     const ls = parseSentence("كِتَابٌ كِتَابًا كِتَابٍ").map((w) => w.letters[3].mark.vowel);
     expect(ls).toEqual(["un", "an", "in"]);
+  });
+
+  it("accepts tanween fath on the letter or on the final alif", () => {
+    const onLetter = parseSentence("بَارِدًا")[0];
+    const onAlif = parseSentence("بَارِداً")[0];
+    expect(onAlif).toEqual(onLetter);
+    expect(onAlif.letters[3].mark.vowel).toBe("an");
+    expect(onAlif.letters[4].mark).toEqual({ shadda: false, vowel: null });
+    // with shadda on the carrier
+    expect(parseSentence("حَقّاً")[0].letters[1].mark).toEqual({ shadda: true, vowel: "an" });
+  });
+
+  it("rejects fathatan on the alif when the letter before already has a vowel", () => {
+    expect(() => parseSentence("بَارِدَاً")).toThrow(ArabicParseError);
+  });
+
+  it("displays tanween fath on the final alif", () => {
+    const [w] = parseSentence("بَارِدًا");
+    const texts = letterTexts(w);
+    expect(texts[3]).toBe("د");
+    expect(texts[4]).toBe("اً");
+    expect(wordToString(w)).toBe("بَارِداً".normalize("NFC"));
+    expect(tanweenCarrierOf(w, 4)).toBe(3);
+    expect(tanweenCarrierOf(w, 1)).toBeNull();
+    // a guess without tanween leaves the alif bare
+    expect(letterTexts(w, w.letters.map(() => ({ shadda: false, vowel: "u" })))[4]).toBe("اُ");
   });
 
   it("keeps dagger alif as part of the letter", () => {
