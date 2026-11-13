@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { HomeLink, Overline, SiteLayout } from "../../components/SiteLayout";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -106,8 +106,8 @@ async function fetchIndicatorData(indicatorId: string): Promise<WBDataPoint[]> {
 function Spinner() {
   return (
     <div className="flex flex-col items-center gap-4 py-24">
-      <div className="w-8 h-8 border-2 border-[#c9a96e]/30 border-t-[#c9a96e] rounded-full animate-spin" />
-      <span className="text-xs tracking-widest uppercase text-[#e8e4dc]/30">
+      <div className="w-8 h-8 border-2 border-gold/30 border-t-gold rounded-full animate-spin" />
+      <span className="text-xs tracking-widest uppercase text-paper/30">
         Fetching data…
       </span>
     </div>
@@ -156,10 +156,7 @@ export default function DataExplorer() {
 
   // Fetch real country codes once on mount
   useEffect(() => {
-    fetchCountryCodes().then((codes) => {
-      console.log(codes);
-      setCountryCodes(codes);
-    });
+    fetchCountryCodes().then(setCountryCodes);
   }, []);
 
   // Close dropdown on outside click — use pointerdown so it doesn't race with
@@ -292,43 +289,25 @@ export default function DataExplorer() {
   const chartHeight = Math.max(400, chartData.length * 28);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#e8e4dc] font-['IBM_Plex_Mono',monospace] overflow-x-hidden">
-      {/* Grid background */}
-      <div
-        className="fixed inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(#e8e4dc 1px, transparent 1px), linear-gradient(90deg, #e8e4dc 1px, transparent 1px)`,
-          backgroundSize: "80px 80px",
-        }}
-      />
-
-      {/* Header */}
-      <header className="relative z-10 flex items-center justify-between px-8 py-6 border-b border-[#e8e4dc]/10">
-        <Link
-          to="/"
-          className="text-xs tracking-[0.3em] uppercase text-[#e8e4dc]/40 hover:text-[#c9a96e] transition-colors duration-300"
-        >
-          ← Home
-        </Link>
-        <span className="text-xs tracking-[0.3em] uppercase text-[#e8e4dc]/20">
+    <SiteLayout
+      headerStart={<HomeLink />}
+      headerEnd={
+        <span className="text-xs tracking-[0.3em] uppercase text-paper/20">
           World Bank · WDI Explorer
         </span>
-      </header>
-
-      <main className="relative z-10 px-8 pt-16 pb-24">
+      }
+    >
+      <main className="relative z-10 px-6 sm:px-8 pt-16 pb-24">
         {/* Page title */}
-        <div className="flex items-center gap-4 mb-6">
-          <div className="h-px w-12 bg-[#c9a96e]" />
-          <span className="text-xs tracking-[0.4em] uppercase text-[#c9a96e]">
-            Data Explorer
-          </span>
+        <div className="mb-6">
+          <Overline>Data Explorer</Overline>
         </div>
-        <h1 className="font-['DM_Serif_Display',serif] text-[clamp(2rem,5vw,4rem)] leading-[1.1] text-[#e8e4dc] mb-3">
+        <h1 className="font-serif text-[clamp(2rem,5vw,4rem)] leading-[1.1] mb-3">
           World Development
           <br />
-          <span className="italic text-[#c9a96e]">Indicators</span>
+          <span className="italic text-gold">Indicators</span>
         </h1>
-        <p className="text-sm text-[#e8e4dc]/40 mb-12 max-w-lg leading-relaxed">
+        <p className="text-sm text-paper/40 mb-12 max-w-lg leading-relaxed">
           Select any indicator from the World Bank WDI dataset to visualize a
           cross-country comparison using the most recent available data. Note:
           I'm on a free trial of the World Bank API, which has a rate limit! If
@@ -337,14 +316,14 @@ export default function DataExplorer() {
 
         {/* ── Indicator Selector ─────────────────────────────────────────── */}
         <div className="mb-10 max-w-2xl" ref={dropdownRef}>
-          <label className="block text-xs tracking-widest uppercase text-[#e8e4dc]/40 mb-3">
+          <label className="block text-xs tracking-widest uppercase text-paper/40 mb-3">
             Select Indicator
           </label>
 
           {loadingIndicators ? (
-            <div className="flex items-center gap-3 border border-[#e8e4dc]/10 px-4 py-3 bg-[#0d0d0d]">
-              <div className="w-4 h-4 border border-[#c9a96e]/40 border-t-[#c9a96e] rounded-full animate-spin" />
-              <span className="text-xs text-[#e8e4dc]/30 tracking-widest">
+            <div className="flex items-center gap-3 border border-paper/10 px-4 py-3 bg-ink-1">
+              <div className="w-4 h-4 border border-gold/40 border-t-gold rounded-full animate-spin" />
+              <span className="text-xs text-paper/30 tracking-widest">
                 Loading
                 {indicators.length > 0
                   ? ` ${indicators.length.toLocaleString()}`
@@ -355,12 +334,12 @@ export default function DataExplorer() {
           ) : (
             <div className="relative">
               <div
-                className="flex items-center border border-[#e8e4dc]/20 hover:border-[#c9a96e]/50 transition-colors duration-200 cursor-pointer bg-[#0d0d0d]"
+                className="flex items-center border border-paper/20 hover:border-gold/50 transition-colors duration-200 cursor-pointer bg-ink-1"
                 onClick={() => setDropdownOpen((o) => !o)}
               >
                 <input
                   type="text"
-                  className="flex-1 bg-transparent px-4 py-3 text-sm text-[#e8e4dc] placeholder-[#e8e4dc]/20 outline-none"
+                  className="flex-1 bg-transparent px-4 py-3 text-sm text-paper placeholder-paper/20 outline-none"
                   placeholder={
                     selectedIndicator
                       ? selectedIndicator.name
@@ -373,25 +352,25 @@ export default function DataExplorer() {
                   }}
                   onFocus={() => setDropdownOpen(true)}
                 />
-                <span className="px-4 text-[#e8e4dc]/20 text-xs select-none">
+                <span className="px-4 text-paper/20 text-xs select-none">
                   {dropdownOpen ? "▲" : "▼"}
                 </span>
               </div>
 
               {dropdownOpen && (
-                <div className="absolute z-50 w-full border border-[#e8e4dc]/10 border-t-0 bg-[#0d0d0d] max-h-72 overflow-y-auto shadow-2xl">
+                <div className="absolute z-50 w-full border border-paper/10 border-t-0 bg-ink-1 max-h-72 overflow-y-auto shadow-2xl">
                   {filtered.length === 0 ? (
-                    <div className="px-4 py-3 text-xs text-[#e8e4dc]/30">
+                    <div className="px-4 py-3 text-xs text-paper/30">
                       No results for "{search}"
                     </div>
                   ) : (
                     filtered.slice(0, 200).map((ind) => (
                       <div
                         key={ind.id}
-                        className={`px-4 py-3 text-xs cursor-pointer border-b border-[#e8e4dc]/5 transition-colors duration-150 ${
+                        className={`px-4 py-3 text-xs cursor-pointer border-b border-paper/5 transition-colors duration-150 ${
                           selectedIndicator?.id === ind.id
-                            ? "bg-[#c9a96e]/10 text-[#c9a96e]"
-                            : "text-[#e8e4dc]/70 hover:bg-[#e8e4dc]/5 hover:text-[#e8e4dc]"
+                            ? "bg-gold/10 text-gold"
+                            : "text-paper/70 hover:bg-paper/5 hover:text-paper"
                         }`}
                         onClick={() => {
                           setSelectedIndicator(ind);
@@ -400,8 +379,8 @@ export default function DataExplorer() {
                           setTopN(30);
                         }}
                       >
-                        <span className="text-[#c9a96e]/50 mr-3">{ind.id}</span>
-                        <span className="text-[#e8e4dc]/60">{ind.name}</span>
+                        <span className="text-gold/50 mr-3">{ind.id}</span>
+                        <span className="text-paper/60">{ind.name}</span>
                       </div>
                     ))
                   )}
@@ -426,23 +405,23 @@ export default function DataExplorer() {
           <div className="animate-fade-in">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
               <div>
-                <h2 className="font-['DM_Serif_Display',serif] text-xl text-[#e8e4dc] mb-1">
+                <h2 className="font-serif text-xl text-paper mb-1">
                   {indicatorLabel}
                 </h2>
-                <p className="text-xs text-[#e8e4dc]/30 tracking-wider">
+                <p className="text-xs text-paper/30 tracking-wider">
                   {countriesOnly && countryCodes.size > 0
                     ? rawData.filter((d) => countryCodes.has(d.countryiso3code))
                         .length
                     : rawData.length}{" "}
                   {countriesOnly ? "countries" : "entries"} · Most recent value
-                  (<span className="text-[#c9a96e]">{latestYear}</span>) ·{" "}
+                  (<span className="text-gold">{latestYear}</span>) ·{" "}
                   {selectedIndicator?.id}
                 </p>
               </div>
 
               <div className="flex items-center gap-3 flex-wrap">
-                <div className="flex items-center gap-2 border border-[#e8e4dc]/10 px-3 py-2">
-                  <span className="text-xs text-[#e8e4dc]/30 tracking-widest uppercase">
+                <div className="flex items-center gap-2 border border-paper/10 px-3 py-2">
+                  <span className="text-xs text-paper/30 tracking-widest uppercase">
                     Top
                   </span>
                   {[20, 30, 50, 100].map((n) => (
@@ -451,8 +430,8 @@ export default function DataExplorer() {
                       onClick={() => setTopN(n)}
                       className={`text-xs px-2 py-1 transition-colors duration-150 ${
                         topN === n
-                          ? "bg-[#c9a96e] text-[#0a0a0a]"
-                          : "text-[#e8e4dc]/40 hover:text-[#e8e4dc]"
+                          ? "bg-gold text-ink"
+                          : "text-paper/40 hover:text-paper"
                       }`}
                     >
                       {n}
@@ -462,7 +441,7 @@ export default function DataExplorer() {
 
                 <button
                   onClick={() => setSortAsc((a) => !a)}
-                  className="flex items-center gap-2 border border-[#e8e4dc]/10 px-3 py-2 text-xs text-[#e8e4dc]/40 hover:text-[#e8e4dc] hover:border-[#e8e4dc]/30 transition-colors duration-150 tracking-widest uppercase"
+                  className="flex items-center gap-2 border border-paper/10 px-3 py-2 text-xs text-paper/40 hover:text-paper hover:border-paper/30 transition-colors duration-150 tracking-widest uppercase"
                 >
                   {sortAsc ? "↑ Asc" : "↓ Desc"}
                 </button>
@@ -471,30 +450,30 @@ export default function DataExplorer() {
                   onClick={() => setCountriesOnly((v) => !v)}
                   className={`flex items-center gap-2 border px-3 py-2 text-xs tracking-widest uppercase transition-colors duration-150 ${
                     countriesOnly
-                      ? "border-[#c9a96e]/50 text-[#c9a96e] bg-[#c9a96e]/5"
-                      : "border-[#e8e4dc]/10 text-[#e8e4dc]/40 hover:text-[#e8e4dc] hover:border-[#e8e4dc]/30"
+                      ? "border-gold/50 text-gold bg-gold/5"
+                      : "border-paper/10 text-paper/40 hover:text-paper hover:border-paper/30"
                   }`}
                 >
                   {countriesOnly ? "🌍 Countries" : "⊕ All Entries"}
                 </button>
 
-                <div className="flex border border-[#e8e4dc]/10">
+                <div className="flex border border-paper/10">
                   <button
                     onClick={() => setViewMode("bar")}
                     className={`text-xs px-4 py-2 tracking-widest uppercase transition-colors duration-150 ${
                       viewMode === "bar"
-                        ? "bg-[#c9a96e]/10 text-[#c9a96e]"
-                        : "text-[#e8e4dc]/30 hover:text-[#e8e4dc]"
+                        ? "bg-gold/10 text-gold"
+                        : "text-paper/30 hover:text-paper"
                     }`}
                   >
                     Chart
                   </button>
                   <button
                     onClick={() => setViewMode("table")}
-                    className={`text-xs px-4 py-2 tracking-widest uppercase transition-colors duration-150 border-l border-[#e8e4dc]/10 ${
+                    className={`text-xs px-4 py-2 tracking-widest uppercase transition-colors duration-150 border-l border-paper/10 ${
                       viewMode === "table"
-                        ? "bg-[#c9a96e]/10 text-[#c9a96e]"
-                        : "text-[#e8e4dc]/30 hover:text-[#e8e4dc]"
+                        ? "bg-gold/10 text-gold"
+                        : "text-paper/30 hover:text-paper"
                     }`}
                   >
                     Table
@@ -505,7 +484,7 @@ export default function DataExplorer() {
 
             {viewMode === "bar" && (
               <div
-                className="border border-[#e8e4dc]/10 bg-[#0d0d0d] p-6"
+                className="border border-paper/10 bg-ink-1 p-6"
                 style={{ height: `${chartHeight}px` }}
               >
                 <Bar data={chartJsData} options={chartOptions} />
@@ -513,23 +492,23 @@ export default function DataExplorer() {
             )}
 
             {viewMode === "table" && (
-              <div className="border border-[#e8e4dc]/10 overflow-auto">
+              <div className="border border-paper/10 overflow-auto">
                 <table className="w-full text-xs">
                   <thead>
-                    <tr className="border-b border-[#e8e4dc]/10 bg-[#0d0d0d]">
-                      <th className="text-left px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal w-8">
+                    <tr className="border-b border-paper/10 bg-ink-1">
+                      <th className="text-left px-5 py-3 text-paper/30 tracking-widest uppercase font-normal w-8">
                         #
                       </th>
-                      <th className="text-left px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">
+                      <th className="text-left px-5 py-3 text-paper/30 tracking-widest uppercase font-normal">
                         Country
                       </th>
-                      <th className="text-left px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">
+                      <th className="text-left px-5 py-3 text-paper/30 tracking-widest uppercase font-normal">
                         ISO3
                       </th>
-                      <th className="text-right px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">
+                      <th className="text-right px-5 py-3 text-paper/30 tracking-widest uppercase font-normal">
                         Value
                       </th>
-                      <th className="text-right px-5 py-3 text-[#e8e4dc]/30 tracking-widest uppercase font-normal">
+                      <th className="text-right px-5 py-3 text-paper/30 tracking-widest uppercase font-normal">
                         Year
                       </th>
                     </tr>
@@ -538,21 +517,21 @@ export default function DataExplorer() {
                     {chartData.map((d, i) => (
                       <tr
                         key={d.countryiso3code}
-                        className="border-b border-[#e8e4dc]/5 hover:bg-[#e8e4dc]/[0.02] transition-colors"
+                        className="border-b border-paper/5 hover:bg-paper/[0.02] transition-colors"
                       >
-                        <td className="px-5 py-3 text-[#e8e4dc]/20">{i + 1}</td>
-                        <td className="px-5 py-3 text-[#e8e4dc]/80">
+                        <td className="px-5 py-3 text-paper/20">{i + 1}</td>
+                        <td className="px-5 py-3 text-paper/80">
                           {d.country.value}
                         </td>
-                        <td className="px-5 py-3 text-[#c9a96e]">
+                        <td className="px-5 py-3 text-gold">
                           {d.countryiso3code}
                         </td>
-                        <td className="px-5 py-3 text-right text-[#e8e4dc]/80 tabular-nums">
+                        <td className="px-5 py-3 text-right text-paper/80 tabular-nums">
                           {(d.value ?? 0).toLocaleString(undefined, {
                             maximumFractionDigits: 3,
                           })}
                         </td>
-                        <td className="px-5 py-3 text-right text-[#e8e4dc]/30">
+                        <td className="px-5 py-3 text-right text-paper/30">
                           {d.date}
                         </td>
                       </tr>
@@ -562,7 +541,7 @@ export default function DataExplorer() {
               </div>
             )}
 
-            <p className="text-xs text-[#e8e4dc]/20 mt-4">
+            <p className="text-xs text-paper/20 mt-4">
               Source: World Bank World Development Indicators ·
               api.worldbank.org/v2 · CC BY 4.0
             </p>
@@ -571,17 +550,17 @@ export default function DataExplorer() {
 
         {/* Empty state */}
         {!loadingData && !loadingIndicators && !selectedIndicator && !error && (
-          <div className="border border-[#e8e4dc]/5 bg-[#0d0d0d] px-10 py-16 text-center max-w-lg">
-            <div className="font-['DM_Serif_Display',serif] text-2xl text-[#e8e4dc]/20 mb-3 italic">
+          <div className="border border-paper/5 bg-ink-1 px-10 py-16 text-center max-w-lg">
+            <div className="font-serif text-2xl text-paper/20 mb-3 italic">
               Pick an indicator above
             </div>
-            <p className="text-xs text-[#e8e4dc]/20 leading-relaxed">
+            <p className="text-xs text-paper/20 leading-relaxed">
               Choose from {indicators.length.toLocaleString()} indicators in the
               World Bank World Development Indicators dataset.
             </p>
           </div>
         )}
       </main>
-    </div>
+    </SiteLayout>
   );
 }
