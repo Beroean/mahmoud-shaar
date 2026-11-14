@@ -40,11 +40,13 @@ source: original
 
 | الحقل | مطلوب؟ | الوصف |
 |---|---|---|
-| `text` | نعم | الجملة مشكولة تشكيلًا كاملًا، من كلمتين إلى أربع. |
+| `text` | نعم | الجملة مشكولة تشكيلًا كاملًا، من كلمتين إلى ست كلمات. |
 | `irab` | نعم | إعراب مختصر لكل كلمة بالترتيب، سطر لكل كلمة يبدأ بـ `- `. |
 | `alts` | لا | تشكيلات أخرى صحيحة تمامًا للجملة نفسها، مثل `["قَرَأْتَ الْكِتَابَ"]`. يُقبل جواب اللاعب إن طابق أيًّا منها. |
 | `author` | لا | الاسم الذي يظهر في نتيجة اللعبة. |
-| `source` | لا | `original` (من تأليفك)، أو `tashkeela`، أو `llm-reviewed`. |
+| `source` | لا | `original` (من تأليفك)، أو `poetry` (شعر)، أو `literature` (نثر أدبي)، أو `quran`، أو `llm-reviewed`. |
+| `level` | لا | الصعوبة: `1` سهل (الافتراضي)، `2` متوسط، `3` صعب. يظهر للاعب، ويُستخدم لتوزيع الجمل الصعبة على الأيام. |
+| `ref` | لا | المرجع الظاهر مع الجواب، مثل «سورة الشرح، الآية ٦» أو اسم القصيدة. مطلوب لآيات القرآن. |
 
 ## قواعد التشكيل في اللعبة
 
@@ -61,6 +63,13 @@ source: original
 - فيها شيء يستحق التفكير: علامة إعراب، أو شدة، أو حرف يلتبس تشكيله.
 - لها تشكيل واحد واضح، أو اذكر البدائل الصحيحة في `alts`.
 - بلا محتوى سياسي أو ديني خلافي أو مسيء.
+
+## الشعر والقرآن
+
+- **القرآن الكريم:** يُنسخ النص كما هو حرفيًا من [مشروع تنزيل](https://tanzil.net) (النص «البسيط»)، مع `source: quran` و`ref`. لا يجوز تعديل حرف أو حركة. بعض الآيات مكتوبة بتشكيل التلاوة (مثل نون بلا سكون قبل الإخفاء) فيرفضها الفحص؛ اختر غيرها.
+- **الشعر:** أشطر أو أبيات مشهورة من شعر قديم انتهت حقوقه، مع `source: poetry` واسم الشاعر في `author`.
+- **الأدب الحديث:** اقتباسات قصيرة جدًا مع ذكر الكاتب والعمل، وتبقى حقوقها لأصحابها.
+- **لا كلمات أغانٍ**، حتى لو كانت القصيدة قديمة.
 
 ## الترخيص
 
@@ -109,7 +118,7 @@ Puzzles that have already been played are locked: the check fails if a PR delete
 
 ### License
 
-Puzzle content (sentences, diacritization, i'rab) is published under [CC BY-NC 4.0](content/shakkil/LICENSE); by contributing you agree to that. The site's code is all rights reserved ([LICENSE](LICENSE)).
+Puzzle content (sentences, diacritization, i'rab) is published under [CC BY-NC 4.0](content/shakkil/LICENSE); by contributing you agree to that. Exceptions: Quran text is verbatim from [Tanzil](https://tanzil.net) (CC BY 3.0, no changes allowed), and short quotations from modern authors stay their authors'. No song lyrics. Sentences are 2–6 words; optional `level` (1–3) and `ref` (citation, required for Quran). The site's code is all rights reserved ([LICENSE](LICENSE)).
 
 ### Local tooling
 

@@ -165,7 +165,7 @@ export function ResultModal({
           </div>
         ))}
       </dl>
-      {puzzle.author && <p className="text-xs text-paper/40 mb-4">الجملة من: {puzzle.author}</p>}
+      <Credit puzzle={puzzle} />
       <div className="flex flex-wrap gap-3 items-center">
         {daily && (
           <button
@@ -195,4 +195,27 @@ export function ResultModal({
 
 function Answer({ words }: { words: Word[] }) {
   return <p className="font-naskh text-4xl leading-[2] text-emerald-200">{sentenceToString(words)}</p>;
+}
+
+/** Where the sentence comes from: Quran (with the Tanzil credit its license requires), poetry, or a contributor. */
+function Credit({ puzzle }: { puzzle: GameState["puzzle"] }) {
+  const { source, ref, author } = puzzle;
+  if (source === "quran") {
+    return (
+      <p className="text-xs text-paper/40 mb-4 leading-relaxed">
+        القرآن الكريم{ref ? `، ${ref}` : ""} · النص من{" "}
+        <a href="https://tanzil.net" target="_blank" rel="noopener noreferrer" className="underline hover:text-gold">
+          مشروع تنزيل
+        </a>
+      </p>
+    );
+  }
+  const who = [author, ref].filter(Boolean).join("، ");
+  if (!who) return null;
+  const label = source === "poetry" ? "من شعر" : source === "literature" ? "من أدب" : "الجملة من";
+  return (
+    <p className="text-xs text-paper/40 mb-4">
+      {label}: {who}
+    </p>
+  );
 }

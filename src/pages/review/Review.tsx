@@ -13,6 +13,9 @@ interface Queued {
   irab: string[];
   alts?: string[];
   author?: string;
+  source?: string;
+  ref?: string;
+  level?: number;
   notes?: string;
   errors: string[];
 }
@@ -22,6 +25,8 @@ interface Draft {
   irab: string;
   alts: string;
   author: string;
+  ref: string;
+  level: number;
 }
 
 const AUTHOR_KEY = "shakkil-review:author";
@@ -40,7 +45,10 @@ function toDraft(c: Queued): Draft {
     text: c.text,
     irab: c.irab.join("\n"),
     alts: (c.alts ?? []).join("\n"),
-    author: c.author ?? rememberedAuthor(),
+    // Quran / poetry / literature are credited to their source, not the reviewer.
+    author: c.author ?? (c.source && c.source !== "llm-reviewed" ? "" : rememberedAuthor()),
+    ref: c.ref ?? "",
+    level: c.level ?? 1,
   };
 }
 
@@ -164,7 +172,15 @@ export default function Review() {
       }
       const r = await api<{ file: string }>("/approve", {
         id: current.id,
-        candidate: { text: draft.text, irab: lines(draft.irab), alts: lines(draft.alts), author: draft.author },
+        candidate: {
+          text: draft.text,
+          irab: lines(draft.irab),
+          alts: lines(draft.alts),
+          author: draft.author,
+          source: current.source,
+          ref: draft.ref,
+          level: draft.level,
+        },
       });
       setMessage(`✓ أضيفت ${r.file}`);
       drop(current.id);
@@ -200,7 +216,7 @@ export default function Review() {
     return () => window.removeEventListener("keydown", onKey);
   });
 
-  const valid = draft ? compilePuzzle({ number: 0, text: draft.text, irab: lines(draft.irab), alts: lines(draft.alts) }).errors.length === 0 : false;
+  const valid = draft ? compilePuzzle({ number: 0, text: draft.text, irab: lines(draft.irab), alts: lines(draft.alts), source: current?.source, ref: draft.ref, level: draft.level }).errors.length === 0 : false;
 
   return (
     <div className="font-[system-ui,'Segoe_UI',Tahoma,sans-serif]">
@@ -254,13 +270,40 @@ export default function Review() {
                     />
                   </label>
                   <label className="block">
-                    <span className="text-xs text-paper/40">الاسم الظاهر (اختياري)</span>
+                    <span className="text-xs text-paper/40">
+                      {current.source === "quran" ? "الاسم الظاهر (يُترك فارغًا للقرآن)" : "الاسم الظاهر / الشاعر (اختياري)"}
+                    </span>
                     <input
                       className={field}
                       value={draft.author}
                       onChange={(e) => setDraft({ ...draft, author: e.target.value })}
                     />
                   </label>
+                  <div className="grid grid-cols-2 gap-3">
+                    <label className="block">
+                      <span className="text-xs text-paper/40">المرجع (السورة والآية / القصيدة)</span>
+                      <input
+                        className={field}
+                        value={draft.ref}
+                        onChange={(e) => setDraft({ ...draft, ref: e.target.value })}
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-xs text-paper/40">الصعوبة</span>
+                      <select
+                        className={field}
+                        value={draft.level}
+                        onChange={(e) => setDraft({ ...draft, level: Number(e.target.value) })}
+                      >
+                        <option value={1}>سهل</option>
+                        <option value={2}>متوسط</option>
+                        <option value={3}>صعب</option>
+                      </select>
+                    </label>
+                  </div>
+                  {current.source && current.source !== "llm-reviewed" && (
+                    <p className="text-xs text-paper/40">المصدر: {current.source}</p>
+                  )}
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-3 pt-2">

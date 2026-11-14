@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { loadAll, normalizeId, parseSchedule, readRejected, resolveOrder } from "./content";
 import { buildReport } from "./pr-report";
 import { LAUNCH_DATE } from "../../src/pages/shakkil/core/daily";
-import { dateOfDay, moveTo } from "./schedule";
+import { dateOfDay, mixByLevel, moveTo, roundRobin } from "./schedule";
 
 describe("schedule", () => {
   it("normalizes IDs however YAML reads them", () => {
@@ -37,6 +37,22 @@ describe("schedule", () => {
     const d = new Date(`${LAUNCH_DATE}T00:00:00Z`);
     d.setUTCDate(d.getUTCDate() + 31);
     expect(dateOfDay(32)).toBe(d.toISOString().slice(0, 10));
+  });
+});
+
+describe("mixByLevel", () => {
+  it("spreads harder puzzles evenly and keeps each level's order", () => {
+    const easy = Array.from({ length: 6 }, (_, i) => ({ id: `e${i}`, level: 1 }));
+    const hard = [{ id: "h0", level: 3 }, { id: "h1", level: 3 }];
+    const mixed = mixByLevel([...easy, ...hard]).map((x) => x.id);
+    expect(mixed).toEqual(["e0", "e1", "h0", "e2", "e3", "e4", "h1", "e5"]);
+  });
+});
+
+describe("roundRobin", () => {
+  it("spreads each group through the list instead of leaving blocks", () => {
+    const items = ["q1", "q2", "q3", "p1", "p2", "p3"].map((id) => ({ id, g: id[0] }));
+    expect(roundRobin(items, (x) => x.g).map((x) => x.id)).toEqual(["q1", "p1", "q2", "p2", "q3", "p3"]);
   });
 });
 

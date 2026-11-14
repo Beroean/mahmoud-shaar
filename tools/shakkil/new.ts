@@ -23,7 +23,7 @@ const irab = words.map((w) => `  - "" # ${w}`).join("\n");
 
 writeFileSync(
   path,
-  `# الجملة مشكولة تشكيلًا كاملًا / the fully diacritized sentence (2–4 words)
+  `# الجملة مشكولة تشكيلًا كاملًا / the fully diacritized sentence (2–6 words)
 text: ${text || "ضع الجملة هنا"}
 
 # إعراب مختصر لكل كلمة بالترتيب / one short i'rab note per word, in order

@@ -137,6 +137,7 @@ function Game({
           <p className="text-sm text-paper/50">
             {daily ? `${isLaunched() ? "جملة اليوم" : "معاينة · جملة"} #${toArabicDigits(number)}` : "تدريب"}
             {state.status === "playing" && ` · بقي ${toArabicDigits(remaining)} من ${toArabicDigits(MAX_ATTEMPTS)}`}
+            <LevelBadge level={session.puzzle.level} />
           </p>
         </div>
         <nav className="flex items-center gap-1">
@@ -204,6 +205,18 @@ function Game({
       )}
     </>
   );
+}
+
+const LEVEL_LABEL: Record<number, [string, string]> = {
+  1: ["سهل", "border-emerald-400/40 text-emerald-200/80"],
+  2: ["متوسط", "border-sky-400/40 text-sky-200/80"],
+  3: ["صعب", "border-rose-400/50 text-rose-200/90"],
+};
+
+/** Small difficulty pill next to the puzzle number (level 1 when unset). */
+function LevelBadge({ level = 1 }: { level?: number }) {
+  const [label, tone] = LEVEL_LABEL[level] ?? LEVEL_LABEL[1];
+  return <span className={`ms-2 inline-block rounded-full border px-2 py-px text-[11px] align-middle ${tone}`}>{label}</span>;
 }
 
 function IconButton({ label, onClick, children }: { label: string; onClick: () => void; children: ReactNode }) {

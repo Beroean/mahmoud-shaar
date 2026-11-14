@@ -16,6 +16,10 @@ export interface PuzzleSource {
   alts?: string[];
   author?: string;
   source?: string;
+  /** Difficulty: 1 easy (default), 2 medium, 3 hard. Drives the badge and `npm run schedule -- mix`. */
+  level?: number;
+  /** Citation shown with the answer, e.g. "سورة الشرح، الآية ٦" or "المتنبي". */
+  ref?: string;
 }
 
 /** A puzzle ready to play: parsed and with grading specs for every accepted variant. */
@@ -24,8 +28,13 @@ export interface Puzzle extends PuzzleSource {
   variants: Variant[];
 }
 
-export const LIMITS = { minWords: 2, maxWords: 4 };
-export const SOURCES = ["original", "tashkeela", "llm-reviewed"] as const;
+export const LIMITS = { minWords: 2, maxWords: 6 };
+/**
+ * quran = verbatim from the Tanzil text (tanzil.net); poetry / literature = a credited line from a
+ * poem or a prose work (author + ref).
+ */
+export const SOURCES = ["original", "tashkeela", "llm-reviewed", "quran", "poetry", "literature"] as const;
+export const LEVELS = [1, 2, 3] as const;
 
 function variantOf(text: string): Variant {
   const words = parseSentence(text);
@@ -87,6 +96,12 @@ export function compilePuzzle(src: PuzzleSource): { puzzle?: Puzzle; errors: str
     }
   }
 
+  if (src.level !== undefined && !(LEVELS as readonly number[]).includes(src.level)) {
+    err(`المستوى يجب أن يكون ١ أو ٢ أو ٣`, `level must be 1, 2 or 3`);
+  }
+  if (src.source === "quran" && !src.ref?.trim()) {
+    err("آيات القرآن تحتاج إلى ref (السورة والآية)", "Quran puzzles need a ref (sura and aya)");
+  }
   if (src.source !== undefined && !(SOURCES as readonly string[]).includes(src.source)) {
     err(`المصدر غير معروف «${src.source}»`, `unknown source; use one of: ${SOURCES.join(", ")}`);
   }
