@@ -2,7 +2,7 @@
 # - Quran: excerpts copied verbatim from the Tanzil "simple" text (tanzil.net, CC BY 3.0, no changes
 #   allowed). Checked with tools/shakkil/quran-excerpt.ts. The i'rab is ours.
 # - Classical poetry: public-domain half-verses; tashkeel and i'rab are ours.
-# - Modern writers (Darwish, Kanafani): short credited quotations; still under copyright,
+# - Modern writers (Darwish, Qabbani, Kanafani): short credited quotations; still under copyright,
 #   so they are NOT covered by the CC BY-NC content license. Please double-check the exact wording.
 #   No song lyrics (e.g. Qabbani poems sung by Kadim al-Sahir, or muwashshahat as sung by Sabah Fakhri).
 # - MSA: original sentences built around harder rules.
@@ -370,6 +370,29 @@
     - ضمير منفصل مبني على السكون في محل رفع مبتدأ
     - خبر مرفوع وعلامة رفعه تنوين الضم
   notes: في القصيدة تُقرأ «عربيْ» بالسكون للوقف؛ التشكيل هنا بالوصل.
+- text: إِذَا خَسِرْنَا الْحَرْبَ لَا غَرَابَةَ
+  source: poetry
+  author: نزار قباني
+  ref: هوامش على دفتر النكسة
+  level: 3
+  irab:
+    - ظرف لما يستقبل من الزمان متضمن معنى الشرط مبني على السكون في محل نصب
+    - فعل ماضٍ مبني على السكون لاتصاله بـ«نا» الفاعلين، و«نا» ضمير متصل في محل رفع فاعل، والجملة في محل جر بالإضافة
+    - مفعول به منصوب وعلامة نصبه الفتحة الظاهرة
+    - نافية للجنس تعمل عمل «إنّ» مبنية على السكون
+    - اسم «لا» مبني على الفتح في محل نصب، وخبرها محذوف، والجملة جواب الشرط لا محل لها
+  notes: في القصيدة «لا غرابهْ» بالسكون للوقف والقافية؛ التشكيل هنا بالوصل. تحقق من النص.
+- text: مَتَى يُعْلِنُونَ وَفَاةَ الْعَرَبِ؟
+  source: poetry
+  author: نزار قباني
+  ref: متى يعلنون وفاة العرب؟
+  level: 2
+  irab:
+    - اسم استفهام مبني على السكون في محل نصب ظرف زمان
+    - فعل مضارع مرفوع وعلامة رفعه ثبوت النون، والواو ضمير متصل في محل رفع فاعل
+    - مفعول به منصوب وعلامة نصبه الفتحة، وهو مضاف
+    - مضاف إليه مجرور وعلامة جره الكسرة الظاهرة
+  notes: عنوان القصيدة ومطلع سؤالها المتكرر. تحقق من النص.
 - text: لِمَاذَا لَمْ تَدُقُّوا جُدْرَانَ الْخَزَّانِ؟
   source: literature
   author: غسان كنفاني
