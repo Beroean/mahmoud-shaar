@@ -55,6 +55,8 @@ npm run schedule                                       # list the run order with
 npm run schedule -- next 0042 0057                     # run these next, right after today
 npm run schedule -- author "Name"                      # run all upcoming puzzles by Name next
 npm run schedule -- move 0042 15                       # put 0042 on day 15
+npm run schedule -- mix                                # spread harder puzzles (level 2-3) evenly over upcoming days
+npx tsx tools/shakkil/quran-excerpt.ts 94:6 "…"         # check a Quran excerpt is verbatim Tanzil text (needs .cache/tanzil)
 ```
 
 Outside contributors: see [CONTRIBUTING.md](CONTRIBUTING.md) (Arabic and English). Pull requests that touch puzzles get an automatic report comment from `.github/workflows/puzzle-check.yml` + `puzzle-comment.yml`.

@@ -15,7 +15,7 @@ export const PUZZLE_DIR = resolve(import.meta.dirname, "../../content/shakkil/pu
 export const SCHEDULE_FILE = resolve(import.meta.dirname, "../../content/shakkil/schedule.yaml");
 export const REJECTED_FILE = resolve(import.meta.dirname, "../../content/shakkil/rejected.yaml");
 export const FILE_RE = /^(\d{4})\.yaml$/;
-const KNOWN_KEYS = new Set(["text", "irab", "alts", "author", "source"]);
+const KNOWN_KEYS = new Set(["text", "irab", "alts", "author", "source", "level", "ref"]);
 
 export interface FileResult {
   file: string;

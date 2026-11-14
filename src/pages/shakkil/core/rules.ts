@@ -58,13 +58,18 @@ function next(word: Word, i: number): Letter | undefined {
 }
 
 /**
- * True if the alif at index k is the alif of ال after a one-letter prefix (وَالْ، فَالْ، كَالْ،
- * بِالْ): it is not a long vowel, so the prefix's vowel stays required. Told apart from a real madd
- * (قَالَ) by the lam after it, which is bare or carries sukun.
+ * True if the alif at index k is a hamzat wasl after a one-letter prefix (the alif of ال, or of a
+ * verb/noun like اعتقاد): it is not a long vowel, so the prefix's vowel stays required.
  */
 function isArticleAlif(word: Word, k: number): boolean {
-  const lam = word.letters[k + 1];
-  return k === 1 && word.letters[k].char === "ا" && lam?.char === "ل" && (lam.mark.vowel === null || lam.mark.vowel === "o") && !lam.mark.shadda;
+  if (k !== 1 || word.letters[k].char !== "ا") return false;
+  const next = word.letters[k + 1];
+  if (!next) return false;
+  // ال after a prefix: وَالْبيت، كَالسَّيف (lam bare or with sukun).
+  if (next.char === "ل" && (next.mark.vowel === null || next.mark.vowel === "o") && !next.mark.shadda) return true;
+  // Hamzat wasl before a vowelless or doubled letter: وَاعْتِقَادِي، فَاخْتَارِي، وَاتَّقُوا. A long
+  // alif is always followed by a voweled letter (قَالَ), so this can't misfire on a real madd.
+  return next.mark.vowel === "o" || next.mark.shadda;
 }
 
 /** Why a bare letter is allowed to be bare, or null if it must carry a mark. */

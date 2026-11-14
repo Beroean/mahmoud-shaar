@@ -24,6 +24,8 @@ export interface Candidate {
   alts?: string[];
   author?: string;
   source?: string;
+  level?: number;
+  ref?: string;
   /** Drafting notes for the reviewer: ambiguity, rule being tested, etc. */
   notes?: string;
 }
@@ -53,7 +55,15 @@ function readList(path: string): Candidate[] {
 }
 
 function validate(c: Candidate): string[] {
-  return compilePuzzle({ number: 0, text: c.text, irab: c.irab, alts: c.alts, source: "llm-reviewed" }).errors;
+  return compilePuzzle({
+    number: 0,
+    text: c.text,
+    irab: c.irab,
+    alts: c.alts,
+    source: c.source ?? "llm-reviewed",
+    level: c.level,
+    ref: c.ref,
+  }).errors;
 }
 
 export function loadQueue(): QueuedCandidate[] {
@@ -99,6 +109,8 @@ export function approve(id: string, edited: Candidate): { number: number; file: 
   doc.alts = (edited.alts ?? []).map((s) => s.trim()).filter(Boolean);
   if (edited.author?.trim()) doc.author = edited.author.trim();
   doc.source = edited.source ?? "llm-reviewed";
+  if (edited.level && edited.level !== 1) doc.level = edited.level;
+  if (edited.ref?.trim()) doc.ref = edited.ref.trim();
   writeFileSync(join(PUZZLE_DIR, file), stringify(doc, { lineWidth: 0 }), "utf8");
   return { number, file };
 }

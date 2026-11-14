@@ -30,6 +30,19 @@ function AttemptRow({ words, guess, results }: { words: Word[]; guess: Mark[][];
   );
 }
 
+/**
+ * Letter size for the editable sentence. Short sentences stay big; long ones (5–6 words, or long
+ * words like والمستشفيات) step down on phones so each word fits on a line and the sentence doesn't
+ * fill the screen. Desktop has room, so it changes less.
+ */
+function editSize(words: Word[]): string {
+  const longest = Math.max(...words.map((w) => w.letters.length));
+  const total = words.reduce((n, w) => n + w.letters.length, 0);
+  if (longest >= 10 || total >= 28) return "text-3xl sm:text-5xl";
+  if (longest >= 7 || total >= 20) return "text-4xl sm:text-5xl";
+  return "text-5xl sm:text-6xl";
+}
+
 function EditRow({
   state,
   onSelect,
@@ -41,7 +54,7 @@ function EditRow({
   const last = results[results.length - 1];
   return (
     <div
-      className="flex flex-wrap justify-center gap-x-8 gap-y-3 font-naskh text-5xl sm:text-6xl leading-[2.1]"
+      className={`flex flex-wrap justify-center gap-x-8 gap-y-3 font-naskh leading-[2.1] ${editSize(puzzle.words)}`}
       role="group"
       aria-label="الجملة"
     >
@@ -86,7 +99,7 @@ function EditRow({
                   onClick={() => onSelect(pos)}
                   aria-label={`الحرف ${l.char}${editable ? "" : "، صحيح"}`}
                   aria-current={active ? "true" : undefined}
-                  className={`inline-block min-w-[1.75rem] border-b-[3px] rounded-t-md transition-colors ${tone} ${
+                  className={`inline-block min-w-[0.7em] border-b-[3px] rounded-t-md transition-colors ${tone} ${
                     active ? "ring-2 ring-paper ring-offset-2 ring-offset-ink" : ""
                   } ${editable ? "hover:bg-paper/10 cursor-pointer" : "cursor-default"}`}
                 >

@@ -7,14 +7,14 @@ body:
     attributes:
       value: |
         شكرًا لمساهمتك! 🌟
-        - الجملة من **كلمتين إلى أربع كلمات**، واضحة المعنى بنفسها.
+        - الجملة من **كلمتين إلى ست كلمات**، واضحة المعنى بنفسها.
         - شكّلها **تشكيلًا كاملًا**: كل حرف عليه حركته، والشدة، وعلامة الإعراب. لا داعي لتشكيل حروف المد (ا و ي) ولا ألف «ال».
         - تنوين الفتح يمكن وضعه على الحرف (كِتَابًا) أو على الألف (كِتَاباً).
         - اكتب إعرابًا مختصرًا لكل كلمة، بالترتيب، كل كلمة في سطر.
 
         سنراجع الجملة ونضيفها إلى قائمة الجمل، وسيظهر اسمك في نتيجة اللعبة إن أردت.
 
-        *English: one fully diacritized sentence of 2–4 words, plus a short i'rab note per word (one per line). See CONTRIBUTING.md.*
+        *English: one fully diacritized sentence of 2–6 words, plus a short i'rab note per word (one per line). See CONTRIBUTING.md.*
   - type: input
     id: sentence
     attributes:
