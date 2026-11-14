@@ -39,16 +39,29 @@ export function moveTo(order: string[], ids: string[], at: number, locked: numbe
   return [...rest.slice(0, k), ...ids, ...rest.slice(k)];
 }
 
+/** Round-robin across groups (keeping each group's order), so no single group runs in a block. */
+export function roundRobin<T>(items: T[], groupOf: (item: T) => string): T[] {
+  const groups = new Map<string, T[]>();
+  for (const it of items) groups.set(groupOf(it), [...(groups.get(groupOf(it)) ?? []), it]);
+  // Spread each group evenly over the whole list, the same way levels are spread.
+  return [...groups.values()]
+    .flatMap((list, g) => list.map((it, i) => ({ it, pos: (i + 0.5) / list.length, g })))
+    .sort((a, b) => a.pos - b.pos || a.g - b.g)
+    .map((x) => x.it);
+}
+
 /**
- * Interleaves puzzles by difficulty: each level's puzzles are placed at evenly spaced positions
- * (keeping their relative order), so hard days are spread out instead of clumped together.
+ * Interleaves puzzles by difficulty: each level's puzzles are placed at evenly spaced positions, so
+ * hard days are spread out instead of clumped together. Within a level, puzzles are first spread by
+ * `group` (e.g. author or source) so one poet or the Quran excerpts don't run back to back.
  */
-export function mixByLevel<T extends { level?: number }>(items: T[]): T[] {
+export function mixByLevel<T extends { level?: number; group?: string }>(items: T[]): T[] {
   const byLevel = new Map<number, T[]>();
   for (const it of items) {
     const l = it.level ?? 1;
     byLevel.set(l, [...(byLevel.get(l) ?? []), it]);
   }
+  for (const [l, list] of byLevel) byLevel.set(l, roundRobin(list, (it) => it.group ?? ""));
   return [...byLevel.entries()]
     .flatMap(([level, list]) => list.map((it, i) => ({ it, pos: (i + 0.5) / list.length, level })))
     .sort((a, b) => a.pos - b.pos || a.level - b.level)
@@ -80,7 +93,11 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     else if (cmd === "mix") {
       // Tomorrow's puzzle is already on the site (the rollover buffer), so it stays put too.
       const fixed = locked + 1;
-      const upcoming = results.slice(fixed).map((r) => ({ id: r.id, level: r.source?.level }));
+      const upcoming = results.slice(fixed).map((r) => ({
+        id: r.id,
+        level: r.source?.level,
+        group: r.source?.source === "quran" ? "quran" : (r.source?.author ?? r.source?.source ?? ""),
+      }));
       next = [...order.slice(0, fixed), ...mixByLevel(upcoming).map((x) => x.id)];
     }
     else if (cmd) throw new Error(`unknown command "${cmd}"; use next, author, move or mix`);
