@@ -2,3 +2,4 @@
 # The puzzle check fails if a puzzle's text matches one of these.
 - text: شَكِّلْ تَفُزْ
   reason: محجوزة لصورة معاينة الرابط (public/og/shakkil.png) / reserved for the link-preview image
+- text: الصِّدْقَ الصِّدْقَ
