@@ -42,7 +42,7 @@ npm run build && npm run preview
 ## شَكِّل (Shakkil) puzzles
 
 - `content/shakkil/puzzles/NNNN.yaml`: one puzzle per file. `NNNN` is a permanent ID.
-- `content/shakkil/schedule.yaml`: the run order (day 1 = first entry). Unlisted puzzles run after the listed ones in ID order. Days already played are locked; CI fails if a PR changes them.
+- `content/shakkil/schedule.yaml`: one entry per day (day 1 = first entry). An entry is one ID (a single-sentence day) or `["easy", "medium", "hard"]` IDs (a three-sentence day). While all days are single, unlisted puzzles run after the listed ones; once three-sentence days exist, unlisted puzzles wait in a pool until `npm run schedule -- plan` places them. Days already played (and tomorrow) are locked; CI fails if a PR changes them.
 - `content/shakkil/queue/*.yaml`: candidates waiting for review. `content/shakkil/rejected.yaml`: rejected candidates (so they aren't drafted again).
 
 ```bash
@@ -55,7 +55,9 @@ npm run schedule                                       # list the run order with
 npm run schedule -- next 0042 0057                     # run these next, right after today
 npm run schedule -- author "Name"                      # run all upcoming puzzles by Name next
 npm run schedule -- move 0042 15                       # put 0042 on day 15
-npm run schedule -- mix                                # spread harder puzzles (level 2-3) evenly over upcoming days
+npm run schedule -- mix                                # spread harder puzzles evenly (single-sentence schedules)
+npm run schedule -- plan                               # three-sentence days (easy, medium, hard) from all unplayed puzzles
+npm run schedule -- plan --author "Name" --days 30     # same, Name's puzzles first, at most 30 days
 npx tsx tools/shakkil/quran-excerpt.ts 94:6 "…"         # check a Quran excerpt is verbatim Tanzil text (needs .cache/tanzil)
 ```
 
