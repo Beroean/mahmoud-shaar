@@ -43,6 +43,7 @@ npm run build && npm run preview
 
 - `content/shakkil/puzzles/NNNN.yaml`: one puzzle per file. `NNNN` is a permanent ID.
 - `content/shakkil/schedule.yaml`: one entry per day (day 1 = first entry). An entry is one ID (a single-sentence day) or `["easy", "medium", "hard"]` IDs (a three-sentence day). While all days are single, unlisted puzzles run after the listed ones; once three-sentence days exist, unlisted puzzles wait in a pool until `npm run schedule -- plan` places them. Days already played (and tomorrow) are locked; CI fails if a PR changes them.
+- Preview any day locally: `npm run dev`, then open `http://localhost:5173/shakkil/?day=N`. Dev server only; the live site ignores it. Progress you make there is saved in localhost storage, separate from the live site.
 - `content/shakkil/queue/*.yaml`: candidates waiting for review. `content/shakkil/rejected.yaml`: rejected candidates (so they aren't drafted again).
 
 ```bash

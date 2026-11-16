@@ -3,7 +3,7 @@ import { FlagIcon, HelpIcon, StatsIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
 import { sentenceToString } from "./core/arabic";
-import { isLaunched, puzzleNumber } from "./core/daily";
+import { devDay, isLaunched, puzzleNumber } from "./core/daily";
 import type { Guess } from "./core/grade";
 import { type Puzzle, type PuzzleSource, compilePuzzle } from "./core/puzzle";
 import { GAME_NAME, toArabicDigits } from "./core/share";
@@ -362,6 +362,11 @@ export default function Shakkil() {
         headerEnd={<span className="text-xs text-paper/25">لعبة التشكيل اليومية</span>}
       >
         <main className="relative z-10 mx-auto max-w-2xl px-4 pt-8 pb-4">
+          {devDay() !== null && (
+            <p dir="ltr" className="mb-4 rounded-md border border-gold/40 px-3 py-2 text-center text-xs text-gold/80">
+              Dev preview: day {devDay()} (remove ?day= to go back to today)
+            </p>
+          )}
           {error && <p className="text-rose-300">تعذّر تحميل اللعبة: {error}</p>}
           {!session && !error && !waiting && <p className="text-paper/40 py-24 text-center">جارٍ التحميل…</p>}
           {waiting && !session && all && (
