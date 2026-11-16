@@ -3,8 +3,8 @@
  * compiles days into the game bundle and by the data test.
  *
  * - origins.yaml   round 1 · where did the word come from?
- * - proverbs.yaml  round 2 · finish the proverb
- * - wildcards.yaml round 3 · riddle / vendor cry / idiom / folk belief
+ * - proverbs.yaml  round 2 · finish the saying: proverb (default) / wisdom / taunt
+ * - wildcards.yaml round 3 · riddle / vendor cry / idiom / folk belief / simile / blessing / song
  *
  * Day N plays item N of each list, so the number of days is the length of the shortest list.
  */
@@ -15,7 +15,10 @@ import { BLANK, type Day, type Round, type RoundKind } from "../../src/pages/hal
 
 export const CONTENT_DIR = resolve(import.meta.dirname, "../../content/halab");
 const FILES = { origins: "origins.yaml", proverbs: "proverbs.yaml", wildcards: "wildcards.yaml" } as const;
-const WILD_KINDS = new Set<RoundKind>(["riddle", "vendor", "idiom", "belief"]);
+const SAYING_KINDS = new Set<RoundKind>(["proverb", "wisdom", "taunt"]);
+const WILD_KINDS = new Set<RoundKind>(["riddle", "vendor", "idiom", "belief", "simile", "blessing", "song"]);
+/** Wildcard kinds whose prompt hides a part behind the blank. */
+const BLANK_KINDS = new Set<RoundKind>(["vendor", "belief", "simile", "blessing", "song"]);
 const STATUSES = new Set(["draft", "approved"]);
 
 type Raw = Record<string, unknown>;
@@ -54,7 +57,7 @@ function check(item: Raw, kind: RoundKind, textKey: string, needsBlank: boolean)
   const errors: string[] = [];
   const text = str(item[textKey]);
   const answer = str(item.answer);
-  if (!/^[a-z]\d{3}$/.test(str(item.id))) errors.push(`bad id ${JSON.stringify(item.id)}`);
+  if (!/^[a-z]\d{3,4}$/.test(str(item.id))) errors.push(`bad id ${JSON.stringify(item.id)}`);
   if (!text) errors.push(`missing ${textKey}`);
   if (!answer) errors.push("missing answer");
   const others = Array.isArray(item.others) ? item.others.map(str) : [];
@@ -123,14 +126,16 @@ export function loadDays(): Loaded {
   });
 
   const proverbs = collect(FILES.proverbs, readList(FILES.proverbs, errors), (item) => {
-    const errs = check(item, "proverb", "text", true);
-    return { errs, round: toRound(item, "proverb", str(item.text), str(item.meaning) ? { meaning: str(item.meaning) } : {}) };
+    const kind = (str(item.kind) || "proverb") as RoundKind;
+    if (!SAYING_KINDS.has(kind)) return { errs: [`unknown kind ${JSON.stringify(item.kind)}`] };
+    const errs = check(item, kind, "text", true);
+    return { errs, round: toRound(item, kind, str(item.text), str(item.meaning) ? { meaning: str(item.meaning) } : {}) };
   });
 
   const wildcards = collect(FILES.wildcards, readList(FILES.wildcards, errors), (item) => {
     const kind = str(item.kind) as RoundKind;
     if (!WILD_KINDS.has(kind)) return { errs: [`unknown kind ${JSON.stringify(item.kind)}`] };
-    const errs = check(item, kind, "prompt", kind === "vendor" || kind === "belief");
+    const errs = check(item, kind, "prompt", BLANK_KINDS.has(kind));
     return { errs, round: toRound(item, kind, str(item.prompt), {}) };
   });
 

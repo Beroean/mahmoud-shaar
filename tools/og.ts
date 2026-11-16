@@ -131,16 +131,18 @@ const IMAGES: Record<string, string> = {
   </g>
   ${footer("mahmoudshaar.com/shakkil", "جملة جديدة كل يوم، وست محاولات")}`),
 
-  // The citadel gate is CitadelIcon (src/components/icons.tsx), drawn 15× larger.
+  // The citadel is CitadelIcon (src/components/icons.tsx), drawn 16× larger.
   halab: frame(`
-  <g transform="translate(80 150) scale(15)" fill="none" stroke="${GOLD}" stroke-width="0.24" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M2.5 21V4.5h19V21"/>
+  <g transform="translate(70 140) scale(16)" fill="none" stroke="${GOLD}" stroke-width="0.24" stroke-linecap="round" stroke-linejoin="round">
     <path d="M1.5 21h21"/>
-    <path d="M10.6 4.5V3.2h2.8v1.3"/>
-    <path d="M9.4 21v-7.2c0-2.2 1.2-3.9 2.6-4.9 1.4 1 2.6 2.7 2.6 4.9V21"/>
-    <path d="M3.5 11.6h3.6v2.1H3.5zM16.9 11.6h3.6v2.1h-3.6z"/>
-    <path d="M11 8V6.2h2V8"/>
-    <path d="M5.3 8.5V7.3c0-.5.3-.8.5-1 .2.2.5.5.5 1v1.2M17.7 8.5V7.3c0-.5.3-.8.5-1 .2.2.5.5.5 1v1.2"/>
+    <path d="M2.8 14.5 3.2 4.8h7.6l.4 9.7"/>
+    <path d="M4.4 4.8V3.4M7 4.8V3.4M9.6 4.8V3.4"/>
+    <path d="M5.6 14.5v-3.3c0-1.2.6-2 1.4-2.6.8.6 1.4 1.4 1.4 2.6v3.3"/>
+    <path d="M1.5 20.5c.5-2.2.9-4.2 1.3-6h8.4c.4 1.9.9 4.1 1.5 6.5"/>
+    <path d="m11.4 15.3 5.9 2.5"/>
+    <path d="M14.3 21v-4.4M16.2 21v-3.6"/>
+    <path d="M17.3 21v-5.8h1.5v-2.4H22V21"/>
+    <path d="M19.9 12.8v-1.4M21.4 12.8v-1.4"/>
   </g>
   <text x="1120" y="235" text-anchor="end" font-family="Amiri" font-weight="700" font-size="150" fill="${GOLD}">حلبيّات</text>
   <text x="1120" y="345" text-anchor="end" font-family="Amiri" font-size="44" fill="${PAPER}" fill-opacity="0.85">ثلاث جولات يومية من موسوعة حلب المقارنة</text>

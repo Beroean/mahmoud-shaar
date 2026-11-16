@@ -16,11 +16,12 @@ describe("content/halab", () => {
     expect(errors).toEqual([]);
   });
 
-  it("has days, each with origin, proverb and a wildcard", () => {
+  it("has days, each with an origin, a saying and a wildcard", () => {
     expect(days.length).toBeGreaterThan(0);
     for (const d of days) {
-      expect(d.rounds.map((r) => r.kind).slice(0, 2)).toEqual(["origin", "proverb"]);
-      expect(["riddle", "vendor", "idiom", "belief"]).toContain(d.rounds[2].kind);
+      expect(d.rounds[0].kind).toBe("origin");
+      expect(["proverb", "wisdom", "taunt"]).toContain(d.rounds[1].kind);
+      expect(["riddle", "vendor", "idiom", "belief", "simile", "blessing", "song"]).toContain(d.rounds[2].kind);
     }
   });
 

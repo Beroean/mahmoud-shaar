@@ -25,7 +25,7 @@ const FILTERS: [Filter, string][] = [
 ];
 
 const kindOf = (it: Item): RoundKind =>
-  it.file === "origins" ? "origin" : it.file === "proverbs" ? "proverb" : ((it.data.kind as RoundKind) ?? "riddle");
+  it.file === "origins" ? "origin" : ((it.data.kind as RoundKind) ?? (it.file === "proverbs" ? "proverb" : "riddle"));
 
 /** The main text field per file. */
 const textKey = (it: Item) => (it.file === "origins" ? "word" : it.file === "proverbs" ? "text" : "prompt");

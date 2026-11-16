@@ -68,13 +68,14 @@ The game logic (parsing, leniency rules, grading, schedule, stats, share text) i
 
 ## حلبيّات (Halabiyyat)
 
-A daily game from «موسوعة حلب المقارنة» by محمد خير الدين الأسدي, dedicated to my father أحمد أديب شعار, who digitized the encyclopedia and made it free for everyone. Three multiple-choice rounds a day: where an Aleppine word came from, finish a proverb, and a wildcard (riddle, street vendor's cry, idiom or folk belief).
+A daily game from «موسوعة حلب المقارنة» by محمد خير الدين الأسدي, dedicated to my father أحمد أديب شعار, who digitized the encyclopedia and made it free for everyone. Three multiple-choice rounds a day: where an Aleppine word came from; a saying to finish (proverb, wise saying or witty taunt); and a wildcard (riddle, street vendor's cry, idiom, folk belief, simile, blessing or folk-song line).
 
 - `content/halab/origins.yaml`, `proverbs.yaml`, `wildcards.yaml`: day N plays item N of each list, so the shortest list sets the number of days and the rest are spares. Each item's `line` points into the book's text (non-blank lines of the archive.org `_djvu.txt`), for review.
 - `content/halab/rejected.yaml`: items rejected in review (created on the first rejection).
 - Day 1 is `LAUNCH_DATE` in `src/pages/halab/core/daily.ts`, on Shakkil's clock (midnight Mecca time). Builds ship days only up to tomorrow; `?day=N` replays past days (any day in dev).
 - `npm test` validates every item and fails when fewer than 14 days are left.
-- The opening gate animation is `src/pages/halab/ui/GateIntro.tsx` (once per browser session; `?gate=1` replays it).
+- The opening animation is `src/pages/halab/ui/GateIntro.tsx`, with its drawings of the citadel in `gateArt.ts` (once per browser session; `?gate=1` replays it).
+- Items the curators were unsure of carry a `flag:` note; the review page lists those first.
 
 ```bash
 npm run review:halab   # local review page: flagged items first, with the book's text beside each (dev only)
