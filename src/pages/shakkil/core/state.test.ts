@@ -145,3 +145,57 @@ describe("launch", () => {
     expect(msUntilLaunch(launch + H)).toBe(0);
   });
 });
+
+describe("three-sentence days", () => {
+  it("wins the day only when every sentence is solved, and charts each solved sentence", async () => {
+    const { emptyStats, recordResult } = await import("./storage");
+    let s = recordResult(emptyStats(), 5, true, [2, 3, 6]);
+    expect(s).toMatchObject({ played: 1, won: 1, streak: 1, lastWon: 5 });
+    expect(s.dist).toEqual([0, 1, 1, 0, 0, 1]);
+    s = recordResult(s, 6, false, [1, 4]); // hard one not solved
+    expect(s).toMatchObject({ played: 2, won: 1, streak: 0 });
+    expect(s.dist).toEqual([1, 1, 1, 1, 0, 1]);
+  });
+
+  it("keeps an existing streak going into the new format", async () => {
+    const { emptyStats, recordResult } = await import("./storage");
+    const s = recordResult(recordResult(emptyStats(), 4, true, 3), 5, true, [1, 2, 4]);
+    expect(s.streak).toBe(2);
+  });
+
+  it("saves and restores rounds, and still reads old saves", async () => {
+    const { load, save, emptySave } = await import("./storage");
+    const data = new Map<string, string>();
+    const kv = { getItem: (k: string) => data.get(k) ?? null, setItem: (k: string, v: string) => void data.set(k, v) };
+    const d = emptySave();
+    d.daily = {
+      puzzle: 5,
+      id: "0011",
+      attempts: [],
+      status: "playing",
+      rounds: [{ id: "0011", attempts: [[[{ shadda: false, vowel: "a" }]]], status: "won" }],
+    };
+    save(d, kv);
+    expect(load(kv).daily?.rounds?.[0].status).toBe("won");
+    data.set("shakkil:v1", JSON.stringify({ version: 1, stats: d.stats, daily: { puzzle: 4, attempts: [], status: "won" } }));
+    expect(load(kv).daily?.puzzle).toBe(4);
+  });
+
+  it("formats the day's share text with one line per sentence", async () => {
+    const { shareTextDay } = await import("./share");
+    const text = shareTextDay(5, [
+      { level: 1, attempts: [[["correct"], ["correct"]]], won: true },
+      { level: 2, attempts: [[["wrong"]], [["correct"]]], won: true },
+      { level: 3, attempts: [[["partial"], ["wrong"]]], won: false },
+    ]);
+    expect(text.split("\n")).toEqual([
+      "شَكِّل #٥ ٢/٣",
+      "",
+      "سهل ١/٦ 🟩🟩",
+      "متوسط ٢/٦ 🟩",
+      "صعب X/٦ 🟨🟥",
+      "",
+      "https://mahmoudshaar.com/shakkil/",
+    ]);
+  });
+});

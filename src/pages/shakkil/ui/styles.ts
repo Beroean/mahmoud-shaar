@@ -11,3 +11,6 @@ export const RESULT_STYLE: Record<LetterResult, string> = {
   wrong: "bg-rose-500/20 text-rose-200 border-rose-400/70 border-dotted",
   fixed: "text-paper/45 border-transparent",
 };
+
+/** Difficulty names, indexed by level (1 easy, 2 medium, 3 hard). */
+export const LEVEL_NAMES = ["", "سهل", "متوسط", "صعب"];

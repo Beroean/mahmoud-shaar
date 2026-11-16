@@ -102,3 +102,14 @@ describe("parseSentence", () => {
     expect(parseSentence("ك" + DAMMA)[0].letters[0].mark.vowel).toBe("u");
   });
 });
+
+describe("Quran display", () => {
+  it("keeps tanween fath on the letter for Quran text", async () => {
+    const { compilePuzzle } = await import("./puzzle");
+    const { wordToString } = await import("./arabic");
+    const q = compilePuzzle({ number: 1, text: "إِنَّ مَعَ الْعُسْرِ يُسْرًا", irab: ["a", "b", "c", "d"], source: "quran", ref: "x" }).puzzle!;
+    expect(wordToString(q.words[3])).toBe("يُسْرًا".normalize("NFC"));
+    const p = compilePuzzle({ number: 1, text: "إِنَّ مَعَ الْعُسْرِ يُسْرًا", irab: ["a", "b", "c", "d"] }).puzzle!;
+    expect(wordToString(p.words[3])).toBe("يُسْراً".normalize("NFC"));
+  });
+});

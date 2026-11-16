@@ -6,6 +6,8 @@ import { specsFor } from "./rules";
 export interface PuzzleSource {
   /** 1-based puzzle number = day in the schedule (content/shakkil/schedule.yaml). */
   number: number;
+  /** Position within its day: 0 on single days; 0/1/2 = easy/medium/hard on three-sentence days. */
+  slot?: number;
   /** Permanent ID (the puzzle's file name, e.g. "0042"). Stays the same when the schedule changes. */
   id?: string;
   /** Fully diacritized reference sentence. */
@@ -107,5 +109,7 @@ export function compilePuzzle(src: PuzzleSource): { puzzle?: Puzzle; errors: str
   }
 
   if (errors.length) return { errors };
+  // Quran text is displayed exactly as written in the source (no tanween moved onto the alif).
+  if (src.source === "quran") for (const v of variants) for (const w of v.words) w.tanweenOnLetter = true;
   return { puzzle: { ...src, words: main.words, variants }, errors };
 }

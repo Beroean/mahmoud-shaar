@@ -36,6 +36,11 @@ export interface Letter {
 
 export interface Word {
   letters: Letter[];
+  /**
+   * Show tanween fath on the letter, as written, instead of moving it onto a following alif.
+   * Set for Quran text, which must be displayed exactly as the source writes it.
+   */
+  tanweenOnLetter?: boolean;
   /** Punctuation before / after the word (displayed, never graded). */
   prefix: string;
   suffix: string;
@@ -227,7 +232,7 @@ function isTanweenAlif(word: Word, i: number): boolean {
 export function letterTexts(word: Word, marks: Mark[] = word.letters.map((l) => l.mark)): string[] {
   const out = word.letters.map((l, i) => letterToString(l, marks[i]));
   const k = word.letters.length - 1;
-  if (TANWEEN_FATH_ON_ALIF && isTanweenAlif(word, k) && marks[k - 1]?.vowel === "an") {
+  if (TANWEEN_FATH_ON_ALIF && !word.tanweenOnLetter && isTanweenAlif(word, k) && marks[k - 1]?.vowel === "an") {
     out[k - 1] = letterToString(word.letters[k - 1], { ...marks[k - 1], vowel: null });
     out[k] = word.letters[k].char + VOWEL_CHAR.an;
   }
@@ -236,7 +241,7 @@ export function letterTexts(word: Word, marks: Mark[] = word.letters.map((l) => 
 
 /** For a bare final alif, the index of the letter whose tanween fath it can display; else null. */
 export function tanweenCarrierOf(word: Word, i: number): number | null {
-  return TANWEEN_FATH_ON_ALIF && isTanweenAlif(word, i) ? i - 1 : null;
+  return TANWEEN_FATH_ON_ALIF && !word.tanweenOnLetter && isTanweenAlif(word, i) ? i - 1 : null;
 }
 
 /** Parses diacritized (or bare) Arabic text into words. Throws {@link ArabicParseError}. */

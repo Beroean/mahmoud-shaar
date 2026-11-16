@@ -26,10 +26,11 @@ describe("content/shakkil/puzzles", () => {
 
   it(`covers at least ${MIN_RUNWAY_DAYS} days ahead (after launch)`, () => {
     if (dayIndex() < LAUNCH_DAY) return; // pre-launch: nothing scheduled yet
-    const remaining = results.length - puzzleNumber();
+    const lastDay = Math.max(...results.map((r) => r.number));
+    const remaining = lastDay - puzzleNumber();
     expect(
       remaining,
-      `only ${remaining} puzzle(s) left in the schedule; add more under content/shakkil/puzzles`,
+      `only ${remaining} day(s) left in the schedule; add puzzles and run npm run schedule -- plan`,
     ).toBeGreaterThanOrEqual(MIN_RUNWAY_DAYS);
   });
 });
