@@ -6,12 +6,24 @@ const KEY = "shakkil:v1";
 
 export type GameStatus = "playing" | "won" | "lost";
 
-export interface GameRecord {
-  puzzle: number;
-  /** Permanent puzzle ID played that day; guards against the schedule changing under a saved game. */
-  id?: string;
+/** One sentence of a day: which puzzle, the attempts so far, and how it ended. */
+export interface RoundRecord {
+  id: string;
   attempts: Guess[];
   status: GameStatus;
+}
+
+export interface GameRecord {
+  /** Day number. */
+  puzzle: number;
+  /** Permanent puzzle ID of the (first) sentence; guards against the schedule changing under a save. */
+  id?: string;
+  /** Attempts of the first sentence (kept so single-sentence saves read the same as before). */
+  attempts: Guess[];
+  /** The whole day: "won" only when every sentence is solved. */
+  status: GameStatus;
+  /** Every sentence of the day (three on three-sentence days). Absent in older saves. */
+  rounds?: RoundRecord[];
 }
 
 export interface Stats {
@@ -69,7 +81,19 @@ function validate(raw: unknown): SaveData | null {
     stats.dist = emptyStats().dist;
   }
   let daily = d.daily ?? null;
-  if (daily && !(typeof daily.puzzle === "number" && Array.isArray(daily.attempts) && daily.attempts.every(isGuess))) {
+  const isRound = (r: unknown): r is RoundRecord => {
+    const x = r as RoundRecord;
+    return typeof x?.id === "string" && Array.isArray(x.attempts) && x.attempts.every(isGuess);
+  };
+  if (
+    daily &&
+    !(
+      typeof daily.puzzle === "number" &&
+      Array.isArray(daily.attempts) &&
+      daily.attempts.every(isGuess) &&
+      (daily.rounds === undefined || (Array.isArray(daily.rounds) && daily.rounds.every(isRound)))
+    )
+  ) {
     daily = null;
   }
   return { version: 1, daily, stats };
@@ -101,13 +125,18 @@ export function save(data: SaveData, kv: KV | undefined = defaultKV()): void {
   }
 }
 
-/** Records a finished daily game and returns the new stats. */
-export function recordResult(stats: Stats, puzzle: number, won: boolean, attempts: number): Stats {
+/**
+ * Records a finished day and returns the new stats. `won` is the whole day (every sentence solved);
+ * `solved` is the attempt count of each solved sentence (a single number for one-sentence days), which
+ * feeds the "attempts per sentence" chart.
+ */
+export function recordResult(stats: Stats, puzzle: number, won: boolean, solved: number | number[]): Stats {
   const s: Stats = { ...stats, dist: [...stats.dist] };
   s.played++;
+  const counts = Array.isArray(solved) ? solved : won ? [solved] : [];
+  for (const n of counts) if (n >= 1 && n <= MAX_ATTEMPTS) s.dist[n - 1]++;
   if (won) {
     s.won++;
-    s.dist[attempts - 1]++;
     s.streak = s.lastWon === puzzle - 1 ? s.streak + 1 : 1;
     s.maxStreak = Math.max(s.maxStreak, s.streak);
     s.lastWon = puzzle;

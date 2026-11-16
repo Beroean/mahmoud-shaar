@@ -29,24 +29,15 @@ interface Draft {
   level: number;
 }
 
-const AUTHOR_KEY = "shakkil-review:author";
 const lines = (s: string) => s.split("\n").map((l) => l.trim()).filter(Boolean);
-
-function rememberedAuthor(): string {
-  try {
-    return localStorage.getItem(AUTHOR_KEY) ?? "";
-  } catch {
-    return "";
-  }
-}
 
 function toDraft(c: Queued): Draft {
   return {
     text: c.text,
     irab: c.irab.join("\n"),
     alts: (c.alts ?? []).join("\n"),
-    // Quran / poetry / literature are credited to their source, not the reviewer.
-    author: c.author ?? (c.source && c.source !== "llm-reviewed" ? "" : rememberedAuthor()),
+    // Only the candidate's own credit. Never carry a name over from another sentence.
+    author: c.author ?? "",
     ref: c.ref ?? "",
     level: c.level ?? 1,
   };
@@ -165,11 +156,6 @@ export default function Review() {
     if (!current || !draft || busy) return;
     setBusy(true);
     try {
-      try {
-        localStorage.setItem(AUTHOR_KEY, draft.author);
-      } catch {
-        /* ignore */
-      }
       const r = await api<{ file: string }>("/approve", {
         id: current.id,
         candidate: {

@@ -1,9 +1,11 @@
 import { type ReactNode, useEffect, useState } from "react";
 import { type Word, sentenceToString, wordToString } from "../core/arabic";
 import { isLaunched, msUntilLaunch, msUntilNext } from "../core/daily";
-import { shareText, toArabicDigits } from "../core/share";
-import { MAX_ATTEMPTS, type Stats, currentStreak } from "../core/storage";
-import type { GameState } from "../game";
+import type { Puzzle } from "../core/puzzle";
+import { shareText, shareTextDay, toArabicDigits } from "../core/share";
+import { MAX_ATTEMPTS, type RoundRecord, type Stats, currentStreak } from "../core/storage";
+import { type GameState, initGame } from "../game";
+import { LevelBadge } from "./LevelBadge";
 import { RESULT_STYLE } from "./styles";
 
 export function Modal({ title, onClose, children }: { title: string; onClose: () => void; children: ReactNode }) {
@@ -50,6 +52,10 @@ export function HelpModal({ onClose }: { onClose: () => void }) {
           كل يوم جملة قصيرة بلا تشكيل. ضع الحركات الصحيحة على حروفها، ولديك {toArabicDigits(MAX_ATTEMPTS)} محاولات.
         </p>
         <p>اضغط على حرف ثم اختر حركته من اللوحة. اضغط «تحقّق» عندما تنتهي.</p>
+        <p>
+          في كل يوم ثلاث جمل: سهلة ثم متوسطة ثم صعبة، ولكل جملة {toArabicDigits(MAX_ATTEMPTS)} محاولات. يُحسب اليوم فوزًا
+          ويستمر تتابعك إذا شكّلت الجمل الثلاث.
+        </p>
         <ul className="space-y-2">
           <Swatch kind="correct" label="صحيح، ويُثبَّت في المحاولات التالية" />
           <Swatch kind="partial" label="نصف صحيح: الحركة صحيحة والشدة لا (أو العكس)، أو تنوين بدل الحركة" />
@@ -217,5 +223,93 @@ function Credit({ puzzle }: { puzzle: GameState["puzzle"] }) {
     <p className="text-xs text-paper/40 mb-4">
       {label}: {who}
     </p>
+  );
+}
+
+/** End of a three-sentence day: every sentence's answer, i'rab and credit, plus the day's share text. */
+export function DayResultModal({
+  rounds,
+  progress,
+  number,
+  onShare,
+  onPractice,
+  onClose,
+}: {
+  rounds: Puzzle[];
+  progress: RoundRecord[];
+  number: number;
+  onShare: (text: string) => void;
+  onPractice: () => void;
+  onClose: () => void;
+}) {
+  const states = rounds.map((p, i) => initGame(p, progress[i]?.attempts ?? []));
+  const solved = states.filter((s) => s.status === "won").length;
+  const done = states.every((s) => s.status !== "playing");
+  const text = shareTextDay(
+    number,
+    states.map((s, i) => ({
+      level: rounds[i].level ?? i + 1,
+      attempts: s.results.map((r) => r.letters),
+      won: s.status === "won",
+    })),
+  );
+  const title = !done
+    ? "جمل اليوم"
+    : solved === rounds.length
+      ? "أحسنت! شكّلت جمل اليوم كلها"
+      : `شكّلت ${toArabicDigits(solved)} من ${toArabicDigits(rounds.length)}`;
+  return (
+    <Modal title={title} onClose={onClose}>
+      <ol className="space-y-6 mb-6">
+        {states.map((s, i) => {
+          const puzzle = rounds[i];
+          const variant = puzzle.variants[s.results[s.results.length - 1]?.variant ?? 0] ?? puzzle.variants[0];
+          return (
+            <li key={i} className="border-b border-paper/10 pb-5 last:border-0">
+              <div className="flex items-center gap-2 text-sm text-paper/60 mb-1">
+                <LevelBadge level={puzzle.level ?? i + 1} className="" />
+                {s.status === "won"
+                  ? `في ${toArabicDigits(s.attempts.length)} من ${toArabicDigits(MAX_ATTEMPTS)}`
+                  : s.status === "lost"
+                    ? "لم تُشكَّل"
+                    : "لم تكتمل"}
+              </div>
+              <Answer words={variant.words} />
+              <details className="mt-2">
+                <summary className="cursor-pointer text-sm text-paper/60 hover:text-paper">الإعراب</summary>
+                <dl className="space-y-2 mt-3">
+                  {puzzle.words.map((w, k) => (
+                    <div key={k} className="flex gap-3 items-baseline">
+                      <dt className="font-naskh text-xl text-gold shrink-0">{wordToString(w)}</dt>
+                      <dd className="text-sm text-paper/80 leading-relaxed">{puzzle.irab[k]}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </details>
+              <div className="mt-2">
+                <Credit puzzle={puzzle} />
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+      <div className="flex flex-wrap gap-3 items-center">
+        {done && (
+          <button
+            type="button"
+            onClick={() => onShare(text)}
+            className="px-5 py-3 rounded-md bg-gold text-ink font-bold hover:bg-gold/90"
+          >
+            شارك النتيجة
+          </button>
+        )}
+        <button type="button" onClick={onPractice} className="px-5 py-3 rounded-md border border-paper/20 hover:border-paper/50">
+          جملة للتدريب
+        </button>
+      </div>
+      <p className="text-sm text-paper/50 mt-5">
+        {isLaunched() ? "الجمل التالية بعد" : "تبدأ اللعبة رسميًا بعد"} <Countdown />
+      </p>
+    </Modal>
   );
 }

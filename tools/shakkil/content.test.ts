@@ -10,7 +10,7 @@ import { loadAll } from "./content";
 const MIN_RUNWAY_DAYS = 14;
 
 describe("content/shakkil/puzzles", () => {
-  const { results, setErrors } = loadAll();
+  const { results, pool, setErrors } = loadAll();
 
   it("has puzzles", () => {
     expect(results.length).toBeGreaterThan(0);
@@ -20,16 +20,17 @@ describe("content/shakkil/puzzles", () => {
     expect(setErrors).toEqual([]);
   });
 
-  it.each(results.map((r) => [r.file, r] as const))("%s is valid", (_, r) => {
+  it.each([...results, ...pool].map((r) => [r.file, r] as const))("%s is valid", (_, r) => {
     expect(r.errors).toEqual([]);
   });
 
   it(`covers at least ${MIN_RUNWAY_DAYS} days ahead (after launch)`, () => {
     if (dayIndex() < LAUNCH_DAY) return; // pre-launch: nothing scheduled yet
-    const remaining = results.length - puzzleNumber();
+    const lastDay = Math.max(...results.map((r) => r.number));
+    const remaining = lastDay - puzzleNumber();
     expect(
       remaining,
-      `only ${remaining} puzzle(s) left in the schedule; add more under content/shakkil/puzzles`,
+      `only ${remaining} day(s) left in the schedule; add puzzles and run npm run schedule -- plan`,
     ).toBeGreaterThanOrEqual(MIN_RUNWAY_DAYS);
   });
 });

@@ -55,8 +55,13 @@ function sharedHead(): Plugin {
 function shakkilPuzzles(): Plugin {
   const ID = "virtual:shakkil-puzzles";
   const RESOLVED = "\0" + ID;
+  // The dev server serves every day so `/shakkil/?day=N` can preview future days locally.
+  let serveAll = false;
   return {
     name: "shakkil-puzzles",
+    configResolved(config) {
+      serveAll = config.command === "serve";
+    },
     resolveId: (id) => (id === ID ? RESOLVED : undefined),
     load(id) {
       if (id !== RESOLVED) return;
@@ -66,7 +71,7 @@ function shakkilPuzzles(): Plugin {
         ...results.flatMap((r) => r.errors.map((e) => `${r.file}: ${e}`)),
       ];
       if (errors.length) this.error(`Invalid Shakkil puzzles:\n${errors.join("\n")}`);
-      const lastDay = puzzleNumber() + SHAKKIL_DAYS_AHEAD;
+      const lastDay = serveAll ? Infinity : puzzleNumber() + SHAKKIL_DAYS_AHEAD;
       const shipped = results.filter((r) => r.number <= lastDay).map((r) => r.source);
       return `export default ${JSON.stringify(shipped)};`;
     },

@@ -34,8 +34,8 @@ function changedPuzzles(base: string): Change[] {
     });
 }
 
-/** The day order on the base branch (what is live now). */
-function baseOrder(base: string): string[] {
+/** The days on the base branch (what is live now), each a list of puzzle IDs. */
+function baseOrder(base: string): string[][] {
   const git = (...args: string[]) => execFileSync("git", args, { encoding: "utf8" });
   const ids = git("ls-tree", "--name-only", base, "--", "content/shakkil/puzzles/")
     .split(/\r?\n/)
@@ -47,7 +47,14 @@ function baseOrder(base: string): string[] {
   } catch {
     /* no schedule on base */
   }
-  return resolveOrder(parseSchedule(schedule), ids).order;
+  return resolveOrder(parseSchedule(schedule), ids).days;
+}
+
+/** Days as lists of IDs, rebuilt from loaded results (which carry their day number). */
+function daysOf(results: FileResult[]): string[][] {
+  const days: string[][] = [];
+  for (const r of results) (days[r.number - 1] ??= []).push(r.id);
+  return days;
 }
 
 function scheduleChanged(base: string): boolean {
@@ -86,7 +93,7 @@ function wordTable(r: FileResult): string {
 
 export interface ScheduleContext {
   /** Day order currently live (base branch). */
-  baseOrder: string[];
+  baseOrder: string[][];
   /** Days that have been played (today included); they must not change. */
   locked: number;
   scheduleChanged?: boolean;
@@ -96,17 +103,19 @@ export function buildReport(
   changes: Change[],
   results: FileResult[],
   setErrors: string[],
-  ctx: ScheduleContext = { baseOrder: results.map((r) => r.id), locked: 0 },
+  ctx: ScheduleContext = { baseOrder: daysOf(results), locked: 0 },
 ) {
   const byFile = new Map(results.map((r) => [r.file, r]));
-  const lockedIds = new Set(ctx.baseOrder.slice(0, ctx.locked));
+  const lockedIds = new Set(ctx.baseOrder.slice(0, ctx.locked).flat());
   const lines: string[] = [MARKER, "## شَكِّل · فحص الجمل / puzzle check", ""];
   let ok = setErrors.length === 0;
   const warnings: string[] = [];
 
   // Played days are locked: their puzzles must stay on the same days.
-  const headOrder = results.map((r) => r.id);
-  const moved = ctx.baseOrder.slice(0, ctx.locked).filter((id, k) => headOrder[k] !== id);
+  const headDays = daysOf(results);
+  const moved = ctx.baseOrder
+    .slice(0, ctx.locked)
+    .flatMap((day, k) => (day.join() === (headDays[k] ?? []).join() ? [] : day));
   if (moved.length) {
     ok = false;
     lines.push(
@@ -169,7 +178,7 @@ export function buildReport(
   }
 
   if (ctx.scheduleChanged) {
-    const upcoming = results.slice(ctx.locked, ctx.locked + 10);
+    const upcoming = results.filter((r) => r.number > ctx.locked && r.number <= ctx.locked + 10);
     lines.push(
       "### 📅 الترتيب الجديد / new order",
       "",
