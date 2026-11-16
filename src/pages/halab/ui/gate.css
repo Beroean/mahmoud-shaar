@@ -1,0 +1,138 @@
+/*
+ * Entering through the gate of the Citadel of Aleppo (GateIntro.tsx). About 3 s:
+ * approach (0–0.8 s), the doors swing inward (0.8–2.1 s), then we walk through the arch into the
+ * light (1.8–3 s). Every animation runs on transform/opacity only.
+ */
+
+.gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #0a0a0a;
+  cursor: pointer;
+  animation: gate-out 0.7s ease-in 2.35s both;
+}
+
+.gate-scene {
+  position: relative;
+  height: min(84vh, 132vw);
+  aspect-ratio: 400 / 560;
+  transform-origin: 50% 74%;
+  animation:
+    gate-approach 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both,
+    gate-through 1.25s cubic-bezier(0.55, 0, 0.8, 0.35) 1.75s forwards;
+}
+
+.gate-scene > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* The doorway: the inner arch, x 140–260 and y 276.1–560 of the 400 × 560 facade. */
+.gate-doorway {
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  top: 49.3%;
+  height: 50.7%;
+  perspective: 700px;
+}
+
+.gate-light {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 78%, rgb(255 236 190 / 0.95), rgb(201 169 110 / 0.6) 45%, rgb(201 169 110 / 0.08) 85%);
+  opacity: 0.15;
+  animation: gate-light 1.4s ease-in 0.8s forwards;
+}
+
+.gate-door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.gate-door > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gate-door-left {
+  left: 0;
+  transform-origin: 0 50%;
+  animation: gate-open-left 1.35s cubic-bezier(0.55, 0.05, 0.3, 1) 0.8s forwards;
+}
+
+.gate-door-right {
+  right: 0;
+  transform-origin: 100% 50%;
+  animation: gate-open-right 1.35s cubic-bezier(0.55, 0.05, 0.3, 1) 0.8s forwards;
+}
+
+.gate-skip {
+  position: absolute;
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  inset-inline: 0;
+  margin-inline: auto;
+  width: fit-content;
+  font-size: 0.75rem;
+  color: rgb(232 228 220 / 0.35);
+  animation: gate-fade 0.6s ease 0.4s both;
+}
+
+@keyframes gate-approach {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(2%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Inward, like the real gate: the free edge swings away from us. */
+@keyframes gate-open-left {
+  to {
+    transform: rotateY(100deg);
+  }
+}
+
+@keyframes gate-open-right {
+  to {
+    transform: rotateY(-100deg);
+  }
+}
+
+@keyframes gate-light {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gate-through {
+  to {
+    transform: scale(7);
+  }
+}
+
+@keyframes gate-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes gate-fade {
+  from {
+    opacity: 0;
+  }
+}

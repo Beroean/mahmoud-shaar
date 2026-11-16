@@ -9,6 +9,7 @@ import {
   BarsIcon,
   CandlesIcon,
   CapIcon,
+  CitadelIcon,
   GitHubIcon,
   GlobeIcon,
   HarakaIcon,
@@ -73,6 +74,22 @@ const EXPERIMENTS: Experiment[] = [
     blurb:
       "A daily Arabic diacritics puzzle: put the right harakat on a short sentence in six tries, then see the i'rab of every word.",
     cta: "Play today's puzzle",
+  },
+  {
+    href: "/halab/",
+    icon: <CitadelIcon />,
+    kicker: "Daily Game · Aleppo",
+    title: (
+      <>
+        <span lang="ar" className="font-naskh">
+          حلبيّات
+        </span>{" "}
+        · Halabiyyat
+      </>
+    ),
+    blurb:
+      "Three rounds a day from al-Asadi's Comparative Encyclopedia of Aleppo: where a word came from, a proverb to finish, and a riddle, street cry or folk belief.",
+    cta: "Play today's rounds",
   },
 ];
 
@@ -178,7 +195,7 @@ export default function Home() {
             <a
               key={x.href}
               href={x.href}
-              className="bg-ink p-8 group hover:bg-ink-2 transition-colors duration-300 block"
+              className="bg-ink p-8 group hover:bg-ink-2 transition-colors duration-300 block md:[&:last-child:nth-child(odd)]:col-span-2"
             >
               <div className="flex justify-center text-gold/80 group-hover:text-gold mb-5 transition-colors duration-300">
                 {x.icon}

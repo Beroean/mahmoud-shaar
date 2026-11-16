@@ -97,6 +97,25 @@ export function HarakaIcon({ className }: IconProps) {
   );
 }
 
+/**
+ * The great gate of the Citadel of Aleppo, seen head-on: the stone block, its tall pointed arch, the
+ * projecting machicolations either side, the arched windows above and the framed central window.
+ * حلبيّات.
+ */
+export function CitadelIcon({ className }: IconProps) {
+  return (
+    <LineIcon className={className}>
+      <path d="M2.5 21V4.5h19V21" />
+      <path d="M1.5 21h21" />
+      <path d="M10.6 4.5V3.2h2.8v1.3" />
+      <path d="M9.4 21v-7.2c0-2.2 1.2-3.9 2.6-4.9 1.4 1 2.6 2.7 2.6 4.9V21" />
+      <path d="M3.5 11.6h3.6v2.1H3.5zM16.9 11.6h3.6v2.1h-3.6z" />
+      <path d="M11 8V6.2h2V8" />
+      <path d="M5.3 8.5V7.3c0-.5.3-.8.5-1 .2.2.5.5.5 1v1.2M17.7 8.5V7.3c0-.5.3-.8.5-1 .2.2.5.5.5 1v1.2" />
+    </LineIcon>
+  );
+}
+
 /** Stacked layers. "All entries" (countries + aggregates). */
 export function LayersIcon({ className }: IconProps) {
   return (
