@@ -85,11 +85,11 @@ if (textIdx >= 0) {
       ok = report(loadPuzzleFile(path)) && ok;
     }
   } else {
-    const { results, setErrors } = loadAll();
-    for (const r of results) ok = report(r) && ok;
+    const { results, pool, setErrors } = loadAll();
+    for (const r of [...results, ...pool]) ok = report(r) && ok;
     for (const e of setErrors) console.log(red(`✗ ${e}`));
     ok = ok && setErrors.length === 0;
-    console.log(`\n${results.length} puzzles, ${ok ? green("all valid") : red("errors found")}`);
+    console.log(`\n${results.length + pool.length} puzzles (${pool.length} not scheduled yet), ${ok ? green("all valid") : red("errors found")}`);
   }
 }
 

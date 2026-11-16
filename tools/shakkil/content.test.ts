@@ -10,7 +10,7 @@ import { loadAll } from "./content";
 const MIN_RUNWAY_DAYS = 14;
 
 describe("content/shakkil/puzzles", () => {
-  const { results, setErrors } = loadAll();
+  const { results, pool, setErrors } = loadAll();
 
   it("has puzzles", () => {
     expect(results.length).toBeGreaterThan(0);
@@ -20,7 +20,7 @@ describe("content/shakkil/puzzles", () => {
     expect(setErrors).toEqual([]);
   });
 
-  it.each(results.map((r) => [r.file, r] as const))("%s is valid", (_, r) => {
+  it.each([...results, ...pool].map((r) => [r.file, r] as const))("%s is valid", (_, r) => {
     expect(r.errors).toEqual([]);
   });
 

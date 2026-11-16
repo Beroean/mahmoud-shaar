@@ -159,7 +159,8 @@ export function loadAll(
   const pool = poolIds.map((id) => byId.get(id)!);
   const rejected = readRejected();
   const seen = new Map<string, string>();
-  for (const r of results) {
+  // Scheduled and pool puzzles alike: a pool sentence is a future day.
+  for (const r of [...results, ...pool]) {
     const key = r.source?.text?.normalize("NFC").trim();
     if (!key) continue;
     if (rejected.has(sentenceKey(key))) {
@@ -167,10 +168,6 @@ export function loadAll(
     }
     if (seen.has(key)) setErrors.push(`جملة مكررة في ${seen.get(key)} و ${r.file} / duplicate sentence`);
     else seen.set(key, r.file);
-  }
-  for (const r of pool) {
-    const key = r.source?.text?.normalize("NFC").trim();
-    if (key && rejected.has(sentenceKey(key))) setErrors.push(`${r.file}: الجملة مرفوضة أو محجوزة في rejected.yaml / sentence is rejected or reserved`);
   }
   return { results, days, pool, setErrors };
 }
