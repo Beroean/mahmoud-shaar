@@ -1,0 +1,7564 @@
+# Round 2 · كمّل المثل — finish the Aleppine proverb.
+#
+# text:     the proverb with ___ where the hidden word goes (exactly one ___)
+# answer:   the hidden word
+# others:   three wrong words that fit the sentence but not the proverb
+# meaning:  a short gloss shown after answering. The encyclopedia rarely explains proverbs, so these
+#           are written for the game unless `meaning_source: book` (please review them closely)
+# line:     line number in the book (blank lines removed) where the proverb appears
+
+- id: p001
+  text: لو كان الجمل شاف ___ كان وقع وانكسرت رقبتو
+  answer: حدبتو
+  others: [ ضلّو, دنبو, حملو ]
+  meaning: لو رأى المرء عيوبه لما عاب غيره.
+  line: 16058
+  status: draft
+
+- id: p002
+  text: العصفور عم بيتفلّى والصيّاد عم ___
+  answer: بيتقلّى
+  others: [ بيتسلّى, بيتعشّى, بيتغنّى ]
+  meaning: واحد مرتاح لا يدري بما ينتظره، والآخر على نار يترقّبه.
+  line: 38937
+  status: draft
+
+- id: p003
+  text: اللي أمّو بالبيت خبزتو مدهونة ___
+  answer: بزيت
+  others: [ بسمن, بعسل, بدبس ]
+  meaning: من كانت أمه حاضرة لا ينقصه شيء من الرعاية.
+  line: 71521
+  status: draft
+
+- id: p004
+  text: المطرة في نيسان بتسوى السكّة و___
+  answer: الفدّان
+  others: [ البستان, الدكّان, الميزان ]
+  meaning: مطر نيسان ثمين للزرع، يساوي آلة الحراثة وثيرانها.
+  line: 88454
+  status: draft
+
+- id: p005
+  text: الدين سواد ___
+  answer: الخدّين
+  others: [ العينين, الإيدين, القلب ]
+  meaning: الدَّين همّ وذلّ يظهر على وجه صاحبه.
+  line: 91241
+  status: draft
+
+- id: p006
+  text: إذا حضر الأصيل بطل ___
+  answer: الوكيل
+  others: [ الدليل, البخيل, الكفيل ]
+  meaning: إذا حضر صاحب الشأن نفسه فلا حاجة إلى من ينوب عنه.
+  line: 8997
+  status: draft
+
+- id: p007
+  text: الصيت لأبو زيد والفعل ___
+  answer: لدياب
+  others: [ للزير, لعنتر, لجحا ]
+  meaning: الشهرة لواحد والعمل الحقيقي لغيره (أبو زيد الهلالي ودياب بن غانم من أبطال السيرة الهلالية).
+  line: 2699
+  status: draft
+
+- id: p008
+  text: أعرج حلب وصل ___
+  answer: للهند
+  others: [ للشام, لليمن, للصين ]
+  meaning: الإرادة تبلغ بصاحبها أبعد مما يُظنّ به.
+  line: 173196
+  status: draft
+
+- id: p009
+  text: يا كترة اصحابي لمّا كان كرمي دبس، ويا قلّة اصحابي لمّا صار كرمي ___
+  answer: يبس
+  others: [ حصرم, خلّ, شوك ]
+  meaning: يكثر الأصحاب في الرخاء ويقلّون في الشدّة.
+  line: 177396
+  status: draft
+
+- id: p010
+  text: عزّ الزيت ___
+  answer: بخان الزيت
+  others: [ بسوق العطّارين, بخان الحرير, بباب الفرج ]
+  meaning: لكل شيء قيمته في موضعه (وخان الزيت من خانات حلب القديمة).
+  line: 114120
+  status: draft
+
+- id: p011
+  text: هزّ عصاية العزّ ولا ___ فيها
+  answer: تضرب
+  others: [ تكسر, تتّكي, ترمي ]
+  meaning: لوّح بالهيبة ولا تستعمل القوة.
+  line: 104532
+  status: draft
+
+- id: p012
+  text: ما بيحنّ عالعود إلا ___
+  answer: قشرو
+  others: [ جذرو, ورقو, غصنو ]
+  meaning: لا يشفق على المرء إلا أهله وأقرب الناس إليه.
+  line: 59581
+  status: draft
+
+- id: p013
+  text: القمر إذا كان عليه طارة بتكون ليلة غدا ___
+  answer: مطّارة
+  others: [ حرّارة, سهّارة, غبّارة ]
+  meaning: من علامات الطقس عندهم، إذا ظهرت هالة حول القمر أمطرت في الليلة التالية.
+  line: 159641
+  status: draft
+
+- id: p014
+  text: إذا طعميت شبّع وإذا ضربت ___
+  answer: وجّع
+  others: [ علّم, سامح, اهرب ]
+  meaning: إذا فعلت شيئًا فافعله كاملًا.
+  line: 174441
+  status: draft
+
+- id: p015
+  text: لولا هديك الشبكة ما أجت هالـ___
+  answer: سمكة
+  others: [ غيمة, نعمة, حكاية ]
+  meaning: لكل نتيجة سبب سبقها.
+  line: 172248
+  status: draft
+
+- id: p016
+  text: ابن آدم عينو ما بتشبع إلا ___
+  answer: مالتراب
+  others: [ مالدهب, مالخبز, مالنوم ]
+  meaning: طمع الإنسان لا ينتهي إلا بموته.
+  line: 34072
+  status: draft
+
+- id: p100
+  text: آب اللّهاب، طبّاخ التين و___
+  answer: العنّاب
+  others: [ "الرمّان", "الزبيب", "الصبّار" ]
+  meaning: آب شديد الحرّ يُنضج التين والعنّاب.
+  line: 678
+  status: draft
+
+- id: p101
+  text: اللي إلو أوّل إلو ___
+  answer: آخر
+  others: [ "بيت", "ناس", "رزق" ]
+  meaning: لكلّ شيء بداية ونهاية.
+  line: 842
+  status: draft
+
+- id: p102
+  text: لا تخاف مالآغا، خاف من ___
+  answer: كلابو
+  others: [ "جيرانو", "ولادو", "ضيوفو" ]
+  meaning: الأذى يأتي غالبًا من أتباع صاحب السلطة لا منه.
+  line: 1120
+  status: draft
+
+- id: p103
+  text: صينيّة كنافة وجنبا ___
+  answer: آفة
+  others: [ "قطايف", "حلاوة", "صفيحة" ]
+  meaning: قد يكمن الأذى إلى جانب الشيء المغري.
+  meaning_source: book
+  line: 1145
+  status: draft
+
+- id: p104
+  text: بدعي على ولدي وبدعي عاللي بيقول ___
+  answer: آمين
+  others: [ "مرحبا", "صحّتين", "الله معك" ]
+  meaning: الأمّ تدعو على ولدها في غضبها ولا تريد أن يُستجاب لها.
+  line: 1328
+  status: draft
+
+- id: p105
+  text: إبريق ما بيطفي ___
+  answer: حريق
+  others: [ "قنديل", "بابور", "كانون" ]
+  meaning: القليل لا يكفي لدفع المصيبة الكبيرة.
+  line: 2021
+  status: draft
+
+- id: p106
+  text: إن أسعدك أسماك وإن أتعسك ___
+  answer: أرماك
+  others: [ "أبكاك", "أنساك", "أغناك" ]
+  meaning: الحظّ إن ساعدك رفعك وإن خانك أسقطك.
+  line: 3183
+  status: draft
+
+- id: p107
+  text: إذا اتّفقوا اتنين لابدّ واحد منّن ___
+  answer: غلبان
+  others: [ "زعلان", "فرحان", "سهران" ]
+  meaning: في كلّ اتفاق طرف يتنازل أو يخسر.
+  line: 3200
+  status: draft
+
+- id: p108
+  text: إذا صارت ورقة التين قدّ إجر البطّة، نام ولا ___
+  answer: تتغطّى
+  others: [ "تتعشّى", "تسهر", "تبكّر" ]
+  meaning: إذا كبر ورق التين دفئ الجوّ واستغنى النائم عن الغطاء.
+  line: 3690
+  status: draft
+
+- id: p109
+  text: كانون الأوّل الأجرد خلّى الشجر ___
+  answer: أمرد
+  others: [ "أخضر", "مزهّر", "مورّق" ]
+  meaning: كانون الأوّل يعرّي الشجر من ورقه.
+  line: 12716
+  status: draft
+
+- id: p110
+  text: ما بيفضح البيت الكبير إلا الكنّة و___
+  answer: الأجير
+  others: [ الجارة, الضيف, الحماية ]
+  meaning: أسرار البيت تخرج ممّن يدخلونه من خارج أهله.
+  line: 29949
+  status: approved
+
+- id: p111
+  text: اللي انحرق لسانو مالحليب الحار، بينفخ عال___
+  answer: رايب
+  others: [ "مي", "شاي", "عصير" ]
+  meaning: من أصابه ضرر مرّة صار يحتاط حتى ممّا لا يضرّ.
+  line: 3987
+  status: draft
+
+- id: p112
+  text: شو في أحلى مالعسل؟ قال، الخلّ ___
+  answer: ببلاش
+  others: [ "بالسكّر", "بالعسل", "بالزيت" ]
+  meaning: ما يأتي بلا ثمن أحلى من الثمين.
+  line: 4193
+  status: draft
+
+- id: p113
+  text: القرش بيفرّق بين الأخ و___
+  answer: أخوه
+  others: [ "جارو", "رفيقو", "ابن عمّو" ]
+  meaning: المال يفسد ما بين الإخوة.
+  line: 4399
+  status: draft
+
+- id: p114
+  text: لولا تختلف العقول ما بتنفق ___
+  answer: السلع
+  others: [ "الدراهم", "البيوت", "الكتب" ]
+  meaning: لاختلاف الأذواق تروج البضائع.
+  line: 4542
+  status: draft
+
+- id: p115
+  text: قالوا للجمل، ليش بتاكل شوك؟ قال، بفتكرو لمّا كان ___
+  answer: أخضر
+  others: [ "حلو", "كبير", "ناشف" ]
+  meaning: يتعلّق المرء بالشيء لذكرى أيّامه الحلوة.
+  line: 10098
+  status: draft
+
+- id: p116
+  text: الله يديم أيّام الرخا حتّى نضلّ ___
+  answer: صحاب
+  others: [ أغنيا, شباب, سهرانين ]
+  meaning: الصداقة تدوم في أيّام اليسر وتنكشف في العسر.
+  line: 4960
+  status: approved
+
+- id: p117
+  text: حلّينا القلوع وأرسينا، وأصبحنا على ما ___
+  answer: أمسينا
+  others: [ "نوينا", "لقينا", "بدينا" ]
+  meaning: تعب كثير ولم يتغيّر شيء.
+  line: 5737
+  status: draft
+
+- id: p118
+  text: كلام الأسى ما ___
+  answer: بينتسى
+  others: [ "بينقال", "بينحكى", "بينكتب" ]
+  meaning: الكلمة الجارحة تبقى في القلب.
+  line: 6286
+  status: draft
+
+- id: p119
+  text: تينة جنب تينة ___
+  answer: بتستوي
+  others: [ "بتكبر", "بتحلى", "بتزهّر" ]
+  meaning: القرين يؤثّر في قرينه.
+  meaning_source: book
+  line: 7437
+  status: draft
+
+- id: p120
+  text: شو بيعمل الحاسد مع ___
+  answer: الرازق
+  others: [ "الحاكم", "الشاطر", "الغني" ]
+  meaning: الحسد لا يمنع رزقًا كتبه الله.
+  line: 8142
+  status: draft
+
+- id: p121
+  text: القرصة بغصّة ولو كانت من أصابيع ___
+  answer: فضّة
+  others: [ "حرير", "شمع", "زبدة" ]
+  meaning: الأذى مؤلم مهما كان مصدره كريمًا.
+  line: 8679
+  status: draft
+
+- id: p122
+  text: جينا لنصيدو ___
+  answer: اصطادنا
+  others: [ "هرب منّا", "عضّنا", "ضحك علينا" ]
+  meaning: أردنا أن نوقع به فأوقع بنا.
+  line: 8820
+  status: draft
+
+- id: p123
+  text: كلّ ما جعت بتاكل ___
+  answer: أطيب
+  others: [ "أكتر", "أسرع", "أقلّ" ]
+  meaning: الجوع يطيّب الطعام.
+  line: 9263
+  status: draft
+
+- id: p124
+  text: الإعادة فيها ___
+  answer: إفادة
+  others: [ "زيادة", "عبادة", "سعادة" ]
+  meaning: تكرار الكلام يرسّخه.
+  line: 9302
+  status: draft
+
+- id: p125
+  text: لابدّ مالدهب يعتاز لل___
+  answer: نخالة
+  others: [ "فضّة", "نحاس", "حديد" ]
+  meaning: النفيس يحتاج أحيانًا إلى الخسيس.
+  line: 9336
+  status: draft
+
+- id: p126
+  text: أعزب دهر ولا أرمل ___
+  answer: شهر
+  others: [ "ليلة", "جمعة", "عمر" ]
+  meaning: العزوبة الطويلة أهون من الترمّل القصير.
+  line: 9514
+  status: draft
+
+- id: p127
+  text: برّوك أعوج واحكي ___
+  answer: ساوي
+  others: [ مليح, عالي, شوي ]
+  meaning: اجلس كيفما شئت ولكن تكلّم بالحقّ.
+  line: 9653
+  status: approved
+
+- id: p128
+  text: إذا أفلس الجندي بيدوّر عالدفاتر ___
+  answer: العتق
+  others: [ "الجداد", "المخبّاية", "الضايعة" ]
+  meaning: المفلس يفتّش في ديونه القديمة.
+  line: 10242
+  status: draft
+
+- id: p129
+  text: الجنون ___
+  answer: فنون
+  others: [ "بطون", "ديون", "حصون" ]
+  meaning: للجنون صور كثيرة.
+  line: 10568
+  status: draft
+
+- id: p130
+  text: قالوا لجحا، عدّ أمواج البحر، قال، الجايات أكتر من ___
+  answer: الرايحات
+  others: [ "الطايرات", "الحاضرات", "الواقفات" ]
+  meaning: ما هو آتٍ أكثر ممّا مضى.
+  line: 45095
+  status: draft
+
+- id: p131
+  text: الرزق اللي ماهو ببلدك لا إلك ولا ___
+  answer: لولدك
+  others: [ "لجارك", "لأهلك", "لأخوك" ]
+  meaning: المال المكسوب في الغربة لا يدوم.
+  line: 27599
+  status: draft
+
+- id: p132
+  text: ما بيعلم بحالك غير الله و___
+  answer: جارك
+  others: [ "أخوك", "أمّك", "صاحبك" ]
+  meaning: الجار أدرى الناس بحال جاره.
+  line: 11759
+  status: draft
+
+- id: p133
+  text: الله بيطعمي الإجاص للي مالو ___
+  answer: أضراس
+  others: [ "إيدين", "نفس", "بيت" ]
+  meaning: قد تأتي النعمة لمن لا ينتفع بها.
+  line: 11757
+  status: draft
+
+- id: p134
+  text: العين لولا اللمس طابت من ___
+  answer: أمس
+  others: [ "بكرا", "الليل", "الجمعة" ]
+  meaning: كثرة لمس العين المريضة تؤخّر شفاءها.
+  line: 12747
+  status: draft
+
+- id: p135
+  text: سكّر بابك، ___ جارك
+  answer: أمّن
+  others: [ "سامح", "حبّ", "زور" ]
+  meaning: احفظ مالك بنفسك ولا تتّهم جارك.
+  line: 12896
+  status: draft
+
+- id: p136
+  text: أيّار، هات ___ واندار
+  answer: منجلك
+  others: [ "معولك", "فاسك", "سلّتك" ]
+  meaning: في أيّار يبدأ الحصاد.
+  line: 14163
+  status: draft
+
+- id: p137
+  text: كلّ الغنم ما بتنساق بفرد ___
+  answer: عصاية
+  others: [ "كلب", "صفّارة", "حبل" ]
+  meaning: لا يُعامل الناس جميعًا بطريقة واحدة.
+  line: 14542
+  status: draft
+
+- id: p138
+  text: اللي بيحكي الحقّ بينعوج ___
+  answer: قاووقو
+  others: [ "لسانو", "ضهرو", "حظّو" ]
+  meaning: من يقول الحقّ يتعرّض للأذى. والقاووق غطاء رأس قديم.
+  line: 15509
+  status: draft
+
+- id: p139
+  text: ماتت الحمارة وانقطعت ___
+  answer: الزيارة
+  others: [ "التجارة", "الحارة", "السيّارة" ]
+  meaning: تنقطع الصلة حين تنتهي المصلحة.
+  line: 16154
+  status: draft
+
+- id: p140
+  text: تلت أشيا ما بتنوجد، شباب دايم وقمر دايم و___ دايم
+  answer: ربيع
+  others: [ "صيف", "شتا", "نهار" ]
+  meaning: الأشياء الجميلة لا تدوم.
+  line: 16861
+  status: draft
+
+- id: p141
+  text: أوّل تلجة سمّ، وتاني تلجة دم، وتالت تلجة كول ولا ___
+  answer: تهتمّ
+  others: [ تنام, تعدّ, تقوم ]
+  meaning: الثلجة الأولى تحمل الغبار، وما بعدها أنظف.
+  line: 17044
+  status: approved
+
+- id: p142
+  text: جحا أولى بلحم ___
+  answer: تورو
+  others: [ "عجلو", "خاروفو", "جملو" ]
+  meaning: صاحب الشيء أحقّ به.
+  line: 17780
+  status: draft
+
+- id: p143
+  text: إيد وحدة ما ___
+  answer: بتسقّف
+  others: [ "بتشيل", "بتبني", "بتطبخ" ]
+  meaning: العمل يحتاج إلى التعاون.
+  line: 18167
+  status: draft
+
+- id: p144
+  text: أيلول طرفو بالشتا ___
+  answer: مبلول
+  others: [ "مشغول", "مكحول", "مقفول" ]
+  meaning: آخر أيلول يأتي بالمطر.
+  meaning_source: book
+  line: 18344
+  status: draft
+
+- id: p145
+  text: وحدة بوحدة والبادي ___
+  answer: أظلم
+  others: [ "أكرم", "أشطر", "أقوى" ]
+  meaning: من بدأ بالإساءة هو الملوم.
+  line: 19636
+  status: draft
+
+- id: p146
+  text: الولد إذا بار، تلتينو لل___
+  answer: خال
+  others: [ "عمّ", "جدّ", "جار" ]
+  meaning: الولد يشبه خاله في أكثر طباعه.
+  line: 19641
+  status: draft
+
+- id: p147
+  text: إذا ضبّبت عشيّة لاقيلك مغارة دفيّة، وإذا ضبّبت باكر خود عصايتك و___
+  answer: سافر
+  others: [ "نام", "سهّر", "اقعد" ]
+  meaning: ضباب المساء ينذر بالمطر، وضباب الصباح يبشّر بالصحو.
+  line: 83778
+  status: draft
+
+- id: p148
+  text: اللي عبالو لا يحرم ___
+  answer: حالو
+  others: [ "ولادو", "جارو", "ضيفو" ]
+  meaning: من اشتهى شيئًا فليأخذه ولا يحرم نفسه.
+  line: 20572
+  status: draft
+
+- id: p149
+  text: شو بدّك تدعي عالبلّانة؟ حفيانة ___
+  answer: عريانة
+  others: [ "تعبانة", "جوعانة", "سهرانة" ]
+  meaning: من لا يملك شيئًا لا يُخشى عليه. والبلّانة خادمة الحمّام.
+  line: 20604
+  status: draft
+
+- id: p150
+  text: بكرا بيدوب التلج وبيبان ___
+  answer: المرج
+  others: [ "الدرب", "النهر", "الحجر" ]
+  meaning: ستنكشف الحقيقة عمّا قريب.
+  line: 40035
+  status: draft
+
+- id: p151
+  text: بخت عطيني وفي البحر ___
+  answer: ارميني
+  others: [ "خبّيني", "نيّمني", "علّيني" ]
+  meaning: الحظّ أنفع من كلّ شيء.
+  line: 22081
+  status: draft
+
+- id: p152
+  text: البخيل إذا تكرّم بتتعجّب ملايكة ___
+  answer: السما
+  others: [ "الأرض", "البحر", "الجنّة" ]
+  meaning: كرم البخيل نادر عجيب.
+  line: 22274
+  status: draft
+
+- id: p153
+  text: اللي داق حلوتا بدّو يصبر على ___
+  answer: مرّتا
+  others: [ "قلّتا", "شرّتا", "نارا" ]
+  meaning: من نال حلو الشيء فليتحمّل مرّه.
+  line: 58488
+  status: draft
+
+- id: p154
+  text: في عيد البربارة النهار بيطول نطّة ___
+  answer: الفارة
+  others: [ "القطّة", "العصفورة", "الجاجة" ]
+  meaning: بعد عيد البربارة يبدأ النهار يطول قليلًا.
+  line: 22950
+  status: draft
+
+- id: p155
+  text: نام بظلّ الورد وتذكّر ليالي ___
+  answer: البرد
+  others: [ "السهر", "الوحدة", "العيد" ]
+  meaning: تذكّر أيّام الشدّة وأنت في الرخاء.
+  line: 34009
+  status: draft
+
+- id: p156
+  text: الرزّ بحليب كلّما برد ___
+  answer: بيطيب
+  others: [ "بيجمد", "بيخرب", "بيقسى" ]
+  meaning: الرزّ بحليب يؤكل باردًا.
+  line: 23308
+  status: draft
+
+- id: p157
+  text: كلّ الجمال بتعارك إلا جملنا ___
+  answer: بارك
+  others: [ "هارب", "نايم", "تعبان" ]
+  meaning: يسخرون من الكسول القاعد حين يعمل الجميع.
+  line: 23857
+  status: draft
+
+- id: p158
+  text: صفّي النيّة ونام ___
+  answer: بالبرّيّة
+  others: [ "بالبيت", "بالجامع", "عالسطح" ]
+  meaning: من صفت نيّته أمِن حيث كان.
+  line: 24408
+  status: draft
+
+- id: p159
+  text: جحشة الحكومة عرجا بس ___
+  answer: بتوصل
+  others: [ "بتمشي", "بتركض", "بتتعب" ]
+  meaning: عمل الحكومة بطيء لكنّه ينفذ في النهاية.
+  line: 24613
+  status: draft
+
+- id: p160
+  text: تلاتة من بستان، ورد وفلّ و___
+  answer: ريحان
+  others: [ "ياسمين", "نعنع", "زعتر" ]
+  meaning: أطيب ما في البستان.
+  line: 24768
+  status: draft
+
+- id: p161
+  text: البلد اللي بتصلّا، كول من ___
+  answer: بصلا
+  others: [ "خبزا", "لحما", "عنبا" ]
+  meaning: تكيّف مع عادات البلد الذي تنزل فيه.
+  line: 25418
+  status: draft
+
+- id: p162
+  text: الغريب أعمى ولو كان ___
+  answer: بصير
+  others: [ "غني", "كبير", "شاطر" ]
+  meaning: الغريب لا يعرف خفايا البلد مهما كان ذكيًّا.
+  line: 25530
+  status: draft
+
+- id: p163
+  text: فرخ البطّ ___
+  answer: سبّيح
+  others: [ "طيّار", "لعّيب", "نوّام" ]
+  meaning: الولد يشبه أهله.
+  line: 85089
+  status: draft
+
+- id: p164
+  text: إذا مات بلال ما ببطل ___
+  answer: الأدان
+  others: [ "الجامع", "الدين", "الصيام" ]
+  meaning: العمل لا يتوقّف بغياب شخص.
+  line: 27515
+  status: draft
+
+- id: p165
+  text: ابعد عن الشرّ و___ لو
+  answer: غنّي
+  others: [ "صلّي", "قول", "اقعد" ]
+  meaning: اجتنب الشرّ وعِش مرتاحًا.
+  line: 26253
+  status: draft
+
+- id: p166
+  text: إذا ردت تكدب بعّد ___
+  answer: شهودك
+  others: [ "كلامك", "بيتك", "صحابك" ]
+  meaning: الكاذب يستشهد بمن لا يمكن سؤاله.
+  line: 26260
+  status: draft
+
+- id: p167
+  text: قالوا للبغل، مين أبوك؟ قال، الفرس ___
+  answer: خالي
+  others: [ "عمّي", "جدّي", "أختي" ]
+  meaning: يتباهى المرء بأحسن أقاربه ويخفي الأقلّ.
+  line: 26536
+  status: draft
+
+- id: p168
+  text: تلت بلاوي من بلاوي الحقّ، البقّ والدقّ و___
+  answer: النقّ
+  others: [ "الشقّ", "الرقّ", "الزقّ" ]
+  meaning: ثلاث مصائب، البقّ والدقّ (الوشم) وكثرة التذمّر.
+  line: 26605
+  status: draft
+
+- id: p169
+  text: ضربني وبكى، وسبقني و___
+  answer: اشتكى
+  others: [ "حكى", "مشى", "ارتمى" ]
+  meaning: الظالم يتظاهر بأنّه المظلوم.
+  line: 27081
+  status: draft
+
+- id: p170
+  text: الولد إذا ما بكي ما بترضعو ___
+  answer: أمّو
+  others: [ "ستّو", "خالتو", "جارتو" ]
+  meaning: من لا يطالب بحقّه لا يناله.
+  line: 27326
+  status: draft
+
+- id: p171
+  text: قال لو، مين غاظك؟ قال لو، اللي ___
+  answer: بلّغك
+  others: [ "سبّك", "زارك", "شافك" ]
+  meaning: ناقل الكلام شريك في الأذى.
+  line: 27813
+  status: draft
+
+- id: p172
+  text: اللي بيهوانا بدّو يصبر على ___
+  answer: بلوانا
+  others: [ "هوانا", "دوانا", "عشانا" ]
+  meaning: من أحبّنا فليتحمّل عيوبنا.
+  line: 27915
+  status: draft
+
+- id: p173
+  text: قنباز العيد لا تلبسو قبل العيد بتروح ___
+  answer: بهجتو
+  others: [ "قيمتو", "ريحتو", "لونو" ]
+  meaning: لكلّ شيء وقته، واستعجاله يفسد فرحته.
+  line: 28954
+  status: draft
+
+- id: p174
+  text: البومة دارت دارت ما شافت أحسن من ___
+  answer: أولادا
+  others: [ "عشّا", "بيتا", "حالا" ]
+  meaning: كلّ أمّ ترى أولادها أجمل الناس.
+  line: 29697
+  status: draft
+
+- id: p175
+  text: لا تزعلي يا جارة، البيّاع لسّاه بال___
+  answer: حارة
+  others: [ "سوق", "دكّانة", "طريق" ]
+  meaning: لا يزال في الأمر متّسع.
+  line: 29867
+  status: draft
+
+- id: p176
+  text: شرط بالأوّل ولا خناقة عال___
+  answer: بيدر
+  others: [ "سوق", "باب", "درب" ]
+  meaning: الاتّفاق في البداية يمنع الخلاف في النهاية.
+  line: 30137
+  status: draft
+
+- id: p177
+  text: ابن غيرك ما بينفعك، وكلب غيرك ما ___
+  answer: بيتبعك
+  others: [ "بيحرسك", "بيعرفك", "بيسمعك" ]
+  meaning: لا تعتمد على ما ليس لك.
+  line: 31967
+  status: draft
+
+- id: p178
+  text: التبن إذا عتق ما بيصير ___
+  answer: تبر
+  others: [ "قمح", "شعير", "خبز" ]
+  meaning: الرديء لا يصير نفيسًا بمرور الزمن.
+  line: 32289
+  status: draft
+
+- id: p179
+  text: الولد لبسو خسارة وأكلو ___
+  answer: تجارة
+  others: [ "عبادة", "حضارة", "مرارة" ]
+  meaning: يقوى الولد بالأكل فيعمل ويفيد أهله.
+  meaning_source: book
+  line: 32545
+  status: draft
+
+- id: p180
+  text: كلّ مين بيتجوّز أمّي بسمّيه ___
+  answer: عمّي
+  others: [ "خالي", "سيدي", "جاري" ]
+  meaning: يسخرون من المتملّق لكلّ صاحب سلطة.
+  line: 32739
+  status: draft
+
+- id: p181
+  text: شرط الألفة ترك ___
+  answer: الكلفة
+  others: [ "العشرة", "الخلفة", "الغيبة" ]
+  meaning: الصداقة الحقيقيّة لا تكلّف فيها.
+  line: 34698
+  status: draft
+
+- id: p182
+  text: إذا تزاحمت الأقدام، الأعرج بيمشي ___
+  answer: قدّام
+  others: [ "ورا", "بالنصّ", "لحالو" ]
+  meaning: في الزحام يتقدّم أقلّ الناس أهليّة.
+  line: 35087
+  status: draft
+
+- id: p183
+  text: اللي ما بيطعمي التسعة ما بياكل ___
+  answer: العشرة
+  others: [ "التمانية", "المية", "الكلّ" ]
+  meaning: من لا يعطي قليلًا لا يكسب كثيرًا.
+  line: 35446
+  status: draft
+
+- id: p184
+  text: اللي بياكل مشبّك ___
+  answer: بيتشربك
+  others: [ "بيتعشّى", "بيتنشّط", "بيتعبّك" ]
+  meaning: يقع في الحبّ.
+  meaning_source: book
+  line: 35878
+  status: draft
+
+- id: p185
+  text: عضّ على حيّة ولا تعضّ على خيارة ___
+  answer: تشرينيّة
+  others: [ "صيفيّة", "شتويّة", "بلديّة" ]
+  meaning: خيار تشرين مرّ مؤذٍ.
+  line: 35929
+  status: draft
+
+- id: p186
+  text: إذا تصالح القطّ والفار، يا تعس ___
+  answer: العطّار
+  others: [ "الجزّار", "الفلّاح", "البقّال" ]
+  meaning: لأنّه لن يبيع سمّ الفار.
+  meaning_source: book
+  line: 37248
+  status: draft
+
+- id: p187
+  text: اللي بيخفّ راسو بيتعب ___
+  answer: إجريه
+  others: [ "إيديه", "قلبو", "ضهرو" ]
+  meaning: من لا يحسن التفكير يُتعب جسده.
+  line: 37003
+  status: draft
+
+- id: p188
+  text: أمر عجيب، تعلب راكب ___
+  answer: ديب
+  others: [ "حمار", "جمل", "حصان" ]
+  meaning: يُقال للأمر الغريب الذي لا يُصدّق.
+  line: 37389
+  status: draft
+
+- id: p189
+  text: الواحد ما بيتعلّم إلا من ___
+  answer: كيسو
+  others: [ "معلّمو", "أبوه", "كتابو" ]
+  meaning: لا يتعلّم المرء إلا ممّا يخسره بنفسه.
+  line: 37426
+  status: draft
+
+- id: p190
+  text: خفّ بتدرج، تقل ___
+  answer: بتعرج
+  others: [ "بتقعد", "بتوقع", "بتتعب" ]
+  meaning: الخفيف يسير بسهولة والمُثقل يتعثّر.
+  line: 38932
+  status: draft
+
+- id: p191
+  text: جبل مع جبل ما بيتلاقى، وابن آدم مع ابن آدم ___
+  answer: بيتلاقى
+  others: [ "بيتعادى", "بيتباعد", "بيتنازع" ]
+  meaning: الناس لا بدّ أن يلتقوا يومًا.
+  line: 39847
+  status: draft
+
+- id: p193
+  text: إفطار وإبطار ولو ضحكتين، وتغدّى وتمدّى ولو ___
+  answer: دقيقتين
+  others: [ "ساعتين", "لقمتين", "ليلتين" ]
+  meaning: بعد الغداء تمدّد ولو قليلًا.
+  line: 40923
+  status: draft
+
+- id: p194
+  text: بتمّوز بتغلي المي في ___
+  answer: الكوز
+  others: [ "الإبريق", "الجرّة", "الطنجرة" ]
+  meaning: حرّ تمّوز شديد.
+  line: 41410
+  status: draft
+
+- id: p195
+  text: المتهوم ألف والحرامي ___
+  answer: واحد
+  others: [ "هارب", "مخبّى", "قاعد" ]
+  meaning: التهمة تصيب الكثيرين والمذنب واحد.
+  line: 42586
+  status: draft
+
+- id: p196
+  text: ما في تين إلا ب___
+  answer: سلقين
+  others: [ "إدلب", "حماة", "عفرين" ]
+  meaning: تين سلقين ممتاز. وسلقين بلدة قرب حلب.
+  meaning_source: book
+  line: 43693
+  status: draft
+
+- id: p197
+  text: اللي بيزرع شجرة لازم ياكل ___
+  answer: تمرتا
+  others: [ "خشبا", "ورقا", "زهرا" ]
+  meaning: من تعب في شيء نال ثمرته.
+  line: 43885
+  status: draft
+
+- id: p198
+  text: الجحش بيسمن من ضرسو، وابن آدم بيسمن من ___
+  answer: أدنو
+  others: [ بطنو, تمّو, نومو ]
+  meaning: الإنسان يسعد بسماع البشارات والغناء.
+  meaning_source: book
+  line: 46091
+  status: approved
+
+- id: p199
+  text: ما بتعرف خيرو تتجرّب ___
+  answer: غيرو
+  others: [ "شرّو", "حالو", "دربو" ]
+  meaning: لا تعرف قيمة الشيء حتى تجرّب سواه.
+  line: 46638
+  status: draft
+
+- id: p200
+  text: ما بيخاف عالمال إلا اللي جناه، وما بيخاف عالولد غير اللي ___
+  answer: ربّاه
+  others: [ "حبّاه", "خلّاه", "شافو" ]
+  meaning: يعرف قيمة الشيء من تعب فيه.
+  line: 48887
+  status: draft
+
+- id: p201
+  text: جنب العقرب لا ___
+  answer: تقرب
+  others: [ "تضحك", "تحكي", "تغنّي" ]
+  meaning: ابتعد عن مصدر الأذى.
+  line: 48992
+  status: draft
+
+- id: p202
+  text: الجنّة بلا ناس ما ___
+  answer: بتنداس
+  others: [ "بتنحبّ", "بتنباع", "بتنشاف" ]
+  meaning: أجمل مكان لا يُطاق بلا أنيس.
+  line: 49320
+  status: draft
+
+- id: p203
+  text: النار فاكهة ___
+  answer: الشتا
+  others: [ "الصيف", "الليل", "الفقير" ]
+  meaning: الجلوس حول النار متعة الشتاء.
+  line: 49800
+  status: draft
+
+- id: p204
+  text: مو كلّ المدعبل جوز، ولا كلّ الطاول ___
+  answer: موز
+  others: [ "خيار", "قصب", "لوبيا" ]
+  meaning: المظاهر خدّاعة.
+  line: 49972
+  status: draft
+
+- id: p205
+  text: جوّع كلبك ___
+  answer: بيتبعك
+  others: [ "بيحرسك", "بيعضّك", "بيحبّك" ]
+  meaning: يقولونه في من يُذلّ الناس ليحتاجوه.
+  line: 50170
+  status: draft
+
+- id: p206
+  text: الخوف بيقطع ___
+  answer: الجوف
+  others: [ "الدرب", "الكلام", "النفس" ]
+  meaning: الخوف يصيب القلب.
+  meaning_source: book
+  line: 66005
+  status: draft
+
+- id: p207
+  text: الجيجة بتقول، افلتني ولا ___
+  answer: تطعميني
+  others: [ "تحبّيني", "تلبّسيني", "تحمّميني" ]
+  meaning: الحرّيّة أحبّ من الطعام.
+  line: 50475
+  status: draft
+
+- id: p208
+  text: الحاجة بتفتق ___
+  answer: الحيلة
+  others: [ "العقل", "الدرب", "الباب" ]
+  meaning: الضرورة تولّد الحيلة.
+  line: 51998
+  status: draft
+
+- id: p209
+  text: قاضي الأولاد شنق ___
+  answer: حالو
+  others: [ "أبوه", "جارو", "القاضي" ]
+  meaning: من يتوسّط بين الأولاد يتعب نفسه بلا فائدة.
+  line: 52685
+  status: draft
+
+- id: p210
+  text: ما حدا بيقول عن دبسو ___
+  answer: حامض
+  others: [ "مرّ", "مالح", "ناشف" ]
+  meaning: لا أحد يعيب ما عنده.
+  line: 52812
+  status: draft
+
+- id: p211
+  text: حبل الكدب ___
+  answer: قصير
+  others: [ "رفيع", "طويل", "مقطوع" ]
+  meaning: الكذب ينكشف سريعًا.
+  line: 53336
+  status: draft
+
+- id: p212
+  text: فلان مالحبّة بيعمل ___
+  answer: قبّة
+  others: [ "جبّة", "كبّة", "علبة" ]
+  meaning: يكبّر الأمور الصغيرة.
+  line: 53427
+  status: draft
+
+- id: p213
+  text: كلّ محجوب ___
+  answer: مرغوب
+  others: [ "مكتوب", "مقلوب", "مسلوب" ]
+  meaning: الممنوع تشتهيه النفس.
+  line: 53749
+  status: draft
+
+- id: p214
+  text: الناس أجناس، منّن حصى منقّلة ومنّن حجر ___
+  answer: ألماس
+  others: [ "رخام", "صوّان", "بلّور" ]
+  meaning: الناس ليسوا سواء.
+  line: 53891
+  status: draft
+
+- id: p215
+  text: ما بيفلّ الحديد إلا ___
+  answer: الحديد
+  others: [ "الدهب", "الحجر", "الخشب" ]
+  meaning: لا يغلب القويّ إلا قويّ مثله.
+  line: 54287
+  status: draft
+
+- id: p216
+  text: المال السايب بيعلّم الناس عال___
+  answer: حرام
+  others: [ "كسل", "صرف", "لعب" ]
+  meaning: إهمال المال يغري الناس بسرقته.
+  line: 84210
+  status: draft
+
+- id: p217
+  text: شرارة بتحرق ___
+  answer: حارة
+  others: [ "سيّارة", "جارة", "مغارة" ]
+  meaning: الشرّ الصغير قد يجرّ مصيبة كبيرة.
+  line: 54901
+  status: draft
+
+- id: p218
+  text: خبز وبصل وحرّيّة، ولا جاج وعسل و___
+  answer: جبريّة
+  others: [ "هديّة", "ضيافة", "حمّيّة" ]
+  meaning: العيش البسيط مع الحرّيّة خير من النعيم مع القهر.
+  line: 61995
+  status: draft
+
+- id: p219
+  text: لا عين تقشع ولا قلب ___
+  answer: يحزن
+  others: [ "يفرح", "يدقّ", "ينسى" ]
+  meaning: ما لا تراه العين لا يحزن له القلب.
+  line: 55323
+  status: draft
+
+- id: p220
+  text: اسمع تفرح، جرّب ___
+  answer: تحزن
+  others: [ "تنجح", "تتعلّم", "تفهم" ]
+  meaning: ما يُسمع عن الشيء أجمل من تجربته.
+  line: 55322
+  status: draft
+
+- id: p221
+  text: حزيران قلبو ___
+  answer: نيران
+  others: [ "ريحان", "بستان", "رمّان" ]
+  meaning: حزيران شديد الحرّ.
+  line: 55353
+  status: draft
+
+- id: p222
+  text: الكيد مالأهل والحسد مال___
+  answer: جيران
+  others: [ "غُرب", "رفقا", "أصحاب" ]
+  meaning: الكيد يأتي من الأقارب والحسد من الجيران.
+  line: 55543
+  status: draft
+
+- id: p223
+  text: شوفتو بالدرب ولا حسرة ___
+  answer: بالقلب
+  others: [ "بالبيت", "بالعين", "عالباب" ]
+  meaning: رؤية الشيء خير من الحسرة عليه.
+  line: 55553
+  status: draft
+
+- id: p224
+  text: حصوة بتسند ___
+  answer: جرّة
+  others: [ "سقف", "باب", "جبل" ]
+  meaning: الصغير قد ينفع في الأمر الكبير.
+  line: 56306
+  status: draft
+
+- id: p225
+  text: اللي بيسكت عن الحقّ شيطان ___
+  answer: أخرس
+  others: [ "أعمى", "أطرش", "رجيم" ]
+  meaning: السكوت عن الحقّ إثم.
+  line: 56939
+  status: draft
+
+- id: p226
+  text: مكتوب على ورق الحلاوة، لا محبّة إلا بعد ___
+  answer: عداوة
+  others: [ "شقاوة", "غداوة", "قساوة" ]
+  meaning: أمتن المحبّة ما جاء بعد خصام.
+  line: 57585
+  status: draft
+
+- id: p227
+  text: إذا درّت عنزتك ___
+  answer: احلبا
+  others: [ بيعا, دبحا, سمّنا ]
+  meaning: اغتنم الفرصة حين تأتي.
+  line: 57655
+  status: approved
+
+- id: p228
+  text: رجعت حليمة لعادتا ___
+  answer: القديمة
+  others: [ "الجديدة", "الحلوة", "الكبيرة" ]
+  meaning: عاد إلى طبعه القديم.
+  line: 58589
+  status: draft
+
+- id: p229
+  text: جحا باع الحوش وما باع ___
+  answer: المزراب
+  others: [ "الباب", "البير", "الدرج" ]
+  meaning: يُقال لمن يحتفظ بذريعة ليعود إلى ما باعه.
+  meaning_source: book
+  line: 60257
+  status: draft
+
+- id: p230
+  text: زمّار الحي ما ___
+  answer: بيطرب
+  others: [ "بيغنّي", "بيزمّر", "بينسمع" ]
+  meaning: لا يقدّر الناس من هو بينهم.
+  line: 60386
+  status: draft
+
+- id: p231
+  text: هات اليوم صوف، وخود بكرا ___
+  answer: خاروف
+  others: [ "معزاية", "جاجة", "بقرة" ]
+  meaning: اصبر على الصغير يكبر لك.
+  line: 61052
+  status: draft
+
+- id: p232
+  text: امشي شهر ولا تخوض ___
+  answer: نهر
+  others: [ ثلج, رمل, وحل ]
+  meaning: الطريق الطويل الآمن خير من القصير الخطر.
+  line: 61245
+  status: approved
+
+- id: p233
+  text: من شان خاطر الورد بيشرب ___
+  answer: العلّيق
+  others: [ "الصبّار", "الحشيش", "النعنع" ]
+  meaning: من أجل الحبيب يُكرم من حوله.
+  line: 61295
+  status: draft
+
+- id: p234
+  text: عطي خبزك لل___ ولو أكلو كلّو
+  answer: خبّاز
+  others: [ جيران, جوعان, شحّاد ]
+  meaning: أعطِ العمل لأهله ولو كلّفك.
+  line: 61843
+  status: approved
+
+- id: p235
+  text: ياما في الزوايا ___
+  answer: خبايا
+  others: [ "بلايا", "حكايا", "هدايا" ]
+  meaning: في الأمور أسرار لا تظهر.
+  line: 61888
+  status: draft
+
+- id: p236
+  text: بسعد الخبايا بتطلع العقارب و___
+  answer: الحيايا
+  others: [ "الفيران", "الدبابير", "النمل" ]
+  meaning: في أواخر الشتاء تخرج الهوامّ من مخابئها.
+  line: 61892
+  status: draft
+
+- id: p237
+  text: قالوا للأعور، العمى صعب، قال، عندي نصّ ___
+  answer: الخبر
+  others: [ الكيس, الدوا, البيت ]
+  meaning: من ذاق بعض البلاء عرف كلّه.
+  line: 61928
+  status: approved
+
+- id: p238
+  text: شباط إن شبط وإن لبط، ريحة ___ فيه
+  answer: الصيف
+  others: [ "الورد", "المطر", "التلج" ]
+  meaning: مهما اشتدّ شباط ففيه بشائر الدفء.
+  line: 62115
+  status: draft
+
+- id: p239
+  text: الكار اللي ماهو كارك بيخرب ___
+  answer: ديارك
+  others: [ "جارك", "قلبك", "نومك" ]
+  meaning: لا تعمل في غير صنعتك.
+  line: 62541
+  status: draft
+
+- id: p240
+  text: بني آدم نصّو خلقة ونصّو ___
+  answer: خرقة
+  others: [ "حرقة", "فرقة", "طبقة" ]
+  meaning: الثياب تجمّل الإنسان.
+  meaning_source: book
+  line: 64888
+  status: draft
+
+- id: p241
+  text: مال الخسيس بيروح ___
+  answer: فطيس
+  others: [ "رخيص", "خسيس", "حبيس" ]
+  meaning: مال البخيل يضيع بلا فائدة.
+  line: 63598
+  status: draft
+
+- id: p242
+  text: الله خلق أختين ما خلق ___
+  answer: بختين
+  others: [ "عقلين", "قلبين", "أمّين" ]
+  meaning: لكلّ إنسان حظّه.
+  line: 64839
+  status: draft
+
+- id: p243
+  text: خود الأصيل ولو عال___
+  answer: حصير
+  others: [ "سجّادة", "طرّاحة", "ديوان" ]
+  meaning: الزواج من الأصيل خير ولو كان فقيرًا.
+  line: 65916
+  status: draft
+
+- id: p244
+  text: من بعد أمّي وخيّاتي كلّ الخلق ___
+  answer: جيران
+  others: [ "صحاب", "ضيوف", "حبايب" ]
+  meaning: لا أحد أقرب من الأمّ والأخوات.
+  line: 66082
+  status: draft
+
+- id: p245
+  text: سعد الدابح بيلاقي الكلب عالباب ___
+  answer: نابح
+  others: [ "سارح", "رابح", "سابح" ]
+  meaning: في سعد الذابح يشتدّ البرد.
+  meaning_source: book
+  line: 66672
+  status: draft
+
+- id: p246
+  text: تحت السواهي ___
+  answer: دواهي
+  others: [ "ملاهي", "سواقي", "عوالي" ]
+  meaning: من تراه ساهيًا قد يكون داهية.
+  meaning_source: book
+  line: 67212
+  status: draft
+
+- id: p247
+  text: بيني وبينك ادبحني، وبين الناس لا ___
+  answer: تجرحني
+  others: [ "تتركني", "تنساني", "تعرفني" ]
+  meaning: عاتبني سرًّا ولا تفضحني أمام الناس.
+  line: 67518
+  status: draft
+
+- id: p248
+  text: الوردة بتدبل و___ فيها
+  answer: ريحتا
+  others: [ "شوكا", "لونا", "ميّتا" ]
+  meaning: الأصيل يبقى أثره ولو ذهب جماله.
+  line: 67856
+  status: draft
+
+- id: p249
+  text: فارتين ما بيساعوا ب___
+  answer: درخوش
+  others: [ قفص, مصيدة, بيت ]
+  meaning: اثنان متنافسان لا يتّسع لهما مكان واحد. والدرخوش الجحر.
+  line: 68751
+  status: approved
+
+- id: p250
+  text: الدروشة ما بتحبّ ___
+  answer: القروشة
+  others: [ "الشوشرة", "النقوشة", "الفروشة" ]
+  meaning: الزهد لا يحبّ الادّعاء ورفع الصوت.
+  meaning_source: book
+  line: 69077
+  status: draft
+
+- id: p251
+  text: مو كلّ مين قرى ___
+  answer: دري
+  others: [ "كتب", "حكى", "شاف" ]
+  meaning: ليس كلّ متعلّم فاهمًا.
+  line: 69145
+  status: draft
+
+- id: p252
+  text: كلّ هالدعكة على هال___
+  answer: كعكة
+  others: [ "كبّة", "بيضة", "لقمة" ]
+  meaning: تعب كبير على شيء تافه.
+  line: 69616
+  status: draft
+
+- id: p253
+  text: الدم ما بيصير ___
+  answer: مي
+  others: [ "حليب", "عسل", "زيت" ]
+  meaning: القرابة لا تُهمل.
+  meaning_source: book
+  line: 70803
+  status: draft
+
+- id: p254
+  text: خبّيتك يا دمعي ليوم ___
+  answer: شدّتي
+  others: [ "عرسي", "عيدي", "فرحي" ]
+  meaning: ادّخر قوّتك لوقت الحاجة.
+  line: 70925
+  status: draft
+
+- id: p255
+  text: الصنعة سوار من ___
+  answer: دهب
+  others: [ "فضّة", "نحاس", "حديد" ]
+  meaning: الحرفة كنز لصاحبها.
+  line: 71363
+  status: draft
+
+- id: p256
+  text: احمل سلاحك دوم، بيلزمك شي ___
+  answer: يوم
+  others: [ "مرّة", "سنة", "ساعة" ]
+  meaning: كن مستعدًّا دائمًا.
+  line: 72327
+  status: draft
+
+- id: p257
+  text: صاحب العيال دوم مشغول ___
+  answer: البال
+  others: [ "الإيد", "الحال", "القلب" ]
+  meaning: من يعول أسرة لا يرتاح باله.
+  line: 72328
+  status: draft
+
+- id: p258
+  text: قالوا للديك صيح، قال، كلّ شي بوقتو ___
+  answer: مليح
+  others: [ "صحيح", "بيصير", "حلو" ]
+  meaning: لكلّ أمر وقته المناسب.
+  line: 72694
+  status: draft
+
+- id: p259
+  text: الديك الفصيح مالبيضة ___
+  answer: بيصيح
+  others: [ "بيبيض", "بيطير", "بينام" ]
+  meaning: النجيب تظهر نجابته من صغره.
+  line: 72695
+  status: draft
+
+- id: p260
+  text: كلّ مين ذنبو على ___
+  answer: جنبو
+  others: [ "راسو", "ضهرو", "ربّو" ]
+  meaning: كلّ امرئ مسؤول عن ذنبه.
+  line: 73396
+  status: draft
+
+- id: p261
+  text: من رادك ريدو، والما بيريدك بالجفا ___
+  answer: زيدو
+  others: [ "كيدو", "خلّيه", "سامحو" ]
+  meaning: بادل المحبّة بالمحبّة والجفاء بالجفاء.
+  line: 73754
+  status: draft
+
+- id: p262
+  text: شرط المرافقة ___
+  answer: الموافقة
+  others: [ "المسامحة", "المسافة", "الضيافة" ]
+  meaning: لا تصحب إلا من يوافقك.
+  line: 74177
+  status: draft
+
+- id: p263
+  text: الرجّال غايب والعشا ___
+  answer: رايب
+  others: [ "طايب", "دايب", "سايب" ]
+  meaning: يقولونه حين يغيب ربّ البيت ويخفّ العشاء.
+  line: 74346
+  status: draft
+
+- id: p264
+  text: الرايح مفقود والجايي ___
+  answer: مولود
+  others: [ "موجود", "مقصود", "مسعود" ]
+  meaning: من خرج إلى السفر كالمفقود، ومن عاد كأنّه وُلد من جديد.
+  line: 74375
+  status: draft
+
+- id: p265
+  text: شباط ما عليه ___
+  answer: رباط
+  others: [ "حساب", "باب", "كلام" ]
+  meaning: طقس شباط متقلّب لا يُؤمَن.
+  line: 74543
+  status: draft
+
+- id: p266
+  text: وردة ما بتعمل ___
+  answer: ربيع
+  others: [ "عرس", "عيد", "حارة" ]
+  meaning: الفرد لا يغيّر الحال وحده.
+  line: 74738
+  status: draft
+
+- id: p267
+  text: حلب أمّ المعالي و___
+  answer: الرتب
+  others: [ "الذهب", "الأدب", "الحسب" ]
+  meaning: حلب مدينة المجد والمكانة.
+  line: 74796
+  status: draft
+
+- id: p268
+  text: الهديّة بتجي على قطّ وبترجع على ___
+  answer: جمل
+  others: [ "فار", "حمار", "ديك" ]
+  meaning: الهديّة الصغيرة يُردّ عليها بأضعافها.
+  meaning_source: book
+  line: 74948
+  status: draft
+
+- id: p269
+  text: مطرح ما بترزق ___
+  answer: إلزق
+  others: [ ارتاح, ادعي, اشكر ]
+  meaning: الزم المكان الذي يأتيك منه رزقك.
+  line: 75756
+  status: approved
+
+- id: p270
+  text: لا تخاف إلا مالمي ___
+  answer: الراقدة
+  others: [ "الجارية", "الحامية", "الغالية" ]
+  meaning: احذر الساكت الهادئ.
+  line: 77119
+  status: draft
+
+- id: p271
+  text: البرغل بيسامير ال___
+  answer: ركب
+  others: [ "ضهر", "قلب", "سنان" ]
+  meaning: البرغل يقوّي الجسم.
+  line: 77553
+  status: draft
+
+- id: p272
+  text: لو كان فيها خير ما رماها ___
+  answer: الطير
+  others: [ "الكلب", "البحر", "الريح" ]
+  meaning: ما يتركه الناس غالبًا لا خير فيه.
+  line: 77704
+  status: draft
+
+- id: p273
+  text: الحمل عالجماعة ___
+  answer: ريش
+  others: [ "تقيل", "حديد", "حجار" ]
+  meaning: التعاون يخفّف الأعباء.
+  line: 78845
+  status: draft
+
+- id: p274
+  text: يا ريت تشردقي بريقي لأعرف عدوّي من ___
+  answer: صديقي
+  others: [ "رفيقي", "حبيبي", "شقيقي" ]
+  meaning: الشدّة تكشف الأصدقاء.
+  line: 78952
+  status: draft
+
+- id: p275
+  text: ضرب الحبيب ___
+  answer: زبيب
+  others: [ "حليب", "طبيب", "نصيب" ]
+  meaning: أذى الحبيب محتمل حلو.
+  line: 79461
+  status: draft
+
+- id: p276
+  text: بعد العرس ما في ___
+  answer: زردة
+  others: [ "حلاوة", "عزيمة", "فرحة" ]
+  meaning: لكلّ شيء وقته، وما بعد الوقت لا ينفع. والزردة حلوى الأعراس.
+  line: 79934
+  status: draft
+
+- id: p277
+  text: آدار المدار أبو الزلازل و___
+  answer: الأمطار
+  others: [ "الأزهار", "الأنهار", "الأخطار" ]
+  meaning: آذار شهر متقلّب.
+  line: 81283
+  status: draft
+
+- id: p278
+  text: اللي إلو تمّ وزلعوم لازم ___
+  answer: يقوم
+  others: [ "ينام", "ياكل", "يصوم" ]
+  meaning: من يأكل عليه أن يعمل.
+  meaning_source: book
+  line: 81402
+  status: draft
+
+- id: p279
+  text: بيموت الزمّار وإصبعتو عم ___
+  answer: بتلعب
+  others: [ "بترجف", "بتكتب", "بتأشّر" ]
+  meaning: الطبع يبقى مع صاحبه حتى آخر عمره.
+  line: 81673
+  status: draft
+
+- id: p280
+  text: كول الزيت بتهدّ ___
+  answer: الحيط
+  others: [ "الجبل", "الباب", "السقف" ]
+  meaning: الزيت يقوّي الجسم.
+  line: 82912
+  status: draft
+
+- id: p281
+  text: أنا أمير وإنت أمير، مين بقى بيسوق ___
+  answer: الحمير
+  others: [ "الجمال", "الخيول", "البقر" ]
+  meaning: لا بدّ أن يقوم أحد بالعمل.
+  line: 83799
+  status: draft
+
+- id: p282
+  text: وعد بلا وفا عداوة بلا ___
+  answer: سبب
+  others: [ "غضب", "حرب", "تعب" ]
+  meaning: إخلاف الوعد يجلب العداوة.
+  line: 84382
+  status: draft
+
+- id: p283
+  text: السبع إذا كبر بتلعب بأدنيه ___
+  answer: الفيران
+  others: [ "القطاط", "العصافير", "الولاد" ]
+  meaning: الضعف يُجرّئ الصغار على الكبير.
+  line: 84582
+  status: draft
+
+- id: p284
+  text: اللي بيسبق بياكل ___
+  answer: بندق
+  others: [ "لوز", "فستق", "جوز" ]
+  meaning: من يبادر يغنم.
+  line: 85004
+  status: draft
+
+- id: p285
+  text: الكرم ستّار ___
+  answer: العيوب
+  others: [ "الدنوب", "الجيوب", "القلوب" ]
+  meaning: الكرم يغطّي النقائص.
+  line: 85327
+  status: draft
+
+- id: p286
+  text: من برّا رخام ومن جوّا ___
+  answer: سخام
+  others: [ "ركام", "حطام", "ظلام" ]
+  meaning: ظاهره جميل وباطنه قبيح.
+  line: 85910
+  status: draft
+
+- id: p287
+  text: السعد لمّا بيجي بيكسر ___
+  answer: الباب
+  others: [ "الحيط", "القفل", "الشبّاك" ]
+  meaning: الحظّ إذا أقبل لا يمنعه شيء.
+  line: 87135
+  status: draft
+
+- id: p288
+  text: بسقيك بالوعد يا ___
+  answer: كمّون
+  others: [ "ريحان", "نعنع", "بقدونس" ]
+  meaning: يُقال لمن يُماطَل بالوعود. ويقولون إنّ الكمّون يكتفي بالوعد بالسقي.
+  meaning_source: book
+  line: 87659
+  status: draft
+
+- id: p289
+  text: راحت السكرة وإجت ___
+  answer: الفكرة
+  others: [ "السهرة", "الفرحة", "الحسرة" ]
+  meaning: انتهت النشوة وجاء وقت الحساب.
+  line: 88304
+  status: draft
+
+- id: p300
+  text: النوم ___
+  answer: سلطان
+  others: [ "ضيف", "حِمل", "عدو" ]
+  meaning: النوم يغلب كل أحد ولا يقدر أحد على مقاومته.
+  line: 89032
+  status: draft
+
+- id: p301
+  text: مو كل مرّة بتسلم ___
+  answer: الجرّة
+  others: [ الطنجرة, الحلّة, السلّة ]
+  meaning: لا ينجو المرء من العاقبة في كل مرة.
+  line: 89300
+  status: approved
+
+- id: p302
+  text: الله يرزقنا الطحين لنسمّعكن طقّ ___
+  answer: العجين
+  others: [ "الصحون", "الهاون", "الباب" ]
+  meaning: دعاء بالرزق، فإذا جاء الطحين سُمع صوت العجن.
+  line: 90056
+  status: draft
+
+- id: p303
+  text: دقّ الباب بتسمع ___
+  answer: الجواب
+  others: [ "الصوت", "الخبر", "الحسّ" ]
+  meaning: من طلب شيئاً جاءه الرد.
+  line: 90057
+  status: draft
+
+- id: p304
+  text: السمن الحديدي والرز ___
+  answer: الرشيدي
+  others: [ "المصري", "الحلبي", "الشامي" ]
+  meaning: أجود السمن الحديدي وأجود الرز الرشيدي.
+  meaning_source: book
+  line: 90224
+  status: draft
+
+- id: p305
+  text: أكبر منك بيوم أعلم منك ___
+  answer: بسنة
+  others: [ "بشهر", "بيومين", "بجمعة" ]
+  meaning: من سبقك في العمر ولو قليلاً سبقك في الخبرة كثيراً.
+  line: 90987
+  status: draft
+
+- id: p306
+  text: "مكتوب على ورق الخيار: اللي بيسهر بالليل بينام ___"
+  answer: بالنهار
+  others: [ "بكّير", "عالحصيرة", "بالعصر" ]
+  meaning: من سهر ليله ضاع نهاره في النوم، وذكر الخيار للسجع فقط.
+  meaning_source: book
+  line: 91070
+  status: draft
+
+- id: p308
+  text: الكار سوار من ___
+  answer: دهب
+  others: [ "فضّة", "نحاس", "خرز" ]
+  meaning: الحرفة ثروة وزينة لصاحبها.
+  line: 91264
+  status: draft
+
+- id: p309
+  text: الحنطة سوسا ولا ___
+  answer: فلوسا
+  others: [ "ترابا", "حجارا", "زوانا" ]
+  meaning: الحنطة ولو أصابها السوس خير من ثمنها نقداً.
+  line: 91569
+  status: draft
+
+- id: p310
+  text: على هوى السوق ___
+  answer: منسوق
+  others: [ "منبيع", "منشتري", "منمشي" ]
+  meaning: نساير أحوال السوق ونتصرف بحسبها.
+  line: 91642
+  status: draft
+
+- id: p311
+  text: الحقّ بالسيف والعاجز ___
+  answer: بيشتكي
+  others: [ "بيبكي", "بيهرب", "بينام" ]
+  meaning: صاحب القوة يأخذ حقه، والضعيف لا يملك إلا الشكوى.
+  line: 92488
+  status: draft
+
+- id: p312
+  text: كلّما شاب ___
+  answer: طاب
+  others: [ "غاب", "تاب", "داب" ]
+  meaning: كلما تقدم المرء في السن طابت أخلاقه.
+  line: 92773
+  status: draft
+
+- id: p313
+  text: من شبّ على شي ___ عليه
+  answer: شاب
+  others: [ "قام", "غاب", "داب" ]
+  meaning: ما يعتاده المرء في صغره يلازمه في كبره.
+  line: 92773
+  status: draft
+
+- id: p314
+  text: الشام بتطبق ___
+  answer: عالغريب
+  others: [ عالفقير, عالضيف, عالتاجر ]
+  meaning: يضيق صدر الغريب في الشام.
+  meaning_source: book
+  line: 93475
+  status: approved
+
+- id: p315
+  text: إذا ردت تكذب بعّد ___
+  answer: شهودك
+  others: [ "حكيك", "دارك", "صوتك" ]
+  meaning: من أراد الكذب جعل شهوده بعيدين لا يُسألون.
+  line: 93613
+  status: draft
+
+- id: p316
+  text: اللي بدّك منّو شبر بدنا منّو ___
+  answer: دراع
+  others: [ "إصبع", "كفّ", "قيراط" ]
+  meaning: ما تطلب منه القليل نطلب منه الكثير.
+  line: 93936
+  status: draft
+
+- id: p318
+  text: كل اللي بتشتلو بتقلعو إلا ابن آدم بتشتلو ___
+  answer: بيقلعك
+  others: [ "بيحبّك", "بيكبر", "بيطعميك" ]
+  meaning: الإنسان قد يجحد من ربّاه ويقتلعه.
+  line: 94334
+  status: draft
+
+- id: p320
+  text: القرش بيغطّي ___
+  answer: الشرش
+  others: [ "الراس", "الدكّان", "الحيط" ]
+  meaning: المال يستر الأصل المتواضع.
+  line: 95334
+  status: draft
+
+- id: p323
+  text: يا بركة شريكين ما ___
+  answer: خانوا
+  others: [ "ناموا", "سافروا", "أكلوا" ]
+  meaning: البركة في الشريكين إذا لم يخن أحدهما الآخر.
+  line: 95818
+  status: draft
+
+- id: p324
+  text: من وفّر فطورو لغداه ما شمتت فيه ___
+  answer: أعداه
+  others: [ "جيرانو", "أهلو", "رفقاتو" ]
+  meaning: من دبّر رزقه وادّخر لم يشمت به أعداؤه.
+  line: 97862
+  status: draft
+
+- id: p325
+  text: الخبزة المقمّرة ما بتاكلا إلا الصبيّة ___
+  answer: المشمّرة
+  others: [ "المدلّلة", "الزغيرة", "الجوعانة" ]
+  meaning: الشيء الجيد من نصيب المجتهد النشيط.
+  line: 97891
+  status: draft
+
+- id: p326
+  text: يا فتّاح بابك واشهرو يا سكّرو ___
+  answer: واسترو
+  others: [ "وانسى", "ونام", "وارتاح" ]
+  meaning: إما أن تفتح محلك وتشهره أو تغلقه وتستر حالك.
+  line: 98560
+  status: draft
+
+- id: p327
+  text: تمّوز الماوي وآب ___
+  answer: الشاوي
+  others: [ الساقي, الغافي, الراوي ]
+  meaning: تموز تكثر فيه المياه وآب يشتد فيه الحر.
+  line: 173396
+  status: approved
+
+- id: p328
+  text: كل إنسان شيطانو ___
+  answer: بعينو
+  others: [ "بجيبو", "بدارو", "بإجرو" ]
+  meaning: لكل امرئ ما يغويه.
+  line: 99834
+  status: draft
+
+- id: p329
+  text: الشيطان ما بياكل إلا من ___
+  answer: كيسو
+  others: [ "صحنو", "بيتو", "دكّانو" ]
+  meaning: صاحب الشر يدفع ثمن شره من ماله.
+  line: 99835
+  status: draft
+
+- id: p330
+  text: اللي بدّك تصبّحو وتمسّيه لا ___
+  answer: تعاديه
+  others: [ تحاسبو, تسلّفو, تزوّرو ]
+  meaning: من تلقاه صباح مساء لا تتخذه عدواً.
+  line: 152132
+  status: approved
+
+- id: p331
+  text: النار فاكهة الشتا واللي ما بيصدّق ___
+  answer: يصطلي
+  others: [ "يبرد", "ينام", "يطبخ" ]
+  meaning: الجلوس إلى النار في الشتاء متعة كالفاكهة.
+  line: 101532
+  status: draft
+
+- id: p333
+  text: اللي عندو مال بياكل رز بصفيحة واللي ما معو مال بيستنشق ___
+  answer: الريحة
+  others: [ "الهوا", "الدخان", "البخار" ]
+  meaning: الغني ينال الطيبات والفقير لا ينال إلا رائحتها.
+  line: 102526
+  status: draft
+
+- id: p334
+  text: يا شي يصلح يا تركو ___
+  answer: أصلح
+  others: [ "أصعب", "أغلى", "أبطأ" ]
+  meaning: ما لا يصلح فتركه أولى.
+  line: 102730
+  status: draft
+
+- id: p335
+  text: دقّوا صندوقا وعطوا ___
+  answer: حقوقا
+  others: [ "دهبا", "هداياها", "تيابا" ]
+  meaning: قدّروا مقام العروس وأعطوها ما تستحقه من المهر.
+  meaning_source: book
+  line: 103085
+  status: draft
+
+- id: p336
+  text: هات اليومة صوف وخود غدا ___
+  answer: خاروف
+  others: [ "حليب", "جبنة", "عنزة" ]
+  meaning: اصبر على القليل اليوم تنل الكثير غداً.
+  line: 120096
+  status: draft
+
+- id: p337
+  text: الصيد لمن ___
+  answer: سبق
+  others: [ "صبر", "تعب", "نشّن" ]
+  meaning: الفرصة لمن يبادر إليها أولاً.
+  line: 103740
+  status: draft
+
+- id: p338
+  text: الصيف ___
+  answer: ضيف
+  others: [ "نعمة", "بركة", "سفر" ]
+  meaning: الصيف قصير يرحل سريعاً كالضيف.
+  line: 103807
+  status: draft
+
+- id: p339
+  text: إذا ضبّبت عشيّة لاقي لك مغارة دفيّة، وإن ضبّبت باكر خود عصايتك و___
+  answer: سافر
+  others: [ "ارجع", "نام", "اقعد" ]
+  meaning: ضباب المساء نذير برد ومطر، وضباب الصباح نذير صحو.
+  line: 104212
+  status: draft
+
+- id: p340
+  text: الضمانة أوّلا شهامة وتانيا ندامة وتالتا ___
+  answer: غرامة
+  others: [ "خسارة", "مصيبة", "فضيحة" ]
+  meaning: الكفالة تبدأ شهامة وتنتهي بالندم ودفع المال.
+  line: 105017
+  status: draft
+
+- id: p341
+  text: ضيف المسا مالو ___
+  answer: عشا
+  others: [ "فرشة", "مطرح", "قهوة" ]
+  meaning: من يأتي متأخراً ليلاً لا يُعَدّ له طعام.
+  line: 105382
+  status: draft
+
+- id: p342
+  text: الحنطة بتدور بتدور وبترجع ___
+  answer: للطاحون
+  others: [ "للبيدر", "للأرض", "للسوق" ]
+  meaning: كل شيء يعود في النهاية إلى مآله المعروف.
+  line: 105671
+  status: draft
+
+- id: p343
+  text: الطبع ___ التطبّع
+  answer: غلب
+  others: [ "بيسبق", "بيكسر", "بيغطّي" ]
+  meaning: الطبع الأصيل يغلب ما يتكلّفه المرء.
+  line: 106588
+  status: draft
+
+- id: p344
+  text: "قالوا للقاق: ليش بتنشل الصابونة؟ قال لن: الأذى ___"
+  answer: طبع
+  others: [ "عادة", "شطارة", "حاجة" ]
+  meaning: المؤذي يؤذي بطبعه لا لحاجة.
+  line: 106589
+  status: draft
+
+- id: p345
+  text: أجا الطبل وغطّى ___
+  answer: عالنايات
+  others: [ "عالدفوف", "عالعود", "عالغنا" ]
+  meaning: جاء الأقوى صوتاً فطغى على من دونه.
+  line: 106753
+  status: draft
+
+- id: p346
+  text: زمان الطرب ___
+  answer: هرب
+  others: [ "قرب", "غلب", "طاب" ]
+  meaning: أيام اللهو والسرور مضت.
+  line: 107213
+  status: draft
+
+- id: p348
+  text: الرفيق قبل ___
+  answer: الطريق
+  others: [ "السفر", "الزاد", "الدار" ]
+  meaning: اختر الصاحب قبل أن تبدأ الرحلة.
+  line: 107960
+  status: draft
+
+- id: p349
+  text: إذا حضر الطعام بطل ___
+  answer: الكلام
+  others: [ "السلام", "الشغل", "الصيام" ]
+  meaning: كان من آدابهم الصمت عند الطعام.
+  meaning_source: book
+  line: 108156
+  status: draft
+
+- id: p351
+  text: خدوا الفال من تمّ ___
+  answer: الأطفال
+  others: [ "الكبار", "الختيارية", "الجيران" ]
+  meaning: كلام الأطفال العفوي يُتفاءل به لصدقه.
+  line: 108421
+  status: draft
+
+- id: p352
+  text: ابن آدم ___
+  answer: طمّاع
+  others: [ "صبور", "قنوع", "كسلان" ]
+  meaning: الإنسان لا يشبع من الدنيا.
+  line: 109028
+  status: draft
+
+- id: p353
+  text: خبّي الجمرات الكبار ___
+  answer: لآدار
+  others: [ "لشباط", "لكانون", "لنيسان" ]
+  meaning: ادّخر الحطب والجمر لآذار فبرده شديد.
+  line: 109062
+  status: draft
+
+- id: p354
+  text: من بعدي ___
+  answer: الطوفان
+  others: [ "الخراب", "النار", "السيل" ]
+  meaning: قول الأناني الذي لا يبالي بما يحدث بعده، وأصله فرنسي.
+  meaning_source: book
+  line: 109778
+  status: draft
+
+- id: p355
+  text: كل شي مع العافية ___
+  answer: طيّب
+  others: [ "غالي", "بعيد", "صعب" ]
+  meaning: مع الصحة يطيب كل شيء.
+  line: 110054
+  status: draft
+
+- id: p356
+  text: كل شي عالطيّب ___
+  answer: قريب
+  others: [ "حبيب", "رخيص", "مليح" ]
+  meaning: الطيّب يقترب منه كل شيء ويحبه الناس.
+  line: 110070
+  status: draft
+
+- id: p357
+  text: طار طيرك وأخدو ___
+  answer: غيرك
+  others: [ "بيتك", "عصفورك", "قفصك" ]
+  meaning: ضاعت الفرصة منك وظفر بها غيرك.
+  line: 110088
+  status: draft
+
+- id: p358
+  text: لا تدخل بيت ظنّان ولا تدوق زاد ___
+  answer: منّان
+  others: [ "غريب", "جوعان", "نعسان" ]
+  meaning: اجتنب سيّئ الظن ومن يمنّ عليك بطعامه.
+  line: 110511
+  status: draft
+
+- id: p359
+  text: اللي بيغيّر عادتو بتقلّ ___
+  answer: سعادتو
+  others: [ "صحّتو", "قيمتو", "بركتو" ]
+  meaning: ترك العادة المألوفة يذهب بالراحة.
+  line: 110745
+  status: draft
+
+- id: p360
+  text: النار ولا ___
+  answer: العار
+  others: [ "الفقر", "الجوع", "الغربة" ]
+  meaning: احتمال الأذى أهون من احتمال العار.
+  line: 110823
+  status: draft
+
+- id: p361
+  text: عاشر القوم أربعين يوم بتصير ___
+  answer: منّن
+  others: [ غريب, صاحبن, حبيبن ]
+  meaning: من طالت معاشرته لقوم صار مثلهم.
+  line: 110942
+  status: approved
+
+- id: p362
+  text: الرحمة خاصّة والبلا ___
+  answer: عام
+  others: [ "كتير", "قريب", "واصل" ]
+  meaning: الرحمة تخص أناساً والبلاء يعم الجميع.
+  line: 111203
+  status: draft
+
+- id: p363
+  text: الكبر عبر والزغر يا جنون يا ___
+  answer: بطر
+  others: [ "فقر", "لعب", "طيش" ]
+  meaning: الشيخوخة عبرة، والصبا إما جنون وإما بطر.
+  line: 111732
+  status: draft
+
+- id: p364
+  text: لا تمشي بالعتمة بتجيك ___
+  answer: لطمة
+  others: [ "ضربة", "حجرة", "شوكة" ]
+  meaning: من سار في الظلام أصابه الأذى.
+  line: 112023
+  status: draft
+
+- id: p365
+  text: عجينك من ___
+  answer: طحينك
+  others: [ "إيدك", "بيتك", "خبزك" ]
+  meaning: ما تجنيه هو من صنع يدك.
+  line: 112500
+  status: draft
+
+- id: p366
+  text: العداوة بالأهل والحسد ___
+  answer: بالجيران
+  others: [ "بالرفقات", "بالغربا", "بالسوق" ]
+  meaning: العداوة تكثر بين الأقارب والحسد بين الجيران.
+  line: 112664
+  status: draft
+
+- id: p368
+  text: "قال لو: شو أحلى مالحلاوة؟ قال لو: الصلح بعد ___"
+  answer: العداوة
+  others: [ "الخناقة", "الجوع", "الغربة" ]
+  meaning: أحلى شيء أن يتصالح المتخاصمان.
+  line: 112666
+  status: draft
+
+- id: p369
+  text: ألف صديق ولا ___
+  answer: عدو
+  others: [ "جار", "غريب", "شريك" ]
+  meaning: عدو واحد يكفي للأذى فاستكثر من الأصدقاء.
+  line: 112899
+  status: draft
+
+- id: p370
+  text: الولد قطعة ___
+  answer: مالكبد
+  others: [ "مالبيت", "مالعمر", "مالراس" ]
+  meaning: الولد غالٍ على أهله كجزء منهم.
+  line: 134948
+  status: draft
+
+- id: p372
+  text: العرق ___
+  answer: دسّاس
+  others: [ "بيحنّ", "غالي", "بعيد" ]
+  meaning: الأصل يظهر أثره في الفروع.
+  line: 113616
+  status: draft
+
+- id: p373
+  text: الفلوس بتجيب ___
+  answer: العروس
+  others: [ "البيت", "الصحاب", "الدكتور" ]
+  meaning: بالمال تتيسّر الأمور الصعبة.
+  line: 113890
+  status: draft
+
+- id: p374
+  text: العطشان بيشرب مية ___
+  answer: صابون
+  others: [ "بحر", "مطر", "نهر" ]
+  meaning: صاحب الحاجة يقبل بأي شيء.
+  line: 115649
+  status: draft
+
+- id: p375
+  text: الدفا ___
+  answer: عفا
+  others: [ "غنى", "دوا", "نعمة" ]
+  meaning: الدفء عافية.
+  meaning_source: book
+  line: 115810
+  status: draft
+
+- id: p376
+  text: كل عقدة وإلها ___
+  answer: حلّال
+  others: [ شيخ, سكّين, خيط ]
+  meaning: لكل مشكلة من يحلّها.
+  line: 116248
+  status: approved
+
+- id: p377
+  text: الأقارب ___
+  answer: عقارب
+  others: [ "حبايب", "سند", "كنوز" ]
+  meaning: الأذى قد يأتي من الأقرباء.
+  line: 116311
+  status: draft
+
+- id: p378
+  text: لمّا تفرّقت العقول كل مين عجبو عقلو، ولمّا تفرّقت الحظوظ ما حدا عجبو ___
+  answer: حظّو
+  others: [ "مالو", "بيتو", "رزقو" ]
+  meaning: كل امرئ راضٍ بعقله ساخط على حظه.
+  line: 116420
+  status: draft
+
+- id: p379
+  text: الرمد أحسن ___
+  answer: مالعمى
+  others: [ "مالحمّى", "مالجوع", "مالوجع" ]
+  meaning: أهون الشرّين خير من أشدّهما.
+  line: 117526
+  status: draft
+
+- id: p380
+  text: لولا الكاسورة ما عمرت ___
+  answer: الفاخورة
+  others: [ "الدكّانة", "الحارة", "المصبغة" ]
+  meaning: لولا كسر الأواني لما راجت صناعة الفخّار.
+  line: 117713
+  status: draft
+
+- id: p381
+  text: اصبور عالحصرم بتاكلو ___
+  answer: عنب
+  others: [ "تين", "توت", "رمّان" ]
+  meaning: بالصبر تنال ما تريد ناضجاً.
+  line: 118173
+  status: draft
+
+- id: p382
+  text: لا تقول عنب حتى يصير ___
+  answer: بالقفّة
+  others: [ "عالدالية", "بالسوق", "بالكرم" ]
+  meaning: لا تعدّ الشيء ملكك حتى يصير في يدك.
+  line: 118174
+  status: draft
+
+- id: p383
+  text: قطع الأعناق ولا قطع ___
+  answer: الأرزاق
+  others: [ "الأشجار", "الطرقات", "الأخبار" ]
+  meaning: قطع الرزق أشد من القتل.
+  line: 118477
+  status: draft
+
+- id: p384
+  text: المكتوب بيبين من ___
+  answer: عنوانو
+  others: [ "حبرو", "خطّو", "ورقو" ]
+  meaning: بداية الأمر تدل على نهايته.
+  line: 118533
+  status: draft
+
+- id: p385
+  text: ما بيعيب إلا ___
+  answer: المعيوب
+  others: [ "الحسود", "الجاهل", "الغريب" ]
+  meaning: لا يعيب الناس إلا من فيه العيب.
+  line: 119052
+  status: draft
+
+- id: p386
+  text: لولا الزيارات العيدية لبطلت ___
+  answer: الأهلية
+  others: [ "المحبّة", "العشرة", "الحارة" ]
+  meaning: زيارات الأعياد تحفظ صلة القرابة.
+  line: 119128
+  status: draft
+
+- id: p387
+  text: في أيّار اسحاب منجلك و___
+  answer: غار
+  others: [ "ارتاح", "نام", "ارجع" ]
+  meaning: في أيار يبدأ الحصاد فاهجم بمنجلك على الزرع.
+  meaning_source: book
+  line: 119747
+  status: draft
+
+- id: p388
+  text: المشمش رخيص بس شيلو ___
+  answer: غالي
+  others: [ "حامض", "ممنوع", "قليل" ]
+  meaning: المشمش رخيص لكن مدته قصيرة فلا يدوم.
+  line: 119856
+  status: draft
+
+- id: p389
+  text: كل شي أول ما بيجي غالي إلا ___
+  answer: التوت
+  others: [ "المشمش", "التين", "العنب" ]
+  meaning: التوت رخيص من أول موسمه.
+  line: 119856
+  status: draft
+
+- id: p390
+  text: لا يغرّك رخصو بتكبّ ___
+  answer: نصّو
+  others: [ "ربعو", "كلّو", "تلتو" ]
+  meaning: الرخيص رديء يُرمى نصفه.
+  line: 120186
+  status: draft
+
+- id: p391
+  text: الغربة ___
+  answer: كربة
+  others: [ "غصّة", "مُرّة", "صعبة" ]
+  meaning: الغربة همّ وضيق.
+  line: 120319
+  status: draft
+
+- id: p392
+  text: في الصيف حريق وفي الشتا ___
+  answer: غريق
+  others: [ "برد", "طين", "ضباب" ]
+  meaning: لا يرضى بحال، يشكو الحر صيفاً والمطر شتاءً.
+  line: 120426
+  status: draft
+
+- id: p393
+  text: إذا كنت غريب كون ___
+  answer: أديب
+  others: [ "قريب", "حريص", "صبور" ]
+  meaning: على الغريب أن يتأدب.
+  line: 120501
+  status: draft
+
+- id: p394
+  text: القرد بعين أمّو ___
+  answer: غزال
+  others: [ "قمر", "ورد", "عريس" ]
+  meaning: كل أمّ ترى ولدها جميلاً.
+  line: 120797
+  status: draft
+
+- id: p395
+  text: بتمّوز بتغلي المي ___
+  answer: بالكوز
+  others: [ "بالجرّة", "بالطاسة", "بالبير" ]
+  meaning: حرّ تموز شديد.
+  line: 121279
+  status: draft
+
+- id: p396
+  text: الصنعة إذا ما غنّت ___
+  answer: بتستر
+  others: [ "بتتعب", "بتنسى", "بتبيع" ]
+  meaning: الحرفة إن لم تغنِ صاحبها سترت حاله.
+  line: 121745
+  status: draft
+
+- id: p397
+  text: إذا كان الطحين والبرغل بالبيت عشت و___
+  answer: غنّيت
+  others: [ تعبت, بكيت, سافرت ]
+  meaning: كانت مؤونة الفقراء الطحين والبرغل فمن ملكهما عاش مطمئناً.
+  meaning_source: book
+  line: 121773
+  status: approved
+
+- id: p398
+  text: لا بيموت الديب ولا بتفنى ___
+  answer: الغنم
+  others: [ "الدجاج", "الطيور", "القطاط" ]
+  meaning: حل وسط يرضي الطرفين.
+  line: 121864
+  status: draft
+
+- id: p399
+  text: اصرف ما في الجيب يأتيك ما في ___
+  answer: الغيب
+  others: [ "الدكّان", "البيت", "البير" ]
+  meaning: أنفق ما معك يرزقك الله غيره.
+  line: 122039
+  status: draft
+
+- id: p400
+  text: من فاتو اللحم عليه ___
+  answer: بالمرق
+  others: [ "بالعضم", "بالخبز", "بالبرغل" ]
+  meaning: من فاته الأصل فليقنع بما بقي منه.
+  line: 122211
+  status: draft
+
+- id: p401
+  text: أكلتو راح، طعميتو ___
+  answer: فاح
+  others: [ "ضاع", "باق", "طاب" ]
+  meaning: ما تأكله يذهب، وما تطعمه غيرك ينشر ذكرك بالكرم.
+  meaning_source: book
+  line: 122268
+  status: draft
+
+- id: p404
+  text: جنب العقرب لا تقرب، وجنب الحيّة افروش و___
+  answer: نام
+  others: [ "قوم", "اهرب", "اقعد" ]
+  meaning: خطر العقرب الخفي أشد من خطر الحية الظاهرة.
+  line: 124237
+  status: draft
+
+- id: p405
+  text: الفرفور ذنبو ___
+  answer: مغفور
+  others: [ "مستور", "معروف", "مكتوب" ]
+  meaning: الصغير يُسامَح على خطئه.
+  line: 124457
+  status: draft
+
+- id: p407
+  text: الدروة أحسن ___
+  answer: مالفروة
+  others: [ "مالنار", "مالبيت", "مالحطب" ]
+  meaning: الاحتماء من الريح خير من لبس الفرو.
+  line: 124902
+  status: draft
+
+- id: p408
+  text: قبل ما تفصّل ___
+  answer: قيس
+  others: [ "فكّر", "اسأل", "اشتري" ]
+  meaning: تحقق قبل أن تقدم على العمل.
+  line: 125859
+  status: draft
+
+- id: p410
+  text: ربّي قط بياكل فارك، ربّي كلب بيحرس دارك، ربّي ابن آدم بيخرب ___
+  answer: ديارك
+  others: [ "بيتك", "حالك", "عمرك" ]
+  meaning: قد ينكر الإنسان معروف من ربّاه.
+  line: 125964
+  status: draft
+
+- id: p411
+  text: القرصة بغضة ولو كانت من أصابيع ___
+  answer: فضّة
+  others: [ "دهب", "حرير", "عسل" ]
+  meaning: الأذى مكروه ولو جاء من يد كريمة.
+  line: 126036
+  status: draft
+
+- id: p412
+  text: صيت غنى ولا صيت ___
+  answer: فقر
+  others: [ "علم", "عيلة", "جمال" ]
+  meaning: سمعة الغنى خير من سمعة الفقر.
+  line: 126506
+  status: draft
+
+- id: p414
+  text: "الجاجة بتقول: افلتني ولا ___"
+  answer: تطعميني
+  others: [ "تحبسني", "تدبحني", "تبيعني" ]
+  meaning: الحرية أحب من الطعام.
+  line: 127155
+  status: draft
+
+- id: p415
+  text: الكلب الفلتان أحسن مالسبع ___
+  answer: المربوط
+  others: [ "الجوعان", "الختيار", "النايم" ]
+  meaning: القليل الحر خير من القوي المقيد.
+  line: 127156
+  status: draft
+
+- id: p416
+  text: كول فول وامشي ___
+  answer: عالأصول
+  others: [ "عالطريق", "بالسوق", "عالمهل" ]
+  meaning: عش ببساطة والتزم الأصول.
+  line: 128024
+  status: draft
+
+- id: p417
+  text: يا جارتي قاتليني وخلّي للصلح ___
+  answer: مطرح
+  others: [ "وقت", "باب", "كلمة" ]
+  meaning: اختلف إن شئت لكن أبقِ سبيلاً للصلح.
+  line: 128627
+  status: draft
+
+- id: p418
+  text: اللي ما بيقدر عليه القدوم بيقدر عليه ___
+  answer: المنشار
+  others: [ "الفاس", "المطرقة", "المسمار" ]
+  meaning: لكل صعب أداة تقهره.
+  line: 130957
+  status: draft
+
+- id: p419
+  text: من قدّم السبت لقي ___
+  answer: الأحد
+  others: [ "الجمعة", "الخميس", "التنين" ]
+  meaning: من قدّم معروفاً لقي جزاءه.
+  line: 131082
+  status: draft
+
+- id: p420
+  text: إن كنت قرفان عليك بالحامض والليمون، وإن كنت زعلان عليك بالكيس و___
+  answer: الغليون
+  others: [ "الفنجان", "الأركيلة", "السيجارة" ]
+  meaning: لكل حال ما يناسبها.
+  line: 132137
+  status: draft
+
+- id: p421
+  text: هديّة القرفان ليمونة ___
+  answer: حامضة
+  others: [ "صفرا", "زغيرة", "مقشورة" ]
+  meaning: لكل امرئ ما يناسب حاله.
+  line: 151576
+  status: draft
+
+- id: p422
+  text: العين بصيرة والإيد ___
+  answer: قصيرة
+  others: [ "فاضية", "ضعيفة", "مقطوعة" ]
+  meaning: يرى ما يريد لكنه عاجز عنه.
+  line: 134147
+  status: draft
+
+- id: p423
+  text: غاب القط اسرح يا ___
+  answer: فار
+  others: [ "ديك", "عصفور", "ولد" ]
+  meaning: إذا غاب الرقيب انطلق الضعيف.
+  line: 134388
+  status: draft
+
+- id: p424
+  text: ألف قلبة ولا ___
+  answer: غلبة
+  others: [ "خسارة", "ضربة", "كلمة" ]
+  meaning: التقلّب ألف مرة خير من الغلبة مرة.
+  line: 135706
+  status: draft
+
+- id: p426
+  text: كل واحد بيقلع شوكو ___
+  answer: بإيدو
+  others: [ "بسنانو", "بمقصّو", "بإبرة" ]
+  meaning: كل امرئ يحل مشكلته بنفسه.
+  line: 135795
+  status: draft
+
+- id: p427
+  text: طول ما القمر معي بعدّ النجوم ___
+  answer: بإصبعي
+  others: [ "بعيوني", "لحالي", "بالليل" ]
+  meaning: ما دام الحبيب معي فلا يهمني شيء.
+  line: 136353
+  status: draft
+
+- id: p428
+  text: الدار دارنا والقمر ___
+  answer: جارنا
+  others: [ "ضيفنا", "ضوّنا", "حبيبنا" ]
+  meaning: نحن في أرضنا مطمئنون.
+  line: 136355
+  status: draft
+
+- id: p429
+  text: الكرم لو يسلم مالنواطير بيحمل ___
+  answer: قناطير
+  others: [ "عناقيد", "سلال", "أحمال" ]
+  meaning: لولا الحرّاس الذين يأكلون منه لأثمر الكرم كثيراً.
+  line: 137236
+  status: draft
+
+- id: p430
+  text: ما باكل إلا القيسي ولو بعت ___
+  answer: لباسي
+  others: [ "بيتي", "دكّاني", "فرسي" ]
+  meaning: لا أرضى إلا بالعنب القيسي الجيد ولو بعت ثيابي.
+  meaning_source: book
+  line: 138333
+  status: draft
+
+- id: p431
+  text: كانون الأجرد خلّى الشجر ___
+  answer: أمرد
+  others: [ "أخضر", "مزهّر", "عالي" ]
+  meaning: في كانون تتعرّى الأشجار من أوراقها.
+  line: 139254
+  status: draft
+
+- id: p432
+  text: السبع إذا كبر بتلعب بأدانيه ___
+  answer: الفار
+  others: [ "القطاط", "العصافير", "الولاد" ]
+  meaning: القوي إذا ضعف تجرأ عليه الضعفاء.
+  line: 139563
+  status: draft
+
+- id: p433
+  text: الحق الكذّاب لباب ___
+  answer: الدار
+  others: [ "الجامع", "السوق", "الخان" ]
+  meaning: تتبّع الكاذب حتى ينكشف أمره.
+  line: 140871
+  status: draft
+
+- id: p434
+  text: نيسان ما بيطلع بلا ___
+  answer: كدسان
+  others: [ "مطر", "ورد", "برد" ]
+  meaning: لا ينقضي نيسان إلا وقد كُوّمت فيه أكداس العدس والحلبة.
+  meaning_source: book
+  line: 140942
+  status: draft
+
+- id: p435
+  text: كرمال عين تكرم ___
+  answer: مرجعيون
+  others: [ الشام, الحارة, الجيران ]
+  meaning: من أجل حبيب يُكرَم كثيرون.
+  line: 141859
+  status: approved
+
+- id: p436
+  text: الكريم إذا وعد ___
+  answer: وفى
+  others: [ "حكى", "سكت", "غاب" ]
+  meaning: الكريم لا يخلف وعده.
+  line: 142072
+  status: draft
+
+- id: p437
+  text: السعد لمّا بيجي بيكسر الباب و___
+  answer: بيدخل
+  others: [ "بيهرب", "بينام", "بيقعد" ]
+  meaning: الحظ إذا أقبل لا يرده شيء.
+  line: 142365
+  status: draft
+
+- id: p438
+  text: كل دقن إلها ___
+  answer: مشط
+  others: [ "مقصّ", "شيب", "موس" ]
+  meaning: لكل شخص ما يناسبه ويقوّمه.
+  line: 144035
+  status: draft
+
+- id: p439
+  text: الكلمة اللي ما بدها تنفد حسرة بقلب ___
+  answer: قايلا
+  others: [ "سامعا", "صاحبا", "كاتبا" ]
+  meaning: الكلام الذي لا يُسمع يبقى غصة عند قائله.
+  line: 144616
+  status: draft
+
+- id: p440
+  text: كلنا بالهوا ___
+  answer: سوا
+  others: [ "غربا", "ضعاف", "حبايب" ]
+  meaning: كلنا في المصيبة متساوون.
+  line: 144675
+  status: draft
+
+- id: p442
+  text: بوس الأيادي ضحك ___
+  answer: عاللحى
+  others: [ "عالقلوب", "عالحيطان", "عالكبار" ]
+  meaning: تقبيل الأيدي نفاق وسخرية من أصحابها.
+  line: 149254
+  status: draft
+
+- id: p444
+  text: البطن على لقمة والشرّ على ___
+  answer: كلمة
+  others: [ "نظرة", "ضحكة", "غلطة" ]
+  meaning: لقمة تكفي البطن وكلمة تكفي لإثارة الشر.
+  line: 150519
+  status: draft
+
+- id: p445
+  text: اللي بيكبّر لقمتو ___ فيها
+  answer: بيغصّ
+  others: [ "بيشبع", "بيتعب", "بينام" ]
+  meaning: من طمع في الكثير خاب.
+  line: 150520
+  status: draft
+
+- id: p446
+  text: كل مين بيغنّي على ___
+  answer: ليلاه
+  others: [ "هواه", "حالو", "عودو" ]
+  meaning: كل امرئ مشغول بهمّه.
+  line: 151503
+  status: draft
+
+- id: p448
+  text: العافية بتروح بالقنطار وبتجي ___
+  answer: بالمتقال
+  others: [ "بالوقيّة", "بالرطل", "بالدرهم" ]
+  meaning: الصحة تذهب دفعة واحدة وتعود ببطء.
+  line: 153009
+  status: draft
+
+- id: p449
+  text: الدهب عالحكّ ___
+  answer: بيبان
+  others: [ "بيذوب", "بيصفر", "بيتكسّر" ]
+  meaning: الأصيل يُعرف عند الامتحان.
+  line: 154261
+  status: draft
+
+- id: p450
+  text: محلّ الضيق بيسع ألف ___
+  answer: صديق
+  others: [ "عدو", "غريب", "جمل" ]
+  meaning: المكان الضيق يتسع للأحبة.
+  line: 154334
+  status: draft
+
+- id: p451
+  text: العين ما بتقاوم ___
+  answer: المخرز
+  others: [ "الحجر", "السيف", "الشمس" ]
+  meaning: الضعيف لا يقدر على مواجهة القوي.
+  line: 154700
+  status: draft
+
+- id: p452
+  text: الغريب داريه وإن مرض ___
+  answer: داويه
+  others: [ "زوره", "ودّعه", "اطعميه" ]
+  meaning: ارفق بالغريب واعتنِ به.
+  line: 156172
+  status: draft
+
+- id: p453
+  text: امشي مع السعيد ___
+  answer: تسعد
+  others: [ "تفرح", "ترتاح", "تغنى" ]
+  meaning: مصاحبة المحظوظ تجلب الحظ.
+  line: 158929
+  status: draft
+
+- id: p454
+  text: المصاري بتجيب بنت ___
+  answer: السلطان
+  others: [ "الباشا", "الجيران", "الأمير" ]
+  meaning: بالمال يُنال كل شيء.
+  line: 159044
+  status: draft
+
+- id: p455
+  text: برد تشارين بيهري ___
+  answer: المصارين
+  others: [ "العضام", "القلوب", "الجلود" ]
+  meaning: برد تشرين يؤذي البطون.
+  line: 159239
+  status: draft
+
+- id: p456
+  text: مو كل المدعبل جوز ولا كل المطاول ___
+  answer: موز
+  others: [ "خيار", "قتّة", "عود" ]
+  meaning: لا تحكم على الأشياء بأشكالها.
+  line: 159690
+  status: draft
+
+- id: p458
+  text: مطرح ما بتطلع الكلمة بتطلع ___
+  answer: الروح
+  others: [ "الحسرة", "الدمعة", "النار" ]
+  meaning: الكلمة الخارجة لا تعود كالروح.
+  line: 159882
+  status: draft
+
+- id: p459
+  text: اللي بتحطّو بالدست بيطلع ___
+  answer: بالمغرفة
+  others: [ "بالصحن", "بالطبخة", "بالريحة" ]
+  meaning: ما تقدّمه تجده.
+  line: 161240
+  status: draft
+
+- id: p460
+  text: مفتاح السرّ كلمة ومفتاح البطن ___
+  answer: لقمة
+  others: [ "عضّة", "خبزة", "شربة" ]
+  meaning: كلمة تكشف السر ولقمة تفتح الشهية.
+  line: 161408
+  status: draft
+
+- id: p461
+  text: منام القطاط ___
+  answer: فيران
+  others: [ "حليب", "لحمة", "عصافير" ]
+  meaning: كل امرئ يحلم بما يشتهي.
+  line: 163862
+  status: draft
+
+- id: p462
+  text: الجاجة ما بتعدّي عن كارا ولو قطعوا ___
+  answer: منقارا
+  others: [ "جناحا", "ريشا", "راسا" ]
+  meaning: الطبع لا يتغير.
+  line: 164335
+  status: draft
+
+- id: p463
+  text: اللي ما بيكشّر عن نابو ما حدا ___
+  answer: بيستهابو
+  others: [ "بيحبّو", "بيعرفو", "بيسمعو" ]
+  meaning: من لا يُظهر قوته لا يهابه الناس.
+  line: 166072
+  status: draft
+
+- id: p464
+  text: الانتظار أحرّ من ___
+  answer: النار
+  others: [ "الفلفل", "الشمس", "الحمّى" ]
+  meaning: الانتظار عذاب شديد.
+  line: 166182
+  status: draft
+
+- id: p465
+  text: أجا الخطّاف نام برّا ولا ___
+  answer: تخاف
+  others: [ "تبرد", "تتغطّى", "تسهر" ]
+  meaning: مجيء السنونو علامة الدفء.
+  line: 166637
+  status: draft
+
+- id: p466
+  text: من شاف حبابو نسي ___
+  answer: صحابو
+  others: [ "أهلو", "بيتو", "حالو" ]
+  meaning: من لقي أحبته نسي أصدقاءه.
+  line: 168316
+  status: draft
+
+- id: p467
+  text: "قال لو: ليش عم بتنفخ باللبن؟ قال لو: كواني ___"
+  answer: الحليب
+  others: [ "الشاي", "المي", "الفنجان" ]
+  meaning: من أصابه الأذى مرة احتاط مما يشبهه.
+  meaning_source: book
+  line: 169525
+  status: draft
+
+- id: p468
+  text: صبري على نفسي ولا صبر ___ عليّ
+  answer: الناس
+  others: [ "أهلي", "جاري", "رفقاتي" ]
+  meaning: أتحمّل نفسي ولا أحمّل الناس عبئي.
+  line: 169604
+  status: draft
+
+- id: p469
+  text: "تلاتة من بلاوي الخلق: البقّ والدقّ و___"
+  answer: النقّ
+  others: [ "الحكي", "الدين", "الهمّ" ]
+  meaning: "ثلاثة تنغّص العيش: البق والطَّرق والتذمّر."
+  line: 169881
+  status: draft
+
+- id: p470
+  text: كلام الليل ___ النهار
+  answer: بيمحوه
+  others: [ "بيطلعو", "بيضيّعو", "بيسمعو" ]
+  meaning: وعود الليل تُنسى في النهار.
+  line: 170764
+  status: draft
+
+- id: p472
+  text: اللي عند أمّو لا تاكل ___
+  answer: همّو
+  others: [ "أكلو", "خبزو", "حقّو" ]
+  meaning: من عنده أمه لا يُخشى عليه.
+  line: 172955
+  status: draft
+
+- id: p474
+  text: العين بتشوف ألوف والقلب بيهوى ___
+  answer: واحد
+  others: [ "اتنين", "كتار", "ألوف" ]
+  meaning: القلب لا يحب إلا واحداً.
+  line: 173640
+  status: draft
+
+- id: p477
+  text: النبي وصّى بسابع ___
+  answer: جار
+  others: [ "قريب", "ضيف", "يتيم" ]
+  meaning: حق الجار عظيم حتى السابع.
+  line: 175616
+  status: draft
+
+- id: p478
+  text: وعد الحرّ ___
+  answer: دين
+  others: [ "حلم", "حكي", "هديّة" ]
+  meaning: الحر يفي بوعده كأنه دين عليه.
+  line: 175931
+  status: draft
+
+- id: p479
+  text: الصديق وقت ___
+  answer: الضيق
+  others: [ "الفرح", "العيد", "السفر" ]
+  meaning: الصديق الحق يظهر في الشدة.
+  line: 176125
+  status: draft
+
+- id: p500
+  text: الإبرة غلبت ___
+  answer: الحايك
+  others: ["النجّار","الحدّاد","العطّار"]
+  meaning: الصغير الدؤوب قد يغلب الكبير، فلا يُستهان بشيء لصغره.
+  line: 1943
+  status: draft
+  flag: meaning is my reading, book gives none
+
+- id: p1200
+  kind: taunt
+  text: فلان ما بفرّق بين الألف و___
+  answer: المادنة
+  others: ["الطنجرة","الدولاب","البطّيخة"]
+  meaning: يُقال في الأمّي الجاهل الذي لا يميّز حرف الألف من المئذنة، وكلاهما قائم منتصب.
+  line: 407
+  status: draft
+
+- id: p1000
+  kind: wisdom
+  text: عزّ الدنيا بالمال وعزّ الآخرة ___
+  answer: بالأعمال
+  others: ["بالأقوال","بالآمال","بالرجال"]
+  meaning: عزّ المرء في دنياه بماله، وفي آخرته بصالح عمله.
+  line: 851
+  status: draft
+
+- id: p501
+  text: ابن الحلال عند ذكرو ___
+  answer: ببان
+  others: ["بينام","بيزعل","بيغيب"]
+  meaning: يقال لمن يحضر ساعةَ يُذكر اسمه.
+  line: 2317
+  status: draft
+
+- id: p502
+  text: الحيطان إلا ___
+  answer: آدان
+  others: ["عيون","بواب","شبابيك"]
+  meaning: احذر في كلامك، فقد يسمعك من لا تراه.
+  line: 5155
+  status: draft
+
+- id: p1201
+  kind: taunt
+  text: اللي بطالع الجحش عالمادنة ___
+  answer: بنزّلو
+  others: ["بعلفو","بركبو","ببيعو"]
+  meaning: يُقال لمن ورّط نفسه في مشكلة، فعليه هو أن يحلّها كما صنعها.
+  line: 151959
+  status: draft
+
+- id: p503
+  text: قالوا للجحش، ليش أدنيك كبار؟ قال لن، قد ما بركد وبشمّ ___
+  answer: أخبار
+  others: ["أزهار","غبار","بهار"]
+  meaning: يقال في الفضولي الذي يتتبّع أخبار الناس.
+  line: 5157
+  status: draft
+
+- id: p1001
+  kind: wisdom
+  text: ابنك لمّا يكون زغير ربّيه ولمّا يكبر ___
+  answer: خاويه
+  others: ["جافيه","انسيه","عاديه"]
+  meaning: أدّب ابنك صغيراً، واتّخذه أخاً وصديقاً إذا كبر.
+  line: 2213
+  status: draft
+
+- id: p504
+  text: عينو في الطبق وأدنو لمن ___
+  answer: زعق
+  others: ["سرق","نطق","صدق"]
+  meaning: يقال في من يأكل وهو منتبه لكل ما يدور حوله.
+  line: 5158
+  status: draft
+
+- id: p1203
+  kind: taunt
+  text: فلان لا لسان ولا ___
+  answer: إحسان
+  others: ["ميزان","بستان","دكّان"]
+  meaning: يُقال فيمن لا يُحسن الكلام الطيّب ولا يفعل المعروف، فلا خير يُرجى منه.
+  line: 4136
+  status: draft
+
+- id: p505
+  text: سألوا الجوعان، تنين وتنين شقد؟ قال لن، أربعة ___
+  answer: أرغفة
+  others: ["قروش","أصابيع","أيّام"]
+  meaning: من اشتدّت حاجته إلى شيء لم يفكّر إلا فيه.
+  line: 5410
+  status: draft
+
+- id: p1002
+  kind: wisdom
+  text: لا تطوّل ___ لابنك بيشنق حالو فيه
+  answer: الحبل
+  others: ["السهرة","الدرب","الحكي"]
+  meaning: الإفراط في التساهل مع الولد يفسده ويهلكه.
+  line: 52668
+  status: draft
+
+- id: p506
+  text: الضيف المتعشّي تقلتو على ___
+  answer: الأرض
+  others: ["السفرة","الجيبة","المطبخ"]
+  meaning: الضيف الذي جاء وقد تعشّى خفيف المؤونة على أهل البيت.
+  line: 5809
+  status: draft
+
+- id: p507
+  text: اللي حضر السوق باع و___
+  answer: اشترى
+  others: ["حلف","تفرّج","نام"]
+  meaning: من حضر الفرصة انتفع بها، والغائب لا نصيب له.
+  line: 8290
+  status: draft
+
+- id: p1204
+  kind: taunt
+  text: "قالوا للأرنبة: كلي لحم، قالت لن: إن شا الله أسلم على ___"
+  answer: لحمي
+  others: ["جزري","بيتي","دنبي"]
+  meaning: يُقال فيمن يُعرض عليه ما يفوق حاله، وحسبه أن ينجو بنفسه.
+  line: 13058
+  status: draft
+
+- id: p508
+  text: الله حطّ سرّو في أضعف ___
+  answer: خلقو
+  others: ["أيّامو","بلادو","جبالو"]
+  meaning: قد تكون القدرة والحكمة عند من نحسبه ضعيفاً.
+  line: 9050
+  status: draft
+
+- id: p1003
+  kind: wisdom
+  text: خبّي قرشك الأبيض ليومك ___
+  answer: الأسود
+  others: ["الأحمر","الأخضر","الأبيض"]
+  meaning: ادّخر من مالك في السعة لوقت الشدّة.
+  line: 8079
+  status: draft
+
+- id: p509
+  text: صاحب الحاجة ___
+  answer: أعمى
+  others: ["شاطر","صابر","كريم"]
+  meaning: من اشتدّت حاجته لا يرى شيئاً غيرها.
+  line: 9615
+  status: draft
+
+- id: p1205
+  kind: taunt
+  text: "أسدين ضرغامين: واحد من باب انطاكية وواحد من ___"
+  answer: باب جنان
+  others: ["نهر قويق","جبل سمعان","سوق المدينة"]
+  meaning: تهكّم بمن يدّعيان البطولة والبأس، وهما اثنان من عامّة أهل حارات حلب.
+  line: 7524
+  status: draft
+
+- id: p510
+  text: مجدّرة البرغل ما بتلتقى إلا ببيت ___
+  answer: الأعيان
+  others: ["الجيران","العرسان","الرهبان"]
+  meaning: مديح للمجدّرة، طعام البسطاء، كأنها لا تليق إلا بموائد الأكابر.
+  line: 9790
+  status: draft
+  flag: meaning guessed (likely playful praise); first half of the proverb (العدس لولو والبرغل ...) is garbled and was left out
+
+- id: p1004
+  kind: wisdom
+  text: اشتغل تتكلّ ولا تعتاز ___
+  answer: للذلّ
+  others: ["للناس","للدين","للغير"]
+  meaning: اعمل حتى يضنيك التعب، فذلك خير من أن تحتاج فتذلّ.
+  line: 9337
+  status: draft
+
+- id: p511
+  text: قال لو، مين أغلى مالولد؟ قال لو، ___
+  answer: ولد الولد
+  others: ["أبو الولد","خال الولد","رفيق الولد"]
+  meaning: الحفيد أعزّ على جدّه من ابنه.
+  line: 9920
+  status: draft
+  flag: book has منو for مين
+
+- id: p1206
+  kind: taunt
+  text: الإسكافي حافي والحايك ___
+  answer: عريان
+  others: ["جوعان","نعسان","زعلان"]
+  meaning: يُقال في صاحب الصنعة الذي ينفع الناس بها ويحرم نفسه منها.
+  line: 7772
+  status: draft
+
+- id: p512
+  text: قال العنبر، الله أكبر، متل هالسنة اللعينة ما حطّوا فيني ___
+  answer: مونة
+  others: ["زينة","عتمة","خزنة"]
+  meaning: يقال في سنة القحط حين تبقى العنابر خالية من المؤونة.
+  line: 10669
+  status: draft
+  flag: meaning inferred
+
+- id: p513
+  text: أكوس منّي الله خلقو، أزنكن منّي الله رزقو، أشطر منّي بركد و___
+  answer: بلحقو
+  others: ["بتركو","بحسدو","بنساه"]
+  meaning: الجمال والغنى قسمة من الله، أمّا الشطارة فتُدرك بالاجتهاد.
+  line: 11056
+  status: draft
+
+- id: p1005
+  kind: wisdom
+  text: إذا كان لك حاجة عند الكلب قول لو، يا عمّي حجّ ___
+  answer: كلبون
+  others: ["سبعون","أفندي","سلطان"]
+  meaning: صاحب الحاجة يضطرّ إلى مجاملة من لا يستحقّ حتى تُقضى حاجته.
+  line: 51942
+  status: draft
+
+- id: p1207
+  kind: taunt
+  text: يطعمك الحجّ والناس ___
+  answer: راجعون
+  others: ["صايمون","نايمون","واقفون"]
+  meaning: دعاء ساخر يُقال لمن يأتي إلى الأمر بعد فوات أوانه.
+  line: 53648
+  status: draft
+
+- id: p514
+  text: ضربة المعلّم بألف ولو شلفا ___
+  answer: شلف
+  others: ["غلط","نتف","خطف"]
+  meaning: عمل الخبير ثمين ولو أدّاه بلا تكلّف.
+  line: 11522
+  status: draft
+
+- id: p515
+  text: ألف قرش برطيل ما بيوفي قرش ___
+  answer: دين
+  others: ["حلال","تعب","ورتة"]
+  meaning: الدَّين لا يسقط إلا بوفائه مهما أنفق المدين في غيره.
+  line: 11523
+  status: draft
+
+- id: p1006
+  kind: wisdom
+  text: الله أحنّ من ___ على ولدا
+  answer: الوالدة
+  others: ["الخالة","الجارة","الداية"]
+  meaning: رحمة الله بعباده أوسع من رحمة الأمّ بولدها.
+  line: 4308
+  status: draft
+
+- id: p1208
+  kind: taunt
+  text: ركّبناه ورانا مدّ إيدو على ___
+  answer: الخرج
+  others: ["الرسن","السرج","الركاب"]
+  meaning: يُقال فيمن تُحسن إليه فيطمع في ما عندك.
+  line: 62726
+  status: draft
+
+- id: p516
+  text: دنب السعادة ___
+  answer: أملس
+  others: ["طويل","معقود","قصير"]
+  meaning: السعادة تفلت من اليد بسهولة ولا يُمسَك بها.
+  line: 12869
+  status: draft
+
+- id: p517
+  text: ما حدا بقول «أنا» إلا بيقع في ___
+  answer: العنا
+  others: ["الهنا","الغنى","المنى"]
+  meaning: المعتدّ بنفسه يلقى التعب.
+  line: 13116
+  status: draft
+
+- id: p1007
+  kind: wisdom
+  text: لا تأخّر عمل اليوم ___
+  answer: لغدا
+  others: ["للعيد","للصيف","للجمعة"]
+  meaning: أنجز عملك في وقته ولا تؤجّله.
+  line: 4704
+  status: draft
+
+- id: p518
+  text: إذا ضربت اضروب أمير، وإذا سرقت اسروق ___
+  answer: حرير
+  others: ["حصير","شعير","بعير"]
+  meaning: إن كان لا بدّ من المجازفة فلتكن في أمر يستحقّها.
+  line: 13846
+  status: draft
+
+- id: p1209
+  kind: taunt
+  text: "قال لو: أش إلك في القصر؟ قال لو: من امبارحة ___"
+  answer: العصر
+  others: ["الصبح","الضهر","المغرب"]
+  meaning: يُقال فيمن يتباهى بمكانة أو صلة لم يمضِ عليها إلا وقت قصير.
+  line: 12574
+  status: draft
+
+- id: p519
+  text: الحيوان بينربط من رسنو والإنسان من ___
+  answer: لسانو
+  others: ["إيدو","جيبو","راسو"]
+  meaning: الإنسان مرهون بكلمته ووعده.
+  line: 14568
+  status: draft
+  flag: line 14568 is cut after والإنسان; ending 'من لسانو' confirmed at lines 14320 and 149473
+
+- id: p520
+  text: اللي انكتب غلب، واللي ابتلى ___
+  answer: يصبر
+  others: ["يهرب","يشكي","يسافر"]
+  meaning: المقدَّر نافذ، وعلى المبتلى أن يصبر.
+  line: 16241
+  status: draft
+
+- id: p1210
+  kind: taunt
+  text: أملو أمل إبليس في ___
+  answer: الجنّة
+  others: ["الدنيا","الحجّ","السوق"]
+  meaning: يُقال فيمن يطمع في أمر لا سبيل له إليه أبداً.
+  line: 12841
+  status: draft
+
+- id: p1008
+  kind: wisdom
+  text: عدوّك لا تأذيه، ألو ربّ ___
+  answer: يجازيه
+  others: ["يغنيه","ينسيه","يحميه"]
+  meaning: لا تنتقم من عدوّك، ودع حسابه على الله.
+  line: 5287
+  status: draft
+
+- id: p521
+  text: القتّاية العوجا إذا جلّستا ___
+  answer: بتنكسر
+  others: ["بتطول","بتحلى","بتستوي"]
+  meaning: من شبّ على اعوجاج صعب تقويمه.
+  line: 16370
+  status: draft
+  flag: book has قتاية عوجا without ال
+
+- id: p522
+  text: رزق الهبلان على ___
+  answer: المجانين
+  others: ["الشاطرين","التجّار","الجيران"]
+  meaning: البسيط يجد دائماً من هو أبسط منه فيرتزق منه.
+  line: 17011
+  status: draft
+
+- id: p1211
+  kind: taunt
+  text: "لسان حالو: يا ريتني أمير ولو على ___"
+  answer: الحمير
+  others: ["الغنم","القطاط","النمل"]
+  meaning: يُقال فيمن يحبّ الرئاسة والوجاهة ولو على أحقر الأتباع.
+  line: 12972
+  status: draft
+
+- id: p1009
+  kind: wisdom
+  text: الأرض الواطية بتشرب ماءا وماء ___
+  answer: غيرا
+  others: ["البحر","السما","البير"]
+  meaning: المتواضع ينال نصيبه ونصيب المتكبّرين.
+  line: 95181
+  status: draft
+
+- id: p523
+  text: جحا سلطان، أوّل ما شنق شنق أهل ___
+  answer: حارتو
+  others: ["بيتو","ضيعتو","صنعتو"]
+  meaning: من تولّى أمراً بدأ بأذى أقرب الناس إليه.
+  line: 17080
+  status: draft
+
+- id: p524
+  text: لوما وقفتي عالركيّة كنت بغزل رطل و___
+  answer: أوقيّة
+  others: ["شويّة","هديّة","عباية"]
+  meaning: يقال في من يتعلّل عن تقصيره بما شغله من توافه.
+  line: 17685
+  status: draft
+  flag: meaning inferred; الركيّة presumably the well
+
+- id: p1212
+  kind: taunt
+  text: فلان بحبّ يتعلّى ولو على ___
+  answer: خازوق
+  others: ["بساط","حصيرة","عتبة"]
+  meaning: يُقال فيمن يطلب العلوّ والظهور ولو كان فيه هلاكه.
+  line: 37378
+  status: draft
+
+- id: p525
+  text: عادي باشتك ولا تعادي أهل ___
+  answer: حارتك
+  others: ["صنعتك","دكّانك","مدرستك"]
+  meaning: معاداة الحاكم أهون من معاداة الجيران الذين تعيش بينهم.
+  line: 20116
+  status: draft
+
+- id: p1010
+  kind: wisdom
+  text: البيتداخل في ما لا يعنيه بيسمع ما لا ___
+  answer: يرضيه
+  others: ["يكفيه","ينسيه","يغنيه"]
+  meaning: من تدخّل في شؤون غيره سمع ما يكره.
+  line: 5868
+  status: draft
+
+- id: p526
+  text: ما حدا ببخّر لربّو ___
+  answer: ببلاش
+  others: ["بالليل","بالسرّ","بالدين"]
+  meaning: لا أحد يعمل عملاً بلا مقابل.
+  line: 22113
+  status: draft
+
+- id: p1213
+  kind: taunt
+  text: "بعد ما أكل وانتكا قال لا: يا مرا! طعامك مالو ___"
+  answer: زكا
+  others: ["ملح","لون","اسم"]
+  meaning: يُقال فيمن ينتفع بالشيء حتى يشبع منه ثم يذمّه.
+  line: 13520
+  status: draft
+
+- id: p527
+  text: بدّو كويّس ورخيص و___
+  answer: ابن ناس
+  others: ["ابن يومو","ابن سوق","ابن حرام"]
+  meaning: يقال لمن يطلب المحاسن كلها في شيء واحد.
+  line: 22314
+  status: draft
+
+- id: p1011
+  kind: wisdom
+  text: شاور الأكبر منك والأزغر منك وارجاع ___
+  answer: لشورك
+  others: ["لبيتك","لشغلك","لنومك"]
+  meaning: استشر الجميع ثم احتكم إلى رأيك.
+  line: 6236
+  status: draft
+
+- id: p528
+  text: غيّر بدارك ولو من عند ___
+  answer: جارك
+  others: ["خالك","عدوّك","التاجر"]
+  meaning: جدّد بذار أرضك كل حين ولو أخذته من أقرب الناس.
+  line: 22383
+  status: draft
+
+- id: p529
+  text: بيت برّات السور ما بيسوى ___
+  answer: عصفور
+  others: ["قنطار","خاروف","زنبور"]
+  meaning: البيت خارج سور المدينة لا قيمة له لقلّة الأمان فيه.
+  line: 22762
+  status: draft
+
+- id: p1214
+  kind: taunt
+  text: ما بتحضر أم رزّوق إلا بكون انفضّ ___
+  answer: السوق
+  others: ["العرس","الحمّام","الفرن"]
+  meaning: يُقال فيمن يتأخّر دائماً فيصل بعد فوات الفرصة.
+  line: 15824
+  status: draft
+
+- id: p530
+  text: البرد سبب كل ___
+  answer: علّة
+  others: ["نومة","طبخة","خناقة"]
+  meaning: البرد أصل الأمراض.
+  line: 23274
+  status: draft
+
+- id: p1012
+  kind: wisdom
+  text: الاستقامة عين ___
+  answer: الكرامة
+  others: ["الندامة","الملامة","الغرامة"]
+  meaning: في استقامة المرء كرامته.
+  line: 7120
+  status: draft
+
+- id: p531
+  text: دخان يعمي ولا برد ___
+  answer: يضني
+  others: ["يدفي","يشوي","يسلّي"]
+  meaning: احتمال دخان النار أهون من احتمال البرد.
+  line: 23274
+  status: draft
+
+- id: p1215
+  kind: taunt
+  text: علّمناه الشحادة سبقنا على ___
+  answer: الأبواب
+  others: ["المدرسة","الطاحونة","الحمّام"]
+  meaning: يُقال فيمن تعلّمه صنعة فينافسك فيها ويتقدّم عليك.
+  line: 18997
+  status: draft
+
+- id: p532
+  text: برد الصيف أحدّ من ___
+  answer: السيف
+  others: ["الجمر","الموس","الشوك"]
+  meaning: برد الصيف أشدّ أذى لأنه يأتي على غفلة.
+  line: 23276
+  status: draft
+
+- id: p1013
+  kind: wisdom
+  text: كلّما ___ افرح لا
+  answer: اشتدّت
+  others: ["طالت","بعدت","غليت"]
+  meaning: اشتداد الأزمة إيذان بقرب الفرج.
+  meaning_source: book
+  line: 8262
+  status: draft
+
+- id: p533
+  text: بساط الصيف ___
+  answer: وسيع
+  others: ["رقيق","قصير","غالي"]
+  meaning: في الصيف يتّسع كل مكان للجلوس والنوم.
+  line: 24689
+  status: draft
+
+- id: p1216
+  kind: taunt
+  text: كتير الكارات قليل ___
+  answer: البارات
+  others: ["الصحاب","الحكي","النوم"]
+  meaning: من تنقّل بين الصنائع الكثيرة لم يتقن واحدة منها فقلّ كسبه، والبارة قطعة نقد صغيرة.
+  line: 19767
+  status: draft
+
+- id: p534
+  text: ضربة عالحافر، ضربة عالـ___
+  answer: بسمار
+  others: ["سرج","ركاب","رسن"]
+  meaning: يقال في من يشدّ مرة ويلين مرة ليداري الطرفين.
+  line: 24986
+  status: draft
+
+- id: p535
+  text: البطن بيسع طشت مخلوطة، ما بيسع ___؟
+  answer: كلمة
+  others: ["لقمة","شربة","حبّة"]
+  meaning: من اتّسع بطنه لكل ذلك الطعام فليتّسع لكتمان كلمة.
+  line: 25932
+  status: draft
+
+- id: p1014
+  kind: wisdom
+  text: المالو كبير يشتري لو ___
+  answer: كبير
+  others: ["صاحب","خاتم","دكّان"]
+  meaning: لا غنى للمرء عن كبير حكيم يرجع إليه في أموره.
+  line: 8293
+  status: draft
+
+- id: p1217
+  kind: taunt
+  text: فلان بسأل عن البيضة منو باضا و___ منو جابا
+  answer: الجيجة
+  others: ["السلّة","المقلاية","الملعقة"]
+  meaning: يُقال في الفضولي الذي يُكثر السؤال عمّا لا يعنيه.
+  line: 30396
+  status: draft
+
+- id: p536
+  text: بطّيخ يكسّر ___
+  answer: بعضو
+  others: ["قشرو","سعرو","بزرو"]
+  meaning: يقال في خصمين لا يعنيك أمرهما، فليتخاصما كما شاءا.
+  line: 26069
+  status: draft
+
+- id: p537
+  text: خان الدقّ وجامع البقّ ضاع فين ___
+  answer: الحقّ
+  others: ["الوقت","الرزق","الدرب"]
+  meaning: قاله رجل اعتُدي عليه في هذين المكانين وأنكر الشهود، ويُضرب لضياع الحقّ.
+  meaning_source: book
+  line: 26610
+  status: draft
+
+- id: p1015
+  kind: wisdom
+  text: لا تكبّر، الله ___
+  answer: أكبر
+  others: ["أعلم","أرحم","أكرم"]
+  meaning: لا تتعاظم على الناس، فالله أكبر من كلّ متكبّر.
+  line: 10663
+  status: draft
+
+- id: p1218
+  kind: taunt
+  text: شي شاط وشي باط وشي أكلتو ___
+  answer: القطاط
+  others: ["الجيران","الضيوف","النار"]
+  meaning: يُقال في الشيء الذي ضاع كلّه بسوء التدبير، بعضه احترق وبعضه فسد وبعضه نُهب.
+  line: 20325
+  status: draft
+
+- id: p538
+  text: خلصنا من بقرة أبو زيد و___
+  answer: حليبا
+  others: ["قرونا","علفا","صوتا"]
+  meaning: كان صاحبها يغشّ حليبها بالماء فجرفها السيل، ويقال عند الخلاص من شيء مغشوش ومتاعبه.
+  meaning_source: book
+  line: 26841
+  status: draft
+
+- id: p539
+  text: إذا حلق جارك ___ أنت
+  answer: بلّ
+  others: ["نام","اضحك","اهرب"]
+  meaning: إذا أصاب جارَك أمر فاستعدّ، فدورك آتٍ.
+  line: 27374
+  status: draft
+
+- id: p540
+  text: في شباط لمّ البيض من على ___
+  answer: البلاط
+  others: ["السطوح","الرفوف","الحيطان"]
+  meaning: في شباط يكثر بيض الدجاج حتى يُلتقط عن الأرض.
+  line: 27469
+  status: draft
+
+- id: p1016
+  kind: wisdom
+  text: افراح للّي بيبكّيك ولا تفرح للّي ___
+  answer: بيضحّكك
+  others: ["بيعطيك","بيزورك","بيخدمك"]
+  meaning: من يصارحك بما يؤلمك أنفع لك ممّن يجاملك.
+  line: 27102
+  status: draft
+
+- id: p1219
+  kind: taunt
+  text: بدّلنا غزلاننا ___
+  answer: بقرود
+  others: ["بخيول","بطيور","بنمور"]
+  meaning: يُقال عند استبدال الجيّد بالرديء.
+  line: 22477
+  status: draft
+
+- id: p541
+  text: في أيّار بتغنّي البلابل على ___
+  answer: الأشجار
+  others: ["السطوح","الحيطان","الأنهار"]
+  meaning: أيّار شهر الخضرة وتغريد الطيور.
+  line: 27559
+  status: draft
+
+- id: p542
+  text: زيوان بلدي ولا ___ الصليبي
+  answer: حنطة
+  others: ["سمنة","حرير","دهب"]
+  meaning: الرديء من بلدك خير من الجيّد عند الغريب.
+  line: 27627
+  status: draft
+  flag: الصليبي read as 'the foreigner'
+
+- id: p1220
+  kind: taunt
+  text: من شان برغوت حرق ___
+  answer: اللحاف
+  others: ["الدكّان","الكرم","البيدر"]
+  meaning: يُقال فيمن يُتلف شيئاً ثميناً ليتخلّص من مضايقة تافهة.
+  line: 23705
+  status: draft
+
+- id: p1017
+  kind: wisdom
+  text: صنعة في اليد أمان من ___
+  answer: الفقر
+  others: ["الحسد","الغربة","المرض"]
+  meaning: من أتقن صنعة لم يخشَ العوز.
+  line: 12513
+  status: draft
+
+- id: p543
+  text: الطمّاع بنى لو بيت، اجا المفلس ___ فيه
+  answer: سكن
+  others: ["لعب","صلّى","غنّى"]
+  meaning: الطمّاع يجمع وغيره ينتفع.
+  line: 28187
+  status: draft
+
+- id: p544
+  text: الرجّال جنى والمرا ___
+  answer: بنى
+  others: ["غنى","هنا","منى"]
+  meaning: الرجل يكسب، والمرأة بتدبيرها تعمّر البيت.
+  line: 28215
+  status: draft
+
+- id: p1221
+  kind: taunt
+  text: من كترة ذوقو ببطّن توبو ببطانة أغلى من ___
+  answer: الوجّ
+  others: ["الزرّ","الخيط","الإبرة"]
+  meaning: تهكّم بمن يدّعي حسن الذوق وهو يضع الأشياء في غير مواضعها.
+  line: 25950
+  status: draft
+
+- id: p1018
+  kind: wisdom
+  text: اللي بيداري الزمان بينام ___
+  answer: بأمان
+  others: ["جوعان","بردان","سهران"]
+  meaning: من ساير أحوال زمانه عاش مطمئنّاً.
+  line: 166679
+  status: draft
+
+- id: p545
+  text: اللي عندو بهار بيرشّ على ___
+  answer: المخلوطة
+  others: ["المهلّبيّة","الكنافة","القهوة"]
+  meaning: البهار غالٍ يُجلب من الهند، فمن وسّع الله عليه أنفق حتى على أبسط الطعام.
+  meaning_source: book
+  line: 28887
+  status: draft
+
+- id: p546
+  text: كل شي بالتخمين إلا الألماز بالـ___
+  answer: تتمين
+  others: ["تخزين","تلوين","تزيين"]
+  meaning: الأشياء تُقدَّر تقريباً إلا النفيس فيُقوَّم بدقّة.
+  line: 32452
+  status: draft
+
+- id: p1222
+  kind: taunt
+  text: كمل جهاز القطّ، ما بقى ناقصو إلا ___
+  answer: شمعدان
+  others: ["فارة","دنب","شوارب"]
+  meaning: يُقال فيمن ينقصه الضروري ثم يطلب الكماليات.
+  line: 26655
+  status: draft
+
+- id: p547
+  text: الدهب كلّما عتق ___
+  answer: بيتجوهر
+  others: ["بيرخص","بيصدّي","بيخفّ"]
+  meaning: الأصيل يزداد قيمة مع الأيام.
+  line: 32766
+  status: draft
+
+- id: p1019
+  kind: wisdom
+  text: لولا الأمل بطل ___
+  answer: العمل
+  others: ["الزعل","الكسل","الخجل"]
+  meaning: الأمل هو ما يدفع الناس إلى العمل.
+  line: 12840
+  status: draft
+
+- id: p548
+  text: يا طالب الشرّ بلا أصل، تعا للصايم بعد ___
+  answer: العصر
+  others: ["الفطور","السحور","العشا"]
+  meaning: الصائم قُبيل الإفطار ضيّق الخلق سريع الغضب.
+  line: 36840
+  status: draft
+
+- id: p1223
+  kind: taunt
+  text: لو كان جحا بنّا كان بنى إلو ___
+  answer: بيت
+  others: ["جسر","سور","طاحونة"]
+  meaning: يُقال فيمن يدّعي المهارة وينصح غيره وهو لم ينفع نفسه.
+  line: 28218
+  status: draft
+
+- id: p549
+  text: اللي ما بيجي معك تعا ___
+  answer: معو
+  others: ["عليه","بلاه","قبلو"]
+  meaning: إن لم يوافقك صاحبك فوافقه أنت.
+  line: 36839
+  status: draft
+
+- id: p1020
+  kind: wisdom
+  text: لا تمشي مع المشبوه ___
+  answer: بتنشبه
+  others: ["بتنسرق","بتنضرب","بتنتسى"]
+  meaning: مرافقة المريب تجلب لك الريبة.
+  line: 14798
+  status: draft
+
+- id: p550
+  text: الحجر بمطرحو ___
+  answer: تقيل
+  others: ["رخيص","مدوّر","بارد"]
+  meaning: المرء عزيز في موضعه وبين أهله.
+  line: 39167
+  status: draft
+
+- id: p551
+  text: اللي بيحضر التكيّة بيشرّق ___
+  answer: الشوربا
+  others: ["القهوة","العيران","الشاي"]
+  meaning: من حضر نال نصيبه.
+  line: 39686
+  status: draft
+
+- id: p1224
+  kind: taunt
+  text: كنّا في الحكمة صرنا في ___
+  answer: البيطرة
+  others: ["الخياطة","النجارة","الحلاقة"]
+  meaning: يُقال حين ينحدر الأمر من الرفيع إلى الوضيع، فالحكمة طبّ الناس والبيطرة طبّ الدواب.
+  meaning_source: book
+  line: 30591
+  status: draft
+
+- id: p552
+  text: السلف ___
+  answer: تلف
+  others: ["شرف","ترف","خلف"]
+  meaning: من دفع الثمن مقدَّماً عرّض ماله للضياع.
+  line: 40346
+  status: draft
+  flag: book's explanation is partly garbled (دفع المبلغ ...)
+
+- id: p1021
+  kind: wisdom
+  text: الإنصاف نصف ___
+  answer: الدين
+  others: ["العقل","العلم","العمر"]
+  meaning: العدل مع الناس شطر التديّن.
+  line: 15039
+  status: draft
+
+- id: p553
+  text: إن كنت غشيم عطي نصّ ___
+  answer: التمن
+  others: ["الرطل","الأجرة","الطريق"]
+  meaning: إن جهلت قيمة السلعة فادفع نصف ما يطلبه البائع.
+  line: 41332
+  status: draft
+
+- id: p1226
+  kind: taunt
+  text: من معرفتو بالصحابة بترضّى على ___
+  answer: عنتر
+  others: ["جحا","قراقوش","كراكوز"]
+  meaning: تهكّم بالجاهل الذي يدّعي العلم فيخلط بين الصحابة وأبطال السِيَر الشعبية.
+  line: 34585
+  status: draft
+
+- id: p554
+  text: وجع الضرس والفلس صعب، لكن وجع العين غطّى على ___
+  answer: التنين
+  others: ["الراس","القلب","الضهر"]
+  meaning: ألم العين أشدّ من ألم الضرس ومن ضيق الإفلاس.
+  line: 42417
+  status: draft
+
+- id: p1022
+  kind: wisdom
+  text: إن أنصف الدهر، يوم إلك ويوم ___
+  answer: عليك
+  others: ["لغيرك","لجارك","لولادك"]
+  meaning: أحسن أحوال الدنيا أن تتعادل أيّامها الحلوة والمرّة.
+  line: 15088
+  status: draft
+
+- id: p555
+  text: توب العيرة ما بيدفّي، ولو دفّى ما ___
+  answer: بيدوم
+  others: ["بيلبق","بينغسل","بينكوى"]
+  meaning: المستعار لا ينفع صاحبه طويلاً.
+  line: 42803
+  status: draft
+
+- id: p1227
+  kind: taunt
+  text: "قال لو: أش عم تتغدّى؟ قال لو: كتير متلك ___"
+  answer: عدّى
+  others: ["سأل","شبع","قعد"]
+  meaning: جواب البخيل لمن يسأله عن طعامه طمعاً في دعوة، أي مرّ كثيرون مثلك ولم ينل أحد من زادي.
+  meaning_source: book
+  line: 37669
+  status: draft
+
+- id: p556
+  text: الناس مخبّاية بـ___
+  answer: تيابا
+  others: ["بيوتا","أساميا","دكاكينا"]
+  meaning: لا تُعرف حقيقة الناس من ظاهرهم.
+  line: 42805
+  status: draft
+
+- id: p557
+  text: تور عاجز ما بيدوّر ___
+  answer: ساقية
+  others: ["مركب","عرس","قافلة"]
+  meaning: الضعيف لا يُعتمد عليه في العمل الشاقّ.
+  line: 43014
+  status: draft
+
+- id: p1023
+  kind: wisdom
+  text: فتّح عين وغمّض عين بتشوفا ___
+  answer: انفرجت
+  others: ["انقلبت","انحرقت","انسرقت"]
+  meaning: الفرج قريب يأتي في طرفة عين.
+  line: 15726
+  status: draft
+
+- id: p1228
+  kind: taunt
+  text: تكمّل النقل ___
+  answer: بالزعرور
+  others: ["بالفستق","باللوز","بالجوز"]
+  meaning: يُقال تهكّماً حين يُضاف إلى المجموعة شيء تافه كأنه تمامها.
+  line: 39548
+  status: draft
+
+- id: p558
+  text: لا جود إلا بالـ___
+  answer: موجود
+  others: ["معدود","موعود","مقصود"]
+  meaning: يجود المرء بما عنده، ولا يُلام على ما لا يملك.
+  line: 44163
+  status: draft
+
+- id: p559
+  text: جور القطّ ولا عدل ___
+  answer: الفار
+  others: ["الكلب","الديب","الجار"]
+  meaning: ظلم القويّ الكريم أهون من عدل الوضيع إذا تحكّم.
+  line: 44191
+  status: draft
+
+- id: p1024
+  kind: wisdom
+  text: الدنيا بتنهزّ لكن ما ___
+  answer: بتنهدم
+  others: ["بتنباع","بتنسكن","بتنعدّ"]
+  meaning: الشدائد تهزّ الدنيا ولا تنهيها.
+  line: 16792
+  status: draft
+
+- id: p1229
+  kind: taunt
+  text: فلان إذا تأمّر ___
+  answer: تنمّر
+  others: ["تعلّم","تبسّم","تكرّم"]
+  meaning: يُقال فيمن إذا نال سلطة تجبّر على الناس.
+  line: 42239
+  status: draft
+
+- id: p560
+  text: الولد إذا بكي يا جوع يا ___
+  answer: موجوع
+  others: ["مخلوع","ممنوع","مسموع"]
+  meaning: الطفل لا يبكي إلا من جوع أو ألم.
+  line: 44702
+  status: draft
+
+- id: p561
+  text: إذا جعت غنّي، وإذا كترت همومك ___
+  answer: نام
+  others: ["كول","سافر","اشتغل"]
+  meaning: تلهَّ عن الجوع بالغناء وعن الهمّ بالنوم.
+  line: 44703
+  status: draft
+
+- id: p562
+  text: ___ ما بينشالوا بإيد واحدة
+  answer: جبستين
+  others: ["جوزتين","بيضتين","تفّاحتين"]
+  meaning: لا يستطيع المرء أن يقوم بعملين كبيرين معاً.
+  line: 45520
+  status: draft
+
+- id: p1230
+  kind: taunt
+  text: البدخل بين القشرة والتومة ما بنوبو غير ريحتا ___
+  answer: المشؤومة
+  others: ["الحلوة","الزكية","الخفيفة"]
+  meaning: يُقال فيمن يتدخّل بين المتقاربين فلا يناله إلا الأذى.
+  line: 43377
+  status: draft
+
+- id: p1025
+  kind: wisdom
+  text: عصفور بالإيد ولا عشرة ___
+  answer: عالسجرة
+  others: ["بالقفص","عالسطح","بالسما"]
+  meaning: القليل المضمون خير من الكثير غير المضمون.
+  line: 115181
+  status: draft
+
+- id: p563
+  text: عتّق دابّتك وجدّد ___
+  answer: أجيرك
+  others: ["بيتك","توبك","جارك"]
+  meaning: أبقِ على دابّتك التي ألفتها، وبدّل أجيرك كل حين.
+  line: 46344
+  status: draft
+
+- id: p564
+  text: يا رايح لسوق الدواب علّق برقبتك ___
+  answer: جرس
+  others: ["خرزة","مفتاح","وردة"]
+  meaning: من خالط قوماً فليتميّز عنهم كي لا يُحسب منهم.
+  line: 46803
+  status: draft
+  flag: meaning inferred
+
+- id: p1231
+  kind: taunt
+  text: عديم ووقع بقفّة ___
+  answer: تين
+  others: ["تبن","فحم","بصل"]
+  meaning: يُقال في المحروم الذي وقع على نعمة فانكبّ عليها بنهم.
+  line: 176194
+  status: draft
+  flag: first word OCR عدم/عنم/عويل; read as عديم
+
+- id: p1026
+  kind: wisdom
+  text: البشاشة حبل ___
+  answer: الوداد
+  others: ["الخصام","الغسيل","الفراق"]
+  meaning: طلاقة الوجه تصل المودّة بين الناس.
+  line: 25060
+  status: draft
+
+- id: p565
+  text: كلمة نضيفة أحسن من جريدة ___
+  answer: وسخة
+  others: ["طويلة","قديمة","غالية"]
+  meaning: الكلمة الطيّبة الموجزة خير من الكلام الكثير الرديء.
+  line: 47073
+  status: draft
+
+- id: p566
+  text: الله بيجسّ النبض وبيعطي ___
+  answer: الدوا
+  others: ["الأجر","الرزق","الولد"]
+  meaning: الله حكيم، يعطي كل امرئ ما يصلحه.
+  meaning_source: book
+  line: 47251
+  status: draft
+  flag: book's النبط read as النبض
+
+- id: p1232
+  kind: taunt
+  text: افراح يا كرشي، جارنا طابخ ___
+  answer: محشي
+  others: ["برغل","شوربة","عدس"]
+  meaning: يُقال في الطفيلي الذي يفرح بطعام غيره ويعدّ نفسه مدعوّاً إليه.
+  line: 141602
+  status: draft
+
+- id: p567
+  text: ما بيربى ولد إلا ليفنى ___
+  answer: جسد
+  others: ["بلد","عدد","سند"]
+  meaning: تربية الولد تُفني جسد أهله تعباً.
+  line: 47271
+  status: draft
+  flag: OCR reads حسد; جسد confirmed by line 74721
+
+- id: p1027
+  kind: wisdom
+  text: الله بيبلي و___
+  answer: بيعين
+  others: ["بينسى","بيزيد","بيفضح"]
+  meaning: من ابتلاه الله أعانه على بلائه.
+  line: 27399
+  status: draft
+
+- id: p568
+  text: الكحيلة ما بيعيبا ___
+  answer: جلالا
+  others: ["صهيلا","لونا","عمرا"]
+  meaning: الفرس الأصيلة لا يعيبها رثاثة جلّها، والأصيل لا يعيبه لباسه.
+  line: 47919
+  status: draft
+
+- id: p1233
+  kind: taunt
+  text: الجحش جحشنا أما ___ متغيّر
+  answer: الجلال
+  others: ["الدنب","الصوت","الاسم"]
+  meaning: يتندّرون بها مع الصاحب إذا لبس ثوباً جديداً، أي أنت أنت وإنما تغيّر الكساء.
+  meaning_source: book
+  line: 47916
+  status: draft
+
+- id: p569
+  text: العنزة اللي بتاكل عفص بيطلع بـ___
+  answer: جلدا
+  others: ["حليبا","قرونا","صوتا"]
+  meaning: ما يفعله المرء يظهر أثره عليه، والعفص ممّا تُدبغ به الجلود.
+  line: 47999
+  status: draft
+
+- id: p1028
+  kind: wisdom
+  text: تنين بفرد قلب بياخدوا ___
+  answer: بلد
+  others: ["بيت","دكّان","كرم"]
+  meaning: اتّفاق القلوب قوّة تبلغ أصعب الغايات.
+  line: 27606
+  status: draft
+
+- id: p570
+  text: الله ما بيجمع حتّى ___
+  answer: يوفّق
+  others: ["يفرّق","يجرّب","يبعّد"]
+  meaning: إذا جمع الله بين اثنين وفّق بينهما.
+  line: 48469
+  status: draft
+
+- id: p1234
+  kind: taunt
+  text: يا حيف عجسورك يا ___!
+  answer: قويق
+  others: ["الفرات","بردى","العاصي"]
+  meaning: تهكّم بنهر حلب الصغير الشحيح الماء، ويُقال في الشيء الضئيل تُعدّ له عدّة أكبر منه.
+  line: 47288
+  status: draft
+  flag: meaning inferred, not explained in book
+
+- id: p571
+  text: الجمعة مغيّرة ___
+  answer: العادات
+  others: ["الطبخات","الساعات","الجيران"]
+  meaning: يوم الجمعة يوم عطلة فلا يجري فيه نظام الأيام المعتاد.
+  meaning_source: book
+  line: 48532
+  status: draft
+
+- id: p572
+  text: الفقر جنزير ___
+  answer: السباع
+  others: ["الكلاب","الدهب","البواب"]
+  meaning: الفقر يقيّد حتى الشجعان.
+  line: 49177
+  status: draft
+
+- id: p1029
+  kind: wisdom
+  text: ابلاع لقمة كبيرة ولا تحكي ___ كبيرة
+  answer: كلمة
+  others: ["قصّة","نكتة","غنّيّة"]
+  meaning: أهون عليك أن تغصّ بلقمة من أن تتفوّه بكلام أكبر منك.
+  line: 150514
+  status: draft
+  flag: end garbled in OCR at 27758/57108/150514; restored as كلمة كبيرة
+
+- id: p573
+  text: الجنزير والطوق ولا البركة مع قليل ___
+  answer: الذوق
+  others: ["المال","النوم","الحكي"]
+  meaning: احتمال القيد أهون من مجالسة عديم الذوق.
+  line: 73462
+  status: draft
+
+- id: p1235
+  kind: taunt
+  text: إذا كان طبّاخنا جعيص شبعنا ___
+  answer: مرقة
+  others: ["لحمة","كبّة","حلاوة"]
+  meaning: إذا تولّى الأمر من لا يُحسنه لم ننل منه إلا أهونه.
+  line: 47539
+  status: draft
+
+- id: p574
+  text: ما باكل الفوعي لو متت من ___
+  answer: جوعي
+  others: ["عطشي","بردي","تعبي"]
+  meaning: يأنف من الرديء ولو اشتدّت حاجته، والفوعي ضرب من العنب.
+  line: 50158
+  status: draft
+
+- id: p1030
+  kind: wisdom
+  text: اللي بيطّلّع عقصر الملك بيخرّب ___
+  answer: بيتو
+  others: ["القصر","الحارة","عيونو"]
+  meaning: من قاس حاله على حال الأغنياء أتلف ما عنده.
+  line: 62577
+  status: draft
+  flag: meaning inferred; verb بطع/بطلع - 'looks at' vs 'goes up to'
+
+- id: p575
+  text: جيب مبخوش ما بيلحق لو ___
+  answer: قروش
+  others: ["خيطان","رقاع","كياس"]
+  meaning: المبذّر لا يكفيه مال.
+  line: 50389
+  status: draft
+
+- id: p1236
+  kind: taunt
+  text: أش عرّف الحمير بأكل ___
+  answer: الجنزبيل
+  others: ["الشعير","التبن","الحشيش"]
+  meaning: يُقال فيمن لا يقدّر الشيء النفيس لأنه لا يعرف قيمته.
+  line: 49156
+  status: draft
+
+- id: p576
+  text: الإنسان عيبو ___
+  answer: جيبو
+  others: ["لسانو","طبعو","شيبو"]
+  meaning: لا يُعاب الرجل عند الناس إلا بفقره.
+  line: 50389
+  status: draft
+
+- id: p1031
+  kind: wisdom
+  text: إذا كنت عالبير لا تصرف ___
+  answer: كتير
+  others: ["قليل","بكّير","بالدين"]
+  meaning: اقتصد ولو كنت في سعة ووفرة.
+  line: 101767
+  status: draft
+
+- id: p577
+  text: قلبي على ولدي وقلب ولدي على ___
+  answer: الحجر
+  others: ["اللعب","الجيران","السفر"]
+  meaning: الأهل يحنّون على الولد وهو قاسٍ لا يبادلهم الحنان.
+  line: 53805
+  status: draft
+
+- id: p1237
+  kind: taunt
+  text: بعد الجوع والقلّة صار لك حمارة و___
+  answer: بغلة
+  others: ["عنزة","بقرة","جيجة"]
+  meaning: يُقال فيمن اغتنى بعد فقر فأخذ يتباهى بما صار عنده.
+  line: 50159
+  status: draft
+
+- id: p578
+  text: الغايب حجّتو ___
+  answer: معو
+  others: ["عليه","ضعيفة","ببيتو"]
+  meaning: لا تلُم الغائب قبل أن تسمع عذره.
+  line: 53958
+  status: draft
+
+- id: p579
+  text: على قدّ مالك بتحرت ___
+  answer: فدّانك
+  others: ["بستانك","جيرانك","حصانك"]
+  meaning: يعمل المرء على قدر إمكاناته.
+  line: 54636
+  status: draft
+  flag: book reads بحرت فدانك
+
+- id: p1032
+  kind: wisdom
+  text: القوم اللي ___ ما شقيوا
+  answer: تعاونوا
+  others: ["تفرّقوا","تخانقوا","تحاسدوا"]
+  meaning: التعاون يدفع الشقاء عن الجماعة.
+  line: 36951
+  status: draft
+
+- id: p1238
+  kind: taunt
+  text: يوم الغيمانة بتفرح ___
+  answer: الكسلانة
+  others: ["الغسّالة","الخبّازة","الفلّاحة"]
+  meaning: يُقال في الكسول الذي يتّخذ من أيّ شيء عذراً للنوم وترك العمل.
+  line: 50186
+  status: draft
+
+- id: p580
+  text: اللي إلو طبّاخ لا يحروق ___
+  answer: إيديه
+  others: ["تيابو","قلبو","دقنو"]
+  meaning: من عنده من يكفيه العمل فلا يُتعب نفسه.
+  line: 55085
+  status: draft
+
+- id: p581
+  text: برمي النار وبصيح ___
+  answer: حريق
+  others: ["برد","عتمة","دخيلكن"]
+  meaning: يقال لمن يفتعل المشكلة ثم يشكو منها.
+  line: 55170
+  status: draft
+
+- id: p1033
+  kind: wisdom
+  text: لا تعيب ___
+  answer: بتبتلي
+  others: ["بتغتني","بتنتسي","بتستحي"]
+  meaning: من عاب غيره ابتُلي بمثل عيبه.
+  line: 37577
+  status: draft
+
+- id: p1239
+  kind: taunt
+  text: مو كل من چقچق ___
+  answer: رقص
+  others: ["غنّى","طبخ","ربح"]
+  meaning: ليس كل من أحدث جلبة أتقن الصنعة.
+  line: 51263
+  status: draft
+
+- id: p582
+  text: بكانون حضّر الفحم و___
+  answer: الكانون
+  others: ["اللحاف","الحطب","المونة"]
+  meaning: استعدّ لبرد كانون بالفحم والموقد.
+  line: 56442
+  status: draft
+
+- id: p583
+  text: كل ضيعة إلّا درب على ___
+  answer: حلب
+  others: ["البحر","الشام","السوق"]
+  meaning: كل القرى لها طريق إلى حلب، فهي مقصد الجميع.
+  line: 57671
+  status: draft
+
+- id: p584
+  text: لا تربط الحمار جنب رفيقو، يا بيعلّمو الشهنقة يا بياكل لو ___
+  answer: عليقو
+  others: ["رسنو","تبنو","بردعتو"]
+  meaning: المجاورة تُعدي أو تضرّ، فانظر من تجاور.
+  line: 58723
+  status: draft
+
+- id: p1240
+  kind: taunt
+  text: پارة چوق، عقل ___
+  answer: يوق
+  others: ["چوق","طمام","أفندم"]
+  meaning: عبارة تركية يتهكّمون بها على من ماله كثير ولا عقل له.
+  meaning_source: book
+  line: 177904
+  status: draft
+
+- id: p1034
+  kind: wisdom
+  text: التدبير تلتين ___
+  answer: المعيشة
+  others: ["التجارة","الصحّة","الشطارة"]
+  meaning: حسن التدبير في الإنفاق هو معظم أسباب العيش الكريم.
+  line: 39923
+  status: draft
+
+- id: p585
+  text: حمار مؤالف ولا غزال ___
+  answer: مخالف
+  others: ["نافر","خايف","واقف"]
+  meaning: الرفيق الموافق ولو كان بسيطاً خير من الجميل المشاكس.
+  line: 58724
+  status: draft
+
+- id: p586
+  text: مكتوب عباب الجنّة، عمرا حماية ما حبّت ___
+  answer: كنّة
+  others: ["جارة","ضرّة","خيّاطة"]
+  meaning: دعابة في ما بين الحماة والكنّة من نفور قديم.
+  line: 59095
+  status: draft
+
+- id: p1241
+  kind: taunt
+  text: قاعدين في الشمس وبعدّوا حالن ___
+  answer: حواصيد
+  others: ["نواطير","صيّادين","بنّايين"]
+  meaning: يُقال في الكسالى الذين لا يعملون شيئاً ويحسبون أنفسهم من أهل الكدّ.
+  line: 52690
+  status: draft
+
+- id: p1035
+  kind: wisdom
+  text: كلّ شي بيلتمّ إلا البيطلع من ___
+  answer: التمّ
+  others: ["الإيد","الجيبة","البيت"]
+  meaning: كلّ شيء يمكن تداركه إلا الكلمة إذا قيلت.
+  line: 40718
+  status: draft
+
+- id: p587
+  text: إن قلّ عليك ___ عليك بالحمّصاني
+  answer: الضاني
+  others: ["الرمّاني","التفّاحي","البطّيخي"]
+  meaning: إن عزّ لحم الضأن فالحمّص يقوم مقامه.
+  line: 59356
+  status: draft
+
+- id: p588
+  text: إذا كرهك جارك حوّل باب ___
+  answer: دارك
+  others: ["دكّانك","بستانك","مطبخك"]
+  meaning: إن ساءت الجيرة فابتعد عن جارك ولا تخاصمه.
+  line: 66850
+  status: draft
+
+- id: p1242
+  kind: taunt
+  text: الله يعطيك العافية طول ما الجيجة ___
+  answer: حافية
+  others: ["نايمة","جوعانة","طايرة"]
+  meaning: دعاء مازح بعافية لا تنقطع، فالدجاجة لا تنتعل أبداً.
+  line: 52569
+  status: draft
+
+- id: p589
+  text: الحيطان دفاتر ___
+  answer: المجانين
+  others: ["العشّاق","الأولاد","الشعرا"]
+  meaning: لا يكتب على الجدران إلا خفيف العقل.
+  line: 60543
+  status: draft
+
+- id: p1036
+  kind: wisdom
+  text: لا تجعل الدنيا همّك، مالك منها غير لقمة ___
+  answer: تمّك
+  others: ["يومك","بيتك","عشاك"]
+  meaning: لا تحمل همّ الدنيا، فليس لك منها إلا ما تأكله.
+  line: 172966
+  status: draft
+
+- id: p590
+  text: حيلة الضعيف ___
+  answer: دموعو
+  others: ["صوتو","سكوتو","إجريه"]
+  meaning: الضعيف لا يملك غير البكاء.
+  line: 60632
+  status: draft
+
+- id: p1243
+  kind: taunt
+  text: حرد ___ عن الكرم، زاد حملو قنطار
+  answer: الدبّ
+  others: ["الناطور","الفلّاح","الكرّام"]
+  meaning: يُقال فيمن يظنّ أن مقاطعته تضرّ، وغيابه في الحقيقة نفع.
+  line: 54691
+  status: draft
+
+- id: p591
+  text: اللي كنّا نخاف منّو ___ فيه
+  answer: وقعنا
+  others: ["ربحنا","فرحنا","طمعنا"]
+  meaning: يقال حين يقع المحذور بعد طول تجنّب.
+  line: 61318
+  status: draft
+
+- id: p1037
+  kind: wisdom
+  text: التكبّر عالمتكبّر ___
+  answer: تواضع
+  others: ["ندامة","خسارة","جهالة"]
+  meaning: مقابلة المتكبّر بمثل كبره ليست كبراً.
+  line: 42729
+  status: draft
+
+- id: p592
+  text: جوزتين بالخرج ___
+  answer: بيقرقعوا
+  others: ["بيفقّسوا","بيدوبوا","بيناموا"]
+  meaning: القليل في الوعاء الفارغ يُحدث ضجّة، كقليل البضاعة كثير الجعجعة.
+  line: 62724
+  status: draft
+  flag: meaning inferred
+
+- id: p1244
+  kind: taunt
+  text: عمرك شفت قطاط بحشوا ___؟
+  answer: قبوات
+  others: ["كوسا","بانجان","يبرق"]
+  meaning: يُقال استبعاداً لأن يؤتمن الطامع على ما يشتهيه، فالقطّ يأكل اللحم ولا يحشوه.
+  line: 55907
+  status: draft
+
+- id: p593
+  text: اللي بدّو يلعب مع القطّ بدّو يحمل ___
+  answer: خراميشو
+  others: ["شواربو","ديلو","مواءو"]
+  meaning: من عاشر صاحب أذى فليحتمل أذاه.
+  line: 63140
+  status: draft
+
+- id: p594
+  text: إيد بتغسل إيد، وإيدتين بيغسلوا ___
+  answer: وجّ
+  others: ["توب","صحن","بيت"]
+  meaning: بالتعاون يتمّ العمل.
+  line: 63572
+  status: draft
+
+- id: p1038
+  kind: wisdom
+  text: نقطة جارية خير من بحر ___
+  answer: واقف
+  others: ["مالح","بعيد","هايج"]
+  meaning: القليل الدائم خير من الكثير المنقطع.
+  line: 44274
+  status: draft
+
+- id: p595
+  text: اشطوف بيتك ما بتعرف مين بيدوسو، واغسول وجّك ما بتعرف مين ___
+  answer: بيبوسو
+  others: ["بيشوفو","بيمدحو","بيعرفو"]
+  meaning: كن نظيفاً مرتّباً دائماً، فلا تدري من يزورك ومن تلقى.
+  line: 63574
+  status: draft
+
+- id: p1245
+  kind: taunt
+  text: عيش يا كديش تيطلع ___
+  answer: الحشيش
+  others: ["القمر","الصبح","الربيع"]
+  meaning: يُقال لمن يوعَد بخير بعيد قد لا يدركه.
+  line: 56049
+  status: draft
+
+- id: p596
+  text: اللي في عقلو خفّة يجعل بينو وبين المي ___
+  answer: دفّة
+  others: ["قفّة","لفّة","زفّة"]
+  meaning: من لا يأمن طيش نفسه فليحتط ويبتعد عن الخطر.
+  line: 64327
+  status: draft
+
+- id: p1039
+  kind: wisdom
+  text: احفاظ عتيقك، ___ ما بيدوم لك
+  answer: جديدك
+  others: ["مالك","شبابك","جارك"]
+  meaning: حافظ على القديم الذي جرّبته، فالجديد لا يُضمن بقاؤه.
+  line: 56817
+  status: draft
+
+- id: p597
+  text: اللي بيحطّ إيدو تحت راسو بيعرف ___
+  answer: خلاصو
+  others: ["نعاسو","قياسو","ناسو"]
+  meaning: من خلا بنفسه وتفكّر عرف طريق نجاته.
+  line: 64591
+  status: draft
+
+- id: p1246
+  kind: taunt
+  text: ناس بتاكل حصرم وناس ___
+  answer: بضرسوا
+  others: ["بشبعوا","بغنّوا","بنعسوا"]
+  meaning: يُقال حين يخطئ واحد ويتحمّل العاقبة غيره.
+  line: 56235
+  status: draft
+
+- id: p598
+  text: من خلّف ما ___
+  answer: مات
+  others: ["تعب","شاب","جاع"]
+  meaning: من ترك ولداً بقي ذكره بعده.
+  line: 64796
+  status: draft
+
+- id: p599
+  text: خلص العيد وقلقو، وكل مين رجع لـ___
+  answer: خلقو
+  others: ["شغلو","بيتو","همّو"]
+  meaning: انتهى العيد وعاد كلٌّ إلى ثوبه القديم، والخَلَق هو البالي.
+  meaning_source: book
+  line: 64858
+  status: draft
+
+- id: p1040
+  kind: wisdom
+  text: الردي ردي، كلّما جليتو ___
+  answer: صدي
+  others: ["لمع","غلي","كبر"]
+  meaning: سيّئ الطبع لا يصلحه التهذيب مهما تكرّر.
+  line: 75491
+  status: draft
+
+- id: p1247
+  kind: taunt
+  text: أيام الحصايد كان عم بغنّي ___
+  answer: قصايد
+  others: ["مواويل","عتابا","قدود"]
+  meaning: يُقال فيمن لها وقت العمل ثم جاء يطلب العون وقت الحاجة، وأصله حكاية الصرصور الذي دهمه البرد ولا مؤونة عنده.
+  meaning_source: book
+  line: 134126
+  status: draft
+
+- id: p600
+  text: الفرس من خيّالا والمرا من ___
+  answer: رجّالا
+  others: ["جمالا","جيرانا","مالا"]
+  meaning: كما يُظهر الفارس جودة فرسه، يُظهر الزوج قدر زوجته.
+  line: 66232
+  status: draft
+
+- id: p601
+  text: الخير على قدوم ___
+  answer: الواردين
+  others: ["الغايبين","الصابرين","الخيّالة"]
+  meaning: يقال ترحيباً بقادم جاء الخير مع قدومه.
+  line: 66283
+  status: draft
+
+- id: p1041
+  kind: wisdom
+  text: إذا جنّوا اصحابك ما بينفعك ___
+  answer: عقلك
+  others: ["مالك","صبرك","كلامك"]
+  meaning: لا ينفع العاقلَ عقلُه وحده بين قوم فقدوا صوابهم.
+  line: 48844
+  status: draft
+
+- id: p1248
+  kind: taunt
+  text: أعوذ بالله من الحفيان إذا ___
+  answer: تقبقب
+  others: ["تكلّم","تعلّم","تسحّر"]
+  meaning: يُقال في المحروم إذا نال نعمة صغيرة فتكبّر بها على الناس، وتقبقب أي لبس القبقاب.
+  meaning_source: book
+  line: 56860
+  status: draft
+
+- id: p602
+  text: شدّ الخيط ومطّو، كل مين عليه شي ___
+  answer: يحطّو
+  others: ["يخبّيه","ينساه","يشيلو"]
+  meaning: الخيط خيط كيس النقود، أي حان وقت الحساب فليدفع كلٌّ ما عليه.
+  meaning_source: book
+  line: 66390
+  status: draft
+  flag: OCR 'محطو' read as يحطّو
+
+- id: p603
+  text: سعد السعود دبّ الماء في العود ودفي كل ___
+  answer: مبرود
+  others: ["مولود","موعود","موجود"]
+  meaning: في سعد السعود، أواخر الشتاء، تسري العصارة في الشجر ويدفأ الجوّ.
+  line: 67342
+  status: draft
+
+- id: p1249
+  kind: taunt
+  text: "منقول لو تيس، بقول: ___"
+  answer: احلبو
+  others: ["اربطو","بيعو","اعلفو"]
+  meaning: يُقال في العنيد الذي يصرّ على طلب المستحيل مهما شُرح له.
+  line: 57653
+  status: draft
+
+- id: p1042
+  kind: wisdom
+  text: أمّك، جنّتك ونارك تحت ___
+  answer: أقداما
+  others: ["إيديها","سقفا","جناحا"]
+  meaning: رضا الأمّ طريق الجنّة وسخطها طريق النار.
+  line: 49343
+  status: draft
+
+- id: p604
+  text: الإجر بتدبّ مطرح ما ___
+  answer: بتحبّ
+  others: ["بتتعب","بتخاف","بتنام"]
+  meaning: يمشي المرء إلى حيث يهوى قلبه.
+  line: 67343
+  status: draft
+
+- id: p605
+  text: الدبّانة بتعرف دقن ___
+  answer: الدبّاس
+  others: ["الحلّاق","الخبّاز","النجّار"]
+  meaning: صاحب المصلحة يعرف أين يجد منفعته، والدبّاس بائع الدبس.
+  line: 67415
+  status: draft
+
+- id: p606
+  text: لا تدفش السكران، بيقع ___
+  answer: لحالو
+  others: ["عليك","وبيقوم","بالنهر"]
+  meaning: لا تُتعب نفسك في إسقاط من هو ساقط بنفسه.
+  line: 69881
+  status: draft
+
+- id: p1250
+  kind: taunt
+  text: "مو كل من صفّ صواني قال: أنا ___"
+  answer: حلواني
+  others: ["نحّاس","طبّاخ","خبّاز"]
+  meaning: ليس كل من قلّد مظاهر الصنعة صار من أهلها.
+  line: 58424
+  status: draft
+
+- id: p1043
+  kind: wisdom
+  text: القوم بلا جهّال بتضيع ___
+  answer: حقوقن
+  others: ["ولادن","بيوتن","مصاريّن"]
+  meaning: لا بدّ للجماعة من متهوّرين أشدّاء يحمون حقوقها.
+  line: 104026
+  status: draft
+
+- id: p607
+  text: قال الحيط للبسمار، ليش عم بتشقّني؟ قال لو، اسأل اللي عم ___
+  answer: بيدقّني
+  others: ["بيشيلني","بيبيعني","بيشوفني"]
+  meaning: لا تلُم المأمور ولُم من أمره.
+  line: 70009
+  status: draft
+  flag: OCR line is cut after 'اسأل اللي'; ending بيدقّني is the standard form, please verify against the book
+
+- id: p608
+  text: شعرة من هون وشعرة من هون بيساوي لو ___
+  answer: دقن
+  others: ["فروة","مخدّة","حبل"]
+  meaning: القليل مع القليل يصير كثيراً.
+  line: 70239
+  status: draft
+
+- id: p1251
+  kind: taunt
+  text: رخصت الزلابية وأكلوا ___
+  answer: الحمير
+  others: ["الأمرا","الأكابر","الباشاوات"]
+  meaning: يُقال حين يرخص الشيء النفيس فيناله من ليس أهلاً له.
+  line: 58711
+  status: draft
+
+- id: p1044
+  kind: wisdom
+  text: الشبعان بيفتّ للجوعان فتّ ___
+  answer: بطي
+  others: ["كتير","ناعم","طيّب"]
+  meaning: المستغني لا يحسّ بعجلة المحتاج.
+  line: 50179
+  status: draft
+
+- id: p609
+  text: لو كانت الدنيا ___ كان شرقا واحد
+  answer: بيضة
+  others: ["لقمة","كاسة","حبّة"]
+  meaning: لو أمكن أن يستأثر واحد بالدنيا كلها لابتلعها ولم يترك لغيره شيئاً.
+  line: 71287
+  status: draft
+  flag: meaning inferred
+
+- id: p610
+  text: الدنيا يوم إلك ويوم ___
+  answer: عليك
+  others: ["لغيرك","بلاك","وراك"]
+  meaning: الأيام دول، لا تدوم على حال.
+  line: 71288
+  status: draft
+
+- id: p1252
+  kind: taunt
+  text: ما شاء الله تمدّنّا، وصار الضو بالخيط والمي ___
+  answer: بالحيط
+  others: ["بالسطل","بالبير","بالجرّة"]
+  meaning: تهكّم ظريف بمظاهر المدنيّة الحديثة يوم دخلت الكهرباء البيوت بالأسلاك والماء بالأنابيب في الجدران.
+  line: 60519
+  status: draft
+
+- id: p611
+  text: الناس على دين ___
+  answer: ملوكا
+  others: ["جيرانا","تجّارا","شيوخا"]
+  meaning: الرعيّة تقلّد حكّامها في طباعهم.
+  line: 72870
+  status: draft
+
+- id: p1045
+  kind: wisdom
+  text: قرش في الجيب ولا عشرة في ___
+  answer: الغيب
+  others: ["السوق","الدين","البنك"]
+  meaning: القليل الحاضر خير من الكثير الموعود.
+  line: 50391
+  status: draft
+
+- id: p612
+  text: كل مين على دينو الله ___
+  answer: يعينو
+  others: ["يهديه","يرزقو","يحميه"]
+  meaning: لكل امرئ معتقده، والله يتولّى الجميع.
+  line: 72871
+  status: draft
+
+- id: p1253
+  kind: taunt
+  text: طوّل الغيبة وأجا ___
+  answer: بالخيبة
+  others: ["بالهدية","بالغنيمة","بالبشارة"]
+  meaning: يُقال فيمن يغيب طويلاً ثم يعود بلا طائل.
+  line: 60784
+  status: draft
+
+- id: p613
+  text: ما بيجي مالناس غير وجع ___
+  answer: الراس
+  others: ["الضرس","البطن","الضهر"]
+  meaning: مخالطة الناس لا تجلب إلا المتاعب.
+  line: 73966
+  status: draft
+
+- id: p1046
+  kind: wisdom
+  text: اشتغل بقرش وحاسب ___
+  answer: البطّال
+  others: ["الشغّال","المعلّم","الزبون"]
+  meaning: العمل بأجر زهيد أربح من البطالة.
+  meaning_source: book
+  line: 52273
+  status: draft
+
+- id: p614
+  text: رطل المشمش بقرشين ورطل مربّى المشمش بـ___
+  answer: ميتين
+  others: ["قرش","فلسين","بلاش"]
+  meaning: الصنعة ترفع قيمة الشيء أضعافاً.
+  line: 74524
+  status: draft
+  flag: meaning inferred
+
+- id: p1254
+  kind: taunt
+  text: بعد ما خلص السوق وزحمتو نزل المعتّر يقطع ___
+  answer: لحمتو
+  others: ["خبزتو","تذكرتو","شجرتو"]
+  meaning: يُقال في سيّئ الحظّ الذي لا يأتي إلا بعد فوات الأوان.
+  line: 64703
+  status: draft
+
+- id: p615
+  text: الرجّال في البيت رحمة ولو جاب ___
+  answer: فحمة
+  others: ["لحمة","شحمة","لقمة"]
+  meaning: وجود ربّ البيت نعمة ولو قلّ كسبه.
+  line: 74866
+  status: draft
+
+- id: p616
+  text: البيرقّع ما ___
+  answer: بيعرى
+  others: ["بيشقى","بيبرد","بيغنى"]
+  meaning: من يصلح ثيابه ويدبّر أمره لا يحتاج.
+  line: 77309
+  status: draft
+
+- id: p1047
+  kind: wisdom
+  text: الما بتربّيه الأيّام بتربّيه ___
+  answer: الحكّام
+  others: ["الأحلام","الأعمام","الأقلام"]
+  meaning: من لم تؤدّبه تجارب الحياة أدّبه القانون والسلطان.
+  line: 52599
+  status: draft
+
+- id: p617
+  text: احترت يا توبي منين ___
+  answer: أرقّعك
+  others: ["ألبسك","أغسلك","أبيعك"]
+  meaning: يقال حين تكثر العيوب فلا يُدرى من أين يبدأ الإصلاح.
+  line: 77309
+  status: draft
+
+- id: p1255
+  kind: taunt
+  text: أجا ليخلّص أخوه ___
+  answer: كفخوه
+  others: ["شكروه","عزموه","حبّوه"]
+  meaning: يُقال فيمن يتدخّل للنجدة فيناله الأذى.
+  line: 64718
+  status: draft
+
+- id: p618
+  text: الرمح ما بيتخبّى بـ___
+  answer: عدل
+  others: ["كمّ","جيب","صرّة"]
+  meaning: الأمر الظاهر لا يمكن إخفاؤه، والعدل هو الكيس الكبير.
+  line: 77806
+  status: draft
+
+- id: p1048
+  kind: wisdom
+  text: دوام الحال من ___
+  answer: المحال
+  others: ["الكمال","الحلال","الآمال"]
+  meaning: لا تبقى الدنيا على حال واحدة.
+  line: 52667
+  status: draft
+
+- id: p619
+  text: اللي بدّك ترهنو ___
+  answer: بيعو
+  others: ["خبّيه","عيرو","لبسو"]
+  meaning: المرهون قلّما يعود، فبيعه أولى.
+  line: 78171
+  status: draft
+
+- id: p1256
+  kind: taunt
+  text: وردة خلّفت ___
+  answer: شوكة
+  others: ["زهرة","فلّة","ريحانة"]
+  meaning: يُقال في الأصل الطيّب إذا أنجب ولداً سيّئاً.
+  line: 64797
+  status: draft
+
+- id: p620
+  text: المراية متل ما بترويا ___
+  answer: بترويك
+  others: ["بتغشّك","بتنساك","بتكبّرك"]
+  meaning: يعاملك الناس كما تعاملهم.
+  line: 78231
+  status: draft
+
+- id: p621
+  text: اللي إلو راس عند الروّاس ما ___
+  answer: بينام
+  others: ["بيجوع","بيدفع","بيحكي"]
+  meaning: من له حاجة عند غيره يبقى قلقاً حتى ينالها، والروّاس بائع رؤوس الغنم.
+  line: 78247
+  status: draft
+
+- id: p1049
+  kind: wisdom
+  text: العمر محتوم والرزق ___
+  answer: مقسوم
+  others: ["مهضوم","ملموم","محروم"]
+  meaning: الأجل والرزق مقدّران لا يتغيّران بالحرص.
+  line: 53602
+  status: draft
+
+- id: p1257
+  kind: taunt
+  text: فلان عم بتاجر بالكبيرة وما عندو ___
+  answer: خميرة
+  others: ["دكّان","ميزان","زبون"]
+  meaning: يُقال فيمن يدّعي التجارة الواسعة وليس عنده رأسمال.
+  line: 65397
+  status: draft
+
+- id: p622
+  text: الروس إذا غبّر، والإنكليز إذا بحّر، والعثمانلي إذا ___
+  answer: كبّر
+  others: ["عسكر","دبّر","صبّر"]
+  meaning: قوة الروس في جيشهم البرّي، والإنكليز في أسطولهم، والعثمانيين حين يهجمون مكبّرين.
+  meaning_source: book
+  line: 78501
+  status: draft
+
+- id: p623
+  text: الطبخة الطيّبة بتطلع ريحتا من ___
+  answer: العصر
+  others: ["المطبخ","السطح","الشبّاك"]
+  meaning: الشيء الجيّد تظهر علاماته باكراً.
+  line: 78804
+  status: draft
+
+- id: p1050
+  kind: wisdom
+  text: الحذر ما بيمنع ___
+  answer: القدر
+  others: ["المطر","السفر","السهر"]
+  meaning: الاحتياط لا يردّ ما قُدّر.
+  line: 54366
+  status: draft
+
+- id: p1258
+  kind: taunt
+  text: "الخنفسة شافت بنتا عالحيط قالت: لولية ومضمومة ___"
+  answer: بخيط
+  others: ["بدهب","بحرير","بشريط"]
+  meaning: يُقال في أن كل أحد يرى ولده أجمل الخلق.
+  line: 65718
+  status: draft
+
+- id: p624
+  text: زاد واحد بيكفي ___
+  answer: تنين
+  others: ["ضيعة","شهر","عرس"]
+  meaning: طعام الواحد يكفي اثنين إذا حضرت القناعة.
+  line: 79092
+  status: draft
+
+- id: p625
+  text: اعمال مليح وزتّو في ___
+  answer: البحر
+  others: ["البير","السوق","الطريق"]
+  meaning: اصنع المعروف ولا تنتظر جزاءه.
+  line: 79502
+  status: draft
+
+- id: p1259
+  kind: taunt
+  text: خيّاط وكمّو ___
+  answer: مفتوق
+  others: ["مكوي","مطرّز","مزرّر"]
+  meaning: يُقال في صاحب الصنعة الذي يُهمل نفسه فيما يُتقنه لغيره.
+  line: 66193
+  status: draft
+
+- id: p626
+  text: اللي بيخاف مالعصافير ما بيزرع ___
+  answer: درة
+  others: ["ورد","قطن","بصل"]
+  meaning: من خشي العواقب الصغيرة لم يُقدم على عمل.
+  line: 80071
+  status: draft
+
+- id: p1051
+  kind: wisdom
+  text: المقسوم إلك ___ على غيرك
+  answer: محرّم
+  others: ["محسوب","مكتوب","مردود"]
+  meaning: ما قُسم لك من الرزق لن يأخذه سواك.
+  line: 133147
+  status: draft
+
+- id: p627
+  text: اللي ببشّر بالعجّور بدّو عباية، واللي ببشّر بالزعرور بدّو ألف ___
+  answer: عصاية
+  others: ["هديّة","وردة","ليرة"]
+  meaning: العجّور يأتي بعده الربيع فمبشّره يُكافأ، والزعرور يأتي بعده الشتاء.
+  meaning_source: book
+  line: 80479
+  status: draft
+
+- id: p628
+  text: جوز القصيرة بيحسبا ___
+  answer: زغيرة
+  others: ["أميرة","طويلة","غزالة"]
+  meaning: القصيرة تبدو في عين زوجها أصغر من سنّها.
+  line: 80690
+  status: draft
+
+- id: p1260
+  kind: taunt
+  text: عدّى الزنكين عباب دارنا، كبر ___
+  answer: مقدارنا
+  others: ["بيتنا","ولدنا","كرمنا"]
+  meaning: يُقال فيمن يتباهى بأتفه صلة له بالأغنياء.
+  line: 66859
+  status: draft
+
+- id: p1052
+  kind: wisdom
+  text: حطّ الحزن ___ واقعود عليه
+  answer: بالجرن
+  others: ["بالكيس","بالصندوق","بالبير"]
+  meaning: اكبت حزنك وتغلّب عليه ولا تستسلم له.
+  line: 55318
+  status: draft
+
+- id: p629
+  text: حكمت زلقة بـ___
+  answer: تمّوز
+  others: ["شباط","كانون","آدار"]
+  meaning: يقال في الأمر النادر الذي يقع في غير أوانه.
+  line: 81496
+  status: draft
+
+- id: p630
+  text: من بعد عزّي وزهواتي صيّرني الدهر ___
+  answer: قهواتي
+  others: ["عتّال","بوّاب","سقّا"]
+  meaning: يقال في من تبدّلت حاله من العزّ إلى خدمة الناس.
+  line: 82341
+  status: draft
+  flag: OCR 'قهوان' read as قهواتي (rhyme)
+
+- id: p1261
+  kind: taunt
+  text: خبزي درة وخبزك درة، وليش ___؟
+  answer: هالقنبرة
+  others: ["هالضحكة","هالسهرة","هالعزيمة"]
+  meaning: يُقال لمن يتكبّر على من هو مثله في الحال، والقنبرة التعاظم.
+  line: 68960
+  status: draft
+
+- id: p1053
+  kind: wisdom
+  text: إش بيساوي الحاسب مع ___
+  answer: الرازق
+  others: ["الكاتب","السارق","التاجر"]
+  meaning: حسابات البشر لا تغيّر ما قسمه الله من الرزق.
+  line: 84118
+  status: draft
+
+- id: p631
+  text: كل شي عند ___ موجود إلا «حبّني بالزور» ما في
+  answer: العطّار
+  others: ["النجّار","الحدّاد","الخيّاط"]
+  meaning: المحبّة لا تُشترى ولا تكون بالإكراه.
+  line: 82499
+  status: draft
+
+- id: p632
+  text: الشي بالدور مو بـ___
+  answer: الزور
+  others: ["الدين","الصوت","الحظّ"]
+  meaning: الأمور تُنال بالدَّور لا بالقوّة.
+  line: 82498
+  status: draft
+
+- id: p1262
+  kind: taunt
+  text: مو دفنّا الشيخ زنكي ___
+  answer: سوا
+  others: ["مبارح","بكّير","بالليل"]
+  meaning: يُقال للشريك الذي يحاول أن يخدعك بما تعرفان حقيقته معاً، وأصله أن رجلين دفنا جحشهما وبنيا عليه قبّة وسمّياه الشيخ زنكي.
+  meaning_source: book
+  line: 69953
+  status: draft
+
+- id: p633
+  text: كل سجرة وإلا فيّ، وكل بلد وإلا ___
+  answer: زيّ
+  others: ["حيّ","ميّ","ضيّ"]
+  meaning: لكل بلد لباسه وعاداته كما لكل شجرة ظلّها.
+  line: 85583
+  status: draft
+
+- id: p1054
+  kind: wisdom
+  text: من صرف وما حسب ___ وما دري
+  answer: فقر
+  others: ["ربح","شبع","كبر"]
+  meaning: من أنفق بلا حساب افتقر من حيث لا يشعر.
+  line: 69148
+  status: draft
+
+- id: p634
+  text: الكترة بتغلب ___
+  answer: السجاعة
+  others: ["الشطارة","العادة","الحيلة"]
+  meaning: العدد الكثير يغلب الشجاع الواحد.
+  line: 85542
+  status: draft
+
+- id: p1263
+  kind: taunt
+  text: ابنو بحضنو وعم ___ عليه
+  answer: بدوّر
+  others: ["بضحك","بغنّي","بصرخ"]
+  meaning: يُقال في شديد الغفلة الذي يبحث عمّا هو بين يديه.
+  line: 71984
+  status: draft
+
+- id: p635
+  text: الطاقة اللي بيجيك منّا الهوا ___
+  answer: سدّا
+  others: ["فتحا","وسّعا","دهنا"]
+  meaning: اقطع سبب الأذى تسترح.
+  line: 86112
+  status: draft
+
+- id: p1055
+  kind: wisdom
+  text: الحسود لا ___
+  answer: يسود
+  others: ["يعود","يجود","يزور"]
+  meaning: الحاسد لا ينال السيادة ولا الرفعة.
+  line: 55546
+  status: draft
+
+- id: p636
+  text: تلاتة بيطوّلوا العمر، الدار الوسيعة والمرا المطيعة والفرس ___
+  answer: السريعة
+  others: ["البديعة","الرفيعة","الوديعة"]
+  meaning: راحة البال في البيت الواسع والزوجة الموافقة والمركب الجيّد.
+  line: 86809
+  status: draft
+
+- id: p1264
+  kind: taunt
+  text: "الفسفسة بتفقّس مية وبتقول: يا قلّة ___!"
+  answer: الذرّية
+  others: ["الحيلة","الراحة","الصحّة"]
+  meaning: يُقال فيمن عنده الكثير ولا يزال يشكو القلّة.
+  line: 125534
+  status: draft
+
+- id: p637
+  text: اللي ما بيشبع ببيتو ما بيشبع عسفرة ___
+  answer: الناس
+  others: ["العرس","العيد","الملوك"]
+  meaning: من لم يكفه ما في بيته لم يكفه ما عند غيره.
+  line: 87534
+  status: draft
+
+- id: p638
+  text: من ___ سقّي لو
+  answer: دهنو
+  others: ["بيرو","كاسو","ميّتو"]
+  meaning: عامله بمثل ما عنده، أو أنفق عليه من ماله نفسه.
+  line: 87688
+  status: draft
+
+- id: p1056
+  kind: wisdom
+  text: اسأل مجرّب ولا تسأل ___
+  answer: حكيم
+  others: ["جار","غريب","صاحب"]
+  meaning: صاحب التجربة أعلم بالأمر من صاحب العلم النظري.
+  line: 57322
+  status: draft
+
+- id: p639
+  text: الجوعان بيشوف ___ بنومو
+  answer: السقطيّة
+  others: ["القلعة","الجامع","المحطّة"]
+  meaning: المحتاج يحلم بما ينقصه، والسقطيّة سوق اللحوم والمآكل في حلب.
+  line: 87873
+  status: draft
+
+- id: p1265
+  kind: taunt
+  text: ردنا نتخلّص من الوكف وقفنا تحت ___
+  answer: المزراب
+  others: ["السقف","الشمسية","القنطرة"]
+  meaning: يُقال فيمن يهرب من ضرر صغير فيقع في أكبر منه.
+  line: 73771
+  status: draft
+
+- id: p640
+  text: مال الوقف بيهدّ ___
+  answer: السقف
+  others: ["الحيط","الباب","الدرج"]
+  meaning: من تصرّف بمال الوقف في غير وجهه خربت داره.
+  meaning_source: book
+  line: 87886
+  status: draft
+
+- id: p1057
+  kind: wisdom
+  text: الله بيحنّ و___
+  answer: بيحنّن
+  others: ["بيجنّن","بيمنّن","بيسنّن"]
+  meaning: الله يرحم ويعطّف القلوب بعضها على بعض.
+  line: 59999
+  status: draft
+
+- id: p641
+  text: سكبة الجار ما ___
+  answer: بتشبّع
+  others: ["بتبرد","بتنعدّ","بتنباع"]
+  meaning: ما يهديه الجار من طعامه قليل لا يُعتمد عليه.
+  line: 88022
+  status: draft
+
+- id: p1266
+  kind: taunt
+  text: فلان ما بعجبو العجب ولا الصيام في ___
+  answer: رجب
+  others: ["رمضان","شعبان","الصيف"]
+  meaning: يُقال في الذي لا يرضيه شيء.
+  line: 112165
+  status: draft
+
+- id: p642
+  text: لا ساقطة إلا وراها ___
+  answer: لاقطة
+  others: ["رابطة","غلطة","ضابطة"]
+  meaning: كل كلمة تسقط من قائلها تجد من يلتقطها.
+  line: 87818
+  status: draft
+
+- id: p700
+  text: اللي بياكل خبز السلطان بيضرب ___
+  answer: بسيفو
+  others: ["بعصاتو","بطبلو","بكفّو"]
+  meaning: من يعيش من خير أحد يدافع عنه ويقاتل في صفّه.
+  line: 89034
+  status: draft
+
+- id: p1058
+  kind: wisdom
+  text: الحيط الواطي كلّ الناس ___
+  answer: بتركبو
+  others: ["بتهدمو","بتدهنو","بتسندو"]
+  meaning: الضعيف المتساهل يتجرّأ عليه الجميع.
+  line: 60530
+  status: draft
+
+- id: p1268
+  kind: taunt
+  text: باع الجمل واستحيف على ___
+  answer: الرسن
+  others: ["السنام","الصحرا","القافلة"]
+  meaning: يُقال فيمن فرّط في الشيء الكبير ثم تحسّر على التافه.
+  line: 75988
+  status: draft
+
+- id: p701
+  text: اللي بيسلّم دقنو للناس ___ لو ياها
+  answer: بينتفوا
+  others: ["بيمشّطوا","بيحنّوا","بيعطّروا"]
+  meaning: من أسلم أمره للناس عبثوا به وأذلّوه.
+  line: 89329
+  status: draft
+
+- id: p702
+  text: أصابيعك مو كلّن ___
+  answer: سوا
+  others: ["طوال","قصار","إلك"]
+  meaning: الناس ليسوا سواء، حتى الإخوة في البيت الواحد.
+  line: 91207
+  status: draft
+
+- id: p1269
+  kind: taunt
+  text: وجّو ما بضحك لرغيف ___
+  answer: السخن
+  others: ["اليابس","البايت","المحروق"]
+  meaning: يُقال في العبوس الذي لا يبتسم لشيء مهما كان مبهجاً.
+  line: 76767
+  status: draft
+
+- id: p1059
+  kind: wisdom
+  text: من أمّنك لا تخونو ولو كنت ___
+  answer: خوّان
+  others: ["جوعان","زعلان","طفران"]
+  meaning: احفظ أمانة من وثق بك مهما كان طبعك.
+  line: 61492
+  status: draft
+
+- id: p703
+  text: بحبّك يا سواري، متل ___ لأ
+  answer: زندي
+  others: ["خاتمي","عقدي","شالي"]
+  meaning: أحبّ مالي لكنّ نفسي أغلى عندي منه.
+  line: 91265
+  status: draft
+
+- id: p705
+  text: الظلم بالسويّة عدل ___
+  answer: بالرعيّة
+  others: ["بالقضيّة","بالبرّيّة","بالهديّة"]
+  meaning: إذا عمّ الظلم الجميع بالتساوي عُدّ ضرباً من العدل.
+  line: 92087
+  status: draft
+
+- id: p1270
+  kind: taunt
+  text: البيت ضيّق والحمار ___
+  answer: رفّاس
+  others: ["نعسان","زغير","مربوط"]
+  meaning: يُقال حين تجتمع على المرء ضائقتان، ضيق المكان وسوء العشير.
+  line: 76827
+  status: draft
+
+- id: p706
+  text: ادخول بين سيفين ولا تدخل بين ___
+  answer: شيخين
+  others: ["ضيفين","صفّين","جارين"]
+  meaning: التدخّل في خلاف العلماء أخطر من الدخول بين المتقاتلين.
+  line: 92489
+  status: draft
+
+- id: p1060
+  kind: wisdom
+  text: خلّف لعدوّك ولا تعتاز ___
+  answer: لزديقك
+  others: ["لجارك","لأخوك","لابنك"]
+  meaning: أن تترك مالك لعدوّك بعدك خير من أن تحتاج إلى صديقك في حياتك.
+  line: 64801
+  status: draft
+
+- id: p707
+  text: السيف ما بيقطع ___
+  answer: بقرابو
+  others: ["بصاحبو","بلمعتو","بإسمو"]
+  meaning: السيف لا ينفع وهو في غمده، فلا بدّ من العمل.
+  line: 131235
+  status: draft
+
+- id: p1271
+  kind: taunt
+  text: فلان منقدّم لو العليق بقدّم لنا ___
+  answer: الرفس
+  others: ["الشكر","السلام","الهدايا"]
+  meaning: يُقال في ناكر الجميل الذي يقابل الإحسان بالإساءة.
+  line: 76903
+  status: draft
+
+- id: p708
+  text: حلال عال___
+  answer: شاطر
+  others: ["صابر","تاجر","فقير"]
+  meaning: الغنيمة لمن كان أمهر وأسبق إليها.
+  line: 93094
+  status: draft
+
+- id: p1061
+  kind: wisdom
+  text: ألسنة الخلق أقلام ___
+  answer: الحقّ
+  others: ["الرصاص","الكتّاب","القاضي"]
+  meaning: ما يجمع عليه الناس في الحكم على امرئ هو الحقّ غالباً.
+  line: 64826
+  status: draft
+
+- id: p709
+  text: الحنطة اللي ماهي إلك لا تحضر كيلا، بتغبّر دقنك وبتتعب ___
+  answer: بشيلا
+  others: ["بطحنا","بعدّا","ببيعا"]
+  meaning: لا تشغل نفسك بما ليس لك فلن تنال منه إلا التعب.
+  line: 93345
+  status: draft
+
+- id: p710
+  text: المكاتبة نصّ ___
+  answer: المشاهدة
+  others: ["المعاتبة","المحبّة","المسافة"]
+  meaning: الرسالة تقوم مقام نصف اللقاء.
+  line: 93603
+  status: draft
+
+- id: p1272
+  kind: taunt
+  text: يا طاقة! عطينا ___
+  answer: رقاقة
+  others: ["خبزة","ليرة","كبّة"]
+  meaning: يتهكّمون بها على من يريد بلوغ أمانيه بالتمنّي وحده دون سعي.
+  meaning_source: book
+  line: 105984
+  status: draft
+
+- id: p711
+  text: اللي بيرقص مع احبابو الله يفرّح ___
+  answer: شبابو
+  others: ["عيالو","جيرانو","أيّامو"]
+  meaning: دعاء بالخير لمن يشارك أحبابه أفراحهم.
+  line: 93786
+  status: draft
+
+- id: p1062
+  kind: wisdom
+  text: الإنسان مسيّر ماهو ___
+  answer: مخيّر
+  others: ["مغيّر","محيّر","مصوّر"]
+  meaning: الإنسان محكوم بقدره لا بما يختاره.
+  line: 66315
+  status: draft
+
+- id: p712
+  text: منو بيشدّ مع العروس غير أمّا و___
+  answer: الماشطة
+  others: ["الخيّاطة","الجارة","الداية"]
+  meaning: لا يمدح المرء إلا أهله ومن له مصلحة عنده.
+  line: 94774
+  status: draft
+
+- id: p1273
+  kind: taunt
+  text: ناس أكلت معاليق وناس لسّاتا على ___
+  answer: الريق
+  others: ["الباب","السفرة","الدور"]
+  meaning: يُقال في تفاوت الحظوظ، قوم شبعوا وقوم لم يذوقوا شيئاً بعد.
+  line: 78956
+  status: draft
+
+- id: p713
+  text: أوّلو شرط آخرو ___
+  answer: رضى
+  others: ["ندم","خصام","عتب"]
+  meaning: الاتّفاق الواضح في البداية يمنع الخلاف في النهاية.
+  line: 95400
+  status: draft
+
+- id: p1064
+  kind: wisdom
+  text: ياما الزمان نزّل ملوك عن ___
+  answer: كراسيا
+  others: ["خيولا","سطوحا","قصورا"]
+  meaning: الزمان لا يُبقي ذا سلطان في سلطانه.
+  line: 141549
+  status: draft
+
+- id: p714
+  text: اشطوف بيتك ما بتعرف منو بيدوسو، واغسول وجّك ما بتعرف منو ___
+  answer: ببوسو
+  others: ["بيمدحو","بيزورو","بيرسمو"]
+  meaning: كن نظيفاً مرتّباً دائماً فلا تدري من يفاجئك.
+  line: 95979
+  flag: middle of the proverb is garbled in OCR; reading 'بيدوسو ... ببوسو' taken from line 95981
+  status: draft
+
+- id: p1274
+  kind: taunt
+  text: أكل الهدية وكسر ___
+  answer: الزبدية
+  others: ["الملعقة","الطاولة","الباب"]
+  meaning: يُقال في ناكر الجميل الذي ينتفع بالمعروف ثم يسيء إلى صاحبه.
+  line: 172263
+  status: draft
+
+- id: p715
+  text: اللي إلو في الجمل شعرة ___
+  answer: بينيّخو
+  others: ["بيركبو","بيبيعو","بيحلبو"]
+  meaning: صاحب أدنى نصيب في الشيء يتصرّف فيه كأنه مالكه.
+  line: 96166
+  status: draft
+
+- id: p716
+  text: الغني زيت حلو، بتاكل منّو و___ منّو
+  answer: بتشعل
+  others: ["بتشرب","بتبيع","بتغسل"]
+  meaning: الغنيّ يُنتفع به على كلّ وجه، كالزيت طعاماً وضوءاً.
+  line: 96288
+  status: draft
+
+- id: p1065
+  kind: wisdom
+  text: ظالم لا تكون، ___ لا تخاف
+  answer: مالدعا
+  others: ["مالبرد","مالعتمة","مالكلاب"]
+  meaning: من لم يظلم أحداً لم يخشَ دعاء المظلومين.
+  line: 110469
+  status: draft
+
+- id: p1275
+  kind: taunt
+  text: أنا غنية وبحبّ ___
+  answer: الهدية
+  others: ["الشغل","السفر","الصيام"]
+  meaning: يُقال فيمن يطمع في العطايا مع أنه غير محتاج.
+  line: 172262
+  status: draft
+
+- id: p717
+  text: الجمل شقد ما بار بيحمل ___
+  answer: قنطار
+  others: ["صاحبو","حالو","قشّة"]
+  meaning: الكبير القدر مهما ضعف يبقى قادراً على ما يعجز عنه غيره.
+  line: 96773
+  status: draft
+
+- id: p718
+  text: المجنون إذا شلف حجر، عشرين ___ ما بيرجّعو
+  answer: عاقل
+  others: ["حمّال","بنّا","شرطي"]
+  meaning: حماقة واحدة قد يعجز العقلاء جميعاً عن إصلاحها.
+  line: 97528
+  status: draft
+
+- id: p1066
+  kind: wisdom
+  text: إن غاب عنك أصلو بيدلّك ___
+  answer: فعلو
+  others: ["اسمو","طولو","مالو"]
+  meaning: أفعال المرء تكشف عن أصله.
+  line: 70494
+  status: draft
+
+- id: p1276
+  kind: taunt
+  text: وكّلنا العصفور بالزرزور طلعوا التنين ___
+  answer: طيّارين
+  others: ["نايمين","جوعانين","خرسانين"]
+  meaning: يُقال حين يؤتمن واحد على آخر فإذا هما سواء في التفلّت.
+  line: 115170
+  status: draft
+
+- id: p719
+  text: اللي راسو من شمع ما بيمشي في ___
+  answer: الشمس
+  others: ["العتمة","السوق","المطر"]
+  meaning: من كان فيه عيب فليتجنّب ما يكشفه.
+  line: 98068
+  status: draft
+
+- id: p720
+  text: اللي بيحضر التكيّة بيشرق ___
+  answer: الشوربة
+  others: ["القهوة","الشاي","اللبن"]
+  meaning: من حضر في الوقت والمكان نال نصيبه.
+  line: 98921
+  status: draft
+
+- id: p1067
+  kind: wisdom
+  text: الما بيكون ديب بتاكلو ___
+  answer: الدياب
+  others: ["الغنم","الجاج","العصافير"]
+  meaning: من لم يكن قويّاً حازماً استضعفه الأقوياء.
+  line: 72544
+  status: draft
+  flag: last word garbled in OCR; restored as الدياب
+
+- id: p721
+  text: كل شي بالحشمة إلا التوت ___
+  answer: بالكمشة
+  others: ["بالحبّة","بالملعقة","بالصحن"]
+  meaning: لكلّ شيء أدب في أكله إلا التوت فلا يحلو إلا بملء الكفّ.
+  line: 99286
+  status: draft
+
+- id: p1277
+  kind: taunt
+  text: مرتك وابنك الزغير بخمّنوك على كل شي ___
+  answer: قدير
+  others: ["زعلان","مديون","نعسان"]
+  meaning: يُقال في أن الزوجة والولد الصغير يظنّان ربّ البيت قادراً على تلبية كل طلب.
+  line: 80688
+  status: draft
+
+- id: p722
+  text: لا يغرّك الباب بكبر الحلقة، يمكن يكون فيه ناس بيستحقّوا ___
+  answer: الصدقة
+  others: ["الزيارة","السلام","الحسد"]
+  meaning: المظاهر خدّاعة، فقد يخفي الباب الفخم فقراً.
+  line: 101551
+  status: draft
+
+- id: p723
+  text: راح العدو من بيناتنا وصفينا ___
+  answer: تنيناتنا
+  others: ["بحسراتنا","بغمّاتنا","لولاداتنا"]
+  meaning: زال من كان يفرّق بيننا فصفا الودّ.
+  line: 102518
+  status: draft
+
+- id: p1278
+  kind: taunt
+  text: فلان بكره الضيف ولو ___ معو
+  answer: زوادتو
+  others: ["مفتاحو","عصايتو","طربوشو"]
+  meaning: يُقال في شديد البخل الذي يضيق بالضيف حتى لو لم يكلّفه شيئاً.
+  line: 82381
+  status: draft
+
+- id: p1068
+  kind: wisdom
+  text: الذوق فضّلوه ___
+  answer: عالعلم
+  others: ["عالمال","عالجمال","عالنسب"]
+  meaning: حسن التصرّف واللياقة أعلى قدراً من كثرة العلم.
+  line: 73460
+  status: draft
+
+- id: p726
+  text: اضروب اضروب وآخرتا بوس ___
+  answer: دقون
+  others: ["إيدين","خدود","جبين"]
+  meaning: مهما اشتدّ الخصام فنهايته الصلح.
+  meaning_source: book
+  line: 104534
+  status: draft
+
+- id: p727
+  text: الضرورات إلها ___
+  answer: أحكام
+  others: ["أيّام","أبواب","أثمان"]
+  meaning: عند الضرورة يجوز ما لا يجوز في غيرها.
+  line: 104767
+  status: draft
+
+- id: p1279
+  kind: taunt
+  text: شرب البحر وغصّ عند ___
+  answer: الساقية
+  others: ["الجبل","المركب","الشطّ"]
+  meaning: يُقال فيمن أنجز الصعب ثم عجز عن اليسير.
+  line: 83883
+  status: draft
+
+- id: p1069
+  kind: wisdom
+  text: ريد الخير ___ بتلقاه بديارك
+  answer: لجارك
+  others: ["لحالك","لمالك","لخالك"]
+  meaning: من تمنّى الخير لغيره ناله في بيته.
+  line: 73766
+  status: draft
+
+- id: p729
+  text: الضيف المتعشّي تقلتو ___
+  answer: عالأرض
+  others: ["عالمطبخ","عالجيبة","عالسفرة"]
+  meaning: الضيف الذي جاء شبعان لا يكلّف صاحب البيت شيئاً.
+  line: 105384
+  status: draft
+
+- id: p730
+  text: نام بالبرّيّة ولا تنام جنب ___
+  answer: طاقة
+  others: ["ساقية","شجرة","مغارة"]
+  meaning: تيّار الهواء من النافذة أضرّ من النوم في العراء.
+  line: 105980
+  status: draft
+
+- id: p1280
+  kind: taunt
+  text: "سألوا البغل عن أبوه قال لن: الحصان ___"
+  answer: خالي
+  others: ["جاري","صاحبي","معلّمي"]
+  meaning: يُقال فيمن يستحي من أصله فيفتخر بأقاربه الأرفع شأناً.
+  line: 83955
+  status: draft
+
+- id: p731
+  text: قال لا، يا مرا اطبخي طيّب. قالت لو، يا رجّال ___
+  answer: كلّف
+  others: ["دوق","اصبور","اشكور"]
+  meaning: الطعام الطيّب يحتاج إلى إنفاق لا إلى كلام.
+  line: 106423
+  status: draft
+
+- id: p1070
+  kind: wisdom
+  text: أنا بريد وإنته بتريد والله يفعل ما ___
+  answer: يريد
+  others: ["نريد","تريد","يفيد"]
+  meaning: للناس رغبات شتّى، ولا ينفذ إلا ما أراده الله.
+  line: 126377
+  status: draft
+
+- id: p732
+  text: اللي ما بيشوف بالغربال بيكون ___
+  answer: أعمى
+  others: ["نعسان","زعلان","بردان"]
+  meaning: من لا يرى الأمر الواضح وضوح الشمس فلا حيلة فيه.
+  line: 120297
+  status: draft
+
+- id: p1281
+  kind: taunt
+  text: أش بتترجّى من السفرجلة وكل عضّة ___
+  answer: بغصّة
+  others: ["بحبّة","بليرة","بضحكة"]
+  meaning: يُقال في الأمر الذي كل ما فيه مشقّة ولا يُرجى منه خير.
+  line: 87473
+  status: draft
+
+- id: p733
+  text: القفص الكويّس ما بيطعمي ___
+  answer: العصفور
+  others: ["الصيّاد","النجّار","الجيران"]
+  meaning: المظهر الجميل لا يغني عن الحاجة الحقيقية.
+  line: 108256
+  status: draft
+
+- id: p1071
+  kind: wisdom
+  text: العجلة مالشيطان والتأنّي من ___
+  answer: الرحمن
+  others: ["الإنسان","الزمان","السلطان"]
+  meaning: التسرّع مذموم والتمهّل محمود.
+  line: 75133
+  status: draft
+
+- id: p734
+  text: يا هناهن يا هناهن، طلبوا من الله والله ___
+  answer: عطاهن
+  others: ["حماهن","هداهن","نساهن"]
+  meaning: يقال في من نال ما تمنّى.
+  line: 108671
+  status: draft
+
+- id: p735
+  text: طلبناها مالسما وشفناها ___
+  answer: عالأرض
+  others: ["بالمنام","عالسطح","بالسوق"]
+  meaning: ما كنّا نظنّه بعيد المنال وجدناه قريباً.
+  line: 108672
+  status: draft
+
+- id: p1282
+  kind: taunt
+  text: قام السلطان يحدي خيلو مدّت الخنفسة ___
+  answer: إجرا
+  others: ["راسا","جناحا","قرنا"]
+  meaning: يُقال في الوضيع الذي يحشر نفسه بين الكبار ويطلب ما يُصنع لهم.
+  line: 89040
+  status: draft
+
+- id: p736
+  text: كول البطّيخ وطلّع عزنودك، وكول الدبس وطلّع ___
+  answer: عخدودك
+  others: ["عكفوفك","عكتافك","عجبينك"]
+  meaning: البطّيخ يقوّي الجسم والدبس يورّد الخدّين.
+  line: 108827
+  flag: OCR 'الحبس' read as الدبس
+  status: draft
+
+- id: p1072
+  kind: wisdom
+  text: قال لو، يا ربّي ارزقني، قال لو، ___ يا عبدي لأسعى معك
+  answer: اسعى
+  others: ["اصبور","ادعي","نام"]
+  meaning: الرزق يحتاج إلى سعي، والله يعين الساعي.
+  line: 75752
+  status: draft
+
+- id: p737
+  text: طبّوا الطنجرة على تمّا بتطلع البنيّة ___
+  answer: لأمّا
+  others: ["لأبوها","لستّا","لخالتا"]
+  meaning: البنت تشبه أمّها في طباعها.
+  line: 109283
+  status: draft
+
+- id: p1283
+  kind: taunt
+  text: بصوم بصوم وبفطر على سنّ ___
+  answer: توم
+  others: ["لوز","جوز","سكّر"]
+  meaning: يُقال فيمن يصبر طويلاً ثم ينال شيئاً تافهاً.
+  line: 90573
+  status: draft
+
+- id: p738
+  text: الفرس الأصيلة ما بيعيبا ___
+  answer: جلالا
+  others: ["صاحبا","لونا","عمرا"]
+  meaning: الأصيل لا ينقص قدره رثاثة مظهره.
+  line: 110625
+  status: draft
+
+- id: p1073
+  kind: wisdom
+  text: الإلو عمر ما بتقتلو ___
+  answer: شدّة
+  others: ["كلمة","نسمة","ضحكة"]
+  meaning: من كُتب له العمر نجا من كلّ شدّة.
+  line: 130565
+  status: draft
+
+- id: p739
+  text: كل شي عادة حتى ___
+  answer: العبادة
+  others: ["السعادة","الشهادة","الولادة"]
+  meaning: كلّ أمر يسهل بالتعوّد عليه.
+  line: 110747
+  status: draft
+
+- id: p1284
+  kind: taunt
+  text: هالموظّف شغلتو يغيّب شموس ويقبض ___
+  answer: فلوس
+  others: ["هموم","حكي","تعب"]
+  meaning: يُقال في الموظّف الخامل الذي لا عمل له إلا انتظار غروب الشمس وقبض راتبه.
+  line: 122044
+  status: draft
+
+- id: p740
+  text: الله يعين الضعيف ليتعجّب ___
+  answer: القوي
+  others: ["الطبيب","الجار","الحاسد"]
+  meaning: قد ينصر الله الضعيف نصراً يدهش الأقوياء.
+  line: 111306
+  status: draft
+
+- id: p741
+  text: الحجرة اللي ما بتعجب ___
+  answer: بتفجّ
+  others: ["بتلمع","بتسند","بتطير"]
+  meaning: ما تستهين به قد يؤذيك أشدّ الأذى.
+  line: 112158
+  status: draft
+
+- id: p1074
+  kind: wisdom
+  text: تراب العمل ولا ___ الكسل
+  answer: زعفران
+  others: ["سكّر","حرير","ريحان"]
+  meaning: مشقّة العمل وغباره خير من ترف البطالة.
+  line: 80541
+  status: draft
+
+- id: p1285
+  kind: taunt
+  text: من بعد ما شاب ودّوه ___
+  answer: للكتّاب
+  others: ["للحمّام","للسوق","للعرس"]
+  meaning: يُقال فيمن يبدأ بالتعلّم بعد فوات أوانه.
+  line: 92770
+  status: draft
+
+- id: p742
+  text: الحمّام في الشتا لا تعدّي على بابا، وفي الصيف اجعال دابك ___
+  answer: ودابا
+  others: ["وبابا","وغيابا","وحسابا"]
+  meaning: يُتجنّب حمّام السوق شتاءً خوف البرد ويُكثر منه صيفاً.
+  line: 112597
+  status: draft
+
+- id: p743
+  text: اللي بيعرف بيعرف، واللي ما بيعرف بيقول كفّ ___
+  answer: عدس
+  others: ["حمّص","برغل","فول"]
+  meaning: من يجهل حقيقة الأمر يفسّره بظاهره البسيط.
+  line: 112729
+  status: draft
+
+- id: p1075
+  kind: wisdom
+  text: المال المزكّى لا بيحرق ولا ___
+  answer: بيغرق
+  others: ["بيخلص","بينعدّ","بينتسى"]
+  meaning: المال الذي تُخرج زكاته محفوظ من التلف.
+  line: 81066
+  status: draft
+
+- id: p1286
+  kind: taunt
+  text: لمّا الجردون بسكر بلعب ___ القطّ
+  answer: بشوارب
+  others: ["بصحن","بطابة","بفرشة"]
+  meaning: يُقال في الضعيف الذي تأخذه النشوة فيتجرّأ على من يقدر على هلاكه.
+  line: 92938
+  status: draft
+
+- id: p744
+  text: ما عدمتك يا لسان، شلون ما دوّرتك ___
+  answer: بتندار
+  others: ["بتنهار","بتحتار","بتنعار"]
+  meaning: اللسان طيّع يقلب الكلام كيف شاء صاحبه.
+  line: 112822
+  status: draft
+
+- id: p745
+  text: عدوّ جدّك ما ___
+  answer: بيودّك
+  others: ["بيردّك","بيعدّك","بيهدّك"]
+  meaning: العداوة القديمة تتوارثها الأجيال.
+  line: 112901
+  status: draft
+
+- id: p746
+  text: السفر قطعة من ___
+  answer: العذاب
+  others: ["العمر","الجنّة","القلب"]
+  meaning: السفر مشقّة وتعب.
+  line: 112983
+  status: draft
+
+- id: p1076
+  kind: wisdom
+  text: ضوّي عقدّ ___
+  answer: زيتاتك
+  others: ["شمعاتك","سهراتك","ضيوفك"]
+  meaning: أنفق على قدر ما تملك.
+  line: 105273
+  status: draft
+
+- id: p1287
+  kind: taunt
+  text: "قال لو: يا بو شرّفنا! قال لو: تيموت ___"
+  answer: البيعرفنا
+  others: ["البيحبّنا","البيزورنا","البيسمعنا"]
+  meaning: سأل الابن أباه أن يعدّد له مناقب أجداده ليفتخر بها، فأجابه أن ذلك لا يمكن ما دام من يعرف حقيقتهم حيّاً.
+  meaning_source: book
+  line: 95504
+  status: draft
+
+- id: p747
+  text: اللي بيريد يبسط نفسو يتذكّر ليلة ___
+  answer: عرسو
+  others: ["عيدو","سفرو","ختمتو"]
+  meaning: استعادة الذكريات الحلوة تسرّ النفس.
+  line: 113385
+  status: draft
+
+- id: p748
+  text: الخبز الحاف بيعرّض ___
+  answer: الأكتاف
+  others: ["الخدود","الجيوب","الأحلام"]
+  meaning: الخبز وحده يكفي لتقوية الجسم، يقال في القناعة.
+  line: 113514
+  status: draft
+
+- id: p1288
+  kind: taunt
+  text: "دخل كتير الغلبة عجهنّم وقال: الحطب ___"
+  answer: نديان
+  others: ["ناشف","كتير","مليح"]
+  meaning: يُقال في الذي لا يكفّ عن الاعتراض والتعليق حتى في أشدّ المواقف.
+  line: 140705
+  status: draft
+
+- id: p1077
+  kind: wisdom
+  text: اللي معو المال كلّ الناس بتسوسو، والما معو المال كلّ الناس ___
+  answer: بتدوسو
+  others: ["بتبوسو","بتحبّو","بتزورو"]
+  meaning: الناس يدارون الغنيّ ويستخفّون بالفقير.
+  line: 83469
+  status: draft
+
+- id: p749
+  text: عدّي على عدوّك جوعان ولا تعدّي عليه ___
+  answer: عريان
+  others: ["شبعان","زعلان","تعبان"]
+  meaning: الجوع يخفى على الناس، أمّا رثاثة اللباس فتُشمت العدوّ.
+  line: 113973
+  status: draft
+
+- id: p750
+  text: بيت السبع ما بيخلى من ___
+  answer: العضام
+  others: ["الفيران","الورد","الدخّان"]
+  meaning: بيت الكريم الغنيّ لا يخلو من خير.
+  line: 115360
+  status: draft
+
+- id: p1289
+  kind: taunt
+  text: شي ما نابو وتقطّعت ___
+  answer: تيابو
+  others: ["حبالو","كتبو","خيطانو"]
+  meaning: يُقال فيمن أتعب نفسه في أمر فلم ينل منه إلا الخسارة.
+  line: 99282
+  status: draft
+
+- id: p1078
+  kind: wisdom
+  text: الدنيا ساعة فاجعلها ___
+  answer: طاعة
+  others: ["بضاعة","إذاعة","مجاعة"]
+  meaning: العمر قصير فاغتنمه في طاعة الله.
+  line: 83622
+  status: draft
+
+- id: p751
+  text: اللي بيخاف من العفريت ___ لو
+  answer: بيطلع
+  others: ["بيضحك","بيدفع","بيغنّي"]
+  meaning: من خاف شيئاً وأكثر التفكير فيه وقع فيه.
+  line: 115873
+  status: draft
+
+- id: p752
+  text: جوزك متل ما علّمتيه وابنك متل ما ___
+  answer: ربّيتيه
+  others: ["سمّيتيه","لبّستيه","شفتيه"]
+  meaning: الزوج والولد على ما تعوّدهما المرأة.
+  line: 117233
+  flag: first words garbled in OCR; read as جوزك متل ما علّمتيه
+  status: draft
+
+- id: p1290
+  kind: taunt
+  text: حنّ السير عالقبقاب والعدا صارت ___
+  answer: اصحاب
+  others: ["جيران","قرايب","شركا"]
+  meaning: يُقال تهكّماً حين يتصالح خصمان فجأة بعد عداوة.
+  line: 100189
+  status: draft
+
+- id: p754
+  text: عند الغارة ما بينفع ___
+  answer: العليق
+  others: ["الكحل","الغسيل","الحمّام"]
+  meaning: لا ينفع علف الفرس ساعة الهجوم، فالاستعداد يكون قبل وقت الحاجة.
+  line: 117411
+  status: draft
+
+- id: p1079
+  kind: wisdom
+  text: الضحك بلا سبب من قلّة ___
+  answer: الأدب
+  others: ["التعب","الطرب","الدهب"]
+  meaning: الضحك في غير موضعه سوء أدب.
+  line: 84384
+  status: draft
+
+- id: p755
+  text: عليك بالطرق ولو دارت، وعليك بالمدن ولو ___
+  answer: جارت
+  others: ["طارت","غارت","صارت"]
+  meaning: اسلك الطريق المعروفة ولو طالت، واسكن المدن ولو ظلمتك.
+  line: 117422
+  status: draft
+
+- id: p1291
+  kind: taunt
+  text: منحطّك بصدر البيت منلاقيك ___
+  answer: بالعتبة
+  others: ["بالسطح","بالمطبخ","بالجنينة"]
+  meaning: يُقال فيمن تُكرمه وترفع قدره فيأبى إلا أن ينزل بنفسه إلى الدون.
+  line: 101401
+  status: draft
+
+- id: p756
+  text: خدوا البنات من صدور ___
+  answer: العمّات
+  others: ["البيوت","المدارس","الجيران"]
+  meaning: البنت تشبه عمّتها، فمن أراد أن يعرف طباعها فلينظر إلى عمّاتها.
+  line: 117909
+  status: draft
+
+- id: p1080
+  kind: wisdom
+  text: السماح ___
+  answer: رباح
+  others: ["نجاح","سلاح","مفتاح"]
+  meaning: المساهلة في المعاملة تجلب الربح.
+  meaning_source: book
+  line: 89714
+  status: draft
+
+- id: p758
+  text: بتشرين بيخلص العنب و___
+  answer: التين
+  others: ["الزيتون","الرمّان","التوت"]
+  meaning: في تشرين ينتهي موسم العنب والتين.
+  line: 118174
+  status: draft
+
+- id: p759
+  text: قال العنبر، الله أكبر! متل هالسنة الملعونة ما حطّوا فيّي ___
+  answer: المونة
+  others: ["الزيتونة","الليمونة","الصابونة"]
+  meaning: يقال على لسان مخزن البيت الفارغ في سنة القحط والغلاء.
+  line: 118219
+  status: draft
+
+- id: p1292
+  kind: taunt
+  text: مال أبونا وبدّو يصير علينا ___
+  answer: صدقة
+  others: ["ورتة","أمانة","تجارة"]
+  meaning: يُقال فيمن يمنّ عليك بما هو حقّك أصلاً.
+  line: 101549
+  status: draft
+
+- id: p760
+  text: قال لو، عنتر بيقتل ألف. قال لو، إذا كان وراه ___
+  answer: ألف
+  others: ["سيف","حصان","عبلة"]
+  meaning: البطل لا ينتصر وحده بل بمن يسنده.
+  line: 118304
+  status: draft
+
+- id: p1081
+  kind: wisdom
+  text: إن غرّبت شيش برك وإن شرّقت ___
+  answer: كبّة
+  others: ["محشي","يبرق","كباب"]
+  meaning: كلّ ما يجري حسن ولذيذ أينما اتّجهت.
+  meaning_source: book
+  line: 95566
+  status: draft
+
+- id: p761
+  text: عنصر واطلاع، وصلّب و___
+  answer: ادخول
+  others: ["انزول","اسروح","ازراع"]
+  meaning: في عيد العنصرة يدفأ الجوّ فنم في صحن الدار، وفي عيد الصليب يبرد فادخل إلى البيت.
+  meaning_source: book
+  line: 118413
+  status: draft
+
+- id: p1293
+  kind: taunt
+  text: لو كنّا منحسب حساب للصراصير كنّا ما نزلنا على ___
+  answer: الحمّام
+  others: ["السوق","البستان","الجامع"]
+  meaning: يُقال في أن من يخشى كل منغّص صغير لا يُقدم على شيء.
+  line: 101728
+  status: draft
+
+- id: p762
+  text: قالوا للكلاب، اركضوا وعوّوا. قالوا، عال___ ما منقدر
+  answer: شغلتين
+  others: ["عتمة","برد","جوع"]
+  meaning: لا يُطلب من المرء عملان في وقت واحد.
+  line: 118605
+  status: draft
+
+- id: p1082
+  kind: wisdom
+  text: الصبر مفتاح ___
+  answer: الفرج
+  others: ["الدار","الخزنة","الحارة"]
+  meaning: بالصبر تنفرج الشدائد.
+  line: 161402
+  status: draft
+
+- id: p763
+  text: كل عود و___ فيه
+  answer: دخّانو
+  others: ["ورقو","طولو","شوكو"]
+  meaning: لكلّ إنسان عيبه الملازم له.
+  line: 118735
+  status: draft
+
+- id: p1294
+  kind: taunt
+  text: عم بكيّل البحر ___
+  answer: بالفنجان
+  others: ["بالميزان","بالدراع","بالغربال"]
+  meaning: يُقال فيمن يشغل نفسه بعمل لا ينتهي ولا طائل منه.
+  line: 127589
+  status: draft
+
+- id: p764
+  text: توب العيارة ما ___
+  answer: بيدفّي
+  others: ["بيتّسخ","بينباع","بينكوى"]
+  meaning: ما تستعيره من غيرك لا يغنيك ولا يدوم لك.
+  line: 118985
+  status: draft
+
+- id: p765
+  text: الغالي هوّه ___
+  answer: رخيص
+  others: ["تقيل","بعيد","قديم"]
+  meaning: الجيّد الغالي أوفر في النهاية لأنه يدوم.
+  line: 119855
+  status: draft
+
+- id: p1083
+  kind: wisdom
+  text: اضحاك للدنيا ___ لك
+  answer: بتضحك
+  others: ["بتغنّي","بترقص","بتبكي"]
+  meaning: من استقبل الحياة بالبشر أقبلت عليه.
+  line: 104364
+  status: draft
+
+- id: p1295
+  kind: taunt
+  text: اللفّة مصقولة والجيب ما في ___
+  answer: فولة
+  others: ["ليرة","بارة","فرنك"]
+  meaning: يُقال في المتأنّق في مظهره وهو مفلس.
+  line: 102591
+  status: draft
+
+- id: p766
+  text: الطحّان ما بيغبّر على ___
+  answer: كلّاس
+  others: ["خبّاز","حلّاق","عطّار"]
+  meaning: كلاهما مغبَّر، فلا يعيب أحد غيره بما فيه مثله.
+  line: 119965
+  status: draft
+
+- id: p767
+  text: الغرض ___
+  answer: مرض
+  others: ["فرض","قرض","عرض"]
+  meaning: الهوى والمصلحة الخاصّة يفسدان الحكم كما يفسد المرض الجسم.
+  line: 120380
+  status: draft
+
+- id: p1084
+  kind: wisdom
+  text: الضرف الما ___ بيكون معيوب
+  answer: بينتفخ
+  others: ["بينملى","بينحمل","بينباع"]
+  meaning: من لا يثور حين يجب الغضب لا نخوة عنده.
+  meaning_source: book
+  line: 104717
+  status: draft
+
+- id: p1296
+  kind: taunt
+  text: كل ديك على مزبلتو ___
+  answer: صيّاح
+  others: ["نعسان","خرسان","جوعان"]
+  meaning: يُقال فيمن لا يتشجّع ولا يتعاظم إلا في داره وبين أهله.
+  line: 103671
+  status: draft
+
+- id: p768
+  text: الغزّالة بتغزل على ___، واللي ماهي غزّالة بتقول مردني معووج
+  answer: عود
+  others: ["دولاب","مكنة","نول"]
+  meaning: الماهر يعمل بأبسط الأدوات، والعاجز يتعلّل بعيب أدواته.
+  line: 155974
+  status: draft
+
+- id: p769
+  text: الكترة بتغلب ___
+  answer: الشجاعة
+  others: ["القناعة","الجماعة","الصناعة"]
+  meaning: العدد الكبير يغلب الشجاع الواحد.
+  line: 121371
+  status: draft
+
+- id: p770
+  text: اللقمة مغمّسة ___
+  answer: بالدم
+  others: ["بالسمن","بالعسل","بالزيت"]
+  meaning: الرزق لا يُنال إلا بالتعب الشديد.
+  line: 121663
+  status: draft
+
+- id: p1297
+  kind: taunt
+  text: البدين المفلس بقبض ___
+  answer: ضباب
+  others: ["دهب","فايدة","ربح"]
+  meaning: يُقال في أن من يُقرض المفلس لا يستردّ شيئاً.
+  line: 104199
+  status: draft
+
+- id: p1085
+  kind: wisdom
+  text: الله بيعين الضعيف تيتعجّب ___
+  answer: القوي
+  others: ["الغني","الحكيم","الجار"]
+  meaning: الله ينصر الضعيف نصراً يدهش الأقوياء.
+  line: 104853
+  status: draft
+
+- id: p771
+  text: يا لابس الأبيض بالشتا، يا من غنى يا من ___
+  answer: فقر
+  others: ["برد","عرس","سفر"]
+  meaning: من لبس الأبيض شتاءً إمّا غنيّ تحته ثياب صوف تدفئه، وإمّا فقير لا يملك غيره.
+  meaning_source: book
+  line: 148471
+  status: draft
+
+- id: p772
+  text: كل غنمة معلّقة من ___
+  answer: كرعوبا
+  others: ["صوفتا","قرنا","دنبتا"]
+  meaning: كلّ إنسان مسؤول عن عمله وحده.
+  line: 121865
+  status: draft
+
+- id: p1298
+  kind: taunt
+  text: كنّا بالاعراس صرنا بقلع ___
+  answer: الاضراس
+  others: ["المسامير","الشوك","الحجار"]
+  meaning: يُقال حين ينقلب الحال من الفرح إلى الوجع والنكد.
+  line: 104628
+  status: draft
+
+- id: p1086
+  kind: wisdom
+  text: يا طالب المعالي، مهر المعالي ___
+  answer: غالي
+  others: ["رخيص","مدفوع","قليل"]
+  meaning: من طلب المجد دفع ثمنه تعباً وتضحية.
+  line: 160145
+  status: draft
+
+- id: p773
+  text: قالوا للبسمار، ليش بتفوت بالحيط؟ قال لن، مالرصّ ___
+  answer: الوراني
+  others: ["القدّامي","الفوقاني","الجوّاني"]
+  meaning: قد يُدفع المرء إلى فعله مكرهاً بضغط ممّن وراءه.
+  line: 122212
+  flag: OCR 'مالرص الوراي' read as مالرصّ الوراني
+  status: draft
+
+- id: p774
+  text: اللي بيدشّروه الحراميّة بياخدوه فتّاحين ___
+  answer: الفال
+  others: ["البواب","الدكاكين","الصناديق"]
+  meaning: ما يسلم من اللصوص يذهب إلى المشعوذين.
+  line: 122716
+  status: draft
+
+- id: p1299
+  kind: taunt
+  text: "قال: ضعيف، وأكل ميت ___"
+  answer: رغيف
+  others: ["لقمة","حبّة","زيتونة"]
+  meaning: يُقال فيمن يدّعي المرض والضعف وأفعاله تكذّبه.
+  line: 104857
+  status: draft
+
+- id: p775
+  text: المال فدى ___
+  answer: الأبدان
+  others: ["الأوطان","الأحزان","الجيران"]
+  meaning: خسارة المال تهون إذا سلمت الصحّة.
+  line: 123602
+  status: draft
+
+- id: p1087
+  kind: wisdom
+  text: ما ضاع حقّ وراه ___
+  answer: طالب
+  others: ["نايم","ناسي","ساكت"]
+  meaning: الحقّ لا يضيع ما دام صاحبه يطالب به.
+  line: 106062
+  status: draft
+
+- id: p776
+  text: همّي وهمّ الجيران ما بتّ ليلة ___
+  answer: فرحان
+  others: ["شبعان","بردان","عطشان"]
+  meaning: من حمل همّ غيره مع همّه لم يعرف الراحة.
+  line: 123999
+  status: draft
+
+- id: p1300
+  kind: taunt
+  text: فلان لا للسيف ولا ___
+  answer: للضيف
+  others: ["للزرع","للبيع","للسفر"]
+  meaning: يُقال فيمن لا شجاعة عنده ولا كرم، فلا نفع فيه.
+  line: 105385
+  status: draft
+
+- id: p778
+  text: الفقر في الوطن ___
+  answer: غربة
+  others: ["نعمة","راحة","سترة"]
+  meaning: الفقير يحسّ بالغربة ولو كان بين أهله.
+  line: 126508
+  status: draft
+
+- id: p1088
+  kind: wisdom
+  text: الكسل ما بيطعمي ___
+  answer: عسل
+  others: ["لحم","خبز","تين"]
+  meaning: لا ينال الكسول طيّبات العيش.
+  line: 108271
+  status: draft
+
+- id: p779
+  text: فلاحة الوحل ___
+  answer: محل
+  others: ["عسل","أمل","عمل"]
+  meaning: حراثة الأرض وهي موحلة تفسد الموسم.
+  line: 127033
+  status: draft
+
+- id: p1301
+  kind: taunt
+  text: طلبتا المشتهية وأكلتا ___
+  answer: المستحية
+  others: ["الطبّاخة","الجارة","القطّة"]
+  meaning: يُقال حين يطلب الشيءَ واحدٌ فيناله غيره ممن كان يُظهر التعفّف.
+  line: 108673
+  status: draft
+
+- id: p780
+  text: اللبيب بيفهم من ___
+  answer: الإشارة
+  others: ["الزيارة","الخسارة","التجارة"]
+  meaning: الذكيّ يكفيه التلميح.
+  line: 127777
+  status: draft
+
+- id: p781
+  text: أهل أوّل ما خلّوا شي إلا ___
+  answer: قالوه
+  others: ["باعوه","أكلوه","خبّوه"]
+  meaning: الأقدمون لم يتركوا حالاً إلا ضربوا لها مثلاً.
+  line: 129364
+  status: draft
+
+- id: p1089
+  kind: wisdom
+  text: من راد الكلّ فاتو ___
+  answer: الكلّ
+  others: ["النصّ","القليل","الوقت"]
+  meaning: من طمع في كلّ شيء خسر كلّ شيء.
+  line: 144057
+  status: draft
+
+- id: p782
+  text: لو محبّة العرس تدوم كانت القيامة ما ___
+  answer: بتقوم
+  others: ["بتنوم","بتلوم","بتعوم"]
+  meaning: مودّة أيّام العرس لا تبقى على حالها.
+  line: 129470
+  status: draft
+
+- id: p1302
+  kind: taunt
+  text: طبخي عيش وطبختك عيش، وهالطمع بقى كلّو ___؟
+  answer: ليش
+  others: ["لمين","منين","كيف"]
+  meaning: يُقال لمن يطمع فيما عند غيره وعنده مثله.
+  line: 109109
+  status: draft
+
+- id: p783
+  text: لا تاخد الصاحب إلا بعد ___
+  answer: قتلة
+  others: ["عزيمة","هديّة","ضحكة"]
+  meaning: الصداقة المتينة قد تبدأ بخصام يكشف معادن الرجال.
+  line: 130597
+  status: draft
+
+- id: p1090
+  kind: wisdom
+  text: الطمع ضرّ ما ___
+  answer: نفع
+  others: ["شبع","رجع","وجع"]
+  meaning: الطمع يضرّ صاحبه ولا ينفعه.
+  line: 109112
+  status: draft
+
+- id: p784
+  text: الأجر على قدر ___
+  answer: المشقّة
+  others: ["المحبّة","الشطارة","الواسطة"]
+  meaning: الثواب بقدر التعب.
+  line: 130898
+  status: draft
+
+- id: p1303
+  kind: taunt
+  text: "الطواية عيّرت المقلاية قالت لا: تنيناتنا ___"
+  answer: بالمطبخ
+  others: ["بالسوق","بالخزانة","بالعرس"]
+  meaning: يُقال فيمن يعيّر غيره بعيب وهما فيه سواء.
+  line: 109582
+  status: draft
+
+- id: p785
+  text: احفاظ قديمك، جديدك ما ___ لك
+  answer: بيدوم
+  others: ["بيلبق","بيرجع","بيضحك"]
+  meaning: لا تفرّط في القديم المجرَّب فالجديد لا يُضمن.
+  line: 131156
+  status: draft
+
+- id: p1091
+  kind: wisdom
+  text: الطنجرة الكبيرة بتسع ___
+  answer: الزغيرة
+  others: ["الغطا","المعلقة","النار"]
+  meaning: الكبير يتّسع صدره للصغير ويحتمله.
+  line: 109292
+  status: draft
+
+- id: p786
+  text: اللي بيكتر مالو بيقسى ___
+  answer: قلبو
+  others: ["راسو","خبزو","جلدو"]
+  meaning: كثرة المال تقسّي القلب.
+  line: 133195
+  status: draft
+
+- id: p1304
+  kind: taunt
+  text: لو كان بدّي من هالشكال كنت عبّيت لي منو ___
+  answer: چوال
+  others: ["سلّة","كيس","صندوق"]
+  meaning: يُقال في ردّ العرض الرديء، أي لو أردتُ مثل هذا لوجدتُ منه الكثير.
+  line: 111438
+  status: draft
+
+- id: p787
+  text: العاب بالمقصقص ليجي ___
+  answer: الطيّار
+  others: ["الصيّاد","البيطار","العطّار"]
+  meaning: ارضَ بالطير المقصوص الجناح إلى أن يأتيك الطيّار، أي اقنع باليسير إلى أن يوسَّع عليك.
+  meaning_source: book
+  line: 134032
+  flag: OCR 'بالقصقص'; book glosses it as المقصوص الجناح
+  status: draft
+
+- id: p788
+  text: اذكور الديب وحضّر ___
+  answer: القضيب
+  others: ["الحليب","الزبيب","الطبيب"]
+  meaning: إذا ذُكر الشرّير فتأهّب له فقد يحضر.
+  line: 134322
+  status: draft
+
+- id: p1092
+  kind: wisdom
+  text: لا تنصح الجاهل ___
+  answer: بيعاديك
+  others: ["بيشكرك","بيسمعك","بيهاديك"]
+  meaning: الجاهل يقابل النصيحة بالعداوة.
+  line: 168863
+  status: draft
+
+- id: p1305
+  kind: taunt
+  text: "عزموا الجحش عالعرس قال لن: يا للحطب يا ___"
+  answer: للمي
+  others: ["للرقص","للأكل","للغنا"]
+  meaning: يُقال فيمن لا يُدعى إلى مناسبة إلا ليُستخدم فيها.
+  line: 114283
+  status: draft
+
+- id: p790
+  text: يا عريض القفا، الدين بدّو ___
+  answer: وفا
+  others: ["دفا","شفا","خفا"]
+  meaning: لا مهرب من سداد الدين مهما تغافل المدين.
+  line: 135211
+  status: draft
+
+- id: p791
+  text: اللي بيطلع من دارو بيقلّ ___
+  answer: مقدارو
+  others: ["مشوارو","جيرانو","نهارو"]
+  meaning: من ترك بيته وبلده نقصت منزلته.
+  line: 135405
+  status: draft
+
+- id: p1093
+  kind: wisdom
+  text: الله ما بيخلّي العالي عالي ولا الواطي ___
+  answer: واطي
+  others: ["عالي","باقي","ماشي"]
+  meaning: الأحوال تتبدّل، فلا رفعة تدوم ولا ضعة.
+  line: 111179
+  status: draft
+
+- id: p1306
+  kind: taunt
+  text: أول غزاتو كسر ___
+  answer: عصاتو
+  others: ["بابو","جرّتو","صحنو"]
+  meaning: يُقال فيمن يخفق في أول عمل يقوم به.
+  line: 114974
+  status: draft
+
+- id: p792
+  text: المؤمن قلبو ___
+  answer: دليلو
+  others: ["خليلو","وكيلو","قنديلو"]
+  meaning: صاحب القلب الصافي يهديه إحساسه إلى الصواب.
+  line: 135564
+  status: draft
+
+- id: p793
+  text: خلّي الكلمة في القلب تجرح ولا تطلع لبرّا ___
+  answer: تفضح
+  others: ["تفرح","تمزح","تنصح"]
+  meaning: كتمان الكلمة المؤلمة خير من إفشائها.
+  line: 135564
+  status: draft
+
+- id: p794
+  text: البيت بيت أبونا والناس ___
+  answer: بيقلّعونا
+  others: ["بيزورونا","بيحسدونا","بيسألونا"]
+  meaning: يقال حين يُزاحَم صاحب الحقّ في حقّه.
+  line: 135808
+  status: draft
+
+- id: p1307
+  kind: taunt
+  text: حكايتك بتلهي الجحش عن ___
+  answer: عليقو
+  others: ["رسنو","صاحبو","دربو"]
+  meaning: تهكّم بالحديث الطويل الفارغ.
+  line: 150867
+  status: draft
+
+- id: p1094
+  kind: wisdom
+  text: العلم في الصغر كالنقش ___
+  answer: بالحجر
+  others: ["بالرمل","بالميّ","بالتلج"]
+  meaning: ما يتعلّمه المرء صغيراً يثبت ولا يُنسى.
+  line: 117149
+  status: draft
+
+- id: p795
+  text: اللي بإيدو قلم ما بيكتب حالو من ___
+  answer: الأشقيا
+  others: ["الأغنيا","الأوليا","الأذكيا"]
+  meaning: من بيده القرار لا يختار لنفسه إلا الخير.
+  line: 136032
+  status: draft
+
+- id: p796
+  text: المال بيجرّ المال والقمل بيجرّ ___
+  answer: الصيبان
+  others: ["الجيران","الديدان","الفيران"]
+  meaning: الغنى يجلب الغنى والفقر يجلب الفقر.
+  line: 136569
+  status: draft
+
+- id: p1308
+  kind: taunt
+  text: أجا ليكحّلا ___
+  answer: عماها
+  others: ["زيّنها","فرّحها","جوّزها"]
+  meaning: يُقال فيمن أراد الإصلاح فأفسد.
+  line: 117536
+  status: draft
+
+- id: p1095
+  kind: wisdom
+  text: المركب اللي ما فيه شي لله ___
+  answer: بيغرق
+  others: ["بيوصل","بيطير","بيرجع"]
+  meaning: العمل الذي لا نصيب فيه للخير لا يُكتب له النجاح.
+  line: 156382
+  status: draft
+
+- id: p797
+  text: لحم العصافير ما بينباع ___
+  answer: بالقناطير
+  others: ["بالمناديل","بالبراميل","بالدكاكين"]
+  meaning: الشيء النفيس القليل لا يُباع بالجملة.
+  line: 137237
+  status: draft
+
+- id: p798
+  text: في كانون كنّ، وعالفقير ___
+  answer: حنّ
+  others: ["منّ","جنّ","ظنّ"]
+  meaning: في كانون الزم بيتك وتصدّق على الفقير.
+  line: 139256
+  status: draft
+
+- id: p1309
+  kind: taunt
+  text: أجا ونام عنّا ليلة ساوى حالو من ___
+  answer: العيلة
+  others: ["الجيران","الضيوف","الأكابر"]
+  meaning: يُقال فيمن يتبسّط بعد معرفة قصيرة فيتصرّف كأنه من أهل البيت.
+  line: 118092
+  status: draft
+
+- id: p799
+  text: اللي ما عندو في البيت كبير يحطّ لو ___ كبير
+  answer: حجر
+  others: ["كرسي","قفل","سرير"]
+  meaning: لا بدّ للبيت من كبير يُرجع إليه ويُهاب.
+  line: 140287
+  status: draft
+
+- id: p1096
+  kind: wisdom
+  text: المركب بين ___ بيغرق
+  answer: ريّسين
+  others: ["موجتين","بحرين","مينتين"]
+  meaning: تعدّد القادة في الأمر الواحد يفسده.
+  line: 156383
+  status: draft
+
+- id: p800
+  text: أجا كتاب من خالو قال، كل مين هو بحالو، وأجا مكتوب من عمّو قال، كل مين هو ___
+  answer: بهمّو
+  others: ["بدمّو","بأمّو","بتمّو"]
+  meaning: كلّ إنسان مشغول بنفسه وهمومه.
+  line: 140377
+  status: draft
+
+- id: p1310
+  kind: taunt
+  text: لا قدرك بغلي ولا مقلايتك بتقلي وأنا عدّيت عليكي من قلّة ___
+  answer: عقلي
+  others: ["حظّي","وقتي","خبزي"]
+  meaning: يُقال في زيارة من لا يُرجى عنده ضيافة ولا نفع.
+  line: 121274
+  status: draft
+
+- id: p801
+  text: كل حلّاف ___
+  answer: كدّاب
+  others: ["خوّاف","صرّاف","تعبان"]
+  meaning: من أكثر الحلف دلّ على كذبه.
+  line: 140886
+  status: draft
+
+- id: p1097
+  kind: wisdom
+  text: الغضب أوّلو جنون وآخرو ___
+  answer: ندامة
+  others: ["سلامة","كرامة","شهامة"]
+  meaning: الغضب يبدأ بفقدان الصواب وينتهي بالندم.
+  line: 121049
+  status: draft
+
+- id: p802
+  text: قالوا لجحا، منين تعلّمت الكرم؟ قال لن، بحسب الشي ___
+  answer: ما كان
+  others: ["إلو تمن","من غيري","رح يرجع"]
+  meaning: الكريم يعدّ ما أعطاه كأنه لم يكن عنده.
+  line: 141828
+  status: draft
+
+- id: p1311
+  kind: taunt
+  text: لو بدّا تمطر زلابية كانت غيّمت ___
+  answer: عجين
+  others: ["سكّر","عسل","زيت"]
+  meaning: يُقال في أن الأمر المرجوّ لو كان آتياً لظهرت بوادره.
+  line: 159800
+  status: draft
+
+- id: p803
+  text: كول كره واشراب كره ولا ___ كره
+  answer: تعاشر
+  others: ["تسافر","تنام","تلبس"]
+  meaning: احتمال الطعام الكريه أهون من معاشرة من تكره.
+  line: 141931
+  status: draft
+
+- id: p804
+  text: كتر الدلال بيكرّه ___
+  answer: العاشق
+  others: ["الجار","الضيف","التاجر"]
+  meaning: الإفراط في التدلّل ينفّر المحبّ.
+  line: 141942
+  status: draft
+
+- id: p1098
+  kind: wisdom
+  text: لو ___ ما بيغلبنا غلّاب
+  answer: اتّحدنا
+  others: ["افترقنا","نمنا","هربنا"]
+  meaning: في الاتّحاد قوّة لا تُغلب.
+  line: 121309
+  status: draft
+
+- id: p805
+  text: ياما الجمل كسر ___
+  answer: بطّيخ
+  others: ["فخّار","بيض","قزاز"]
+  meaning: يقال لمن يستكثر خطأً صغيراً، فكم وقع أكبر منه.
+  line: 142396
+  status: draft
+
+- id: p1312
+  kind: taunt
+  text: "مو كل من لبس قميص فرنجي قال: أنا ___"
+  answer: أفندي
+  others: ["شيخ","قبضاي","حكيم"]
+  meaning: ليس كل من لبس لباس الوجهاء صار واحداً منهم.
+  line: 124795
+  status: draft
+
+- id: p806
+  text: مستريح وكعكة ولا عشرة ألوان و___
+  answer: دعكة
+  others: ["بركة","سهرة","شبعة"]
+  meaning: القليل مع راحة البال خير من الكثير مع التعب.
+  line: 143252
+  status: draft
+
+- id: p1099
+  kind: wisdom
+  text: احلوق بالفاس ولا تعتاز ___
+  answer: للناس
+  others: ["للموس","للمراية","للصابون"]
+  meaning: تدبّر أمرك بما عندك ولو شقّ عليك، ولا تحتج إلى أحد.
+  line: 122462
+  status: draft
+  flag: last word lost in OCR; restored by rhyme as للناس
+
+- id: p807
+  text: عند نقش كفوفن ما حدا بيشوفن، وعند بلاوين قوموا يا ___
+  answer: أهالين
+  others: ["جيرانين","نايمين","غافلين"]
+  meaning: في أفراحهم ينسوننا وفي مصائبهم يستنجدون بنا.
+  line: 143356
+  status: draft
+
+- id: p1313
+  kind: taunt
+  text: إذا كان جوزي راضي أشو فضول ___؟
+  answer: القاضي
+  others: ["الخبّاز","الناطور","السقّا"]
+  meaning: يُقال لمن يتدخّل في شأن رضي به أصحابه.
+  line: 126059
+  status: draft
+
+- id: p808
+  text: اللي فينا ___
+  answer: بيكفّينا
+  others: ["بيدفّينا","بيسلّينا","بيغنّينا"]
+  meaning: عندنا من الهموم ما يكفي فلا تزيدونا.
+  line: 143395
+  status: draft
+
+- id: p809
+  text: بحكي لك يا كنّة لتسمعي يا ___
+  answer: جارة
+  others: ["حماة","بنت","خالة"]
+  meaning: يُوجَّه الكلام إلى شخص والمقصود به غيره.
+  line: 145635
+  status: draft
+
+- id: p1100
+  kind: wisdom
+  text: المالو فزعة بيروح ___
+  answer: دعس
+  others: ["حبس","نعس","عرس"]
+  meaning: من لا نصير له يُداس حقّه.
+  line: 125047
+  status: draft
+
+- id: p1314
+  kind: taunt
+  text: ما زاد عالشحّادين غير القهوة و___
+  answer: الفناجين
+  others: ["الأراكيل","السكّر","الكراسي"]
+  meaning: يُقال في المعدم الذي يتطلّع إلى مظاهر الترف والوجاهة.
+  line: 127588
+  status: draft
+
+- id: p810
+  text: ابن إبنك إلك وابن بنتك ___
+  answer: لأ
+  others: ["أحلى","ضيف","أغلى"]
+  meaning: ولد الابن يحمل اسم العائلة، أمّا ولد البنت فلعائلة أبيه.
+  line: 147852
+  status: draft
+
+- id: p811
+  text: بلحس مسنّي وببات ___
+  answer: متهنّي
+  others: ["متعشّي","متغطّي","متخبّي"]
+  meaning: أقنع بالقليل وأنام مرتاح البال.
+  line: 148883
+  status: draft
+
+- id: p1101
+  kind: wisdom
+  text: نحنه بالتفكير والله ___
+  answer: بالتدبير
+  others: ["بالتأخير","بالتغيير","بالتصوير"]
+  meaning: الإنسان يفكّر ويخطّط، والله هو المدبّر.
+  line: 126860
+  status: draft
+
+- id: p1315
+  kind: taunt
+  text: شافوا القبّة من بعيد حسبوا ___
+  answer: مزار
+  others: ["جبل","خيمة","بطّيخة"]
+  meaning: يُقال فيمن ينخدع بالمظهر فيظنّ بالشيء العاديّ الجلال والبركة.
+  line: 156719
+  status: draft
+
+- id: p812
+  text: إن كان حبيبك عسل لا تلحسو ___
+  answer: كلّو
+  others: ["هلّق","بإيدك","وحدك"]
+  meaning: لا تستغلّ طيبة من يحبّك حتى آخرها.
+  line: 148884
+  flag: start of the proverb garbled in OCR (line 148884); ending 'عسل لا تلحسو كلو' is clear
+  status: draft
+
+- id: p813
+  text: اللي لدغتو ___ بيخاف من مسحالا
+  answer: الحيّة
+  others: ["العقربة","النحلة","الدبّورة"]
+  meaning: من لدغته الحيّة صار يخاف حتى من أثر زحفها على التراب.
+  meaning_source: book
+  line: 149300
+  status: draft
+
+- id: p1316
+  kind: taunt
+  text: بياكل قضامة وبيحكي في ___
+  answer: اللاهوت
+  others: ["الطبخ","السوق","الحارة"]
+  meaning: يُقال فيمن حاله بسيطة ويخوض في أعلى المسائل وأعوصها.
+  line: 134279
+  status: draft
+
+- id: p1102
+  kind: wisdom
+  text: إذا قلت لا تخاف وإذا خفت لا ___
+  answer: تقول
+  others: ["تنام","تروح","تحلف"]
+  meaning: إن تكلّمت فكن شجاعاً، وإن كنت خائفاً فاسكت.
+  line: 129380
+  status: draft
+
+- id: p815
+  text: الرجال منهدّيا والنار منطفّيا، أمّا ___ وين منروح فيا
+  answer: المي
+  others: ["الشمس","الأرض","العتمة"]
+  meaning: الماء إذا طغى لا حيلة فيه.
+  line: 151701
+  status: draft
+
+- id: p816
+  text: مال ___ ما بيثمر
+  answer: الحرام
+  others: ["التعب","الحلال","الجدّ"]
+  meaning: المال المكتسب بغير حقّ لا بركة فيه.
+  line: 153096
+  status: draft
+
+- id: p817
+  text: اللي عندو ___ بيرشّ عالمخلوطة
+  answer: بهار
+  others: ["سكّر","سمسم","ملح"]
+  meaning: من وُسّع عليه تنعّم حتى في أبسط طعامه، فالبهار أغلى ما يُرشّ على المخلوطة.
+  meaning_source: book
+  line: 154858
+  flag: OCR 'مار' read as بهار per the book's own gloss
+  status: draft
+
+- id: p1317
+  kind: taunt
+  text: "قلنا لك: قمّرو، ما قلنا لك: ___"
+  answer: احرقو
+  others: ["عجنو","بلّو","قطّعو"]
+  meaning: يُقال فيمن يُطلب منه الشيء باعتدال فيبالغ فيه حتى يفسده، والتقمير تحميص الخبز.
+  line: 136386
+  status: draft
+
+- id: p1103
+  kind: wisdom
+  text: كلّ من بيقدح ___
+  answer: بزندو
+  others: ["بكبريتو","بحجرو","بجارو"]
+  meaning: كلّ امرئ يعتمد على نفسه وما عنده.
+  line: 130852
+  status: draft
+
+- id: p818
+  text: لولا جارتي طقّت ___
+  answer: مرارتي
+  others: ["طنجرتي","جرّتي","سهرتي"]
+  meaning: الجارة التي نفضي إليها بهمومنا تخفّف عنّا.
+  line: 155639
+  status: draft
+
+- id: p819
+  text: الجرح ما بيمضّ إلا ___
+  answer: صاحبو
+  others: ["طبيبو","جارو","عدوّو"]
+  meaning: لا يحسّ بالألم إلا صاحبه.
+  line: 159424
+  status: draft
+
+- id: p1318
+  kind: taunt
+  text: "صار لو ميت سنة بكار الشحادة وما تعلّم يقول: «من مال ___»"
+  answer: الله
+  others: ["الناس","أبوي","الوقف"]
+  meaning: يُقال في البليد الذي يطول عهده بالصنعة ولا يتقن أبسط أصولها.
+  line: 138745
+  status: draft
+
+- id: p1104
+  kind: wisdom
+  text: كلّ شي قسمة و___
+  answer: نصيب
+  others: ["حبيب","غريب","ترتيب"]
+  meaning: كلّ ما يناله المرء مقدّر له.
+  line: 133182
+  status: draft
+
+- id: p820
+  text: مطرات التوت بتهدّ ___
+  answer: البيوت
+  others: ["القلوب","الجبال","الجسور"]
+  meaning: أمطار موسم التوت في أواخر الربيع غزيرة شديدة.
+  line: 159829
+  status: draft
+
+- id: p822
+  text: الأقربون أولى ___
+  answer: بالمعروف
+  others: ["بالميراث","بالعتب","بالزيارة"]
+  meaning: أهلك أحقّ الناس بإحسانك.
+  line: 160516
+  status: draft
+
+- id: p1319
+  kind: taunt
+  text: بياكل اش ما كان وبضيّق ___
+  answer: المكان
+  others: ["الدرب","الباب","السفرة"]
+  meaning: يُقال في الثقيل الذي لا نفع منه، يأكل ما يجد ويزاحم أهل البيت.
+  line: 139192
+  status: draft
+
+- id: p823
+  text: المعنى بقلب ___
+  answer: الشاعر
+  others: ["الكاتب","الشيخ","القاضي"]
+  meaning: المقصود الحقيقي لا يعرفه إلا قائله.
+  line: 160948
+  status: draft
+
+- id: p1105
+  kind: wisdom
+  text: الحيا بيقطع ___
+  answer: الرزق
+  others: ["النفس","الدرب","الحكي"]
+  meaning: الخجل الزائد يحرم صاحبه من نصيبه.
+  line: 134898
+  status: draft
+
+- id: p824
+  text: التدبير نصّ ___
+  answer: المعيشة
+  others: ["العيلة","الراحة","الشطارة"]
+  meaning: حسن التدبير في الإنفاق نصف الرزق.
+  line: 161061
+  status: draft
+
+- id: p1320
+  kind: taunt
+  text: من كترة اشغالو برك ___
+  answer: بطّال
+  others: ["شغّال","ركّاض","مستعجل"]
+  meaning: يُقال فيمن يدّعي كثرة المشاغل وهو في الحقيقة بلا عمل.
+  line: 140602
+  status: draft
+
+- id: p825
+  text: الراعي المغفّل بيحبّو ___
+  answer: الديب
+  others: ["الغنم","الكلب","الحليب"]
+  meaning: الغافل عن ماله يطمع فيه الطامعون.
+  line: 161298
+  status: draft
+
+- id: p1106
+  kind: wisdom
+  text: القناعة ___ لا يفنى
+  answer: كنز
+  others: ["بحر","بيت","عمر"]
+  meaning: الرضا بالقليل غنى لا ينفد.
+  line: 136675
+  status: draft
+
+- id: p826
+  text: لكل مقام ___
+  answer: مقال
+  others: ["رجال","سؤال","مجال"]
+  meaning: لكلّ موقف كلام يناسبه.
+  line: 161626
+  status: draft
+
+- id: p1321
+  kind: taunt
+  text: فلان كريم لكن من مال ___
+  answer: غيرو
+  others: ["جيبو","تعبو","كيسو"]
+  meaning: يُقال فيمن يجود بما لا يملك.
+  line: 142074
+  status: draft
+
+- id: p827
+  text: الستّ مو بسوارا، ___
+  answer: بمقدارا
+  others: ["بخلخالا","بفستانا","بمراياتا"]
+  meaning: قيمة المرأة بقدرها لا بحليّها.
+  line: 161727
+  status: draft
+
+- id: p828
+  text: مكّة على عاشقا ماهي ___
+  answer: بعيدة
+  others: ["غالية","صعبة","حامية"]
+  meaning: المحبّ لا يستبعد الطريق إلى ما يحبّ.
+  line: 162621
+  status: draft
+
+- id: p1107
+  kind: wisdom
+  text: عزّ من قنع وذلّ من ___
+  answer: طمع
+  others: ["شبع","رجع","سمع"]
+  meaning: القناعة عزّ والطمع مذلّة.
+  line: 137279
+  status: draft
+
+- id: p829
+  text: قالوا للشقرقة، ليش ما بتحكي؟ قالت لن، تمّي ملان ___
+  answer: مي
+  others: ["دبّان","حكي","تراب"]
+  meaning: يقال في من يمنعه مانع من الكلام بما يعرف.
+  line: 162841
+  flag: شقرقة presumably the frog; verify and maybe gloss it
+  status: draft
+
+- id: p1322
+  kind: taunt
+  text: أبو كشكول ما بحبّ أبو ___
+  answer: مخلاية
+  others: ["طربوش","سيف","دكّان"]
+  meaning: صاحب الحرفة يكره من ينافسه فيها، فالشحّاد حامل الكشكول لا يحبّ الشحّاد حامل المخلاة.
+  line: 142940
+  status: draft
+
+- id: p830
+  text: لو كان الشي بكبر الشوارب كانوا ___ ملوك
+  answer: الجرادين
+  others: ["الحلّاقين","الجمال","الديوك"]
+  meaning: القيمة ليست بالمظهر ولا بطول الشوارب.
+  line: 163369
+  status: draft
+
+- id: p1108
+  kind: wisdom
+  text: درهم مال بدّو قنطار ___
+  answer: عقل
+  others: ["تعب","حكي","ورق"]
+  meaning: المال القليل يحتاج إلى عقل كثير لحفظه وتدبيره.
+  line: 152333
+  status: draft
+
+- id: p831
+  text: تاجر و___ ما بيصير
+  answer: منجّم
+  others: ["معلّم","شاطر","غني"]
+  meaning: التاجر لا يعلم الغيب، فالربح والخسارة لا يُعرفان سلفاً.
+  line: 164003
+  status: draft
+
+- id: p1323
+  kind: taunt
+  text: الحكي ما عليه ___
+  answer: كمرك
+  others: ["ملح","قفل","ميزان"]
+  meaning: يُقال فيمن يطلق الكلام والوعود جزافاً لأن الكلام لا يكلّفه شيئاً.
+  line: 147532
+  status: draft
+
+- id: p832
+  text: الممنوع ___
+  answer: مرغوب
+  others: ["مكتوب","مقلوب","مهروب"]
+  meaning: ما يُمنع عن الإنسان يزداد تعلّقاً به.
+  line: 164275
+  status: draft
+
+- id: p833
+  text: الفقير منين لك؟ والزنگين ___
+  answer: مبارك
+  others: ["مسافر","مشغول","مديون"]
+  meaning: إذا اقتنى الفقير شيئاً سألوه من أين، وإذا اقتناه الغنيّ هنّؤوه.
+  line: 164418
+  status: draft
+
+- id: p1109
+  kind: wisdom
+  text: حبّ وداري واكراه و___
+  answer: داري
+  others: ["جافي","عادي","نادي"]
+  meaning: اكتم حبّك وبغضك ولا تجاهر بأيّ منهما.
+  line: 141935
+  status: draft
+
+- id: p1324
+  kind: taunt
+  text: "وقت الشوي واليخني ما قلت: يا بو ___"
+  answer: الحقني
+  others: ["اسمعني","سامحني","علّمني"]
+  meaning: يُقال لمن ينساك في الرخاء ولا يتذكّرك إلا في الشدّة.
+  line: 148941
+  status: draft
+  flag: OCR يايو الحقيٰ; read as يا بو الحقني
+
+- id: p835
+  text: مال المي ___
+  answer: للمي
+  others: ["للبير","للسقي","للغسيل"]
+  meaning: ما كُسب بالغشّ يذهب كما جاء، قيل في من كان يغشّ حليبه بالماء فغرقت بقرته.
+  meaning_source: book
+  line: 165533
+  status: draft
+
+- id: p836
+  text: لا أكل إلا أكل اللحم ولا نار إلا نار ___
+  answer: الفحم
+  others: ["الحطب","الشمع","التبن"]
+  meaning: خير الطعام اللحم وخير النار نار الفحم.
+  line: 166181
+  status: draft
+
+- id: p1110
+  kind: wisdom
+  text: الإنسان لازم ينطر ___
+  answer: قفاه
+  others: ["رزقو","بيتو","كرمو"]
+  meaning: على المرء ألّا يترك مجالاً لكلام الناس عنه في غيابه.
+  meaning_source: book
+  line: 148055
+  status: draft
+
+- id: p1325
+  kind: taunt
+  text: فلان لا مال ياخدو الرحمان ولا عقل ياخدو ___
+  answer: الشيطان
+  others: ["الحرامي","الجيران","القاضي"]
+  meaning: يُقال فيمن لا مال عنده ولا عقل، فلا مطمع فيه لأحد.
+  line: 152337
+  status: draft
+
+- id: p837
+  text: الناي في كمّي والهوا في ___
+  answer: تمّي
+  others: ["همّي","دمّي","عمّي"]
+  meaning: كلّ ما أحتاجه حاضر عندي ولا أحتاج إلى أحد.
+  line: 166814
+  status: draft
+
+- id: p838
+  text: إذا كان الكدب بينجّي، ___ أنجى وأنجى
+  answer: الصدق
+  others: ["الحلف","الهرب","الدهب"]
+  meaning: إن ظننت الكذب ينجيك فالصدق أنجى.
+  line: 167156
+  status: draft
+
+- id: p1326
+  kind: taunt
+  text: "ما قال: مرض، إلا إلو تلتين ___"
+  answer: الغرض
+  others: ["الحقّ","الدوا","الوجع"]
+  meaning: يُقال في المتمارض الذي يدّعي المرض لغاية في نفسه.
+  line: 156147
+  status: draft
+
+- id: p839
+  text: اللي بيطالع الجحش عالمادنة ___
+  answer: بينزّلو
+  others: ["بيركّبو","بيعلّفو","بيشتريه"]
+  meaning: من أوقع نفسه في ورطة فعليه أن يخرج منها.
+  line: 168004
+  status: draft
+
+- id: p1111
+  kind: wisdom
+  text: البيشقى ___
+  answer: بيلقى
+  others: ["بيبقى","بيشكي","بيغفى"]
+  meaning: من تعب في عمله نال ثمرة تعبه.
+  line: 150605
+  status: draft
+
+- id: p840
+  text: قالوا للحماية، ما كنتي كنّة؟ قالت، كنت و___
+  answer: نسيت
+  others: ["تعبت","صبرت","كبرت"]
+  meaning: يقال في من ينسى ما قاساه فيقسو على غيره.
+  line: 168318
+  status: draft
+
+- id: p841
+  text: اللي ما بدّو يعير حبلو بيقول، ناشر عليه ___
+  answer: حنطة
+  others: ["غسيل","صوف","تياب"]
+  meaning: من لا يريد أن يعطي يتعلّل بأيّ عذر ولو كان مضحكاً.
+  line: 168582
+  status: draft
+
+- id: p1327
+  kind: taunt
+  text: عصفور عالبركة بضحك عالناس وهو ___
+  answer: مضحكة
+  others: ["ملك","حكيم","صيّاد"]
+  meaning: يُقال فيمن يسخر من الناس وهو أولى بأن يُسخر منه.
+  line: 159507
+  status: draft
+
+- id: p1112
+  kind: wisdom
+  text: كلمة الحقّ ___
+  answer: مرّة
+  others: ["حلوة","خفيفة","رخيصة"]
+  meaning: قول الحقّ ثقيل على السامع.
+  line: 155528
+  status: draft
+
+- id: p842
+  text: غير نصيبك ما ___
+  answer: بيصيبك
+  others: ["بيعيبك","بيجيبك","بيطيبك"]
+  meaning: لن ينالك إلا ما قُسم لك.
+  line: 168941
+  status: draft
+
+- id: p843
+  text: النضافة من ___
+  answer: الإيمان
+  others: ["الصابون","الأمّ","العافية"]
+  meaning: النظافة من خصال المؤمن.
+  line: 168988
+  status: draft
+
+- id: p1328
+  kind: taunt
+  text: "قالوا لأبو الحصين: نام مع الجيج، قال لن: بخاف ___"
+  answer: ينقروني
+  others: ["يفيّقوني","يكرهوني","يسبقوني"]
+  meaning: يُقال فيمن يتظاهر بالتمنّع عن شيء هو أشدّ الناس طمعاً فيه.
+  line: 170032
+  status: draft
+
+- id: p1113
+  kind: wisdom
+  text: الما بيكون إلو من نفسو واعظ ما بتنفعو ___
+  answer: المواعظ
+  others: ["المصاري","المدارس","الأصحاب"]
+  meaning: من لم يردعه ضميره لم تنفعه نصائح الناس.
+  line: 169730
+  status: draft
+
+- id: p844
+  text: الحيط ___ بينطّ عليه الكلب
+  answer: الواطي
+  others: ["العالي","المايل","الجديد"]
+  meaning: الضعيف يتجرّأ عليه كلّ أحد.
+  line: 169050
+  status: draft
+
+- id: p845
+  text: النقطة الدايمة بتعلّم في ___
+  answer: الحجر
+  others: ["البحر","الورق","الرمل"]
+  meaning: المثابرة تؤثّر في أصلب الأشياء.
+  line: 170200
+  status: draft
+
+- id: p1329
+  kind: taunt
+  text: نجّار وبابو ___
+  answer: مخلوع
+  others: ["مدهون","منقوش","جديد"]
+  meaning: يُقال في صاحب الصنعة الذي يُهمل بيته فيما يُتقنه للناس.
+  line: 167171
+  status: draft
+
+- id: p846
+  text: نيّال المتهوم وعند الله ___
+  answer: بري
+  others: ["غني","قوي","ولي"]
+  meaning: طوبى لمن اتّهمه الناس وهو بريء عند الله.
+  line: 171273
+  status: draft
+
+- id: p1114
+  kind: wisdom
+  text: المكتوب ما منّو ___
+  answer: مهروب
+  others: ["مكتوب","مطلوب","محسوب"]
+  meaning: ما قُدّر على المرء لا مفرّ منه.
+  line: 172339
+  status: draft
+
+- id: p847
+  text: لمّا بترجع مالسفر جيب معك هديّة ولو ___
+  answer: حجر
+  others: ["خبر","قمر","سفر"]
+  meaning: العائد من السفر لا يدخل على أهله فارغ اليدين.
+  line: 172257
+  status: draft
+
+- id: p1330
+  kind: taunt
+  text: "قال لو: في مصر كنت نطّ أربعين دراع، قال لو: هنيك أرض وهون ___"
+  answer: أرض
+  others: ["سما","بحر","جبل"]
+  meaning: يُقال في تكذيب من يدّعي بطولات صنعها في مكان بعيد، أي أرِنا ذلك هنا.
+  line: 169044
+  status: draft
+
+- id: p848
+  text: الهزيمة تلتين ___
+  answer: المرجلة
+  others: ["الخسارة","الفضيحة","الطريق"]
+  meaning: الفرار في وقته من حسن التدبير.
+  line: 172589
+  status: draft
+
+- id: p1115
+  kind: wisdom
+  text: الله ما شافوه، ___ عرفوه
+  answer: بالعقل
+  others: ["بالعين","بالكتب","بالحكي"]
+  meaning: تُدرَك الحقائق بالعقل وإن لم ترها العين.
+  line: 116414
+  status: draft
+
+- id: p849
+  text: أهلك ولا ___
+  answer: تهلك
+  others: ["تتركن","تزعل","تسافر"]
+  meaning: الحق بأهلك والزمهم ففيهم نجاتك.
+  meaning_source: book
+  line: 172901
+  status: draft
+
+- id: p1331
+  kind: taunt
+  text: الورد ما بصير منتور والجحش ما بصير ___
+  answer: غندور
+  others: ["تاجر","شاعر","خيّاط"]
+  meaning: يُقال في أن الطبع لا يتبدّل، فالغليظ لا يصير ظريفاً أنيقاً.
+  line: 175039
+  status: draft
+
+- id: p852
+  text: ما بيجي من الناس غير وجع ___
+  answer: الراس
+  others: ["القلب","الضرس","الضهر"]
+  meaning: مخالطة الناس لا تأتي إلا بالمتاعب.
+  line: 174429
+  status: draft
+
+- id: p853
+  text: لا تبيع برخيص ولا توصّي ___
+  answer: حريص
+  others: ["بخيل","غريب","تاجر"]
+  meaning: الحريص لا يحتاج إلى من يوصيه.
+  line: 175615
+  status: draft
+
+- id: p1116
+  kind: wisdom
+  text: العمر بيخلص و___ ما بيخلص
+  answer: الشغل
+  others: ["الصيف","العيد","المال"]
+  meaning: مشاغل الدنيا لا تنتهي، فلا تُفنِ عمرك فيها.
+  line: 64698
+  status: draft
+
+- id: p854
+  text: الحاجة اللي ما بتهمّك وصّي عليها ___
+  answer: جوز أمّك
+  others: ["ابن عمّك","أعزّ صاحب","شيخ الحارة"]
+  meaning: ما لا يهمّك أمره كلّف به من لا يهتمّ بك.
+  line: 175616
+  status: draft
+
+- id: p1332
+  kind: taunt
+  text: أبوه بوفّر وهو ___
+  answer: بعفّر
+  others: ["بصلّي","بنام","بتعلّم"]
+  meaning: يُقال في الابن المبذّر الذي يبدّد ما جمعه أبوه بالتقتير.
+  line: 176063
+  status: draft
+
+- id: p856
+  text: اللي بيوفّرو الجوخجي بياخدو ___
+  answer: الخيّاط
+  others: ["السمّان","الحلّاق","الحرامي"]
+  meaning: ما توفّره في جهة تدفعه في جهة أخرى.
+  line: 176064
+  status: draft
+
+- id: p1117
+  kind: wisdom
+  text: كول لحم إيدك ولا تعتاز ___
+  answer: القصّاب
+  others: ["الطبّاخ","الخبّاز","الجيران"]
+  meaning: اصبر على الحرمان ولا تحتج إلى منّة أحد.
+  line: 18197
+  status: draft
+
+- id: p857
+  text: طلب الزود وقع في ___
+  answer: النقص
+  others: ["البير","الدين","الفخّ"]
+  meaning: الطمع في الزيادة يوقع في الخسارة.
+  line: 176190
+  status: draft
+
+- id: p1333
+  kind: taunt
+  text: إذا تصالحوا القطاط والفيران يا تعس ___
+  answer: العطّار
+  others: ["الخيّاط","الحلّاق","السقّا"]
+  meaning: إذا اتّفق الحارس واللصّ ضاع صاحب المال.
+  line: 177033
+  status: draft
+
+- id: p859
+  text: عيد التجلّي بيقول للصيف ___
+  answer: ولّي
+  others: ["طوّل","أهلا","هلّي"]
+  meaning: بعد عيد التجلّي في آب يبدأ الحرّ بالانكسار.
+  line: 176442
+  status: draft
+
+- id: p860
+  text: يا رايح كتّر ___
+  answer: ملايح
+  others: ["فضايح","نصايح","روايح"]
+  meaning: من كان راحلاً فليترك وراءه ذكراً طيباً.
+  line: 177086
+  status: draft
+
+- id: p1118
+  kind: wisdom
+  text: إذا جار عليك الزمان جور على ___
+  answer: إيديك
+  others: ["جيرانك","ولادك","خيلك"]
+  meaning: إذا ضاقت بك الحال فاعتمد على عمل يديك.
+  line: 18198
+  status: draft
+
+- id: p1334
+  kind: taunt
+  text: ما زال طبّاخنا غزالة شغلنا كلّو ___
+  answer: رذالة
+  others: ["تمام","عال","بركة"]
+  meaning: ما دام القائم على الأمر غير كفء فلا يُرجى صلاح.
+  line: 75508
+  status: draft
+
+- id: p861
+  text: اليبرق بالدهون ___
+  answer: بيغرق
+  others: ["بيحرق","بيزهق","بيبرق"]
+  meaning: ورق العنب المحشيّ لا يطيب إلا بكثرة الدهن.
+  line: 177378
+  status: draft

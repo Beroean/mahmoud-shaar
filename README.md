@@ -66,6 +66,23 @@ Outside contributors: see [CONTRIBUTING.md](CONTRIBUTING.md) (Arabic and English
 
 The game logic (parsing, leniency rules, grading, schedule, stats, share text) is in `src/pages/shakkil/core/`. The grading rules and their switches are in `rules.ts`.
 
+## حلبيّات (Halabiyyat)
+
+A daily game from «موسوعة حلب المقارنة» by محمد خير الدين الأسدي, dedicated to my father أحمد أديب شعار, who digitized the encyclopedia and made it free for everyone. Three multiple-choice rounds a day: where an Aleppine word came from; a saying to finish (proverb, wise saying or witty taunt); and a wildcard (riddle, street vendor's cry, idiom, folk belief, simile, blessing or folk-song line).
+
+- `content/halab/origins.yaml`, `proverbs.yaml`, `wildcards.yaml`: day N plays item N of each list, so the shortest list sets the number of days and the rest are spares. Each item's `line` points into the book's text (non-blank lines of the archive.org `_djvu.txt`), for review.
+- `content/halab/rejected.yaml`: items rejected in review (created on the first rejection).
+- Day 1 is `LAUNCH_DATE` in `src/pages/halab/core/daily.ts`, on Shakkil's clock (midnight Mecca time). Builds ship days only up to tomorrow; `?day=N` replays past days (any day in dev).
+- `npm test` validates every item and fails when fewer than 14 days are left.
+- The opening animation is `src/pages/halab/ui/GateIntro.tsx`, with its drawings of the citadel in `gateArt.ts` (once per browser session; `?gate=1` replays it).
+- Items the curators were unsure of carry a `flag:` note; the review page lists those first.
+
+```bash
+npm run review:halab   # local review page: flagged items first, with the book's text beside each (dev only)
+```
+
+The review page reads the book from `~/Downloads/موسوعة حلب المقارنة_djvu.txt` (or `HALAB_BOOK`); it isn't in the repo.
+
 ## WDI explorer data
 
 The explorer (`/explore/`) never calls the World Bank API at runtime (its uncached data requests often hang for 60s+). Instead `npm run wdi` (`tools/wdi/build.ts`) reads the World Bank's bulk download `WDI_CSV.zip` (~280 MB) and writes small static files to `public/data/wdi/` (gitignored): `indicators.json`, `countries.json`, `meta.json` and one `ind/<id>.json` per indicator with the latest value per country.

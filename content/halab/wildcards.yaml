@@ -1,0 +1,7192 @@
+# Round 3 · the wildcard: a different drawer of the encyclopedia each day.
+#
+# kind:     riddle (حزّورة) · vendor (نداء البيّاع) · idiom (كناية) · belief (من اعتقاداتهم)
+# prompt:   what the player reads. For vendor and belief items ___ marks the hidden part.
+# answer:   the right answer (for riddles and vendor cries, the book's own answer)
+# others:   three wrong answers
+# note:     shown after answering (optional)
+# line:     line number in the book (blank lines removed)
+# The list runs in order, one item per day, so keep the kinds interleaved.
+
+- id: w001
+  kind: riddle
+  prompt: بيت مدوّر مالو باب، عايش فيه أربع شباب
+  answer: الجوز
+  others: [ البيضة, الرمّانة, البطّيخة ]
+  note: الجوزة مغلقة لا باب لها، وفي داخلها أربعة فصوص.
+  line: 49974
+  status: draft
+
+- id: w002
+  kind: vendor
+  prompt: على أصابيع البوبو يا ___!
+  answer: خيار
+  others: [ جزر, كوسا, لوبيا ]
+  note: يريد البيّاع أن خياره غضّ رفيع كأصابع الطفل الصغير.
+  line: 8701
+  status: draft
+
+- id: w003
+  kind: idiom
+  prompt: فلان بيوديك عالبحر وبيرجّعك عطشان
+  answer: يخدعك بحيلته وحسن كلامه
+  others: [ كريم يسقيك قبل أن تطلب, لا يعرف الطريق, يحبّ السفر والبحر ]
+  line: 174820
+  status: draft
+
+- id: w004
+  kind: belief
+  prompt: إذا زقزقت عصافير الحوش، بدّو يجي ___
+  answer: خطّار
+  others: [ مطر, عرس, حرامي ]
+  note: والخطّار هو الضيف.
+  line: 115194
+  status: draft
+
+- id: w005
+  kind: riddle
+  prompt: ابن المي، والمي بتموّتو
+  answer: الملح
+  others: [ السكّر, الطين, الصابون ]
+  note: يُستخرج الملح من الماء، ويذوب فيه فيختفي.
+  line: 162983
+  status: draft
+
+- id: w006
+  kind: vendor
+  prompt: قرصك عسل يا ___!
+  answer: بطّيخ
+  others: [ تين, رمّان, مشمش ]
+  note: والقرص يقال للواحدة من البطيخ، كما يقال للوح من العسل.
+  line: 26055
+  status: draft
+
+- id: w007
+  kind: idiom
+  prompt: فلان معلّق على أنفو نصّ أوقية لحمة
+  answer: متكبّر
+  others: [ جوعان دايمًا, قصّاب, بخيل ]
+  line: 149051
+  status: draft
+
+- id: w008
+  kind: belief
+  prompt: اللي بيكنس بيتو بالليل، بيكنس ___
+  answer: رزقو
+  others: [ حظّو, عمرو, صحّتو ]
+  note: ومن اعتقادهم أيضًا أنه إذا سافر عزيز لا يُكنس البيت.
+  line: 30000
+  status: draft
+
+- id: w009
+  kind: riddle
+  prompt: شي بتتركو بيلحقك، وبتلحقو بينهزم منك، وما بتقدر تكمشو
+  answer: الظلّ
+  others: [ الريح, الصوت, الدخّان ]
+  line: 110435
+  status: draft
+
+- id: w010
+  kind: vendor
+  prompt: الهوا رماك وبلبل أحوالك يا ___!
+  answer: مشمش
+  others: [ دراق, خوخ, توت ]
+  note: ومن ندائه أيضًا «يا رمي الهوا! داب واستوى».
+  line: 52677
+  status: draft
+
+- id: w011
+  kind: idiom
+  prompt: بيناتن ما صنع الحدّاد
+  answer: عداوة وخصومة
+  others: [ شراكة في الشغل, قرابة ونسب, صداقة قديمة ]
+  note: أي السيف، أي الحرب والعداوة.
+  line: 30808
+  status: draft
+
+- id: w012
+  kind: belief
+  prompt: رفّة العين اليمين بكا وأنين، ورفّة العين الشمال ___
+  answer: فرح وإقبال
+  others: [ سفر وغياب, خطّار عالباب, مرض وتعب ]
+  line: 76988
+  status: draft
+
+- id: w013
+  kind: riddle
+  prompt: شي المصّ بشفّتو، والكيف بلفّتو، والنار براسو، والمي عند إجريه
+  answer: الأرگيلة
+  others: [ اللمبة, الإبريق, الفنجان ]
+  line: 167891
+  status: draft
+
+- id: w014
+  kind: vendor
+  prompt: ___ بتاكلا العجوز بتقلب صبية!
+  answer: مهلبية
+  others: [ بقلاوة, هريسة, كنافة ]
+  note: وكذا ينادي بيّاع الملبنية.
+  line: 112454
+  status: draft
+
+- id: w015
+  kind: idiom
+  prompt: فلان مضيّع التذكرة
+  answer: شارد الذهن
+  others: [ مفلس, مسافر, كذّاب ]
+  line: 34017
+  status: draft
+
+- id: w016
+  kind: belief
+  prompt: إذا غسّلنا فناجين القهوة قبل ما يروحوا الضيوف، ___
+  answer: ما منعود منشوفن إلا بعد زمان
+  others: [ بيرجعوا بكرا, بيصير بيناتنا زعل, بتنكسر الفناجين ]
+  line: 105389
+  status: draft
+
+- id: w300
+  kind: idiom
+  prompt: لا أسنان بتقرط ولا آلة بتخرط
+  answer: شاخ وكبر في السنّ
+  others: [ "افتقر وخسر صنعته", "فقد شهيّته للطعام", "كسل عن العمل" ]
+  line: 1262
+  status: draft
+
+- id: w500
+  kind: belief
+  prompt: اللي بيقتل سبع ___ مجمّعين بضربة كفّ وحدة بتنكتب لو حجّة
+  answer: أبو بريصات
+  others: [ عقارب, صراصير, دبابير ]
+  note: يحتقرون أبا بريص لأنه كان ينفخ في النار التي أُضرمت لإحراق إبراهيم.
+  line: 2550
+  status: approved
+
+- id: w301
+  kind: idiom
+  prompt: فلان إجر كرسي
+  answer: لا شأن له ولا قيمة
+  others: [ "عماد الأسرة وسندها", "صاحب منصب ومكانة", "كثير السفر والتنقّل" ]
+  line: 3700
+  status: draft
+
+- id: w101
+  kind: riddle
+  prompt: كم إدن لإمّك ولإمّ أخوك ولحماية مرت أخوك؟
+  answer: إدنين بس
+  others: [ "ست إدان", "أربع إدان", "تمان إدان" ]
+  note: لأن أمّك هي نفسها أمّ أخوك وحماة مرته.
+  line: 59119
+  status: draft
+
+- id: w501
+  kind: belief
+  prompt: إذا حكّتك إجرك بكون بدّك ___
+  answer: تدوس أرض جديدة
+  others: [ "تقبض مصاري", "تتقاتل مع حدا", "يجيك خطّار" ]
+  line: 3720
+  status: draft
+
+- id: w302
+  kind: idiom
+  prompt: فلان إيدي وإجري
+  answer: عوني الذي لا أستغني عنه
+  others: [ "عبء ثقيل عليّ", "خصمي الذي يلاحقني", "ضيف لا يغادر بيتي" ]
+  line: 3701
+  status: draft
+
+- id: w200
+  kind: vendor
+  prompt: قلبك أبيض يا قليب ___!
+  answer: الجوز
+  others: [ "اللوز", "الفستق", "البندق" ]
+  note: ينادي به بائع الجوز الأخضر المقشّر.
+  line: 2968
+  status: draft
+
+- id: w303
+  kind: idiom
+  prompt: فلان متل الفاخوري، متل ما بدّو بيركّب أدن الجرّة
+  answer: يسمع إن شاء ويتصامم إن شاء
+  others: [ ماهر في صنعته سريع العمل, كثير الكسر قليل الإصلاح, يصنع المشاكل من لا شيء ]
+  note: الفاخوري يركّب أذن الجرّة حيث يشاء.
+  line: 5169
+  status: approved
+
+- id: w502
+  kind: belief
+  prompt: اللي بيقتل قطّة ملزوم يوم القيامة يعبّي إجريها ___
+  answer: دهب
+  others: [ "فضّة", "مي", "قمح" ]
+  line: 71374
+  status: draft
+
+- id: w304
+  kind: idiom
+  prompt: حدّك أدنك
+  answer: الشيء قريب جدًّا منك
+  others: [ انتبه لما تسمع, لا تتدخّل فيما لا يعنيك, اسمع قبل أن تحكم ]
+  note: أي قريب قُرب ما بين الخدّ والأذن.
+  line: 5173
+  status: approved
+
+- id: w503
+  kind: belief
+  prompt: الأرض محمولة على قرن ___، ولمّا بيتعب القرن بينقلها للقرن التاني وبتصير زلزلة
+  answer: تور
+  others: [ "جمل", "غزال", "كبش" ]
+  line: 5802
+  status: draft
+
+- id: w305
+  kind: idiom
+  prompt: الجحش بيسمن من ضرسو وابن آدم بيسمن من أدنو
+  answer: من سماع الخبر الطيّب
+  others: [ "من كثرة النوم", "من الطعام الدسم", "من قلّة الحركة" ]
+  note: أي من سماع الأخبار الحسنة أو من الطرب.
+  line: 2256
+  status: draft
+
+- id: w102
+  kind: riddle
+  prompt: ستّي بالصمندرة، بتحبّ البوس والكركرة
+  answer: الشَّربة
+  others: [ "الفنجان", "الطنجرة", "المكحلة" ]
+  note: الشَّربة إبريق الفخّار، يُشرب منها الماء فتقرقر.
+  line: 52995
+  status: draft
+
+- id: w306
+  kind: idiom
+  prompt: تعبت الحواصل وارتخت المفاصل
+  answer: أكل حتى شبع ونعس
+  others: [ "اشتغل كثيرًا حتى تعب", "شاخ وضعفت قوّته", "مرض ولزم الفراش" ]
+  line: 5545
+  status: draft
+
+- id: w504
+  kind: belief
+  prompt: إذا شاف واحد بمنامو السما تحت والأرض فوق، بتكون هالليلة ___
+  answer: ليلة القدر
+  others: [ "ليلة العيد", "ليلة المعراج", "ليلة راس السنة" ]
+  line: 5804
+  status: draft
+
+- id: w307
+  kind: idiom
+  prompt: فلان وين ما أمسى أرسى
+  answer: لا مقرّ له ولا بيت
+  others: [ "ينام باكرًا في كل مكان", "بحّار يعرف كل المرافئ", "صاحب أملاك في كل بلد" ]
+  line: 5735
+  status: draft
+
+- id: w202
+  kind: vendor
+  prompt: أسود كماية يا ___!
+  answer: بانجان
+  others: [ "كوسا", "فليفلة", "بندورة" ]
+  line: 8072
+  status: draft
+
+- id: w505
+  kind: belief
+  prompt: البيطلع لو بأضافيرو لطعة بيضا، بكون ___
+  answer: رزقو كتير
+  others: [ "عمرو طويل", "بدّو يسافر", "قلبو أبيض" ]
+  line: 9084
+  status: draft
+
+- id: w308
+  kind: idiom
+  prompt: دخل متل السفين
+  answer: مضغوطًا عليه من كل جانب
+  others: [ "مسرعًا لا يلتفت لأحد", "بلا استئذان ولا سلام", "خفيفًا لا يشعر به أحد" ]
+  note: السفين هو الإسفين يُدقّ بين قطعتين.
+  line: 7694
+  status: draft
+
+- id: w103
+  kind: riddle
+  prompt: دخلوا عالمغارة، أجتن ضربة، واحد بقي وتنين انهزموا
+  answer: البزر لمّا ينفصفص
+  others: [ الزيتون, العنب, التمر ]
+  note: اللبّ يبقى في الفم والقشرتان تُرميان.
+  line: 22639
+  status: approved
+
+- id: w309
+  kind: idiom
+  prompt: فلان بيشتغل بشركة اللفّ والدوران الأهلية
+  answer: لا عمل له إلا التجوال
+  others: [ "موظّف في شركة كبيرة", "صاحب تجارة رابحة", "يعمل في نقل البضائع" ]
+  line: 8345
+  status: draft
+
+- id: w506
+  kind: belief
+  prompt: البيقصّ أضافيرو يوم السبت بياكل ___ طول الجمعة
+  answer: قتلات
+  others: [ حلويات, لحمة, عزايم ]
+  note: "الجمعة هنا بمعنى الأسبوع، والقتلات: الضرب."
+  line: 9085
+  status: approved
+
+- id: w310
+  kind: idiom
+  prompt: فلان بيقول للأعور أعور بعينو
+  answer: صريح لا يجامل أحدًا
+  others: [ "يعيب الناس وفيه عيوبهم", "ضعيف البصر لا يرى", "يخاف من مواجهة الناس" ]
+  line: 9735
+  status: draft
+
+- id: w507
+  kind: belief
+  prompt: البيحكّ أضافير الباهمين ببعضن، بكون قدّامو ___
+  answer: قتالة
+  others: [ "سفرة", "رزقة", "عزيمة" ]
+  line: 130516
+  status: draft
+
+- id: w311
+  kind: idiom
+  prompt: لا انعزل هالمأمور الكبير ما بقى حدا يكتال بكيلو
+  answer: لم يعد أحد يأبه له
+  others: [ "ضاعت أمواله بعد عزله", "عاد إلى بلده مرتاحًا", "صار الناس يخافون منه" ]
+  line: 10677
+  status: draft
+
+- id: w312
+  kind: idiom
+  prompt: متل الأطرش بالزفّة
+  answer: حاضر لا يدري بما يجري
+  others: [ "يرقص دون أن يُدعى", "يفسد الفرح على أهله", "يصيح أعلى من الجميع" ]
+  note: الأطرش في زفّة العروس لا يسمع الغناء.
+  line: 9154
+  status: draft
+
+- id: w508
+  kind: belief
+  prompt: إذا إجا واحد يبرك عالكرسي والكرسي انقلب، بكون هالزلمة آكل ___
+  answer: غضب أمّو وأبوه
+  others: [ "مال يتيم", "حقّ جارو", "عين حسود" ]
+  line: 121052
+  status: draft
+
+- id: w203
+  kind: vendor
+  prompt: يا ___، طراوات أكل الآغوات!
+  answer: بقلة
+  others: [ "فجلة", "خسّة", "نعناع" ]
+  line: 107199
+  status: draft
+
+- id: w104
+  kind: riddle
+  prompt: قبّة صفرا جوّاتا سبع تمن خوة حلوين، مشطّح الواحد فوق التاني
+  answer: البرتقانة
+  others: [ "الرمّانة", "البطّيخة", "التفّاحة" ]
+  note: فصوص البرتقالة مصفوفة بعضها فوق بعض.
+  line: 23136
+  status: draft
+
+- id: w313
+  kind: idiom
+  prompt: الله خلق الخلق!
+  answer: تمهّل ولا تستعجلني
+  others: [ كل الناس سواسية, الرزق على الله وحده, لا تتدخّل فيما لا يعنيك ]
+  note: "يريدون: خلقه في ستة أيام، فأمهلني."
+  line: 64837
+  status: approved
+
+- id: w509
+  kind: belief
+  prompt: إذا حدا حكى منامو للناس وما قالوا لو «___»، بينقلب منامو لشرّ
+  answer: خير إن شاء الله
+  others: [ "صحّة وهنا", "الله يسامحك", "نعيماً" ]
+  line: 13062
+  status: draft
+
+- id: w314
+  kind: idiom
+  prompt: حطّ لو بأنفا عودة
+  answer: أفسد عليه الأمر
+  others: [ "ساعده على قضاء حاجته", "ذكّره بأمر نسيه", "صالحه بعد خصام" ]
+  line: 15615
+  status: draft
+
+- id: w510
+  kind: belief
+  prompt: اللي بيحكّو أنفو بكون بدّو ___
+  answer: يتقاتل مع مرتو
+  others: [ "يقبض مصاري", "يسافر", "يجيه خطّار" ]
+  line: 15639
+  status: draft
+
+- id: w315
+  kind: idiom
+  prompt: حدا بيقطع أنفو من وجّو؟
+  answer: لا أحد يهجر أهله وذويه
+  others: [ "لا أحد يرضى بالإهانة", "الكبرياء لا تنفع صاحبها", "لا أحد يتنازل عن رأيه" ]
+  line: 15625
+  status: draft
+
+- id: w316
+  kind: idiom
+  prompt: فلان معلّق على أنفو نصّ أوقية لحمة منشّحة
+  answer: متكبّر شامخ بأنفه
+  others: [ "بخيل لا يطعم أحدًا", "جزّار يبيع اللحم", "شرِه يحبّ الأكل" ]
+  line: 149051
+  status: draft
+
+- id: w511
+  kind: belief
+  prompt: من شان ينفتح باب العلم عالولد، لازم يقرا سورة ___
+  answer: الفتح
+  others: [ "الضحى", "يس", "الملك" ]
+  line: 15662
+  status: draft
+
+- id: w105
+  kind: riddle
+  prompt: أسود مالليل، أسرع مالخيل، لحقوه خمسة، وجابوه تنين وطقّوه
+  answer: البرغوت
+  others: [ النملة, الصرصور, الدبّانة ]
+  note: تلاحقه أصابع اليد الخمس، ثم تفقسه إصبعان.
+  line: 23712
+  status: approved
+
+- id: w317
+  kind: idiom
+  prompt: صرنا إيد من قدّام وإيد من ورا
+  answer: فقدنا كل ما نملك
+  others: [ "صرنا متعاونين متكاتفين", "انشغلنا بأعمال كثيرة", "تصالحنا بعد خصام" ]
+  note: يقول الأسدي إنها سائرة في سورية ولبنان والعراق ومصر.
+  line: 18121
+  status: draft
+
+- id: w204
+  kind: vendor
+  prompt: سبحان الخلّاق يا ___!
+  answer: درّاق
+  others: [ مشمش, خوخ, تفّاح ]
+  line: 84513
+  status: approved
+
+- id: w512
+  kind: belief
+  prompt: لا تغطّوا الولد بسجّادة الصلاة، بيمرّوا عليه ___
+  answer: ذنوب اللي صلّوا عليها
+  others: [ "دعوات اللي صلّوا عليها", "برد الشتا", "أحلام بشعة" ]
+  line: 85530
+  status: draft
+
+- id: w318
+  kind: idiom
+  prompt: فلان إذا مدّ إيدو عالبحر بينشّفو
+  answer: شؤم على من حوله
+  others: [ "قوي لا يقف أمامه شيء", "كريم يعطي بلا حساب", "محظوظ في كل أعماله" ]
+  line: 18126
+  status: draft
+
+- id: w319
+  kind: idiom
+  prompt: فلان إيدو ماسكة
+  answer: بخيل يمسك المال
+  others: [ "أمين على الودائع", "ماهر في صنعته", "متمسّك برأيه" ]
+  line: 18127
+  status: draft
+
+- id: w513
+  kind: belief
+  prompt: "إذا نجي حدا من خطر بيقولوا: انكتب لو ___"
+  answer: عمر جديد
+  others: [ "اسم جديد", "رزق جديد", "حظّ جديد" ]
+  line: 16243
+  status: draft
+
+- id: w320
+  kind: idiom
+  prompt: فلان إيدو فاضية
+  answer: لا يجلب لأهله ما يحتاجون
+  others: [ "كريم يعطي كل ما معه", "بريء من التهمة", "مستعدّ للعمل دائمًا" ]
+  line: 18129
+  status: draft
+
+- id: w106
+  kind: riddle
+  prompt: شي ما بيمشي إلا تتضربو عراسو
+  answer: البسمار
+  others: [ "البرغي", "المفتاح", "القفل" ]
+  note: ومثله عندهم «شي بيدخل كلّو وبيبقى راسو».
+  line: 24994
+  status: draft
+
+- id: w514
+  kind: belief
+  prompt: البيلبس توب جديد بعد الحمّام، هالتوب ___
+  answer: بيهترى قوام
+  others: [ "بيضيق عليه", "بيجيب لو الحظّ", "بيضيع منّو" ]
+  note: يهترئ سريعاً.
+  line: 17022
+  status: draft
+
+- id: w321
+  kind: idiom
+  prompt: إيدو ما بتتأمّن عالمي الغالية
+  answer: يسرق ولو احترقت يده
+  others: [ "يتأخّر في إنجاز الأعمال", "لا يتحمّل المشقّة", "يفسد كل ما يلمسه" ]
+  line: 18134
+  status: draft
+
+- id: w322
+  kind: idiom
+  prompt: فلان على حطّة إيدك
+  answer: لم يتغيّر أبدًا
+  others: [ "رهن إشارتك يطيعك", "قريب منك في المكان", "يقلّدك في كل شيء" ]
+  line: 18135
+  status: draft
+
+- id: w515
+  kind: belief
+  prompt: البيتشردق وهوّ عم بياكل، بكون بدّو يجيه ___ من واحد بخيل
+  answer: أرمغان
+  others: [ "عزيمة", "مكتوب", "سلام" ]
+  note: "الأرمغان: الهدية."
+  line: 22276
+  status: draft
+
+- id: w205
+  kind: vendor
+  prompt: ___ ناعمة وريّانة!
+  answer: القتّة
+  others: [ البندورة, البطاطا, الباذنجانة ]
+  note: القتّة القثّاء الطويلة، ويسمّونها «عروسة البستان».
+  line: 130501
+  status: approved
+
+- id: w323
+  kind: idiom
+  prompt: فلان من إيدو لحلقو
+  answer: ينفق كل ما يكسبه
+  others: [ "شرِه لا يشبع أبدًا", "يتكلّم بلا تفكير", "يعمل بيده لا بعقله" ]
+  line: 18136
+  status: draft
+
+- id: w516
+  kind: belief
+  prompt: اللي بتساوي كبّة نيّة تلت أيّام ورا بعضها، بتطير بركة ___
+  answer: البرغل
+  others: [ "اللحمة", "الطحين", "البيت" ]
+  line: 23971
+  status: draft
+
+- id: w324
+  kind: idiom
+  prompt: لا تشدّ إيدك بفلان كتير
+  answer: لا يُوثق به ولا يُعتمد عليه
+  others: [ "لا تضربه فهو ضعيف", "لا تبخل عليه بالعطاء", "لا تصافحه فهو مريض" ]
+  line: 18144
+  status: draft
+
+- id: w107
+  kind: riddle
+  prompt: أينا شي إلو أربعة بيطلعوا عالسما، وأربعة عالأرض، وأربعة بيطعموا الجوعان؟
+  answer: البقرة
+  others: [ "الحصان", "الحمار", "الخاروف" ]
+  note: قرناها وأذناها، وقوائمها الأربع، وضروعها الأربعة.
+  line: 26848
+  status: draft
+
+- id: w325
+  kind: idiom
+  prompt: فلان ما بيصبّ على إيد فلان مي
+  answer: لا يصلح أن يكون خادمًا له
+  others: [ "لا يساعده في الشدائد", "لا يزوره في بيته", "يكرهه ولا يطيق رؤيته" ]
+  line: 18145
+  status: draft
+
+- id: w517
+  kind: belief
+  prompt: إذا واحد عدّ المصاري أو غيرها، ___
+  answer: بتطير بركتها
+  others: [ "بتتضاعف", "بتنسرق", "بيحسدوه عليها" ]
+  line: 23969
+  status: draft
+
+- id: w326
+  kind: idiom
+  prompt: شقد الوقت؟ — إيدو على خدّو
+  answer: اقترب وقت الأذان
+  others: [ "حان وقت النوم", "الوقت متأخّر جدًّا", "حان وقت الغداء" ]
+  note: أي يد المؤذّن على خدّه يتهيّأ لرفع الأذان.
+  line: 18148
+  status: draft
+
+- id: w518
+  kind: belief
+  prompt: لا تنشّف بمنشفة غيرك، بتصير بيناتكن ___
+  answer: عداوة
+  others: [ "قرابة", "محبّة", "شراكة" ]
+  line: 112662
+  status: draft
+
+- id: w327
+  kind: idiom
+  prompt: إذا حطّ فلان إيدو بإيدك لازم تعدّ أصابيعك
+  answer: حرامي لا يُؤمَن جانبه
+  others: [ "يصافح بقوّة شديدة", "كثير الحساب والتدقيق", "كريم يعطي بلا حساب" ]
+  line: 18150
+  status: draft
+
+- id: w206
+  kind: vendor
+  prompt: تروحي فرم يا ___!
+  answer: بندورة
+  others: [ "كوسا", "بطاطا", "بانجان" ]
+  note: كأنما يدعو عليها، ومثله «تروحي فقي يا بيض».
+  line: 124638
+  status: draft
+
+- id: w108
+  kind: riddle
+  prompt: شي عضمو من برّا وجسمو من جوّا
+  answer: البيضة
+  others: [ "الرمّانة", "البطّيخة", "البصلة" ]
+  note: قشرتها كالعظم من الخارج.
+  line: 30447
+  status: draft
+
+- id: w328
+  kind: idiom
+  prompt: هالشغلة أكلت من إيدي شقفة
+  answer: زاولتها كثيرًا
+  others: [ "جرحتني وأنا أعملها", "كلّفتني مالًا كثيرًا", "لم أتقنها بعد" ]
+  line: 18157
+  status: draft
+
+- id: w519
+  kind: belief
+  prompt: كلّ الدوابّ ما رضيت تشيل الحطب اللي بدّن يحرقوا فيه نبيّنا إبراهيم إلا ___، فدعا عليه بقطع نسلو
+  answer: البغل
+  others: [ "الحمار", "الجمل", "الحصان" ]
+  note: ولهذا عندهم لا نسل للبغل.
+  line: 26538
+  status: draft
+
+- id: w329
+  kind: idiom
+  prompt: غسل إيدو من هالشغلة
+  answer: انتهى منها وتخلّص
+  others: [ "أتقنها إتقانًا تامًّا", "بدأ بها من جديد", "ربح منها ربحًا كبيرًا" ]
+  line: 18225
+  status: draft
+
+- id: w520
+  kind: belief
+  prompt: اللي بِكر ولادو ___ بيكون مرزوق
+  answer: بنت
+  others: [ "صبي", "توم", "أشقر" ]
+  line: 27175
+  status: draft
+
+- id: w330
+  kind: idiom
+  prompt: فلان قالب الصندوق على بابو
+  answer: لبس كل ما في صندوقه
+  others: [ "باع أثاث بيته", "أغلق بابه في وجه الناس", "سافر ولم يعد" ]
+  line: 18988
+  status: draft
+
+- id: w331
+  kind: idiom
+  prompt: عم بيكيل البحر بالفنجان
+  answer: يحاول ما ليس باستطاعته
+  others: [ "يبذّر ماله بلا حساب", "يصطاد في الماء العكر", "يعمل بدقّة وصبر" ]
+  line: 21585
+  status: draft
+
+- id: w521
+  kind: belief
+  prompt: "إذا صاحت البومة لازم نقول: الله يعطينا ___ هالليلة"
+  answer: خير
+  others: [ "نوم", "مطر", "ضو" ]
+  line: 29701
+  status: draft
+
+- id: w109
+  kind: riddle
+  prompt: ستّي بالجورة، وكشّتا منبورة
+  answer: القرنبيطة
+  others: [ الجزرة, الفجلة, البصلة ]
+  line: 49907
+  status: approved
+
+- id: w332
+  kind: idiom
+  prompt: رميناه بالبحر طلع وبتمّو سمكة
+  answer: محظوظ في كل أمر
+  others: [ "سبّاح ماهر لا يغرق", "عنيد لا يتعلّم", "طمّاع لا يشبع" ]
+  line: 90151
+  status: draft
+
+- id: w207
+  kind: vendor
+  prompt: تروحي فقي يا ___!
+  answer: بيض
+  others: [ "جبنة", "لبن", "خبز" ]
+  line: 126479
+  status: draft
+
+- id: w522
+  kind: belief
+  prompt: إذا سافر عزيز ما بيصير ___
+  answer: يتكنس البيت
+  others: [ "ينطبخ مجدّرة", "يتسكّر باب الدار", "يتغنّى بالبيت" ]
+  line: 30000
+  status: draft
+
+- id: w333
+  kind: idiom
+  prompt: عم بيقرط فحم وبيبخّ نار
+  answer: شديد الغضب
+  others: [ "يعمل بجدّ ونشاط", "جائع يأكل أي شيء", "يكذب ويبالغ" ]
+  line: 131880
+  status: draft
+
+- id: w334
+  kind: idiom
+  prompt: كفّو مبخوش
+  answer: كريم لا يمسك المال
+  others: [ "بخيل لا يعطي شيئًا", "لصّ يمدّ يده", "عامل جُرحت يده" ]
+  note: المبخوش المثقوب.
+  line: 22178
+  status: draft
+
+- id: w523
+  kind: belief
+  prompt: من شان يروح الثقيل مالبيت، لازم يرشّوا ___ في العتبة ويحطّوا المكنسة فيها
+  answer: ملح
+  others: [ "سكّر", "رز", "مي" ]
+  line: 30002
+  status: draft
+
+- id: w335
+  kind: idiom
+  prompt: عالطرقة متل البرقة وعالشغلة متل البغلة
+  answer: سريع إلى الأكل بطيء في العمل
+  others: [ "قوي في العمل ضعيف في الكلام", "سريع الغضب بطيء الرضا", "يأكل قليلًا ويعمل كثيرًا" ]
+  note: الطرقة عندهم الأكل.
+  line: 23805
+  status: draft
+
+- id: w110
+  kind: riddle
+  prompt: أينا شي بيقرصك وما بتشوفو؟
+  answer: الجوع
+  others: [ "النحلة", "العقرب", "النملة" ]
+  line: 50166
+  status: draft
+
+- id: w524
+  kind: belief
+  prompt: لازم عالعروس ليلة عرسها تدخل عبيت المي بالحمّام وترقص شوي فيه، تا يرقص لها ___
+  answer: سعدها
+  others: [ "قلب عريسها", "حماتها", "الجيران" ]
+  line: 30066
+  status: draft
+
+- id: w336
+  kind: idiom
+  prompt: ساوى لنا بالرز بصل
+  answer: أفسد علينا الطبخة
+  others: [ "أطعمنا من أطيب الطعام", "بخل علينا بالطعام", "طبخ لنا على عجل" ]
+  line: 25413
+  status: draft
+
+- id: w337
+  kind: idiom
+  prompt: كسر عأنفو بصلة
+  answer: أذلّه وكسر كبرياءه
+  others: [ "أبكاه بشدّة", "ضربه على وجهه", "صالحه بعد خصام" ]
+  line: 25415
+  status: draft
+
+- id: w525
+  kind: belief
+  prompt: ليلة كتاب العروس ما بيصير تنام، تا ما ___
+  answer: ينام سعدها
+  others: [ "تنتفخ عيونها", "يزعل عريسها", "تنسى أهلها" ]
+  line: 113905
+  status: draft
+
+- id: w208
+  kind: vendor
+  prompt: مفتّح النواضر يا ___!
+  answer: زعتر
+  others: [ "نعناع", "كمّون", "سمّاق" ]
+  note: يزعمون أن الزعتر يفتح الذهن.
+  line: 122979
+  status: draft
+
+- id: w338
+  kind: idiom
+  prompt: فرس بتلقط البقّ
+  answer: رشيقة تمشي على رأس حافرها
+  others: [ "عجوز ضعيفة لا تقوى", "سريعة الغضب ترفس", "جائعة تأكل كل شيء" ]
+  line: 26607
+  status: draft
+
+- id: w526
+  kind: belief
+  prompt: بيبيّتوا قبل الفحص شوية ملبّس في مرقد ___ ليفتح الله فهمهم
+  answer: زكريّا
+  others: [ "الخضر", "الشيخ فارس", "الأربعين" ]
+  note: مقام النبي زكريا في الجامع الكبير بحلب.
+  line: 30087
+  status: draft
+
+- id: w339
+  kind: idiom
+  prompt: متل بزر البقلة
+  answer: كثيرون جدًّا
+  others: [ "صغار لا قيمة لهم", "متفرّقون في كل مكان", "متشابهون لا فرق بينهم" ]
+  line: 27014
+  status: draft
+
+- id: w111
+  kind: riddle
+  prompt: أينا شي بأرض بلادو أخضر، وبالسوق أسود، وعلى تمّنا أحمر؟
+  answer: الشاي
+  others: [ "التتن", "الحنّا", "الزعتر" ]
+  note: ورقه أخضر في شجرته، يُباع أسود، ويُشرب أحمر.
+  line: 50889
+  status: draft
+
+- id: w527
+  kind: belief
+  prompt: "لمّا حدا بتصير معو مصيبة بيقولوا لو: بوجّ مين ___ اليوم؟"
+  answer: تصبّحت
+  others: [ "تغدّيت", "نمت", "حكيت" ]
+  note: يعتقدون أن التصبّح ببعض الناس يُمن وببعضهم شؤم.
+  line: 36243
+  status: draft
+
+- id: w340
+  kind: idiom
+  prompt: كل بيت إلو بلّوعة
+  answer: في كل أسرة من يسيء السلوك
+  others: [ "كل بيت يحتاج إلى تنظيف", "لكل بيت رزقه", "كل أسرة لها كبير" ]
+  line: 28000
+  status: draft
+
+- id: w341
+  kind: idiom
+  prompt: صحبة فلان وفلان متل البندورة المعفّسة
+  answer: ملزوزون دائمًا لا يفترقون
+  others: [ "مختلفون لا يتّفقون أبدًا", "صحبة قصيرة سريعة الانتهاء", "أحدهما يستغلّ الآخر" ]
+  note: يقولونها تهكّمًا على هذا الالتصاق.
+  line: 28574
+  status: draft
+
+- id: w528
+  kind: belief
+  prompt: التعدّاي من تحت السلّم حرام، ومن تحت ___ كفر
+  answer: السيبا
+  others: [ "المزراب", "القنطرة", "حبل الغسيل" ]
+  note: "السيبا: سلّم خشبي له ثلاث أرجل."
+  line: 92217
+  status: draft
+
+- id: w342
+  kind: idiom
+  prompt: حطّ جنب بيدرو شكّارة
+  answer: اتّهم غيره وهو المذنب
+  others: [ "أعان جاره في الحصاد", "خبّأ ماله عند غيره", "زاد في ماله سرًّا" ]
+  line: 30138
+  status: draft
+
+- id: w209
+  kind: vendor
+  prompt: بيضك قتلك يا ___!
+  answer: قرنبيط
+  others: [ "ملفوف", "باذنجان", "سلق" ]
+  note: لأن أوراقه تضعف كلما كبر زهره الأبيض.
+  line: 30573
+  status: draft
+
+- id: w529
+  kind: belief
+  prompt: البيتفشكل وهوّ ماشي، بكون عليه ___
+  answer: نذر
+  others: [ "دين", "سفر", "عرس" ]
+  note: "يتفشكل: يتعثّر في مشيه."
+  line: 38198
+  status: draft
+
+- id: w343
+  kind: idiom
+  prompt: كإنّو ماشي على بيض
+  answer: بطيء في سيره
+  others: [ متكبّر يختال في مشيته, سريع لا يلحقه أحد, حافٍ يتألّم من الطريق ]
+  line: 30393
+  status: approved
+
+- id: w112
+  kind: riddle
+  prompt: أربعة چك مك، وتنين چاني ماني، وواحد بيكشّ الدبّان
+  answer: الدابّة
+  others: [ "الجاجة", "الحمامة", "السمكة" ]
+  note: الأربعة قوائمها، والتنين أذناها، والواحد ذيلها.
+  line: 51335
+  status: draft
+
+- id: w344
+  kind: idiom
+  prompt: أبو البيضة لا تفاقسو
+  answer: لا تراهن من رأس ماله ضعيف
+  others: [ "لا تمازح الصغير", "لا تأمن البخيل", "لا تجادل الأحمق" ]
+  note: المفاقسة مضاربة البيض بالبيض.
+  line: 30412
+  status: draft
+
+- id: w530
+  kind: belief
+  prompt: "الغسيل يوم التنين: شدّة ودين و___"
+  answer: وجع إيدين
+  others: [ "وجع راس", "قلّة رزق", "برد وشتي" ]
+  line: 63604
+  status: draft
+
+- id: w345
+  kind: idiom
+  prompt: تاه العدّاد
+  answer: كثير لا يُحصى
+  others: [ "أخطأ الحساب عمدًا", "نسي ما عليه من دين", "فقد عقله من الهمّ" ]
+  line: 31654
+  status: draft
+
+- id: w531
+  kind: belief
+  prompt: الغسيل يوم الجمعة بيطرّش ___
+  answer: الملايكة
+  others: [ "الجيران", "الحمام", "العصافير" ]
+  line: 63603
+  status: draft
+
+- id: w346
+  kind: idiom
+  prompt: فلان سكّينتو متلّمة
+  answer: ضعيف خائر القوى
+  others: [ "بخيل لا يذبح لضيوفه", "كسول في عمله", "لا يجيد الطبخ" ]
+  line: 32440
+  status: draft
+
+- id: w113
+  kind: riddle
+  prompt: حلبي ومرتو وشامي وأختو دخلوا البستان وأكلوا تلت تفّاحات، كل واحد تفّاحة. كيف؟
+  answer: كانوا تلاتة، مرت الحلبي هيّ أخت الشامي
+  others: [ واحد منن كان صايم, قسموا تفّاحة بيناتن, الشامي ما أكل ]
+  line: 57679
+  status: approved
+
+- id: w347
+  kind: idiom
+  prompt: الشغلة دخلت عليه بالتركي
+  answer: لم يفهمها
+  others: [ "جاءته بالقوّة والإجبار", "نجح فيها بسهولة", "دخلها بلا استئذان" ]
+  line: 34712
+  status: draft
+
+- id: w532
+  kind: belief
+  prompt: إذا رادت الأم يطول عمر ابنها الزغير، لازم تركّبو ___
+  answer: عالجحش بالمقلوب
+  others: [ "عالجمل بالعرض", "عالسطح بالليل", "بالمرجوحة سبع مرّات" ]
+  line: 46127
+  status: draft
+
+- id: w210
+  kind: vendor
+  prompt: طافت القناية وتكبكب ___!
+  answer: العجّور
+  others: [ "البطّيخ", "الخيار", "القرع" ]
+  line: 105942
+  status: draft
+
+- id: w348
+  kind: idiom
+  prompt: عشّاه قطّ بالتفاية
+  answer: لا طبيخ عنده
+  others: [ "عشاؤه متأخّر دائمًا", "يطبخ على نار هادئة", "يطعم القطط قبل نفسه" ]
+  note: الأثفية باردة فيأوي إليها القطّ.
+  line: 37942
+  status: draft
+
+- id: w533
+  kind: belief
+  prompt: الجدي فيه شعرة من ___
+  answer: الجان
+  others: [ "الغزال", "القرد", "الأرنب" ]
+  note: تخيّلوا ذلك لأن الجدي نشيط كثير الحركة.
+  line: 46394
+  status: draft
+
+- id: w349
+  kind: idiom
+  prompt: عمرو ما تقاتلوا صرمايتين بعتبتو ولا معلقتين بسفرتو
+  answer: بخيل لا يستقبل ضيوفًا
+  others: [ "مسالم يكره الشجار", "نظيف مرتّب البيت", "يأكل وحده بصمت" ]
+  line: 38484
+  status: draft
+
+- id: w350
+  kind: idiom
+  prompt: فلان خلق ومعلقة الدهب بتمّو
+  answer: عاش في نعمة
+  others: [ "يتكلّم كلامًا ثمينًا", "طمّاع يحبّ الذهب", "صائغ ماهر" ]
+  line: 71371
+  status: draft
+
+- id: w534
+  kind: belief
+  prompt: البيروح عالحمّام وما لازمو حمّام، بيضحك عليه ___
+  answer: جرن الحمّام
+  others: [ "الناطور", "المكيّس", "البلّان" ]
+  line: 46943
+  status: draft
+
+- id: w114
+  kind: riddle
+  prompt: تلاتة عبروا نهر سوا، الأوّل شاف المي وخاض فيها، والتاني شاف المي وما خاض فيها، والتالت لا شاف المي ولا خاض فيها. مين هنّي؟
+  answer: مرا، وابنا على كتفا، وجنين ببطنا
+  others: [ رجّال وحمارو وكلبو, خيّال وحصانو وسرجو, صيّاد وشبكتو وسمكة ]
+  line: 61247
+  status: approved
+
+- id: w351
+  kind: idiom
+  prompt: فلان عم بيقصّ دهب
+  answer: يربح كثيرًا
+  others: [ "يتكلّم كلامًا جميلًا", "يعمل في الصياغة", "يبذّر ماله" ]
+  line: 71372
+  status: draft
+
+- id: w535
+  kind: belief
+  prompt: البياكل جوز كتير ___
+  answer: بينقرع
+  others: [ "بيصير ذكي", "بيسمن", "بيطرش" ]
+  line: 49970
+  status: draft
+
+- id: w352
+  kind: idiom
+  prompt: لباسو إلو مية وتنين وتلاتين تنية
+  answer: غاوي وعكيد متأنّق
+  others: [ "فقير ثيابه مرقّعة", "كثير الهموم والمشاكل", "بخيل يدّخر كل شيء" ]
+  line: 41475
+  status: draft
+
+- id: w211
+  kind: vendor
+  prompt: ___ النبي بركة!
+  answer: تمر
+  others: [ "عنب", "تين", "زيتون" ]
+  note: يريد أن تمره من الحجاز، وأكثر تمر حلب من العراق.
+  line: 40954
+  status: draft
+
+- id: w353
+  kind: idiom
+  prompt: حفر حفر حتّى وصل لقرن التور
+  answer: حفرة عميقة جدًّا
+  others: [ "تعب ولم يجد شيئًا", "وقع في مشكلة كبيرة", "اكتشف كنزًا ثمينًا" ]
+  line: 43039
+  status: draft
+
+- id: w536
+  kind: belief
+  prompt: إذا طنّت أدنك، بكون حدا عم ___
+  answer: يذكرك
+  others: [ "يحسدك", "يستناك", "يغتابك بالكذب" ]
+  line: 51529
+  status: draft
+
+- id: w354
+  kind: idiom
+  prompt: الشغلة جابا من بحر السرج
+  answer: حصل عليها بجهد عظيم
+  others: [ "سرقها من صاحبها", "جاءته بلا تعب", "اشتراها بثمن رخيص" ]
+  line: 44085
+  status: draft
+
+- id: w115
+  kind: riddle
+  prompt: أمّك بتدخّلو أبيض نام، وأبوك بيطالعو أحمر قام
+  answer: الخبز
+  others: [ "البيض", "البطاطا", "اللحمة" ]
+  note: يدخل الفرن عجيناً أبيض ويخرج محمّراً منتفخاً.
+  line: 62052
+  status: draft
+
+- id: w537
+  kind: belief
+  prompt: خبز الحاف بيعرّض ___
+  answer: الكتاف
+  others: [ "الخدود", "البطون", "الرقاب" ]
+  note: "خبز الحاف: الخبز بلا إدام."
+  line: 52491
+  status: draft
+
+- id: w355
+  kind: idiom
+  prompt: كإنّو أمّك جابتك عالعتبة!
+  answer: عجول لا يصبر
+  others: [ "محظوظ منذ ولادته", "غريب لا أهل له", "كثير التنقّل لا يستقرّ" ]
+  note: أي لم تنتظر أن تجيء الداية.
+  line: 111931
+  status: draft
+
+- id: w356
+  kind: idiom
+  prompt: فلان مقطّع حصر الجامع
+  answer: يتردّد كثيرًا إلى المسجد
+  others: [ "يفسد كل ما يلمسه", "فقير لا يملك حصيرًا", "كثير الحركة لا يهدأ" ]
+  line: 44815
+  status: draft
+
+- id: w538
+  kind: belief
+  prompt: حبّة حلب ظهورها في الوجه جمال، وفي القدم سفر، وفي الإيد ___
+  answer: عمل وتوفيق
+  others: [ "فقر وتعتير", "زواج قريب", "مرض طويل" ]
+  note: "حبّة حلب: البثرة المعروفة باسم المدينة."
+  line: 53492
+  status: draft
+
+- id: w357
+  kind: idiom
+  prompt: فلان جاية على سبعة
+  answer: وُلد لسبعة أشهر فلا يصبر
+  others: [ "محظوظ في كل أموره", "سابع إخوته", "يعمل سبعة أيام بلا راحة" ]
+  line: 45097
+  status: draft
+
+- id: w539
+  kind: belief
+  prompt: "إذا حكى حدا عن مرض أصابو وأشار لمكانو، بيقول: «إيدي على ___» تا ما يرجع المرض"
+  answer: حجر
+  others: [ خشب, راسك, قلبي ]
+  line: 53780
+  status: approved
+
+- id: w212
+  kind: vendor
+  prompt: على أوّل مونة يا ___، ولا عازة الجيران!
+  answer: توم
+  others: [ "بصل", "فول", "برغل" ]
+  line: 43369
+  status: draft
+
+- id: w358
+  kind: idiom
+  prompt: حطّ لو تحت إجرو قشرة موزة
+  answer: زحلقه وأوقعه بالكلام
+  others: [ "قدّم له هديّة صغيرة", "ساعده على النهوض", "أطعمه الفاكهة" ]
+  line: 133344
+  status: draft
+
+- id: w116
+  kind: riddle
+  prompt: وين في بحار وما فيها مي؟
+  answer: في الخريطة
+  others: [ "في الصحرا", "في الحلم", "في السما" ]
+  line: 63282
+  status: draft
+
+- id: w359
+  kind: idiom
+  prompt: متل كبس الجبن
+  answer: متلاصقون مزدحمون
+  others: [ "بيض ناصع البياض", "صامتون لا يتكلّمون", "مالحون لا يُطاقون" ]
+  line: 45705
+  status: draft
+
+- id: w540
+  kind: belief
+  prompt: بيوهموا الولاد إنّو في ___ بتحكي لأهلن شو عملوا
+  answer: حمامة
+  others: [ "قطّة", "بومة", "جاجة" ]
+  note: "يقولون للولد: الحمامة شافتك وحكت لي."
+  line: 59052
+  status: draft
+
+- id: w360
+  kind: idiom
+  prompt: من سنة جدّي
+  answer: من قديم الزمان
+  others: [ "منذ سنة واحدة فقط", "في عام الجفاف", "في المستقبل البعيد" ]
+  line: 46281
+  status: draft
+
+- id: w541
+  kind: belief
+  prompt: إذا حدا نطّ على فرد إجر، بتغلى ___
+  answer: الحنطة
+  others: [ "اللحمة", "الأجارات", "القهوة" ]
+  line: 169052
+  status: draft
+
+- id: w361
+  kind: idiom
+  prompt: أكلة بيلعب عليها الجدي
+  answer: مغمورة باللحم
+  others: [ "قليلة لا تُشبع", "سهلة التحضير", "باردة لا طعم لها" ]
+  line: 46397
+  status: draft
+
+- id: w117
+  kind: riddle
+  prompt: أينا شي بيمشي عراسو، وكلّما مشي بيقصر دنبو؟
+  answer: خيط الخياطة
+  others: [ "المسمار", "الفرشاية", "المفتاح" ]
+  note: الإبرة تمشي برأسها والخيط وراءها يقصر مع كل غرزة.
+  line: 66425
+  status: draft
+
+- id: w362
+  kind: idiom
+  prompt: فضّى جرابو
+  answer: باح بكل ما في نفسه
+  others: [ "أنفق كل ماله", "رحل بلا رجعة", "شبع وامتلأ" ]
+  line: 46556
+  status: draft
+
+- id: w542
+  kind: belief
+  prompt: إذا انكسف القمر، بيكون بلعو ___
+  answer: الحوت
+  others: [ "التنّين", "الغول", "الديب" ]
+  note: فيدقّون الطناجر والتنكات ليتركه.
+  line: 60134
+  status: draft
+
+- id: w363
+  kind: idiom
+  prompt: فلان صيدتو جرادة
+  answer: يرضى بأيسر العروض
+  others: [ "صيّاد ماهر", "طمّاع لا يقنع", "سريع الحركة" ]
+  line: 46580
+  status: draft
+
+- id: w213
+  kind: vendor
+  prompt: بارد، والعسل من تمّو شارد، بارد وقشّ الندى يا ___!
+  answer: تين
+  others: [ "مشمش", "عنب", "خوخ" ]
+  line: 43687
+  status: draft
+
+- id: w543
+  kind: belief
+  prompt: اللي بيشوف ___ بمنامو بكون بدّو يتجوّز
+  answer: الخبّيزة
+  others: [ "الملوخية", "السبانخ", "البقدونس" ]
+  line: 61875
+  status: draft
+
+- id: w364
+  kind: idiom
+  prompt: متل الجراد، فخدو ما هو منّو
+  answer: لا يسأل عن أقربائه
+  others: [ "يأكل كل ما يجده", "كثير الأولاد", "مسافر دائمًا" ]
+  line: 46585
+  status: draft
+
+- id: w544
+  kind: belief
+  prompt: إذا المرا غسلت التياب يوم الوقفة، بتتزحلق ___ في عرفات
+  answer: جمال الحجّاج
+  others: [ "نعال الحجّاج", "خيم الحجّاج", "حمير السقّايين" ]
+  line: 63578
+  status: draft
+
+- id: w365
+  kind: idiom
+  prompt: ما في أحلى من جمع راسين على فرد مخدّة
+  answer: التوفيق بين الزوجين
+  others: [ "السهر مع الأحبّة", "راحة البال بعد التعب", "اجتماع الأهل على العشاء" ]
+  line: 48414
+  status: draft
+
+- id: w118
+  kind: riddle
+  prompt: كلمة إذا قطعت راسا بتصير إله، وإذا قطعت نصّا بتصير حيوان ضاري بيرقّصوه، وإذا قطعت دنبا بتصير شي للزينة
+  answer: درب
+  others: [ دهب, درج, قلب ]
+  note: درب، بلا رأس «ربّ»، بلا وسط «دبّ»، بلا ذيل «درّ».
+  line: 68474
+  status: approved
+
+- id: w366
+  kind: idiom
+  prompt: نبع متل رقبة الجمل
+  answer: غزير الماء
+  others: [ "ملتوٍ لا يستقيم", "بعيد صعب الوصول", "ماؤه مالح" ]
+  line: 166938
+  status: draft
+
+- id: w545
+  kind: belief
+  prompt: إذا غسلت القطّة وجّها، بكون بدّو يزور البيت ___
+  answer: خطّار
+  others: [ "حرامي", "مطر", "مكتوب" ]
+  line: 63577
+  status: draft
+
+- id: w367
+  kind: idiom
+  prompt: كإنّك فلتان من الجنازير
+  answer: تتصرّف كالمجنون
+  others: [ هارب من السجن, متعب من عمل شاقّ, مسافر عاد للتوّ ]
+  note: كانوا يقيّدون المجانين بالسلاسل.
+  line: 49180
+  status: approved
+
+- id: w546
+  kind: belief
+  prompt: إذا طار من لقن العجين ___، بكون بدّو ياكل من خبزو خطّار
+  answer: شقفة عجين
+  others: [ "شوية طحين", "نقطة مي", "حبّة ملح" ]
+  line: 64122
+  status: draft
+
+- id: w368
+  kind: idiom
+  prompt: ورم كيسو ورم أنفو
+  answer: اغتنى فتكبّر
+  others: [ "مرض وانتفخ وجهه", "أكل حتى شبع", "غضب واحمرّ وجهه" ]
+  line: 175317
+  status: draft
+
+- id: w214
+  kind: vendor
+  prompt: جبالو فاحت يا ___!
+  answer: زعرور
+  others: [ "رمّان", "ليمون", "بطّيخ" ]
+  line: 80482
+  status: draft
+
+- id: w369
+  kind: idiom
+  prompt: حاسب!
+  answer: قف وتمهّل
+  others: [ "ادفع ما عليك من دين", "عدّ نقودك", "اترك المكان فورًا" ]
+  note: لأنّ المحاسبة تستدعي التريّث.
+  line: 52263
+  status: draft
+
+- id: w547
+  kind: belief
+  prompt: خمسة بعين ___
+  answer: الشيطان
+  others: [ "الجار", "الديب", "البومة" ]
+  note: "ويقولون أيضاً: خمسة بعين العدو."
+  line: 65302
+  status: draft
+
+- id: w119
+  kind: riddle
+  prompt: جرجي عندو أربع وزنات بس، بيزن فيهن من الرطل للأربعين رطل، شو هالوزنات؟
+  answer: ١ و٣ و٩ و٢٧
+  others: [ "١ و٢ و٤ و٨", "٢ و٤ و٦ و٨", "١ و٥ و١٠ و٢٠" ]
+  note: بوضع الأوزان في الكفّتين يزن كل رطل من ١ إلى ٤٠.
+  line: 76551
+  status: draft
+
+- id: w370
+  kind: idiom
+  prompt: دقّة عالنعل ودقّة عالحافر
+  answer: لا تكن جائرًا كل الجور
+  others: [ "اضرب بقوّة ولا ترحم", "اعمل عملك بإتقان", "أسرع قبل فوات الوقت" ]
+  line: 52498
+  status: draft
+
+- id: w548
+  kind: belief
+  prompt: إذا حدا عار خميرتو بالليل، بتنقطع ___
+  answer: رزقتو
+  others: [ "عافيتو", "صحبتو", "نومتو" ]
+  line: 65395
+  status: draft
+
+- id: w371
+  kind: idiom
+  prompt: هالزيت من الشجر للحجر
+  answer: خالص لا غشّ فيه
+  others: [ "قديم معتّق", "غالي الثمن", "معصور مرّتين" ]
+  note: أي من الشجرة إلى حجر المعصرة مباشرة.
+  line: 53796
+  status: draft
+
+- id: w372
+  kind: idiom
+  prompt: صارت عينيه متل كاسات الحجامة
+  answer: محمرّتان
+  others: [ "واسعتان جميلتان", "غائرتان من التعب", "دامعتان من الحزن" ]
+  line: 53934
+  status: draft
+
+- id: w549
+  kind: belief
+  prompt: إذا طلعت لك عطّاشة، لازم عبكرا ___ وعند المسا تصبّحها بالخير تا تروح
+  answer: تمسّيها بالخير
+  others: [ تكحّلها, تبوسها, تغسلها بمي وملح ]
+  note: "العطّاشة: حبّة تطلع على جفن العين."
+  line: 66296
+  status: approved
+
+- id: w373
+  kind: idiom
+  prompt: نام على حرير
+  answer: كن مطمئنًّا مرتاح البال
+  others: [ عاش في ترف, سافر بلا عودة, تكاسل عن عمله ]
+  note: "وضدّها: نام على شوك."
+  line: 55111
+  status: approved
+
+- id: w215
+  kind: vendor
+  prompt: يا ___ اليبرق!
+  answer: سلق
+  others: [ "خسّ", "بقدونس", "نعناع" ]
+  note: ورق السلق يُلفّ يبرقاً.
+  line: 89209
+  status: draft
+
+- id: w120
+  kind: riddle
+  prompt: طيّارة طايرة وما لا ريش، مناكل منّا ومنشعل منّا
+  answer: النحلة
+  others: [ "الفراشة", "الدبّانة", "الوطواط" ]
+  note: منها العسل ومن شمعها الشموع.
+  line: 78848
+  status: draft
+
+- id: w550
+  kind: belief
+  prompt: تعليق نضوة الحصان عباب الدار بيجيب ___
+  answer: الخير
+  others: [ "الضيوف", "الحسد", "المطر" ]
+  note: "نضوة الحصان: الحدوة، وهو اعتقاد أخذوه عن أوروبا."
+  line: 117037
+  status: draft
+
+- id: w374
+  kind: idiom
+  prompt: الحشّ بدّو رشّ
+  answer: الأكل يستدعي الشرب
+  others: [ "الكلام يحتاج إلى دليل", "العمل يحتاج إلى أجر", "الزرع يحتاج إلى سقاية" ]
+  line: 55894
+  status: draft
+
+- id: w375
+  kind: idiom
+  prompt: لسّا الحلاوة عالرفّ
+  answer: لا يزال في بداية الأمر
+  others: [ "الخير مخبّأ للضيوف", "انتهى الأمر بسلام", "البخيل يخبّئ طعامه" ]
+  note: أي حلاوة العروس.
+  line: 57583
+  status: draft
+
+- id: w551
+  kind: belief
+  prompt: "البيقول قبل ما ينام: «سلامي على ___ في العالمين» ما بتقرصو دبّيبة"
+  answer: نوح
+  others: [ "إبراهيم", "موسى", "يوسف" ]
+  note: "مأخوذة من الآية: «سلامٌ على نوحٍ في العالمين»."
+  line: 171018
+  status: draft
+
+- id: w376
+  kind: idiom
+  prompt: حلق لو عالناشف
+  answer: آلمه كثيرًا
+  others: [ "خدعه وأخذ ماله", "عامله بجفاء", "رفض طلبه" ]
+  line: 58265
+  status: draft
+
+- id: w552
+  kind: belief
+  prompt: العلكة للبنات، وإذا الصبي علك علكة بتطلع دقنو ___
+  answer: من ورا
+  others: [ "بيضا", "شقرا", "خفيفة" ]
+  line: 70244
+  status: draft
+
+- id: w377
+  kind: idiom
+  prompt: حنّتو بكفوفي
+  answer: أعرف حقيقته جيّدًا
+  others: [ "أحبّه كثيرًا", "ساعدته في زواجه", "أدين له بالمعروف" ]
+  line: 59666
+  status: draft
+
+- id: w121
+  kind: riddle
+  prompt: إينا شي إذا ربطتو بيمشي، وإذا انفكّ رباطو بيوقف؟
+  answer: الساعة
+  others: [ "الطاحونة", "الدولاب", "البابور" ]
+  note: ساعة الزنبرك تمشي ما دامت معبّأة.
+  line: 83638
+  status: draft
+
+- id: w378
+  kind: idiom
+  prompt: كإنّو ما عوّت عليك كلاب خان طومان
+  answer: لم تغادر حلب قطّ
+  others: [ "لم تتعرّض لخطر قطّ", "وصلت متأخّرًا", "أنت غريب عن البلد" ]
+  note: خان طومان على طريق حلب الجنوبي.
+  line: 61718
+  status: draft
+
+- id: w553
+  kind: belief
+  prompt: ما بيصير حدا يلعب بالسلاح الفاضي، لأنّو ___
+  answer: بيدكّو الشيطان
+  others: [ "بيصدّي", "بيفرط", "بيزعل صاحبو" ]
+  note: "يدكّو: يحشوه."
+  line: 70328
+  status: draft
+
+- id: w216
+  kind: vendor
+  prompt: العندو جرّة فاضية يا ___!
+  answer: لفت
+  others: [ "بطّيخ", "تين", "موز" ]
+  note: يدعو إلى كبس اللفت مخلّلاً.
+  line: 122582
+  status: draft
+
+- id: w379
+  kind: idiom
+  prompt: فلان وجّو متل خبّاز بيلان
+  answer: مقطّب عابس
+  others: [ "محمرّ من الحرّ", "بشوش مبتسم دائمًا", "مغطّى بالطحين" ]
+  line: 61845
+  status: draft
+
+- id: w554
+  kind: belief
+  prompt: حبّة الرز الواحدة الله كاتب عليها واحد وأربعين مرّة سورة ___
+  answer: الإخلاص
+  others: [ "الفاتحة", "الكوثر", "الناس" ]
+  line: 75585
+  status: draft
+
+- id: w380
+  kind: idiom
+  prompt: ضرب لو خردقة
+  answer: أثار الفتنة
+  others: [ "أطلق عليه النار", "طرده من المجلس", "سخر منه أمام الناس" ]
+  line: 62807
+  status: draft
+
+- id: w122
+  kind: riddle
+  prompt: إينا شي وزنو وهوّ فاضي متل وزنو وهوّ مليان؟
+  answer: الساعة
+  others: [ الزنبيل, الجرّة, الكيس ]
+  note: الساعة المعبّأة (المليانة) والفارغة وزنهما واحد.
+  line: 83639
+  status: approved
+
+- id: w381
+  kind: idiom
+  prompt: عم بياكل بالخمسة والكفّ
+  answer: يأكل بشراهة
+  others: [ "يأكل بأدب ولباقة", "يأكل بيده بلا ملعقة", "يأكل قليلًا" ]
+  line: 65307
+  status: draft
+
+- id: w555
+  kind: belief
+  prompt: إذا كبّ حدا بالأرض فرافيط خبز أو رز أو ملح، بدّو يلمّن يوم القيامة ___
+  answer: برموش عيونو
+  others: [ "بلسانو", "بسنانو", "بإيد وحدة" ]
+  line: 75587
+  status: draft
+
+- id: w382
+  kind: idiom
+  prompt: طالع الخمير والفطير
+  answer: حاسبه على القديم والجديد
+  others: [ "فتّش في مطبخه", "ذكّره بأيام الفقر", "أكل كل ما في البيت" ]
+  line: 65390
+  status: draft
+
+- id: w556
+  kind: belief
+  prompt: البيقطّب توبو وهوّ لابسو، بتجيه ___
+  answer: الرزيّة
+  others: [ "الضيوف", "الرزقة", "البشارة" ]
+  note: "يقطّب: يخيط. والرزيّة: المصيبة."
+  line: 75829
+  status: draft
+
+- id: w383
+  kind: idiom
+  prompt: فلان بيضحّك الخازوق
+  answer: صاحب نوادر ونكت
+  others: [ "ثقيل الدم لا يُضحك", "يضحك على المصائب", "يسخر من الناس" ]
+  line: 65973
+  status: draft
+
+- id: w217
+  kind: vendor
+  prompt: على خوابي العسل يا ___!
+  answer: بطّيخ
+  others: [ "تين", "عنب", "مشمش" ]
+  line: 60824
+  status: draft
+
+- id: w384
+  kind: idiom
+  prompt: أش إنته، عراسك خيمة؟
+  answer: تظنّ نفسك بمنأى عن المصائب
+  others: [ تظنّ نفسك أكبر من الجميع, لماذا تجلس في الظل؟, لماذا تحمل هموم غيرك؟ ]
+  note: أي تظلّلك من المصاب العامّ وضرباته.
+  line: 66503
+  status: approved
+
+- id: w557
+  kind: belief
+  prompt: من شان يروح رشحك، صرّ شوية ملح بصرّة وزتّ هالصرّة في الدرب، واللي بيشيلها ___
+  answer: بياخد عنك الرشح
+  others: [ "بيرجعلك ياها", "بيصير صاحبك", "بيدعيلك" ]
+  line: 76147
+  status: draft
+
+- id: w124
+  kind: riddle
+  prompt: أش في بين الأرض والسما؟
+  answer: الواو
+  others: [ "الهوا", "الغيم", "الطيور" ]
+  note: الواو بين كلمتي «الأرض والسما».
+  line: 89676
+  status: draft
+
+- id: w385
+  kind: idiom
+  prompt: فلان عم بيكشّ دبّان
+  answer: لا عمل له
+  others: [ "عصبي سريع الغضب", "دائم الشكوى", "يطرد الضيوف" ]
+  line: 67497
+  status: draft
+
+- id: w558
+  kind: belief
+  prompt: البيقسم الرغيف بإيد وحدة مو بإيدتين، ___
+  answer: بتيبس إيدو
+  others: [ "بيجوع", "بينقرع", "بتوجعو سنانو" ]
+  line: 76786
+  status: draft
+
+- id: w386
+  kind: idiom
+  prompt: رشّ لو درة
+  answer: أغراه بشيء لينال منه
+  others: [ "أعطاه صدقة", "ساعده في الزراعة", "بذّر ماله عليه" ]
+  note: كما يُغرى الحمام الغريب بالذرة.
+  line: 76040
+  status: draft
+
+- id: w387
+  kind: idiom
+  prompt: لسّا القاق ما لحس دنبو
+  answer: بكّر قبل طلوع الصبح
+  others: [ "ما زال صغيرًا لا يفهم", "جائع لم يأكل بعد", "نائم لم يستيقظ" ]
+  note: القاق الغراب.
+  line: 71091
+  status: draft
+
+- id: w559
+  kind: belief
+  prompt: أكل الزعتر بيزيد في ___ الولد
+  answer: ذكاء
+  others: [ "طول", "وزن", "شهيّة" ]
+  note: فيطعمونه منه.
+  line: 80389
+  status: draft
+
+- id: w388
+  kind: idiom
+  prompt: كلام الليل مدهون بزبدة
+  answer: تذيبه شمس النهار فيُنسى
+  others: [ "كلام حلو مريح للقلب", "أصدق الكلام ما قيل ليلًا", "كلام الأصحاب في السهرة" ]
+  line: 71523
+  status: draft
+
+- id: w125
+  kind: riddle
+  prompt: حاملة ومحمولة، ونصّا التحتاني مبلول
+  answer: الشختورة
+  others: [ "السمكة", "الجسر", "الدلو" ]
+  note: الشختورة القارب.
+  line: 94755
+  status: draft
+
+- id: w218
+  kind: vendor
+  prompt: بطفّي الشوبة يا ___!
+  answer: خيار
+  others: [ "كوسا", "بانجان", "فجل" ]
+  note: الشوبة الحرّ.
+  line: 98760
+  status: draft
+
+- id: w560
+  kind: belief
+  prompt: السباعي (اللي انولد بسبع شهور) بيكون ___
+  answer: عجول
+  others: [ "كسول", "نعسان", "هادي" ]
+  note: لأنه وُلد قبل أوانه بشهرين.
+  line: 84309
+  status: draft
+
+- id: w389
+  kind: idiom
+  prompt: عاش مين شافك!
+  answer: طالت غيبتك عنّا
+  others: [ أنت لا تتغيّر أبدًا, كنّا ننتظرك الآن, مبروك على سلامتك ]
+  note: من يراك بعد طول الغياب يُعدّ معمّرًا.
+  line: 73525
+  status: approved
+
+- id: w561
+  kind: belief
+  prompt: لا تبلع العجو، بيطلع ___ بقلبك
+  answer: شجرو
+  others: [ "شوكو", "عضمو", "زهرو" ]
+  note: "العجو: نوى التمر، والقلب هنا البطن."
+  line: 85593
+  status: draft
+
+- id: w390
+  kind: idiom
+  prompt: فلان راح لبيت خالتو
+  answer: دخل الحبس
+  others: [ "ذهب إلى المستشفى", "سافر بعيدًا", "ذهب ليتزوّج" ]
+  line: 73664
+  status: draft
+
+- id: w391
+  kind: idiom
+  prompt: فلان مضروب على راسو ألف طبنجة
+  answer: مرّت عليه مخاطر كثيرة
+  others: [ "عنيد لا يتعلّم", "مجنون فاقد العقل", "غبي لا يفهم" ]
+  note: الطبنجة المسدّس.
+  line: 106836
+  status: draft
+
+- id: w562
+  kind: belief
+  prompt: البيسفّ طحين بيصير بقلبو ___
+  answer: دود
+  others: [ "حجار", "عجين", "رمل" ]
+  note: "يريدون: في بطنه."
+  line: 87324
+  status: draft
+
+- id: w392
+  kind: idiom
+  prompt: فلان بوجّو «ربّي يسّر»
+  answer: سهل ليّن مطواع
+  others: [ كثير الدعاء والتمنّي, عابس لا يبتسم, محظوظ في كل أموره ]
+  line: 74425
+  status: approved
+
+- id: w126
+  kind: riddle
+  prompt: إينا شي بينقسم وبيتوزّع وبتاكلو، وما بيزلّ عالمعدة؟
+  answer: الشدّة
+  others: [ "الخبز", "الكبّة", "البطّيخ" ]
+  note: الشدّة ورق اللعب، يوزَّع ويُؤكل في اللعب.
+  line: 94869
+  status: draft
+
+- id: w563
+  kind: belief
+  prompt: البياكل سمك و___ بيجنّ
+  answer: لبن
+  others: [ "تمر", "عسل", "بطّيخ" ]
+  line: 148666
+  status: draft
+
+- id: w393
+  kind: idiom
+  prompt: فلان بيتلطّى من حيط لحيط وبيقول يا ربّي توصّلني البيت
+  answer: ضعيف واهن
+  others: [ خائف يتخفّى من الناس, تائه لا يعرف طريقه, كسول يتباطأ في مشيه ]
+  line: 74426
+  status: approved
+
+- id: w219
+  kind: vendor
+  prompt: ما بخلّي عالقلب نار يا ___!
+  answer: خيار
+  others: [ "فليفلة", "بصل", "فجل" ]
+  line: 135548
+  status: draft
+
+- id: w394
+  kind: idiom
+  prompt: نزلت بابوجة فلان من عالرفّ
+  answer: نزلت مرتبته ومقامه
+  others: [ "ترك العمل وارتاح", "اشترى حذاءً جديدًا", "عاد من سفره" ]
+  line: 76818
+  status: draft
+
+- id: w564
+  kind: belief
+  prompt: إذا عاش الإنسان ميّة سنة، بتنبت لو ___ متل الولاد
+  answer: أسنان جداد
+  others: [ "شعرات سود", "عيون جداد", "غمّازات" ]
+  line: 90560
+  status: draft
+
+- id: w395
+  kind: idiom
+  prompt: صاروا عمايم برقاب
+  answer: غُلبوا وذلّوا
+  others: [ "اغتنوا فجأة", "صاروا علماء", "تحالفوا ضدّ عدوّهم" ]
+  note: أي جُعلت عمائمهم في رقابهم أطواقًا.
+  line: 77104
+  status: draft
+
+- id: w565
+  kind: belief
+  prompt: إذا شعلت سيكارة واحد من زيق، والزيق التاني ما شعلت، بكون ___
+  answer: عاشق
+  others: [ "مديون", "زعلان", "مسافر" ]
+  note: "الزيق: الطرف والحافة."
+  line: 92595
+  status: draft
+
+- id: w396
+  kind: idiom
+  prompt: ما معو الرنّان
+  answer: لا يملك نقودًا
+  others: [ "لا هيبة له بين الناس", "لا يحسن الكلام", "لا أصدقاء له" ]
+  note: أي النقود التي ترنّ إذا أُلقيت على حجر.
+  line: 78029
+  status: draft
+
+- id: w127
+  kind: riddle
+  prompt: شي بيخرق البلّور وبيدخل عالبيت، وما بينكسر البلّور
+  answer: الشمس
+  others: [ "الهوا", "المطر", "الدخّان" ]
+  line: 97977
+  status: draft
+
+- id: w397
+  kind: idiom
+  prompt: الأصفر الرنّان
+  answer: الدينار الذهبي
+  others: [ "النحاس المطروق", "جرس المدرسة", "الليمون الحامض" ]
+  line: 78047
+  status: draft
+
+- id: w566
+  kind: belief
+  prompt: "بيقولوا للصبي: لا تشرب قهوة، بتطلع شواربك ___"
+  answer: عوج
+  others: [ "بيض", "طوال", "شقر" ]
+  line: 92954
+  status: draft
+
+- id: w398
+  kind: idiom
+  prompt: فرّجاه نجوم الضهر
+  answer: جعل نهاره ليلًا من الشدّة
+  others: [ "أراه أشياء عجيبة", "سهر معه حتى الصباح", "علّمه علم الفلك" ]
+  line: 105200
+  status: draft
+
+- id: w220
+  kind: vendor
+  prompt: على قشّ القصبة يا ___!
+  answer: خوخ
+  others: [ "مشمش", "عنب", "تين" ]
+  line: 65898
+  status: draft
+
+- id: w567
+  kind: belief
+  prompt: البيشوف الهلال على مصاري أو على وجّ حلو، بكون شهرو ___
+  answer: خير وبسط
+  others: [ "نحس وتعتير", "صوم وصلاة", "سفر وغربة" ]
+  line: 159046
+  status: draft
+
+- id: w399
+  kind: idiom
+  prompt: ريح في قفص
+  answer: العدم والباطل
+  others: [ "حرّية مقيّدة", "شخص سريع الغضب", "سرّ محفوظ" ]
+  line: 78744
+  status: draft
+
+- id: w128
+  kind: riddle
+  prompt: صفّ چناق، صفّ صحون، من أبواب حلب للطاحون
+  answer: دعسات الجمل الحامل الطحنة
+  others: [ "حجار الدرب", "سواقي المي", "أكياس الطحين" ]
+  line: 105683
+  status: draft
+
+- id: w400
+  kind: idiom
+  prompt: فلان ركب الريح
+  answer: ارتفع وتحسّنت حاله
+  others: [ "هرب مسرعًا", "سافر بعيدًا", "غضب وثار" ]
+  line: 78746
+  status: draft
+
+- id: w568
+  kind: belief
+  prompt: إذا حدا شبّك أصابيع إيديه وقت كتب الكتاب، ___
+  answer: بتتعقّد حياة العريس والعروس
+  others: [ "بيكتروا ولادهن", "بيتأجّل العرس", "بيدوم الحبّ بيناتن" ]
+  note: يعتقدون أن تشبيك الأصابع تعقيد للأمر.
+  line: 140403
+  status: draft
+
+- id: w401
+  kind: idiom
+  prompt: فلان فاحت ريحتو
+  answer: انتشر عنه خبر سوء
+  others: [ "اشتهر بالكرم", "تعطّر بالطيب", "عاد من سفر طويل" ]
+  note: قالوا إنه مستمدّ من تعبير تركي.
+  line: 78819
+  status: draft
+
+- id: w569
+  kind: belief
+  prompt: إذا شفتو شحّاد غريب بين المغرب والعشا عطوه، لأنّو بيكون هادا ___
+  answer: الخضر
+  others: [ شيخ الحارة, ابن السلطان, مختار الحيّ ]
+  note: الخضر عليه السلام.
+  line: 94388
+  status: approved
+
+- id: w402
+  kind: idiom
+  prompt: الكلام على زرّ الصرماية
+  answer: العبرة بخواتيم الأمور
+  others: [ "الكلام الفارغ لا قيمة له", "الحديث عن الأحذية والملابس", "اسمع ولا تتكلّم" ]
+  note: الصرماية تُزرّ بعد انفضاض المجلس.
+  line: 79698
+  status: draft
+
+- id: w403
+  kind: idiom
+  prompt: إيدي بزنّارك
+  answer: احتميت بك واستجرت
+  others: [ "سأحاسبك على فعلتك", "أقرضني بعض المال", "سأشدّ وثاقك" ]
+  line: 81874
+  status: draft
+
+- id: w570
+  kind: belief
+  prompt: إذا انترك المقصّ مفتوح، بيصير في البيت ___
+  answer: شرور
+  others: [ "ضيوف", "رزق", "عرس" ]
+  line: 161880
+  status: draft
+
+- id: w129
+  kind: riddle
+  prompt: شي من عند النجّار، وشي من عند الحدّاد، وشي من عند القصّاب، ولا شفتو طار
+  answer: الطار
+  others: [ "القبقاب", "الكرسي", "السكّين" ]
+  note: الطار دفّ، و«طار» فيها تورية.
+  line: 105760
+  status: draft
+
+- id: w222
+  kind: vendor
+  prompt: ___ الهوا يا ولاد!
+  answer: دواليب
+  others: [ "طابات", "دحاحل", "صفّيرات" ]
+  line: 72295
+  status: draft
+
+- id: w404
+  kind: idiom
+  prompt: فلان زنبوط
+  answer: بخيل يؤذي ولا ينفع
+  others: [ "نشيط لا يهدأ", "ثرثار مزعج", "سريع الغضب" ]
+  note: الزنبوط الدبّور.
+  line: 81980
+  status: draft
+
+- id: w571
+  kind: belief
+  prompt: إذا ردت تعطي حدا الصابونة، لازم تحطّها عضهر كفّك تا ما يصير بينك وبين اللي عطيتو ياها ___
+  answer: زعل
+  others: [ "حبّ", "شراكة", "دين" ]
+  line: 100085
+  status: draft
+
+- id: w405
+  kind: idiom
+  prompt: أكلنا زلابية متل جنح الزنبوط
+  answer: رقيقة جدًّا
+  others: [ "حلوة كالعسل", "صغيرة الحجم", "ذهبية اللون" ]
+  line: 81987
+  status: draft
+
+- id: w406
+  kind: idiom
+  prompt: وجّو متل قفا الساعة
+  answer: صقيل منير
+  others: [ "عابس لا يبتسم", "مستدير كبير", "مليء بالتجاعيد" ]
+  line: 83626
+  status: draft
+
+- id: w572
+  kind: belief
+  prompt: شرا الصابون بشهر ___ حرام
+  answer: صفر
+  others: [ "رمضان", "شعبان", "رجب" ]
+  line: 100086
+  status: draft
+
+- id: w407
+  kind: idiom
+  prompt: فلان سبع الكارات
+  answer: اشتغل في حِرف كثيرة
+  others: [ "قوي شجاع كالأسد", "فاشل في كل عمل", "يملك سبعة دكاكين" ]
+  line: 84955
+  status: draft
+
+- id: w130
+  kind: riddle
+  prompt: إينا شي طول النهار بيضربوه عبطنو، وبعدين بيشنقوه
+  answer: الطبل
+  others: [ الجرس, الباب, البسمار ]
+  note: يُضرب على بطنه ثم يُعلَّق.
+  line: 106763
+  status: approved
+
+- id: w573
+  kind: belief
+  prompt: إذا الوحدة سرّحت شعرها ببيت رفيقتها، بيصير بين تنيناتن ___
+  answer: حبّ ووداد
+  others: [ "زعل وعداوة", "غيرة وحسد", "قطيعة" ]
+  line: 101689
+  status: draft
+
+- id: w408
+  kind: idiom
+  prompt: ما خلّى عليه ستر مغطّى
+  answer: فضحه
+  others: [ "ستر عيوبه", "أعطاه كل ما يملك", "سرق كل ثيابه" ]
+  line: 85383
+  status: draft
+
+- id: w223
+  kind: vendor
+  prompt: عاشوري يا ___!
+  answer: فستق
+  others: [ "لوز", "جوز", "عنب" ]
+  note: نسبة إلى كروم بيت عاشور، وهو أجود الفستق الحلبي.
+  line: 110982
+  status: draft
+
+- id: w409
+  kind: idiom
+  prompt: دنب السعادة أملس
+  answer: لا يمكن الإمساك بها
+  others: [ "تأتي لمن لا يستحقّها", "ثمنها غالٍ", "تأتي متأخّرة دائمًا" ]
+  line: 87103
+  status: draft
+
+- id: w574
+  kind: belief
+  prompt: لازم نكسر بآخر أربعا من صفر شي معمول من البلّور أو الفخّار، تا ينكسر ___
+  answer: شرّ هالشهر
+  others: [ "غلا الأسعار", "برد الشتا", "حسد الجيران" ]
+  note: آخر أربعاء من شهر صفر.
+  line: 102287
+  status: draft
+
+- id: w410
+  kind: idiom
+  prompt: هالدكّنجي عم بيتلقّى الغيم من سقّاقات العرش
+  answer: لا بيع عنده فهو سارح بالأحلام
+  others: [ "يغشّ في الميزان", "ينتظر المطر ليرتاح", "دكّانه مليء بالزبائن" ]
+  line: 87753
+  status: draft
+
+- id: w575
+  kind: belief
+  prompt: إذا ضاع شي، بيقروا سورة ___
+  answer: الضحى
+  others: [ "الفتح", "يس", "الكهف" ]
+  line: 104029
+  status: draft
+
+- id: w411
+  kind: idiom
+  prompt: وصل السكّين للعضم
+  answer: اشتدّ المصاب
+  others: [ "وصل إلى الحقيقة", "انتهى العمل كلّه", "صار نحيلًا جدًّا" ]
+  line: 88544
+  status: draft
+
+- id: w132
+  kind: riddle
+  prompt: إينا أختين بيناتن جبل، وما شافو بعضن بعمرن؟
+  answer: العينين
+  others: [ "الإجرين", "الإيدين", "الشبّاكين" ]
+  note: والجبل بينهما هو الأنف.
+  line: 119479
+  status: draft
+
+- id: w412
+  kind: idiom
+  prompt: ركض متل سيخ النار
+  answer: انطلق مسرعًا كالشهاب
+  others: [ "ركض وهو يحترق", "هرب خائفًا", "ركض متعرّجًا" ]
+  line: 92254
+  status: draft
+
+- id: w576
+  kind: belief
+  prompt: الولد الزغير لمّا بيضحك، بتكون ___ عم بتضحّكو
+  answer: الملايكة
+  others: [ "الحمامة", "الشمس", "العصافير" ]
+  line: 104378
+  status: draft
+
+- id: w413
+  kind: idiom
+  prompt: إذا شفت كراية فايرة ابعد عنها
+  answer: ابتعد عن الغضبان ولا تثره
+  others: [ لا تأكل الطعام الساخن, اغتنم الفرصة قبل فواتها, لا تقترب من المطبخ ]
+  line: 93209
+  status: approved
+
+- id: w577
+  kind: belief
+  prompt: البيضحك كتير في زغرتو، ___ ما بيتجعلك في كبرتو
+  answer: وجّو
+  others: [ "قلبو", "إيدو", "صوتو" ]
+  line: 104377
+  status: draft
+
+- id: w224
+  kind: vendor
+  prompt: ___ يالله يا كرم!
+  answer: ساحلب
+  others: [ "قهوة", "كعك", "حليب" ]
+  line: 85851
+  status: draft
+
+- id: w414
+  kind: idiom
+  prompt: التاجر الفلاني شبّر
+  answer: أفلس
+  others: [ ربح ربحًا كبيرًا, سافر للتجارة, غشّ في البيع ]
+  note: التشبير فتح الكفّ فلا يقبض على شيء.
+  line: 93945
+  status: approved
+
+- id: w578
+  kind: belief
+  prompt: إذا طلع حبّ في جسد الولد، لازم أمّو تنتشل شوية ___ وتساوي منها طوق وتعلّقو برقبتو تا يطيب
+  answer: قضامة
+  others: [ "فول يابس", "زبيب", "لوز" ]
+  note: "تنتشل: تجمعها من البيوت."
+  line: 168644
+  status: draft
+
+- id: w415
+  kind: idiom
+  prompt: فلان بيشقّ الشعرة
+  answer: شاطر ماهر
+  others: [ "يفرّق بين الأحبّة", "حلّاق يعمل بسرعة", "بخيل يحسب كل شيء" ]
+  line: 96162
+  status: draft
+
+- id: w133
+  kind: riddle
+  prompt: واحد ماشي بالبرّية، قدّامو حريق، ووراه سيل، وعن يمينو وادي غميق، وعن يسارو غولة ميتة مالجوع. لوين بيتوجّه؟
+  answer: نحو الغولة
+  others: [ "لقدّام عالحريق", "لورا عالسيل", "عالوادي الغميق" ]
+  note: لأن الغولة ميتة.
+  line: 122002
+  status: draft
+
+- id: w416
+  kind: idiom
+  prompt: هادا من اللي شقّ الأرض وطلع
+  answer: من الجانّ
+  others: [ "مزارع يعمل في الأرض", "طفل قصير القامة", "فقير معدم" ]
+  line: 96715
+  status: draft
+
+- id: w579
+  kind: belief
+  prompt: لازم ننتشل شوي من زوّادة المسافر، تا ___
+  answer: يرجع قوام
+  others: [ "ما يجوع", "يربح بتجارتو", "ما يضيع الدرب" ]
+  line: 168643
+  status: draft
+
+- id: w417
+  kind: idiom
+  prompt: شال إجريه عأكتافو
+  answer: ركض وهرب
+  others: [ تعب من المشي, حمل همومه وحده, جلس متربّعًا ]
+  line: 97011
+  status: approved
+
+- id: w580
+  kind: belief
+  prompt: البيدوس فوق حجرة الطاحون ___
+  answer: بيقصر
+  others: [ "بيطول", "بينقرع", "بيطرش" ]
+  note: لأن الطاحون عندهم مقدّس.
+  line: 105681
+  status: draft
+
+- id: w418
+  kind: idiom
+  prompt: أخد مرتو وولادو وراحوا يشمّوا الهوا
+  answer: يتنزّهون
+  others: [ "يهربون من المشاكل", "يبحثون عن علاج", "يرحلون إلى بلد آخر" ]
+  line: 97717
+  status: draft
+
+- id: w134
+  kind: riddle
+  prompt: لبّاد فوق لبّاد، من هون لبغداد
+  answer: الغيم
+  others: [ "الدخّان", "السجّاد", "الرمل" ]
+  line: 122135
+  status: draft
+
+- id: w419
+  kind: idiom
+  prompt: فلان على شمسو غيم
+  answer: منقطع عن أصحابه
+  others: [ سيّئ الحظ, مريض شاحب, حزين يبكي ]
+  line: 97952
+  status: approved
+
+- id: w225
+  kind: vendor
+  prompt: العودة سكّر يا ___!
+  answer: عرموط
+  others: [ "تفّاح", "سفرجل", "خوخ" ]
+  line: 113853
+  status: draft
+
+- id: w581
+  kind: belief
+  prompt: إذا دارت الطاحونة عالفاضي، بيصير في البلد ___
+  answer: غلا
+  others: [ "مطر", "عرس", "رخص" ]
+  line: 121298
+  status: draft
+
+- id: w420
+  kind: idiom
+  prompt: انقلبت الشوّاية
+  answer: صار الأمر عكس ما كان
+  others: [ "احترق الطعام", "انتهت السهرة", "غضب صاحب البيت" ]
+  line: 98751
+  status: draft
+
+- id: w582
+  kind: belief
+  prompt: طقطقة النار بتدلّ إنّو ___ عم يدبّر مكيدة
+  answer: العدو
+  others: [ "الحرامي", "القطّ", "الجار" ]
+  line: 108547
+  status: draft
+
+- id: w421
+  kind: idiom
+  prompt: فلان نام على شوك
+  answer: بات قلقًا معذّبًا
+  others: [ "نام في العراء", "عاش في فقر", "نام نومًا خفيفًا" ]
+  note: "وضدّها: نام على حرير."
+  line: 99101
+  status: draft
+
+- id: w422
+  kind: idiom
+  prompt: فلان متل هبّة الشوك
+  answer: سريع الغضب شديده
+  others: [ "طويل نحيل جافّ", "مؤذٍ لمن يقترب منه", "يختفي بسرعة" ]
+  line: 150888
+  status: draft
+
+- id: w583
+  kind: belief
+  prompt: إذا عملوا عزيمة وخافوا الأكل ما يكفّي، بيقروا عليه سورة ___ فبتنطرح فيه البركة
+  answer: لإيلاف قريش
+  others: [ "الكوثر", "الفاتحة", "الإخلاص" ]
+  line: 114406
+  status: draft
+
+- id: w135
+  kind: riddle
+  prompt: طير بالسما وجناح مالو، بيمشي بالعجل وإجرين مالو، بتنزل دموعو وعيون مالو
+  answer: الغيم
+  others: [ "الطيّارة", "الريح", "النسر" ]
+  line: 122136
+  status: draft
+
+- id: w423
+  kind: idiom
+  prompt: فلان صباغو ثابت
+  answer: صاحب مبدأ ثابت
+  others: [ "لونه لا يتغيّر من الشمس", "سمعته سيئة لا تُمحى", "صنعته متقنة لا تخيب" ]
+  line: 100766
+  status: draft
+
+- id: w584
+  kind: belief
+  prompt: البيعمّر عمارة وما بيدبح لها ___، بتخرب قوام
+  answer: دبيحة
+  others: [ "شمعة", "حجر أساس", "سبيل مي" ]
+  line: 117566
+  status: draft
+
+- id: w424
+  kind: idiom
+  prompt: فلان عم بيغمّس خبزتو برّات الصحن
+  answer: يخرج عن الموضوع
+  others: [ "يأكل من طعام غيره", "يبذّر ويضيّع رزقه", "لا يحسن آداب الأكل" ]
+  line: 101179
+  status: draft
+
+- id: w226
+  kind: vendor
+  prompt: عالسكّين يا ___!
+  answer: جبس
+  others: [ "قرع", "كوسا", "بانجان" ]
+  note: يعرض أن يشقّه بالسكّين ليريك أنه أحمر.
+  line: 88550
+  status: draft
+
+- id: w425
+  kind: idiom
+  prompt: فلان دقّ صدرو منشان قضيتك
+  answer: ضمنها وكفلها
+  others: [ "حزن عليك كثيرًا", "تفاخر بها أمام الناس", "غضب منها" ]
+  line: 101407
+  status: draft
+
+- id: w585
+  kind: belief
+  prompt: الولد اللي أدنيه كبار بيعيش ___
+  answer: عمر كبير
+  others: [ "عمر قصير", "فقير", "مدلّل" ]
+  line: 117698
+  status: draft
+
+- id: w426
+  kind: idiom
+  prompt: هالأوبة متل صرامي السهرة
+  answer: كل واحد منهم بشكل
+  others: [ كلّهم متشابهون, متعبون بعد السهر, يتأخّرون دائمًا ]
+  line: 101924
+  status: approved
+
+- id: w136
+  kind: riddle
+  prompt: ياللي مالفضّة سكبوكي، والجوخ الأحمر لبّسوكي، وبشراشيب الزمرّد قبّعوكي، عتبي على أهلك بأرخص السعر باعوكي
+  answer: الفجلة
+  others: [ "الجزرة", "الشوندرة", "البندورة" ]
+  note: بيضاء من الداخل، حمراء القشرة، خضراء الورق، ورخيصة.
+  line: 123332
+  status: draft
+
+- id: w586
+  kind: belief
+  prompt: العنكبوت في البيت دليل ___
+  answer: الفقر
+  others: [ "الرزق", "الضيوف", "العرس" ]
+  line: 126514
+  status: draft
+
+- id: w427
+  kind: idiom
+  prompt: فلان شواربو بيوقف عليهم الصقر
+  answer: شواربه طويلة مبرومة
+  others: [ "صيّاد يربّي الصقور", "مهمل لا يقصّ شاربه", "كثير التباهي بالكلام" ]
+  line: 102569
+  status: draft
+
+- id: w428
+  kind: idiom
+  prompt: راح وإجريه عم بتدقّ بضهرو
+  answer: يركض مسرعًا
+  others: [ "عاد خائبًا", "مشى متعبًا", "رقص فرحًا" ]
+  line: 105166
+  status: draft
+
+- id: w587
+  kind: belief
+  prompt: البيكحّل عيونو ___ ما بيعود يرمد
+  answer: بالعاشورة
+  others: [ "بليلة القدر", "بيوم الوقفة", "براس السنة" ]
+  note: "الرمد: وجع العين."
+  line: 119466
+  status: draft
+
+- id: w429
+  kind: idiom
+  prompt: صار الضو بالخيط والمي بالحيط
+  answer: دخلت الكهرباء والماء البيوت
+  others: [ "صار كل شيء غاليًا", "انقطعت الخدمات", "جاء الشتاء والمطر" ]
+  line: 105230
+  status: draft
+
+- id: w227
+  kind: vendor
+  prompt: على طابات الندى يا ___!
+  answer: شوكي
+  others: [ "خسّ", "ملفوف", "قرنبيط" ]
+  note: الأرضي شوكي، والبائع يناديه «شوكي».
+  line: 167754
+  status: draft
+
+- id: w588
+  kind: belief
+  prompt: الببكي وبينام بيطلع لو ___ بعيونو
+  answer: شعرة
+  others: [ "حبّة", "عطّاشة", "دمعة" ]
+  line: 119468
+  status: draft
+
+- id: w430
+  kind: idiom
+  prompt: شفناه مرّة وهادا وجّ الضيف
+  answer: ثم لم نره بعدها
+  others: [ "كان ضيفًا ثقيلًا", "أكرمناه كضيف", "وجهه بشوش كالضيف" ]
+  line: 105379
+  status: draft
+
+- id: w137
+  kind: riddle
+  prompt: أخت ما بتمشي بلا أختا
+  answer: فردة النعل
+  others: [ "الإصبعة", "السنّ", "الحاجب" ]
+  line: 124135
+  status: draft
+
+- id: w431
+  kind: idiom
+  prompt: فلان مأجّر طابقو الفوقاني
+  answer: لا عقل في رأسه
+  others: [ "غني يملك عقارات", "بخيل يستغلّ كل شيء", "يسكن في الطابق الأرضي" ]
+  line: 105546
+  status: draft
+
+- id: w589
+  kind: belief
+  prompt: البيغنّي بالحمّام بيضيّع ___
+  answer: هيبتو
+  others: [ "صوتو", "مصاريه", "دورو" ]
+  note: "ويقولون أيضاً: يضيّع قدرو."
+  line: 121791
+  status: draft
+
+- id: w432
+  kind: idiom
+  prompt: فلان متل طاسة الجنّ، مين ما نقرا بترنّ
+  answer: يعرف كل أنواع المعارف
+  others: [ "فارغ لا قيمة له", "سريع الغضب", "مسحور لا يُؤمن" ]
+  line: 78031
+  status: draft
+
+- id: w590
+  kind: belief
+  prompt: إذا فارت القهوة وانكبّ منها، بكون بدّو يجيك ___
+  answer: رزقة
+  others: [ "خطّار", "زعل", "مكتوب" ]
+  line: 122334
+  status: draft
+
+- id: w433
+  kind: idiom
+  prompt: فلان بيطالع من الأقرع شعرة ومن الحافي نعل
+  answer: يأتي بالشيء من العدم
+  others: [ "بخيل يأخذ من الفقير", "يسخر من عيوب الناس", "يطلب المستحيل دائمًا" ]
+  line: 106091
+  status: draft
+
+- id: w138
+  kind: riddle
+  prompt: ميّت بليت عضامو، بينزل عالسوق وبيلوّح بكمامو
+  answer: الفروة
+  others: [ "السجّادة", "الخيمة", "الطربوش" ]
+  line: 124904
+  status: draft
+
+- id: w434
+  kind: idiom
+  prompt: إن مطرت عدس بتكون قصعتنا مطبوبة
+  answer: نحن سيّئو الحظ
+  others: [ "نحن نحبّ العدس", "قانعون بما يأتي", "نتعب بلا فائدة" ]
+  line: 106317
+  status: draft
+
+- id: w591
+  kind: belief
+  prompt: لا ترشّ حدا بالمي، لأنّو المي ___
+  answer: فراق
+  others: [ "بركة", "رحمة", "سعد" ]
+  line: 123859
+  status: draft
+
+- id: w228
+  kind: vendor
+  prompt: ظريف يا ___!
+  answer: كوسا
+  others: [ خيار, بانجان, فليفلة ]
+  line: 110393
+  status: approved
+
+- id: w435
+  kind: idiom
+  prompt: طبّل طبلك وزمّر زمرك
+  answer: أقبلت أفراحك
+  others: [ "افعل ما تشاء فلا أحد يسمعك", "ارحل من هنا", "اعمل وحدك" ]
+  line: 106755
+  status: draft
+
+- id: w592
+  kind: belief
+  prompt: إذا ركبت فردة صرماية فوق فردة، بيدلّ على ___
+  answer: سفر قريب
+  others: [ "عرس قريب", "ضيف قريب", "زعل قريب" ]
+  line: 124133
+  status: draft
+
+- id: w436
+  kind: idiom
+  prompt: من طقطق لسلام عليكم
+  answer: من البداية إلى النهاية
+  others: [ "من غير استئذان", "بسرعة شديدة", "بأدب واحترام" ]
+  note: من قرع الباب حتى الانصراف بالسلام.
+  line: 108533
+  status: draft
+
+- id: w437
+  kind: idiom
+  prompt: فلان متل طين الشتا
+  answer: وسخ ومزعج
+  others: [ "ليّن يتشكّل كما تريد", "بارد المشاعر", "ثقيل لا يتحرّك" ]
+  line: 110181
+  status: draft
+
+- id: w593
+  kind: belief
+  prompt: لا تخلّوا القندرة مقلوبة على قفاها، ___
+  answer: بتحكي مع الشيطان
+  others: [ "بتجيب الفقر", "بتزعّل الملايكة", "بتهترى قوام" ]
+  line: 137078
+  status: draft
+
+- id: w139
+  kind: riddle
+  prompt: مدوّر متل القمر، وخدّ ملس أحمر، وخدّ أبيض مچكچك بالإبر، ما أطيبو بالشتا بالقطر
+  answer: القطايف
+  others: [ "المعروك", "الكنافة", "الكبّة" ]
+  line: 163118
+  status: draft
+
+- id: w438
+  kind: idiom
+  prompt: أنا عاجنك وخابزك
+  answer: جرّبتك كثيرًا وعرفتك
+  others: [ "أطعمتك من يدي", "سأؤدّبك بشدّة", "أنت تعبت مثلي" ]
+  line: 112343
+  status: draft
+
+- id: w594
+  kind: belief
+  prompt: إذا شفت حدا عم يحسدك، قوم واقرص ___
+  answer: فخدك
+  others: [ "إدنك", "إيدك", "خدّك" ]
+  line: 131775
+  status: draft
+
+- id: w439
+  kind: idiom
+  prompt: فلان عرّش
+  answer: زاد خيره
+  others: [ تكبّر وتعالى, استقرّ في مكانه, بنى عريشة ]
+  line: 113443
+  status: approved
+
+- id: w229
+  kind: vendor
+  prompt: ياما عركوك بالليالي يا ___!
+  answer: معروك
+  others: [ "كعك", "سمسم", "قطايف" ]
+  line: 143198
+  status: draft
+
+- id: w595
+  kind: belief
+  prompt: البيحطّ المنصب عالنار وما بيحطّ عليه شي يسخّنو، بيتعلّق هالمنصب ___ يوم القيامة
+  answer: برقبتو
+  others: [ "بإجرو", "بضهرو", "بلسانو" ]
+  note: "المنصب: الأثافي أو الحامل الحديدي الذي توضع عليه القدر."
+  line: 138250
+  status: draft
+
+- id: w440
+  kind: idiom
+  prompt: فرجينا عرض أكتافك
+  answer: انصرف عنّا
+  others: [ "أرنا قوّتك", "ساعدنا في الحمل", "تفاخر بنفسك" ]
+  line: 113462
+  status: draft
+
+- id: w441
+  kind: idiom
+  prompt: متل «عمّي، السلام عليكم»
+  answer: عمل لا يكلّف إلا الكلام
+  others: [ "ترحيب بارد بلا ودّ", "وداع قبل الرحيل", "احترام الكبير" ]
+  line: 117498
+  status: draft
+
+- id: w596
+  kind: belief
+  prompt: "إذا كنت عم تكنس وسألك حدا: شو عم تكنس؟ جاوبو: «عم بكنس ___» تا تنكنس كل مشاكلك"
+  answer: المحكمة
+  others: [ الهمّ, الحارة, الدكّان ]
+  line: 145600
+  status: approved
+
+- id: w140
+  kind: riddle
+  prompt: قدّو قدّ الفستقة، وإلو ألف عين مبحلقة
+  answer: الكشتبان
+  others: [ "المصفاية", "الغربال", "الإسفنجة" ]
+  line: 142713
+  status: draft
+
+- id: w442
+  kind: idiom
+  prompt: الفرفوطة بتقلع عينو
+  answer: بخيل جدًّا
+  others: [ "فقير معدم", "حسود لا يحبّ الخير", "ضعيف البصر" ]
+  line: 119442
+  status: draft
+
+- id: w597
+  kind: belief
+  prompt: البيحكي حكاية في النهار، بيضيّع ___ في الحمّام
+  answer: لباسو
+  others: [ "صابونتو", "قبقابو", "مشطو" ]
+  line: 148405
+  status: draft
+
+- id: w443
+  kind: idiom
+  prompt: فلان ما بيفتل خيطان قدّام فلان
+  answer: لا يصلح أن يكون أجيرًا عنده
+  others: [ "لا يكذب أمامه", "لا يتآمر عليه", "لا يخيط ثيابه" ]
+  note: أجير الصرماياتي يفتل الخيطان حين تشميعها.
+  line: 123085
+  status: draft
+
+- id: w444
+  kind: idiom
+  prompt: هادا كلامو فجّ
+  answer: غير ناضج قاسٍ ثقيل
+  others: [ "صريح يقول الحقّ", "سريع مختصر", "حلو كالفاكهة" ]
+  line: 123259
+  status: draft
+
+- id: w598
+  kind: belief
+  prompt: إذا رجف لسان اللمبة، بكون عم يحكي ___ عن ذنوبنا
+  answer: للملايكة
+  others: [ "للجان", "للجيران", "للحيطان" ]
+  note: "ويقولون أيضاً: بكون حدا عم يحكي بقفانا."
+  line: 149467
+  status: draft
+
+- id: w230
+  kind: vendor
+  prompt: ياما غزلوك بالليالي يا ___!
+  answer: غزل البنات
+  others: [ "حلاوة الجبن", "الناعم", "القطايف" ]
+  note: ويناديه أيضاً «حرير الليلة حرير».
+  line: 120884
+  status: draft
+
+- id: w445
+  kind: idiom
+  prompt: شمّ الوردة واشتري الفردة
+  answer: اشترِ الفحم في الربيع
+  others: [ استمتع بالحياة قبل فواتها, اغتنم الفرح ولا تحزن, تزوّج في الربيع ]
+  note: الفردة كيس الفحم.
+  line: 124131
+  status: approved
+
+- id: w141
+  kind: riddle
+  prompt: الله خلق جوّات الأرض شي متل الحجر بياكلو البشر
+  answer: الكماية
+  others: [ "الجزرة", "البصلة", "الفستق" ]
+  note: الكماية الكمأة.
+  line: 144896
+  status: draft
+
+- id: w599
+  kind: belief
+  prompt: سرى إليهم من الغرب إنّو العدد ___ مشؤوم
+  answer: ١٣
+  others: [ "٧", "٤٠", "٩" ]
+  line: 158325
+  status: draft
+
+- id: w446
+  kind: idiom
+  prompt: فلان متل فروة أبو نواس
+  answer: معروف مشهور
+  others: [ "قديم بالٍ", "دافئ حنون", "كثير الثرثرة" ]
+  line: 124900
+  status: draft
+
+- id: w447
+  kind: idiom
+  prompt: افقي لنا هالدمّلة
+  answer: أزِل عنّا هذه البلوى
+  others: [ اكشف لنا السرّ, اقطع الكلام الطويل, أسرع في العمل ]
+  line: 126482
+  status: approved
+
+- id: w600
+  kind: belief
+  prompt: إذا كنت عم تشوف منامات بشعة، حطّ تحت مخدّتك ___
+  answer: سكّينة
+  others: [ "مشط", "مفتاح", "قرش" ]
+  line: 163868
+  status: draft
+
+- id: w448
+  kind: idiom
+  prompt: فلان متل قبّة وقنطرة
+  answer: قوي متين
+  others: [ "عالي المقام", "منحني الظهر", "كبير الرأس" ]
+  line: 130345
+  status: draft
+
+- id: w601
+  kind: belief
+  prompt: إذا حدا حرّك النار بالسكّينة، ___
+  answer: بيتجرّح ورا أدنيه
+  others: [ "بتنطفي النار", "بيحترق أكلو", "بتنقطع رزقتو" ]
+  line: 166208
+  status: draft
+
+- id: w449
+  kind: idiom
+  prompt: قرا الورقة عالوجهين
+  answer: درس الأمر من كل احتمال
+  others: [ "قرأ ولم يفهم", "منافق ذو وجهين", "بخيل يكتب على الوجهين" ]
+  line: 131192
+  status: draft
+
+- id: w142
+  kind: riddle
+  prompt: نبتة جليلة، شروشا لفوق وغصونا لتحت
+  answer: اللحية
+  others: [ الدالية, الصفصافة, الخيارة ]
+  line: 149250
+  status: approved
+
+- id: w231
+  kind: vendor
+  prompt: أوّل فواكي الصيف يا ___ أخضر!
+  answer: لوز
+  others: [ "جوز", "مشمش", "خوخ" ]
+  line: 116180
+  status: draft
+
+- id: w450
+  kind: idiom
+  prompt: كلامو كلّو قشور
+  answer: كلام فارغ لا قيمة له
+  others: [ "كلام لطيف ناعم", "كلامه قاسٍ جارح", "كلامه مختصر" ]
+  line: 133349
+  status: draft
+
+- id: w602
+  kind: belief
+  prompt: البياكل وبينام ___
+  answer: بيحكي بنومو
+  others: [ "بيشخر", "بيمشي بنومو", "بيفيق جوعان" ]
+  line: 166690
+  status: draft
+
+- id: w451
+  kind: idiom
+  prompt: فلان بيقلع توتة
+  answer: قوي جدًّا
+  others: [ "كسول لا يعمل", "مزارع ماهر", "يحبّ التوت" ]
+  line: 135789
+  status: draft
+
+- id: w603
+  kind: belief
+  prompt: البيعدّ النجوم بيطلع لو ___ في أصابيعو
+  answer: تالول
+  others: [ "شوكة", "بقعة بيضا", "جرح" ]
+  note: "التالول: الثؤلول."
+  line: 167277
+  status: draft
+
+- id: w452
+  kind: idiom
+  prompt: فلان إذا كركرتو الضهر بيضحك العصر
+  answer: بارد بطيء التأثّر
+  others: [ "كثير الضحك بلا سبب", "يؤجّل عمله دائمًا", "ينام في النهار" ]
+  line: 141725
+  status: draft
+
+- id: w143
+  kind: riddle
+  prompt: مرا واقفة دوم، وإبنا رجّال في بطنا، وعمرا ما حملت، وكل يوم بيزعق إبنا خمس زعقات
+  answer: المادنة
+  others: [ "القلعة", "الساعة", "الطاحونة" ]
+  note: المؤذّن يصعد في جوفها ويؤذّن خمس مرات.
+  line: 151961
+  status: draft
+
+- id: w453
+  kind: idiom
+  prompt: متل قتال القيقان عكشك بيت الجيران
+  answer: قصير الأمد
+  others: [ "شديد لا ينتهي", "يفرّق بين الجيران", "يقع بين الأقارب" ]
+  note: القيقان الغربان.
+  line: 142819
+  status: draft
+
+- id: w604
+  kind: belief
+  prompt: حرام يطلع ___ مالبيت بعد المغرب
+  answer: النحاس
+  others: [ "الصابون", "الحطب", "القمح" ]
+  line: 167363
+  status: draft
+
+- id: w454
+  kind: idiom
+  prompt: مشي على كفّ الرحمن
+  answer: سافر في حفظ الله
+  others: [ مشى حافيًا, سار بلا هدف, تصدّق على الفقراء ]
+  line: 143340
+  status: approved
+
+- id: w233
+  kind: vendor
+  prompt: كرابيج بعل يا ___!
+  answer: تين
+  others: [ "عنب", "مشمش", "درّاق" ]
+  note: يشبّه التين البعلي بالكرابيج.
+  line: 141083
+  status: draft
+
+- id: w605
+  kind: belief
+  prompt: مطر نيسان بيطوّل ___
+  answer: شعر الإنسان
+  others: [ "عمر الإنسان", "قامة الولاد", "رموش العيون" ]
+  line: 171342
+  status: draft
+
+- id: w455
+  kind: idiom
+  prompt: وجّو متل الكمبيالة المستحقّة
+  answer: يبعث على الهمّ
+  others: [ "أصفر من المرض", "رسمي جادّ", "مليء بالتجاعيد" ]
+  note: الكمبيالة سند الدين.
+  line: 144941
+  status: draft
+
+- id: w456
+  kind: idiom
+  prompt: كلّما دقّ الكوز بالجرّة بيساوي لنا هالفنّة
+  answer: في كل مرّة ومناسبة
+  others: [ "مرّة واحدة في العمر", "حين يغضب فقط", "بعد طول انتظار" ]
+  note: "أصلها: كلّما شرب."
+  line: 145988
+  status: draft
+
+- id: w606
+  kind: belief
+  prompt: إذا هزّينا سرير الطفل وما كان هوّ فيه، بيوجعو ___
+  answer: ضهرو
+  others: [ "بطنو", "سنانو", "إدنو" ]
+  line: 172522
+  status: draft
+
+- id: w144
+  kind: riddle
+  prompt: عمّي هالختيار مدندل دقنو عالدار، بيشتغل بالشتا وبالصيف بطّال
+  answer: المزراب
+  others: [ "الحنفيّة", "الدالية", "البير" ]
+  line: 156794
+  status: draft
+
+- id: w457
+  kind: idiom
+  prompt: ما بيعرف كوعو من بوعو
+  answer: شديد الجهل
+  others: [ "ضعيف البصر", "كثير النسيان", "أعسر لا يحسن الكتابة" ]
+  line: 146092
+  status: draft
+
+- id: w607
+  kind: belief
+  prompt: "البيطلع لو في الأكل درويش كبّة فاضي: إن كان شبّ بدّو ___، وإن كان ختيار بدّو يحجّ"
+  answer: يتجوّز
+  others: [ يسافر, يغتني, يتوظّف ]
+  note: "درويش الكبّة: كبّة فارغة بلا حشوة."
+  line: 69137
+  status: approved
+
+- id: w458
+  kind: idiom
+  prompt: هزّ الكيل
+  answer: أفسح مكانًا بجانبك
+  others: [ "زِد في الكيل", "احسب بدقّة", "اعمل بسرعة" ]
+  note: يقولونها إذا ضاق المجلس.
+  line: 146743
+  status: draft
+
+- id: w459
+  kind: idiom
+  prompt: كل مين بيجرّ اللحاف لصوبو
+  answer: كل إنسان يطلب الخير لنفسه
+  others: [ "النوم في الشتاء صعب", "الزوجان لا يتّفقان", "البخيل يخفي ماله" ]
+  line: 148823
+  status: draft
+
+- id: w608
+  kind: belief
+  prompt: اللي بياكل خبز محروق بيلاقي ___ في السوق
+  answer: لقيّة
+  others: [ حرامي, عروس, خناقة ]
+  note: "اللقيّة: الشيء الثمين يعثر عليه المرء."
+  line: 62037
+  status: approved
+
+- id: w234
+  kind: vendor
+  prompt: بكليبو يا ___!
+  answer: لبن
+  others: [ "حليب", "زيت", "مي" ]
+  note: يريد أنه ثخين يعلق بالإصبع.
+  line: 148639
+  status: draft
+
+- id: w460
+  kind: idiom
+  prompt: هات إيدك والحقني
+  answer: وهلمّ جرًّا
+  others: [ "ساعدني في المصيبة", "اتبعني بسرعة", "صافحني وتصالحنا" ]
+  line: 148938
+  status: draft
+
+- id: w145
+  kind: riddle
+  prompt: شي محمّل بيدخل عالطاحون، وبيخلّي دنبو برّا
+  answer: المعلقة
+  others: [ "المفتاح", "الإبريق", "الزنبيل" ]
+  note: والطاحون هنا هو الفم.
+  line: 160801
+  status: draft
+
+- id: w609
+  kind: belief
+  prompt: البياكل مالطنجرة، ___
+  answer: بتمطر في عرسو
+  others: [ "بينقرع", "بيضيع رزقو", "بيبرد أكلو" ]
+  line: 159804
+  status: draft
+
+- id: w461
+  kind: idiom
+  prompt: عصايتك ما بتلعب بيني وبينو
+  answer: لن تفرّق بيننا
+  others: [ لن تضربني ولا تضربه, لن تتدخّل في تجارتنا, لن تخيفنا بتهديدك ]
+  note: أي عصا التفرقة.
+  line: 149877
+  status: approved
+
+- id: w462
+  kind: idiom
+  prompt: فلان مايع
+  answer: لا يستقرّ على حال
+  others: [ "سريع البكاء", "عرقان من الحرّ", "كريم كثير العطاء" ]
+  note: أو يأخذ شكل الظرف الذي هو فيه.
+  line: 152210
+  status: draft
+
+- id: w610
+  kind: belief
+  prompt: "إذا رادت البنت تتيسّر جازتها، لازم تقول تلت مرّات: «يا أحد يا موجود، يا ربّ يا معبود، فرّجي سعدي من بين ___»"
+  answer: السعود
+  others: [ "النجوم", "الحدود", "الجدود" ]
+  note: "الجازة: الزواج."
+  line: 44326
+  status: draft
+
+- id: w463
+  kind: idiom
+  prompt: هالعرس متل مقلاع أبو قدّور، لا طقّة ولا ونّة
+  answer: بلا طبل ولا زمر ولا بهجة
+  others: [ "كثير الضجيج والصياح", "قصير انتهى بسرعة", "فيه شجار وخصام" ]
+  line: 162066
+  status: draft
+
+- id: w611
+  kind: belief
+  prompt: كانت الزلحفة مرا متل كلّ النسوان، إجت فاطمة بنت النبي تستعير منها ___ وما عارتها، فدعت عليها وصارت زلحفة
+  answer: طاحونتها
+  others: [ منخلها, جرّتها, مكنستها ]
+  line: 16692
+  status: approved
+
+- id: w464
+  kind: idiom
+  prompt: أنا هالشغلة حاطّا بالمقلاع
+  answer: سأرميها ولا أبالي بالنتيجة
+  others: [ "سأنجزها بسرعة", "أخطّط لها بدقّة", "سأستعملها ضدّ خصمي" ]
+  line: 162069
+  status: draft
+
+- id: w146
+  kind: riddle
+  prompt: من استنبول لحلب جابوني، ولمقداري عالحرير مشّوني
+  answer: المقصّ
+  others: [ "المكوى", "الطربوش", "الفنجان" ]
+  line: 161882
+  status: draft
+
+- id: w236
+  kind: vendor
+  prompt: يا ___ كلّا ورق!
+  answer: ملوخية
+  others: [ "بامية", "فاصوليا", "كوسا" ]
+  line: 163483
+  status: draft
+
+- id: w612
+  kind: belief
+  prompt: إذا اجتمع في مجلس تلت أسامي متل بعض، بيطلع على وجّن ___
+  answer: كنز
+  others: [ مطر, خناقة, عرس ]
+  line: 145557
+  status: approved
+
+- id: w465
+  kind: idiom
+  prompt: على حجرو مي
+  answer: شغله ماشٍ
+  others: [ فقير لا يملك إلا الماء, شبعان لا يحتاج شيئًا, بارد لا يتأثّر ]
+  note: كدولاب الطاحون حين يجري عليه الماء.
+  line: 165540
+  status: approved
+
+- id: w466
+  kind: idiom
+  prompt: خبزو مخبوز ومايتو بالكوز
+  answer: مكفيّ المؤونة
+  others: [ فقير يعيش على الخبز والماء, مسافر يحمل زاده, كسول لا يعمل ]
+  line: 165545
+  status: approved
+
+- id: w613
+  kind: belief
+  prompt: إذا انحبس السعدان ببيت، بيصير بين صاحب الدار ومرتو ___
+  answer: شرور
+  others: [ "محبّة", "ضحك", "ولاد" ]
+  note: "السعدان: القرد."
+  line: 87226
+  status: draft
+
+- id: w467
+  kind: idiom
+  prompt: مالو فيها ناقة ولا جمل
+  answer: لا علاقة له بالأمر
+  others: [ "فقير لا يملك مالًا", "ليس من أهل البادية", "يعمل وحده بلا مساعدة" ]
+  note: مستمدّة من العربية.
+  line: 166587
+  status: draft
+
+- id: w614
+  kind: belief
+  prompt: "الخزانة المفتوحة بتقول: اللي فضحني الله يفضحو، واللي سترني الله ___"
+  answer: يسترو
+  others: [ "يرحمو", "يخلّيه", "يعطيه" ]
+  note: "لذلك يقولون: حرام تضلّ الخزانة مفتوحة."
+  line: 125976
+  status: draft
+
+- id: w468
+  kind: idiom
+  prompt: وجّ لا بيصدي ولا بينّدي
+  answer: وقح لا حياء فيه
+  others: [ "وجه جميل لا يشيخ", "جافّ لا يتأثّر بالبكاء", "نظيف لا يتّسخ" ]
+  line: 167666
+  status: draft
+
+- id: w147
+  kind: riddle
+  prompt: عجوز ختيارة بتمشي عراسا، والأيام فكفكت زنّارا
+  answer: المكنسة
+  others: [ العكّازة, الشمعة, الدولاب ]
+  line: 162597
+  status: approved
+
+- id: w469
+  kind: idiom
+  prompt: نزل أكتافو
+  answer: دفئ بعد البرد
+  others: [ "حزن وانكسر", "تعب من الحمل", "تخلّى عن كبريائه" ]
+  line: 168028
+  status: draft
+
+- id: w615
+  kind: belief
+  prompt: يعتقدون إنّو ___ بيوعدوه إنّو ينسقى، فبيضلّ أخضر متل ما لو انسقى
+  answer: الكمّون
+  others: [ "النعنع", "البقدونس", "الريحان" ]
+  line: 145175
+  status: draft
+
+- id: w237
+  kind: vendor
+  prompt: بقلاوة يا ___!
+  answer: موز
+  others: [ "تين", "عنب", "مشمش" ]
+  line: 26977
+  status: draft
+
+- id: w470
+  kind: idiom
+  prompt: إيدو ما هي نضيفة
+  answer: لصّ يمدّ يده
+  others: [ "لا يغسل يديه", "كاذب لا يُصدّق", "مريض بالجرب" ]
+  line: 169027
+  status: draft
+
+- id: w616
+  kind: belief
+  prompt: الولد الزغير إذا حدا فشخ من فوق سريرو بيقصر، وتا ما يقصر لازم ___
+  answer: يرجع فشختو
+  others: [ "يبوسو", "يسمّي عليه", "يرشّ عليه مي" ]
+  note: "فشخ: خطا خطوة واسعة."
+  line: 125614
+  status: draft
+
+- id: w471
+  kind: idiom
+  prompt: نقبك على حجر
+  answer: تعبت ولم تستفد شيئًا
+  others: [ "عنيد لا يتراجع", "وصلت إلى غايتك", "قلبك قاسٍ كالحجر" ]
+  note: أصله في من يحفر بحثًا عن الماء.
+  line: 169966
+  status: draft
+
+- id: w148
+  kind: riddle
+  prompt: شي طول ما هي عايشة بتاكل، وإذا شربت مي بتموت؟
+  answer: النار
+  others: [ "النبتة", "السمكة", "القطّة" ]
+  line: 166210
+  status: draft
+
+- id: w472
+  kind: idiom
+  prompt: فلان حلّاب النملة
+  answer: بخيل خسيس
+  others: [ صبور دقيق, ماهر في عمله, محظوظ ]
+  line: 170657
+  status: approved
+
+- id: w617
+  kind: belief
+  prompt: ___ بتفكّ رعبة
+  answer: رعبة
+  others: [ "ضحكة", "مي باردة", "بوسة" ]
+  note: "أي: الخوف يعالَج بخوف آخر."
+  line: 76596
+  status: draft
+
+- id: w473
+  kind: idiom
+  prompt: فلان ما بيقطع وقت
+  answer: لا يترك صلاة
+  others: [ "كثير السهر", "يعمل بلا راحة", "لا يلبس ساعة" ]
+  note: أي من أوقات الصلاة.
+  line: 176129
+  status: draft
+
+- id: w618
+  kind: belief
+  prompt: كيس المصاري بتلاقي فيه ـ ماعدا المصاري ـ فولة يابسة وودعة و___ منشان البركة
+  answer: خرزة زرقا
+  others: [ "مفتاح زغير", "حبّة سكّر", "عود كبريت" ]
+  line: 128019
+  status: draft
+
+- id: w474
+  kind: idiom
+  prompt: وقع السوق عليه
+  answer: كثرت زبائنه
+  others: [ "خسر تجارته", "أغلق دكّانه", "انهار عليه السقف" ]
+  line: 176203
+  status: draft
+
+- id: w239
+  kind: vendor
+  prompt: الزهرة بيضا يا ___!
+  answer: قرنبيط
+  others: [ "ملفوف", "خسّ", "فجل" ]
+  line: 132564
+  status: draft
+
+- id: w475
+  kind: idiom
+  prompt: أنا خانجي وإنته يولجي
+  answer: أنا مقيم وأنت عابر سبيل
+  others: [ "أنا الغني وأنت الفقير", "أنا أدفع وأنت تأكل", "أنا أخدمك وأنت تأمرني" ]
+  note: الخانجي صاحب الخان، واليولجي المسافر.
+  line: 177919
+  status: draft
+
+- id: w619
+  kind: belief
+  prompt: البيمسح راس اليتيم تلت مرّات، بتنكتب لو ___
+  answer: حجّة
+  others: [ "صلاة", "صدقة", "صومة" ]
+  line: 177432
+  status: draft
+
+- id: w149
+  kind: riddle
+  prompt: إينا عمل إذا سألوك وإنتَ عم تعملو «أش عم تعمل؟» ما بتجاوب؟
+  answer: النوم
+  others: [ "الشغل", "المشي", "القراية" ]
+  line: 166681
+  status: draft
+
+- id: w476
+  kind: idiom
+  prompt: أبو الطنجرة البتبقبق ولّا أبو القندرة البتزقرق؟
+  answer: الكريم على بيته أم الأنيق
+  others: [ الطبّاخ أم الإسكافي, القريب أم الغريب, الكبير أم الصغير ]
+  note: يسألون بها البنت المخطوبة.
+  line: 137071
+  status: approved
+
+- id: w620
+  kind: belief
+  prompt: "إذا حدا تأخّر على ميعاد، بينكّسوا المكنسة وبيچكّوا فيها دبابيس وبيقروا: تحتك عود وفوقك عود، ما بيجيك صبر ولا ___"
+  answer: قعود
+  others: [ "رقود", "وعود", "سجود" ]
+  note: إن كنت بارك يقوّموك، وإن كنت ماشي يركّدوك.
+  line: 170455
+  status: draft
+
+- id: w477
+  kind: idiom
+  prompt: فلان مزعفر
+  answer: اصفرّ وجهه غضبًا
+  others: [ "مريض بالصفرة", "متعطّر بالطيب", "سعيد مسرور" ]
+  line: 80539
+  status: draft
+
+- id: w700
+  kind: idiom
+  prompt: فلان صار آلة بإيديهن
+  answer: يسيّرونه كما يشاؤون
+  others: ["صار ماهراً في صنعته","يشتغل عندهم بلا راحة","اغتنى بفضلهم"]
+  line: 1258
+  status: draft
+
+- id: w1200
+  kind: simile
+  prompt: واقف متل ___
+  answer: الألف
+  others: ["النون","الواو","الدال"]
+  note: حرف الألف قائم مستقيم، يقال لمن يقف منتصباً لا يتحرّك.
+  line: 403
+  status: draft
+
+- id: w1600
+  kind: song
+  prompt: كبيبة مين كبكبها، أجا السلطان وطلبها / قالوا لو زغيرة زغيرة، قال الله ___
+  answer: يكبّرها
+  others: ["يصغّرها","يدبّرها","يسمّيها"]
+  note: مناغاة تقولها الأم لبنتها وهي تحرّك كفّيها كمن يدوّر الكبّة.
+  line: 3472
+  status: draft
+
+- id: w1400
+  kind: blessing
+  prompt: — نعيماً. — الله ___ عليك
+  answer: ينعم
+  others: ["يسلّم","يكرم","يهنّي"]
+  note: يهنّئون بـ«نعيماً» من استحمّ أو حلق، وهذا جوابه.
+  line: 169333
+  status: draft
+
+- id: w701
+  kind: idiom
+  prompt: ولا الضالّين، آمين
+  answer: انتهى الأمر بكل ما يلزمه
+  others: ["لا فائدة من المحاولة","الأمر ما زال في أوله","لا أحد يعرف الجواب"]
+  note: كما تنتهي الفاتحة بقول «آمين».
+  line: 1331
+  status: draft
+  flag: OCR garbled meaning (اتلاء الأمر عا يستازمه = انتهاء الأمر بما يستلزمه?)
+
+- id: w1201
+  kind: simile
+  prompt: الإبرة بإيد البنت متل ___ بإيد الفارس
+  answer: الرمح
+  others: ["الترس","اللجام","الركاب"]
+  line: 77807
+  status: draft
+
+- id: w702
+  kind: idiom
+  prompt: ما أخدت منو لا أبيض ولا أحمر
+  answer: لم آخذ منه أي نقود
+  others: ["لم أسمع منه كلمة طيبة","لم أعرف له وجهاً من قفا","لم آكل عنده لقمة"]
+  note: الأبيض والأحمر (والأصفر) هي النقود الفضية والنحاسية والذهبية.
+  line: 4281
+  status: draft
+
+- id: w1601
+  kind: song
+  prompt: ما في واحد بيقول خود، كل الناس بتقول ___
+  answer: هات
+  others: ["روح","لا","جود"]
+  note: أغنية ساخرة، ومنها اسم لعبة السهرات «خود هات».
+  line: 4681
+  status: draft
+
+- id: w703
+  kind: idiom
+  prompt: فلان احمرّت عينو منّك
+  answer: غضب وحقد عليك
+  others: ["خجل منك كثيراً","بكى شوقاً إليك","حسدك على نعمتك"]
+  line: 4294
+  status: draft
+  flag: OCR 'ا مرت عينو متك' read as احمرّت عينو منّك
+
+- id: w1202
+  kind: simile
+  prompt: متل ___ جامع الزكي، اللي ما هو نايم مرتكي
+  answer: إبرقة
+  others: ["شبابيك","قناديل","قباقيب"]
+  note: أباريق ميضأة جامع الزكي كانت دائماً محطّمة، فالإبريق فيها إمّا واقع أو مائل.
+  line: 81143
+  status: draft
+
+- id: w1401
+  kind: blessing
+  prompt: "إذا شرب أحدهم قالوا له «هنيئاً»، فيجيبهم: ___ الله"
+  answer: هنّاكم
+  others: ["سلّمكم","عافاكم","أكرمكم"]
+  note: من عاداتهم بعد شرب الماء.
+  line: 173174
+  status: draft
+
+- id: w704
+  kind: idiom
+  prompt: أخدت معو
+  answer: ثارت نار جنونه
+  others: ["اقتنع بالكلام","ربح في تجارته","طال به المرض"]
+  note: «أخدت» هنا بمعنى اشتعلت، والكلمة من السريانية.
+  line: 4617
+  status: draft
+
+- id: w1602
+  kind: song
+  prompt: لأطلع عَ راس الجبل وأشرف على الوادي / وأقول يا مرحبا، نسّم هوا ___
+  answer: بلادي
+  others: ["ولادي","أسيادي","فؤادي"]
+  note: أغنية شعبية في الحنين إلى الوطن.
+  line: 27610
+  status: draft
+
+- id: w1203
+  kind: simile
+  prompt: فلان متل ___ الأبلق
+  answer: القاق
+  others: ["الجمل","الفيل","الديب"]
+  note: القاق (الغراب) لا يكون إلا أسود، فلو كان أبلق لكان غريباً عجيباً.
+  line: 2105
+  status: draft
+
+- id: w705
+  kind: idiom
+  prompt: سحب آه من أضافير إجريه
+  answer: تأوّه من أعماق بدنه
+  others: ["مشى مسافة طويلة حافياً","تعب من كثرة الشغل","ندم على ما قال"]
+  line: 9071
+  status: draft
+
+- id: w1603
+  kind: song
+  prompt: ما باكل القطايف، إلا السمن يكون ___
+  answer: طايف
+  others: ["خايف","نايف","ناشف"]
+  note: أغنية تهكّمية على لسان الأكول، وطايف أي يعوم فوقها.
+  line: 10953
+  status: draft
+
+- id: w706
+  kind: idiom
+  prompt: أش بك عم بتاكل لحمك؟
+  answer: تضغط على أسنانك غيظاً
+  others: ["تصرف من رأس مالك","تتعب نفسك بلا فائدة","تؤذي أقرب الناس إليك"]
+  line: 10949
+  status: draft
+
+- id: w1402
+  kind: blessing
+  prompt: "يقولون لمن توضّأ: من ___"
+  answer: زمزم
+  others: ["الكوثر","الفرات","العين"]
+  note: يدعون له أن يحجّ ويتوضّأ من بئر زمزم، فيجيبهم «صحبة».
+  line: 81735
+  status: draft
+
+- id: w1204
+  kind: simile
+  prompt: فلان متل ___، منين ما مسكتو بتلحوس أصابيعك
+  answer: أبلوج السكّر
+  others: ["لوح الصابون","قالب التلج","رغيف الخبز"]
+  note: أبلوج السكّر قالب السكّر الأبيض، يقال لمن يصيب خيره كل من يعامله.
+  line: 8682
+  status: draft
+
+- id: w707
+  kind: idiom
+  prompt: "قول: يا الله!"
+  answer: قم وانصرف من هنا
+  others: ["اصبر على مصيبتك","احلف أنك صادق","ابدأ بالأكل"]
+  note: أي استعن بالله على ذهابك.
+  line: 11715
+  status: draft
+
+- id: w1604
+  kind: song
+  prompt: عطشان يا صبايا دلّوني عالسبيل / الروحة بالعربية والجيّة ___
+  answer: بالطرمبيل
+  others: ["بالزنبيل","عالخيل","بالليل"]
+  note: أغنية من أيام دخول السيارة، والطرمبيل هو الأوتوموبيل.
+  line: 17364
+  status: draft
+
+- id: w1205
+  kind: simile
+  prompt: متل حبّ ___ لإبنو، إجا تيبوسو عضّ لو أدنو
+  answer: الدبّ
+  others: ["الجمل","الديك","الحصان"]
+  line: 2236
+  status: draft
+
+- id: w708
+  kind: idiom
+  prompt: فلان أجا عالإملا
+  answer: جاء على القاعدة والأصول
+  others: ["جاء متأخراً عن موعده","جاء بلا دعوة","جاء ليتعلم الكتابة"]
+  line: 12860
+  status: draft
+
+- id: w1403
+  kind: blessing
+  prompt: "يدعو أحدهم أحداً أن ياكل معه، فيجيبه: ___"
+  answer: عوافي
+  others: ["نعيماً","مبارك","خاطرك"]
+  note: جمع العافية، يتمنّاها المدعوّ لصاحب الطعام.
+  line: 111064
+  status: draft
+  flag: OCR has عواقی; read as عوافي (plural of عافية, given two lines above)
+
+- id: w709
+  kind: idiom
+  prompt: انضاق فلان
+  answer: صار فقيراً
+  others: ["غضب بسرعة","سُجن","مرض مرضاً شديداً"]
+  line: 15132
+  status: draft
+  flag: OCR 'صار فعنرا' read as فقيراً
+
+- id: w1206
+  kind: simile
+  prompt: فلان متل جحش ___، بيدور بيدور وما بيعرف أشو الخبر
+  answer: الطاحون
+  others: ["الكرم","البيدر","السوق"]
+  line: 61931
+  status: draft
+
+- id: w1605
+  kind: song
+  prompt: جوزي تجوّز عليّا، وأنا لسّا الحنّة ___
+  answer: بإيديّا
+  others: ["بخدّيّا","برجليّا","بشعريّا"]
+  note: أغنية على لسان عروس جديدة.
+  line: 18184
+  status: draft
+
+- id: w710
+  kind: idiom
+  prompt: من تعبو راح طشت وإبريق وأنكري
+  answer: وقع على الأرض بلا حراك
+  others: ["ذهب إلى الحمّام ليرتاح","باع أثاث بيته","صار يخلط في كلامه"]
+  line: 16448
+  status: draft
+
+- id: w1207
+  kind: simile
+  prompt: اللي إصبعتو بالميّ مو متل اللي إصبعتو ___
+  answer: بالنار
+  others: ["بالزيت","بالتلج","بالطين"]
+  line: 8770
+  status: draft
+
+- id: w711
+  kind: idiom
+  prompt: فلان إيدو مفتوحة
+  answer: كريم
+  others: ["سارق","كثير الضرب","فقير لا يملك شيئاً"]
+  note: وضدّها «إيدو ماسكة».
+  line: 18128
+  status: draft
+
+- id: w1404
+  kind: blessing
+  prompt: "إذا دُعي أحدهم إلى المشاركة في طعام البيت قال: بـ___ إن شا الله"
+  answer: الأفراح
+  others: ["الأحلام","الأسفار","الأسواق"]
+  note: يتمنّى أن يكون الاجتماع القادم على الطعام في فرح.
+  line: 123987
+  status: draft
+
+- id: w1606
+  kind: song
+  prompt: بالكحلة سوسحتيني يا غصين البان / بين المبسم والغرّة باقة ___
+  answer: ريحان
+  others: ["رمّان","مرجان","سوسان"]
+  note: أغنية غزلية.
+  line: 20502
+  status: draft
+
+- id: w712
+  kind: idiom
+  prompt: ما حدا بيدفع باب زقاقك بإجرو
+  answer: لا أحد يزورك حاملاً هدية
+  others: ["لا أحد يجرؤ على إهانتك","بيتك مفتوح لكل الناس","جيرانك لا يسألون عنك"]
+  note: من كانت يداه مشغولتين بحمل الهدية دفع الباب برجله.
+  line: 18130
+  status: draft
+
+- id: w1208
+  kind: simile
+  prompt: فلان متل ___ بإصبعي
+  answer: الخاتم
+  others: ["السبحة","الشوكة","الخيط"]
+  note: أي يحرّكه كما يشاء.
+  line: 60855
+  status: draft
+
+- id: w713
+  kind: idiom
+  prompt: مالباب للطاقة
+  answer: هجم على الموضوع بلا تمهيد
+  others: ["بيته صغير ضيّق","هرب من أقرب طريق","لا يستقر في مكان"]
+  line: 18975
+  status: draft
+
+- id: w1607
+  kind: song
+  prompt: حوحو حوحو يا بردي، قشّة حطب ما عندي / عندي بنيّة غندورة، بتضرب لي ___
+  answer: بالطنبورة
+  others: ["بالزمّورة","بالصفّورة","بالناعورة"]
+  note: من مناغاة الأمهات لأطفالهن في الشتاء.
+  line: 109255
+  status: draft
+
+- id: w1405
+  kind: blessing
+  prompt: — سلامة. — الله ___
+  answer: يسلّمك
+  others: ["يكرمك","يهنّيك","ينعم عليك"]
+  note: من المجاملات التي يكثر فيها ذكر الله، والجواب من لفظ التحيّة.
+  line: 11668
+  status: draft
+
+- id: w714
+  kind: idiom
+  prompt: بزّر معو الباذنجان
+  answer: انفجر غيظاً وأطلق السباب
+  others: ["كثر أولاده","ربحت تجارته","شاخ وكبر في السن"]
+  note: الباذنجان إذا كبر على أمّه انفلقت قشرته وانتثر بزره.
+  line: 22662
+  status: draft
+
+- id: w1209
+  kind: simile
+  prompt: متل ___، بيضحك عالأصلع بطقطقة المقصّ
+  answer: الحلّاق
+  others: ["الخيّاط","السكّاف","العطّار"]
+  line: 104375
+  status: draft
+
+- id: w715
+  kind: idiom
+  prompt: "مناليوم اللي قالوا: بلى"
+  answer: من يوم الخليقة
+  others: ["من يوم العرس","من أول يوم في المدرسة","من يوم ما اتفقنا"]
+  note: "إشارة إلى الآية: «ألستُ بربّكم؟ قالوا: بلى»."
+  line: 27423
+  status: draft
+
+- id: w1608
+  kind: song
+  prompt: أنا جبتك من قلبي واشتهيتك من ربّي / والك خان الحاج موسى، والك دكاكين ___
+  answer: ببانقوسا
+  others: ["بالمدينة","بباب النصر","بالعزيزية"]
+  note: من مناغاة الأمهات لأطفالهن، وبانقوسا من أحياء حلب القديمة.
+  line: 24429
+  status: draft
+
+- id: w1210
+  kind: simile
+  prompt: بني آدم متل ___، بيعرى وبيكتسي
+  answer: السجرة
+  others: ["النهر","القمر","البصلة"]
+  line: 85591
+  status: draft
+
+- id: w716
+  kind: idiom
+  prompt: فلان بالع ريقو
+  answer: حالته المالية لا بأس بها
+  others: ["خائف لا يتكلم","صائم","ينتظر دوره بصبر"]
+  line: 27742
+  status: draft
+
+- id: w1406
+  kind: blessing
+  prompt: — بكرا بدّي أسافر. — ترجع بـ___
+  answer: السلامة
+  others: ["الهدايا","المصاري","الأخبار"]
+  note: تقال لمن يخبر بسفره، أو يقولون «يا الله السلامة إن شا الله».
+  line: 11672
+  status: draft
+
+- id: w1609
+  kind: song
+  prompt: سبع مكاتيب بعتّ لّو، ولا مكتوب ما جا ___
+  answer: منّو
+  others: ["منّي","يومو","مرّة"]
+  note: أغنية شعبية في عتاب الغائب.
+  line: 26169
+  status: draft
+
+- id: w717
+  kind: idiom
+  prompt: بلّع المأمور
+  answer: رشاه
+  others: ["شتمه","خدعه بالكلام","أسكته بالحجّة"]
+  line: 27772
+  status: draft
+  flag: OCR 'بلع الأمور' read as بلّع المأمور
+
+- id: w1211
+  kind: simile
+  prompt: متل ___، بياكل عالطالع وعالنازل
+  answer: المنشار
+  others: ["المبرد","الشاكوش","المقصّ"]
+  line: 164193
+  status: draft
+
+- id: w718
+  kind: idiom
+  prompt: طار مع بنات نعش
+  answer: ابتعد وأوغل في البعد
+  others: ["سهر حتى الصبح","تزوّج بنات عمّه","اغتنى فجأة"]
+  note: بنات نعش نجوم في السماء.
+  line: 28229
+  status: draft
+
+- id: w1212
+  kind: simile
+  prompt: متل خبز ___، مأكول مذموم
+  answer: الشعير
+  others: ["الحنطة","التنّور","العيد"]
+  line: 62019
+  status: draft
+
+- id: w1610
+  kind: song
+  prompt: يا رايحة عالحمّام خديني معاكي / لأشقل لك البقجة وأمشي ___
+  answer: وراكي
+  others: ["حداكي","قدّامك","لحالي"]
+  note: أغنية شعبية، والبقجة صرّة ثياب الحمّام.
+  line: 26764
+  status: draft
+
+- id: w719
+  kind: idiom
+  prompt: لا تلعب مع فلان لأنّو بيلعب بيانو
+  answer: أصابعه خفيفة في سرقة الأحجار
+  others: ["يطيل التفكير قبل كل نقلة","يغنّي وهو يلعب","يربح دائماً بالحظ"]
+  note: يقولها لاعبو الطاولة، كأن أصابعه أصابع عازف البيانو.
+  line: 29884
+  status: draft
+
+- id: w1407
+  kind: blessing
+  prompt: — تكرم. — الله ___
+  answer: يكرمك
+  others: ["يسلّمك","يهنّيك","يعافيك"]
+  note: من المجاملات، والجواب من لفظ الكلمة.
+  line: 11675
+  status: draft
+
+- id: w720
+  kind: idiom
+  prompt: من بيتو!
+  answer: أصله عريق في المكارم
+  others: ["لم يخرج من داره","بخيل لا يطعم أحداً","دفع من ماله الخاص"]
+  note: تقال لمن بدرت منه مأثرة طيبة.
+  line: 29941
+  status: draft
+
+- id: w1213
+  kind: simile
+  prompt: متل أمّ ___، فاضية مشغولة
+  answer: العروس
+  others: ["الولاد","التوم","المعلّم"]
+  line: 113886
+  status: draft
+
+- id: w1611
+  kind: song
+  prompt: جانم جانم بالتركي، أحمد باشا ناطركي / حمّامك تحت القلعة، وخدّامك ستّة ___
+  answer: سبعة
+  others: ["تسعة","أربعة","عشرة"]
+  note: مناغاة تدلّل بها الأم بنتها.
+  line: 26771
+  status: draft
+
+- id: w721
+  kind: idiom
+  prompt: المرا بين نفسين
+  answer: حبلى
+  others: ["محتارة بين خاطبين","مريضة تعبانة","تعمل في بيتين"]
+  note: اهتمامها موزّع بين نفسها ونفس مولودها.
+  line: 30765
+  status: draft
+
+- id: w1214
+  kind: simile
+  prompt: فلان متل ___، إذا كلّب ما بيفكّ
+  answer: أمّ أربعة وأربعين
+  others: ["أبو بريص","الزلحفة","العصفور"]
+  line: 12294
+  status: draft
+
+- id: w1408
+  kind: blessing
+  prompt: "يقولون لمن سافر: إن شا الله العودة سالم ___"
+  answer: غانم
+  others: ["نايم","صايم","دايم"]
+  note: يتمنّون له أن يعود سالماً ورابحاً.
+  line: 119882
+  status: draft
+
+- id: w722
+  kind: idiom
+  prompt: بركّو على جرنو
+  answer: جعله يلزم حدّه
+  others: ["غسّله في الحمّام","ساعده في شغله","أضافه في بيته"]
+  note: أصله من تعابير الحمّام.
+  line: 31892
+  status: draft
+
+- id: w1612
+  kind: song
+  prompt: بلا حسبك بلا نسبك، غير الليرات ما ___
+  answer: بتحكي
+  others: ["بتبكي","بتشكي","بتضحك"]
+  note: أغنية شعبية ساخرة عن سلطان المال.
+  line: 27418
+  status: draft
+
+- id: w723
+  kind: idiom
+  prompt: فلان لا فوقو ولا تحتو
+  answer: فقير
+  others: ["يتيم","متكبّر","لا يعرف أحداً"]
+  line: 32939
+  status: draft
+
+- id: w1215
+  kind: simile
+  prompt: الحبّ بلا أمل متل ___ الفاضي
+  answer: البندق
+  others: ["الدفّ","الصحن","الجرن"]
+  line: 12838
+  status: draft
+
+- id: w724
+  kind: idiom
+  prompt: ترسمل منّو
+  answer: استدرجه بالكلام ليعرف ما في قلبه
+  others: ["استدان منه مالاً","تعلّم منه الصنعة","شاركه في التجارة"]
+  line: 34530
+  status: draft
+
+- id: w1613
+  kind: song
+  prompt: بنت الچلبية، عيونا ___
+  answer: لوزية
+  others: ["عسلية","كحلية","سماوية"]
+  note: أغنية شعبية، والچلبي لقب الوجهاء.
+  line: 151126
+  status: draft
+  flag: "OCR: 'بنت الچابيه' here, 'البنت الجلبية' at 28354; read as الچلبية (could be الحلبية)"
+
+- id: w1409
+  kind: blessing
+  prompt: "يقولون للذاهب والمسافر: مصحوب بـ___"
+  answer: السلامة
+  others: ["الكرامة","الغنيمة","البركة"]
+  note: من عبارات التوديع، ومثلها «محفوظ بالسلامة».
+  line: 101121
+  status: draft
+
+- id: w1216
+  kind: simile
+  prompt: ياللي مأمّلة بالرجال متل ___ بالغربال
+  answer: الميّ
+  others: ["الطحين","البرغل","العدس"]
+  line: 12849
+  status: draft
+
+- id: w725
+  kind: idiom
+  prompt: تصرصر فلان
+  answer: جمع المال وعقده صرراً
+  others: ["ارتجف من البرد","كثر كلامه","هزل جسمه"]
+  line: 36313
+  status: draft
+
+- id: w726
+  kind: idiom
+  prompt: فلان بيتصلّى على ديالو
+  answer: طاهر
+  others: ["متكبّر","طويل الثياب","كثير الصلاة رياءً"]
+  note: "الديال: ذيل الثوب. وقد تقال للتهكّم."
+  line: 36368
+  status: draft
+
+- id: w1614
+  kind: song
+  prompt: يا بنت يا للي حمامك طار / طار وعلّى عَ سطوح ___
+  answer: الدار
+  others: ["الجار","الحارة","الخان"]
+  note: أغنية شعبية.
+  line: 28355
+  status: draft
+
+- id: w1217
+  kind: simile
+  prompt: فلان متل ___، لا بتنمسك ولا بتنباس
+  answer: القنفدة
+  others: ["الأرنبة","الحمامة","القطّة"]
+  line: 13141
+  status: draft
+
+- id: w1410
+  kind: blessing
+  prompt: "يقول المودِّع: ___، والجواب: مع السلامة"
+  answer: خاطرك
+  others: ["نعيماً","عوافي","هنيئاً"]
+  note: من كلام التوديع عند الانصراف.
+  line: 61263
+  status: draft
+
+- id: w727
+  kind: idiom
+  prompt: شفت صاحبك متغبّر منّك
+  answer: ودّه لك غير صافٍ
+  others: ["راجعاً من سفر طويل","مشغولاً عنك بشغله","يقلّدك في كل شيء"]
+  line: 37652
+  status: draft
+
+- id: w1218
+  kind: simile
+  prompt: متل ___، أوّلو للكبار وآخرو للحمار
+  answer: الخيار
+  others: ["التفّاح","البطّيخ","العنب"]
+  line: 58729
+  status: draft
+
+- id: w1615
+  kind: song
+  prompt: لله لله يا بنيّة، ويا واردة ___
+  answer: عالميّة
+  others: ["عالعين","عالبير","عالنبعة"]
+  note: أغنية شعبية عن الصبايا الواردات على الماء.
+  line: 28849
+  status: draft
+
+- id: w728
+  kind: idiom
+  prompt: فلان بيشرب من تمّ فلانة
+  answer: يعشقها
+  others: ["يصدّق كل ما تقول","يعيش من مالها","ينقل كلامها للناس"]
+  line: 40703
+  status: draft
+
+- id: w729
+  kind: idiom
+  prompt: أيام التوت بيشتغل العامل تيموت
+  answer: النهار طويل في موسم التوت
+  others: ["الأجرة قليلة في الصيف","قطف التوت شغل خطر","العمّال كثار في الربيع"]
+  line: 42889
+  status: draft
+
+- id: w1219
+  kind: simile
+  prompt: متل ___ الواقف على دبق، بيقيم إجر وبيحطّ إجر
+  answer: العصفور
+  others: ["الجمل","الجحش","القطّ"]
+  note: الدبق مادة لزجة يُصاد بها الطير.
+  line: 115188
+  status: draft
+
+- id: w1411
+  kind: blessing
+  prompt: — تصبحوا على خير. — وأنتو من ___
+  answer: أهلو
+  others: ["أصحابو","جيرانو","ضيوفو"]
+  note: تحيّة الوداع وجوابها، أي وأنتم من أهل الخير.
+  line: 66272
+  status: draft
+  flag: OCR has قصبحوا; book calls it 'تحية الوداع صباحاً'
+
+- id: w1616
+  kind: song
+  prompt: عريسنا الشبّ، نحنا اليوم في حيّك / يا برج عالي وكل الناس في ___
+  answer: فيّك
+  others: ["ضيّك","زيّك","ميّك"]
+  note: هنهونة تُقال للعريس في العرس، والفيّ هو الظلّ.
+  line: 29787
+  status: draft
+
+- id: w730
+  kind: idiom
+  prompt: هالشغلة ما منها تمرة
+  answer: لا نفع منها ولا نتيجة
+  others: ["صعبة تحتاج إلى صبر","رخيصة الثمن","ليست حلوة الطعم"]
+  note: "تمرة: ثمرة."
+  line: 43890
+  status: draft
+
+- id: w1220
+  kind: simile
+  prompt: فلان وفلان متل النار و___
+  answer: البارود
+  others: ["الرماد","الدخان","الفحم"]
+  line: 19804
+  status: draft
+
+- id: w731
+  kind: idiom
+  prompt: فلان عينو جوعانة
+  answer: ليس بابن نعمة
+  others: ["يحسد الناس","لم ينم منذ أيام","يحبّ النظر إلى النساء"]
+  line: 44700
+  status: draft
+
+- id: w1617
+  kind: song
+  prompt: عالتس تيسة وتس تيسة، وعرسك يوم الخميسة / وبعزم لك أهل السراي، وبطبخ زردة و___
+  answer: هريسة
+  others: ["كبيبة","مجدّرة","عصيدة"]
+  note: من مناغاة الأمهات لأطفالهن تعده بعرس كبير.
+  line: 113408
+  status: draft
+
+- id: w732
+  kind: idiom
+  prompt: فلان جبّ مالو دوّاسات
+  answer: سرّه عميق لا يُعرف
+  others: ["بخيل لا يعطي","غنيّ لا تنفد أمواله","لا يزوره أحد"]
+  note: "الدوّاسات: درجات ينزل عليها إلى قاع الجبّ."
+  line: 45144
+  status: draft
+
+- id: w1412
+  kind: blessing
+  prompt: "يقولون لمن ودّع: متل ما ودّعت ___"
+  answer: تلاقي
+  others: ["تسافر","تنسى","تنام"]
+  note: دعاء للمسافر أن يلقى أحبابه عند عودته كما ودّعهم.
+  line: 174868
+  status: draft
+
+- id: w1221
+  kind: simile
+  prompt: متل ___، بيتّاكل نيّ ومشوي ومقلي ومطبوخ
+  answer: البانجان
+  others: ["العدس","الرزّ","البرغل"]
+  note: ولذلك يسمّونه «أبو العيال».
+  line: 20854
+  status: draft
+
+- id: w733
+  kind: idiom
+  prompt: فلان بيجرّ حيط
+  answer: قويّ
+  others: ["بنّاء ماهر","عنيد","بطيء الحركة"]
+  line: 46507
+  status: draft
+
+- id: w1618
+  kind: song
+  prompt: نسيت تعبي يا زغيّر، طعميتك لوز و___ / لكن حظّي المعتّر خلّاك تكبّر عليّا
+  answer: سكّر
+  others: ["عسل","جوز","فستق"]
+  note: أغنية شعبية في العتاب.
+  line: 139571
+  status: draft
+
+- id: w1222
+  kind: simile
+  prompt: نحنا متل بخاش ___، كلّ واحد براي
+  answer: الناي
+  others: ["الغربال","المنخل","الباب"]
+  line: 22170
+  status: draft
+
+- id: w734
+  kind: idiom
+  prompt: فلان جلدة وعضمة
+  answer: هزيل
+  others: ["بخيل","قاسي القلب","قويّ البنية"]
+  line: 47992
+  status: draft
+
+- id: w1413
+  kind: blessing
+  prompt: "يقولون للتوديع: برعاية ___"
+  answer: الرحمن
+  others: ["السلطان","الزمان","الجيران"]
+  note: من عبارات التوديع.
+  line: 76576
+  status: draft
+
+- id: w735
+  kind: idiom
+  prompt: صفّينا عالجنط
+  answer: أفلسنا وساءت حالنا
+  others: ["وصلنا إلى آخر الطريق","اتفقنا بعد خلاف","سهرنا حتى الصبح"]
+  note: "الجنط: دولاب السيارة المعدني، والسيارة لا تمشي بلا كاوتشوك."
+  line: 49222
+  status: draft
+
+- id: w1619
+  kind: song
+  prompt: يا ولد لفّ لك شال، وتعلّم شغلات ___
+  answer: الرجال
+  others: ["الأبطال","العمّال","الجهّال"]
+  note: أغنية شعبية.
+  line: 37433
+  status: draft
+
+- id: w1223
+  kind: simile
+  prompt: فلان متل ___، ما بيعيقا بخش
+  answer: المصفاية
+  others: ["الطنجرة","الجرّة","القربة"]
+  line: 159309
+  status: draft
+
+- id: w736
+  kind: idiom
+  prompt: فلان بيمسّح جوخ
+  answer: يتزلّف ويتملّق
+  others: ["يشتغل خيّاطاً","يلبس أفخر الثياب","يضيّع وقته"]
+  line: 49797
+  status: draft
+  flag: OCR 'فلان چ جوخ' read as بيمسّح جوخ
+
+- id: w1620
+  kind: song
+  prompt: يا رايحين لحلب، حبّي معكن راح / يا محمّلين العنب، فوق العنب ___
+  answer: تفّاح
+  others: ["رمّان","مشمش","دراق"]
+  note: من أشهر الأغاني الشعبية عن حلب.
+  line: 118186
+  status: draft
+
+- id: w737
+  kind: idiom
+  prompt: چنق كنافة وجنبو آفة
+  answer: شيء مغرٍ لكنه محاط بالأذى
+  others: ["أكل كثير وضيوف قليلون","حلو المنظر مرّ الطعم","رزق جاء في غير وقته"]
+  note: "الچنق: الصحن."
+  line: 51629
+  status: draft
+
+- id: w1224
+  kind: simile
+  prompt: متل ___، كلّ ساعة بشان
+  answer: البرخي
+  others: ["أبو بريص","الزلحفة","القنفد"]
+  note: البرخي هو الحرباء، يتلوّن كل ساعة بلون.
+  line: 22975
+  status: draft
+
+- id: w1414
+  kind: blessing
+  prompt: "يقولون لمن طالت غيبته: شفنا لك ___"
+  answer: وحشة
+  others: ["فرحة","قصّة","غلطة"]
+  note: أي اشتقنا إليك.
+  line: 174738
+  status: draft
+
+- id: w738
+  kind: idiom
+  prompt: عدّى الجمل عالحارة وشفّتو مرتخية
+  answer: خاف من قبضايات الحارة
+  others: ["تعب من طول الطريق","لم يجد ما يأكله فيها","أعجبته الحارة فتمهّل"]
+  line: 52217
+  status: draft
+
+- id: w1225
+  kind: simile
+  prompt: لزق فلان عنّا متل ___ وما بقى يروح
+  answer: البزّاقة
+  others: ["النحلة","الفراشة","السنونة"]
+  line: 24461
+  status: draft
+
+- id: w1621
+  kind: song
+  prompt: تفته هندي تفته هندي، شاش حرير يا بنات / افتحي لي يا صبيّة، أنا بايع ___
+  answer: للستّات
+  others: ["للعرايس","للخيّاطات","للخانمات"]
+  note: أغنية على لسان بائع القماش الجوّال.
+  line: 37984
+  status: draft
+
+- id: w739
+  kind: idiom
+  prompt: حيط حوش بيت جدّي حبلان
+  answer: انتفخ وسطه وكاد ينهار
+  others: ["بُني عالياً جداً","مليان شقوق وعشب","وراءه كنز مدفون"]
+  line: 53365
+  status: draft
+
+- id: w740
+  kind: idiom
+  prompt: أنا لا بكاون ولا بلمّ حجار
+  answer: لا أشارك في الخصومة بشيء
+  others: ["لا أشتغل في البناء","لا أملك شيئاً","لا أخاف من أحد"]
+  note: "يقولها الريفي. كاون: تشاجر."
+  line: 53797
+  status: draft
+
+- id: w1415
+  kind: blessing
+  prompt: "يقولون لدى الولادة: مبارك ما أجاكي، إن شا الله تمضي ___ بخير"
+  answer: أربعينك
+  others: ["سنتك","جمعتك","ليلتك"]
+  note: تهنئة الوالدة، والأربعين هي أيام النفاس.
+  line: 152657
+  status: draft
+  flag: OCR 'مضي أربعينك'; restored as تمضي
+
+- id: w1226
+  kind: simile
+  prompt: متل البغل الشموس، بنقدّم لو العليق بيقدّم لنا ___
+  answer: الرفس
+  others: ["الطاعة","الحمل","الصهيل"]
+  line: 117412
+  status: draft
+
+- id: w1622
+  kind: song
+  prompt: رحنا على سوقو، كسرنا صندوقو / قرص العسل في تمّو، هون جابتو ___
+  answer: أمّو
+  others: ["عمّو","ستّو","أختو"]
+  note: من أهزوجة «كرسي كراسي» يهزج بها الأولاد حاملين ولداً على أكفّهم المتشابكة.
+  line: 141541
+  status: draft
+
+- id: w741
+  kind: idiom
+  prompt: أنا ماني قصير حربة
+  answer: لست ضعيف السلاح
+  others: ["لست قليل الصبر","لست صغير السنّ","لست قصير القامة"]
+  line: 54619
+  status: draft
+
+- id: w1227
+  kind: simile
+  prompt: من رعبتو صار وجّو متل ___
+  answer: الليمون
+  others: ["البندورة","الشوندر","الفحم"]
+  line: 151565
+  status: draft
+
+- id: w742
+  kind: idiom
+  prompt: فلان ما بيحلّل ولا بيحرّم
+  answer: لا يتبع أوامر الدين
+  others: ["لا يتدخّل في شيء","لا يعرف الحساب","لا يحلف يميناً"]
+  line: 55038
+  status: draft
+
+- id: w1623
+  kind: song
+  prompt: حلقلاقة زيتونة، بابا جاب لي ليمونة / حطّيتا بالطاقة، أجت عمّي ___
+  answer: السرّاقة
+  others: ["الحلّاقة","الدقّاقة","البرّاقة"]
+  note: يهزج بها الصغار وهم حلقة ممسكين بأيدي بعضهم.
+  line: 41002
+  status: draft
+
+- id: w1416
+  kind: blessing
+  prompt: "يسوّفون الشابّ بقولهم «على عرسك إن شا الله»، ويسوّفون الشيخ بقولهم: على ___ إن شا الله"
+  answer: حجّتك
+  others: ["بيتك","عيدك","دكّانتك"]
+  note: وعد مؤجَّل في صورة دعاء، لكل عمرٍ مناسبته.
+  line: 13051
+  status: draft
+
+- id: w743
+  kind: idiom
+  prompt: إيوه! حشّ حشي حاف
+  answer: تمتّع باللذائذ خالصة
+  others: ["كُل خبزك بلا إدام","اشتغل ولا تتكلم","اصبر على الفقر"]
+  note: يقولونها لمن يتقلّب في النعمة الزائدة.
+  line: 55893
+  status: draft
+  flag: OCR variants زق الحشي حاف / حش حشي حاف
+
+- id: w1228
+  kind: simile
+  prompt: فلان متل بلع ___، إن بلعو دبحو وإن طالعو جرحو
+  answer: الموس
+  others: ["الجمر","الحصرم","الدوا"]
+  line: 46708
+  status: draft
+
+- id: w744
+  kind: idiom
+  prompt: قول لشيخك ينفّض الحصيرة
+  answer: قل له أن يضربك
+  others: ["قل له أن يبدأ الدرس","قل له أن يعطيكم عطلة","قل له أن يزورنا"]
+  note: يقولونها للولد، والشيخ معلّم الكتّاب.
+  line: 56336
+  status: draft
+  flag: OCR 'ينقض الحصيرة' read as ينفّض
+
+- id: w1624
+  kind: song
+  prompt: جبنا العروس وجينا، يا بو العريس ___
+  answer: لاقينا
+  others: ["حاكينا","راضينا","ناسينا"]
+  note: أهزوجة زفّة العروس إلى بيت العريس.
+  line: 44110
+  status: draft
+
+- id: w1229
+  kind: simile
+  prompt: متل ___، بيبني بيتو من قلبو
+  answer: العنكبوت
+  others: ["السنونو","الجردون","اللقلق"]
+  line: 30044
+  status: draft
+
+- id: w745
+  kind: idiom
+  prompt: فلان ما بيعرف الله وين حاطّو
+  answer: ضائع الرشد
+  others: ["لا دين له","غريب عن البلد","مغرور بنفسه"]
+  line: 56533
+  status: draft
+
+- id: w1417
+  kind: blessing
+  prompt: "يقولون للولد: إن شا الله باكل من زردة ___"
+  answer: عرسك
+  others: ["عيدك","بيتك","جارك"]
+  note: الزردة حلوى من الرز تقدَّم في الأعراس.
+  line: 79933
+  status: draft
+  flag: note's description of زردة is general knowledge, not from this line
+
+- id: w746
+  kind: idiom
+  prompt: فلان جلدو عم يحكّو
+  answer: بحاجة إلى الضرب
+  others: ["يريد أن يسافر","مريض","لا يطيق الانتظار"]
+  line: 57069
+  status: draft
+
+- id: w1625
+  kind: song
+  prompt: يا جمّال البوبعة، ايش تعشّيتو امبارحة؟ / خبزة وجبنة ___
+  answer: مالحة
+  others: ["طيّبة","بايتة","حلوة"]
+  note: أهزوجة يهزج بها الأولاد.
+  line: 48637
+  status: draft
+
+- id: w1230
+  kind: simile
+  prompt: متل ___ على حيط، هات حجر هات طين
+  answer: البنّا
+  others: ["النجّار","الدهّان","الحدّاد"]
+  line: 28216
+  status: draft
+
+- id: w747
+  kind: idiom
+  prompt: هالشغلة ما بدّا حكّ رقبة
+  answer: لا تحتاج إلى تفكير
+  others: ["لا تحتاج إلى مال","لا تستحقّ التعب","لا يُخجل منها"]
+  line: 57071
+  status: draft
+
+- id: w1231
+  kind: simile
+  prompt: متل ___ الزحّافي، كلما لو لَوَرا
+  answer: القبقاب
+  others: ["الحصان","الدولاب","المركب"]
+  note: يقال لمن تتراجع حاله يوماً بعد يوم.
+  line: 130188
+  status: draft
+  flag: note is my reading of the sense; book gives no gloss
+
+- id: w1418
+  kind: blessing
+  prompt: صوت الطبل عم يردخ بحارتنا، ___ عندك
+  answer: عقبال
+  others: ["نعيماً","عوافي","خاطرك"]
+  note: يتمنّون لمن يخاطبونه فرحاً مثل الفرح الذي عندهم.
+  line: 106752
+  status: draft
+
+- id: w1626
+  kind: song
+  prompt: حجّ الله يا حجيج الله، دبس وسمنة بالجرّة / باكل أنا والببّو، والبيسة تطلع ___
+  answer: برّا
+  others: ["جوّا","فوق","لعنّا"]
+  note: من مناغاة الأمهات لأطفالهن، والببّو الطفل والبيسة القطّة.
+  line: 90239
+  status: draft
+
+- id: w748
+  kind: idiom
+  prompt: فلان بياكل الحلفا والخلفا
+  answer: يأتي على كل شيء
+  others: ["يأكل قليلاً","يحبّ الحلويات","يأكل من تعب غيره"]
+  note: الحلفا نبات صحراوي، والخلفا ما وراءها.
+  line: 58224
+  status: draft
+
+- id: w749
+  kind: idiom
+  prompt: حمّر لو وجّو بالكلام اللي قال لو ياه
+  answer: أخجله
+  others: ["أغضبه","مدحه كثيراً","ضربه كفّاً"]
+  line: 59200
+  status: draft
+
+- id: w1232
+  kind: simile
+  prompt: متين متل ___
+  answer: التانك
+  others: ["الطيّارة","البابور","الترامواي"]
+  note: التانك هو الدبّابة.
+  line: 31635
+  status: draft
+
+- id: w1627
+  kind: song
+  prompt: الحنّة يا الحنّة يا قطر الندى / شبّاك حبيبي يا عيني جلّاب ___
+  answer: الهوى
+  others: ["الدوا","الضوا","الشتا"]
+  note: من أغاني ليلة الحنّة.
+  line: 59661
+  status: draft
+
+- id: w750
+  kind: idiom
+  prompt: فلان صوفتو حمرا
+  answer: يلفت الانتباه
+  others: ["سريع الغضب","غنيّ","حظّه سيّئ"]
+  line: 59214
+  status: draft
+
+- id: w1419
+  kind: blessing
+  prompt: "إذا قيل له «عذّبناك، الله يعطيك العافية» أجاب: الله يعافيك، عذابك ___"
+  answer: راحة
+  others: ["فرحة","بركة","هديّة"]
+  note: من آدابهم في ردّ الشكر على خدمة.
+  line: 73709
+  status: draft
+
+- id: w1233
+  kind: simile
+  prompt: فلان متل ___ تحت التبن
+  answer: الحيّة
+  others: ["الفارة","البيضة","الجيجة"]
+  line: 60685
+  status: draft
+
+- id: w751
+  kind: idiom
+  prompt: فلان ضرّاب خاشوقة
+  answer: نَهِم يحبّ الأكل
+  others: ["طبّاخ ماهر","كثير الشجار","يتكلم بلا تفكير"]
+  note: "الخاشوقة: الملعقة."
+  line: 61184
+  status: draft
+
+- id: w1628
+  kind: song
+  prompt: قومي وتمختري يا زينة، يا ورد جوّا ___
+  answer: الجنينة
+  others: ["المدينة","السفينة","الخزينة"]
+  note: أغنية شعبية تُغنّى للعروس.
+  line: 49329
+  status: draft
+
+- id: w752
+  kind: idiom
+  prompt: فلان بيطالع جحشتو مالخان
+  answer: ربحه لا يزيد عن أجرة مبيتها
+  others: ["يسافر كل يوم","يبيع ما يملك ليعيش","يهتمّ بدابّته أكثر من أهله"]
+  line: 61607
+  status: draft
+  flag: answer paraphrases book's 'يربح أجر بيتوتها في الخان'
+
+- id: w1234
+  kind: simile
+  prompt: فلان متل الجمّال، ما بيتذكّر ربّو إلا لمّا بيتزحلق ___
+  answer: جملو
+  others: ["جحشو","حصانو","بغلو"]
+  line: 48315
+  status: draft
+
+- id: w753
+  kind: idiom
+  prompt: فلان عم يحكي عن الخلّ والدرج وأمير المؤمنين
+  answer: كلامه لا انسجام فيه
+  others: ["يعرف في كل العلوم","يحكي قصصاً قديمة","يطيل الكلام في السياسة"]
+  line: 64496
+  status: draft
+
+- id: w1420
+  kind: blessing
+  prompt: الله يعطيك العافية، الله ___ العافية
+  answer: يلبّسك
+  others: ["يطعمك","يسقيك","يهديك"]
+  note: دعاء لمن قدّم عملاً، يتمنّون له أن تكسوه العافية.
+  line: 111070
+  status: draft
+
+- id: w1629
+  kind: song
+  prompt: جوز الحمام بنّي، مين يشتريك يا حمام ___
+  answer: منّي
+  others: ["عنّي","هلّق","بكرا"]
+  note: أغنية شعبية.
+  line: 50036
+  status: draft
+
+- id: w1235
+  kind: simile
+  prompt: فلان متل ___، بيحرّك دنبو وما بيخلّي الجيج ينام
+  answer: التعلب
+  others: ["الجحش","الجمل","الخاروف"]
+  line: 37394
+  status: draft
+
+- id: w754
+  kind: idiom
+  prompt: دبحو بقزازة
+  answer: عذّبه
+  others: ["خدعه","غلبه بسهولة","أضحكه كثيراً"]
+  note: "القزازة: قطعة الزجاج."
+  line: 67521
+  status: draft
+
+- id: w755
+  kind: idiom
+  prompt: فلان لسّا ما دخل الدنيا
+  answer: لم يتزوّج بعد
+  others: ["لم يولد بعد","لم يشتغل بعد","لم يسافر بعد"]
+  line: 68153
+  status: draft
+
+- id: w1630
+  kind: song
+  prompt: يا شبّ يا بو السيكارة، دخلك دبّر لي ___
+  answer: چارة
+  others: ["حارة","نارة","شارة"]
+  note: أهزوجة، والچارة هي الحيلة والحلّ.
+  line: 50718
+  status: draft
+
+- id: w1236
+  kind: simile
+  prompt: هدول متل ___، كلّن روس
+  answer: التوم
+  others: ["الخيار","العدس","البقدونس"]
+  line: 43385
+  status: draft
+
+- id: w1421
+  kind: blessing
+  prompt: يكتّر ___ (تقال لمن أحسن)
+  answer: خيرك
+  others: ["حكيك","ضيوفك","شغلك"]
+  note: من آدابهم في الشكر.
+  line: 7206
+  status: draft
+
+- id: w756
+  kind: idiom
+  prompt: فلان ما بيدخل لسانو لحلقو
+  answer: يكثر الكلام
+  others: ["لا يأكل شيئاً","لا يكذب أبداً","لا يذوق الطعام"]
+  line: 68173
+  status: draft
+  flag: meaning taken from the twin idiom at line 58237 (تكثر الكلام)
+
+- id: w1237
+  kind: simile
+  prompt: متل ___ عالجرح
+  answer: المرهم
+  others: ["الحنّة","الكحل","العسل"]
+  line: 156530
+  status: draft
+
+- id: w757
+  kind: idiom
+  prompt: فلان درباس
+  answer: بخيل
+  others: ["قويّ","حارس","عنيد"]
+  note: "الدرباس: مزلاج الباب."
+  line: 68523
+  status: draft
+
+- id: w1631
+  kind: song
+  prompt: تس تك تس تك يا فولة، وعينك سودا و___
+  answer: مكحولة
+  others: ["مغسولة","مشغولة","مجدولة"]
+  note: مناغاة ترقّص بها الأم بنتها.
+  line: 51593
+  status: draft
+
+- id: w758
+  kind: idiom
+  prompt: فلان عم يمشي على دقّة ونصّ
+  answer: يمشي كأنه يرقص
+  others: ["يمشي على مهل","يعرج","يمشي خائفاً"]
+  note: من دقّات الدربكّة.
+  line: 70024
+  status: draft
+
+- id: w1422
+  kind: blessing
+  prompt: "يقول البيّاع حين يقبض ثمن سلعته: ___ عليك"
+  answer: يخلف
+  others: ["يسلّم","يهنّي","ينعم"]
+  note: أي يعوّضك الله ما دفعت، وهي صيغة قديمة وردت في وثيقة من أواخر القرن التاسع الهجري.
+  line: 4850
+  status: draft
+
+- id: w1238
+  kind: simile
+  prompt: واقف فوق راسي متل ___
+  answer: الجلّاد
+  others: ["العطّار","الخيّاط","الطبّاخ"]
+  line: 47886
+  status: draft
+
+- id: w1632
+  kind: song
+  prompt: إن كان ما في ورق لأكتب عَ جناح الطير / وإن كان ما في حبر، بدموع ___
+  answer: عينيّا
+  others: ["قلبي","إيديّا","خدّيّا"]
+  note: أغنية شعبية في الشوق.
+  line: 53172
+  status: draft
+
+- id: w759
+  kind: idiom
+  prompt: فلان نصّ دوقتور
+  answer: تور
+  others: ["نصف متعلّم","طبيب شاطر","ممرّض"]
+  note: نصف كلمة «دوقتور» هو «تور».
+  line: 72201
+  status: draft
+  flag: mild insult pun; check taste
+
+- id: w1239
+  kind: simile
+  prompt: متل الأولاد، زمّارة بتجمعن و___ بتفرّقن
+  answer: عصاية
+  others: ["طبلة","مطرة","صفّارة"]
+  line: 48470
+  status: draft
+
+- id: w760
+  kind: idiom
+  prompt: سلخو كفّ شهّاه عالمشمش
+  answer: احمرّ خدّه من الضربة كالمشمش
+  others: ["باعه بضاعة غالية","أطعمه أكلة طيبة","وعده ولم يفِ"]
+  line: 72879
+  status: draft
+
+- id: w1633
+  kind: song
+  prompt: دوس يا عريسنا، دوس على روس / تحت إجريك دهب ___
+  answer: مكدوس
+  others: ["منقوش","ملبوس","محبوس"]
+  note: هنهونة تُقال للعريس في العرس.
+  line: 53223
+  status: draft
+
+- id: w1423
+  kind: blessing
+  prompt: "يقول البيّاع في أوّل بيعة: ___ مبارك بالصلاة عالنبي"
+  answer: استفتاح
+  others: ["صباح","زبون","ميزان"]
+  note: الاستفتاح أوّل بيعة في النهار، يتفاءل بها البائع.
+  line: 7064
+  status: draft
+
+- id: w761
+  kind: idiom
+  prompt: فلان ذمّتو وسيعة
+  answer: تتسع لكل عمل حسن أو سيّئ
+  others: ["أمين لا يخون","كثير الديون","كريم مع ضيوفه"]
+  line: 73350
+  status: draft
+
+- id: w1240
+  kind: simile
+  prompt: فلان متل ___، ما بيجي إلا بالكسر
+  answer: الجوز
+  others: ["التين","العنب","المشمش"]
+  line: 49960
+  status: draft
+
+- id: w762
+  kind: idiom
+  prompt: فلان ما بيروح عالشيخ
+  answer: عنيد كالولد العنيد
+  others: ["لا يصلّي","جاهل لا يقرأ","لا يحترم الكبار"]
+  note: الشيخ معلّم الكتّاب.
+  line: 73664
+  status: draft
+
+- id: w1634
+  kind: song
+  prompt: طبخ لي عجّور محشي، وقال لي تفضّلي ___
+  answer: تعشّي
+  others: ["تغدّي","كُلي","ذوقي"]
+  note: أهزوجة يهزج بها الأولاد.
+  line: 82053
+  status: draft
+
+- id: w763
+  kind: idiom
+  prompt: راسي مكنسة وإيدي مجرفة
+  answer: أشتغل كثيراً في البيت
+  others: ["لا أملك أدوات الشغل","شعري منكوش","أنا خادمة عند الناس"]
+  note: تقولها المرأة.
+  line: 73988
+  status: draft
+
+- id: w1242
+  kind: simile
+  prompt: بزماننا هادا صرنا متل ___ الجامع، الجديدة لقدّام والعتيقة لَوَرا
+  answer: حصر
+  others: ["قناديل","أباريق","شبابيك"]
+  line: 56346
+  status: draft
+
+- id: w1424
+  kind: blessing
+  prompt: "يقولون لمن يهدي الزهر: إي والله، خضرة بـ___"
+  answer: عمرك
+  others: ["بيتك","دربك","جيبتك"]
+  note: من آدابهم، يأخذ الزهرة فيشمّها ويصلّي على النبي ثم يقولها.
+  line: 117659
+  status: draft
+  flag: OCR 'حضرة بعمرك'; read as خضرة
+
+- id: w764
+  kind: idiom
+  prompt: يا ربّي! مالي غير بابك
+  answer: لا أملك شيئاً
+  others: ["لا أشكو لأحد","أنا يتيم","بيتي بلا باب"]
+  line: 74423
+  status: draft
+
+- id: w1635
+  kind: song
+  prompt: يا يامو أنا مرضانة وبدّي حكيم يداويني / دوا الحكيم ما بينفع شي، شوفة حبيبي ___
+  answer: بتكفّيني
+  others: ["بتبكّيني","بتعمّيني","بتنسّيني"]
+  note: أغنية شعبية.
+  line: 67221
+  status: draft
+
+- id: w1243
+  kind: simile
+  prompt: متل ___، قنطار خشب عَدرهم حلو
+  answer: الخرنوب
+  others: ["التمر","الرمّان","الجوز"]
+  line: 63233
+  status: draft
+
+- id: w765
+  kind: idiom
+  prompt: فلان بيشتغل قوّاس عند ربّنا
+  answer: لا عمل له
+  others: ["يشتغل مؤذّناً","يشتغل بلا أجرة","متديّن كثير الصلاة"]
+  note: "القوّاس: الحارس المرافق."
+  line: 74424
+  status: draft
+
+- id: w766
+  kind: idiom
+  prompt: بدّو يرتي خبصاتو
+  answer: يريد أن يتدارك زلّاته
+  others: ["يريد أن يخيط ثيابه","يريد أن يخفي أمواله","يريد أن يكمل طبخته"]
+  note: "رتى الثوب: رفاه."
+  line: 74775
+  status: draft
+
+- id: w1244
+  kind: simile
+  prompt: متل حمار ___، كلما نادوا صاحبو بيوقف
+  answer: الزيّات
+  others: ["الطحّان","الحطّاب","الفلّاح"]
+  note: بائع الزيت الجوّال يقف كلما ناداه أحد، فاعتاد حماره الوقوف عند كل نداء.
+  line: 58730
+  status: draft
+  flag: note is inferred, not in book
+
+- id: w1425
+  kind: blessing
+  prompt: "يقولون لمن تزحلق على الأرض: اسم الله عليك وعلى ___"
+  answer: أختك
+  others: ["جارتك","خالتك","ستّك"]
+  note: يعتقدون أن لكل إنسان قرينة تولد معه، فيسمّون عليه وعليها.
+  line: 132835
+  status: draft
+
+- id: w1636
+  kind: song
+  prompt: حمادة يا حمادة، سافر بلا ___
+  answer: زوّادة
+  others: ["سجّادة","مخدّة","شهادة"]
+  note: أغنية شعبية.
+  line: 58680
+  status: draft
+
+- id: w767
+  kind: idiom
+  prompt: رخى بنايقو
+  answer: عمد إلى الراحة
+  others: ["غضب وهدّد","بكى","شبع"]
+  note: "البنايق: قطع تُخاط في جانبي الثوب."
+  line: 75216
+  status: draft
+
+- id: w1245
+  kind: simile
+  prompt: هالعيلة متل ___ الحمّام، كلّ فردة شكل
+  answer: قباقيب
+  others: ["مناشف","طاسات","صوابين"]
+  line: 130189
+  status: draft
+
+- id: w768
+  kind: idiom
+  prompt: القرمز رخص
+  answer: قيلت لمن احمرّ وجهه خجلاً
+  others: ["قيلت لمن خسر تجارته","قيلت لمن لبس ثوباً جديداً","قيلت لمن غضب"]
+  note: القرمز صباغ أحمر.
+  line: 75263
+  status: draft
+
+- id: w1637
+  kind: song
+  prompt: طيري وعلّي يا حمامة، وجيبي لي من حبّي ___
+  answer: علامة
+  others: ["غمامة","قضامة","ندامة"]
+  note: أغنية شعبية.
+  line: 59046
+  status: draft
+
+- id: w1426
+  kind: blessing
+  prompt: "يقولون لمن استحسنوا دعاءه: من تمّك لأبواب ___"
+  answer: السما
+  others: ["القلعة","المدينة","الجامع"]
+  note: أي ليصعد دعاؤك من فمك إلى أبواب السماء.
+  line: 40694
+  status: draft
+
+- id: w769
+  kind: idiom
+  prompt: شباب مرباية عالرزّ والمحاشي
+  answer: تربّوا على الرغد
+  others: ["لا يعرفون الطبخ","تربّوا في بيت جدّهم","يحبّون العزايم"]
+  line: 75591
+  status: draft
+  flag: OCR 'عالرزاز والحاشي' read as عالرزّ والمحاشي
+
+- id: w1246
+  kind: simile
+  prompt: قتال الخيّات متل ___ بالديّات
+  answer: الحنّا
+  others: ["الخواتم","الأساور","الشوك"]
+  note: يريدون أنه يزول أثره قريباً، كما تزول الحنّة عن اليدين.
+  line: 59664
+  status: draft
+
+- id: w1638
+  kind: song
+  prompt: يا يامو شوفي وشوفي، والحنّة نقشت ___
+  answer: كفوفي
+  others: ["خدودي","كتوفي","حروفي"]
+  note: من أغاني ليلة الحنّة.
+  line: 59659
+  status: draft
+
+- id: w770
+  kind: idiom
+  prompt: فلان الله يساعدو، مالخشبة للرقبة
+  answer: فقير عنده ثوب واحد
+  others: ["مريض لا يقوم من الفراش","محكوم بالحبس","يشتغل نجّاراً ليل نهار"]
+  note: يأخذ ثوبه عن الخشبة التي يعلّقه عليها فيلبسه.
+  line: 77105
+  status: draft
+
+- id: w1247
+  kind: simile
+  prompt: شوارب فلان متل ___ خان الجمرك
+  answer: درابيس
+  others: ["مفاتيح","قناطر","شبابيك"]
+  note: الدرابيس مزاليج الباب، ودرابيس باب خان الجمرك كبيرة غليظة.
+  line: 61605
+  status: draft
+  flag: note on درابيس is general knowledge, entry gives no gloss here
+
+- id: w771
+  kind: idiom
+  prompt: أبو الخيمة الزرقا
+  answer: الله
+  others: ["البدوي","البحر","الخيّاط"]
+  note: الخيمة الزرقا هي السماء.
+  line: 80118
+  status: draft
+
+- id: w1427
+  kind: blessing
+  prompt: "بعد الدعاء يقولون للداعي: ___ الله"
+  answer: تقبّل
+  others: ["تكرّم","تفضّل","تبارك"]
+  note: يقولونها بلفظها العربي الفصيح.
+  line: 38628
+  status: draft
+
+- id: w1639
+  kind: song
+  prompt: يا جماعة ماني مذنب، كمشوني بعد المغرب / شيخ الحارة قال لي ___
+  answer: بتكدب
+  others: ["بتلعب","بتهرب","بتشرب"]
+  note: أغنية شعبية فكاهية.
+  line: 155474
+  status: draft
+
+- id: w772
+  kind: idiom
+  prompt: فلان ساعة الرحمة بيغيب
+  answer: من نوع الشياطين
+  others: ["لا يحضر الأعراس","قليل الحظ","ينام باكراً"]
+  line: 83630
+  status: draft
+
+- id: w1248
+  kind: simile
+  prompt: إجاه متل ___ الخاطف
+  answer: البرق
+  others: ["السيل","الغيم","الرعد"]
+  line: 64214
+  status: draft
+
+- id: w773
+  kind: idiom
+  prompt: عم يضرب أخماس بأسداس
+  answer: يفكّر بأمور صعبة
+  others: ["يشتغل شغلتين","يضرب الناس بلا سبب","يلعب بالطاولة"]
+  note: كأنه يقوم بعملية حسابية دقيقة.
+  line: 86169
+  status: draft
+
+- id: w1640
+  kind: song
+  prompt: يا بو عريسنا يعلّي الله راياتك / والسعد يرقص ويدبك في ___
+  answer: سراياتك
+  others: ["حاراتك","ساحاتك","بيّاراتك"]
+  note: هنهونة تُقال لأبي العريس.
+  line: 67806
+  status: draft
+
+- id: w1249
+  kind: simile
+  prompt: فلان متل ___ الشتوي، كلّ ما كبر بيخفّ
+  answer: القرع
+  others: ["البطّيخ","التفّاح","الرمّان"]
+  note: يقال لمن يخفّ عقله كلما كبر.
+  line: 131973
+  status: draft
+
+- id: w1000
+  kind: idiom
+  prompt: السماط ممدود
+  answer: الفرصة سانحة والأسباب مهيّأة
+  others: ["الضيوف كثيرون والبيت ضيّق","الأمر انتهى وفات أوانه","الخلاف قديم وطال أمده"]
+  note: السماط سفرة الطعام الممدودة.
+  line: 89754
+  status: draft
+
+- id: w1428
+  kind: blessing
+  prompt: "إذا ضحكوا قالوا: الله يعطينا خير ___"
+  answer: هالضحك
+  others: ["هالسهرة","هالحكي","هالأكل"]
+  note: يقولونها بعد الضحك الكثير، كأنّ الضحك ذنب.
+  line: 66274
+  status: draft
+
+- id: w1001
+  kind: idiom
+  prompt: فلان جبّتو عم بتشحط عالأرض
+  answer: صاحب غنى ويسار
+  others: ["مهمل لا يعتني بهندامه","قصير القامة","متعب من كثرة المشي"]
+  line: 94488
+  status: draft
+
+- id: w1250
+  kind: simile
+  prompt: فلان مصمود ومقزّع عالكرويتة متل ___ بدكّان السكّاف
+  answer: الخفّ
+  others: ["الطربوش","الإبريق","الفانوس"]
+  line: 64339
+  status: draft
+
+- id: w1641
+  kind: song
+  prompt: وسبع سواقي دهب تسقي جنيناتك / وسبع كناين بتحلف، عمّو ___
+  answer: وحياتك
+  others: ["وراياتك","وبركاتك","وخيراتك"]
+  note: هنهونة تُقال لأبي العريس، تتمنّى له سبع كنائن.
+  line: 67808
+  status: draft
+
+- id: w1002
+  kind: idiom
+  prompt: هالمسألة شرّا على بلاط
+  answer: لا رجاء في نجاحها
+  others: ["واضحة لا تحتاج إلى شرح","قديمة يعرفها الجميع","سهلة تنتهي بسرعة"]
+  note: الشرّ عندهم الشرش أي الجذر، والجذر لا ينبت على البلاط.
+  line: 94972
+  status: draft
+  flag: prompt reading 'شرّا' (its root) inferred from the entry شرّ=شرش; check
+
+- id: w1429
+  kind: blessing
+  prompt: الله لا يورّيك القلّة ولا الذلّة ولا جور بيت ___
+  answer: الأحما
+  others: ["الجيران","الأغراب","الشركا"]
+  note: دعاء لفلان بألّا يذوق الفقر ولا الهوان ولا ظلم أهل الزوج.
+  line: 4236
+  status: draft
+  flag: OCR الأها/الأحها; read as الأحما (in-laws)
+
+- id: w1251
+  kind: simile
+  prompt: من كتر ما بكي صارت عيونو متل ___
+  answer: الخوخ
+  others: ["الزيتون","اللوز","الحمّص"]
+  note: أي حمراء منتفخة.
+  line: 65901
+  status: draft
+  flag: gloss inferred
+
+- id: w1004
+  kind: idiom
+  prompt: فلان مشعور
+  answer: عقله غير سليم
+  others: ["كثير الشعر","مرهف الإحساس","يحبّ نظم الشعر"]
+  note: شبّهوه بالآنية التي حدث فيها شَعر أي شقّ رفيع.
+  line: 96197
+  status: draft
+
+- id: w1642
+  kind: song
+  prompt: دقّت طبول الفرح من دخلتك عالدار / والورد فتّح وفاحت ريحة ___
+  answer: الأزهار
+  others: ["العطّار","الأشجار","الأنوار"]
+  note: هنهونة تُقال للعروس في العرس.
+  line: 62313
+  status: draft
+
+- id: w1005
+  kind: idiom
+  prompt: فلان شاكل معلقتو بزنّارو
+  answer: طفيلي يحضر الولائم بلا دعوة
+  others: ["طبّاخ ماهر يُطلب للأعراس","بخيل يأكل وحده","مسافر لا يستقرّ في بلد"]
+  line: 97309
+  status: draft
+  flag: book gloss is the single word 'سلتهجي' (OCR); rendered as freeloader/gate-crasher
+
+- id: w1252
+  kind: simile
+  prompt: عم بيداريه متل العين ___
+  answer: الرمدانة
+  others: ["الكحلا","الزرقا","النعسانة"]
+  line: 66915
+  status: draft
+
+- id: w1006
+  kind: idiom
+  prompt: فلان مشلّط
+  answer: لا يبالي بأي مسؤولية
+  others: ["ممزّق الثياب","سريع الغضب","كثير المال"]
+  line: 97487
+  status: draft
+
+- id: w1643
+  kind: song
+  prompt: والوجه دورة قمر والخدّ يقدح نار / والخصر من رقّتو ما يحمل ___
+  answer: الزنّار
+  others: ["السوار","الخلخال","الشنتيان"]
+  note: هنهونة تُقال للعروس في العرس في وصف جمالها.
+  line: 62315
+  status: draft
+
+- id: w1430
+  kind: blessing
+  prompt: الله يحلّي ريقنا ويكتّر ___
+  answer: زديقنا
+  others: ["رزقنا","ضحكنا","عمرنا"]
+  note: الزديق هو الصديق في لهجة حلب.
+  line: 57393
+  status: draft
+
+- id: w1253
+  kind: simile
+  prompt: القهوة بلا دخان متل الفرشة بلا ___
+  answer: يورغان
+  others: ["مخدّة","شرشف","بساط"]
+  note: اليورغان من التركية، اللحاف.
+  line: 124266
+  status: draft
+
+- id: w1007
+  kind: idiom
+  prompt: صارت المسألة شلّة حرير على شوك
+  answer: تعقّدت وصعب حلّها
+  others: ["صارت ثمينة يتنافس عليها الناس","انحلّت بسهولة ونعومة","انكشفت وعرفها الجميع"]
+  line: 97617
+  status: draft
+  flag: meaning taken from the idiom's own first half (تلخبطت المسألة)
+
+- id: w1644
+  kind: song
+  prompt: الله واسم الله عليكي، والسعد هو أقبل ليكي / وشبّة مع خرزة زرقا، يردّوا العين عن ___
+  answer: عينيكي
+  others: ["خدّيكي","إيديكي","أهاليكي"]
+  note: هنهونة تُقال للعروس في العرس لردّ العين عنها.
+  line: 75353
+  status: draft
+
+- id: w1008
+  kind: idiom
+  prompt: نه شيش نه كباب
+  answer: بلا مغالاة، لا هذا ولا ذاك
+  others: ["لا طعام في البيت إطلاقاً","كل شيء جاهز ومتوفّر","الأمران سواء عندي"]
+  note: مستمدّة من التركية.
+  line: 99717
+  status: draft
+
+- id: w1254
+  kind: simile
+  prompt: هيّ متل ___، شمّا ولا تدعكا
+  answer: الوردة
+  others: ["التفّاحة","الليمونة","السفرجلة"]
+  line: 97731
+  status: draft
+
+- id: w1431
+  kind: blessing
+  prompt: الله يعين كل حيّ على ___
+  answer: بلواه
+  others: ["رزقو","دربو","شغلو"]
+  note: تقال عند سماع مصيبة أصابت غيرهم.
+  line: 11684
+  status: draft
+  flag: note (occasion) is inferred, book gives only the saying
+
+- id: w1009
+  kind: idiom
+  prompt: أنا ما عندي دقن ممشّطة
+  answer: كل الناس عندي سواء
+  others: ["لا وقت عندي للزينة","لا أخاف من أحد","لا أحبّ كثرة الكلام"]
+  line: 101685
+  status: draft
+
+- id: w1645
+  kind: song
+  prompt: عيونك السود أشكيها لشرع الله / وخدودك الحمر، يخزي العين و___
+  answer: ما شا الله
+  others: ["سبحان الله","بسم الله","إن شا الله"]
+  note: هنهونة تُقال للعروس في العرس.
+  line: 63392
+  status: draft
+
+- id: w1255
+  kind: simile
+  prompt: فلان متل دكر النحل، بياكل ___ وبيضيّق المحلّ
+  answer: العسل
+  others: ["البصل","الدبس","الخبز"]
+  line: 70397
+  status: draft
+
+- id: w1010
+  kind: idiom
+  prompt: فلان مصرصر
+  answer: عنده صُرر من الذهب
+  others: ["نحيل الجسم","صوته حادّ مزعج","كثير الحركة لا يهدأ"]
+  line: 101721
+  status: draft
+
+- id: w1012
+  kind: idiom
+  prompt: صلاتو صلاة إبراهيمية
+  answer: صلاته طويلة وخاشعة
+  others: ["صلاته سريعة بلا خشوع","لا يصلّي إلا في العيد","يصلّي في بيته لا في الجامع"]
+  note: نسبة إلى الزاهد إبراهيم بن أدهم.
+  line: 102667
+  status: draft
+
+- id: w1256
+  kind: simile
+  prompt: متل ___، كلّ ما عتق بيتجوهر
+  answer: الدهب
+  others: ["الخبز","الحديد","القماش"]
+  line: 71368
+  status: draft
+
+- id: w1432
+  kind: blessing
+  prompt: الله يجيبك يا طولة ___!
+  answer: البال
+  others: ["العمر","الليل","الدرب"]
+  note: يدعون بالصبر حين يضيق صدرهم.
+  line: 20577
+  status: draft
+
+- id: w1646
+  kind: song
+  prompt: كل الزهور تزهّر كل سنة مرّة / إلا خدودك يا روحي، دوم ___
+  answer: حمرا
+  others: ["خضرا","نضرا","سمرا"]
+  note: هنهونة تُقال للعروس في العرس.
+  line: 63394
+  status: draft
+
+- id: w1014
+  kind: idiom
+  prompt: الطاسة ضايعة
+  answer: فوضى ولا أحد مسؤول
+  others: ["المال قليل والحال ضيّقة","الأمر سرّ لا يعرفه أحد","الوقت فات ولا فائدة"]
+  note: أصلها من ضياع الطاسة في حمّام النسوان.
+  line: 105838
+  status: draft
+
+- id: w1015
+  kind: idiom
+  prompt: فلان مضيّع الغزلة
+  answer: مضطرب الفكر
+  others: ["عاطل عن العمل","فقد ثروته","نسي موعده"]
+  line: 105338
+  status: draft
+
+- id: w1257
+  kind: simile
+  prompt: متل الدهب، عـ___ ببان
+  answer: المحكّ
+  others: ["الميزان","السوق","الضوّ"]
+  note: المحكّ حجر يُحكّ به الذهب ليُعرف صافيه من مغشوشه.
+  line: 71368
+  status: draft
+
+- id: w1647
+  kind: song
+  prompt: يا عريسنا بوجهك نور، والخضر إلك ___
+  answer: ناطور
+  others: ["دستور","منصور","شحرور"]
+  note: هنهونة تُقال للعريس في العرس، تدعو أن يحرسه الخضر.
+  line: 66819
+  status: draft
+
+- id: w1016
+  kind: idiom
+  prompt: طبّل الدنيا وهوه بيحكي عن شهادتو
+  answer: أعلن الأمر بصوت عالٍ للجميع
+  others: ["كذب ولم يصدّقه أحد","أقام عرساً كبيراً","أزعج جيرانه في الليل"]
+  line: 106780
+  status: draft
+
+- id: w1433
+  kind: blessing
+  prompt: الله لا يتقّل فينا أرض ولا يكرّه فينا ___
+  answer: عبد
+  others: ["جار","ضيف","قريب"]
+  note: دعاء بألّا يكونوا ثقلاء على أحد، ويظنّون أنهم يسجعون فيه.
+  line: 38930
+  status: draft
+
+- id: w1258
+  kind: simile
+  prompt: ميّ صافية متل عين ___
+  answer: الديك
+  others: ["السمكة","القطّ","الجمل"]
+  line: 72691
+  status: draft
+
+- id: w1017
+  kind: idiom
+  prompt: فلان مطرطق
+  answer: جرّب الحياة وذاق دواهيها
+  others: ["مفلس لا يملك شيئاً","كثير الضجيج والكلام","ضعيف السمع"]
+  line: 107685
+  status: draft
+
+- id: w1648
+  kind: song
+  prompt: حبيبي غاب وأنا قلبي داب / وصار لو زمان ما بعت لي ___
+  answer: جواب
+  others: ["سلام","خبر","مرسال"]
+  note: أغنية شعبية، والجواب هو الرسالة.
+  line: 66661
+  status: draft
+
+- id: w1018
+  kind: idiom
+  prompt: فلان طقّان قروش
+  answer: غني محشوّ بالمال
+  others: ["مفلس خسر كل ماله","بخيل يعدّ قروشه","يصرف ماله بلا حساب"]
+  line: 108487
+  status: draft
+
+- id: w1259
+  kind: simile
+  prompt: فلان متل الديك، بيأدّن وما ___
+  answer: بيصلّي
+  others: ["بينام","بيطير","بياكل"]
+  line: 72692
+  status: draft
+
+- id: w1434
+  kind: blessing
+  prompt: "دعاء الأمّ لابنها: ___ تنبت لك والسما تبعت لك"
+  answer: الأرض
+  others: ["الجنينة","الكرمة","الشجرة"]
+  note: تتمنّى له الرزق من كل جهة.
+  line: 166860
+  status: draft
+
+- id: w1649
+  kind: song
+  prompt: دومك دومك دومك دوم يا يامو / وخلّي الحلوة تشبع ___
+  answer: نوم
+  others: ["دلال","غنج","لوم"]
+  note: أغنية شعبية.
+  line: 67119
+  status: draft
+  flag: OCR reads 'ولي/ولوا الحلوة تشبع نوم'; 'وخلّي' is my reading
+
+- id: w1019
+  kind: idiom
+  prompt: لا طير يطير ولا وحش يسير
+  answer: أرض صحراوية خالية
+  others: ["ليل هادئ نام فيه الجميع","يوم بارد شديد المطر","سوق كاسدة بلا زبائن"]
+  line: 110112
+  status: draft
+
+- id: w1260
+  kind: simile
+  prompt: فلان متل ___ المرّ، من داق بزق
+  answer: العجّور
+  others: ["البطّيخ","الرمّان","التين"]
+  line: 155529
+  status: draft
+
+- id: w1020
+  kind: idiom
+  prompt: فلان طينتو هيك
+  answer: هكذا فطرته وطبعه
+  others: ["هكذا تربّى في بيت أهله","هذه مهنته منذ صغره","هذا حظّه من الدنيا"]
+  line: 110186
+  status: draft
+
+- id: w1650
+  kind: song
+  prompt: الديب دبدب وجاني، والديب راعي ___
+  answer: الغزلاني
+  others: ["الخرفاني","البستاني","الجيراني"]
+  note: يهزج بها الأولاد في لعبة «سكّة القرد».
+  line: 74143
+  status: draft
+
+- id: w1021
+  kind: idiom
+  prompt: فلان بيخاف من ظلّو
+  answer: جبان
+  others: ["بخيل","كتوم","متشائم"]
+  line: 110433
+  status: draft
+
+- id: w1261
+  kind: simile
+  prompt: متل مأدّن حمص، بينبّه الناس عالصلاة وبيروح ___
+  answer: لشغلو
+  others: ["عالجامع","يصلّي","يتوضّا"]
+  line: 96474
+  status: draft
+
+- id: w1435
+  kind: blessing
+  prompt: "من دعاء الأمّهات لأولادهنّ: تمسك التراب يقلب ___"
+  answer: دهب
+  others: ["فضّة","خبز","ورد"]
+  note: دعاء بالتوفيق والرزق.
+  line: 135651
+  status: draft
+
+- id: w1022
+  kind: idiom
+  prompt: لعب الفار بعبّو
+  answer: انتبه لما يُدبَّر له
+  others: ["فرح فرحاً شديداً","أكله الجوع","ضاع ماله من جيبه"]
+  line: 111407
+  status: draft
+
+- id: w1651
+  kind: song
+  prompt: بعدد نبات الأراضي محبّتي فيكن / بعدد نجوم السما عيني ___
+  answer: تراعيكن
+  others: ["تناديكن","تبكّيكن","تنسّيكن"]
+  note: هنهونة تُقال للأحباب المجتمعين في الفرح.
+  line: 167280
+  status: draft
+
+- id: w1262
+  kind: simile
+  prompt: متل كلب ___، بينام نصّو بالشمس ونصّو بالفي
+  answer: الربيع
+  others: ["الصيف","الشتا","الخريف"]
+  line: 74742
+  status: draft
+
+- id: w1023
+  kind: idiom
+  prompt: فلان بيسلّ الشعرة من العجين
+  answer: شاطر وذكي
+  others: ["خبّاز نظيف في شغله","بخيل يحاسب على القليل","صبور طويل البال"]
+  line: 112495
+  status: draft
+
+- id: w1436
+  kind: blessing
+  prompt: تبرك في العتبة وتكشّ في ___
+  answer: القصبة
+  others: ["الحارة","الدكّانة","السطوح"]
+  note: تدعو به الأمّ أو الجدّة، تريد أن يطول عمره ويكثر نسله.
+  line: 133753
+  status: draft
+
+- id: w1024
+  kind: idiom
+  prompt: عم بيعدّ عليه أنفاسو
+  answer: يراقبه أشدّ المراقبة
+  others: ["يعتني به في مرضه","ينتظر موته ليرثه","يحسده على صحّته"]
+  line: 169632
+  status: draft
+  flag: gloss is at line 112545 (same idiom, garbled there)
+
+- id: w1263
+  kind: simile
+  prompt: رزقك متل ___، وين ما مشيت بيتبعك
+  answer: فيّك
+  others: ["إسمك","كلبك","جارك"]
+  note: الفيّ هو الظلّ.
+  line: 158927
+  status: draft
+
+- id: w1652
+  kind: song
+  prompt: دربكّة يا دربكّة، عمّي سافر على مكّة / جاب لي كعكة شامية، حطّيتا ___
+  answer: بالصينية
+  others: ["بالسلّة","بالخزانة","بالطاقة"]
+  note: أهزوجة يهزج بها الأولاد.
+  line: 68630
+  status: draft
+
+- id: w1025
+  kind: idiom
+  prompt: أشّر لو بالقلم العريض
+  answer: أفهمه بإشارة واضحة لا لبس فيها
+  others: ["شطب اسمه من الحساب","كتب له رسالة طويلة","وبّخه أمام الناس"]
+  line: 114065
+  status: draft
+
+- id: w1264
+  kind: simile
+  prompt: كلّ شغلو فاضي متل رغوة ___
+  answer: الصابون
+  others: ["الحليب","القهوة","البحر"]
+  line: 76752
+  status: draft
+
+- id: w1026
+  kind: idiom
+  prompt: زلمة معصمص
+  answer: بخيل لا خير عنده
+  others: ["نحيل ضعيف البنية","عنيد لا يغيّر رأيه","فقير لا يملك شيئاً"]
+  line: 115242
+  status: draft
+
+- id: w1653
+  kind: song
+  prompt: دندق دندق دندق، يطعموك قشر ___
+  answer: البندق
+  others: ["الفستق","اللوز","الجوز"]
+  note: أهزوجة يهزج بها الأولاد.
+  line: 71025
+  status: draft
+
+- id: w1437
+  kind: blessing
+  prompt: الله يرضى عليك، ___ ينهزّ ويرضى عليك
+  answer: العرش
+  others: ["الجبل","البحر","القمر"]
+  note: من دعاء الأمّهات لأولادهنّ بالرضا.
+  line: 76502
+  status: draft
+
+- id: w1027
+  kind: idiom
+  prompt: هادا من السبعة اللي عقروا الناقة
+  answer: من الأقوياء الدهاة
+  others: ["من الفقراء المساكين","من أقدم أهل الحارة","من أهل التقوى والصلاح"]
+  note: قصّة عقر الناقة في القرآن.
+  line: 116257
+  status: draft
+
+- id: w1265
+  kind: simile
+  prompt: متل سفر ___، روحا ركض ورجعا ركض
+  answer: الكلاب
+  others: ["الجمال","الحجّاج","التجّار"]
+  line: 87419
+  status: draft
+
+- id: w1028
+  kind: idiom
+  prompt: العقربين فوق بعضن
+  answer: الساعة الثانية عشرة
+  others: ["الخصمان يتقاتلان","الدَّين تضاعف","البرد بلغ أشدّه"]
+  note: يريدون عقربَي الساعة.
+  line: 116336
+  status: draft
+
+- id: w1654
+  kind: song
+  prompt: البنت تقول لأمّها يامو ظلمتيني / أوّل خطيب الأجا، ليش ما ___
+  answer: عطيتيني
+  others: ["خبّرتيني","شاورتيني","سألتيني"]
+  note: أغنية شعبية.
+  line: 72886
+  status: draft
+
+- id: w1266
+  kind: simile
+  prompt: متل ___، بسبع أرواح
+  answer: القطاط
+  others: ["الجمال","الحيّات","العصافير"]
+  line: 134409
+  status: draft
+
+- id: w1029
+  kind: idiom
+  prompt: فلان ضاربها ضربة علّاوية
+  answer: يظهر بمظهر أعلى من حقيقته
+  others: ["ربح ربحاً كبيراً دفعة واحدة","سكن في أعلى البناية","ضرب خصمه ضربة قوية"]
+  line: 116889
+  status: draft
+
+- id: w1438
+  kind: blessing
+  prompt: الله يطعمك مراد ___
+  answer: قلبك
+  others: ["جارك","عقلك","جيبك"]
+  note: دعاء لفلان بأن ينال ما يتمنّاه.
+  line: 9168
+  status: draft
+
+- id: w1655
+  kind: song
+  prompt: طراق طنطراق، خاروف محشي معلّق على باب ___
+  answer: الزقاق
+  others: ["الدكّان","الفرن","الخان"]
+  note: أهزوجة يهزج بها الأولاد.
+  line: 61080
+  status: draft
+
+- id: w1030
+  kind: idiom
+  prompt: بعلّمك وباكل من بيتنا
+  answer: أعلّمك مجّاناً
+  others: ["أعلّمك على مهل","أعلّمك وأنا جائع","أعلّمك في بيتك"]
+  line: 117222
+  status: draft
+
+- id: w1267
+  kind: simile
+  prompt: متل جحش السوادي، شايل زبل وماشي ___
+  answer: غندرة
+  others: ["خبب","عرج","ركض"]
+  note: السوادي ناقل الزبل (السماد)، والغندرة مشية التبختر.
+  line: 79397
+  status: draft
+  flag: book OCR reads «وشي غندرة», restored as «وماشي غندرة» (cf. line 121836); gloss of السوادي inferred
+
+- id: w1031
+  kind: idiom
+  prompt: فلان ما بتعرف غزلتو منين
+  answer: لا يُعرف أصله
+  others: ["لا يُعرف مصدر ماله","لا يُفهم كلامه","لا يُعرف مكان بيته"]
+  line: 120868
+  status: draft
+
+- id: w1656
+  kind: song
+  prompt: تس تك تس تك تستاية، بعرسك لأطبخ ___ / وإن عيّروني الجيران لأضربهن بالچمچاية
+  answer: رشتاية
+  others: ["كبّاية","شوربة","ملوخية"]
+  note: من مناغاة الأمهات لأطفالهن، والرشتاية طبخة بالرشتة، والچمچاية المغرفة.
+  line: 76139
+  status: draft
+
+- id: w1439
+  kind: blessing
+  prompt: يطعمك زيارة النبي. — اللي طعمك ___
+  answer: يطعمنا
+  others: ["يسقينا","يسمعنا","يشوفنا"]
+  note: يتمنّى القائل لنفسه مثل ما ناله صاحبه.
+  line: 108214
+  status: draft
+  flag: pairing the two consecutive phrases as wish + reply is my reading
+
+- id: w1268
+  kind: simile
+  prompt: فلان بيمشي بالورب متل ___
+  answer: الزلعطان
+  others: ["الزلحفة","القنفد","الجردون"]
+  note: الزلعطان هو السرطان، يمشي منحرفاً.
+  line: 81386
+  status: draft
+
+- id: w1032
+  kind: idiom
+  prompt: طلعت عليه الفالة
+  answer: عاد عليه عمله بالسوء
+  others: ["جاءه الحظ فجأة","انكشف سرّه للناس","خسر في القرعة"]
+  note: الفالة كبسولة البارود، إذا انفجرت من خلفها أصابت وجه صاحبها.
+  line: 122734
+  status: draft
+  flag: verb is OCR 'طعت'; read as طلعت — check
+
+- id: w1033
+  kind: idiom
+  prompt: فلان عم بيفرك إيد بإيد
+  answer: متحيّر لا يدري ما يفعل
+  others: ["بردان يتدفّأ","فرحان بما ربح","مستعدّ للعراك"]
+  line: 124570
+  status: draft
+
+- id: w1269
+  kind: simile
+  prompt: الزمان متل ___، بيرتفع عند الناقص
+  answer: الميزان
+  others: ["الدولاب","الناعورة","السلّم"]
+  line: 81602
+  status: draft
+
+- id: w1657
+  kind: song
+  prompt: طاطا يا طاطا، صحن السلطة / بيضة على رغيف، قولوا يا ___
+  answer: لطيف
+  others: ["ظريف","شريف","خفيف"]
+  note: أهزوجة يهزج بها الأولاد الصغار.
+  line: 76777
+  status: draft
+
+- id: w1034
+  kind: idiom
+  prompt: إجري وإجرك بالفلق
+  answer: كلانا في المصيبة سوا
+  others: ["نحن شريكان في الربح","سبقتني وسبقتك","أنا وأنت خصمان"]
+  note: الفلق خشبة تُشدّ بها الأرجل للضرب.
+  line: 127403
+  status: draft
+
+- id: w1440
+  kind: blessing
+  prompt: "يدعون لفلان أن يحجّ فيقولون: ___ حجّة"
+  answer: يطعمك
+  others: ["يلبّسك","يسمّعك","يكتّبك"]
+  note: يطعمك هنا بمعنى يرزقك.
+  line: 53942
+  status: draft
+
+- id: w1270
+  kind: simile
+  prompt: هجم عليه متل ما بيهجم ___ عالعنب
+  answer: الزنبوط
+  others: ["الخلد","الضفدع","البرغش"]
+  note: الزنبوط هو الدبّور.
+  line: 81986
+  status: draft
+
+- id: w1035
+  kind: idiom
+  prompt: لحّق الحبل بالقادوس
+  answer: أتبع الأمر بما يلزمه
+  others: ["أضاع كل شيء دفعة واحدة","وصل متأخّراً عن موعده","ربط خصمه وقيّده"]
+  note: القادوس وعاء الناعورة المربوط بالحبل.
+  line: 128667
+  status: draft
+  flag: OCR 'لمق'; read as لحّق
+
+- id: w1658
+  kind: song
+  prompt: زوروني بالسنة مرّة، حرام تنسوني ___
+  answer: بالمرّة
+  others: ["هالمرّة","من برّا","يا خوتي"]
+  note: أغنية مشهورة شاعت في حلب.
+  line: 79129
+  status: draft
+
+- id: w1036
+  kind: idiom
+  prompt: فلان قاق
+  answer: حريص لا يُستفاد من خيره
+  others: ["كثير الكلام والصياح","يتشاءم منه الناس","أسمر اللون"]
+  note: القاق هو الغراب، ولحمه لا يؤكل.
+  line: 129307
+  status: draft
+
+- id: w1271
+  kind: simile
+  prompt: هادا متل اللي بيحطّ ___ عضهر البقر
+  answer: السرج
+  others: ["الجرس","الطربوش","البرنيطة"]
+  note: يقال في العمل الذي ليس في محلّه.
+  line: 86446
+  status: draft
+
+- id: w1037
+  kind: idiom
+  prompt: هزّازين القاووق ما أكترن بهالزمان!
+  answer: المتملّقون الموافقون على كل شيء
+  others: ["المتكبّرون على الناس","المشايخ والعلماء","الراقصون في الأعراس"]
+  note: القاووق غطاء رأس قديم، وهزّه إحناء الرأس تصديقاً.
+  line: 129699
+  status: draft
+
+- id: w1441
+  kind: blessing
+  prompt: الله لا يضيّع لك ___
+  answer: تعب
+  others: ["مفتاح","درب","دفتر"]
+  note: دعاء لمن اجتهد في عمل أو خدمة.
+  line: 36997
+  status: draft
+
+- id: w1659
+  kind: song
+  prompt: ها ها حصّنتك بياسين، ها ها يا زهر ___
+  answer: البساتين
+  others: ["الرياحين","الياسمين","الميادين"]
+  note: هنهونة لتحصين العروسين من العين.
+  line: 82260
+  status: draft
+
+- id: w1038
+  kind: idiom
+  prompt: أخد المسألة على قفا الكيل
+  answer: لم يهتمّ بالأمر
+  others: ["حسبها بدقّة شديدة","غشّ في الميزان","حملها فوق طاقته"]
+  line: 135213
+  status: draft
+
+- id: w1272
+  kind: simile
+  prompt: فلان متل ___، متى طلع مالميّ بيموت
+  answer: السمك
+  others: ["الضفدع","البطّ","الزلحفة"]
+  line: 90157
+  status: draft
+
+- id: w1039
+  kind: idiom
+  prompt: فلان أضافيرو طالت، بدّي أقلّم لو ياها
+  answer: تجاوز حدّه وسأوقفه عنده
+  others: ["أهمل نفسه وسأعتني به","كبر وصار يحتاج من يخدمه","اغتنى وسأطلب منه ديني"]
+  line: 136087
+  status: draft
+
+- id: w1660
+  kind: song
+  prompt: كيل حنطة كيل شعير، كيل معبّى بالزنبيل / كيل لبيت السلطان، كيل لبيت ___
+  answer: الوزير
+  others: ["القاضي","المختار","الجيران"]
+  note: يهزج بها ولدان يحملان زنبيلاً فارغاً.
+  line: 146738
+  status: draft
+
+- id: w1273
+  kind: simile
+  prompt: فلان مع شريكو متل السمن و___
+  answer: العسل
+  others: ["الزيت","البصل","الخلّ"]
+  line: 90232
+  status: draft
+
+- id: w1442
+  kind: blessing
+  prompt: الله ___ عنك الأخبار الطيّبة
+  answer: يسمّعنا
+  others: ["يخبّي","يبعّد","يقطع"]
+  note: دعاء لفلان بأن تكون أخباره كلها خيراً.
+  line: 90068
+  status: draft
+
+- id: w1040
+  kind: idiom
+  prompt: «أش عم تشتغل؟» — «قوّاس عند الله»
+  answer: لا شغل له
+  others: ["حارس في الجامع","صيّاد ماهر","شغله سرّ لا يبوح به"]
+  line: 137705
+  status: draft
+  flag: dialogue reconstructed; the question part is garbled in OCR
+
+- id: w1661
+  kind: song
+  prompt: هزّي هزّي هزّي محرمتك / الساعة ستّة، قومي اتبعي ___
+  answer: معلّمتك
+  others: ["رفيقتك","حماتك","جارتك"]
+  note: أغنية شعبية.
+  line: 83636
+  status: draft
+
+- id: w1041
+  kind: idiom
+  prompt: اطلاع من هالقوانات
+  answer: دعنا من مزاعمك المكرّرة
+  others: ["اخرج من هذه الورطة","اترك هذه الصنعة","غيّر هذه الثياب"]
+  note: القوانة أسطوانة الغناء التي تعيد الكلام نفسه.
+  line: 137757
+  status: draft
+
+- id: w1274
+  kind: simile
+  prompt: فلان متل ___، كلّ ما أكل قتلة بيسمن
+  answer: الغرير
+  others: ["الجمل","الديك","الغزال"]
+  note: الغرير حيوان من فصيلة ابن عرس.
+  line: 90323
+  status: draft
+
+- id: w1042
+  kind: idiom
+  prompt: داس على كراعيبو
+  answer: تغلّب عليه
+  others: ["لحق به مسرعاً","اعتذر منه","آذاه دون قصد"]
+  note: أصلها أن كلّاً من العروسين يحاول أن يدوس قدم الآخر ليغلبه.
+  line: 141653
+  status: draft
+
+- id: w1443
+  kind: blessing
+  prompt: الله يقشعك ___
+  answer: الخير
+  others: ["الدرب","الباب","النوم"]
+  note: يقشعك أي يُريك، من «قشع» بمعنى رأى.
+  line: 133456
+  status: draft
+
+- id: w1275
+  kind: simile
+  prompt: إنته متل ___، بتحضر شهر وبتغيب سنة
+  answer: الورد
+  others: ["القمر","الشمس","النجم"]
+  line: 91001
+  status: draft
+
+- id: w1662
+  kind: song
+  prompt: بإيدي علّقت المنخل، اقليب السقّاطة و___
+  answer: ادخل
+  others: ["انزل","اقفل","اسأل"]
+  note: مناغاة تقولها الأم مشيرة بيدها ليقلّدها الطفل.
+  line: 117041
+  status: draft
+
+- id: w1043
+  kind: idiom
+  prompt: فلان رصرص الكعب
+  answer: أثرى من المال الحرام
+  others: ["ثبت في مكانه لا يتحرّك","ربح في لعب الكعاب","تعب من طول الوقوف"]
+  note: أصله تثقيل الكعب بالرصاص للغشّ في اللعب.
+  line: 143081
+  status: draft
+
+- id: w1044
+  kind: idiom
+  prompt: كترت الكماية وصارت عأدناب الكلاب
+  answer: كثُر الشيء حتى فقد قيمته
+  others: ["غلا الشيء حتى عجز عنه الناس","ضاع الشيء ولم يجده أحد","فسد الشيء من طول الخزن"]
+  line: 144302
+  status: draft
+
+- id: w1276
+  kind: simile
+  prompt: شوفتك هدايا متل مطر ___
+  answer: نيسان
+  others: ["كانون","شباط","تمّوز"]
+  line: 93211
+  status: draft
+
+- id: w1663
+  kind: song
+  prompt: عالتكنينا نيناتا، وسكّر بين سنيناتا / يا ربّي تكبر بنتي لناكل من ___
+  answer: دياتا
+  others: ["خبزاتا","طبخاتا","كبّاتا"]
+  note: من مناغاة الأمهات لأطفالهن، ودياتا أي يديها.
+  line: 90563
+  status: draft
+
+- id: w1444
+  kind: blessing
+  prompt: الله يكون بـ___
+  answer: عونك
+  others: ["دربك","بيتك","جيبك"]
+  note: دعاء لفلان بالعون على ما هو فيه.
+  line: 118894
+  status: draft
+
+- id: w1045
+  kind: idiom
+  prompt: فلان كلبتون
+  answer: يتمسّك بالشيء فلا يتركه
+  others: ["شرس يعضّ بلسانه","وفيّ لأصحابه","ينبش عن عيوب الناس"]
+  note: الكلبتون ملقط كبير.
+  line: 144406
+  status: draft
+
+- id: w1277
+  kind: simile
+  prompt: متل ___، بيعير وبيستعير وبيتمّ ناقص
+  answer: شباط
+  others: ["رمضان","كانون","نيسان"]
+  note: يزعمون أنه أعار آب يوماً واستعار من آذار ثلاثة أيام ليُهلك العجوز.
+  line: 93847
+  status: draft
+
+- id: w1046
+  kind: idiom
+  prompt: ضرب كمّ
+  answer: حصل على الشيء بالحيلة والسرقة
+  others: ["شمّر عن ساعديه للعمل","ضرب خصمه بطرف ثوبه","أخفى سرّه عن الناس"]
+  note: كان بعض السرّاق يخفي في كمّه ماسورة يغرف بها من بضاعة العطّار.
+  line: 144786
+  status: draft
+
+- id: w1664
+  kind: song
+  prompt: لا تقول سيگا ولا ميگا، بنات اليوم ___
+  answer: أنتيكا
+  others: ["أمريكا","موسيقا","بلاستيكا"]
+  note: أغنية شعبية مرحة، والأنتيكا التحفة النادرة.
+  line: 92623
+  status: draft
+
+- id: w1047
+  kind: idiom
+  prompt: فلان صارف كمبيالتو
+  answer: شاخ وقارب آخر العمر
+  others: ["وفى كل ديونه","أفلس وباع دكانه","قبض ماله وسافر"]
+  line: 144939
+  status: draft
+
+- id: w1278
+  kind: simile
+  prompt: هيّن متل شربة ___
+  answer: الميّ
+  others: ["الدوا","الشاي","العيران"]
+  line: 95191
+  status: draft
+
+- id: w1445
+  kind: blessing
+  prompt: الله يفتح عليك فتوح ___
+  answer: العارفين
+  others: ["التجّار","السلاطين","الفاتحين"]
+  note: دعاء بالفهم والبصيرة، والعارفون أهل المعرفة بالله.
+  line: 122972
+  status: draft
+
+- id: w1048
+  kind: idiom
+  prompt: فلان معدتو كوسلة
+  answer: معدته قوية متينة
+  others: ["معدته ضعيفة تتعبه","لا يشبع مهما أكل","لا يأكل إلا القليل"]
+  note: الكوسلة جلد متين.
+  line: 146067
+  status: draft
+
+- id: w1665
+  kind: song
+  prompt: يا غزالي كيف عنّي أبعدوك / شتّتوا شملي وهجري ___
+  answer: عوّدوك
+  others: ["علّموك","حمّلوك","ورّثوك"]
+  note: من الموشّحات التي تُغنّى في حلب.
+  line: 94313
+  status: draft
+
+- id: w1279
+  kind: simile
+  prompt: فلان متل ___، ما بتهدّي إلا عالفطايس
+  answer: الشوحة
+  others: ["السنونة","الحمامة","البلبل"]
+  note: الشوحة هي الحدأة.
+  line: 126309
+  status: draft
+
+- id: w1049
+  kind: idiom
+  prompt: وصل الكيل لحدّو
+  answer: لم يبقَ مجال للتحمّل
+  others: ["تمّ البيع وانتهى","امتلأ البيت بالمؤونة","بلغ الولد سنّ الرشد"]
+  line: 146747
+  status: draft
+
+- id: w1050
+  kind: idiom
+  prompt: يا گناها يا وراها
+  answer: إمّا أن تنجح القضية أو لا
+  others: ["لا فرق بين الحلّين","الأمر مؤجّل إلى حين","كل شيء بوقته"]
+  note: الگنا هو القنا أي الرمح.
+  line: 147578
+  status: draft
+
+- id: w1666
+  kind: song
+  prompt: نامي يا بنتي نامي، قبل ما يجي ___ / وياخد حلقك من أدنك، ويشلّحك جوز الصرامي
+  answer: الحرامي
+  others: ["الضبع","العسكر","البرد"]
+  note: تهويدة تنيّم بها الأم بنتها.
+  line: 101964
+  status: draft
+
+- id: w1446
+  kind: blessing
+  prompt: الله يخلّيك ويخلّي لك ولادك، ويخلّي لك الـ___
+  answer: بتحبّو
+  others: ["بتعرفو","بتشوفو","بتسمعو"]
+  note: دعاء لفلان ولكل من يحبّ.
+  line: 64552
+  status: draft
+
+- id: w1280
+  kind: simile
+  prompt: متل ___ بالعين
+  answer: الشوكة
+  others: ["الكحلة","الدمعة","النومة"]
+  line: 99105
+  status: draft
+
+- id: w1051
+  kind: idiom
+  prompt: فلان بيلقط من الهوا
+  answer: ذكي سريع الفهم
+  others: ["فقير يعيش من الصدقة","خفيف اليد يسرق","يصدّق كل ما يسمع"]
+  line: 150430
+  status: draft
+
+- id: w1281
+  kind: simile
+  prompt: فلان متل ___، بيكدّب عينو وبيصدّق أدنو
+  answer: الضبع
+  others: ["التعلب","الديب","الأرنب"]
+  note: أصله أن صيّاد الضباع يدخل وكر الضبع وهو يسأل «أم عامر هون؟» كأنه لا يراها، فتطمئنّ حتى يقيّدها.
+  line: 104267
+  status: draft
+
+- id: w1667
+  kind: song
+  prompt: عوّج الطاگية وگال لي، غنّي لي ___
+  answer: غنّيوة
+  others: ["عتابا","قصيدة","موّال"]
+  note: أغنية شعبية على لهجة البدو.
+  line: 106024
+  status: draft
+
+- id: w1052
+  kind: idiom
+  prompt: فلان اللقمة اللي بتمّو ما هي إلو
+  answer: كريم
+  others: ["جوعان","مديون","طمّاع"]
+  line: 150517
+  status: draft
+
+- id: w1447
+  kind: blessing
+  prompt: "إذا حدا قال «عشايي بامة» قالوا: تسلم لي ها___"
+  answer: القامة
+  others: ["الطلّة","الضحكة","العين"]
+  note: من ملاطفاتهم، يسجعون القامة على البامة.
+  line: 137733
+  status: draft
+
+- id: w1053
+  kind: idiom
+  prompt: فلان مغبّر منك
+  answer: زعلان منك
+  others: ["أفقر منك","أكبر منك سنّاً","خائف منك"]
+  line: 161173
+  status: draft
+
+- id: w1282
+  kind: simile
+  prompt: واقف متل عامود ___
+  answer: سرمدا
+  others: ["الباب","منبج","عزاز"]
+  note: في سرمدا غربي حلب عمود أثري قديم ما زال قائماً.
+  line: 111258
+  status: draft
+  flag: note is general knowledge, not from the entry
+
+- id: w1668
+  kind: song
+  prompt: هبلن طقطق، أكل المحشي وخلّى ___
+  answer: اليبرق
+  others: ["الكبّة","الرز","المرق"]
+  note: أهزوجة يهزج بها الأولاد.
+  line: 171957
+  status: draft
+
+- id: w1054
+  kind: idiom
+  prompt: فلان ما بيموت لو ميّت
+  answer: لا يضيع له حق
+  others: ["لا أهل له ولا أقارب","لا يحزن على أحد","لا يزور المرضى"]
+  line: 165654
+  status: draft
+
+- id: w1283
+  kind: simile
+  prompt: متل ___، لا لو وجّ ولا لو قفا
+  answer: العدس
+  others: ["الرغيف","المخدّة","القرش"]
+  line: 174595
+  status: draft
+
+- id: w1055
+  kind: idiom
+  prompt: إن تاجرنا بالأكفان بتبطّل الناس تموت
+  answer: حظّنا سيّئ
+  others: ["تجارتنا رابحة دائماً","نحن لا نحبّ التجارة","الناس تحبّنا كثيراً"]
+  line: 166328
+  status: draft
+
+- id: w1448
+  kind: blessing
+  prompt: يخزي ___ عنك
+  answer: العين
+  others: ["البرد","التعب","النعس"]
+  note: دعاء بأن يُردّ الحسد عن المخاطَب.
+  line: 119292
+  status: draft
+  flag: lines 119292-3 partly garbled; 'يخزي العين عنك' reconstructed from 'يخزي العين ... يرد ... عنك'
+
+- id: w1669
+  kind: song
+  prompt: عصفوري علّى وعلّى، وهدّى عَ بيت ___
+  answer: الملّا
+  others: ["الباشا","القاضي","الجيران"]
+  note: أغنية شعبية.
+  line: 115192
+  status: draft
+
+- id: w1056
+  kind: idiom
+  prompt: عم يمشي على دقّة ونصّ
+  answer: يتمايل في مشيه كالراقص
+  others: ["يمشي ببطء شديد","يعرج في مشيه","يمشي على رؤوس أصابعه"]
+  line: 168796
+  status: draft
+  flag: OCR 'دقة زنض'; read as دقّة ونصّ — check
+
+- id: w1284
+  kind: simile
+  prompt: كأنّو فصّ ___ وداب
+  answer: ملح
+  others: ["شمع","كافور","بخور"]
+  note: يقال لمن طلبوه فما وجدوه.
+  line: 162973
+  status: draft
+
+- id: w1057
+  kind: idiom
+  prompt: راح وإيدو بالهوا تفتل
+  answer: هرب راكضاً
+  others: ["رجع خائباً بلا شيء","ودّع أهله وسافر","مشى متكبّراً"]
+  line: 173421
+  status: draft
+  flag: book has 'إيدو بالهوا تفتل (هرب، ركض)'; 'راح و' added for readability
+
+- id: w1670
+  kind: song
+  prompt: حوّل يا غنّام حوّل، بات الليلة ___
+  answer: هين
+  others: ["بعيد","جوعان","سهران"]
+  note: أغنية شعبية بدوية مشهورة، وهين أي هنا.
+  line: 121801
+  status: draft
+  flag: OCR 'ول غتام! تول بات الليلة هين'; first half restored from line 60343
+
+- id: w1285
+  kind: simile
+  prompt: "متل يوم ___، كلّ مين بيقول: يا نفسي"
+  answer: القيامة
+  others: ["العيد","الجمعة","العرس"]
+  line: 129372
+  status: draft
+
+- id: w1449
+  kind: blessing
+  prompt: يا من سترت لا ___
+  answer: تفضح
+  others: ["تنسى","تبعد","ترجع"]
+  note: دعاء بدوام الستر.
+  line: 85360
+  status: draft
+
+- id: w1058
+  kind: idiom
+  prompt: عم بيعمل طواحين في الهوا
+  answer: يبني مشاريع خيالية وهمية
+  others: ["يتعب في عمل نافع","يكثر من الكلام والجدال","يلوّح بيديه غاضباً"]
+  line: 173422
+  status: draft
+
+- id: w1059
+  kind: idiom
+  prompt: ورّقت معو
+  answer: انهال بالشتائم كورق الخريف
+  others: ["ربح مالاً كثيراً","بدأ يتحسّن حاله","كتب رسائل كثيرة"]
+  line: 175296
+  status: draft
+
+- id: w1671
+  kind: song
+  prompt: أنا وحبيبي في جنينة، والورد ___ علينا
+  answer: خيّم
+  others: ["فتّح","نزل","ضحك"]
+  note: أغنية شعبية.
+  line: 66488
+  status: draft
+
+- id: w1286
+  kind: simile
+  prompt: رحنا لبيت فيه لعبة، الليرات عالطاولة متل ___
+  answer: القضامة
+  others: ["الزبيب","الفحم","الملح"]
+  note: يريدون كثرة الليرات على طاولة القمار.
+  line: 134282
+  status: draft
+  flag: book has an unclear word «بكرا» after «لعبة», dropped
+
+- id: w1060
+  kind: idiom
+  prompt: عرجان الجمل من تمّو
+  answer: أذاه جاءه من طمعه
+  others: ["مرضه قديم لا علاج له","يتظاهر بالضعف ليرتاح","أكل حتى ثقل عن المشي"]
+  note: رعى في أرض غير صاحبه فرُمي بحجر أصاب رجله.
+  line: 113270
+  status: draft
+  flag: answer is my summary of the book's story-gloss
+
+- id: w1450
+  kind: blessing
+  prompt: الله يلطف بـ___
+  answer: المقدور
+  others: ["المنظور","الموجود","المشهور"]
+  note: دعاء بأن يخفّف الله ما قُدّر.
+  line: 149768
+  status: draft
+
+- id: w1287
+  kind: simile
+  prompt: قاعد متل قفّة ___
+  answer: الهمّ
+  others: ["العنب","التين","الفحم"]
+  line: 135386
+  status: draft
+
+- id: w1061
+  kind: idiom
+  prompt: قطع راس القطّ من أول ليلة
+  answer: حسم الفساد من أول حدوثه
+  others: ["أضاع الفرصة من بدايتها","تشاءم من أول يوم","أسرف في ليلة عرسه"]
+  line: 151468
+  status: draft
+  flag: gloss is at line 73988 (entry راس)
+
+- id: w1672
+  kind: song
+  prompt: تحت فيّ الياسمين / نقطف الورد على أمّو، والعواذل ___
+  answer: نايمين
+  others: ["شايفين","غايبين","واقفين"]
+  note: أغنية شعبية.
+  line: 134967
+  status: draft
+
+- id: w1063
+  kind: idiom
+  prompt: «مخدّات البطن»
+  answer: القرع المحشي
+  others: ["الكبّة المشويّة","أرغفة الخبز السخن","أقراص المعمول"]
+  note: لقب أطلقوه على هذه الأكلة.
+  line: 154656
+  status: draft
+
+- id: w1288
+  kind: simile
+  prompt: متل ___، بيحضر وبيغيب
+  answer: القمر
+  others: ["الجبل","النهر","الحيط"]
+  line: 136359
+  status: draft
+
+- id: w1673
+  kind: song
+  prompt: عاللوبية عاللوبية، يا ما أحلى ___
+  answer: العزوبية
+  others: ["الحرّية","الصبحية","الطفولية"]
+  note: أغنية شعبية مرحة.
+  line: 146714
+  status: draft
+
+- id: w1064
+  kind: idiom
+  prompt: «كراسي الخدود»
+  answer: الوجنات
+  others: ["الأذنان","الحاجبان","الشفتان"]
+  note: لأن الكرسي يُستراح عليه.
+  line: 141545
+  status: draft
+
+- id: w1451
+  kind: blessing
+  prompt: الله يفرّج كربنا وكرب كل ___
+  answer: مخلوق
+  others: ["مسافر","مديون","جوعان"]
+  note: "وبعضهم يقول: وكرب أمّة محمد."
+  line: 141191
+  status: draft
+
+- id: w1065
+  kind: idiom
+  prompt: فلان شايل السلّم بالعرض
+  answer: يعاند ويعقّد الأمور
+  others: ["يساعد كل الناس","يشتغل في البناء","يتعب أكثر من غيره"]
+  line: 89351
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1289
+  kind: simile
+  prompt: متل اللي عم بيتدفّا على ___ المادنة
+  answer: قناديل
+  others: ["درج","حجار","هلال"]
+  line: 137134
+  status: draft
+
+- id: w1674
+  kind: song
+  prompt: يا لابسة الأبيض على التفّاحي / عند الحليوة راحت ___
+  answer: الأرواح
+  others: ["الأفراح","الأتراح","الجراح"]
+  note: أغنية شعبية غزلية.
+  line: 148507
+  status: draft
+
+- id: w1066
+  kind: idiom
+  prompt: فلان صفر عالشمال
+  answer: لا قيمة له ولا تأثير
+  others: ["أعسر يكتب بيساره","مفلس لا مال معه","الأول في كل شيء"]
+  line: 97813
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1290
+  kind: simile
+  prompt: قوام متل عود ___
+  answer: الخيزران
+  others: ["الكبريت","الحطب","التين"]
+  line: 137734
+  status: draft
+
+- id: w1452
+  kind: blessing
+  prompt: الله لا يلوّع لنا كبد ولا يعرّي لنا ___
+  answer: جسد
+  others: ["ضهر","راس","كتف"]
+  note: دعاء بألّا يذوقوا حرقة ولا عوزاً.
+  line: 151172
+  status: draft
+  flag: full saying continues 'ولا يعجّي لنا ولد' (orphaning); truncated on purpose
+
+- id: w1067
+  kind: idiom
+  prompt: فلان فلتانة معو البراغي
+  answer: تصرّفاته غير متّزنة
+  others: ["دكانه خربانة","مريض في مفاصله","ماله ضائع"]
+  line: 127160
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1675
+  kind: song
+  prompt: أوّل عشرة محبوبي، هداني خاتم ___
+  answer: ألماس
+  others: ["فضّة","دهب","ياقوت"]
+  note: أغنية شعبية.
+  line: 148182
+  status: draft
+
+- id: w1068
+  kind: idiom
+  prompt: ضرب عصفورين بحجر
+  answer: حقّق غرضين بعمل واحد
+  others: ["أخطأ الهدف مرّتين","ظلم بريئين معاً","خسر كل ما معه"]
+  line: 115184
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1291
+  kind: simile
+  prompt: "فتح كفّو متل ___ وقال: هات"
+  answer: المغرفة
+  others: ["المقصّ","الإبرة","السكّينة"]
+  line: 143349
+  status: draft
+
+- id: w1069
+  kind: idiom
+  prompt: فلان عم بيلعب عالحبلين
+  answer: يساير الطرفين المتخاصمين معاً
+  others: ["يخاطر بحياته","يشتغل في مهنتين","يضيّع وقته باللهو"]
+  line: 149874
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1676
+  kind: song
+  prompt: يا ريتني منديل بعبّك، دايماً بسمع دقّة ___
+  answer: قلبك
+  others: ["بابك","كعبك","دفّك"]
+  note: أغنية شعبية غزلية.
+  line: 164137
+  status: draft
+  flag: OCR 'دا بسمع دقة قلبك'; 'دايماً' is my reading
+
+- id: w1453
+  kind: blessing
+  prompt: الله لا يسلّط علينا لا حكيم ولا ___
+  answer: حاكم
+  others: ["عالم","تاجر","جار"]
+  note: الحكيم هو الطبيب، أي يدعون بألّا يحتاجوا إلى طبيب ولا إلى صاحب سلطة.
+  line: 57326
+  status: draft
+
+- id: w1292
+  kind: simile
+  prompt: حبّ متل مناقير ___
+  answer: القطا
+  others: ["الديك","اللقلق","البطّ"]
+  note: يقولونه في الحنطة الجيدة الكبيرة الحبّ.
+  line: 147339
+  status: draft
+
+- id: w1070
+  kind: idiom
+  prompt: فلان بوجّين ولسانين
+  answer: منافق
+  others: ["ثرثار","فصيح","متعلّم"]
+  line: 149490
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1071
+  kind: idiom
+  prompt: فلان براسو موّال بدّو يغنّيه
+  answer: مصمّم على أمر في نفسه
+  others: ["صوته جميل","يشكو من الصداع","فرحان بلا سبب"]
+  line: 121790
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1293
+  kind: simile
+  prompt: شقد تقيل، متل ___ عالقلب
+  answer: اللبخة
+  others: ["المخدّة","الريشة","الوردة"]
+  note: يقال في الثقيل الدم الكريه.
+  line: 148446
+  status: draft
+
+- id: w1677
+  kind: song
+  prompt: غزلان ما في ببلدنا، وهالغزالة ___؟
+  answer: منين
+  others: ["لمين","وين","شلون"]
+  note: هنهونة تُقال للعروس في العرس إعجاباً بجمالها.
+  line: 164491
+  status: draft
+
+- id: w1072
+  kind: idiom
+  prompt: فلان ما بيفرّق بين الألف والمادنة
+  answer: شديد الجهل
+  others: ["ضعيف النظر","لا يدخل الجامع","يعامل الناس بالعدل"]
+  line: 151956
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1454
+  kind: blessing
+  prompt: الخبز، الله لا يجعلو ___
+  answer: شهوة
+  others: ["عادة","فرجة","قصّة"]
+  note: دعاء بألّا يأتي يوم يشتهون فيه الخبز فلا يجدونه.
+  line: 98650
+  status: draft
+
+- id: w1294
+  kind: simile
+  prompt: عليه لسان متل مقصّ ___
+  answer: السكّاف
+  others: ["الخبّاز","الصيّاد","الحمّال"]
+  line: 149496
+  status: draft
+
+- id: w1678
+  kind: song
+  prompt: يا معلّم يا معلّم، علّمني ___ يا معلّم
+  answer: الكار
+  others: ["الخطّ","الغنا","الصبر"]
+  note: أغنية شعبية، والكار هو الصنعة.
+  line: 160832
+  status: draft
+
+- id: w1073
+  kind: idiom
+  prompt: عم بيناطح بقرون من عجين
+  answer: يتحدّى وهو ضعيف
+  others: ["يتعب في عمل نافع","يعجن الخبز بمهارة","يهاجم من هو أضعف منه"]
+  line: 166432
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1074
+  kind: idiom
+  prompt: فلان واقع بين نارين
+  answer: محتار بين أمرين كلاهما صعب
+  others: ["بردان يتدفّأ","غضبان من شخصين","محظوظ من جهتين"]
+  line: 166196
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1295
+  kind: simile
+  prompt: فلان عم بيشرط علينا شروط ___
+  answer: المسقوف
+  others: ["الإنكليز","الفرنساوية","الألمان"]
+  note: المسقوف هم الروس، وقد شرطت روسيا على العثمانيين بعد انكسارهم في إحدى الحروب شروطاً قاسية للصلح.
+  line: 157821
+  status: draft
+
+- id: w1455
+  kind: blessing
+  prompt: آنستونا ___
+  answer: شرّفتونا
+  others: ["ودّعتونا","تعّبتونا","نسيتونا"]
+  note: تقال في الترحيب بالضيوف.
+  line: 1364
+  status: draft
+  flag: note (occasion) is general knowledge; book gives only the phrase
+
+- id: w1679
+  kind: song
+  prompt: هلّ الهلّ وهلّ الهلّ، وصبحيّتك صبحيّة ___
+  answer: الفلّ
+  others: ["الورد","الخير","العيد"]
+  note: من مناغاة الأمهات لأطفالهن في الصباح.
+  line: 172803
+  status: draft
+
+- id: w1075
+  kind: idiom
+  prompt: متل ما بتفصّل إنته أنا بلبس
+  answer: أوافق على كل ما تقرّره
+  others: ["أقلّدك في لباسك","أنا خيّاط مثلك","لا يعجبني ذوقك"]
+  line: 148502
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1296
+  kind: simile
+  prompt: مطر متل سيل ___
+  answer: نوح
+  others: ["موسى","يونس","أيّوب"]
+  line: 159835
+  status: draft
+
+- id: w1076
+  kind: idiom
+  prompt: هرب من الدبّ وقع بالجبّ
+  answer: نجا من مصيبة فوقع في أخرى
+  others: ["خاف بلا سبب","اختبأ فلم يجده أحد","ركض حتى تعب"]
+  line: 172336
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1680
+  kind: song
+  prompt: بحبّك وبحبّ اللي بحبّك، وبحبّ الورد لأنّو بشبه ___
+  answer: خدّك
+  others: ["تمّك","عينك","شعرك"]
+  note: من مناغاة الأمهات لأطفالهن.
+  line: 175126
+  status: draft
+
+- id: w1077
+  kind: idiom
+  prompt: عم بيتعلّم الحجامة بروس الأيتام
+  answer: يتدرّب على حساب الضعفاء
+  others: ["يعلّم الفقراء صنعة","يتصدّق على المحتاجين","يتعلّم الطبّ بلا معلّم"]
+  line: 177426
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1456
+  kind: blessing
+  prompt: "من دعائهم للبنت: الله يسعدا و___"
+  answer: يبعدا
+  others: ["يغنيها","يهديها","يحميها"]
+  note: يريدون أن يكون زواجها خيراً ولو في غربة.
+  line: 87208
+  status: draft
+
+- id: w1297
+  kind: simile
+  prompt: متل ___ الحايك، طالع نازل
+  answer: مكّوك
+  others: ["مغزل","مشط","دولاب"]
+  line: 162652
+  status: draft
+
+- id: w1078
+  kind: idiom
+  prompt: فلان ما بيترك لا شاردة ولا واردة
+  answer: ينتبه لكل صغيرة وكبيرة
+  others: ["يطرد كل من يزوره","يأكل كل ما يجده","يسلّم على كل الناس"]
+  note: أصله المال الذي شرد عن القطيع والمال الذي يرد إليه.
+  line: 95301
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1681
+  kind: song
+  prompt: يالله صبّوا هالقهوة وزيدوها ___ / واسقوها للنشامى عَ ضهور الخيل
+  answer: هال
+  others: ["سكّر","مسك","زعفران"]
+  note: أغنية شعبية مشهورة في الأفراح.
+  line: 171747
+  status: draft
+
+- id: w1298
+  kind: simile
+  prompt: عم بيتلوّح بمشيتو متل ميزان ___
+  answer: الفجل
+  others: ["الدهب","الصايغ","العطّار"]
+  line: 165813
+  status: draft
+
+- id: w1079
+  kind: idiom
+  prompt: عندي صندوق للسرّ ضاعت مفاتيحو
+  answer: أنا كتوم لا أفشي سرّاً
+  others: ["نسيت كل ما قلته لي","لا مال عندي أعطيك","أضعت أغلى ما أملك"]
+  line: 161406
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1457
+  kind: blessing
+  prompt: يا اللي عقّدتا ___
+  answer: حلّا
+  others: ["شدّا","خبّيا","زيدا"]
+  note: دعاء عند الشدّة، يسألون الله أن يحلّ ما تعقّد.
+  line: 116230
+  status: draft
+  flag: rest of the saying is garbled in OCR; only first half used
+
+- id: w1080
+  kind: idiom
+  prompt: فلان كزلكو وطربوشو من أيام الطوفان
+  answer: أغراضه قديمة جداً
+  others: ["غني ورث عن أجداده","نظره ضعيف من زمان","أنيق يحافظ على هندامه"]
+  note: الكزلك هو النظّارات.
+  line: 109780
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1682
+  kind: song
+  prompt: عالهيلا الهيلا يا ربّنا / يا ربّ تجمع أنا والحبايب ___
+  answer: شملنا
+  others: ["كلّنا","أهلنا","عندنا"]
+  note: أغنية شعبية.
+  line: 173886
+  status: draft
+  flag: first line garbled in OCR; second read as 'يا رب تجمع أنا والحبايب شملنا'
+
+- id: w1299
+  kind: simile
+  prompt: نام نومة أهل ___
+  answer: الكهف
+  others: ["الشام","الضيعة","البادية"]
+  line: 171172
+  status: draft
+
+- id: w1081
+  kind: idiom
+  prompt: فلان وجّو ما بيضحك لرغيف السخن
+  answer: عبوس دائماً
+  others: ["شبعان لا يشتهي أكلاً","مريض لا يقدر أن يأكل","فقير لا يجد خبزاً"]
+  line: 174606
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1300
+  kind: simile
+  prompt: عالَم متل وظيظ ___
+  answer: النحل
+  others: ["الجمال","الطبل","المطر"]
+  note: الوظيظ هو الطنين، يقال في ازدحام الناس وضجّتهم.
+  line: 167448
+  status: draft
+
+- id: w1082
+  kind: idiom
+  prompt: فلان بيكره الضيف ولو زوّادتو معو
+  answer: شديد البخل
+  others: ["يحبّ السفر وحده","كثير الأشغال","بيته صغير"]
+  line: 141937
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1683
+  kind: song
+  prompt: يا ناس اسمعوا الفتنة، عالحماية و___
+  answer: الكنّة
+  others: ["الجارة","البنت","العمّة"]
+  note: أغنية شعبية فكاهية.
+  line: 166321
+  status: draft
+
+- id: w1458
+  kind: blessing
+  prompt: إن شا الله هالزغير يربى بـ___ أبوه وأمّو
+  answer: دلال
+  others: ["مال","بيت","دكّان"]
+  note: دعاء للمولود بأن يكبر في حضن والديه.
+  line: 74724
+  status: draft
+
+- id: w1083
+  kind: idiom
+  prompt: فلان كتير النطّ قليل الصيد
+  answer: حركته كثيرة ونتيجته قليلة
+  others: ["صيّاد ماهر","خفيف الحركة رشيق","يتعب قليلاً ويربح كثيراً"]
+  line: 103741
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1301
+  kind: simile
+  prompt: سود متل ___
+  answer: العطّابة
+  others: ["القطنة","الليمونة","البندورة"]
+  note: العطّابة خرقة تُسقى زيتاً وتُشعل ثم يُكوى بها الجلد على طريقة الطب القديم، فهي سوداء محروقة.
+  line: 115515
+  status: draft
+  flag: entry text is partly garbled; check the description of العطّابة
+
+- id: w1684
+  kind: song
+  prompt: حلف عريسك بربّو إنّو يلقاكي / ولمّا شافك صرخ، الله ما ___
+  answer: أحلاكي
+  others: ["أغلاكي","أعلاكي","أتقاكي"]
+  note: من هنهونة «بنت الأجاويد» التي تُقال للعروس.
+  line: 52988
+  status: draft
+
+- id: w1084
+  kind: idiom
+  prompt: فلان بيرمي النار وبيصيح، حريق!
+  answer: يفتعل المشكلة ثم يشكو منها
+  others: ["يطفئ الخلاف بين الناس","يخاف من أتفه الأمور","ينبّه الناس إلى الخطر"]
+  line: 100141
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1302
+  kind: simile
+  prompt: قامتو متل ___
+  answer: العضادة
+  others: ["العتبة","الطاقة","المصطبة"]
+  note: العضادة العمود الذي يستند عليه السقف، يريدون أنها طويلة.
+  line: 115320
+  status: draft
+
+- id: w1085
+  kind: idiom
+  prompt: فلان عم بيبني على رمل
+  answer: عمله بلا أساس ولن يدوم
+  others: ["يبني بيتاً قرب البحر","يشتغل بسرعة وإتقان","يصرف ماله على أولاده"]
+  note: وضدّه عندهم، عم بيبني على صخر.
+  line: 101325
+  status: draft
+  flag: book line has the 'صخر' form and gives 'رمل' as its opposite; meaning not glossed in book at this line; standard sense supplied
+
+- id: w1459
+  kind: blessing
+  prompt: تعيش عمر ___
+  answer: النسر
+  others: ["الجمل","الحصان","الديك"]
+  note: دعاء بطول العمر، فالنسر مضرب المثل في التعمير.
+  line: 117671
+  status: draft
+
+- id: w1685
+  kind: song
+  prompt: يا ستّنا يا عروس، قومي نسير فيكي / من بيت أبوكي وأمّك ___
+  answer: لعلاليكي
+  others: ["لأهاليكي","لشبابيكي","لحواليكي"]
+  note: هنهونة عند خروج العروس من بيت أهلها، والعلالي بيتها الجديد العالي.
+  line: 100712
+  status: draft
+
+- id: w1086
+  kind: idiom
+  prompt: فلان عم بيكتب عالمي
+  answer: يتعب في ما لا يبقى له أثر
+  others: ["خطّه جميل واضح","يحفظ السرّ","يسجّل ديونه بدقّة"]
+  line: 140536
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1303
+  kind: simile
+  prompt: عقلو بيلقط قوام متل ورق ___
+  answer: الهشّ
+  others: ["الجرايد","الدخّان","العنب"]
+  note: ورق الهشّ ورق رخو يمتصّ السوائل بسرعة.
+  line: 172628
+  status: draft
+  flag: OCR reads «ورق المش», taken as الهشّ since it sits under entry هش; note inferred
+
+- id: w1087
+  kind: idiom
+  prompt: غمّض عين وفتّح عين بيكون الشي صار
+  answer: يتمّ بسرعة كبيرة
+  others: ["يتمّ في السرّ","يتمّ بعد صبر طويل","يتمّ دون أن يراه أحد"]
+  line: 121678
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1686
+  kind: song
+  prompt: ونصبّ كاس الهنا والسعد ___ / بنت الأجاويد، ما ضاع المهر فيكي
+  answer: يسقيكي
+  others: ["يحميكي","يناديكي","يلاقيكي"]
+  note: من هنهونة «يا ستّنا يا عروس».
+  line: 100714
+  status: draft
+
+- id: w1460
+  kind: blessing
+  prompt: روح يا ابني، الله ياخد بـ___
+  answer: إيدك
+  others: ["راسك","كتفك","جيبك"]
+  note: دعاء بالعون والتوفيق.
+  line: 4610
+  status: draft
+
+- id: w1088
+  kind: idiom
+  prompt: كلامو فات من هالأدن طلع من هالأدن
+  answer: لم يهتمّ أحد بكلامه
+  others: ["انتشر كلامه بين الناس","حفظ الناس كلامه","كان كلامه مزعجاً"]
+  line: 122205
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1304
+  kind: simile
+  prompt: متل روحة برغش لـ___
+  answer: حارم
+  others: ["عزاز","الباب","منبج"]
+  note: "أصله أن الآغا قال: بكرا بدّي أبعت برغش لحارم، فسمعه برغش وراح لحارم ورجع من غير ما يقابله ولا يعرف ليش رايح."
+  line: 23556
+  status: draft
+
+- id: w1089
+  kind: idiom
+  prompt: أنا ما بجي نقطة ببحرك
+  answer: أنت تفوقني كثيراً
+  others: ["لا أحبّ السباحة معك","لا أزورك أبداً","أنا أغنى منك"]
+  line: 170203
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1687
+  kind: song
+  prompt: يا أهل الجمع أنا ما بعرف أساميكن / أفضالكن فوق راسي، وبإيش ___
+  answer: أكافيكن
+  others: ["أناديكن","أسمّيكن","ألاقيكن"]
+  note: هنهونة تُشكر بها المدعوّات في الفرح.
+  line: 17074
+  status: draft
+
+- id: w1305
+  kind: simile
+  prompt: هالمسألة مالا نهاية متل غنّية ___
+  answer: الشيطان
+  others: ["الحصّادين","الحجّاج","الدراويش"]
+  note: أصله حكاية رجل صحب شيطاناً من إستنبول إلى بغداد، واتّفقا أن يركب أحدهما الآخر ما دام يغنّي، فلم تنتهِ الغنّية حتى بغداد.
+  line: 99818
+  status: draft
+
+- id: w1090
+  kind: idiom
+  prompt: طارت السكرة وأجت الفكرة
+  answer: ذهبت الفرحة وجاء وقت الحساب
+  others: ["نسي كل ما حفظه","نام بعد سهر طويل","خطر له رأي جديد"]
+  line: 105738
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1461
+  kind: blessing
+  prompt: — على راسي وعيني. — يسلم ما ___
+  answer: ذكرت
+  others: ["طلبت","حملت","كسرت"]
+  note: جواب من قيل له «على راسي وعيني»، أي يسلم راسك وعينك.
+  line: 73852
+  status: draft
+
+- id: w1091
+  kind: idiom
+  prompt: أش لسانك آكلتو القطّة؟
+  answer: لماذا أنت ساكت؟
+  others: ["لماذا تكذب؟","لماذا لا تأكل؟","لماذا تصرخ؟"]
+  line: 134416
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1306
+  kind: simile
+  prompt: فلان أجوف متل ___
+  answer: الطبل
+  others: ["الحجر","الجوز","الحيط"]
+  line: 106762
+  status: draft
+
+- id: w1688
+  kind: song
+  prompt: ويلي، أبلوج السكّر وقع من يدّي ___
+  answer: تكسّر
+  others: ["تبعثر","تغبّر","تدحرج"]
+  note: أغنية شعبية، وأبلوج السكّر قالبه المخروطي.
+  line: 2132
+  status: draft
+
+- id: w1092
+  kind: idiom
+  prompt: صار كل واحد براس رابية
+  answer: تفرّقوا واختلفوا
+  others: ["اغتنوا وبنوا القصور","تسابقوا إلى الجبل","حرسوا البلد من كل جهة"]
+  line: 174082
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1308
+  kind: simile
+  prompt: فلان متل بلاط ___، بيبصّ وما بينزّ
+  answer: الحلواني
+  others: ["الحمّام","الجامع","الخان"]
+  note: يبصّ أي يلمع، يقال لمن يلمع ظاهره ولا يرشح منه شيء.
+  line: 25282
+  status: draft
+  flag: OCR «ببص وما بز»; reading بينزّ and gloss are inferred
+
+- id: w1462
+  kind: blessing
+  prompt: اسم الله عليك، اسم الله حولك و___
+  answer: حواليك
+  others: ["قدّامك","وراك","فوقك"]
+  note: من تحبّبهم وتعاويذهم، يحوّطون بها من يحبّون.
+  line: 7880
+  status: draft
+
+- id: w1093
+  kind: idiom
+  prompt: وصلت اللقمة للتمّ
+  answer: أوشك الأمر أن يتمّ
+  others: ["شبع الجميع","غلا الطعام","انكشف السرّ"]
+  line: 150510
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1689
+  kind: song
+  prompt: يا يامو شوفي قوامو، أحلى مالسكّر ___
+  answer: كلامو
+  others: ["سلامو","غرامو","منامو"]
+  note: أغنية شعبية غزلية.
+  line: 137739
+  status: draft
+
+- id: w1094
+  kind: idiom
+  prompt: عطاه من الجمل أدنو
+  answer: أعطاه القليل جداً من الكثير
+  others: ["أعطاه أكثر ممّا طلب","أعطاه أثمن ما عنده","أعطاه سرّاً دون أن يراه أحد"]
+  line: 115476
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1309
+  kind: simile
+  prompt: فلان خطّو متل خربشة ___
+  answer: الجيج
+  others: ["الجمال","السمك","الحمير"]
+  line: 50498
+  status: draft
+  flag: OCR «حو» read as خطّو
+
+- id: w1690
+  kind: song
+  prompt: عالماني الماني الماني، فراق الحلو ___
+  answer: بكّاني
+  others: ["ضناني","رماني","نسّاني"]
+  note: أغنية شعبية.
+  line: 27105
+  status: draft
+  flag: refrain garbled ('عالان امان امان' / 'عالماني الان' at 58407); opening words uncertain, answer line is clear
+
+- id: w1095
+  kind: idiom
+  prompt: فلان بينشل الكحل من العين
+  answer: لصّ بارع خفيف اليد
+  others: ["طبيب عيون ماهر","يحبّ الزينة","يغار من الناس"]
+  note: وردت في «ثمرات الأوراق» وتمثّل بها القاضي الفاضل.
+  line: 140803
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1463
+  kind: blessing
+  prompt: ما شاء الله، ___ ومحروستك صاروا شباب
+  answer: محروسك
+  others: ["منصورك","مسعودك","محبوبك"]
+  note: يريدون ابنك وابنتك، المدعوّ لهما أن يحرسهما الله.
+  line: 54786
+  status: draft
+  flag: OCR 'روسك وحروستك'; restored as محروسك ومحروستك
+
+- id: w1310
+  kind: simile
+  prompt: فلان متل ___ المقطوع خرجو
+  answer: العسكري
+  others: ["التاجر","الشيخ","الحلّاق"]
+  note: الخرج هو الراتب.
+  line: 62654
+  status: draft
+
+- id: w1096
+  kind: idiom
+  prompt: فلان نزل من عيني
+  answer: سقط احترامه عندي
+  others: ["بكيت عليه","اشتقت إليه","لم أعد أراه"]
+  line: 119463
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1691
+  kind: song
+  prompt: الخميس فرحنا، الجمعة ___
+  answer: استرحنا
+  others: ["سافرنا","صلّينا","تعبنا"]
+  note: من أهزوجة للأولاد تعدّ أيام الأسبوع.
+  line: 84426
+  status: draft
+  flag: only the ending is legible; start of the chant is garbled
+
+- id: w1097
+  kind: idiom
+  prompt: فلان بياخد من كل دقن شعرة وبيساوي دقن
+  answer: يجمع القليل من كل واحد حتى يكثر
+  others: ["يسخر من كبار السن","يقلّد الناس في كلامهم","حلّاق ماهر"]
+  line: 96159
+  status: draft
+  flag: end of idiom ('دقن') cut off in OCR, standard form supplied; meaning not glossed in book at this line; standard sense supplied
+
+- id: w1311
+  kind: simile
+  prompt: متل برخانة أبو حامد، اللي ما هو مقطوش أدنو مقطوع ___
+  answer: دنبو
+  others: ["راسو","إجرو","قرنو"]
+  note: أبو حامد تاجر دواب له برخانة (زريبة)، ودوابّه كلها معيوبة.
+  line: 23261
+  status: draft
+  flag: gloss inferred from entry أبو حامد (line 2592)
+
+- id: w1098
+  kind: idiom
+  prompt: فتح دكانو وللمسا ما حدا قال لو، بكام ولا بكيف
+  answer: لم يأته أي زبون
+  others: ["باع كل بضاعته","لم يسلّم عليه أحد","أسعاره ثابتة لا تتغيّر"]
+  line: 146660
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied
+
+- id: w1464
+  kind: blessing
+  prompt: "إذا تذكّر أحدهم أمراً سبقه إليه صاحبه قال: عمرك أطول من ___"
+  answer: عمري
+  others: ["لساني","دربي","صبري"]
+  note: تقال حين يشترك اثنان في تذكّر الشيء نفسه.
+  line: 9249
+  status: draft
+
+- id: w1692
+  kind: song
+  prompt: يا تمر حنّا، يا روايح ___
+  answer: الجنّة
+  others: ["الورد","المسك","الحنّة"]
+  note: من أغاني ليلة الحنّة.
+  line: 40998
+  status: draft
+  flag: OCR 'يا مر حنا! يا روايح احنة'; read as تمر حنّا / الجنّة
+
+- id: w1312
+  kind: simile
+  prompt: فلان عقلو متل كبّاية ___
+  answer: الشتا
+  others: ["الصيف","العيد","الحمّام"]
+  note: كبّاية الشتا كرة نباتية خفيفة يدحرجها الهوا أول الشتا، يريدون أنه خفيف تلعب فيه الأهواء.
+  line: 139485
+  status: draft
+
+- id: w1099
+  kind: idiom
+  prompt: قاعد على نار وعم يستنّاه
+  answer: ينتظره بقلق شديد
+  others: ["يتدفّأ وهو ينتظره","غضبان منه كثيراً","يطبخ له الطعام"]
+  line: 135138
+  status: draft
+  flag: meaning not glossed in book at this line; standard sense supplied

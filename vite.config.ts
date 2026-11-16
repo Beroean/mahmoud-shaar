@@ -13,6 +13,82 @@ import { puzzleNumber } from "./src/pages/shakkil/core/daily";
  */
 const SHAKKIL_DAYS_AHEAD = 1;
 import { approve, loadQueue, reject } from "./tools/shakkil/queue";
+import { CONTENT_DIR as HALAB_DIR, loadDays } from "./tools/halab/content";
+import { todayNumber as halabToday } from "./src/pages/halab/core/daily";
+import { listItems as halabItems, rejectItem as halabReject, saveItem as halabSave } from "./tools/halab/review";
+
+/**
+ * Dev-only JSON API for the حلبيّات review page (halab/review/index.html). Never part of the build:
+ * `apply: "serve"` and the page isn't a build input.
+ */
+function halabReviewApi(): Plugin {
+  return {
+    name: "halab-review-api",
+    apply: "serve",
+    configureServer(server) {
+      server.middlewares.use("/__halab", async (req, res) => {
+        const send = (status: number, body: unknown) => {
+          res.statusCode = status;
+          res.setHeader("Content-Type", "application/json; charset=utf-8");
+          res.end(JSON.stringify(body));
+        };
+        try {
+          if (req.method === "GET" && req.url === "/items") return send(200, halabItems());
+          if (req.method !== "POST") return send(405, { error: "method not allowed" });
+          let raw = "";
+          for await (const chunk of req) raw += chunk;
+          const body = JSON.parse(raw || "{}");
+          if (req.url === "/save") return send(200, halabSave(String(body.id), body.patch ?? {}));
+          if (req.url === "/reject") {
+            halabReject(String(body.id), String(body.reason ?? ""));
+            return send(200, { ok: true });
+          }
+          send(404, { error: "not found" });
+        } catch (e) {
+          send(400, { error: (e as Error).message });
+        }
+      });
+    },
+  };
+}
+
+/**
+ * Compiles content/halab/*.yaml into `virtual:halab-days` (a list of Day). Invalid items fail the
+ * build. Like Shakkil, a build ships only days up to tomorrow (HALAB_DAYS_AHEAD), so future answers
+ * aren't readable from the site; the nightly rebuild (deploy.yml) adds the next one. The dev server
+ * ships every day so ?day=N can preview any of them.
+ */
+const HALAB_DAYS_AHEAD = 1;
+
+function halabDays(): Plugin {
+  const ID = "virtual:halab-days";
+  const RESOLVED = "\0" + ID;
+  let dev = false;
+  return {
+    name: "halab-days",
+    configResolved(config) {
+      dev = config.command === "serve";
+    },
+    resolveId: (id) => (id === ID ? RESOLVED : undefined),
+    load(id) {
+      if (id !== RESOLVED) return;
+      const { days, errors } = loadDays();
+      if (errors.length) this.error(`Invalid حلبيّات content:\n${errors.join("\n")}`);
+      const lastDay = halabToday() + HALAB_DAYS_AHEAD;
+      return `export default ${JSON.stringify(dev ? days : days.filter((d) => d.number <= lastDay))};`;
+    },
+    configureServer(server) {
+      server.watcher.add(HALAB_DIR);
+      server.watcher.on("all", (_, file) => {
+        if (!file.startsWith(HALAB_DIR)) return;
+        const mod = server.moduleGraph.getModuleById(RESOLVED);
+        if (mod) server.moduleGraph.invalidateModule(mod);
+        // Only the game reloads; the review page keeps its place.
+        server.ws.send({ type: "full-reload", path: "/halab/index.html" });
+      });
+    },
+  };
+}
 
 /** Injects tags every page shares (favicon, analytics) so each HTML entry stays small. */
 function sharedHead(): Plugin {
@@ -128,11 +204,12 @@ const pages = {
   home: "index.html",
   explore: "explore/index.html",
   shakkil: "shakkil/index.html",
+  halab: "halab/index.html",
   notFound: "404.html",
 };
 
 export default defineConfig({
-  plugins: [react(), babel({ presets: [reactCompilerPreset()] }), sharedHead(), shakkilPuzzles(), reviewApi()],
+  plugins: [react(), babel({ presets: [reactCompilerPreset()] }), sharedHead(), shakkilPuzzles(), halabDays(), halabReviewApi(), reviewApi()],
   build: {
     rollupOptions: {
       input: Object.fromEntries(

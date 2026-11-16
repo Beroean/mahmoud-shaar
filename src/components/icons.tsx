@@ -97,6 +97,27 @@ export function HarakaIcon({ className }: IconProps) {
   );
 }
 
+/**
+ * The entrance of the Citadel of Aleppo from the side: the crenellated gate block with its pointed
+ * arch on the paved mound, the bridge climbing to it on its piers, and the stepped outer tower.
+ * حلبيّات.
+ */
+export function CitadelIcon({ className }: IconProps) {
+  return (
+    <LineIcon className={className}>
+      <path d="M1.5 21h21" />
+      <path d="M2.8 14.5 3.2 4.8h7.6l.4 9.7" />
+      <path d="M4.4 4.8V3.4M7 4.8V3.4M9.6 4.8V3.4" />
+      <path d="M5.6 14.5v-3.3c0-1.2.6-2 1.4-2.6.8.6 1.4 1.4 1.4 2.6v3.3" />
+      <path d="M1.5 20.5c.5-2.2.9-4.2 1.3-6h8.4c.4 1.9.9 4.1 1.5 6.5" />
+      <path d="m11.4 15.3 5.9 2.5" />
+      <path d="M14.3 21v-4.4M16.2 21v-3.6" />
+      <path d="M17.3 21v-5.8h1.5v-2.4H22V21" />
+      <path d="M19.9 12.8v-1.4M21.4 12.8v-1.4" />
+    </LineIcon>
+  );
+}
+
 /** Stacked layers. "All entries" (countries + aggregates). */
 export function LayersIcon({ className }: IconProps) {
   return (

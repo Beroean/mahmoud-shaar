@@ -1,0 +1,212 @@
+/*
+ * Entering the Citadel of Aleppo (GateIntro.tsx, drawings in gateArt.ts). About 4.4 s:
+ *
+ *   0.0 – 1.4   the side view is drawn: outlines trace themselves, then the stone fills in
+ *   1.5 – 2.4   we move in on the gate; the side view dissolves into the gate seen head-on
+ *   2.5 – 3.6   the doors swing inward and light spills out
+ *   3.3 – 4.4   we walk through the arch; the scene fades into the page
+ *
+ * Every animation runs on transform, opacity or stroke-dashoffset only.
+ */
+
+.gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  /* One cell the size of the screen: anything wider (the side view on phones) overflows evenly. */
+  grid-template: 100% / 100%;
+  place-items: center;
+  direction: ltr;
+  overflow: hidden;
+  background: #0a0a0a;
+  cursor: pointer;
+  animation: gate-out 0.65s ease-in 3.8s both;
+}
+
+.gate-overlay > * {
+  grid-area: 1 / 1;
+}
+
+/* ---- Shot 1: the side view ---- */
+
+.gate-pano {
+  width: min(128vh, max(94vw, 480px));
+  aspect-ratio: 8 / 5;
+  animation:
+    gate-pano-in 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both,
+    gate-pano-zoom 0.95s cubic-bezier(0.6, 0, 0.85, 0.4) 1.5s forwards;
+}
+
+.gate-pano > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Outlines trace themselves (pathLength = 1 on every path); each has its own small delay inline. */
+.gate-pano .gd {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: gate-draw 0.95s cubic-bezier(0.45, 0, 0.2, 1) forwards;
+}
+
+.gate-pano .gf {
+  opacity: 0;
+  animation: gate-fill 0.7s ease-out 0.55s forwards;
+}
+
+/* ---- Shot 2: the gate, head-on ---- */
+
+.gate-scene {
+  position: relative;
+  height: min(88vh, 136vw);
+  aspect-ratio: 400 / 560;
+  /* The doorway's centre, so walking through heads into the arch. */
+  transform-origin: 50% 70%;
+  opacity: 0;
+  animation:
+    gate-scene-in 0.55s ease-out 2s forwards,
+    gate-through 1.15s cubic-bezier(0.55, 0, 0.8, 0.35) 3.3s forwards;
+}
+
+.gate-scene > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.gate-doorway {
+  position: absolute;
+  perspective: 700px;
+}
+
+.gate-light {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 75% 55% at 50% 80%, rgb(255 236 190 / 0.95), rgb(201 169 110 / 0.6) 45%, rgb(201 169 110 / 0.08) 85%);
+  opacity: 0.12;
+  animation: gate-light 1.3s ease-in 2.5s forwards;
+}
+
+.gate-door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.gate-door > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Inward, like the real gate: the free edges swing away from us. */
+.gate-door-left {
+  left: 0;
+  transform-origin: 0 50%;
+  animation: gate-open-left 1.15s cubic-bezier(0.55, 0.05, 0.3, 1) 2.5s forwards;
+}
+
+.gate-door-right {
+  right: 0;
+  transform-origin: 100% 50%;
+  animation: gate-open-right 1.15s cubic-bezier(0.55, 0.05, 0.3, 1) 2.5s forwards;
+}
+
+.gate-skip {
+  align-self: end;
+  margin-bottom: max(1.25rem, env(safe-area-inset-bottom));
+  font-size: 0.75rem;
+  color: rgb(232 228 220 / 0.35);
+  animation: gate-fill 0.6s ease 0.6s both;
+}
+
+@keyframes gate-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes gate-fill {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gate-pano-in {
+  from {
+    transform: scale(0.96);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes gate-pano-zoom {
+  30% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  to {
+    transform: scale(4.2);
+    opacity: 0;
+  }
+}
+
+@keyframes gate-scene-in {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gate-open-left {
+  to {
+    transform: rotateY(100deg);
+  }
+}
+
+@keyframes gate-open-right {
+  to {
+    transform: rotateY(-100deg);
+  }
+}
+
+@keyframes gate-light {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gate-through {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 1;
+    transform: scale(8);
+  }
+}
+
+@keyframes gate-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
