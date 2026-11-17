@@ -1,0 +1,73 @@
+# Items rejected in review, so they aren't curated again.
+- id: o230
+  word: السبانخ
+  answer: الفارسية
+  others:
+    - السريانية
+    - اليونانية
+    - الإيطالية
+  meaning: البقلة المعروفة
+  note: من الفارسية «إسپيناخ»، وأخذتها التركية أيضاً من الفارسية.
+  entry: السبانخ
+  line: 84345
+  status: draft
+  file: origins
+  reason: "checked against the PDF: the book gives both Arabic and Persian as the source; ambiguous question"
+  rejected: 2026-11-16
+- id: o251
+  word: النشا
+  answer: الفارسية
+  others:
+    - التركية
+    - اليونانية
+    - السريانية
+  meaning: مادة لزجة تُستخرج من لباب الحنطة
+  note: قيل سُمّي بذلك لخمول رائحته، والصحيح أنه من الفارسية «نشاسته».
+  entry: النشا
+  line: 168429
+  status: draft
+  file: origins
+  reason: "checked against the PDF: the book gives both Arabic and Persian as the source; ambiguous question"
+  rejected: 2026-11-16
+- id: p714
+  text: اشطوف بيتك ما بتعرف منو بيدوسو، واغسول وجّك ما بتعرف منو ___
+  answer: ببوسو
+  others:
+    - بيمدحو
+    - بيزورو
+    - بيرسمو
+  meaning: كن نظيفاً مرتّباً دائماً فلا تدري من يفاجئك.
+  line: 95979
+  flag: middle of the proverb is garbled in OCR; reading 'بيدوسو ... ببوسو' taken from line 95981
+  status: draft
+  file: proverbs
+  reason: "checked against the PDF: same proverb as p595 once corrected to the book wording"
+  rejected: 2026-11-16
+- id: o413
+  word: المرملاد
+  answer: الإيطالية
+  others:
+    - التركية
+    - العربية
+    - اليونانية
+  meaning: مربّى الفواكه
+  note: من الإيطالية «marmellata»، ضرب من الحلويات.
+  entry: المرملاد
+  line: 156440
+  status: draft
+  file: origins
+  reason: "checked against the PDF: the book has two entries with different sources (Italian, and Turkish via French); ambiguous question"
+  rejected: 2026-11-17
+- id: p431
+  text: كانون الأجرد خلّى الشجر ___
+  answer: أمرد
+  others:
+    - أخضر
+    - مزهّر
+    - عالي
+  meaning: في كانون تتعرّى الأشجار من أوراقها.
+  line: 139254
+  status: draft
+  file: proverbs
+  reason: "checked against the PDF: near-duplicate of p109 (كانون الأجرد)"
+  rejected: 2026-11-17

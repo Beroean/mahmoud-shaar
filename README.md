@@ -83,6 +83,8 @@ npm run review:halab   # local review page: flagged items first, with the book's
 
 The review page reads the book from `~/Downloads/موسوعة حلب المقارنة_djvu.txt` (or `HALAB_BOOK`); it isn't in the repo.
 
+That `_djvu.txt` is OCR. The book's true text is the text layer of the PDF on the same archive.org item (`pdftotext -enc UTF-8`, then NFKC-normalize and restore the font's private ligatures U+E814 ته, U+E815 نه, U+E812 به, U+E811 لمج). Every item was checked against it; check new items against it too. Days already played, today's and tomorrow's must never change.
+
 ## WDI explorer data
 
 The explorer (`/explore/`) never calls the World Bank API at runtime (its uncached data requests often hang for 60s+). Instead `npm run wdi` (`tools/wdi/build.ts`) reads the World Bank's bulk download `WDI_CSV.zip` (~280 MB) and writes small static files to `public/data/wdi/` (gitignored): `indicators.json`, `countries.json`, `meta.json` and one `ind/<id>.json` per indicator with the latest value per country.
