@@ -43,3 +43,31 @@
   file: proverbs
   reason: "checked against the PDF: same proverb as p595 once corrected to the book wording"
   rejected: 2026-11-16
+- id: o413
+  word: المرملاد
+  answer: الإيطالية
+  others:
+    - التركية
+    - العربية
+    - اليونانية
+  meaning: مربّى الفواكه
+  note: من الإيطالية «marmellata»، ضرب من الحلويات.
+  entry: المرملاد
+  line: 156440
+  status: draft
+  file: origins
+  reason: "checked against the PDF: the book has two entries with different sources (Italian, and Turkish via French); ambiguous question"
+  rejected: 2026-11-17
+- id: p431
+  text: كانون الأجرد خلّى الشجر ___
+  answer: أمرد
+  others:
+    - أخضر
+    - مزهّر
+    - عالي
+  meaning: في كانون تتعرّى الأشجار من أوراقها.
+  line: 139254
+  status: draft
+  file: proverbs
+  reason: "checked against the PDF: near-duplicate of p109 (كانون الأجرد)"
+  rejected: 2026-11-17
