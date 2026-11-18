@@ -77,6 +77,7 @@ function RoundCard({
   picked,
   onPick,
   onNext,
+  onSummary,
   isLast,
 }: {
   round: Round;
@@ -84,6 +85,8 @@ function RoundCard({
   picked: string | null;
   onPick: (choice: string) => void;
   onNext: () => void;
+  /** Set when revisiting a finished day: jumps straight back to the results. */
+  onSummary?: () => void;
   isLast: boolean;
 }) {
   const answered = picked !== null;
@@ -156,7 +159,16 @@ function RoundCard({
           <p className="text-xs text-paper/35">
             {round.entry ? <>من مادّة «{round.entry}» في موسوعة حلب المقارنة</> : <>من موسوعة حلب المقارنة</>}
           </p>
-          <div className="pt-2 flex justify-end">
+          <div className="pt-2 flex flex-wrap justify-end gap-3">
+            {onSummary && !isLast && (
+              <button
+                type="button"
+                onClick={onSummary}
+                className="px-5 py-3 rounded-md border border-paper/20 text-paper/80 hover:border-gold/60 hover:text-gold"
+              >
+                نتيجة اليوم
+              </button>
+            )}
             <button
               type="button"
               onClick={onNext}
@@ -172,21 +184,34 @@ function RoundCard({
   );
 }
 
-function Steps({ session }: { session: Session }) {
+function Steps({ session, onOpen }: { session: Session; onOpen: (index: number) => void }) {
   return (
     <ol className="flex flex-wrap items-center justify-center gap-2 mb-10" aria-label="جولات اليوم">
       {session.day.rounds.map((r, i) => {
         const p = session.picks[i];
         const tone =
           p === null ? "border-paper/20 text-paper/50" : p === r.answer ? "border-emerald-400/60 bg-emerald-500/15 text-emerald-200" : "border-rose-400/60 bg-rose-500/15 text-rose-200";
+        const label = (
+          <>
+            {toArabicDigits(i + 1)} · {KIND_LABEL[r.kind]}
+            {p === null ? "" : p === r.answer ? " ✓" : " ✗"}
+          </>
+        );
+        // Answered rounds can be reopened to see the full question again.
+        const canOpen = p !== null && i !== session.round;
         return (
           <li
             key={r.id}
             aria-current={i === session.round ? "step" : undefined}
-            className={`rounded-full border px-3 py-1 text-xs ${tone} ${i === session.round ? "ring-1 ring-paper/60" : ""}`}
+            className={`rounded-full border text-xs ${tone} ${i === session.round ? "ring-1 ring-paper/60" : ""}`}
           >
-            {toArabicDigits(i + 1)} · {KIND_LABEL[r.kind]}
-            {p === null ? "" : p === r.answer ? " ✓" : " ✗"}
+            {canOpen ? (
+              <button type="button" onClick={() => onOpen(i)} title="راجع الجولة" className="px-3 py-1 rounded-full hover:bg-paper/10">
+                {label}
+              </button>
+            ) : (
+              <span className="block px-3 py-1">{label}</span>
+            )}
           </li>
         );
       })}
@@ -205,7 +230,17 @@ function useCountdown(): string {
   return toArabicDigits(`${pad(Math.floor(s / 3600))}:${pad(Math.floor((s % 3600) / 60))}:${pad(s % 60)}`);
 }
 
-function Summary({ session, count, onShare }: { session: Session; count: number; onShare: (text: string) => void }) {
+function Summary({
+  session,
+  count,
+  onShare,
+  onReview,
+}: {
+  session: Session;
+  count: number;
+  onShare: (text: string) => void;
+  onReview: (index: number) => void;
+}) {
   const { day, picks, preview } = session;
   const results = day.rounds.map((r, i) => ({ kind: r.kind, correct: picks[i] === r.answer }));
   const score = results.filter((r) => r.correct).length;
@@ -224,10 +259,18 @@ function Summary({ session, count, onShare }: { session: Session; count: number;
 
       <ul className="space-y-2 max-w-sm mx-auto text-start">
         {day.rounds.map((r, i) => (
-          <li key={r.id} className="flex items-baseline gap-3 rounded-lg border border-paper/10 px-4 py-2">
-            <span className={results[i].correct ? "text-emerald-300" : "text-rose-300"}>{results[i].correct ? "✓" : "✗"}</span>
-            <span className="text-xs text-paper/45 w-24 shrink-0">{KIND_LABEL[r.kind]}</span>
-            <span className="font-naskh text-lg truncate">{r.kind === "origin" ? `${r.prompt}: ${r.answer}` : r.answer}</span>
+          <li key={r.id}>
+            <button
+              type="button"
+              onClick={() => onReview(i)}
+              title="راجع الجولة"
+              className="w-full flex items-baseline gap-3 rounded-lg border border-paper/10 px-4 py-2 text-start hover:border-gold/50 hover:bg-gold/5 transition-colors"
+            >
+              <span className={results[i].correct ? "text-emerald-300" : "text-rose-300"}>{results[i].correct ? "✓" : "✗"}</span>
+              <span className="text-xs text-paper/45 w-24 shrink-0">{KIND_LABEL[r.kind]}</span>
+              <span className="font-naskh text-lg truncate flex-1">{r.kind === "origin" ? `${r.prompt}: ${r.answer}` : r.answer}</span>
+              <span className="text-xs text-paper/40 shrink-0">راجع ←</span>
+            </button>
           </li>
         ))}
       </ul>
@@ -366,6 +409,10 @@ export default function Halab() {
     if (moved && el && el.getBoundingClientRect().top < 0) el.scrollIntoView({ block: "start" });
   }, [shownRound]);
   const nextRound = () => setSession((s) => (s ? { ...s, round: Math.min(s.round + 1, s.day.rounds.length) } : s));
+  // Reopen an answered round (read-only, since it already has a pick), or the summary once all are answered.
+  const openRound = (i: number) =>
+    setSession((s) => (s && (i < s.day.rounds.length ? s.picks[i] !== null : s.picks.every((p) => p !== null)) ? { ...s, round: i } : s));
+  const dayDone = session?.picks.every((p) => p !== null) ?? false;
 
   const round = session && session.round < session.day.rounds.length ? session.day.rounds[session.round] : null;
 
@@ -405,7 +452,7 @@ export default function Halab() {
           {days && !session && <p className="text-paper/70 py-24 text-center">أسئلة اليوم في الطريق. حدّث الصفحة بعد قليل.</p>}
 
           <div ref={playRef} className="scroll-mt-4" />
-          {session && <Steps session={session} />}
+          {session && <Steps session={session} onOpen={openRound} />}
           {session && round && (
             <RoundCard
               key={round.id}
@@ -414,6 +461,7 @@ export default function Halab() {
               picked={session.picks[session.round]}
               onPick={pick}
               onNext={nextRound}
+              onSummary={dayDone ? () => openRound(session.day.rounds.length) : undefined}
               isLast={session.round === session.day.rounds.length - 1}
             />
           )}
@@ -421,6 +469,7 @@ export default function Halab() {
             <Summary
               session={session}
               count={days.length}
+              onReview={openRound}
               onShare={async (text) => {
                 if (await share(text)) setToast("نُسخت النتيجة");
               }}
