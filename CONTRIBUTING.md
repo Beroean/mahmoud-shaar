@@ -43,6 +43,9 @@ source: original
 | `text` | نعم | الجملة مشكولة تشكيلًا كاملًا، من كلمتين إلى ست كلمات. |
 | `irab` | نعم | إعراب مختصر لكل كلمة بالترتيب، سطر لكل كلمة يبدأ بـ `- `. |
 | `alts` | لا | تشكيلات أخرى صحيحة تمامًا للجملة نفسها، مثل `["قَرَأْتَ الْكِتَابَ"]`. يُقبل جواب اللاعب إن طابق أيًّا منها. |
+| `vary` | لا | أشكال متبادلة لكلمة واحدة (أو لكلمات متتالية تتغير معًا) حين لا تحدد الجملة المتكلم أو المخاطَب: `- [قَرَأْتُ, قَرَأْتَ, قَرَأْتِ]`. أحد الأشكال يطابق `text`. تُقبل كل التوافيق بين المجموعات. |
+| `context` | لا | سطر يظهر للاعب فوق الجملة ليحدد قراءة واحدة، مثل «الشاعر يخاطب امرأة». مناسب للشعر والنصوص المنقولة التي لا نغيّرها. |
+| `fixed` | لا | كلمات (بلا تشكيل) حسم باقي الجملة تشكيلها، مثل `زلت` في «ما زِلْتُ أَتَذَكَّرُ». يُسكت تنبيه الالتباس عنها. |
 | `author` | لا | الاسم الذي يظهر في نتيجة اللعبة. |
 | `source` | لا | `original` (من تأليفك)، أو `poetry` (شعر)، أو `literature` (نثر أدبي)، أو `quran`، أو `llm-reviewed`. |
 | `level` | لا | الصعوبة: `1` سهل (الافتراضي)، `2` متوسط، `3` صعب. في كل يوم ثلاث جمل: سهلة ومتوسطة وصعبة، فالمستوى يحدد موضع الجملة. |
@@ -61,7 +64,8 @@ source: original
 
 - قصيرة، مفهومة وحدها، من العربية الفصحى المعاصرة.
 - فيها شيء يستحق التفكير: علامة إعراب، أو شدة، أو حرف يلتبس تشكيله.
-- لها تشكيل واحد واضح، أو اذكر البدائل الصحيحة في `alts`.
+- لها تشكيل واحد واضح، أو اذكر البدائل الصحيحة في `alts` أو `vary`.
+- انتبه لتاء الفاعل (قَرَأْتُ / قَرَأْتَ / قَرَأْتِ) وكاف الخطاب (كِتَابُكَ / كِتَابُكِ): إن لم تحددها الجملة فاقبل كل الأشكال بـ`vary`، أو حدّد القراءة بـ`context`. ينبّه `npm run puzzle:check` على ما لم يُعالَج.
 - بلا محتوى سياسي أو ديني خلافي أو مسيء.
 
 ## الشعر والقرآن
@@ -115,6 +119,7 @@ Puzzles that have already been played are locked: the check fails if a PR delete
 - The player may leave out a word-internal sukun and the vowel before a long-vowel letter. Shadda and every word ending (including a final sukun) are required.
 - Tanween fath before a final alif can be written on the letter or on the alif.
 - `alts` lists other fully valid diacritizations; a guess matching any of them wins.
+- Person and gender suffixes (قَرَأْتُ / قَرَأْتَ / قَرَأْتِ, كِتَابُكَ / كِتَابُكِ) are often left open by a short sentence. Accept every form with `vary` (one group per word or run of words: `- [قَرَأْتُ, قَرَأْتَ, قَرَأْتِ]`; every combination of groups is accepted), or pin one reading with `context` (shown above the sentence, e.g. «الشاعر يخاطب امرأة»; use it for quotes we don't change). List words the rest of the sentence already settles in `fixed` (undiacritized). `npm run puzzle:check` and the PR report warn about unhandled ones.
 
 ### License
 

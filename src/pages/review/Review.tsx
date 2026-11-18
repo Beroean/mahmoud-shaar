@@ -5,6 +5,7 @@
 import { useEffect, useState } from "react";
 import { SiteLayout } from "../../components/SiteLayout";
 import { VOWEL_NAMES_AR, letterToString, skeleton, wordToString } from "../shakkil/core/arabic";
+import { ambiguities, describeAmbiguity } from "../shakkil/core/ambiguity";
 import { compilePuzzle } from "../shakkil/core/puzzle";
 
 interface Queued {
@@ -12,6 +13,9 @@ interface Queued {
   text: string;
   irab: string[];
   alts?: string[];
+  vary?: string[][];
+  context?: string;
+  fixed?: string[];
   author?: string;
   source?: string;
   ref?: string;
@@ -24,18 +28,37 @@ interface Draft {
   text: string;
   irab: string;
   alts: string;
+  /** One group per line, forms separated by "|". */
+  vary: string;
+  context: string;
+  /** Words separated by spaces. */
+  fixed: string;
   author: string;
   ref: string;
   level: number;
 }
 
 const lines = (s: string) => s.split("\n").map((l) => l.trim()).filter(Boolean);
+const groups = (s: string) => lines(s).map((l) => l.split("|").map((f) => f.trim()).filter(Boolean));
+
+/** The fields compilePuzzle checks, from a draft. */
+const draftSource = (d: Draft) => ({
+  text: d.text,
+  irab: lines(d.irab),
+  alts: lines(d.alts),
+  vary: groups(d.vary),
+  context: d.context.trim() || undefined,
+  fixed: d.fixed.split(/\s+/).filter(Boolean),
+});
 
 function toDraft(c: Queued): Draft {
   return {
     text: c.text,
     irab: c.irab.join("\n"),
     alts: (c.alts ?? []).join("\n"),
+    vary: (c.vary ?? []).map((g) => g.join(" | ")).join("\n"),
+    context: c.context ?? "",
+    fixed: (c.fixed ?? []).join(" "),
     // Only the candidate's own credit. Never carry a name over from another sentence.
     author: c.author ?? "",
     ref: c.ref ?? "",
@@ -55,12 +78,7 @@ async function api<T>(path: string, body?: unknown): Promise<T> {
 }
 
 function Preview({ draft }: { draft: Draft }) {
-  const { puzzle, errors } = compilePuzzle({
-    number: 0,
-    text: draft.text,
-    irab: lines(draft.irab),
-    alts: lines(draft.alts),
-  });
+  const { puzzle, errors } = compilePuzzle({ number: 0, ...draftSource(draft) });
   if (!puzzle) {
     return (
       <ul className="space-y-1 text-rose-300 text-sm" dir="auto">
@@ -114,6 +132,11 @@ function Preview({ draft }: { draft: Draft }) {
           بدائل مقبولة: {puzzle.variants.slice(1).map((v) => v.words.map((x) => wordToString(x)).join(" ")).join("، ")}
         </p>
       )}
+      {ambiguities(puzzle).map((a) => (
+        <p key={`${a.word}-${a.letter}`} className="text-sm text-amber-300" dir="auto">
+          ⚠ {describeAmbiguity(puzzle, a)}
+        </p>
+      ))}
     </div>
   );
 }
@@ -159,9 +182,7 @@ export default function Review() {
       const r = await api<{ file: string }>("/approve", {
         id: current.id,
         candidate: {
-          text: draft.text,
-          irab: lines(draft.irab),
-          alts: lines(draft.alts),
+          ...draftSource(draft),
           author: draft.author,
           source: current.source,
           ref: draft.ref,
@@ -202,7 +223,7 @@ export default function Review() {
     return () => window.removeEventListener("keydown", onKey);
   });
 
-  const valid = draft ? compilePuzzle({ number: 0, text: draft.text, irab: lines(draft.irab), alts: lines(draft.alts), source: current?.source, ref: draft.ref, level: draft.level }).errors.length === 0 : false;
+  const valid = draft ? compilePuzzle({ number: 0, ...draftSource(draft), source: current?.source, ref: draft.ref, level: draft.level }).errors.length === 0 : false;
 
   return (
     <div className="font-[system-ui,'Segoe_UI',Tahoma,sans-serif]">
@@ -253,6 +274,32 @@ export default function Review() {
                       className={`${field} h-16 font-naskh text-xl`}
                       value={draft.alts}
                       onChange={(e) => setDraft({ ...draft, alts: e.target.value })}
+                    />
+                  </label>
+                  <label className="block">
+                    <span className="text-xs text-paper/40">
+                      أشكال متبادلة لكلمة (سطر لكل كلمة، والأشكال بينها |): قَرَأْتُ | قَرَأْتَ | قَرَأْتِ
+                    </span>
+                    <textarea
+                      className={`${field} h-16 font-naskh text-xl`}
+                      value={draft.vary}
+                      onChange={(e) => setDraft({ ...draft, vary: e.target.value })}
+                    />
+                  </label>
+                  <label className="block">
+                    <span className="text-xs text-paper/40">سياق يظهر للاعب (اختياري): المتكلّمة أنثى</span>
+                    <input
+                      className={field}
+                      value={draft.context}
+                      onChange={(e) => setDraft({ ...draft, context: e.target.value })}
+                    />
+                  </label>
+                  <label className="block">
+                    <span className="text-xs text-paper/40">كلمات تشكيلها محسوم بباقي الجملة (بلا تشكيل، بينها مسافة): زلت</span>
+                    <input
+                      className={field}
+                      value={draft.fixed}
+                      onChange={(e) => setDraft({ ...draft, fixed: e.target.value })}
                     />
                   </label>
                   <label className="block">

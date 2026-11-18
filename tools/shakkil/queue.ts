@@ -22,6 +22,9 @@ export interface Candidate {
   text: string;
   irab: string[];
   alts?: string[];
+  vary?: string[][];
+  context?: string;
+  fixed?: string[];
   author?: string;
   source?: string;
   level?: number;
@@ -60,6 +63,9 @@ function validate(c: Candidate): string[] {
     text: c.text,
     irab: c.irab,
     alts: c.alts,
+    vary: c.vary,
+    context: c.context,
+    fixed: c.fixed,
     source: c.source ?? "llm-reviewed",
     level: c.level,
     ref: c.ref,
@@ -107,6 +113,10 @@ export function approve(id: string, edited: Candidate): { number: number; file: 
   const file = `${String(number).padStart(4, "0")}.yaml`;
   const doc: Record<string, unknown> = { text: edited.text.trim(), irab: edited.irab.map((s) => s.trim()) };
   doc.alts = (edited.alts ?? []).map((s) => s.trim()).filter(Boolean);
+  const vary = (edited.vary ?? []).map((g) => g.map((s) => s.trim()).filter(Boolean)).filter((g) => g.length);
+  if (vary.length) doc.vary = vary;
+  if (edited.context?.trim()) doc.context = edited.context.trim();
+  if (edited.fixed?.length) doc.fixed = edited.fixed;
   if (edited.author?.trim()) doc.author = edited.author.trim();
   doc.source = edited.source ?? "llm-reviewed";
   if (edited.level && edited.level !== 1) doc.level = edited.level;
