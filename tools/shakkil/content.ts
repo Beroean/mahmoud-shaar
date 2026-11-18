@@ -117,7 +117,7 @@ export function loadPuzzleFile(path: string): FileResult {
   return { file, id, number: 0, slot: 0, source, puzzle, errors: [...errors, ...puzzleErrors] };
 }
 
-const sentenceKey = (text: string) => text.normalize("NFC").replace(/[«»"']/g, "").trim();
+export const sentenceKey = (text: string) => text.normalize("NFC").replace(/[«»"']/g, "").trim();
 
 /** Rejected or reserved sentences (content/shakkil/rejected.yaml), normalized for comparison. */
 export function readRejected(): Set<string> {

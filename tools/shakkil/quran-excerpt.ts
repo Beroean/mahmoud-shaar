@@ -7,24 +7,15 @@
  * Needs .cache/tanzil/quran-simple.txt: the Tanzil "simple" text (sura|aya|text), downloaded from
  * https://tanzil.net/download (CC BY 3.0, verbatim only, credit + link to tanzil.net). Not committed.
  */
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
 import { compilePuzzle } from "../../src/pages/shakkil/core/puzzle";
-
-const FILE = resolve(import.meta.dirname, "../../.cache/tanzil/quran-simple.txt");
-
-export function loadTanzil(path = FILE): Map<string, string> {
-  const verses = new Map<string, string>();
-  for (const line of readFileSync(path, "utf8").split(/\r?\n/)) {
-    const m = /^(\d+)\|(\d+)\|(.*)$/.exec(line);
-    // NFC: canonically equivalent text (e.g. shadda+fatha vs fatha+shadda) compares equal.
-    if (m) verses.set(`${m[1]}:${m[2]}`, m[3].normalize("NFC"));
-  }
-  return verses;
-}
+import { TANZIL_FILE, loadTanzil } from "./tanzil";
 
 const args = process.argv.slice(2);
 const verses = loadTanzil();
+if (!verses) {
+  console.log(`✗ ${TANZIL_FILE} not found: download the "simple" text from https://tanzil.net/download`);
+  process.exit(1);
+}
 let ok = true;
 for (let i = 0; i < args.length; i += 2) {
   const [ref, text] = [args[i], args[i + 1].normalize("NFC")];
