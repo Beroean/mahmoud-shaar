@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { HelpIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
@@ -354,6 +354,17 @@ export default function Halab() {
       return next;
     });
 
+  // The answered card is taller than the next one, so the old scroll position would open the next
+  // round part-way down. Bring the round tracker back to the top instead.
+  const playRef = useRef<HTMLDivElement>(null);
+  const shownRound = session?.round;
+  const lastRound = useRef(shownRound);
+  useLayoutEffect(() => {
+    const moved = lastRound.current !== undefined && lastRound.current !== shownRound;
+    lastRound.current = shownRound;
+    const el = playRef.current;
+    if (moved && el && el.getBoundingClientRect().top < 0) el.scrollIntoView({ block: "start" });
+  }, [shownRound]);
   const nextRound = () => setSession((s) => (s ? { ...s, round: Math.min(s.round + 1, s.day.rounds.length) } : s));
 
   const round = session && session.round < session.day.rounds.length ? session.day.rounds[session.round] : null;
@@ -393,6 +404,7 @@ export default function Halab() {
           {!days && !error && <p className="text-paper/40 py-24 text-center">جارٍ التحميل…</p>}
           {days && !session && <p className="text-paper/70 py-24 text-center">أسئلة اليوم في الطريق. حدّث الصفحة بعد قليل.</p>}
 
+          <div ref={playRef} className="scroll-mt-4" />
           {session && <Steps session={session} />}
           {session && round && (
             <RoundCard
