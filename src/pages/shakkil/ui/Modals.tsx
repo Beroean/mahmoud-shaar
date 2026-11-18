@@ -162,7 +162,7 @@ export function ResultModal({
       <Answer words={variant.words} />
       <h3 className="text-sm text-paper/60 mt-6 mb-2">الإعراب</h3>
       <dl className="space-y-2 mb-4">
-        {puzzle.words.map((w, k) => (
+        {variant.words.map((w, k) => (
           <div key={k} className="flex gap-3 items-baseline">
             <dt className="font-naskh text-xl text-gold shrink-0">
               {wordToString(w)}
@@ -281,7 +281,7 @@ export function DayResultModal({
               <details className="mt-2">
                 <summary className="cursor-pointer text-sm text-paper/60 hover:text-paper">الإعراب</summary>
                 <dl className="space-y-2 mt-3">
-                  {puzzle.words.map((w, k) => (
+                  {variant.words.map((w, k) => (
                     <div key={k} className="flex gap-3 items-baseline">
                       <dt className="font-naskh text-xl text-gold shrink-0">{wordToString(w)}</dt>
                       <dd className="text-sm text-paper/80 leading-relaxed">{puzzle.irab[k]}</dd>

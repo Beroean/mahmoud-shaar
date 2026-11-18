@@ -11,6 +11,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { VOWEL_NAMES_AR, letterToString, wordToString, type Word } from "../../src/pages/shakkil/core/arabic";
+import { ambiguities, describeAmbiguity } from "../../src/pages/shakkil/core/ambiguity";
 import { RULE_LABELS, type Spec } from "../../src/pages/shakkil/core/rules";
 import { compilePuzzle } from "../../src/pages/shakkil/core/puzzle";
 import { PUZZLE_DIR, loadAll, loadPuzzleFile, type FileResult } from "./content";
@@ -23,6 +24,7 @@ const color = (code: number) => (s: string) => (process.stdout.isTTY ? `\x1b[${c
 const red = color(31);
 const green = color(32);
 const dim = color(2);
+const yellow = color(33);
 const bold = color(1);
 
 function describeMark(spec: Spec, word: Word, i: number): string {
@@ -49,11 +51,22 @@ function preview(words: Word[], specs: Spec[][]) {
   console.log(dim("    ● required   ○ may be left bare   · not graded"));
 }
 
+let unresolved = 0;
+
+/** Pronoun suffixes whose vowel the sentence leaves open (see core/ambiguity.ts). */
+function ambiguityWarnings(r: FileResult): string[] {
+  if (!r.puzzle) return [];
+  return ambiguities(r.puzzle).map((a) => `⚠ ${describeAmbiguity(r.puzzle!, a)}`);
+}
+
 function report(r: FileResult): boolean {
   const ok = r.errors.length === 0;
+  const warnings = ambiguityWarnings(r);
+  if (warnings.length) unresolved++;
   if (quiet && ok) return ok;
   console.log(`${ok ? green("✓") : red("✗")} ${bold(r.file)}${r.source?.text ? `  ${r.source.text}` : ""}`);
   for (const e of r.errors) console.log(red(`    ${e}`));
+  for (const w of warnings) console.log(yellow(`    ${w}`));
   if (ok && !quiet && r.puzzle) {
     preview(r.puzzle.words, r.puzzle.variants[0].specs);
     r.puzzle.variants.slice(1).forEach((v, k) => {
@@ -90,6 +103,7 @@ if (textIdx >= 0) {
     for (const e of setErrors) console.log(red(`✗ ${e}`));
     ok = ok && setErrors.length === 0;
     console.log(`\n${results.length + pool.length} puzzles (${pool.length} not scheduled yet), ${ok ? green("all valid") : red("errors found")}`);
+    if (unresolved) console.log(yellow(`${unresolved} with a pronoun suffix the sentence leaves open (⚠ above)`));
   }
 }
 

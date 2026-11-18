@@ -206,6 +206,13 @@ function Game({
 
       {multi && <RoundSteps session={session} current={state.status} />}
 
+      {puzzle.context && (
+        <p className="mb-4 text-center text-paper/70" dir="rtl">
+          <span className="text-paper/40">السياق: </span>
+          {puzzle.context}
+        </p>
+      )}
+
       <Board state={state} onSelect={(pos) => dispatch({ type: "select", pos })} />
 
       {finished && multi && !isLast && (

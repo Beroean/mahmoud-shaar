@@ -13,6 +13,7 @@ import { pathToFileURL } from "node:url";
 import { VOWEL_NAMES_AR, type Word, letterToString, wordToString } from "../../src/pages/shakkil/core/arabic";
 import { type FileResult, FILE_RE, idOfFile, loadAll, parseSchedule, resolveOrder } from "./content";
 import { dateOfDay, lockedDays } from "./schedule";
+import { ambiguities, describeAmbiguity } from "../../src/pages/shakkil/core/ambiguity";
 
 export const MARKER = "<!-- shakkil-puzzle-report -->";
 
@@ -162,6 +163,8 @@ export function buildReport(
     }
     if (valid) {
       lines.push(wordTable(r), "");
+      for (const a of ambiguities(r.puzzle!)) warnings.push(`\`${c.file}\`: ${describeAmbiguity(r.puzzle!, a)}`);
+      if (r.source?.context) lines.push(`السياق / context: ${cell(r.source.context)}`, "");
       if (r.puzzle!.variants.length > 1) {
         lines.push(
           `تشكيلات بديلة مقبولة / accepted alternatives: ${r.puzzle!.variants
