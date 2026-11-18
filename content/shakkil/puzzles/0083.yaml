@@ -7,3 +7,4 @@ alts: []
 vary:
   - [أَكَلْتُ, أَكَلْتَ, أَكَلْتِ]
 source: llm-reviewed
+level: 2

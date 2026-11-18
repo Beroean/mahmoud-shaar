@@ -10,15 +10,21 @@
  *   npm run schedule -- plan [--days N] [--first 0042,0057] [--author "Name"]
  *                                            three-sentence days (easy, medium, hard) after tomorrow,
  *                                            from every unplayed puzzle; leftovers stay in the pool
+ *   npm run schedule -- relevel [plan options]
+ *                                            set the level of every unplayed puzzle from its difficulty
+ *                                            score (core/difficulty.ts: easiest third easy, hardest
+ *                                            third hard), then plan as above
  *
  * Days already played (today included, once launched) and tomorrow are locked and never move.
  * schedule.yaml has one entry per day: "0042" (a single-sentence day) or ["0011", "0042", "0103"]
  * (easy, medium, hard). next/author/move/mix work on single-sentence days; plan builds triples.
  */
 import { readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { difficulty, levelsByScore } from "../../src/pages/shakkil/core/difficulty";
 import { pathToFileURL } from "node:url";
 import { LAUNCH_DATE, LAUNCH_DAY, dayIndex, puzzleNumber } from "../../src/pages/shakkil/core/daily";
-import { SCHEDULE_FILE, loadAll, normalizeId } from "./content";
+import { PUZZLE_DIR, SCHEDULE_FILE, loadAll, normalizeId } from "./content";
 
 /** Number of days that are locked: every day up to and including today, once the game launched. */
 export function lockedDays(now = Date.now()): number {
@@ -97,6 +103,16 @@ export function planTriples<T extends { id: string; level?: number; group?: stri
   return { days, leftover: candidates.filter((c) => !used.has(c.id)).map((c) => c.id) };
 }
 
+/** Sets (or, for level 1, removes) the `level:` line of a puzzle file, keeping everything else. */
+export function withLevel(yaml: string, level: number): string {
+  const text = yaml.replace(/\r\n/g, "\n").replace(/^level:.*\n?/m, "");
+  if (level === 1) return text;
+  const line = `level: ${level}\n`;
+  const m = /^source:.*\n/m.exec(text);
+  if (m) return text.slice(0, m.index + m[0].length) + line + text.slice(m.index + m[0].length);
+  return text.endsWith("\n") ? text + line : `${text}\n${line}`;
+}
+
 function writeSchedule(days: string[][]) {
   const text = readFileSync(SCHEDULE_FILE, "utf8").replace(/\r\n/g, "\n");
   const header = text.split("\n").filter((l) => l.startsWith("#")).join("\n");
@@ -147,14 +163,25 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
         .slice(fixed)
         .map((id) => ({ id, level: byId.get(id)?.source?.level, group: groupOf(byId.get(id)!) }));
       next = asDays([...order.slice(0, fixed), ...mixByLevel(upcoming).map((x) => x.id)]);
-    } else if (cmd === "plan") {
+    } else if (cmd === "plan" || cmd === "relevel") {
       // Every puzzle not on a fixed day is a candidate: future single days, future triples, the pool.
       const keep = days.slice(0, fixed);
       const kept = new Set(keep.flat());
-      const candidates = [...byId.values()]
-        .filter((r) => !kept.has(r.id))
-        .sort((a, b) => a.id.localeCompare(b.id))
-        .map((r) => ({ id: r.id, level: r.source?.level, group: groupOf(r) }));
+      const unplayed = [...byId.values()].filter((r) => !kept.has(r.id)).sort((a, b) => a.id.localeCompare(b.id));
+      if (cmd === "relevel") {
+        const levels = levelsByScore(unplayed.map((r) => ({ id: r.id, ...difficulty(r.puzzle!) })));
+        let changed = 0;
+        for (const r of unplayed) {
+          const level = levels.get(r.id)!;
+          if ((r.source?.level ?? 1) === level) continue;
+          const file = join(PUZZLE_DIR, r.file);
+          writeFileSync(file, withLevel(readFileSync(file, "utf8"), level), "utf8");
+          r.source = { ...r.source!, level };
+          changed++;
+        }
+        console.log(`${changed} of ${unplayed.length} unplayed puzzles changed level.`);
+      }
+      const candidates = unplayed.map((r) => ({ id: r.id, level: r.source?.level, group: groupOf(r) }));
       const author = flag("--author");
       const first = [
         ...(flag("--first")?.split(",").map(normalizeId) ?? []),
@@ -168,7 +195,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       console.log(
         `${plan.days.length} three-sentence days from day ${fixed + 1}; ${plan.leftover.length} puzzles left in the pool.`,
       );
-    } else if (cmd) throw new Error(`unknown command "${cmd}"; use next, author, move, mix or plan`);
+    } else if (cmd) throw new Error(`unknown command "${cmd}"; use next, author, move, mix, plan or relevel`);
 
     if (next) {
       writeSchedule(next);

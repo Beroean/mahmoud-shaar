@@ -48,7 +48,7 @@ source: original
 | `fixed` | لا | كلمات (بلا تشكيل) حسم باقي الجملة تشكيلها، مثل `زلت` في «ما زِلْتُ أَتَذَكَّرُ». يُسكت تنبيه الالتباس عنها. |
 | `author` | لا | الاسم الذي يظهر في نتيجة اللعبة. |
 | `source` | لا | `original` (من تأليفك)، أو `poetry` (شعر)، أو `literature` (نثر أدبي)، أو `quran`، أو `llm-reviewed`. |
-| `level` | لا | الصعوبة: `1` سهل (الافتراضي)، `2` متوسط، `3` صعب. في كل يوم ثلاث جمل: سهلة ومتوسطة وصعبة، فالمستوى يحدد موضع الجملة. |
+| `level` | لا | الصعوبة: `1` سهل (الافتراضي)، `2` متوسط، `3` صعب. في كل يوم ثلاث جمل: سهلة ومتوسطة وصعبة، فالمستوى يحدد موضع الجملة. يضبطه `npm run schedule -- relevel` من درجة الصعوبة (عدد الحركات المطلوبة + القواعد المذكورة في الإعراب، مثل الممنوع من الصرف والتمييز والجزم)، فاذكر القاعدة باسمها في الإعراب. |
 | `ref` | لا | المرجع الظاهر مع الجواب، مثل «سورة الشرح، الآية ٦» أو اسم القصيدة. مطلوب لآيات القرآن. |
 
 ## قواعد التشكيل في اللعبة
@@ -119,6 +119,7 @@ Puzzles that have already been played are locked: the check fails if a PR delete
 - The player may leave out a word-internal sukun and the vowel before a long-vowel letter. Shadda and every word ending (including a final sukun) are required.
 - Tanween fath before a final alif can be written on the letter or on the alif.
 - `alts` lists other fully valid diacritizations; a guess matching any of them wins.
+- Difficulty: `src/pages/shakkil/core/difficulty.ts` scores each puzzle (marks the player must enter, plus points for grammar rules named in the i'rab notes, such as ممنوع من الصرف, تمييز, جزم, شرط). `npm run schedule -- relevel` sets every unplayed puzzle's `level` from that score (easiest third easy, hardest third hard) and re-plans the days; CI fails if an upcoming day's medium scores above its hard. `npm run puzzle:check` shows each score. Name the rule in the i'rab note so it counts.
 - Person and gender suffixes (قَرَأْتُ / قَرَأْتَ / قَرَأْتِ, كِتَابُكَ / كِتَابُكِ) are often left open by a short sentence. Accept every form with `vary` (one group per word or run of words: `- [قَرَأْتُ, قَرَأْتَ, قَرَأْتِ]`; every combination of groups is accepted), or pin one reading with `context` (shown above the sentence, e.g. «الشاعر يخاطب امرأة»; use it for quotes we don't change). List words the rest of the sentence already settles in `fixed` (undiacritized). `npm run puzzle:check` and the PR report warn about unhandled ones.
 
 ### License

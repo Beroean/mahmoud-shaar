@@ -2,7 +2,18 @@ import { describe, expect, it } from "vitest";
 import { loadAll, normalizeId, parseSchedule, readRejected, resolveOrder } from "./content";
 import { buildReport } from "./pr-report";
 import { LAUNCH_DATE } from "../../src/pages/shakkil/core/daily";
-import { dateOfDay, mixByLevel, moveTo, planTriples, roundRobin } from "./schedule";
+import { dateOfDay, mixByLevel, moveTo, planTriples, roundRobin, withLevel } from "./schedule";
+
+describe("withLevel", () => {
+  const base = "text: x\nirab: []\nsource: original\nref: y\n";
+  it("puts level after source, replaces it, and drops it for level 1", () => {
+    const two = withLevel(base, 2);
+    expect(two).toBe("text: x\nirab: []\nsource: original\nlevel: 2\nref: y\n");
+    expect(withLevel(two, 3)).toBe("text: x\nirab: []\nsource: original\nlevel: 3\nref: y\n");
+    expect(withLevel(two, 1)).toBe(base);
+    expect(withLevel("text: x\r\n", 2)).toBe("text: x\nlevel: 2\n");
+  });
+});
 
 describe("schedule", () => {
   it("normalizes IDs however YAML reads them, one entry per day", () => {
