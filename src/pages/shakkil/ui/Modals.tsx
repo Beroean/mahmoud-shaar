@@ -203,12 +203,15 @@ function Answer({ words }: { words: Word[] }) {
   return <p className="font-naskh text-4xl leading-[2] text-emerald-200">{sentenceToString(words)}</p>;
 }
 
+/** Big and bold: players kept missing it when it was small print. */
+const CREDIT_STYLE = "text-base font-bold text-paper/80 mb-4 leading-relaxed";
+
 /** Where the sentence comes from: Quran (with the Tanzil credit its license requires), poetry, or a contributor. */
 function Credit({ puzzle }: { puzzle: GameState["puzzle"] }) {
   const { source, ref, author } = puzzle;
   if (source === "quran") {
     return (
-      <p className="text-xs text-paper/40 mb-4 leading-relaxed">
+      <p className={CREDIT_STYLE}>
         القرآن الكريم{ref ? `، ${ref}` : ""} · النص من{" "}
         <a href="https://tanzil.net" target="_blank" rel="noopener noreferrer" className="underline hover:text-gold">
           مشروع تنزيل
@@ -220,7 +223,7 @@ function Credit({ puzzle }: { puzzle: GameState["puzzle"] }) {
   if (!who) return null;
   const label = source === "poetry" ? "من شعر" : source === "literature" ? "من أدب" : "الجملة من";
   return (
-    <p className="text-xs text-paper/40 mb-4">
+    <p className={CREDIT_STYLE}>
       {label}: {who}
     </p>
   );
