@@ -6,14 +6,23 @@
  * removes it from the queue; rejecting one records it in content/shakkil/rejected.yaml (so the same
  * sentence isn't drafted again) and removes it.
  *
- *   npm run queue:check     validate every queued candidate
+ *   npm run queue:check                 validate every queued candidate (errors only)
+ *   npm run queue:check -- --verbose    also list each candidate with its difficulty score and
+ *                                       ambiguity warnings, and a per-file summary
+ *
+ * Errors: the puzzle checker, a Quran item that isn't verbatim Tanzil text (when .cache/tanzil is
+ * downloaded), and a sentence that's already a puzzle, rejected, or queued twice.
  */
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
 import { basename, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { parse, stringify } from "yaml";
+import { ambiguities, describeAmbiguity } from "../../src/pages/shakkil/core/ambiguity";
+import { difficulty } from "../../src/pages/shakkil/core/difficulty";
 import { compilePuzzle } from "../../src/pages/shakkil/core/puzzle";
+import { readRejected, sentenceKey } from "./content";
+import { quranProblems } from "./tanzil";
 import { FILE_RE, PUZZLE_DIR, REJECTED_FILE, puzzleFiles } from "./content";
 
 export const QUEUE_DIR = resolve(import.meta.dirname, "../../content/shakkil/queue");
@@ -58,7 +67,8 @@ function readList(path: string): Candidate[] {
 }
 
 function validate(c: Candidate): string[] {
-  return compilePuzzle({
+  const quran = c.source === "quran" ? quranProblems(c.text, c.ref) : [];
+  return [...quran, ...compilePuzzle({
     number: 0,
     text: c.text,
     irab: c.irab,
@@ -69,7 +79,18 @@ function validate(c: Candidate): string[] {
     source: c.source ?? "llm-reviewed",
     level: c.level,
     ref: c.ref,
-  }).errors;
+  }).errors];
+}
+
+/** Sentences already used: every puzzle file plus rejected.yaml. */
+function usedSentences(): Map<string, string> {
+  const used = new Map<string, string>();
+  for (const path of puzzleFiles()) {
+    const m = /^text:\s*(.*)$/m.exec(readFileSync(path, "utf8"));
+    if (m) used.set(sentenceKey(m[1]), `puzzle ${basename(path)}`);
+  }
+  for (const t of readRejected()) used.set(t, "rejected.yaml");
+  return used;
 }
 
 export function loadQueue(): QueuedCandidate[] {
@@ -85,6 +106,21 @@ export function loadQueue(): QueuedCandidate[] {
     }
     return list.map((c) => ({ ...c, id: idOf(c.text), file: path, errors: validate(c) }));
   });
+}
+
+/** loadQueue, plus duplicate errors: a sentence that's already a puzzle, rejected, or queued twice. */
+export function checkQueue(): QueuedCandidate[] {
+  const queue = loadQueue();
+  const used = usedSentences();
+  const queued = new Map<string, string>();
+  for (const c of queue) {
+    if (!c.text) continue;
+    const key = sentenceKey(c.text);
+    const where = used.get(key) ?? queued.get(key);
+    if (where) c.errors.push(`الجملة موجودة في ${where} / duplicate of ${where}`);
+    else queued.set(key, `queue ${basename(c.file)}`);
+  }
+  return queue;
 }
 
 function removeFromQueue(id: string): QueuedCandidate {
@@ -140,11 +176,36 @@ export function reject(id: string, reason: string): void {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const queue = loadQueue();
+  const verbose = process.argv.includes("--verbose");
+  const queue = checkQueue();
   const bad = queue.filter((c) => c.errors.length);
-  for (const c of bad) {
-    console.log(`✗ ${c.file.split(/[\\/]/).pop()}  ${c.text}`);
+  const byFile = new Map<string, { n: number; scores: number[]; words: number[] }>();
+  for (const c of queue) {
+    const file = basename(c.file);
+    const puzzle = c.errors.length ? undefined : compilePuzzle({ number: 0, ...c, source: c.source ?? "llm-reviewed" }).puzzle;
+    const d = puzzle ? difficulty(puzzle) : null;
+    const s = byFile.get(file) ?? { n: 0, scores: [], words: [] };
+    s.n++;
+    if (d && puzzle) {
+      s.scores.push(d.score);
+      s.words.push(puzzle.words.length);
+    }
+    byFile.set(file, s);
+    const warnings = puzzle ? ambiguities(puzzle).map((a) => describeAmbiguity(puzzle, a)) : [];
+    if (!c.errors.length && !warnings.length && !verbose) continue;
+    console.log(`${c.errors.length ? "✗" : warnings.length ? "⚠" : "✓"} ${file}  ${d ? `[${d.score}] ` : ""}${c.text}`);
     for (const e of c.errors) console.log(`    ${e}`);
+    for (const w of warnings) console.log(`    ⚠ ${w}`);
+  }
+  if (verbose) {
+    console.log("");
+    for (const [file, s] of byFile) {
+      const sorted = [...s.scores].sort((a, b) => a - b);
+      const avg = (xs: number[]) => (xs.reduce((a, b) => a + b, 0) / (xs.length || 1)).toFixed(1);
+      console.log(
+        `${file}: ${s.n} items, ${avg(s.words)} words avg, difficulty ${sorted[0] ?? "-"}–${sorted.at(-1) ?? "-"} (median ${sorted[sorted.length >> 1] ?? "-"})`,
+      );
+    }
   }
   console.log(`${queue.length} queued, ${bad.length} invalid`);
   process.exit(bad.length ? 1 : 0);

@@ -7,6 +7,7 @@ import { LAUNCH_DAY, dayIndex, puzzleNumber } from "../../src/pages/shakkil/core
 import { difficulty } from "../../src/pages/shakkil/core/difficulty";
 import { loadAll } from "./content";
 import { lockedDays } from "./schedule";
+import { loadTanzil, quranProblems } from "./tanzil";
 
 /** Fail CI when fewer than this many future days are covered. */
 const MIN_RUNWAY_DAYS = 14;
@@ -24,6 +25,14 @@ describe("content/shakkil/puzzles", () => {
 
   it.each([...results, ...pool].map((r) => [r.file, r] as const))("%s is valid", (_, r) => {
     expect(r.errors).toEqual([]);
+  });
+
+  // Needs .cache/tanzil (not committed), so it only runs locally where the text is downloaded.
+  it.skipIf(!loadTanzil())("has only verbatim Tanzil text in Quran puzzles", () => {
+    const wrong = [...results, ...pool]
+      .filter((r) => r.source?.source === "quran")
+      .flatMap((r) => quranProblems(r.source!.text, r.source!.ref).map((p) => `${r.file}: ${p}`));
+    expect(wrong).toEqual([]);
   });
 
   // Played days and tomorrow can't change; every later three-sentence day must get harder.
