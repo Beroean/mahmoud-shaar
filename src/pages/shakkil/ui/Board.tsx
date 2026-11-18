@@ -4,10 +4,22 @@ import { type GameState, type Pos, isEditable } from "../game";
 import { joins, withJoiners, withKashida } from "./joining";
 import { RESULT_STYLE } from "./styles";
 
+/** How long a sentence is, for sizing: 0 short, 1 long (5–8 words), 2 very long (a full bayt, 9–12). */
+function lengthClass(words: Word[]): 0 | 1 | 2 {
+  const longest = Math.max(...words.map((w) => w.letters.length));
+  const total = words.reduce((n, w) => n + w.letters.length, 0);
+  if (words.length >= 9 || total >= 40) return 2;
+  if (longest >= 10 || total >= 28) return 1;
+  return 0;
+}
+
+/** Past attempts get smaller as the sentence gets longer, so six of them still fit above the keyboard. */
+const ATTEMPT_SIZE = ["text-3xl sm:text-4xl gap-x-5", "text-2xl sm:text-3xl gap-x-4", "text-xl sm:text-3xl gap-x-3"];
+
 /** Compact, read-only rendering of a past attempt, coloured by result. */
 function AttemptRow({ words, guess, results }: { words: Word[]; guess: Mark[][]; results: LetterResult[][] }) {
   return (
-    <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 font-naskh text-3xl sm:text-4xl leading-[2.1]">
+    <div className={`flex flex-wrap justify-center gap-y-1 font-naskh leading-[2.1] ${ATTEMPT_SIZE[lengthClass(words)]}`}>
       {words.map((word, w) => {
         const j = joins(word);
         const texts = letterTexts(word, guess[w]);
@@ -31,16 +43,19 @@ function AttemptRow({ words, guess, results }: { words: Word[]; guess: Mark[][];
 }
 
 /**
- * Letter size for the editable sentence. Short sentences stay big; long ones (5–6 words, or long
- * words like والمستشفيات) step down on phones so each word fits on a line and the sentence doesn't
- * fill the screen. Desktop has room, so it changes less.
+ * Letter size (and word spacing) for the editable sentence. Short sentences stay big; long ones
+ * (5–8 words, or long words like والمستشفيات) step down on phones so each word fits on a line, and a
+ * full bayt (9–12 words) steps down again so it takes three or four lines, not the whole screen.
+ * Desktop has room, so it changes less. Letters stay at least ~28px, a comfortable tap target.
  */
 function editSize(words: Word[]): string {
   const longest = Math.max(...words.map((w) => w.letters.length));
   const total = words.reduce((n, w) => n + w.letters.length, 0);
-  if (longest >= 10 || total >= 28) return "text-3xl sm:text-5xl";
-  if (longest >= 7 || total >= 20) return "text-4xl sm:text-5xl";
-  return "text-5xl sm:text-6xl";
+  const cls = lengthClass(words);
+  if (cls === 2) return "text-[1.75rem] sm:text-4xl gap-x-5 sm:gap-x-7";
+  if (cls === 1) return "text-3xl sm:text-5xl gap-x-6 sm:gap-x-8";
+  if (longest >= 7 || total >= 20) return "text-4xl sm:text-5xl gap-x-8";
+  return "text-5xl sm:text-6xl gap-x-8";
 }
 
 function EditRow({
@@ -54,7 +69,7 @@ function EditRow({
   const last = results[results.length - 1];
   return (
     <div
-      className={`flex flex-wrap justify-center gap-x-8 gap-y-3 font-naskh leading-[2.1] ${editSize(puzzle.words)}`}
+      className={`flex flex-wrap justify-center gap-y-3 font-naskh leading-[2.1] ${editSize(puzzle.words)}`}
       role="group"
       aria-label="الجملة"
     >

@@ -176,6 +176,12 @@ describe("compilePuzzle", () => {
     expect(alt.errors.join()).toMatch(/not the same sentence/);
   });
 
+  it("allows up to 12 words (a full bayt)", () => {
+    const words = (n: number) => Array(n).fill("ذَهَبَ").join(" ");
+    expect(compilePuzzle({ number: 1, text: words(12), irab: Array(12).fill("x") }).errors).toEqual([]);
+    expect(compilePuzzle({ number: 1, text: words(13), irab: Array(13).fill("x") }).errors.join()).toMatch(/13 words/);
+  });
+
   it("rejects an unknown source", () => {
     const r = compilePuzzle({ number: 1, text: "ذَهَبَ الْوَلَدُ", irab: ["x", "y"], source: "web" });
     expect(r.errors.join()).toMatch(/unknown source/);

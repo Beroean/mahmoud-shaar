@@ -40,7 +40,7 @@ source: original
 
 | الحقل | مطلوب؟ | الوصف |
 |---|---|---|
-| `text` | نعم | الجملة مشكولة تشكيلًا كاملًا، من كلمتين إلى ست كلمات. |
+| `text` | نعم | الجملة مشكولة تشكيلًا كاملًا، من كلمتين إلى اثنتي عشرة كلمة (بيت شعر كامل مثلًا). |
 | `irab` | نعم | إعراب مختصر لكل كلمة بالترتيب، سطر لكل كلمة يبدأ بـ `- `. |
 | `alts` | لا | تشكيلات أخرى صحيحة تمامًا للجملة نفسها، مثل `["قَرَأْتَ الْكِتَابَ"]`. يُقبل جواب اللاعب إن طابق أيًّا منها. |
 | `vary` | لا | أشكال متبادلة لكلمة واحدة (أو لكلمات متتالية تتغير معًا) حين لا تحدد الجملة المتكلم أو المخاطَب: `- [قَرَأْتُ, قَرَأْتَ, قَرَأْتِ]`. أحد الأشكال يطابق `text`. تُقبل كل التوافيق بين المجموعات. |
@@ -124,7 +124,7 @@ Puzzles that have already been played are locked: the check fails if a PR delete
 
 ### License
 
-Puzzle content (sentences, diacritization, i'rab) is published under [CC BY-NC 4.0](content/shakkil/LICENSE); by contributing you agree to that. Exceptions: Quran text is verbatim from [Tanzil](https://tanzil.net) (CC BY 3.0, no changes allowed), and short quotations from modern authors stay their authors'. No song lyrics. Sentences are 2–6 words; optional `level` (1–3) and `ref` (citation, required for Quran). The site's code is all rights reserved ([LICENSE](LICENSE)).
+Puzzle content (sentences, diacritization, i'rab) is published under [CC BY-NC 4.0](content/shakkil/LICENSE); by contributing you agree to that. Exceptions: Quran text is verbatim from [Tanzil](https://tanzil.net) (CC BY 3.0, no changes allowed), and short quotations from modern authors stay their authors'. No song lyrics. Sentences are 2–12 words; optional `level` (1–3) and `ref` (citation, required for Quran). The site's code is all rights reserved ([LICENSE](LICENSE)).
 
 ### Local tooling
 
