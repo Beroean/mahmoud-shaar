@@ -100,7 +100,9 @@ function EditRow({
                   aria-label={`الحرف ${l.char}${editable ? "" : "، صحيح"}`}
                   aria-current={active ? "true" : undefined}
                   className={`inline-block min-w-[0.7em] border-b-[3px] rounded-t-md transition-colors ${tone} ${
-                    active ? "ring-2 ring-paper ring-offset-2 ring-offset-ink" : ""
+                    // Inset, so the box stays inside this letter. An outer ring (and its dark offset)
+                    // painted over the neighbouring letters, hiding a grey alif or lam next to it.
+                    active ? "ring-2 ring-inset ring-paper" : ""
                   } ${editable ? "hover:bg-paper/10 cursor-pointer" : "cursor-default"}`}
                 >
                   {text}
