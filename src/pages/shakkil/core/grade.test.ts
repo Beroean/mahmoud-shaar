@@ -182,6 +182,12 @@ describe("compilePuzzle", () => {
     expect(compilePuzzle({ number: 1, text: words(13), irab: Array(13).fill("x") }).errors.join()).toMatch(/13 words/);
   });
 
+  it("needs a ref for Quran and hadith", () => {
+    const src = { number: 1, text: "ذَهَبَ الْوَلَدُ", irab: ["x", "y"] };
+    expect(compilePuzzle({ ...src, source: "hadith" }).errors.join()).toMatch(/hadith puzzles need a ref/);
+    expect(compilePuzzle({ ...src, source: "hadith", ref: "صحيح البخاري، الحديث ١" }).errors).toEqual([]);
+  });
+
   it("rejects an unknown source", () => {
     const r = compilePuzzle({ number: 1, text: "ذَهَبَ الْوَلَدُ", irab: ["x", "y"], source: "web" });
     expect(r.errors.join()).toMatch(/unknown source/);

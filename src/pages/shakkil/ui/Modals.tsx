@@ -206,7 +206,7 @@ function Answer({ words }: { words: Word[] }) {
 /** Big and bold: players kept missing it when it was small print. */
 const CREDIT_STYLE = "text-base font-bold text-paper/80 mb-4 leading-relaxed";
 
-/** Where the sentence comes from: Quran (with the Tanzil credit its license requires), poetry, or a contributor. */
+/** Where the sentence comes from: Quran (with the Tanzil credit its license requires), hadith, poetry, or a contributor. */
 function Credit({ puzzle }: { puzzle: GameState["puzzle"] }) {
   const { source, ref, author } = puzzle;
   if (source === "quran") {
@@ -218,6 +218,9 @@ function Credit({ puzzle }: { puzzle: GameState["puzzle"] }) {
         </a>
       </p>
     );
+  }
+  if (source === "hadith") {
+    return <p className={CREDIT_STYLE}>الحديث الشريف{ref ? `، ${ref}` : ""}</p>;
   }
   const who = [author, ref].filter(Boolean).join("، ");
   if (!who) return null;

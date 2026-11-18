@@ -318,7 +318,7 @@ export default function Review() {
                   </label>
                   <label className="block">
                     <span className="text-xs text-paper/40">
-                      {current.source === "quran" ? "الاسم الظاهر (يُترك فارغًا للقرآن)" : "الاسم الظاهر / الشاعر (اختياري)"}
+                      {current.source === "quran" || current.source === "hadith" ? "الاسم الظاهر (يُترك فارغًا للقرآن والحديث)" : "الاسم الظاهر / الشاعر (اختياري)"}
                     </span>
                     <input
                       className={field}

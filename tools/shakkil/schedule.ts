@@ -121,7 +121,9 @@ function writeSchedule(days: string[][]) {
 }
 
 const groupOf = (r: { source?: { source?: string; author?: string } }) =>
-  r.source?.source === "quran" ? "quran" : (r.source?.author ?? r.source?.source ?? "");
+  r.source?.source === "quran" || r.source?.source === "hadith"
+    ? r.source.source
+    : (r.source?.author ?? r.source?.source ?? "");
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const [cmd, ...args] = process.argv.slice(2);
