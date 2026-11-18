@@ -14,7 +14,7 @@ export const KIND_LABEL: Record<RoundKind, string> = {
   vendor: "نداء البيّاع",
   idiom: "كناية",
   belief: "من اعتقاداتهم",
-  simile: "متل شو؟",
+  simile: "متل إشو؟",
   blessing: "من دعواتهم",
   song: "من أغانيهم",
 };
@@ -22,12 +22,12 @@ export const KIND_LABEL: Record<RoundKind, string> = {
 /** The question under each prompt. */
 export const KIND_QUESTION: Record<RoundKind, (prompt: string) => string> = {
   origin: (w) => `من أيّ لغة جاءت كلمة «${w}»؟`,
-  proverb: () => "شو الكلمة الناقصة؟",
-  wisdom: () => "شو الكلمة الناقصة؟",
-  taunt: () => "شو الكلمة الناقصة؟",
-  riddle: () => "شو هيّ؟",
-  vendor: () => "شو عم يبيع؟",
-  idiom: () => "شو يعني؟",
+  proverb: () => "إشو الكلمة الناقصة؟",
+  wisdom: () => "إشو الكلمة الناقصة؟",
+  taunt: () => "إشو الكلمة الناقصة؟",
+  riddle: () => "إشو هيّ؟",
+  vendor: () => "إشو عم يبيع؟",
+  idiom: () => "إشو يعني؟",
   belief: () => "كمّل الاعتقاد",
   simile: () => "كمّل التشبيه",
   blessing: () => "كمّل الدعوة",
