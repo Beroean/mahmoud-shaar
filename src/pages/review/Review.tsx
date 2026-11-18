@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { SiteLayout } from "../../components/SiteLayout";
 import { VOWEL_NAMES_AR, letterToString, skeleton, wordToString } from "../shakkil/core/arabic";
 import { ambiguities, describeAmbiguity } from "../shakkil/core/ambiguity";
+import { TRAPS, difficulty } from "../shakkil/core/difficulty";
 import { compilePuzzle } from "../shakkil/core/puzzle";
 
 interface Queued {
@@ -132,12 +133,25 @@ function Preview({ draft }: { draft: Draft }) {
           بدائل مقبولة: {puzzle.variants.slice(1).map((v) => v.words.map((x) => wordToString(x)).join(" ")).join("، ")}
         </p>
       )}
+      <Difficulty puzzle={puzzle} />
       {ambiguities(puzzle).map((a) => (
         <p key={`${a.word}-${a.letter}`} className="text-sm text-amber-300" dir="auto">
           ⚠ {describeAmbiguity(puzzle, a)}
         </p>
       ))}
     </div>
+  );
+}
+
+/** The difficulty score that `npm run schedule -- relevel` turns into a level. */
+function Difficulty({ puzzle }: { puzzle: NonNullable<ReturnType<typeof compilePuzzle>["puzzle"]> }) {
+  const d = difficulty(puzzle);
+  const names = d.traps.map((id) => TRAPS.find((t) => t.id === id)?.ar ?? id);
+  return (
+    <p className="text-sm text-paper/60" dir="auto">
+      الصعوبة {d.score}: {d.marks} حركة مطلوبة{names.length ? ` + ${names.join("، ")}` : ""}
+      {d.defused ? ` − ${d.defused} بديل` : ""}
+    </p>
   );
 }
 

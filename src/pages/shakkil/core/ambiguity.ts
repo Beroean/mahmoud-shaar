@@ -37,33 +37,36 @@ function hasArticle(word: Word): boolean {
   return /^([وفبكل]|وب|فب|ول|فل)?ال/.test(s) || /^لل/.test(s);
 }
 
-export function ambiguities(puzzle: Puzzle): Ambiguity[] {
-  if (puzzle.source === "quran" || puzzle.context) return [];
+/** Pronoun-suffix letters in a word (subject تاء, addressee كاف), ignoring `fixed`. */
+export function suffixLetters(word: Word, w: number): Ambiguity[] {
+  if (hasArticle(word)) return [];
+  const bare = skeleton([word]).replaceAll(DAGGER_ALIF, "");
+  if (NOT_PRONOUN.has(bare) || NOT_PRONOUN.has(bare.replace(/^[وف]/, ""))) return [];
+  const L = word.letters;
   const out: Ambiguity[] = [];
-  const pinned = new Set((puzzle.fixed ?? []).map((f) => f.trim()));
-  puzzle.words.forEach((word, w) => {
-    if (hasArticle(word)) return;
-    const bare = skeleton([word]).replaceAll(DAGGER_ALIF, "");
-    if (pinned.has(word.letters.map((l) => l.char).join(""))) return;
-    if (NOT_PRONOUN.has(bare) || NOT_PRONOUN.has(bare.replace(/^[وف]/, ""))) return;
-    const L = word.letters;
-    const candidates: Ambiguity[] = [];
-    L.forEach((l, i) => {
-      if (l.mark.shadda || !PERSON_VOWELS.has(l.mark.vowel)) return;
-      const rest = L.slice(i + 1).map((x) => x.char).join("");
-      if (l.char === "ت" && i >= 2 && L[i - 1].mark.vowel === "o" && AFTER_TA.has(rest)) {
-        candidates.push({ word: w, letter: i, kind: "speaker" });
-      }
-      if (l.char === "ك" && i === L.length - 1 && i >= 1 && l.mark.vowel !== "u") {
-        candidates.push({ word: w, letter: i, kind: "addressee" });
-      }
-    });
-    for (const c of candidates) {
-      const vowels = new Set(puzzle.variants.map((v) => v.words[c.word].letters[c.letter].mark.vowel));
-      if (vowels.size < 2) out.push(c);
+  L.forEach((l, i) => {
+    if (l.mark.shadda || !PERSON_VOWELS.has(l.mark.vowel)) return;
+    const rest = L.slice(i + 1).map((x) => x.char).join("");
+    if (l.char === "ت" && i >= 2 && L[i - 1].mark.vowel === "o" && AFTER_TA.has(rest)) {
+      out.push({ word: w, letter: i, kind: "speaker" });
+    }
+    if (l.char === "ك" && i === L.length - 1 && i >= 1 && l.mark.vowel !== "u") {
+      out.push({ word: w, letter: i, kind: "addressee" });
     }
   });
   return out;
+}
+
+export function ambiguities(puzzle: Puzzle): Ambiguity[] {
+  if (puzzle.source === "quran" || puzzle.context) return [];
+  const pinned = new Set((puzzle.fixed ?? []).map((f) => f.trim()));
+  return puzzle.words.flatMap((word, w) => {
+    if (pinned.has(word.letters.map((l) => l.char).join(""))) return [];
+    return suffixLetters(word, w).filter((c) => {
+      const vowels = new Set(puzzle.variants.map((v) => v.words[c.word].letters[c.letter].mark.vowel));
+      return vowels.size < 2;
+    });
+  });
 }
 
 /** One bilingual line per ambiguity, for the check tool, the PR report and the review page. */

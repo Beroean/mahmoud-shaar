@@ -12,6 +12,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { VOWEL_NAMES_AR, letterToString, wordToString, type Word } from "../../src/pages/shakkil/core/arabic";
 import { ambiguities, describeAmbiguity } from "../../src/pages/shakkil/core/ambiguity";
+import { difficulty } from "../../src/pages/shakkil/core/difficulty";
 import { RULE_LABELS, type Spec } from "../../src/pages/shakkil/core/rules";
 import { compilePuzzle } from "../../src/pages/shakkil/core/puzzle";
 import { PUZZLE_DIR, loadAll, loadPuzzleFile, type FileResult } from "./content";
@@ -67,6 +68,10 @@ function report(r: FileResult): boolean {
   console.log(`${ok ? green("✓") : red("✗")} ${bold(r.file)}${r.source?.text ? `  ${r.source.text}` : ""}`);
   for (const e of r.errors) console.log(red(`    ${e}`));
   for (const w of warnings) console.log(yellow(`    ${w}`));
+  if (ok && !quiet && r.puzzle) {
+    const d = difficulty(r.puzzle);
+    console.log(dim(`  difficulty ${d.score}: ${d.marks} marks${d.traps.length ? ` + ${d.traps.join(", ")}` : ""}${d.defused ? `, ${d.defused} defused by alts` : ""} · level ${r.puzzle.level ?? 1}`));
+  }
   if (ok && !quiet && r.puzzle) {
     preview(r.puzzle.words, r.puzzle.variants[0].specs);
     r.puzzle.variants.slice(1).forEach((v, k) => {

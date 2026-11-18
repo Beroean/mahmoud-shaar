@@ -4,7 +4,9 @@
  */
 import { describe, expect, it } from "vitest";
 import { LAUNCH_DAY, dayIndex, puzzleNumber } from "../../src/pages/shakkil/core/daily";
+import { difficulty } from "../../src/pages/shakkil/core/difficulty";
 import { loadAll } from "./content";
+import { lockedDays } from "./schedule";
 
 /** Fail CI when fewer than this many future days are covered. */
 const MIN_RUNWAY_DAYS = 14;
@@ -22,6 +24,20 @@ describe("content/shakkil/puzzles", () => {
 
   it.each([...results, ...pool].map((r) => [r.file, r] as const))("%s is valid", (_, r) => {
     expect(r.errors).toEqual([]);
+  });
+
+  // Played days and tomorrow can't change; every later three-sentence day must get harder.
+  it("gets harder within each upcoming day (easy ≤ medium ≤ hard by difficulty score)", () => {
+    const fixed = lockedDays() + 1;
+    const byDay = new Map<number, typeof results>();
+    for (const r of results) byDay.set(r.number, [...(byDay.get(r.number) ?? []), r]);
+    const wrong = [...byDay.entries()]
+      .filter(([day, rs]) => day > fixed && rs.length === 3)
+      .map(([day, rs]) => ({ day, rs: rs.sort((a, b) => a.slot - b.slot) }))
+      .map(({ day, rs }) => ({ day, ids: rs.map((r) => r.id), scores: rs.map((r) => difficulty(r.puzzle!).score) }))
+      .filter(({ scores: [e, m, h] }) => e > m || m > h)
+      .map(({ day, ids, scores }) => `day ${day}: ${ids.map((id, k) => `${id}=${scores[k]}`).join(" ")}`);
+    expect(wrong, "run npm run schedule -- relevel, or fix the levels by hand").toEqual([]);
   });
 
   it(`covers at least ${MIN_RUNWAY_DAYS} days ahead (after launch)`, () => {
