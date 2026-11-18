@@ -47,7 +47,7 @@ export interface Puzzle extends PuzzleSource {
   variants: Variant[];
 }
 
-export const LIMITS = { minWords: 2, maxWords: 6 };
+export const LIMITS = { minWords: 2, maxWords: 12 };
 /**
  * quran = verbatim from the Tanzil text (tanzil.net); poetry / literature = a credited line from a
  * poem or a prose work (author + ref).
