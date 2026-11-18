@@ -49,10 +49,12 @@ export interface Puzzle extends PuzzleSource {
 
 export const LIMITS = { minWords: 2, maxWords: 12 };
 /**
- * quran = verbatim from the Tanzil text (tanzil.net); poetry / literature = a credited line from a
+ * quran = verbatim from the Tanzil text (tanzil.net); hadith = a hadith from the public-domain
+ * hadith-api text (github.com/fawazahmed0/hadith-api), ref = collection and number; poetry /
+ * literature = a credited line from a
  * poem or a prose work (author + ref).
  */
-export const SOURCES = ["original", "tashkeela", "llm-reviewed", "quran", "poetry", "literature"] as const;
+export const SOURCES = ["original", "tashkeela", "llm-reviewed", "quran", "hadith", "poetry", "literature"] as const;
 export const LEVELS = [1, 2, 3] as const;
 
 /** Most accepted variants a puzzle may expand to (`alts` × every `vary` combination). */
@@ -225,6 +227,9 @@ export function compilePuzzle(src: PuzzleSource): { puzzle?: Puzzle; errors: str
 
   if (src.level !== undefined && !(LEVELS as readonly number[]).includes(src.level)) {
     err(`المستوى يجب أن يكون ١ أو ٢ أو ٣`, `level must be 1, 2 or 3`);
+  }
+  if (src.source === "hadith" && !src.ref?.trim()) {
+    err("الأحاديث تحتاج إلى ref (الكتاب ورقم الحديث)", "hadith puzzles need a ref (collection and number)");
   }
   if (src.source === "quran" && !src.ref?.trim()) {
     err("آيات القرآن تحتاج إلى ref (السورة والآية)", "Quran puzzles need a ref (sura and aya)");

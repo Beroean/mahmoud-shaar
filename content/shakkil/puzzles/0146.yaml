@@ -7,4 +7,4 @@ alts: []
 vary:
   - [اشْتَرَيْتُ, اشْتَرَيْتَ, اشْتَرَيْتِ]
 source: llm-reviewed
-level: 3
+level: 2

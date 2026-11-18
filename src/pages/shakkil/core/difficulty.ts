@@ -43,7 +43,7 @@ export const TRAPS: { id: string; ar: string; points: number; re: RegExp }[] = [
   { id: "condition", ar: "شرط", points: HEAVY, re: /شرط/ },
   { id: "elided", ar: "عامل محذوف", points: HEAVY, re: /لفعل محذوف|محذوف تقديره/ },
   // Common rules most players know.
-  { id: "sound-plural-dual", ar: "مثنى أو جمع سالم", points: LIGHT, re: /علامة (رفعه|نصبه|جره) (الألف|الواو|الياء)|حذف النون/ },
+  { id: "sound-plural-dual", ar: "مثنى أو جمع سالم", points: LIGHT, re: /علامة (رفعه|نصبه|جره) (الألف|الواو|الياء)|حذف النون|ثبوت النون/ },
   { id: "nawasikh", ar: "إنّ وكان وأخواتهما", points: LIGHT, re: /(اسم|خبر) «[^»]+»/ },
   { id: "hal", ar: "حال", points: LIGHT, re: /(^|[\s،(])حال(ية)?($|[\s،)])/m },
   { id: "badal", ar: "بدل", points: LIGHT, re: /(^|[\s،])بدل /m },
