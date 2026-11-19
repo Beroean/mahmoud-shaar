@@ -33,16 +33,11 @@ function place(pins: MapPin[]): [number, number][] {
   return out;
 }
 
-export function MiniMap({ pins, title }: { pins: MapPin[]; title: string }) {
+/** The pins, as MiniMap draws them (also the last frame of the opening scene, MapIntro.tsx). */
+export function MapPins({ pins }: { pins: MapPin[] }) {
   const spots = place(pins);
   return (
-    <svg
-      viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-      role="img"
-      aria-label={title}
-      className="block w-56 sm:w-64 mx-auto h-auto"
-    >
-      <path d={LAND} fill="currentColor" className="text-paper/[0.06]" stroke="rgb(186 230 253 / 0.35)" strokeWidth={1.5} strokeLinejoin="round" />
+    <>
       {pins.map((pin, i) => {
         const [x, y] = spots[i];
         return (
@@ -66,6 +61,28 @@ export function MiniMap({ pins, title }: { pins: MapPin[]; title: string }) {
           </g>
         );
       })}
+    </>
+  );
+}
+
+/** The coastline's look on the mini map; the opening scene ends on the same values. */
+export const LAND_FILL = "rgb(232 228 220 / 0.06)";
+export const LAND_STROKE = "rgb(186 230 253)";
+export const LAND_STROKE_OPACITY = 0.35;
+export const LAND_STROKE_WIDTH = 1.5;
+
+export function MiniMap({ pins, title }: { pins: MapPin[]; title: string }) {
+  return (
+    <svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`} role="img" aria-label={title} className="block w-56 sm:w-64 mx-auto h-auto">
+      <path
+        d={LAND}
+        fill={LAND_FILL}
+        stroke={LAND_STROKE}
+        strokeOpacity={LAND_STROKE_OPACITY}
+        strokeWidth={LAND_STROKE_WIDTH}
+        strokeLinejoin="round"
+      />
+      <MapPins pins={pins} />
     </svg>
   );
 }
