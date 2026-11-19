@@ -93,7 +93,7 @@ A daily game from folklore books across the Arab world (Egypt, Palestine, Najd, 
 - `content/arabiyyat/sayings.yaml`, `usage.yaml`, `wildcards.yaml`: day N plays item N of each list; items past the shortest list are spares. Days are shared out so each book has a similar share and no day shows the same place twice.
 - Aleppo items reuse حلبيّات spares (`halab:` names the Halab item). `npm test` fails if Halab's schedule ever grows to include one of them.
 - `answer`/`others` follow the book; `note` is our own short explanation (never copied, since most books are under copyright). Items a curator was unsure of carry `flag:`.
-- Day 1 is `LAUNCH_DATE` in `src/pages/arabiyyat/core/daily.ts`, on Shakkil's clock. Before launch every visit is a preview; `?day=N` opens any day in dev.
+- Day 1 is `LAUNCH_DATE` in `src/pages/arabiyyat/core/daily.ts`, on Shakkil's clock. Builds ship days only up to tomorrow; `?day=N` replays past days (any day in dev). `npm test` fails when fewer than 14 days are left: refill the lists from `spares.yaml`. Days already played, today's and tomorrow's must never change.
 - The source texts and the helper scripts used to draft and check items are kept outside the repo (in `~/Downloads/arabiyyat-sources/`).
 
 ## WDI explorer data

@@ -4,7 +4,7 @@
  */
 import { dayIndex } from "../../shakkil/core/daily";
 
-export const LAUNCH_DATE: string | null = null;
+export const LAUNCH_DATE: string | null = "2026-11-20";
 const DAY_MS = 86_400_000;
 const OFFSET_MS = 3 * 3_600_000;
 

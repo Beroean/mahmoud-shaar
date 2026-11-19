@@ -1,11 +1,15 @@
 /**
  * Data test: every عربيّات item must be valid, every day must have its three rounds, and Aleppo items
- * borrowed from حلبيّات' spares must never be played in Halab too. (No runway check yet: the game
- * hasn't launched. Add one like tools/halab/content.test.ts when it does.)
+ * borrowed from حلبيّات' spares must never be played in Halab too, and the content must not be about
+ * to run out (this fails CI, and the nightly build, two weeks ahead).
  */
 import { describe, expect, it } from "vitest";
+import { todayNumber } from "../../src/pages/arabiyyat/core/daily";
 import { loadDays as loadHalab } from "../halab/content";
 import { loadDays } from "./content";
+
+/** Fail CI when fewer than this many future days are covered. */
+const MIN_RUNWAY_DAYS = 14;
 
 describe("content/arabiyyat", () => {
   const { days, errors, counts, halabIds } = loadDays();
@@ -22,6 +26,14 @@ describe("content/arabiyyat", () => {
       expect(["usage", "meaning"]).toContain(d.rounds[1].kind);
       expect(["origin", "root", "riddle", "custom"]).toContain(d.rounds[2].kind);
     }
+  });
+
+  it(`covers at least ${MIN_RUNWAY_DAYS} days ahead`, () => {
+    const remaining = days.length - todayNumber();
+    expect(
+      remaining,
+      `Only ${remaining} عربيّات days left after today: move items from content/arabiyyat/spares.yaml into the lists.`,
+    ).toBeGreaterThanOrEqual(MIN_RUNWAY_DAYS);
   });
 
   it("offers four distinct choices including the answer", () => {
