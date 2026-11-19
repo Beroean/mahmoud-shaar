@@ -52,15 +52,6 @@ type Experiment = {
 
 const EXPERIMENTS: Experiment[] = [
   {
-    href: "/explore/",
-    icon: <BarsIcon />,
-    kicker: "Data Explorer",
-    title: "World Bank WDI",
-    blurb:
-      "Browse and visualize 1,400+ World Development Indicators across every country. Pick a metric, see the world ranked.",
-    cta: "Open Explorer",
-  },
-  {
     href: "/shakkil/",
     icon: <HarakaIcon />,
     kicker: "Daily Puzzle · Arabic",
@@ -108,6 +99,15 @@ const EXPERIMENTS: Experiment[] = [
       "Three questions a day from folklore books across the Arab world: finish a proverb, say when it's used, then a word's origin, a riddle or an old custom.",
     cta: "Play today's questions",
   },
+  {
+    href: "/explore/",
+    icon: <BarsIcon />,
+    kicker: "Data Explorer",
+    title: "World Bank WDI",
+    blurb:
+      "Browse and visualize 1,400+ World Development Indicators across every country. Pick a metric, see the world ranked.",
+    cta: "Open Explorer",
+  },
 ];
 
 function HeaderLink({ href, children }: { href: string; children: string }) {
@@ -144,30 +144,43 @@ export default function Home() {
         </span>
       }
     >
-      <main className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 pt-24 pb-16 text-center">
-        <div className="mb-10 animate-fade-in">
+      <main className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 pt-14 pb-16 text-center">
+        <div className="mb-6 animate-fade-in">
           <Overline center>Houston, TX · Software Engineer</Overline>
         </div>
 
-        <h1 className="font-serif text-[clamp(3rem,8vw,6.5rem)] leading-[1.05] tracking-tight mb-10 animate-slide-up">
-          Welcome to my
-          <br />
-          <span className="italic text-gold">personal corner</span>
-          <br />
-          of the internet.
+        <h1 className="font-serif text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.1] tracking-tight mb-6 animate-slide-up">
+          Welcome to my <span className="italic text-gold">personal corner</span>
+          <br className="hidden sm:block" /> of the internet.
         </h1>
 
-        <p className="text-sm leading-[1.9] text-paper/60 max-w-xl mx-auto mb-16 animate-slide-up-delay">
+        <p className="text-sm leading-[1.9] text-paper/60 max-w-xl mx-auto mb-8 animate-slide-up-delay">
           I'm using this space to experiment with new tech stacks in my free
           time.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-32 animate-slide-up-delay-2">
+        <ul
+          aria-label="A bit about me"
+          className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-8 text-xs text-paper/50 animate-slide-up-delay"
+        >
+          {ABOUT.map((item) => (
+            <li key={item.label} className="text-center leading-relaxed">
+              <span className="inline-block align-middle mr-2 -mt-0.5 text-gold/70 [&>svg]:w-4 [&>svg]:h-4">
+                {item.icon}
+              </span>
+              <span className="sr-only">{item.label}:</span>
+              <span className="text-paper/80">{item.value}</span>
+              <span className="text-paper/30"> · {item.sub}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex justify-center gap-6 mb-16 animate-slide-up-delay-2">
           <a
             href={LINKEDIN}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-6 py-3 border border-gold text-gold text-xs tracking-widest uppercase hover:bg-gold hover:text-ink transition-all duration-300"
+            className="flex items-center gap-2 text-xs tracking-widest uppercase text-gold/70 hover:text-gold transition-colors duration-300"
           >
             <LinkedInIcon />
             LinkedIn
@@ -176,34 +189,14 @@ export default function Home() {
             href={GITHUB}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-6 py-3 border border-paper/20 text-paper/60 text-xs tracking-widest uppercase hover:border-paper/60 hover:text-paper transition-all duration-300"
+            className="flex items-center gap-2 text-xs tracking-widest uppercase text-paper/50 hover:text-paper transition-colors duration-300"
           >
             <GitHubIcon />
             GitHub
           </a>
         </div>
 
-        <div className="mb-16">
-          <SectionDivider label="A bit about me" />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-paper/10 mb-16">
-          {ABOUT.map((card) => (
-            <div
-              key={card.label}
-              className="bg-ink p-8 hover:bg-ink-2 transition-colors duration-300"
-            >
-              <div className="flex justify-center text-gold/80 mb-5">{card.icon}</div>
-              <div className="text-xs tracking-widest uppercase text-paper/30 mb-2">
-                {card.label}
-              </div>
-              <div className="font-serif text-xl mb-1">{card.value}</div>
-              <div className="text-xs text-paper/40">{card.sub}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mb-12">
+        <div className="mb-8">
           <SectionDivider label="Experiments" />
         </div>
 
