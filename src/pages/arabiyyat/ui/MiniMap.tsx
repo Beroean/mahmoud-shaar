@@ -21,7 +21,8 @@ const LABELED_R = 15;
 function place(pins: MapPin[]): [number, number][] {
   const out: [number, number][] = [];
   for (const pin of pins) {
-    let [x, y] = project(pin.lat, pin.lon);
+    const [px, y] = project(pin.lat, pin.lon);
+    let x = px;
     if (pin.label !== undefined) {
       for (let step = 1; out.some(([ox, oy]) => Math.hypot(ox - x, oy - y) < LABELED_R * 2.2) && step < 8; step++) {
         x += (step % 2 ? 1 : -1) * step * LABELED_R * 1.1;
