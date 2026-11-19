@@ -85,6 +85,17 @@ The review page reads the book from `~/Downloads/موسوعة حلب المقا�
 
 That `_djvu.txt` is OCR. The book's true text is the text layer of the PDF on the same archive.org item (`pdftotext -enc UTF-8`, then NFKC-normalize and restore the font's private ligatures U+E814 ته, U+E815 نه, U+E812 به, U+E811 لمج). Every item was checked against it; check new items against it too. Days already played, today's and tomorrow's must never change.
 
+## عربيّات (Arabiyyat)
+
+A daily game from folklore books across the Arab world (Egypt, Palestine, Najd, Yemen, Iraq, Kuwait, Libya, Morocco, Algeria, Sudan, Aleppo, Damascus). Three multiple-choice rounds a day: finish a saying; when a saying is used or what an idiom means; then a word's origin, its classical Arabic root, a riddle, or an old custom. The place appears above each question as context only: the game never asks which country a saying belongs to, since so many are shared.
+
+- `content/arabiyyat/sources.yaml`: the books, each with the place it records. Every item names its `source` and printed `page` (multi-volume books add `volume`).
+- `content/arabiyyat/sayings.yaml`, `usage.yaml`, `wildcards.yaml`: day N plays item N of each list; items past the shortest list are spares. Days are shared out so each book has a similar share and no day shows the same place twice.
+- Aleppo items reuse حلبيّات spares (`halab:` names the Halab item). `npm test` fails if Halab's schedule ever grows to include one of them.
+- `answer`/`others` follow the book; `note` is our own short explanation (never copied, since most books are under copyright). Items a curator was unsure of carry `flag:`.
+- Day 1 is `LAUNCH_DATE` in `src/pages/arabiyyat/core/daily.ts`, on Shakkil's clock. Builds ship days only up to tomorrow; `?day=N` replays past days (any day in dev). `npm test` fails when fewer than 14 days are left: refill the lists from `spares.yaml`. Days already played, today's and tomorrow's must never change.
+- The source texts and the helper scripts used to draft and check items are kept outside the repo (in `~/Downloads/arabiyyat-sources/`).
+
 ## WDI explorer data
 
 The explorer (`/explore/`) never calls the World Bank API at runtime (its uncached data requests often hang for 60s+). Instead `npm run wdi` (`tools/wdi/build.ts`) reads the World Bank's bulk download `WDI_CSV.zip` (~280 MB) and writes small static files to `public/data/wdi/` (gitignored): `indicators.json`, `countries.json`, `meta.json` and one `ind/<id>.json` per indicator with the latest value per country.

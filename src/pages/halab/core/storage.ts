@@ -59,18 +59,19 @@ function defaultKV(): KV | undefined {
   }
 }
 
-export function load(kv: KV | undefined = defaultKV()): SaveData {
+/** `key` lets another three-round game (عربيّات) keep its own save with the same shape. */
+export function load(kv: KV | undefined = defaultKV(), key = KEY): SaveData {
   try {
-    const raw = kv?.getItem(KEY);
+    const raw = kv?.getItem(key);
     return (raw && validate(JSON.parse(raw))) || emptySave();
   } catch {
     return emptySave();
   }
 }
 
-export function save(data: SaveData, kv: KV | undefined = defaultKV()): void {
+export function save(data: SaveData, kv: KV | undefined = defaultKV(), key = KEY): void {
   try {
-    kv?.setItem(KEY, JSON.stringify(data));
+    kv?.setItem(key, JSON.stringify(data));
   } catch {
     /* storage full or blocked: the game still works for this visit */
   }

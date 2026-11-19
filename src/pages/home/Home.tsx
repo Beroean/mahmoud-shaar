@@ -10,6 +10,7 @@ import {
   CandlesIcon,
   CapIcon,
   CitadelIcon,
+  DallahIcon,
   GitHubIcon,
   GlobeIcon,
   HarakaIcon,
@@ -90,6 +91,22 @@ const EXPERIMENTS: Experiment[] = [
     blurb:
       "Three rounds a day from al-Asadi's Comparative Encyclopedia of Aleppo: where a word came from, a proverb to finish, and a riddle, street cry or folk belief.",
     cta: "Play today's rounds",
+  },
+  {
+    href: "/arabiyyat/",
+    icon: <DallahIcon />,
+    kicker: "Daily Game · Arab World",
+    title: (
+      <>
+        <span lang="ar" className="font-naskh">
+          عربيّات
+        </span>{" "}
+        · Arabiyyat
+      </>
+    ),
+    blurb:
+      "Three questions a day from folklore books across the Arab world: finish a proverb, say when it's used, then a word's origin, a riddle or an old custom.",
+    cta: "Play today's questions",
   },
 ];
 
