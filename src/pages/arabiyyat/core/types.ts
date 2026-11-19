@@ -22,6 +22,9 @@ export interface Source {
   author: string;
   /** The place the book records, shown as context ("يقولون في …"), never asked. */
   place: string;
+  /** Where the mini map's pin goes: the book's city, or a central point of its country. */
+  lat: number;
+  lon: number;
   url: string;
 }
 

@@ -13,6 +13,7 @@ import { Modal } from "../shakkil/ui/Modals";
 import { isLaunched, msUntilNext, previewNumber, todayNumber } from "./core/daily";
 import { GAME_NAME, KIND_LABEL, KIND_QUESTION, STORAGE_KEY, placeLine, shareText } from "./core/share";
 import { BLANK, type Day, type Round, type Source } from "./core/types";
+import { MiniMap } from "./ui/MiniMap";
 
 const load = () => loadSave(undefined, STORAGE_KEY);
 const save = (d: SaveData) => writeSave(d, undefined, STORAGE_KEY);
@@ -544,6 +545,18 @@ export default function Arabiyyat() {
 
           <div ref={playRef} className="scroll-mt-4" />
           {session && <Steps session={session} onOpen={openRound} />}
+          {session && (
+            <div className="-mt-4 mb-6">
+              {round ? (
+                <MiniMap pins={[{ lat: round.source.lat, lon: round.source.lon }]} title={`خريطة: ${round.source.place}`} />
+              ) : (
+                <MiniMap
+                  pins={session.day.rounds.map((r, i) => ({ lat: r.source.lat, lon: r.source.lon, label: i + 1 }))}
+                  title={`خريطة: ${session.day.rounds.map((r) => r.source.place).join("، ")}`}
+                />
+              )}
+            </div>
+          )}
           {session && round && (
             <RoundCard
               key={round.id}

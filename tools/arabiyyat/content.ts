@@ -13,6 +13,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { parse as parseYaml } from "yaml";
 import { BLANK, type Day, type Round, type RoundKind, type Source } from "../../src/pages/arabiyyat/core/types";
+import { BOUNDS } from "../../src/pages/arabiyyat/ui/projection";
 import { shuffledChoices } from "../halab/content";
 
 export const CONTENT_DIR = resolve(import.meta.dirname, "../../content/arabiyyat");
@@ -59,7 +60,13 @@ export function loadDays(): Loaded {
       errors.push(`sources.yaml #${i + 1}: missing ${missing.join(", ")}`);
       return [];
     }
-    return [src];
+    // The mini map's pin: must fall inside the map (projection.ts).
+    const { lat, lon } = s as { lat?: unknown; lon?: unknown };
+    if (typeof lat !== "number" || typeof lon !== "number" || lat < BOUNDS.south || lat > BOUNDS.north || lon < BOUNDS.west || lon > BOUNDS.east) {
+      errors.push(`sources.yaml #${i + 1} (${src.id}): lat/lon missing or outside the map`);
+      return [];
+    }
+    return [{ ...src, lat, lon }];
   });
   const byId = new Map(sources.map((s) => [s.id, s]));
 
