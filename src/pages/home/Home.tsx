@@ -150,13 +150,11 @@ export default function Home() {
         </div>
 
         <h1 className="font-serif text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.1] tracking-tight mb-6 animate-slide-up">
-          Welcome to my <span className="italic text-gold">personal corner</span>
-          <br className="hidden sm:block" /> of the internet.
+          Things I make <span className="italic text-gold">after hours.</span>
         </h1>
 
         <p className="text-sm leading-[1.9] text-paper/60 max-w-xl mx-auto mb-8 animate-slide-up-delay">
-          I'm using this space to experiment with new tech stacks in my free
-          time.
+          Arabic games, data tools, and whatever I'm curious about next.
         </p>
 
         <ul
