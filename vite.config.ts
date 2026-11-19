@@ -136,9 +136,20 @@ function sharedHead(): Plugin {
     name: "shared-head",
     transformIndexHtml() {
       const tags: HtmlTagDescriptor[] = [
+        // Icons from `npm run favicon` (tools/favicon.ts). Browsers take the SVG; older ones the PNG.
         {
           tag: "link",
-          attrs: { rel: "icon", type: "image/png", href: "/favicon-32x32.png" },
+          attrs: { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+          injectTo: "head",
+        },
+        {
+          tag: "link",
+          attrs: { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+          injectTo: "head",
+        },
+        {
+          tag: "link",
+          attrs: { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
           injectTo: "head",
         },
         {

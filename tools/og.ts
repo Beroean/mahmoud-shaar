@@ -105,12 +105,58 @@ const footer = (left: string, right: string) =>
   `<text x="80" y="600" font-family="${MONO}" font-size="20" fill="${PAPER}" fill-opacity="0.45">${left}</text>
   <text x="1120" y="600" text-anchor="end" font-family="${MONO}" font-size="20" fill="${PAPER}" fill-opacity="0.45">${right}</text>`;
 
+/** The game icons from src/components/icons.tsx (24×24 line drawings), as SVG markup. */
+const HARAKA = `
+  <path d="M20.5 9v4.5a3 3 0 0 1-3 3h-11a3 3 0 0 1-3-3V12"/>
+  <circle cx="12" cy="20.5" r="0.9" fill="currentColor" stroke="none"/>
+  <path d="M9.5 7 15 4.5"/>`;
+const CITADEL = `
+  <path d="M1.5 21h21"/>
+  <path d="M2.8 14.5 3.2 4.8h7.6l.4 9.7"/>
+  <path d="M4.4 4.8V3.4M7 4.8V3.4M9.6 4.8V3.4"/>
+  <path d="M5.6 14.5v-3.3c0-1.2.6-2 1.4-2.6.8.6 1.4 1.4 1.4 2.6v3.3"/>
+  <path d="M1.5 20.5c.5-2.2.9-4.2 1.3-6h8.4c.4 1.9.9 4.1 1.5 6.5"/>
+  <path d="m11.4 15.3 5.9 2.5"/>
+  <path d="M14.3 21v-4.4M16.2 21v-3.6"/>
+  <path d="M17.3 21v-5.8h1.5v-2.4H22V21"/>
+  <path d="M19.9 12.8v-1.4M21.4 12.8v-1.4"/>`;
+const DALLAH = `
+  <path d="M1.5 21h21"/>
+  <path d="M7 21c-.6-2.6.3-5 2.2-6.3h3.6c1.9 1.3 2.8 3.7 2.2 6.3"/>
+  <path d="M9.2 14.7 9.8 10h2.4l.6 4.7"/>
+  <path d="M9.3 10h3.4"/>
+  <path d="M10 10c0-1.4.4-2.6 1-3.4.6.8 1 2 1 3.4"/>
+  <path d="M11 6.6V5.4"/>
+  <path d="M11 3.6a.9.9 0 1 0 0 1.8.9.9 0 1 0 0-1.8"/>
+  <path d="M8.4 16.3C6.1 15.7 4.5 13.2 3.5 9.7L2.3 8.9"/>
+  <path d="M14.9 16.2c2.3-.8 3.4-2.5 3.2-4.5-.2-1.6-1.6-2.4-3.4-2.2l-2.4.9"/>
+  <path d="M18.3 19h3.4l-.6 2h-2.2z"/>`;
+
+/** Draws one of the icons above at (x, y), `size` px square, with a stroke `stroke` px wide. */
+const icon = (paths: string, x: number, y: number, size: number, color: string, stroke: number) => {
+  const k = size / 24;
+  return `<g transform="translate(${x} ${y}) scale(${k})" color="${color}" fill="none" stroke="${color}" stroke-width="${stroke / k}" stroke-linecap="round" stroke-linejoin="round">${paths}
+  </g>`;
+};
+
 const IMAGES: Record<string, string> = {
+  // The three daily games' icons, as on the home page cards.
   home: frame(`
-  ${overline("HOUSTON, TX · SOFTWARE ENGINEER")}
-  <text x="80" y="300" font-family="${SERIF}" font-size="112" fill="${PAPER}">Mahmoud Shaar</text>
-  <text x="80" y="400" font-family="${SERIF}" font-style="italic" font-size="64" fill="${GOLD}">personal corner of the internet</text>
-  ${footer("mahmoudshaar.com", "experiments · data · games")}`),
+  ${overline("MAHMOUD SHAAR")}
+  <text x="80" y="285" font-family="${SERIF}" font-size="92" fill="${PAPER}">Things I make</text>
+  <text x="80" y="395" font-family="${SERIF}" font-style="italic" font-size="92" fill="${GOLD}">after hours.</text>
+  <text x="80" y="470" font-family="${MONO}" font-size="26" fill="${PAPER}" fill-opacity="0.6">Arabic games · data tools · what's next</text>
+  ${[
+    { paths: HARAKA, name: "شَكِّل", color: GOLD },
+    { paths: CITADEL, name: "حلبيّات", color: GOLD },
+    { paths: DALLAH, name: "عربيّات", color: SKY },
+  ]
+    .map(
+      (g, i) => `${icon(g.paths, 785 + i * 120, 220, 90, g.color, 2.4)}
+  <text x="${830 + i * 120}" y="375" text-anchor="middle" font-family="Amiri" font-weight="700" font-size="36" fill="${g.color}">${g.name}</text>`,
+    )
+    .join("\n  ")}
+  ${footer("mahmoudshaar.com", "Houston, TX · Software Engineer")}`),
 
   explore: frame(`
   ${overline("DATA EXPLORER")}
@@ -135,17 +181,7 @@ const IMAGES: Record<string, string> = {
 
   // The citadel is CitadelIcon (src/components/icons.tsx), drawn 16× larger.
   halab: frame(`
-  <g transform="translate(70 140) scale(16)" fill="none" stroke="${GOLD}" stroke-width="0.24" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M1.5 21h21"/>
-    <path d="M2.8 14.5 3.2 4.8h7.6l.4 9.7"/>
-    <path d="M4.4 4.8V3.4M7 4.8V3.4M9.6 4.8V3.4"/>
-    <path d="M5.6 14.5v-3.3c0-1.2.6-2 1.4-2.6.8.6 1.4 1.4 1.4 2.6v3.3"/>
-    <path d="M1.5 20.5c.5-2.2.9-4.2 1.3-6h8.4c.4 1.9.9 4.1 1.5 6.5"/>
-    <path d="m11.4 15.3 5.9 2.5"/>
-    <path d="M14.3 21v-4.4M16.2 21v-3.6"/>
-    <path d="M17.3 21v-5.8h1.5v-2.4H22V21"/>
-    <path d="M19.9 12.8v-1.4M21.4 12.8v-1.4"/>
-  </g>
+  ${icon(CITADEL, 70, 140, 384, GOLD, 3.84)}
   <text x="1120" y="235" text-anchor="end" font-family="Amiri" font-weight="700" font-size="150" fill="${GOLD}">حلبيّات</text>
   <text x="1120" y="345" text-anchor="end" font-family="Amiri" font-size="44" fill="${PAPER}" fill-opacity="0.85">ثلاث جولات يومية من موسوعة حلب المقارنة</text>
   <text x="1120" y="450" text-anchor="end" font-family="Amiri" font-size="44" fill="${PAPER}">أصل كلمة · مثل حلبي · حزّورة</text>
@@ -153,18 +189,7 @@ const IMAGES: Record<string, string> = {
 
   // The dallah is DallahIcon (src/components/icons.tsx), drawn 16× larger, in عربيّات' sky accent.
   arabiyyat: frame(`
-  <g transform="translate(70 140) scale(16)" fill="none" stroke="${SKY}" stroke-width="0.24" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M1.5 21h21"/>
-    <path d="M7 21c-.6-2.6.3-5 2.2-6.3h3.6c1.9 1.3 2.8 3.7 2.2 6.3"/>
-    <path d="M9.2 14.7 9.8 10h2.4l.6 4.7"/>
-    <path d="M9.3 10h3.4"/>
-    <path d="M10 10c0-1.4.4-2.6 1-3.4.6.8 1 2 1 3.4"/>
-    <path d="M11 6.6V5.4"/>
-    <path d="M11 3.6a.9.9 0 1 0 0 1.8.9.9 0 1 0 0-1.8"/>
-    <path d="M8.4 16.3C6.1 15.7 4.5 13.2 3.5 9.7L2.3 8.9"/>
-    <path d="M14.9 16.2c2.3-.8 3.4-2.5 3.2-4.5-.2-1.6-1.6-2.4-3.4-2.2l-2.4.9"/>
-    <path d="M18.3 19h3.4l-.6 2h-2.2z"/>
-  </g>
+  ${icon(DALLAH, 70, 140, 384, SKY, 3.84)}
   <text x="1120" y="235" text-anchor="end" font-family="Amiri" font-weight="700" font-size="150" fill="${SKY}">عربيّات</text>
   <text x="1120" y="345" text-anchor="end" font-family="Amiri" font-size="44" fill="${PAPER}" fill-opacity="0.85">ثلاثة أسئلة يومية من أمثال العرب وكلامهم</text>
   <text x="1120" y="450" text-anchor="end" font-family="Amiri" font-size="44" fill="${PAPER}">مثل · معنى · كلمة أو حزّورة</text>
