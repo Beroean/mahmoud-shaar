@@ -1,7 +1,8 @@
-import { type ReactNode, useEffect, useReducer, useState } from "react";
+import { type ReactNode, useCallback, useEffect, useReducer, useState } from "react";
 import { FlagIcon, HelpIcon, StatsIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
+import { markIntroSeen, shouldPlayIntro } from "../../lib/introOnce";
 import { sentenceToString } from "./core/arabic";
 import { devDay, isLaunched, puzzleNumber } from "./core/daily";
 import type { Guess } from "./core/grade";
@@ -14,9 +15,12 @@ import { Keyboard } from "./ui/Keyboard";
 import { LevelBadge } from "./ui/LevelBadge";
 import { LEVEL_NAMES } from "./ui/styles";
 import { DayResultModal, HelpModal, ResultModal, StatsModal } from "./ui/Modals";
+import { ShakkilIntro } from "./ui/ShakkilIntro";
 import { useKeyboard } from "./ui/useKeyboard";
 
 type Mode = "daily" | "practice";
+
+const INTRO_KEY = "shakkil:intro";
 
 /** "The medium/hard sentence" (feminine, agreeing with جملة). */
 const NEXT_LABEL = ["", "السهلة", "المتوسطة", "الصعبة"];
@@ -320,6 +324,11 @@ export default function Shakkil() {
   const [waiting, setWaiting] = useState(false);
   const [dayResult, setDayResult] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const [intro, setIntro] = useState(() => shouldPlayIntro(INTRO_KEY, "intro"));
+  const closeIntro = useCallback(() => setIntro(false), []);
+  useEffect(() => {
+    if (intro) markIntroSeen(INTRO_KEY);
+  }, [intro]);
 
   function showDaily(list: PuzzleSource[]) {
     const s = dailySession(list);
@@ -412,6 +421,7 @@ export default function Shakkil() {
               onClose={() => setDayResult(false)}
             />
           )}
+          {intro && <ShakkilIntro onDone={closeIntro} />}
           {toast && (
             <div role="status" className="fixed top-6 inset-x-0 mx-auto w-fit z-50 px-4 py-2 rounded-md bg-paper text-ink text-sm">
               {toast}
