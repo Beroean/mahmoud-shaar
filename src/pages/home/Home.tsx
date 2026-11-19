@@ -7,39 +7,15 @@ import {
 import {
   ArrowIcon,
   BarsIcon,
-  CandlesIcon,
-  CapIcon,
   CitadelIcon,
   DallahIcon,
   GitHubIcon,
-  GlobeIcon,
   HarakaIcon,
   LinkedInIcon,
 } from "../../components/icons";
 
 const LINKEDIN = "https://www.linkedin.com/in/mahmoud-shaar/";
 const GITHUB = "https://github.com/Beroean";
-
-const ABOUT = [
-  {
-    label: "Background",
-    value: "Syrian Living in the US",
-    sub: "Based in Houston, TX",
-    icon: <GlobeIcon />,
-  },
-  {
-    label: "Profession",
-    value: "Software Engineer",
-    sub: "Commodity Trading",
-    icon: <CandlesIcon />,
-  },
-  {
-    label: "Education",
-    value: "CS + MBA",
-    sub: "University of Houston and Lawrence University",
-    icon: <CapIcon />,
-  },
-];
 
 type Experiment = {
   href: string;
@@ -128,7 +104,7 @@ export default function Home() {
     <SiteLayout
       headerStart={
         <span className="text-xs tracking-[0.3em] uppercase text-paper/40">
-          Personal Site
+          Mahmoud Shaar
         </span>
       }
       headerEnd={
@@ -146,7 +122,10 @@ export default function Home() {
     >
       <main className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 pt-14 pb-16 text-center">
         <div className="mb-6 animate-fade-in">
-          <Overline center>Houston, TX · Software Engineer</Overline>
+          <Overline center>
+            <span className="whitespace-nowrap">Software Engineer</span> ·{" "}
+            <span className="whitespace-nowrap">Aleppo → Houston</span>
+          </Overline>
         </div>
 
         <h1 className="font-serif text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.1] tracking-tight mb-6 animate-slide-up">
@@ -154,24 +133,9 @@ export default function Home() {
         </h1>
 
         <p className="text-sm leading-[1.9] text-paper/60 max-w-xl mx-auto mb-8 animate-slide-up-delay">
+          I work on software for commodity trading. Outside work, I build
           Arabic games, data tools, and whatever I'm curious about next.
         </p>
-
-        <ul
-          aria-label="A bit about me"
-          className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-8 text-xs text-paper/50 animate-slide-up-delay"
-        >
-          {ABOUT.map((item) => (
-            <li key={item.label} className="text-center leading-relaxed">
-              <span className="inline-block align-middle mr-2 -mt-0.5 text-gold/70 [&>svg]:w-4 [&>svg]:h-4">
-                {item.icon}
-              </span>
-              <span className="sr-only">{item.label}:</span>
-              <span className="text-paper/80">{item.value}</span>
-              <span className="text-paper/30"> · {item.sub}</span>
-            </li>
-          ))}
-        </ul>
 
         <div className="flex justify-center gap-6 mb-16 animate-slide-up-delay-2">
           <a
