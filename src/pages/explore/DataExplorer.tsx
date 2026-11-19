@@ -333,7 +333,12 @@ export default function DataExplorer() {
             <div className="relative">
               <div
                 className="flex items-center border border-paper/20 hover:border-gold/50 transition-colors duration-200 cursor-pointer bg-ink-1"
-                onClick={() => setDropdownOpen((o) => !o)}
+                // A click in the search box only opens the list. Its focus event has already
+                // opened it on the first click, so toggling here would close it straight away.
+                onClick={(e) => {
+                  if (e.target instanceof HTMLInputElement) setDropdownOpen(true);
+                  else setDropdownOpen((o) => !o);
+                }}
               >
                 <input
                   type="text"
