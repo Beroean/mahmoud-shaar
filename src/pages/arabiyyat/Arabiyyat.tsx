@@ -12,7 +12,7 @@ import { toArabicDigits } from "../shakkil/core/share";
 import { Modal } from "../shakkil/ui/Modals";
 import { isLaunched, msUntilNext, previewNumber, todayNumber } from "./core/daily";
 import { GAME_NAME, KIND_LABEL, KIND_QUESTION, STORAGE_KEY, placeLine, shareText } from "./core/share";
-import { BLANK, type Day, type Round } from "./core/types";
+import { BLANK, type Day, type Round, type Source } from "./core/types";
 
 const load = () => loadSave(undefined, STORAGE_KEY);
 const save = (d: SaveData) => writeSave(d, undefined, STORAGE_KEY);
@@ -407,10 +407,8 @@ function HelpModal({ onClose }: { onClose: () => void }) {
 }
 
 /** Credits: every book the game draws from, grouped by place. */
-function Credits({ days }: { days: Day[] }) {
-  const books = [...new Map(days.flatMap((d) => d.rounds.map((r) => [r.source.id, r.source] as const))).values()].sort((a, b) =>
-    a.place.localeCompare(b.place, "ar"),
-  );
+function Credits({ sources }: { sources: Source[] }) {
+  const books = [...sources].sort((a, b) => a.place.localeCompare(b.place, "ar"));
   return (
     <aside className="mt-20 pt-10 border-t border-paper/10 space-y-4 text-sm text-paper/65 leading-loose" aria-label="عن اللعبة">
       <p>أسئلة «عربيّات» مأخوذة من هذه الكتب، وتذكر كل إجابة كتابها:</p>
@@ -448,6 +446,7 @@ async function share(text: string): Promise<boolean> {
 
 export default function Arabiyyat() {
   const [days, setDays] = useState<Day[] | null>(null);
+  const [sources, setSources] = useState<Source[]>([]);
   const [session, setSession] = useState<Session | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [help, setHelp] = useState(false);
@@ -458,6 +457,7 @@ export default function Arabiyyat() {
     import("virtual:arabiyyat-days")
       .then((m) => {
         setDays(m.default);
+        setSources(m.sources);
         const s = startSession(m.default);
         setSession(s);
         if (s && !s.preview && !load().stats.played && s.picks.every((p) => p === null)) setHelp(true);
@@ -567,7 +567,7 @@ export default function Arabiyyat() {
             />
           )}
 
-          {days && <Credits days={days} />}
+          {sources.length > 0 && <Credits sources={sources} />}
 
           {help && <HelpModal onClose={closeHelp} />}
           {toast && (

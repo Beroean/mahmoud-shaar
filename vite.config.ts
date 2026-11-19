@@ -108,10 +108,15 @@ function arabiyyatDays(): Plugin {
     resolveId: (id) => (id === ID ? RESOLVED : undefined),
     load(id) {
       if (id !== RESOLVED) return;
-      const { days, errors } = loadArabiyyatDays();
+      const { days, errors, sources } = loadArabiyyatDays();
       if (errors.length) this.error(`Invalid عربيّات content:\n${errors.join("\n")}`);
       const lastDay = arabiyyatToday() + HALAB_DAYS_AHEAD;
-      return `export default ${JSON.stringify(dev ? days : days.filter((d) => d.number <= lastDay))};`;
+      // Every book, for the credits: the shipped days alone name only a few of them.
+      const used = new Set(days.flatMap((d) => d.rounds.map((r) => r.source.id)));
+      return [
+        `export const sources = ${JSON.stringify(sources.filter((s) => used.has(s.id)))};`,
+        `export default ${JSON.stringify(dev ? days : days.filter((d) => d.number <= lastDay))};`,
+      ].join("\n");
     },
     configureServer(server) {
       server.watcher.add(ARABIYYAT_DIR);
