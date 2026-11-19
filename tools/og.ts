@@ -80,6 +80,8 @@ function fontFiles(): string[] {
 const INK = "#0a0a0a";
 const PAPER = "#e8e4dc";
 const GOLD = "#c9a96e";
+/** عربيّات' accent: Tailwind sky-200, as on the game page. */
+const SKY = "#bae6fd";
 const MONO = "IBM Plex Mono";
 const SERIF = "DM Serif Display";
 
@@ -148,6 +150,25 @@ const IMAGES: Record<string, string> = {
   <text x="1120" y="345" text-anchor="end" font-family="Amiri" font-size="44" fill="${PAPER}" fill-opacity="0.85">ثلاث جولات يومية من موسوعة حلب المقارنة</text>
   <text x="1120" y="450" text-anchor="end" font-family="Amiri" font-size="44" fill="${PAPER}">أصل كلمة · مثل حلبي · حزّورة</text>
   ${footer("mahmoudshaar.com/halab", "إلى روح أبي، أحمد أديب شعار")}`),
+
+  // The dallah is DallahIcon (src/components/icons.tsx), drawn 16× larger, in عربيّات' sky accent.
+  arabiyyat: frame(`
+  <g transform="translate(70 140) scale(16)" fill="none" stroke="${SKY}" stroke-width="0.24" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1.5 21h21"/>
+    <path d="M7 21c-.6-2.6.3-5 2.2-6.3h3.6c1.9 1.3 2.8 3.7 2.2 6.3"/>
+    <path d="M9.2 14.7 9.8 10h2.4l.6 4.7"/>
+    <path d="M9.3 10h3.4"/>
+    <path d="M10 10c0-1.4.4-2.6 1-3.4.6.8 1 2 1 3.4"/>
+    <path d="M11 6.6V5.4"/>
+    <path d="M11 3.6a.9.9 0 1 0 0 1.8.9.9 0 1 0 0-1.8"/>
+    <path d="M8.4 16.3C6.1 15.7 4.5 13.2 3.5 9.7L2.3 8.9"/>
+    <path d="M14.9 16.2c2.3-.8 3.4-2.5 3.2-4.5-.2-1.6-1.6-2.4-3.4-2.2l-2.4.9"/>
+    <path d="M18.3 19h3.4l-.6 2h-2.2z"/>
+  </g>
+  <text x="1120" y="235" text-anchor="end" font-family="Amiri" font-weight="700" font-size="150" fill="${SKY}">عربيّات</text>
+  <text x="1120" y="345" text-anchor="end" font-family="Amiri" font-size="44" fill="${PAPER}" fill-opacity="0.85">ثلاثة أسئلة يومية من أمثال العرب وكلامهم</text>
+  <text x="1120" y="450" text-anchor="end" font-family="Amiri" font-size="44" fill="${PAPER}">مثل · معنى · كلمة أو حزّورة</text>
+  ${footer("mahmoudshaar.com/arabiyyat", "من المحيط إلى الخليج")}`),
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

@@ -16,6 +16,8 @@ import { approve, loadQueue, reject } from "./tools/shakkil/queue";
 import { CONTENT_DIR as HALAB_DIR, loadDays } from "./tools/halab/content";
 import { todayNumber as halabToday } from "./src/pages/halab/core/daily";
 import { listItems as halabItems, rejectItem as halabReject, saveItem as halabSave } from "./tools/halab/review";
+import { CONTENT_DIR as ARABIYYAT_DIR, loadDays as loadArabiyyatDays } from "./tools/arabiyyat/content";
+import { todayNumber as arabiyyatToday } from "./src/pages/arabiyyat/core/daily";
 
 /**
  * Dev-only JSON API for the حلبيّات review page (halab/review/index.html). Never part of the build:
@@ -85,6 +87,39 @@ function halabDays(): Plugin {
         if (mod) server.moduleGraph.invalidateModule(mod);
         // Only the game reloads; the review page keeps its place.
         server.ws.send({ type: "full-reload", path: "/halab/index.html" });
+      });
+    },
+  };
+}
+
+/**
+ * Compiles content/arabiyyat/*.yaml into `virtual:arabiyyat-days`, the same way as halabDays():
+ * invalid items fail the build, and a build ships only days up to tomorrow (the dev server ships all).
+ */
+function arabiyyatDays(): Plugin {
+  const ID = "virtual:arabiyyat-days";
+  const RESOLVED = "\0" + ID;
+  let dev = false;
+  return {
+    name: "arabiyyat-days",
+    configResolved(config) {
+      dev = config.command === "serve";
+    },
+    resolveId: (id) => (id === ID ? RESOLVED : undefined),
+    load(id) {
+      if (id !== RESOLVED) return;
+      const { days, errors } = loadArabiyyatDays();
+      if (errors.length) this.error(`Invalid عربيّات content:\n${errors.join("\n")}`);
+      const lastDay = arabiyyatToday() + HALAB_DAYS_AHEAD;
+      return `export default ${JSON.stringify(dev ? days : days.filter((d) => d.number <= lastDay))};`;
+    },
+    configureServer(server) {
+      server.watcher.add(ARABIYYAT_DIR);
+      server.watcher.on("all", (_, file) => {
+        if (!file.startsWith(ARABIYYAT_DIR)) return;
+        const mod = server.moduleGraph.getModuleById(RESOLVED);
+        if (mod) server.moduleGraph.invalidateModule(mod);
+        server.ws.send({ type: "full-reload", path: "/arabiyyat/index.html" });
       });
     },
   };
@@ -205,11 +240,12 @@ const pages = {
   explore: "explore/index.html",
   shakkil: "shakkil/index.html",
   halab: "halab/index.html",
+  arabiyyat: "arabiyyat/index.html",
   notFound: "404.html",
 };
 
 export default defineConfig({
-  plugins: [react(), babel({ presets: [reactCompilerPreset()] }), sharedHead(), shakkilPuzzles(), halabDays(), halabReviewApi(), reviewApi()],
+  plugins: [react(), babel({ presets: [reactCompilerPreset()] }), sharedHead(), shakkilPuzzles(), halabDays(), arabiyyatDays(), halabReviewApi(), reviewApi()],
   build: {
     rollupOptions: {
       input: Object.fromEntries(

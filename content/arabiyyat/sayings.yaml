@@ -1,0 +1,8139 @@
+# Round 1 · أكمل المثل: finish the saying (one ___). The place shown comes from the source's place.
+#
+# Day N plays item N of each list; items past the shortest list are spares. answer/others: the
+# book's answer and three wrong ones the book rules out. note: shown after answering, in our own
+# words (never copied from the book). source: id in sources.yaml · page: printed page · volume:
+# for multi-volume books · line/halab: the Aleppo book's text line and the حلبيّات spare it reuses ·
+# flag: something a reviewer should check · status: draft until a person reviews it.
+
+- id: s0001
+  kind: saying
+  prompt: اللى عنده القمر ما همته فى ___
+  answer: النجوم
+  others: [القناديل, السحاب, الليل]
+  note: من عنده أعلى الأمور لا يهتم بصغارها.
+  source: zanin
+  page: 42
+  status: draft
+
+- id: s0002
+  kind: saying
+  prompt: لا شفت الجمل ولا ___
+  answer: الجمال
+  others: [الحمار, الحمل, الخروف]
+  note: أي لم أر الجمل ولا الإبل كلها. يقال في شدة كتمان السر.
+  source: taymur
+  page: 315
+  status: draft
+
+- id: s0003
+  kind: saying
+  prompt: عين الحسود بيها ___
+  answer: عود
+  others: [رمد, دود, شوك]
+  note: دعاء على الحاسد يقوله البغداديون، وكانوا يعلّقون على الأطفال سنّ الذيب أو العفصة أو «أم سبع عيون» لطرد العين.
+  source: hijiyya
+  page: 110
+  status: draft
+
+- id: s0004
+  kind: saying
+  prompt: من عاش بالحيله مات ___
+  answer: فقر
+  others: [قهر, غريب, وحيد]
+  note: من عاش على التحايل على الناس مات فقيرا، فالحيلة إن نفعت مرة لم تنفع كل مرة. حثّ على الكسب النزيه.
+  source: abboudi_amthal
+  page: 1434
+  volume: ج٤
+  status: draft
+
+- id: s0005
+  kind: saying
+  prompt: آذار بحيي ___
+  answer: الأشجار
+  others: [الأنهار, الأحجار, الأسوار]
+  note: يذكر فضل شهر آذار على الشجر، ففيه تعود إليه الحياة.
+  source: sahli
+  page: 24
+  status: draft
+
+- id: s0006
+  kind: saying
+  prompt: ايلاَ كْثْرُوا ___ كَيْتْحَرَقْ الطّْعَامْ
+  answer: الطَّبَّاخِينْ
+  others: [الضّْيَافْ, الْجِيرَانْ, الدّْرَارِي]
+  note: إذا كثر الطباخون احترق الطعام. فكل واحد يريد أن يفرض رأيه فتضيع النتيجة في خضم الخلاف.
+  source: dadoun
+  page: 391
+  status: draft
+
+- id: s0007
+  kind: saying
+  prompt: القطة ما تبعش ___
+  answer: ولادها
+  others: [بيتها, أكلها, جيرانها]
+  note: يتحدث عن عاطفة الأمومة التي لا تتخلى عن صغارها، حتى عند الحيوان. وفي معناه «القطة ما تاكلش ولادها».
+  source: shaalan
+  page: 66
+  volume: ج٦
+  status: draft
+
+- id: s0008
+  kind: saying
+  prompt: أجا ونام عنّا ليلة ساوى حالو من ___
+  answer: العيلة
+  others: [الجيران, الضيوف, الأكابر]
+  note: يُقال فيمن يتبسّط بعد معرفة قصيرة فيتصرّف كأنه من أهل البيت.
+  source: asadi
+  line: 118092
+  halab: p1309
+  status: draft
+
+- id: s0009
+  kind: saying
+  prompt: شيّخوني وشلّوا ___
+  answer: البقر
+  others: [الغنم, الأرض, الجمل]
+  note: رضي بلقب الشيخ ولو أخذوا بقره؛ يقال لمن يطمع في الجاه ولو خسر ماله.
+  source: adimi
+  page: 249
+  status: draft
+
+- id: s0010
+  kind: saying
+  prompt: إلى صفت النيه فاللقمه تكفي ___
+  answer: ميه
+  others: [عشره, ثنتين, سبعه]
+  note: إذا صفت القلوب من الأطماع والأحقاد كفى القليل جماعة كبيرة.
+  source: juhayman
+  page: 259
+  volume: ج١
+  status: draft
+
+- id: s0011
+  kind: saying
+  prompt: كتر السلام يقل ___
+  answer: المعرفه
+  others: [الفلوس, الشغل, الكلام]
+  note: الإفراط في الشيء يقلبه إلى ضده.
+  source: taymur
+  page: 295
+  status: draft
+
+- id: s0012
+  kind: saying
+  prompt: ما صحبه إلا بعد ___
+  answer: عركه
+  others: [غيبه, ضحكه, نومه]
+  note: «العركة» العراك والمشادة؛ لا تقوم صداقة متينة بين اثنين إلا بعد شجار ينشب بينهما.
+  source: mughniyya
+  page: 486
+  status: draft
+
+- id: s0013
+  kind: saying
+  prompt: لكل طاهش ___
+  answer: راهش
+  others: [صايد, ناهش, حارس]
+  note: الطاهش كل وحش كاسر، والراهش الحشرة السامة القاتلة؛ فلكل كبير مخيف ما يغلبه وقد يكون أصغر منه.
+  source: iryani
+  page: 591
+  status: draft
+
+- id: s0014
+  kind: saying
+  prompt: ما ينفع الطول والعرض، الآدمي من ___
+  answer: فؤاده
+  others: [ماله, أصله, ثوبه]
+  note: من أمثال علي بن زايد؛ قيمة المرء ليست في ضخامة جسمه بل في قلبه وعقله.
+  source: akwa
+  page: 1101
+  volume: ج٢
+  status: draft
+
+- id: s0015
+  kind: saying
+  prompt: إلصحة كنز ثمين، ما بعرف قيمته إلا ___
+  answer: العليل
+  others: [الغني, الصغير, التاجر]
+  note: لا يعرف قيمة العافية إلا من فقدها.
+  source: sahli
+  page: 194
+  status: draft
+
+- id: s0016
+  kind: saying
+  prompt: بلحس مسنّي وببات ___
+  answer: متهنّي
+  others: [متعشّي, متغطّي, متخبّي]
+  note: أقنع بالقليل وأنام مرتاح البال.
+  source: asadi
+  line: 148883
+  halab: p811
+  status: draft
+
+- id: s0017
+  kind: saying
+  prompt: وَخَّا تْفَتَّشْ عْلَى هَذْ الشِّي بَالْفْتِيلَه وَ___ مَا تَلْقَاهْ
+  answer: الْقَنْدِيلْ
+  others: [الْمْكْنْسَه, الْغَرْبَالْ, الْمَنْجَلْ]
+  note: ولو بحثت عنه بالفتيلة والقنديل لن تجده. يقال في الشيء النادر الذي يتعزز التاجر ببيعه إلا بأغلى الأثمان.
+  source: dadoun
+  page: 351
+  status: draft
+
+- id: s0018
+  kind: saying
+  prompt: حلال ___
+  answer: نمله
+  others: [عصفور, جراده, قطّه]
+  note: «الحلال» هنا المال؛ يقال للمال الذي جُمع بمقادير زهيدة، كما تجمع النملة الحبّ حبة حبة.
+  source: abboudi_amthal
+  page: 418
+  volume: ج١
+  status: draft
+
+- id: s0019
+  kind: saying
+  prompt: اللي ما يشقي مع أبوه للظهر يشقي مع الناس ___
+  answer: للمغرب
+  others: [للعصر, للفجر, للعشاء]
+  note: يشقي أي يعمل؛ من كسل عن العون في بيت أهله اضطر إلى عمل أشقّ وأطول عند الغرباء.
+  source: adimi
+  page: 46
+  status: draft
+
+- id: s0020
+  kind: saying
+  prompt: امشيلها مرتاح ماجابها ___
+  answer: ملحاح
+  others: [سريع, شاطر, قوي]
+  note: «الملحاح» الكثير الإلحاح؛ امشِ إلى رزقك مطمئنًّا فالإلحاح لا يجلبه، في الحث على القناعة.
+  source: zanin
+  page: 65
+  status: draft
+
+- id: s0021
+  kind: saying
+  prompt: نص الكلام مالوش ___
+  answer: جواب
+  others: [ثمن, طعم, آخر]
+  note: يقال عند سماع كلام لا طائل تحته، فهو لا يستحق الرد.
+  source: taymur
+  page: 371
+  status: draft
+
+- id: s0022
+  kind: saying
+  prompt: يمنى بلا يسرى تراها ___
+  answer: ضعيفه
+  others: [نظيفه, شريفه, عفيفه]
+  note: اليد اليمنى وحدها ضعيفة. يقال في فوائد التعاون، فالقوي لا يستغني عن عون غيره.
+  source: juhayman
+  page: 301
+  volume: ج٩
+  status: draft
+
+- id: s0023
+  kind: saying
+  prompt: دلع المساكين يقطّع ___
+  answer: المصارين
+  others: [الهدوم, الشباشب, الستاير]
+  note: المصارين هي الأمعاء؛ والمثل يسخر من تكاسل الفقراء وتدللهم وهم أحوج الناس إلى السعي والعمل.
+  source: shaalan
+  page: 381
+  volume: ج٦
+  status: draft
+
+- id: s0024
+  kind: saying
+  prompt: البيت بيت أبونا والناس ___
+  answer: بيقلّعونا
+  others: [بيزورونا, بيحسدونا, بيسألونا]
+  note: يقال حين يُزاحَم صاحب الحقّ في حقّه.
+  source: asadi
+  line: 135808
+  halab: p794
+  status: draft
+
+- id: s0025
+  kind: saying
+  prompt: جحا أكبر وإلا ___؟
+  answer: ولده
+  others: [خوه, حماره, جاره]
+  note: سؤال جوابه بديهي، فالأب أكبر من ابنه؛ يقال في توقير الكبير واحترام تجربته.
+  source: mughniyya
+  page: 218
+  status: draft
+
+- id: s0026
+  kind: saying
+  prompt: يا حرق فوق ___
+  answer: مكوى
+  others: [دهن, ثلج, ماء]
+  note: المكوى الكي؛ يقال لمن يصاب بنكبة ثم تعقبها نكبة أخرى.
+  source: akwa
+  page: 1351
+  volume: ج٢
+  status: draft
+
+- id: s0027
+  kind: saying
+  prompt: وجه بشوش، ولا صناديق ___
+  answer: قروش
+  others: [ذهب, حلوى, تفاح]
+  note: البشاشة خير من المال الكثير.
+  source: sahli
+  page: 350
+  status: draft
+
+- id: s0028
+  kind: saying
+  prompt: ايمَارَتْ الدَّارْ عْلَى ___ الدَّارْ
+  answer: بَابْ
+  others: [سْطَحْ, حِيطْ, وَسْطْ]
+  note: أمارات الدار أي علاماتها تظهر على بابها. يقال في الشيء تعرف قيمته أو تفاهته من مظهره الخارجي.
+  source: dadoun
+  page: 383
+  status: draft
+
+- id: s0029
+  kind: saying
+  prompt: زحمة العيد يا ___
+  answer: منخل
+  others: [مقص, فرن, مكوه]
+  note: في العيد يصنعون الكعك والفطير فتشتد حاجتهم إلى المناخل؛ يقال حين تشتد الحاجة إلى شيء.
+  source: taymur
+  page: 178
+  status: draft
+
+- id: s0030
+  kind: saying
+  prompt: الإسم كبير والعشاء ___
+  answer: قلية
+  others: [لحمة, مندي, ثريد]
+  note: القلية حبوب تُقلى على النار، وهي طعام رخيص؛ يقال لمن شهرته واسعة وحاله الحقيقي متواضع.
+  source: adimi
+  page: 22
+  status: draft
+
+- id: s0031
+  kind: saying
+  prompt: ما يموت بالرِّبق إلا عيال ___
+  answer: الغنم
+  others: [البقر, الحمير, الدجاج]
+  note: «الرِّبق» حبل فيه عُرى تُشدّ بها صغار الغنم؛ فالرجل الحر لا يرضى أن يموت مربوطا ذليلا. يقال في إباء الضيم.
+  source: abboudi_amthal
+  page: 1306
+  volume: ج٤
+  status: draft
+
+- id: s0032
+  kind: saying
+  prompt: يخض ماء ويبي ___
+  answer: زبده
+  others: [عسل, تمر, خبز]
+  note: الخض هو التحريك السريع كما يُخض الحليب الرائب لاستخراج الزبدة. يقال لمن يعمل عملا لا ثمرة من ورائه.
+  source: juhayman
+  page: 222
+  volume: ج٩
+  status: draft
+
+- id: s0033
+  kind: saying
+  prompt: القناعة ___ لا يفنى
+  answer: كنز
+  others: [بحر, بيت, عمر]
+  note: الرضا بالقليل غنى لا ينفد.
+  source: asadi
+  line: 136675
+  halab: p1106
+  status: draft
+
+- id: s0034
+  kind: saying
+  prompt: راح العيد و___، رجعنا مثلما كنا
+  answer: الحنا
+  others: [الكعك, اللحم, الضيوف]
+  note: الحنّاء من زينة العيد، فإذا ذهب العيد وزال أثرها عاد الناس إلى حالهم المعتاد.
+  source: iryani
+  page: 850
+  status: draft
+
+- id: s0035
+  kind: saying
+  prompt: ما بربي الصوص غير ___
+  answer: إمه
+  others: [أبوه, الديك, صاحبه]
+  note: لا يقوم مقام الأم في تربية الأولاد أحد.
+  source: sahli
+  page: 296
+  status: draft
+
+- id: s0036
+  kind: saying
+  prompt: الكلام شوك ___
+  answer: الأكباد
+  others: [الطريق, الأقدام, الأيام]
+  note: أي إن الكلام المؤلم يؤثر في النفس كما يؤثر الشوك في القدمين.
+  source: akwa
+  page: 871
+  volume: ج٢
+  status: draft
+
+- id: s0037
+  kind: saying
+  prompt: الإيد ___ ما تموتش مكمشه
+  answer: السخيه
+  others: [القويه, الطويله, الشاطره]
+  note: «مكمّشة» مقبوضة؛ الجود طبع أصيل يعيش عليه صاحبه ويموت عليه.
+  source: mughniyya
+  page: 164
+  status: draft
+
+- id: s0038
+  kind: saying
+  prompt: لحم ___ يكسر سنة الثعلب
+  answer: السبع
+  others: [الجمل, الحمار, الديك]
+  note: تعبير مجازي عن الطبقية؛ فأصحاب القوة والنفوذ لا يقدر عليهم من هم أضعف منهم.
+  source: shaalan
+  page: 173
+  volume: ج٦
+  status: draft
+
+- id: s0039
+  kind: saying
+  prompt: غِيرْ طَابْ صَبُّوهْ؟ خَلِّيهْ ___ شْوِيَّه
+  answer: يْبَرْدْ
+  others: [يْغْلِي, يْطِيبْ, يْسْخُونْ]
+  note: أنضج فصببتموه؟ اتركوه يبرد قليلًا. يقال لمن يتعجل هدفه قبل أن يحين وقته المناسب.
+  source: dadoun
+  page: 207
+  status: draft
+
+- id: s0040
+  kind: saying
+  prompt: طول الغيبه وجه ___
+  answer: بالخيبه
+  others: [بالهديه, بالفلوس, بالغنيمه]
+  note: يقال لمن يطيل الغياب في طلب أمر ثم يعود بلا شيء، وهو مثل قديم أورده الأبشيهي.
+  source: taymur
+  page: 235
+  status: draft
+
+- id: s0041
+  kind: saying
+  prompt: اللى ما يذوق قبل الرشوف ينحرقوا ___
+  answer: شواربه
+  others: [صوابعه, ثيابه, عيونه]
+  note: «الرشوف» الطعام السائل الساخن يُرتشف؛ يضرب في الحث على عدم التسرع.
+  source: zanin
+  page: 50
+  status: draft
+
+- id: s0042
+  kind: saying
+  prompt: فلان كريم لكن من مال ___
+  answer: غيرو
+  others: [جيبو, تعبو, كيسو]
+  note: يُقال فيمن يجود بما لا يملك.
+  source: asadi
+  line: 142074
+  halab: p1321
+  status: draft
+
+- id: s0043
+  kind: saying
+  prompt: أعتك من ___
+  answer: اليخني
+  others: [الدولمة, الكبة, البرياني]
+  note: يُقال في الشيء الموغل في القدم، لأن اليخني عندهم من أقدم الأطعمة، وفي حكاية شعبية أنه أول ما طُبخ لآدم بعد خروجه من الجنة.
+  source: hijiyya
+  page: 82
+  status: draft
+
+- id: s0044
+  kind: saying
+  prompt: قيراط أمر ولا ألف ___
+  answer: مروءة
+  others: [دينار, قنطار, صاحب]
+  note: قليل من السلطة يفعل ما لا يفعله الكثير من الشهامة؛ فالقوة تنتزع الحق أسرع من اللين.
+  source: adimi
+  page: 306
+  status: draft
+
+- id: s0045
+  kind: saying
+  prompt: ما تنوب الأقلام عن ___
+  answer: الأقدام
+  others: [الأعلام, الأحلام, الأرقام]
+  note: الرسائل المكتوبة لا تغني عن الزيارة والمجيء بنفسك.
+  source: juhayman
+  page: 287
+  volume: ج١٠
+  status: draft
+
+- id: s0046
+  kind: saying
+  prompt: غالي طلب ___
+  answer: رخيص
+  others: [قليل, صغير, بعيد]
+  note: هو عزيز علينا، وما طلبه هيّن؛ فكيف لا يُجاب؟ يقال في سرعة إجابة الطلب.
+  source: abboudi_amthal
+  page: 891
+  volume: ج٣
+  status: draft
+
+- id: s0047
+  kind: saying
+  prompt: لبس المكنسة، بتصير ست ___
+  answer: الحسن
+  others: [البيت, الدار, الكل]
+  note: الثياب الفاخرة تجمّل حتى المكنسة، والمظهر لا يدل على الجوهر.
+  source: sahli
+  page: 284
+  status: draft
+
+- id: s0048
+  kind: saying
+  prompt: مطرات التوت بتهدّ ___
+  answer: البيوت
+  others: [القلوب, الجبال, الجسور]
+  note: أمطار موسم التوت في أواخر الربيع غزيرة شديدة.
+  source: asadi
+  line: 159829
+  halab: p820
+  status: draft
+
+- id: s0049
+  kind: saying
+  prompt: نشفت البركه وبانت ___
+  answer: زقازيقها
+  others: [ضفادعها, حجارتها, طيورها]
+  note: الزقازيق صغار السمك. يقال للشيء يزول ما كان يستره فيظهر ما فيه من طيب أو خبيث.
+  source: taymur
+  page: 371
+  status: draft
+
+- id: s0050
+  kind: saying
+  prompt: من حسب العصافير ما تلم ___
+  answer: ذره
+  others: [عسل, بن, قات]
+  note: يقال في الأخذ بالتوكل؛ فمن خاف أن تأكل العصافير زرعه لن يزرع أبداً.
+  source: akwa
+  page: 1201
+  volume: ج٢
+  status: draft
+
+- id: s0051
+  kind: saying
+  prompt: إلي يحفر حفره ___ مغلاقها
+  answer: راسه
+  others: [ايده, رجله, ولده]
+  note: «مغلاقها» غطاؤها؛ الشر يرتد على صاحبه، فمن نصب فخًّا لغيره وقع فيه.
+  source: mughniyya
+  page: 140
+  status: draft
+
+- id: s0052
+  kind: saying
+  prompt: اخْدَمْ يَالتَّاعَسْ ___
+  answer: لَلنَّاعَسْ
+  others: [لَلْفَارَسْ, لَلسَّايَسْ, لَلْحَارَسْ]
+  note: اعمل يا تعيس الحظ لينعم النائم. يقال لمن يشقى في عمله ليسعد غيره بثمرة تعبه، ولا يناله هو إلا القليل.
+  source: dadoun
+  page: 87
+  status: draft
+
+- id: s0053
+  kind: saying
+  prompt: الديك يصيح من ___
+  answer: البيضة
+  others: [العشة, الفجر, صغره]
+  note: النبوغ تظهر علاماته من الصغر؛ يقال للطفل الذكي حين تبدو موهبته مبكرا.
+  source: adimi
+  page: 41
+  status: draft
+
+- id: s0054
+  kind: saying
+  prompt: أيش ألّف الرباح ماكل ___
+  answer: التفاح
+  others: [الموز, العنب, التمر]
+  note: الرُّبّاح القرود؛ يقال لمن لم يستحسن شيئًا نفيسًا لأنه لم يألفه، أو لمحدث النعمة.
+  source: iryani
+  page: 339
+  status: draft
+
+- id: s0055
+  kind: saying
+  prompt: القرد في عين أمه ___
+  answer: غزال
+  others: [أرنب, حصان, جمل]
+  note: الإنسان قد لا يرى عيوب ما يتصل به، لأن عاطفة الأبوة أو القرابة تغطيها بحجاب كثيف.
+  source: juhayman
+  page: 285
+  volume: ج٥
+  status: draft
+
+- id: s0056
+  kind: saying
+  prompt: هبهب يا كلب وارتاح يا ___
+  answer: قلب
+  others: [عين, راس, جار]
+  note: «هبهب» أي انبح؛ والمعنى دعه ينبح كما يشاء، وأنا لا أبالي، فهو دعوة إلى خلو البال وترك الهموم.
+  source: shaalan
+  page: 171
+  volume: ج٢
+  status: draft
+
+- id: s0057
+  kind: saying
+  prompt: إذا جار عليك الزمان جور على ___
+  answer: إيديك
+  others: [جيرانك, ولادك, خيلك]
+  note: إذا ضاقت بك الحال فاعتمد على عمل يديك.
+  source: asadi
+  line: 18198
+  halab: p1118
+  status: draft
+
+- id: s0058
+  kind: saying
+  prompt: دار ___ بتخرب قبل دار الظالمين
+  answer: الهاملين
+  others: [الفقرا, الغربا, الجيران]
+  note: الإهمال يخرّب البيوت أسرع من الظلم، فاحرص على بيتك.
+  source: sahli
+  page: 145
+  status: draft
+
+- id: s0059
+  kind: saying
+  prompt: عيب الكلام ___
+  answer: تطويله
+  others: [سرعته, علوه, همسه]
+  note: في ذم الإطالة في الكلام وفي غيره.
+  source: taymur
+  page: 256
+  status: draft
+
+- id: s0060
+  kind: saying
+  prompt: كلٍّ ما ياكل إلا ___
+  answer: رزقه
+  others: [تعبه, حقه, كسبه]
+  note: يقال في التوكل على الله في طلب الرزق؛ فكل نفس لا تنال إلا ما كُتب لها.
+  source: abboudi_amthal
+  page: 1057
+  volume: ج٣
+  status: draft
+
+- id: s0061
+  kind: saying
+  prompt: أسأل مجرب ولا تسأل ___
+  answer: طبيب
+  others: [قاضي, تاجر, شاعر]
+  note: الخبرة التي تأتي بالتجربة أنفع من علم من لم يجرّب.
+  source: zanin
+  page: 20
+  status: draft
+
+- id: s0062
+  kind: saying
+  prompt: كل رخيص غالي، وكل غالي ___
+  answer: رخيص
+  others: [غالي, جميل, نادر]
+  note: الرخيص يغلو على صاحبه لرداءته وقصر عمره، والغالي يرخص لجودته وطول بقائه.
+  source: akwa
+  page: 851
+  volume: ج٢
+  status: draft
+
+- id: s0063
+  kind: saying
+  prompt: انْقَصْ الْمَا انْقَصْ ___
+  answer: الدّْقِيقْ
+  others: [الْمْلَحْ, الْعْجِينْ, الْخْبْزْ]
+  note: 'أنقص الماء ينقص الدقيق. يقال لمن يريد بضاعة جيدة بثمن بخس، وعكسه: زد الماء زد الدقيق.'
+  source: dadoun
+  page: 343
+  status: draft
+
+- id: s0064
+  kind: saying
+  prompt: حاجة الصباح من ___
+  answer: الليل
+  others: [الفجر, الأمس, البيت]
+  note: ما تريد إنجازه صباحا يُرتَّب له من الليلة السابقة.
+  source: adimi
+  page: 188
+  status: draft
+
+- id: s0065
+  kind: saying
+  prompt: ما أعطيك لو تلحس ___
+  answer: السما
+  others: [الأرض, الجدار, الصحن]
+  note: أي إن ما تطلبه مستحيل كاستحالة أن تلحس السماء بلسانك. يقال عند الإصرار على الرفض.
+  source: juhayman
+  page: 12
+  volume: ج٧
+  status: draft
+
+- id: s0066
+  kind: saying
+  prompt: البغض بين القرايب والحسد بين ___
+  answer: الجيران
+  others: [الغرب, التجار, الرعيان]
+  note: يلاحظ المثل أن البغضاء تكثر بين الأقارب، والحسد يكثر بين الجيران.
+  source: mughniyya
+  page: 182
+  status: draft
+
+- id: s0067
+  kind: saying
+  prompt: البيشقى ___
+  answer: بيلقى
+  others: [بيبقى, بيشكي, بيغفى]
+  note: من تعب في عمله نال ثمرة تعبه.
+  source: asadi
+  line: 150605
+  halab: p1111
+  status: draft
+
+- id: s0068
+  kind: saying
+  prompt: يا بخت من كان النقيب ___
+  answer: خاله
+  others: [جاره, صاحبه, نسيبه]
+  note: يقال لمن له قريب ذو منصب ينفعه في أموره فيعلو شأنه بسببه.
+  source: taymur
+  page: 383
+  status: draft
+
+- id: s0069
+  kind: saying
+  prompt: بالوجه ___، وبالقفا مذراية
+  answer: مراية
+  others: [وردة, شمعة, حلاوة]
+  note: في وجهك كالمرآة صفاء، ومن خلفك كالمذراة يذرّي سيرتك؛ يقال للمنافق.
+  source: sahli
+  page: 79
+  status: draft
+
+- id: s0070
+  kind: saying
+  prompt: المعنى بقلب ___
+  answer: الشاعر
+  others: [الكاتب, الشيخ, القاضي]
+  note: المقصود الحقيقي لا يعرفه إلا قائله.
+  source: asadi
+  line: 160948
+  halab: p823
+  status: draft
+
+- id: s0071
+  kind: saying
+  prompt: نجّار ولا له ___
+  answer: باب
+  others: [كرسي, سرير, صندوق]
+  note: يصنع الأبواب للناس وبيته بلا باب؛ ويقابله عند المصريين «باب النجار مخلّع».
+  source: abboudi_amthal
+  page: 1499
+  volume: ج٤
+  status: draft
+
+- id: s0072
+  kind: saying
+  prompt: شمعة منوّرة ولا ___ محمّرة
+  answer: فرخة
+  others: [سمكة, بطاطس, كبدة]
+  note: قبل الكهرباء كان إشعال القنديل ليلًا رفاهية لا يقدر عليها إلا القليل؛ فكان النور عند بعضهم أهم من الأكل.
+  source: shaalan
+  page: 48
+  volume: ج٥
+  status: draft
+
+- id: s0073
+  kind: saying
+  prompt: الملقوص يخاف من هزة ___
+  answer: الحبل
+  others: [الريح, الغصن, الباب]
+  note: الملقوص هو من لسعته حشرة أو حيّة، فصار يرتاب حتى من اهتزاز حبل يشبهها.
+  source: iryani
+  page: 812
+  status: draft
+
+- id: s0074
+  kind: saying
+  prompt: كل برده على قدر ___
+  answer: لحافه
+  others: [ثوبه, بيته, ناره]
+  note: من كان غطاؤه سميكا خف عليه البرد، ومن كان غطاؤه رقيقا اشتد عليه. فكل إنسان يتأثر بالشدائد بحسب ما عنده من عدة.
+  source: juhayman
+  page: 62
+  volume: ج٦
+  status: draft
+
+- id: s0075
+  kind: saying
+  prompt: بْحَالْ ___ اللّيلْ، يْعَضْ وَيْتْخَبَّعْ
+  answer: بَرْغُوثْ
+  others: [كَلْبْ, ذِيبْ, فَارْ]
+  note: البرغوث يلدغ في الظلام ثم يختبئ فلا يُرى. يقال فيمن يؤذي الناس في الخفاء بفعله أو بلسانه.
+  source: dadoun
+  page: 23
+  status: draft
+
+- id: s0076
+  kind: saying
+  prompt: عمل الكسل ___
+  answer: مثنّي
+  others: [ناقص, بطيء, ضايع]
+  note: الكسول يضطر إلى إعادة عمله مرة بعد مرة، فيتضاعف تعبه.
+  source: adimi
+  page: 277
+  status: draft
+
+- id: s0077
+  kind: saying
+  prompt: صوّت يا مصوّت، وبين الصوتين ___
+  answer: فرج
+  others: [صبر, جواب, ضيق]
+  note: صوّت أي اصرخ ونادِ؛ يقال في سرعة مجيء الفرج.
+  source: akwa
+  page: 657
+  volume: ج١
+  status: draft
+
+- id: s0078
+  kind: saying
+  prompt: لا تستعجل تجيك ___
+  answer: السالفه
+  others: [الحكايه, البشاره, الهديه]
+  note: السالفة هي القصة، وكانت الجدة تقولها للصغار المتلهفين لمعرفة ما جرى في الحكاية، ثم صارت تُقال لكل مستعجل.
+  source: hijiyya
+  page: 152
+  status: draft
+
+- id: s0079
+  kind: saying
+  prompt: كيف ذبانة ___ من كل شي تذوق
+  answer: السوق
+  others: [الدار, البحر, الخيمه]
+  note: يقال للجشع الذي يحرص على أن يتناول من كل أصناف الطعام.
+  source: mughniyya
+  page: 456
+  status: draft
+
+- id: s0080
+  kind: saying
+  prompt: لو كان فيه خير ما رماه ___
+  answer: الطير
+  others: [البحر, الريح, السيل]
+  note: يقال للشيء عديم النفع يجود به البخيل، وهو مثل قديم أورده الأبشيهي.
+  source: taymur
+  page: 323
+  status: draft
+
+- id: s0081
+  kind: saying
+  prompt: اللى كيف الناس لا ___
+  answer: باس
+  others: [خوف, هم, عيب]
+  note: «كيف» مثل؛ من كان حاله كحال الناس فلا بأس عليه، في الحث على القناعة.
+  source: zanin
+  page: 46
+  status: draft
+
+- id: s0082
+  kind: saying
+  prompt: سحبها مثل ___ من العجين
+  answer: الشعرة
+  others: [الخيط, الريشة, الإبرة]
+  note: لمن يحل المشكلة بمهارة وسهولة كما تُسحب الشعرة من العجين.
+  source: sahli
+  page: 175
+  status: draft
+
+- id: s0083
+  kind: saying
+  prompt: لو ___ ما بيغلبنا غلّاب
+  answer: اتّحدنا
+  others: [افترقنا, نمنا, هربنا]
+  note: في الاتّحاد قوّة لا تُغلب.
+  source: asadi
+  line: 121309
+  halab: p1098
+  status: draft
+
+- id: s0084
+  kind: saying
+  prompt: من بغى العسل فيصبر على ___ النحل
+  answer: لسع
+  others: [طنين, غضب, سهر]
+  note: بغى أي أراد. من أراد شيئا لذيذا فلا بد أن يتحمل في سبيله شيئا من المشقة.
+  source: juhayman
+  page: 122
+  volume: ج٨
+  status: draft
+
+- id: s0085
+  kind: saying
+  prompt: من أدخلته بيدك أخرجك ___
+  answer: برجله
+  others: [بلسانه, بعصاه, بيده]
+  note: يقال لمن يقابل الإحسان بالإساءة.
+  source: adimi
+  page: 389
+  status: draft
+
+- id: s0086
+  kind: saying
+  prompt: حَتَّى نَارْ مَاخَطْهَا رْمَادْ وْ___
+  answer: دُخَّانْ
+  others: [حْطَبْ, جْمَرْ, ضُو]
+  note: لكل نار رماد ودخان يدلان عليها. يقال في الخصومات بين الناس، فوراءها في الغالب أسباب سابقة أشعلتها.
+  source: dadoun
+  page: 71
+  status: draft
+
+- id: s0087
+  kind: saying
+  prompt: إلى تكلّمت بالليل فاخفت، والى تكلّمت بالنهار ___
+  answer: فالتفت
+  others: [فاسكت, فاصرخ, فاقعد]
+  note: «اخفت» أي اخفض صوتك؛ في الليل لا ترى من قد يسمعك، وفي النهار انظر حولك قبل أن تتكلم. وهو مثل عربي قديم.
+  source: abboudi_amthal
+  page: 140
+  volume: ج١
+  status: draft
+
+- id: s0088
+  kind: saying
+  prompt: من احتاج للصوف جز ___
+  answer: الكلب
+  others: [الخروف, التيس, الجمل]
+  note: المحتاج لا تعدم عليه الحيل للوصول إلى حاجته.
+  source: akwa
+  page: 1161
+  volume: ج٢
+  status: draft
+
+- id: s0089
+  kind: saying
+  prompt: عينه في الطبق وودنه لمن ___
+  answer: زعق
+  others: [غنى, ضحك, بكى]
+  note: يقال لمن دأبه التقاط أخبار الناس، يأكل وأذنه مع كل صوت.
+  source: taymur
+  page: 260
+  status: draft
+
+- id: s0090
+  kind: saying
+  prompt: الممنوع ___
+  answer: مرغوب
+  others: [مكتوب, مقلوب, مهروب]
+  note: ما يُمنع عن الإنسان يزداد تعلّقاً به.
+  source: asadi
+  line: 164275
+  halab: p832
+  status: draft
+
+- id: s0091
+  kind: saying
+  prompt: بلد ما حدش يعرفك فيها إمشى و___ فيها
+  answer: برطع
+  others: [اشتغل, اسكت, اتعلم]
+  note: برطع أي اركض وانطلق بلا قيد؛ فالمثل يدعو إلى التحرر من رقابة المجتمع حين تكون في بلد غريب لا يعرفك فيه أحد.
+  source: shaalan
+  page: 306
+  volume: ج٢
+  status: draft
+
+- id: s0092
+  kind: saying
+  prompt: إلشهر المليح ببين من ___
+  answer: أوله
+  others: [آخره, نصه, قمره]
+  note: الأمر الجيد تظهر علامته من بدايته.
+  source: sahli
+  page: 187
+  status: draft
+
+- id: s0093
+  kind: saying
+  prompt: السلف ___
+  answer: تلف
+  others: [شرف, ربح, نعمه]
+  note: «السلف» إقراض المال؛ المال الذي تقرضه قد يذهب ولا يعود.
+  source: mughniyya
+  page: 313
+  status: draft
+
+- id: s0094
+  kind: saying
+  prompt: قطره فوق قطره و___
+  answer: سالت
+  others: [غابت, جفّت, طارت]
+  note: من أقوالهم في الحث على التوفير، وبعدها «وحبه فوق حبه وكالت، وبيسه فوق بيسه وآلت» أي زادت.
+  source: iryani
+  page: 40
+  status: draft
+
+- id: s0095
+  kind: saying
+  prompt: إلى ذكرت الذيب فولم ___
+  answer: العصا
+  others: [القهوة, العشا, الفراش]
+  note: إلى بمعنى إذا، وولّم أي جهّز. إذا خطر لك العدو الغادر فاستعد له قبل أن يباغتك.
+  source: juhayman
+  page: 40
+  volume: ج١٠
+  status: draft
+
+- id: s0096
+  kind: saying
+  prompt: بيع البصل بما ___
+  answer: حصل
+  others: [وصل, سأل, دفع]
+  note: يقال في الشيء الرخيص الذي لا قيمة له، فبعه بأي ثمن وتخلص منه.
+  source: adimi
+  page: 145
+  status: draft
+
+- id: s0097
+  kind: saying
+  prompt: السكران في ذمة ___
+  answer: الصاحي
+  others: [الحارس, الجار, الكبير]
+  note: عتاب لليقظ إذا لم ينبّه الغافل؛ فالغافل أمانة في عنق المتنبه.
+  source: taymur
+  page: 208
+  status: draft
+
+- id: s0098
+  kind: saying
+  prompt: لولا جارتي طقّت ___
+  answer: مرارتي
+  others: [طنجرتي, جرّتي, سهرتي]
+  note: الجارة التي نفضي إليها بهمومنا تخفّف عنّا.
+  source: asadi
+  line: 155639
+  halab: p818
+  status: draft
+
+- id: s0099
+  kind: saying
+  prompt: الزَّرْدَه فِى ___، قْرِيبَه يْلاَ اتّْوَجَّادْ
+  answer: بَغْدَادْ
+  others: [الدَّارْ, الدّْرَبْ, الْجّْنَانْ]
+  note: الزردة هي الوليمة. يقال في الطفيلي الذي يحضر الولائم بلا دعوة ولا يبالي ببعد المكان، فوليمة في بغداد قريبة عنده.
+  source: dadoun
+  page: 127
+  status: draft
+
+- id: s0100
+  kind: saying
+  prompt: ارخى روحك ___
+  answer: تعوم
+  others: [تنام, تطير, تمشى]
+  note: «روحك» جسمك؛ من يُرخي جسمه في الماء يطفو، فيضرب للحث على عدم التشدد.
+  source: zanin
+  page: 19
+  status: draft
+
+- id: s0101
+  kind: saying
+  prompt: إذا احببت أن لا تطاع فاطلب ما لا ___
+  answer: يستطاع
+  others: [يباع, يضاع, يذاع]
+  note: أي لا تكلف أحداً فوق طاقته فيعصي أمرك.
+  source: akwa
+  page: 81
+  volume: ج١
+  status: draft
+
+- id: s0102
+  kind: saying
+  prompt: يا غريب، كن ___
+  answer: اديب
+  others: [قريب, حبيب, مهيب]
+  note: ينبغي للغريب أن يلتزم الأدب واللباقة مع أهل البلد الذي نزل فيه.
+  source: abboudi_amthal
+  page: 1649
+  volume: ج٥
+  status: draft
+
+- id: s0103
+  kind: saying
+  prompt: إلسكوت زينة العالم، وسترة ___
+  answer: الجاهل
+  others: [الفقير, الغريب, الكبير]
+  note: الصمت في موضعه يزيّن العالم ويستر جهل الجاهل.
+  source: sahli
+  page: 177
+  status: draft
+
+- id: s0104
+  kind: saying
+  prompt: طير البحر ما يلايمش طير ___
+  answer: البر
+  others: [الليل, السما, الجبل]
+  note: «ما يلايمش» لا يلائم؛ يقال لمن لا يجتمعان أبدًا لاختلاف ظروفهما وطباعهما.
+  source: mughniyya
+  page: 355
+  status: draft
+
+- id: s0105
+  kind: saying
+  prompt: ابن إبنك إلك وابن بنتك ___
+  answer: لأ
+  others: [أحلى, ضيف, أغلى]
+  note: ولد الابن يحمل اسم العائلة، أمّا ولد البنت فلعائلة أبيه.
+  source: asadi
+  line: 147852
+  halab: p810
+  status: draft
+
+- id: s0106
+  kind: saying
+  prompt: ما تجي المصايب إلا من ___
+  answer: القرايب
+  others: [الركايب, السحايب, الغيايب]
+  note: القرايب هم الأقارب، فبينهم من التنافس والحسد ما قد لا يكون بين الأباعد، فتأتي الإساءة من حيث يُرجى الإحسان.
+  source: juhayman
+  page: 28
+  volume: ج٧
+  status: draft
+
+- id: s0107
+  kind: saying
+  prompt: برا ورده وجوا ___
+  answer: قرده
+  others: [بصله, دوده, نحله]
+  note: يقال في من يحسن ظاهره ويقبح باطنه.
+  source: taymur
+  page: 102
+  status: draft
+
+- id: s0108
+  kind: saying
+  prompt: خسارة قريبة ولا ___ بعيد
+  answer: مكسب
+  others: [سفر, طريق, بيت]
+  note: يفضّل التاجر الموجود العاجل ولو بخسارة على أمل غائب قد لا يتحقق؛ وقريب منه «عصفور في اليد ولا عشرة على الشجرة».
+  source: shaalan
+  page: 118
+  volume: ج٦
+  status: draft
+
+- id: s0109
+  kind: saying
+  prompt: سد مأرب أخربه ___
+  answer: فار
+  others: [سيل, زلزال, جيش]
+  note: تروي الحكايات أن فأرا كان سبب خراب سد مأرب العظيم؛ فلا تستهن بكيد الضعيف.
+  source: adimi
+  page: 242
+  status: draft
+
+- id: s0110
+  kind: saying
+  prompt: فْلِيَّسْ عْلَى فْلِيَّسْ يْوَلِّي ___
+  answer: كْدِيَّسْ
+  others: [فْلُوسْ, فْقِيرْ, دِرْهَمْ]
+  note: فليس تصغير فلس، وكديس تصغير كدس أي الكومة. القليل من المال إذا ادُّخر باستمرار صار مالًا وافرًا.
+  source: dadoun
+  page: 215
+  status: draft
+
+- id: s0111
+  kind: saying
+  prompt: كل قميص وإله ___
+  answer: لبيس
+  others: [خياط, زر, جيب]
+  note: لكل فتاة من يناسبها، كما لكل قميص من يلبسه.
+  source: sahli
+  page: 268
+  status: draft
+
+- id: s0112
+  kind: saying
+  prompt: أهدى هديه، و___ فيها
+  answer: نفسه
+  others: [يده, رجله, راسه]
+  note: يقال لمن يعطي غيره شيئاً وهو ما يزال متعلقاً به.
+  source: akwa
+  page: 241
+  volume: ج١
+  status: draft
+
+- id: s0113
+  kind: saying
+  prompt: الحيط ___ بينطّ عليه الكلب
+  answer: الواطي
+  others: [العالي, المايل, الجديد]
+  note: الضعيف يتجرّأ عليه كلّ أحد.
+  source: asadi
+  line: 169050
+  halab: p844
+  status: draft
+
+- id: s0114
+  kind: saying
+  prompt: ما يشرك الهاطل إلا ___
+  answer: الناطل
+  others: [الجايع, الفقير, الضيف]
+  note: الهاطل جزء من الذبيحة قليل اللحم، ويشرك أي يشتري لحمًا، والناطل هو السبهلل الذي لا يُعتمد عليه.
+  source: iryani
+  page: 871
+  status: draft
+
+- id: s0115
+  kind: saying
+  prompt: الجدر ما يگعد الا على ___
+  answer: اثلاثة
+  others: [اثنين, النار, الحطب]
+  note: الجدر هو القدر، وكانت القدور تُركّز على ثلاث كرات حديدية تسمّى «الزرزبانات»، فالمعنى أن الأمر لا يستقيم إلا بأركانه كاملة.
+  source: hijiyya
+  page: 70
+  status: draft
+
+- id: s0116
+  kind: saying
+  prompt: ما عن صديق ___
+  answer: غناه
+  others: [عتاب, سرار, فراق]
+  note: «الغناة» عندهم الاستغناء؛ أي لا يستطيع المرء أن يستغني عن عون صديقه.
+  source: abboudi_amthal
+  page: 1223
+  volume: ج٣
+  status: draft
+
+- id: s0117
+  kind: saying
+  prompt: سيب العجل يعرف ___
+  answer: أمه
+  others: [مرعاه, زريبته, صاحبه]
+  note: العجل إذا تُرك اهتدى إلى أمه بين القطيع؛ والإنسان إذا خُلّي وشأنه مال إلى أهله.
+  source: taymur
+  page: 211
+  status: draft
+
+- id: s0118
+  kind: saying
+  prompt: على ريح المرق فتوا ___
+  answer: عشانا
+  others: [لحمنا, رزنا, تمرنا]
+  note: للقناعة بالقليل حين لا يوجد غيره؛ فقد يُفتّ الخبز في مكان الإدام ليكسب شيئًا من رائحته الطيبة.
+  source: juhayman
+  page: 386
+  volume: ج٤
+  status: draft
+
+- id: s0119
+  kind: saying
+  prompt: استعجلت الكلبة على ضناها جابتهم بلا ___
+  answer: عيون
+  others: [ذيول, صوت, شعر]
+  note: «ضناها» صغارها؛ يضرب في ذمّ العجلة، فهي تُفسد العمل.
+  source: zanin
+  page: 21
+  status: draft
+
+- id: s0120
+  kind: saying
+  prompt: الملدوغ يتخايل ___
+  answer: الحبل
+  others: [الحجر, الشجره, الطير]
+  note: «الملدوغ» من لدغته أفعى؛ يتخيلها في كل حبل فيخشاه.
+  source: mughniyya
+  page: 516
+  status: draft
+
+- id: s0121
+  kind: saying
+  prompt: من سعى للقات والشركة باع ___
+  answer: التركة
+  others: [الأرض, البيت, الغنم]
+  note: الشركة هنا اللحم؛ من أسرف في القات واللحم أنفق أكثر من قوته حتى باع ما ورثه.
+  source: adimi
+  page: 391
+  status: draft
+
+- id: s0122
+  kind: saying
+  prompt: اللِّي حَبْهَا كُلْهَا ___ كُلْهَا
+  answer: كَيْخَلِّيهَا
+  others: [كَيَاكُلْهَا, كَيْدِّيهَا, كَيْرْبَحْهَا]
+  note: من أرادها كلها تركها كلها. يقال فيمن يطمع في الاستيلاء على كل شيء ولا يقنع بالقليل فيضيّع كل شيء.
+  source: dadoun
+  page: 287
+  status: draft
+
+- id: s0123
+  kind: saying
+  prompt: نيّال المتهوم وعند الله ___
+  answer: بري
+  others: [غني, قوي, ولي]
+  note: طوبى لمن اتّهمه الناس وهو بريء عند الله.
+  source: asadi
+  line: 171273
+  halab: p846
+  status: draft
+
+- id: s0124
+  kind: saying
+  prompt: إلسكافي ___، والحايك عريان
+  answer: حافي
+  others: [تعبان, جوعان, سكران]
+  note: لمن يخدم الناس بصنعته ويهمل نفسه.
+  source: sahli
+  page: 177
+  status: draft
+
+- id: s0125
+  kind: saying
+  prompt: الشئ اللى يزيد عن حده يبقى ___
+  answer: ماسخ
+  others: [رخيص, غالى, قديم]
+  note: الماسخ هو ما لا طعم له؛ والمثل يدعو إلى الاعتدال، فالمبالغة في أي أمر تفقده أثره.
+  source: shaalan
+  page: 431
+  volume: ج٣
+  status: draft
+
+- id: s0126
+  kind: saying
+  prompt: ما احد يذرا نفسه ___
+  answer: شعير
+  others: [ذهب, قمح, رماد]
+  note: من أمثال بُرَط؛ يذرا أي يبذر، والشعير أدنى الحبوب، فلا أحد يرضى لنفسه منزلة منحطة.
+  source: akwa
+  page: 1001
+  volume: ج٢
+  status: draft
+
+- id: s0127
+  kind: saying
+  prompt: الدبان وقعته في ___ كتير
+  answer: العسل
+  others: [اللبن, المرق, الطبيخ]
+  note: يقال لمن يتهافت على الشيء ويرمي نفسه عليه، كما يسقط الذباب في العسل.
+  source: taymur
+  page: 163
+  status: draft
+
+- id: s0128
+  kind: saying
+  prompt: لسان أم جنيب ___ منها
+  answer: أطول
+  others: [أقصر, أحلى, أسرع]
+  note: أم جنيب هي أم حبين، دويبة صغيرة. يقال لقصير الجسم طويل اللسان، يكثر الكلام ولا يعمل.
+  source: juhayman
+  page: 273
+  volume: ج٦
+  status: draft
+
+- id: s0129
+  kind: saying
+  prompt: ياكل المال من لا ___ به
+  answer: تعب
+  others: [فرح, علم, حق]
+  note: قد يأكل المال من لم يبذل في جمعه جهدا ولا مشقة.
+  source: abboudi_amthal
+  page: 1651
+  volume: ج٥
+  status: draft
+
+- id: s0130
+  kind: saying
+  prompt: ما عصّادة تحب ___
+  answer: عصّادة
+  others: [طبّاخة, خبّازة, جارة]
+  note: العصّادة من تحرّك عصيدة القدر؛ أصحاب الصنعة الواحدة لا يحب بعضهم بعضا.
+  source: adimi
+  page: 369
+  status: draft
+
+- id: s0131
+  kind: saying
+  prompt: في كانون كنّ، وعالفقير ___
+  answer: حنّ
+  others: [منّ, جنّ, ظنّ]
+  note: في كانون الزم بيتك وتصدّق على الفقير.
+  source: asadi
+  line: 139256
+  halab: p798
+  status: draft
+
+- id: s0132
+  kind: saying
+  prompt: إلي يصرف ولا يحسب ___ ولا يدري
+  answer: يفلس
+  others: [يغنى, يربح, يسمن]
+  note: من ينفق دون حساب يجد نفسه فقيرًا فجأة؛ في الدعوة إلى ضبط الإنفاق.
+  source: mughniyya
+  page: 146
+  status: draft
+
+- id: s0133
+  kind: saying
+  prompt: مَا تَشْرَبْشِي مَ الْبِيرْ وَتَرْمِي فِيهْ ___
+  answer: لَحْجَرْ
+  others: [الْمَا, الدّْلُو, الْحْبَلْ]
+  note: لا تشرب من البئر ثم ترمي فيه حجرًا. يقال فيمن ينتفع بما تقدمه له ثم يسعى إلى إيذائك.
+  source: dadoun
+  page: 335
+  status: draft
+
+- id: s0134
+  kind: saying
+  prompt: كل شي إذا كثر برخص، إلا ___
+  answer: العقل
+  others: [الذهب, الخبز, الوقت]
+  note: كل شيء يقل ثمنه بكثرته إلا العقل، فقيمته ثابتة.
+  source: sahli
+  page: 265
+  status: draft
+
+- id: s0135
+  kind: saying
+  prompt: ضربه بالجلجل ولا عشر ب___
+  answer: المطرقه
+  others: [العصا, اليد, الحجر]
+  note: الجُلْجُل المطرقة الكبيرة عند الحدادين، فضربة واحدة به تغني عن عشر ضربات بالصغيرة.
+  source: iryani
+  page: 147
+  status: draft
+
+- id: s0136
+  kind: saying
+  prompt: من عاشر المتهوم ___
+  answer: ينتهم
+  others: [يتعلم, يندم, يتوه]
+  note: صاحب أهل الشبهة تصيبه التهمة؛ تحذير من مصاحبة المريب.
+  source: taymur
+  page: 359
+  status: draft
+
+- id: s0137
+  kind: saying
+  prompt: احسبنى كيف خوك وحاسبنى كيف ___
+  answer: عدوك
+  others: [ابنك, جارك, ضيفك]
+  note: عاملني بمودّة الأخ، لكن دقّق معي في الحساب كما تدقق مع الخصم، فتدوم الأخوّة ولا يقع الخلاف.
+  source: zanin
+  page: 15
+  status: draft
+
+- id: s0138
+  kind: saying
+  prompt: انفعني للحجره، قال أين ___
+  answer: الإجره
+  others: [الأكل, الطريق, الزاد]
+  note: الحجرة الرَّدْهة؛ يقال لمن لا مروءة له فيطالب بالأجر على أتفه الأعمال قبل أن يقوم بها.
+  source: akwa
+  page: 241
+  volume: ج١
+  status: draft
+
+- id: s0139
+  kind: saying
+  prompt: الناي في كمّي والهوا في ___
+  answer: تمّي
+  others: [همّي, دمّي, عمّي]
+  note: كلّ ما أحتاجه حاضر عندي ولا أحتاج إلى أحد.
+  source: asadi
+  line: 166814
+  halab: p837
+  status: draft
+
+- id: s0140
+  kind: saying
+  prompt: مرد الكلب على ___
+  answer: القصاب
+  others: [الراعي, الحداد, الخباز]
+  note: القصاب هو الجزار، وطريق الكلب لا بد أن يمر به. يقال للمسيء الذي لا بد أن يعود إلى من هو أقوى منه، فيحسن به أن يتأدب.
+  source: juhayman
+  page: 51
+  volume: ج٨
+  status: draft
+
+- id: s0141
+  kind: saying
+  prompt: أعمى لقي ___
+  answer: ودعه
+  others: [ذهب, مرجان, خاتم]
+  note: الودعة صدفة صغيرة لا قيمة لها؛ يقال لمن يتباهى بشيء تافه ويفخر به.
+  source: adimi
+  page: 90
+  status: draft
+
+- id: s0142
+  kind: saying
+  prompt: عاملين زى ___ الكبير اللى بياكل الصغير
+  answer: السمك
+  others: [الدود, النمل, الشجر]
+  note: يصف المثل شريعة الغاب حين يعتدي القوي على الضعيف ويغيب القانون.
+  source: shaalan
+  page: 136
+  volume: ج٣
+  status: draft
+
+- id: s0143
+  kind: saying
+  prompt: ما عين تقول آه من ___
+  answer: خير
+  others: [نوم, حب, شبع]
+  note: العين لا تشتكي وصاحبها معافى؛ فالشكوى من المرض لها في الغالب أساس صحيح.
+  source: abboudi_amthal
+  page: 1225
+  volume: ج٣
+  status: draft
+
+- id: s0144
+  kind: saying
+  prompt: لَعْرُوسَه لَلْعْرِيسْ، وَالْجْرِي ___
+  answer: لَلْمْتَاعِيسْ
+  others: [لَلْعَزَّابَه, لَلْجِيرَانْ, لَلضّْيَافْ]
+  note: العروس للعريس، والركض والتعب للتعساء. يقال فيمن يشقى في أمر تعود منافعه على غيره.
+  source: dadoun
+  page: 287
+  status: draft
+
+- id: s0145
+  kind: saying
+  prompt: عند البطون ضاعت ___
+  answer: العقول
+  others: [الهموم, الكلمات, القلوب]
+  note: يقال لمن يشغله الطعام عن كل ما حوله.
+  source: sahli
+  page: 223
+  status: draft
+
+- id: s0146
+  kind: saying
+  prompt: إرجانا يا حصان نين يكبر ___
+  answer: العشب
+  others: [المهر, الشعير, السرج]
+  note: انتظر يا حصان حتى ينبت العشب ويكبر؛ يقال سخرية ممن ينتظر أمرًا بعيد التحقق. «نين» أي حتى.
+  source: mughniyya
+  page: 80
+  status: draft
+
+- id: s0147
+  kind: saying
+  prompt: من القلب للقلب ___
+  answer: رسول
+  others: [جواب, سلام, هديه]
+  note: من أحب شخصا وجد عنده من الود مثل ما في قلبه.
+  source: taymur
+  page: 362
+  status: draft
+
+- id: s0148
+  kind: saying
+  prompt: فلان لا مال ياخدو الرحمان ولا عقل ياخدو ___
+  answer: الشيطان
+  others: [الحرامي, الجيران, القاضي]
+  note: يُقال فيمن لا مال عنده ولا عقل، فلا مطمع فيه لأحد.
+  source: asadi
+  line: 152337
+  halab: p1325
+  status: draft
+
+- id: s0149
+  kind: saying
+  prompt: قال بقره وثور قال ثور و___
+  answer: بقره
+  others: [عجل, ناقه, حمار]
+  note: الجملتان بمعنى واحد ولم يتغير إلا الترتيب؛ يقال لمن يخالف لمجرد شهوة الخلاف.
+  source: juhayman
+  page: 237
+  volume: ج٥
+  status: draft
+
+- id: s0150
+  kind: saying
+  prompt: إذا ضاق حالش شربتي لش ___
+  answer: قهاو
+  others: [حليب, شاهي, لبن]
+  note: قول يُوجَّه إلى المرأة، يعني إذا ضاقت بك الأحوال فاشربي القهوة لتنسي همومك. والقهاو عندهم القهوة الجيدة.
+  source: akwa
+  page: 111
+  volume: ج١
+  status: draft
+
+- id: s0151
+  kind: saying
+  prompt: إذا كثرين الديكة بطل ___
+  answer: الصبح
+  others: [البيض, النوم, الأذان]
+  note: إذا كثر الديوك تضاربت أصواتها؛ ويقال حين يتعثر أمر رغم كثرة القائمين عليه.
+  source: adimi
+  page: 85
+  status: draft
+
+- id: s0152
+  kind: saying
+  prompt: الهدايا على قدر ___
+  answer: مهديها
+  others: [ثمنها, وزنها, حاملها]
+  note: قالوها في «وكعة المهر» التي يقدّمها أهل العريس للعروس، وتختلف بحسب حال من يقدّمها.
+  source: hijiyya
+  page: 14
+  status: draft
+
+- id: s0153
+  kind: saying
+  prompt: أجا كتاب من خالو قال، كل مين هو بحالو، وأجا مكتوب من عمّو قال، كل مين هو ___
+  answer: بهمّو
+  others: [بدمّو, بأمّو, بتمّو]
+  note: كلّ إنسان مشغول بنفسه وهمومه.
+  source: asadi
+  line: 140377
+  halab: p800
+  status: draft
+
+- id: s0154
+  kind: saying
+  prompt: أكبر منك بيوم يعرف عنك ___
+  answer: بسنه
+  others: [بشهر, بيومين, بجمعه]
+  note: في توقير رأي من هو أكبر سنا، فخبرة يوم زائد تساوي علم سنة كاملة.
+  source: taymur
+  page: 28
+  status: draft
+
+- id: s0155
+  kind: saying
+  prompt: 'شو أحلى من العسل؟ قال: ___ ببلاش'
+  answer: خل
+  others: [مي, ملح, بصل]
+  note: يقال لمن يفضّل الشيء المجاني ولو كان رديئا.
+  source: sahli
+  page: 188
+  status: draft
+
+- id: s0156
+  kind: saying
+  prompt: ما يشتطّ المصرّ إلا من ___
+  answer: وسطه
+  others: [طرفه, ظهره, قدّامه]
+  note: المصرّ منديل تعقده المرأة على رأسها، ووسطه يحمل الجرّة فيتمزق؛ فمن يتحمل أكثر يصيبه الأذى أكثر.
+  source: iryani
+  page: 491
+  status: draft
+
+- id: s0157
+  kind: saying
+  prompt: تَخْطِي ___ وَتْجِي فَايَنْ بْغَاتْ
+  answer: الرَّاسْ
+  others: [الدَّارْ, الْمَالْ, الْعِينْ]
+  note: أي ما دامت المصيبة قد تجاوزت الرأس فلتقع حيث شاءت. فسلامة النفس أغلى من كل ما سواها.
+  source: dadoun
+  page: 47
+  status: draft
+
+- id: s0158
+  kind: saying
+  prompt: الحوار ما يضرّه وطي ___
+  answer: امه
+  others: [الراعي, الجمل, القطيع]
+  note: الحوار ولد الناقة؛ يقال للأذى الظاهر إذا صدر من شفيق رحيم، كالأم تعاقب ولدها.
+  source: abboudi_amthal
+  page: 435
+  volume: ج١
+  status: draft
+
+- id: s0159
+  kind: saying
+  prompt: اشوية ___ ولا هلبة ينقطع
+  answer: يدوم
+  others: [يكفى, يحلى, يشبع]
+  note: «اشوية» قليل و«هلبة» كثير؛ القليل الدائم خير من الكثير المنقطع.
+  source: zanin
+  page: 23
+  status: draft
+
+- id: s0160
+  kind: saying
+  prompt: أفقر من ___
+  answer: الدبور
+  others: [الغراب, الصرصار, الوطواط]
+  note: الدبور حشرة كبيرة تشبه النحل لكنها لا تصنع عسلًا ولا تعيش في جماعات، فصارت مضرب المثل في شدة الفقر.
+  source: shaalan
+  page: 110
+  volume: ج١
+  status: draft
+
+- id: s0161
+  kind: saying
+  prompt: حضر السرز وال___ ما زال في بطن أمه
+  answer: حصان
+  others: [جمل, حمار, جدي]
+  note: «السرز» السرج؛ أعدّ السرج والحصان لم يولد بعد، فيمن يستعد لأمر قبل أوانه بزمن طويل.
+  source: mughniyya
+  page: 236
+  status: draft
+
+- id: s0162
+  kind: saying
+  prompt: كبدة بعير كلما طبخت ___
+  answer: قست
+  others: [لانت, طابت, حلت]
+  note: اللحم يلين كلما طال طبخه إلا كبد البعير فيزداد صلابة. يقال للشيء الذي يزداد سوءا كلما بذلت الجهد لإصلاحه.
+  source: juhayman
+  page: 12
+  volume: ج٦
+  status: draft
+
+- id: s0163
+  kind: saying
+  prompt: من دوّر الجن ___
+  answer: ركضوه
+  others: [لقيهم, خافهم, هربوا]
+  note: دوّر أي بحث؛ من فتّش عن المتاعب جاءته بما لا قبل له به.
+  source: adimi
+  page: 364
+  status: draft
+
+- id: s0164
+  kind: saying
+  prompt: طلب الزود وقع في ___
+  answer: النقص
+  others: [البير, الدين, الفخّ]
+  note: الطمع في الزيادة يوقع في الخسارة.
+  source: asadi
+  line: 176190
+  halab: p857
+  status: draft
+
+- id: s0165
+  kind: saying
+  prompt: يا حارس باب غيرك، وباب بيتك ___
+  answer: مفلت
+  others: [مسدود, جديد, عالي]
+  note: مفلت أي مهمل؛ يقال لمن يهتم بأمور غيره ويهمل أمر نفسه.
+  source: akwa
+  page: 1351
+  volume: ج٢
+  status: draft
+
+- id: s0166
+  kind: saying
+  prompt: طباخ السم لا بد ___
+  answer: يدوقه
+  others: [يشمه, يشربه, يبيعه]
+  note: يقال لمن يدبّر الأذى للناس فيصيبه منه شيء، وللخادم تمتد يده إلى ما اؤتمن عليه.
+  source: taymur
+  page: 230
+  status: draft
+
+- id: s0167
+  kind: saying
+  prompt: إللي أصبعه بالمي مش زي اللي اصبعه في ___
+  answer: النار
+  others: [الزيت, الطين, الرمل]
+  note: لا يحس بالمصيبة كما ينبغي إلا صاحبها.
+  source: sahli
+  page: 39
+  status: draft
+
+- id: s0168
+  kind: saying
+  prompt: زَغْنَنْتْ لَكْ ___ فِى رَاسَكْ
+  answer: الذَّبَّانَه
+  others: [النّْحْلَه, الْبَرْغُوثَه, الْفَكْرَه]
+  note: كأن ذبابة دخلت رأسه تطنّ فيه. يقال لمن عزم على عمل عاقبته وخيمة، فتنبهه وتحثه على العدول عنه.
+  source: dadoun
+  page: 127
+  status: draft
+
+- id: s0169
+  kind: saying
+  prompt: كلما طقيت في أرض وتد وافق ___
+  answer: حصاة
+  others: [عرق, شوكة, ماي]
+  note: طقيت أي ضربت. يقال لسيئ الحظ الذي يتعثر في كل عمل يبدؤه.
+  source: juhayman
+  page: 122
+  volume: ج٦
+  status: draft
+
+- id: s0170
+  kind: saying
+  prompt: خذ علوم القوم من ___
+  answer: سفهاها
+  others: [شيوخها, كبارها, شعّارها]
+  note: «العلوم» هنا الأخبار؛ فأسرار القوم يفشيها السفهاء منهم، لأنهم لا يحسنون الكتمان.
+  source: abboudi_amthal
+  page: 454
+  volume: ج٢
+  status: draft
+
+- id: s0171
+  kind: saying
+  prompt: ما زال طبّاخنا غزالة شغلنا كلّو ___
+  answer: رذالة
+  others: [تمام, عال, بركة]
+  note: ما دام القائم على الأمر غير كفء فلا يُرجى صلاح.
+  source: asadi
+  line: 75508
+  halab: p1334
+  status: draft
+
+- id: s0172
+  kind: saying
+  prompt: نحلته سارحه في ___
+  answer: النوار
+  others: [الشوك, الرمل, الحجر]
+  note: «النوار» الزهر؛ يقال لمن يعيش في منتهى السعادة والانشراح.
+  source: mughniyya
+  page: 528
+  status: draft
+
+- id: s0173
+  kind: saying
+  prompt: سمّ الخياط مع الأحباب ___
+  answer: ميدان
+  others: [بستان, قصر, ديوان]
+  note: سم الخياط ثقب الإبرة؛ فالمكان الضيق يتسع بالمحبة والرضا.
+  source: adimi
+  page: 238
+  status: draft
+
+- id: s0174
+  kind: saying
+  prompt: زي القرع يمد ___
+  answer: برا
+  others: [جوا, لفوق, لتحت]
+  note: القرع تمتد فروعه بعيدا عن أصله؛ يقال لمن يخص بخيره البعيد دون القريب.
+  source: taymur
+  page: 197
+  status: draft
+
+- id: s0175
+  kind: saying
+  prompt: الدنيا مصالح يا عم ___
+  answer: صالح
+  others: [حسن, محمود, سعيد]
+  note: لا يقصد شخصًا بعينه، وإنما جاء الاسم من أجل السجع والتباسط؛ والمعنى أن الناس تحركهم المصالح.
+  source: shaalan
+  page: 138
+  volume: ج٦
+  status: draft
+
+- id: s0176
+  kind: saying
+  prompt: وقت السلف يا عم، ووقت القضا يا شيبة ___
+  answer: النحس
+  others: [الخير, الحظ, البركة]
+  note: من أمثال عدن؛ يقال في من يتلطف حين يحتاج إلى الدَّين، ثم يتعجرف حين يحين القضاء.
+  source: akwa
+  page: 1341
+  volume: ج٢
+  status: draft
+
+- id: s0177
+  kind: saying
+  prompt: سبرت وعلى ___ ادبرت
+  answer: الشيطان
+  others: [العدو, الحاسد, الجار]
+  note: سبرت أي صلحت؛ يقال عند صلاح الأحوال، فالأمور صلحت وأدبرت على الشيطان.
+  source: iryani
+  page: 418
+  status: draft
+
+- id: s0178
+  kind: saying
+  prompt: الأجواد ابهات ___
+  answer: الأيتام
+  others: [الضيوف, الفقرا, الجيران]
+  note: «ابهات» آباء؛ فالكرماء يرعون اليتيم كأنهم آباؤه ولا يتركونه يضيع.
+  source: zanin
+  page: 14
+  status: draft
+
+- id: s0179
+  kind: saying
+  prompt: إلقرايب أولى ___
+  answer: بالمعروف
+  others: [بالميراث, بالزيارة, بالعتاب]
+  note: للأقارب الأولوية في الخير والعون.
+  source: sahli
+  page: 254
+  status: draft
+
+- id: s0180
+  kind: saying
+  prompt: اعْمَلْ مَا عْمَلْ جَارَكْ، أَوْ حَوَّلْ بَابْ ___
+  answer: دَارَكْ
+  others: [حَانُوتَكْ, جَنَانَكْ, دَرْبَكْ]
+  note: افعل مثل جارك أو انقل بابك عنه. إشارة إلى التنافس بين الجيران، فكل واحد يريد أن يرضي نفسه وأهله.
+  source: dadoun
+  page: 199
+  status: draft
+
+- id: s0181
+  kind: saying
+  prompt: درهم مال بدّو قنطار ___
+  answer: عقل
+  others: [تعب, حكي, ورق]
+  note: المال القليل يحتاج إلى عقل كثير لحفظه وتدبيره.
+  source: asadi
+  line: 152333
+  halab: p1108
+  status: draft
+
+- id: s0182
+  kind: saying
+  prompt: طول جدارك ولا تتهم ___
+  answer: جارك
+  others: [ضيفك, ربعك, صاحبك]
+  note: اتخذ الاحتياطات اللازمة حتى لا تظن بجارك إلا الخير، فلا تتهمه بأنه يطّلع على دارك أو يسمع أسرارك.
+  source: juhayman
+  page: 262
+  volume: ج٤
+  status: draft
+
+- id: s0183
+  kind: saying
+  prompt: يسأل عن البيضه مين ___
+  answer: باضها
+  others: [اشتراها, كسرها, سلقها]
+  note: يقال لمن يتقصّى أخبار الناس ولا يدع صغيرة ولا كبيرة إلا سأل عنها.
+  source: taymur
+  page: 397
+  status: draft
+
+- id: s0184
+  kind: saying
+  prompt: يتضاربوا على مربط ___
+  answer: العنز
+  others: [الجمل, الحمار, الثور]
+  note: تخاصموا على مكان ربط عنز لم يشتروها بعد؛ يقال لمن يتنازعون على ما لا يملكون.
+  source: adimi
+  page: 476
+  status: draft
+
+- id: s0185
+  kind: saying
+  prompt: الله لا يخيّب ___
+  answer: الرجا
+  others: [الضيف, السائل, الصديق]
+  note: دعاء بأن يحقق الله رجاء من يرجو الخير.
+  source: abboudi_amthal
+  page: 1116
+  volume: ج٣
+  status: draft
+
+- id: s0186
+  kind: saying
+  prompt: قالوا للقرد ربي يسخطك. قال لهم كانش بيردني ___؟!
+  answer: غزال
+  others: [حصان, سبع, طير]
+  note: «كانش بيردني» هل سيعيدني؛ يقال لمن ساءت حاله إلى حد لم يعد يكترث لما قد يحدث له.
+  source: mughniyya
+  page: 414
+  status: draft
+
+- id: s0187
+  kind: saying
+  prompt: كول كره واشراب كره ولا ___ كره
+  answer: تعاشر
+  others: [تسافر, تنام, تلبس]
+  note: احتمال الطعام الكريه أهون من معاشرة من تكره.
+  source: asadi
+  line: 141931
+  halab: p803
+  status: draft
+
+- id: s0188
+  kind: saying
+  prompt: لولاك يا ___، ما عثرت يا قدم
+  answer: لسان
+  others: [عين, قلب, راس]
+  note: كثير من العثرات سببها اللسان.
+  source: sahli
+  page: 291
+  status: draft
+
+- id: s0189
+  kind: saying
+  prompt: لو يدري الحمار ما فوقه ما ___
+  answer: نهق
+  others: [أكل, نام, شرب]
+  note: أي لو عرف الحمار ما يحمله على ظهره لما بطر.
+  source: akwa
+  page: 991
+  volume: ج٢
+  status: draft
+
+- id: s0190
+  kind: saying
+  prompt: اشلون وجه مثل فلقة ___
+  answer: الگمر
+  others: [الشمس, الرمانة, البدر]
+  note: تشبيه بغدادي للوجه الجميل بقطعة القمر، يذكره المؤلف في حديثه عن حبّ البغداديين للقمر.
+  source: hijiyya
+  page: 111
+  status: draft
+
+- id: s0191
+  kind: saying
+  prompt: حَرَّكْ الْمَا يَظْهَرْ ___
+  answer: الْعَطْشَانْ
+  others: [الْغَرْقَانْ, الْعَوَّامْ, الْحُوتْ]
+  note: حرّك الماء يظهر من يحتاج إليه. يقال في أن الحاجة إذا ظهرت تهافت عليها الناس وأراد كل واحد نصيبه منها.
+  source: dadoun
+  page: 71
+  status: draft
+
+- id: s0192
+  kind: saying
+  prompt: رزقك فى رجليك زى ___
+  answer: القطط
+  others: [الحمام, الفراخ, السمك]
+  note: يقال للمحظوظ الذي يأتيه رزقه دون أن يسعى إليه، وغالبًا على سبيل المزاح بين الأصدقاء.
+  source: shaalan
+  page: 124
+  volume: ج٦
+  status: draft
+
+- id: s0193
+  kind: saying
+  prompt: وقت الصرام كل الناس ___
+  answer: كرام
+  others: [تجار, صيام, نيام]
+  note: الصرام جذاذ ثمر النخل، وفي وقت الخير يصير الجميع كرماء، أما الكرم الحقيقي فيُعرف في الشدة.
+  source: juhayman
+  page: 48
+  volume: ج٩
+  status: draft
+
+- id: s0194
+  kind: saying
+  prompt: أهل السماح ___
+  answer: ملاح
+  others: [كرام, قلال, سعاد]
+  note: في مدح العفو وأهله؛ أهل الصفح حسان الطباع محبوبون.
+  source: taymur
+  page: 91
+  status: draft
+
+- id: s0195
+  kind: saying
+  prompt: من رأى دار السلطان حرق ___
+  answer: عشته
+  others: [ثوبه, ماله, زرعه]
+  note: العشة الكوخ؛ يقال لمن يحتقر النعمة التي في يده إذا رأى ما عند من هو أعلى منه.
+  source: adimi
+  page: 382
+  status: draft
+
+- id: s0196
+  kind: saying
+  prompt: ايش عرّف الحمير فى ماكلة ___؟
+  answer: الحلوى
+  others: [الكسكسي, اللحم, التمر]
+  note: يضرب للسخرية ممن يقلّد من هم أعلى منه مكانة.
+  source: zanin
+  page: 72
+  status: draft
+
+- id: s0197
+  kind: saying
+  prompt: 'قال لو: في مصر كنت أنطّ أربعين دراع، قال لو: هنيك أرض وهون ___'
+  answer: أرض
+  others: [سما, بحر, جبل]
+  note: يُقال في تكذيب من يدّعي بطولات صنعها في مكان بعيد، أي أرِنا ذلك هنا.
+  source: asadi
+  line: 169044
+  halab: p1330
+  status: draft
+
+- id: s0198
+  kind: saying
+  prompt: اعمل مليح واجدل في ___
+  answer: البحر
+  others: [البير, الوادي, السوق]
+  note: اجدل أي ارمِ، فهو كقولهم «اعمل المعروف وارمه في البحر»، أي افعل الخير ولا تنتظر جزاءه.
+  source: iryani
+  page: 128
+  status: draft
+
+- id: s0199
+  kind: saying
+  prompt: ذا يصيح، وذا ___
+  answer: يطيح
+  others: [ينوح, يصيد, يطير]
+  note: 'أصله في الحرب: بعضهم يصيح من ألم الجرح وبعضهم يسقط؛ يقال لكثرة المصابين في الخصومات والكوارث.'
+  source: abboudi_amthal
+  page: 543
+  volume: ج٢
+  status: draft
+
+- id: s0200
+  kind: saying
+  prompt: ضيف ___، ماله عشا
+  answer: المسا
+  others: [الصبح, الضهر, العيد]
+  note: الضيف الذي يأتي في المساء يأكل مما حضر ولا تُذبح له ذبيحة.
+  source: sahli
+  page: 201
+  status: draft
+
+- id: s0201
+  kind: saying
+  prompt: العام إلي بنشري فيه البردعه بنبيعوا ___
+  answer: الحمار
+  others: [الجمل, الشعير, الدار]
+  note: العام الذي نشتري فيه البردعة نضطر إلى بيع الحمار؛ يقال لمن يلازمه سوء الحظ فيتقلب في الفقر عامًا بعد عام.
+  source: mughniyya
+  page: 361
+  status: draft
+
+- id: s0202
+  kind: saying
+  prompt: ما يحمل الراس الا ___
+  answer: وطنه
+  others: [عمامته, صاحبه, قلبه]
+  note: الوطن هنا بمعنى القياس؛ أي لا يحتمل المرء من التعب إلا ما يطيق.
+  source: akwa
+  page: 1081
+  volume: ج٢
+  status: draft
+
+- id: s0203
+  kind: saying
+  prompt: قَامْ قْيَمَه وَهْدَمْ ___
+  answer: خْيْمَه
+  others: [دَارْ, حِيطْ, صُورْ]
+  note: يقال فيمن لا يحلّ في مكان إلا أحدث فيه خللًا أو كسر شيئًا، لأنه يعمل دون تمييز ولا تعقّل.
+  source: dadoun
+  page: 223
+  status: draft
+
+- id: s0204
+  kind: saying
+  prompt: كثرة التكرار تعلم ___
+  answer: الحمار
+  others: [الصغير, الجاهل, الغريب]
+  note: الإعادة المتكررة تُكسب الخبرة حتى لأبلد الخلق، فالممارسة تعلّم ما لا يعلّمه غيرها.
+  source: juhayman
+  page: 25
+  volume: ج٦
+  status: draft
+
+- id: s0205
+  kind: saying
+  prompt: حضروا المداود قبل حضور ___
+  answer: البقر
+  others: [الغنم, الحمير, الخيل]
+  note: المداود معالف الدواب. يقال لمن يتعجل الاستعداد لشيء لم يتأكد مجيئه.
+  source: taymur
+  page: 144
+  status: draft
+
+- id: s0206
+  kind: saying
+  prompt: المالو فزعة بيروح ___
+  answer: دعس
+  others: [حبس, نعس, عرس]
+  note: من لا نصير له يُداس حقّه.
+  source: asadi
+  line: 125047
+  halab: p1100
+  status: draft
+
+- id: s0207
+  kind: saying
+  prompt: حبتي وإلا ___
+  answer: الديك
+  others: [الدجاجة, الفرخ, البيضة]
+  note: يقال لمن يتمسك بطلبه بعينه ولا يقبل عنه بديلا مهما كان.
+  source: adimi
+  page: 192
+  status: draft
+
+- id: s0208
+  kind: saying
+  prompt: 'تحب ايه يا جحا قال: احب النُّقل اللى ___'
+  answer: ببلاش
+  others: [بالسكر, محمّص, من الشام]
+  note: النُّقل هو المكسرات كالجوز واللوز والبندق، وكانت عزيزة على الفقراء؛ والمثل يسخر من حب الأشياء المجانية.
+  source: shaalan
+  page: 156
+  volume: ج٢
+  status: draft
+
+- id: s0209
+  kind: saying
+  prompt: يا ما بالسجن ___
+  answer: مظاليم
+  others: [حرامية, شطار, شباب]
+  note: يقال دفاعا عمن اتُّهم ظلما.
+  source: sahli
+  page: 363
+  status: draft
+
+- id: s0210
+  kind: saying
+  prompt: 'ما قال: مرض، إلا إلو تلتين ___'
+  answer: الغرض
+  others: [الحقّ, الدوا, الوجع]
+  note: يُقال في المتمارض الذي يدّعي المرض لغاية في نفسه.
+  source: asadi
+  line: 156147
+  halab: p1326
+  status: draft
+
+- id: s0211
+  kind: saying
+  prompt: ما يصبر على جهلي إلا ___
+  answer: اهلي
+  others: [ربعي, جاري, صديقي]
+  note: «الجهل» هنا الإساءة بالقول أو الفعل؛ فالناس لا يغفرون خطأ المرء كما يغفره أهله.
+  source: abboudi_amthal
+  page: 1292
+  volume: ج٤
+  status: draft
+
+- id: s0212
+  kind: saying
+  prompt: إلي أعطى كلمته أعطى ___
+  answer: رقبته
+  others: [ماله, يده, داره]
+  note: من وعد فقد رهن نفسه بوعده؛ في التنبيه إلى خطورة العهد والتحذير من نقضه.
+  source: mughniyya
+  page: 104
+  status: draft
+
+- id: s0213
+  kind: saying
+  prompt: الكلب ما يشطرش إلا على باب ___
+  answer: جحره
+  others: [سيده, السوق, الجزار]
+  note: يقال لمن لا يظهر شجاعته إلا في داره وبين قومه ويجبن في غيرها.
+  source: taymur
+  page: 309
+  status: draft
+
+- id: s0214
+  kind: saying
+  prompt: قال يا كبر ذا الذيب قال يا طول ___
+  answer: ذنبه
+  others: [رجله, اذنه, نابه]
+  note: لم يرَ أحدهما ذئبًا، فكذب الأول وجاراه الثاني بكذبة أكبر تهكمًا به؛ يقال لتُشعر محدّثك بأنك فهمت كذبه.
+  source: juhayman
+  page: 268
+  volume: ج٥
+  status: draft
+
+- id: s0215
+  kind: saying
+  prompt: جوعة ولا ___
+  answer: فجيعة
+  others: [شبعة, نومة, قعدة]
+  note: الفجيعة في العامية الترويع؛ أي إن الفزع أضر بالمرء من الجوع.
+  source: akwa
+  page: 387
+  volume: ج١
+  status: draft
+
+- id: s0216
+  kind: saying
+  prompt: شِي مَاتْ مَا خَلَّى، وْشِي خَلَّى وْرَاهْ ___
+  answer: مَعْرَكَه
+  others: [ذْرَارِي, دْيُونْ, دْيَارْ]
+  note: من مات فقيرًا لم يترك شيئًا، ومن مات غنيًا ترك ورثته يتقاتلون على ميراثه.
+  source: dadoun
+  page: 151
+  status: draft
+
+- id: s0217
+  kind: saying
+  prompt: أكبر منك بليلة فايتك ب___
+  answer: حيلة
+  others: [خطوة, كلمة, نظرة]
+  note: من سبقك في العمر ولو بليلة سبقك في الخبرة والتجربة.
+  source: zanin
+  page: 28
+  status: draft
+
+- id: s0218
+  kind: saying
+  prompt: من أكبر اللجع ___
+  answer: اختنق
+  others: [شبع, ندم, سقط]
+  note: اللجع هي اللقمة، والمثل يُضرب في النهي عن الجشع.
+  source: iryani
+  page: 797
+  status: draft
+
+- id: s0219
+  kind: saying
+  prompt: من يدري بك ياللي تغمزي ___
+  answer: بالغدرة
+  others: [بالليل, بالسوق, بالعرس]
+  note: الغدرة ظلمة الليل؛ يقال لمن يعمل عملا لا يراه أحد ولا ينتبه إليه، استصغارا لشأنه.
+  source: adimi
+  page: 374
+  status: draft
+
+- id: s0220
+  kind: saying
+  prompt: إللي ملوش كبير، ملوش ___
+  answer: تدبير
+  others: [نصيب, بيت, رغيف]
+  note: يذكر قيمة كبير القوم، فمن لا كبير له لا يحسن تدبير أموره.
+  source: sahli
+  page: 57
+  status: draft
+
+- id: s0221
+  kind: saying
+  prompt: كل حلّاف ___
+  answer: كدّاب
+  others: [خوّاف, صرّاف, تعبان]
+  note: من أكثر الحلف دلّ على كذبه.
+  source: asadi
+  line: 140886
+  halab: p801
+  status: draft
+
+- id: s0222
+  kind: saying
+  prompt: اللي ما يرقص يهز ___
+  answer: اكمامه
+  others: [راسه, رجليه, كتافه]
+  note: من لا يحسن الرقص يشارك ولو بهز أكمامه؛ أي يجامل الجماعة ويشاركها بقدر طاقته.
+  source: taymur
+  page: 50
+  status: draft
+
+- id: s0223
+  kind: saying
+  prompt: فلان مثل الخاتم في ___
+  answer: أصبعي
+  others: [جيبي, رقبتي, صندوقي]
+  note: يقال للرجل الذي ينقاد لك في كل ما تريد، كما يتحرك الخاتم في إصبعك يمينًا وشمالًا كيف شئت.
+  source: juhayman
+  page: 156
+  volume: ج٥
+  status: draft
+
+- id: s0224
+  kind: saying
+  prompt: الغربة ___ والبلاد بعيدة
+  answer: كربة
+  others: [لعبة, قربة, شربة]
+  note: يعبر عن كراهية الاغتراب؛ فالمصري يرى هجرته مؤقتة لكسب الرزق ثم العودة.
+  source: shaalan
+  page: 128
+  volume: ج٥
+  status: draft
+
+- id: s0225
+  kind: saying
+  prompt: فُولَه فِى قَاعْ ___
+  answer: مَطْمُورَه
+  others: [خَابْيَه, طَاجِينْ, قُفَّه]
+  note: المطمورة حفرة يخزن فيها الحبّ تحت الأرض، والفولة في قاعها لا تشبع ويصعب الوصول إليها. يقال في الشيء القليل القيمة البعيد المنال.
+  source: dadoun
+  page: 215
+  status: draft
+
+- id: s0226
+  kind: saying
+  prompt: الصابه غفلات والي ما ___ يندم
+  answer: زرع
+  others: [سافر, باع, بنى]
+  note: «الصابة» موسم الخصب يأتي على غفلة، ومن لم يزرع ندم؛ في الحث على الحرث حين يكثر المطر.
+  source: mughniyya
+  page: 331
+  status: draft
+
+- id: s0227
+  kind: saying
+  prompt: إذا هبت الريح دخلت فم ___
+  answer: الجره
+  others: [البير, الباب, الطاقه]
+  note: الخير إذا أقبل على المرء أدركه أينما كان، كالريح تنفذ من كل الثقوب.
+  source: akwa
+  page: 141
+  volume: ج١
+  status: draft
+
+- id: s0228
+  kind: saying
+  prompt: گاعد گعدة ___
+  answer: ملوك
+  others: [عرسان, باشوات, شيوخ]
+  note: يُقال لمن يجلس مرتاحًا معزّزًا مكرّمًا لا ينقصه شيء.
+  source: hijiyya
+  page: 119
+  status: draft
+
+- id: s0229
+  kind: saying
+  prompt: خير الدلايل جرّة ___
+  answer: الفرسان
+  others: [الغزلان, الذيب, الرعيان]
+  note: «الجرّة» أثر الأقدام على الأرض؛ وأقوى دليل على مرور الفرسان آثار حوافر خيلهم. يقال للدليل القوي.
+  source: abboudi_amthal
+  page: 484
+  volume: ج٢
+  status: draft
+
+- id: s0230
+  kind: saying
+  prompt: كلّمن على من قدر وأنا على حمار ___
+  answer: خالتي
+  others: [جاري, عمي, أبوي]
+  note: يقال لمن لا يقدر إلا على من هو أضعف منه من أهله.
+  source: adimi
+  page: 324
+  status: draft
+
+- id: s0231
+  kind: saying
+  prompt: اللي بيوفّرو الجوخجي بياخدو ___
+  answer: الخيّاط
+  others: [السمّان, الحلّاق, الحرامي]
+  note: ما توفّره في جهة تدفعه في جهة أخرى.
+  source: asadi
+  line: 176064
+  halab: p856
+  status: draft
+
+- id: s0232
+  kind: saying
+  prompt: خذ الأصيلة، ولو إنها ع ___
+  answer: الحصيرة
+  others: [الطريق, السرير, البير]
+  note: يحث على الزواج من الفتاة ذات الأصل الطيب ولو كانت فقيرة.
+  source: sahli
+  page: 139
+  status: draft
+
+- id: s0233
+  kind: saying
+  prompt: العري يعلم ___
+  answer: الغزل
+  others: [الصبر, الحيله, الشطاره]
+  note: من لا يجد ما يلبسه يتعلم الغزل ليكسو نفسه؛ فالحاجة تعلّم الجاهل.
+  source: taymur
+  page: 242
+  status: draft
+
+- id: s0234
+  kind: saying
+  prompt: اللى سرواله من ___ مايدفّاش ع النار
+  answer: الحلفة
+  others: [الصوف, الكتان, القطن]
+  note: الحلفاء نبات سريع الاشتعال؛ يضرب في تحذير من تفضحه أقواله وأفعاله أمام الناس.
+  source: zanin
+  page: 40
+  status: draft
+
+- id: s0235
+  kind: saying
+  prompt: فلان يفتل وغيره ___
+  answer: ينقض
+  others: [يغزل, يربط, يبيع]
+  note: يقال للأمر يبنيه قوم ويهدمه آخرون، كمن يفتل الحبل وغيره يحلّه.
+  source: juhayman
+  page: 201
+  volume: ج٥
+  status: draft
+
+- id: s0236
+  kind: saying
+  prompt: عصفور عالبركة بضحك عالناس وهو ___
+  answer: مضحكة
+  others: [ملك, حكيم, صيّاد]
+  note: يُقال فيمن يسخر من الناس وهو أولى بأن يُسخر منه.
+  source: asadi
+  line: 159507
+  halab: p1327
+  status: draft
+
+- id: s0237
+  kind: saying
+  prompt: لَبْحَرْ كَيْطْمَعْ فَى ___
+  answer: السَّاقْيَه
+  others: [الْوَادْ, الْمُوجْ, الْحُوتْ]
+  note: البحر يطمع في الساقية الصغيرة. كناية عن الغني الواسع المال يطمع فيما بيد الفقير القليل.
+  source: dadoun
+  page: 311
+  status: draft
+
+- id: s0238
+  kind: saying
+  prompt: يا حازب بحق الناس يا مصبح ___
+  answer: عريان
+  others: [جوعان, تعبان, سهران]
+  note: الحِزْبة لبس الجديد والتزين، فمن تزيّن بثياب غيره أصبح عاريًا حين يستردّونها.
+  source: iryani
+  page: 174
+  status: draft
+
+- id: s0239
+  kind: saying
+  prompt: من طار وقع، ومن سار ___
+  answer: وصل
+  others: [تعب, رجع, سلم]
+  note: الطائر في علوه مصيره السقوط، والسائر بتواضع يبلغ غايته.
+  source: akwa
+  page: 1241
+  volume: ج٢
+  status: draft
+
+- id: s0240
+  kind: saying
+  prompt: الملح ___ لا عقب يلحق
+  answer: فارس
+  others: [ضيف, راعي, بحار]
+  note: الملح كالفارس يلحق بالقافلة مهما ابتعدت، أي يظهر طعمه ولو تأخر؛ في الدعوة إلى التقليل منه في الطعام.
+  source: mughniyya
+  page: 516
+  status: draft
+
+- id: s0241
+  kind: saying
+  prompt: عكيير الجبل أخرج عكيير ___
+  answer: البيت
+  others: [الوادي, السوق, القرية]
+  note: العكيير فأر صغير؛ يقال حين يحلّ الغريب محل ابن البلد ويستأثر بالمنفعة دونه.
+  source: adimi
+  page: 283
+  status: draft
+
+- id: s0242
+  kind: saying
+  prompt: سوق الغلا ___
+  answer: جلاّب
+  others: [خرّاب, نهّاب, سلاّب]
+  note: «جلاّب» من جلب السلعة إلى السوق؛ فغلاء الثمن يدفع التجار إلى جلب البضاعة حتى تكثر.
+  source: abboudi_amthal
+  page: 651
+  volume: ج٢
+  status: draft
+
+- id: s0243
+  kind: saying
+  prompt: سلم من الدب وقع في ___
+  answer: الجب
+  others: [الطين, الشوك, السيل]
+  note: الجب هو البئر العميقة. يقال لمن ينجو من شر فيقع في أشد منه.
+  source: taymur
+  page: 209
+  status: draft
+
+- id: s0244
+  kind: saying
+  prompt: قبل ما تتجوز عروستك، عاشر ___
+  answer: إمها
+  others: [أبوها, أخوها, جيرانها]
+  note: يحث على التعرف إلى أم الفتاة قبل خطبتها، فالبنت تشبه أمها.
+  source: sahli
+  page: 253
+  status: draft
+
+- id: s0245
+  kind: saying
+  prompt: اللى يفتّح عينيه ياكل ___
+  answer: ملبن
+  others: [بسبوسة, كنافة, قطايف]
+  note: كان باعة الحلوى في الريف ينادون الأطفال بهذه العبارة؛ والمعنى أن اليقظ المنتبه لما حوله ينال ما يريد ولا يقع في المشاكل.
+  source: shaalan
+  page: 86
+  volume: ج٣
+  status: draft
+
+- id: s0246
+  kind: saying
+  prompt: التدبير نصّ ___
+  answer: المعيشة
+  others: [العيلة, الراحة, الشطارة]
+  note: حسن التدبير في الإنفاق نصف الرزق.
+  source: asadi
+  line: 161061
+  halab: p824
+  status: draft
+
+- id: s0247
+  kind: saying
+  prompt: غربيل يمشي و___
+  answer: يذري
+  others: [يكنس, يغني, يحرث]
+  note: الغربيل منخل واسع الفتحات؛ يقال لمن لا يحفظ السر بل يفرقه بين الناس حيث مشى.
+  source: juhayman
+  page: 19
+  volume: ج٥
+  status: draft
+
+- id: s0248
+  kind: saying
+  prompt: تِيظَلْ يْرَقَّعْ الدّْرُوبَه وَيْخَيَّطْ ___
+  answer: الزّْنَاقِي
+  others: [الْحْوَايَجْ, الشّْقُوقْ, الْجّْلاَلَبْ]
+  note: كأنه خياط يرقع الدروب ويخيط الأزقة. كناية عمن لا شغل له إلا التجوال في الطرقات بلا فائدة.
+  source: dadoun
+  page: 55
+  status: draft
+
+- id: s0249
+  kind: saying
+  prompt: من شقي لقى ومن رقد ___
+  answer: تمنى
+  others: [ندم, جاع, نام]
+  note: شقي أي عمل؛ العمل طريق الرزق، والكسل لا يورث إلا الأماني.
+  source: adimi
+  page: 392
+  status: draft
+
+- id: s0250
+  kind: saying
+  prompt: لا تقل للسارق يا سارق الا ويدك في ___
+  answer: حلقه
+  others: [جيبه, بيته, ظهره]
+  note: أي لا تتهم أحداً بجرم إلا إذا قبضت عليه متلبساً به.
+  source: akwa
+  page: 931
+  volume: ج٢
+  status: draft
+
+- id: s0251
+  kind: saying
+  prompt: لا طال توت الشام ولا عنب ___
+  answer: اليمن
+  others: [مصر, الطايف, العراق]
+  note: يقال لمن يتعلق بأمرين فيُحرم منهما معا.
+  source: taymur
+  page: 316
+  status: draft
+
+- id: s0252
+  kind: saying
+  prompt: حلاة الدار ___، وحلاة اللبس صاحبه
+  answer: أهلها
+  others: [بابها, سعتها, حديقتها]
+  note: الدار لا تحلو إلا بسكانها، والثوب لا يحلو إلا بمن يلبسه.
+  source: sahli
+  page: 132
+  status: draft
+
+- id: s0253
+  kind: saying
+  prompt: دفه مني ودفه منك تمشي ___
+  answer: المركب
+  others: [العربه, الطاحونه, الساقيه]
+  note: «دفّه» دفعة؛ دفعة مني ودفعة منك فتسير السفينة، في الحث على التعاون.
+  source: mughniyya
+  page: 265
+  status: draft
+
+- id: s0254
+  kind: saying
+  prompt: قالوا للشقرقة، ليش ما بتحكي؟ قالت لن، تمّي ملان ___
+  answer: مي
+  others: [دبّان, حكي, تراب]
+  note: يقال في من يمنعه مانع من الكلام بما يعرف.
+  source: asadi
+  line: 162841
+  halab: p829
+  status: draft
+
+- id: s0255
+  kind: saying
+  prompt: دقّق الحساب تطول ___
+  answer: العشره
+  others: [الصحبه, الشراكه, الجيره]
+  note: دقّق في الحساب مع صاحبك ولا تترك له أو عليه شيئا، فذلك يحفظ الودّ ويطيل المعاشرة.
+  source: abboudi_amthal
+  page: 514
+  volume: ج٢
+  status: draft
+
+- id: s0256
+  kind: saying
+  prompt: إكرام الفرس قبل ___
+  answer: الضيف
+  others: [الجار, الولد, الراعي]
+  note: العناية بالفرس عناية بصاحبها، فيبدؤون بها قبل الضيف نفسه.
+  source: zanin
+  page: 29
+  status: draft
+
+- id: s0257
+  kind: saying
+  prompt: خريف ابن رهيط يعلم الغنم ___
+  answer: الرباضه
+  others: [الرعي, الشرب, المشي]
+  note: الخريّف تصغير خروف، والرباضة البروك في الأرض؛ يقال في القدوة السيئة ممن يُرجى منه الخير.
+  source: juhayman
+  page: 31
+  volume: ج٣
+  status: draft
+
+- id: s0258
+  kind: saying
+  prompt: ما خضره إلا على ___
+  answer: ما
+  others: [طين, شمس, حجر]
+  note: لا يكون اخضرار ونبات إلا على ماء من غيل أو بئر، ويقال مجازًا إن الظاهر يدلّ على الباطن، كنضارة الوجه على النعمة.
+  source: iryani
+  page: 670
+  status: draft
+
+- id: s0259
+  kind: saying
+  prompt: دقّة ___ تتكلم
+  answer: المعلم
+  others: [الصبى, الزبون, الغريب]
+  note: المعلم هو صاحب الصنعة الخبير؛ فأثر يده يُعرف من غيره ويدل على مهارته.
+  source: shaalan
+  page: 396
+  volume: ج٤
+  status: draft
+
+- id: s0260
+  kind: saying
+  prompt: مَا حَسْ الذّْيبْ غِيرْ بْغْوَاتْ ___
+  answer: النَّعْجَه
+  others: [الرَّاعِي, الْكَلْبْ, الْخْرُوفْ]
+  note: الذئب لا يبالي بصياح النعجة. من أمثال البادية يرد به المرء على من يهدده، فهو لا يخشى تهديده.
+  source: dadoun
+  page: 327
+  status: draft
+
+- id: s0261
+  kind: saying
+  prompt: تمت الحبايب، ما بقاش حد ___
+  answer: غايب
+  others: [زعلان, ناقص, بعيد]
+  note: يقال عند اجتماع الشمل، وقد يقال تهكما إذا اجتمع من يكره بعضهم بعضا.
+  source: taymur
+  page: 121
+  status: draft
+
+- id: s0262
+  kind: saying
+  prompt: لا تربط حمارك جنب حمار ___
+  answer: المدبر
+  others: [الجار, السارق, الشيخ]
+  note: لا تجالس من أدبرت عنه الأيام وهو يعين على بقاء نحسه، فيصيبك ما أصابه.
+  source: adimi
+  page: 342
+  status: draft
+
+- id: s0263
+  kind: saying
+  prompt: المؤمن قلبو ___
+  answer: دليلو
+  others: [خليلو, وكيلو, قنديلو]
+  note: صاحب القلب الصافي يهديه إحساسه إلى الصواب.
+  source: asadi
+  line: 135564
+  halab: p792
+  status: draft
+
+- id: s0264
+  kind: saying
+  prompt: ان شاء الله ___ بوجهك
+  answer: بيضة
+  others: [ضحكة, شمعة, وردة]
+  note: دعاء بالخير وحسن السمعة، فالبغداديون يتفاءلون باللون الأبيض ويضعونه في صواني الأفراح.
+  source: hijiyya
+  page: 13
+  status: draft
+
+- id: s0265
+  kind: saying
+  prompt: إلولد ببكي؛ يا جوع يا ___
+  answer: موجوع
+  others: [مفجوع, مقطوع, ممنوع]
+  note: 'يفسر بكاء الطفل الرضيع: إما جائع وإما يتألم.'
+  source: sahli
+  page: 353
+  status: draft
+
+- id: s0266
+  kind: saying
+  prompt: اشتي لحم من كبشي، واشتي كبشي ___
+  answer: يمشي
+  others: [يطير, يرقص, ينام]
+  note: أشتي أي أريد؛ يقال للبخيل الذي يتمنى أن يأكل من كبشه دون أن يذبحه.
+  source: akwa
+  page: 171
+  volume: ج١
+  status: draft
+
+- id: s0267
+  kind: saying
+  prompt: الإيد ما تذهبش ع ___
+  answer: الفم
+  others: [العين, الراس, الودن]
+  note: «ما تذهبش» لا تخطئ؛ كما لا تضل اليد طريقها إلى الفم، يستطيع الإنسان أن يميز الصواب بنفسه.
+  source: mughniyya
+  page: 164
+  status: draft
+
+- id: s0268
+  kind: saying
+  prompt: النار فاكهة ___
+  answer: الشتا
+  others: [الصيف, الربيع, السفر]
+  note: النار في ليالي الشتاء لذيذة كالفاكهة. ويقال للشيء النافع في وقت والضار في وقت آخر.
+  source: juhayman
+  page: 283
+  volume: ج٨
+  status: draft
+
+- id: s0269
+  kind: saying
+  prompt: أحيني اليوم وموّتني ___
+  answer: باكر
+  others: [بعدين, الليله, بكيفك]
+  note: «باكر» أي غدا؛ يقال لمن يعيش ليومه ولا يدّخر لغده، وفي تفضيل المصلحة القليلة العاجلة على الكثيرة الآجلة.
+  source: abboudi_amthal
+  page: 64
+  volume: ج١
+  status: draft
+
+- id: s0270
+  kind: saying
+  prompt: اللي ما بدّو يعير حبلو بيقول، ناشر عليه ___
+  answer: حنطة
+  others: [غسيل, صوف, تياب]
+  note: من لا يريد أن يعطي يتعلّل بأيّ عذر ولو كان مضحكاً.
+  source: asadi
+  line: 168582
+  halab: p841
+  status: draft
+
+- id: s0271
+  kind: saying
+  prompt: اسأل قبل ما تناسب يبان لك الردي و___
+  answer: المناسب
+  others: [الطيب, الأصيل, الغريب]
+  note: قبل المصاهرة اسأل عن القوم ليتبين لك الصالح من غيره، ويقال في كل معاشرة.
+  source: taymur
+  page: 17
+  status: draft
+
+- id: s0272
+  kind: saying
+  prompt: صاحب المهرتين ___
+  answer: كذاب
+  others: [فقير, تعبان, غني]
+  note: المهرة هي الصنعة؛ من التزم صنعتين معا لا يقدر على الوفاء بمواعيده فيهما.
+  source: adimi
+  page: 258
+  status: draft
+
+- id: s0273
+  kind: saying
+  prompt: بْحَالْ ___ قَارْقَه عْلَى اوْلاَدْهَا
+  answer: الدّْجَاجَه
+  others: [الْقَطَّه, الْعَنْزَه, الْبَقْرَه]
+  note: الدجاجة القارقة هي الحاضنة التي تفرد جناحيها على فراخها. يقال في الأم الشديدة العطف على أبنائها.
+  source: dadoun
+  page: 39
+  status: draft
+
+- id: s0274
+  kind: saying
+  prompt: الأمانة سوّدت وجه ___
+  answer: الغراب
+  others: [الذيب, الثعلب, القط]
+  note: يضرب في الحث على حفظ الأمانات، كأنّ الغراب اسودّ وجهه لأنه خانها.
+  source: zanin
+  page: 29
+  status: draft
+
+- id: s0275
+  kind: saying
+  prompt: لا تعتبش على حبيبك، اعتب على ___
+  answer: نصيبك
+  others: [قلبك, عينك, حالك]
+  note: يقال في سوء الحظ، فاللوم على النصيب لا على الحبيب.
+  source: sahli
+  page: 279
+  status: draft
+
+- id: s0276
+  kind: saying
+  prompt: من ضرب في العيش ضرب في ___
+  answer: الجيش
+  others: [السوق, الصيد, البحر]
+  note: العيش الطعام؛ أي من أكثر من الأكل قوي في القتال، فلا يقوى على المحاربة إلا قوي الجسم.
+  source: akwa
+  page: 1241
+  volume: ج٢
+  status: draft
+
+- id: s0277
+  kind: saying
+  prompt: يدّى الغنى مال ويدّى الفقير ___
+  answer: عيال
+  others: [جيران, غيطان, بهايم]
+  note: سمعه المؤلف من سمكري سيارات، ويقال على سبيل الدهشة من أن الفقراء أكثر الناس أولادًا.
+  source: shaalan
+  page: 74
+  volume: ج٥
+  status: draft
+
+- id: s0278
+  kind: saying
+  prompt: هو يقد من سير ___
+  answer: عريض
+  others: [قصير, قديم, مقطوع]
+  note: يقد أي يقطع، والسير قطعة من الجلد؛ ومن يقطع من سير عريض لا ينفد ما عنده بسرعة. يقال لمن ينفق عن سعة.
+  source: juhayman
+  page: 118
+  volume: ج٩
+  status: draft
+
+- id: s0279
+  kind: saying
+  prompt: إذا كان الكدب بينجّي، ___ أنجى وأنجى
+  answer: الصدق
+  others: [الحلف, الهرب, الدهب]
+  note: إن ظننت الكذب ينجيك فالصدق أنجى.
+  source: asadi
+  line: 167156
+  halab: p838
+  status: draft
+
+- id: s0280
+  kind: saying
+  prompt: شفّ القاضي ولا ألف ___
+  answer: شاهد
+  others: [قاضي, حاكم, شيخ]
+  note: الشفّ الميل؛ فميل القاضي إليك أنفع من ألف شاهد، ومثله «شفّ الحاكم ولا كثر الشهود».
+  source: iryani
+  page: 500
+  status: draft
+
+- id: s0281
+  kind: saying
+  prompt: تحطه في القرعا تلقاه في ___
+  answer: الباذنجان
+  others: [الطماطم, الفلفل, البطيخ]
+  note: تضعه مع القرع فتجده مع الباذنجان؛ يقال لمن لا يستقر في مكان ولا يثبت على مهنة أو موقف.
+  source: mughniyya
+  page: 200
+  status: draft
+
+- id: s0282
+  kind: saying
+  prompt: العيش مخبوز والميه في ___
+  answer: الكوز
+  others: [الزير, القله, الجره]
+  note: الخبز جاهز والماء في الكوز، أي أن أسباب الأمر قد تمت ولم يبق إلا البدء.
+  source: taymur
+  page: 257
+  status: draft
+
+- id: s0283
+  kind: saying
+  prompt: من خلّى المشي خلاّه ___
+  answer: المشي
+  others: [الحيل, الصحب, الزاد]
+  note: من ترك المشي تركه المشي؛ حثّ على الحركة البدنية، فالراحة الطويلة تقعد صاحبها.
+  source: abboudi_amthal
+  page: 1415
+  volume: ج٤
+  status: draft
+
+- id: s0284
+  kind: saying
+  prompt: قبضة بظهر ___
+  answer: جمل
+  others: [حمار, ثور, حصان]
+  note: قبضة صغيرة تؤخذ من حمل جمل؛ يقال للمال الكثير الذي لا ينقصه ما يُنفق منه.
+  source: adimi
+  page: 304
+  status: draft
+
+- id: s0285
+  kind: saying
+  prompt: مَا عْرَفْتْ تَشْطَحْ قَالَتْ الاَرْضْ ___
+  answer: عَوْجَا
+  others: [مَبْلُولَه, صْغِيرَه, سْخُونَه]
+  note: 'لم تحسن الرقص فقالت: الأرض عوجاء. يقال فيمن لا يعترف بنقصه ويتعلل بأسباب واهية.'
+  source: dadoun
+  page: 335
+  status: draft
+
+- id: s0286
+  kind: saying
+  prompt: الرمان بملي القلب ___
+  answer: إيمان
+  others: [أمان, حنان, ألوان]
+  note: يذكر فوائد الرمان وأثره الطيب في النفس.
+  source: sahli
+  page: 162
+  status: draft
+
+- id: s0287
+  kind: saying
+  prompt: الراعي المغفّل بيحبّو ___
+  answer: الديب
+  others: [الغنم, الكلب, الحليب]
+  note: الغافل عن ماله يطمع فيه الطامعون.
+  source: asadi
+  line: 161298
+  halab: p825
+  status: draft
+
+- id: s0288
+  kind: saying
+  prompt: ربك يسويها وصاحبك ___
+  answer: يخربها
+  others: [يبيعها, يحفظها, ينساها]
+  note: الخالق يصلح أمورك، وقد يفسدها عليك صاحبك جهلًا أو حسدًا؛ فالإساءة قد تأتي ممن تنتظر منه العون.
+  source: juhayman
+  page: 170
+  volume: ج٣
+  status: draft
+
+- id: s0289
+  kind: saying
+  prompt: لو اتجر في السليط مازد غربت ___
+  answer: الشمس
+  others: [النجوم, القمر, الريح]
+  note: السليط الزيت؛ لو تاجر في زيت الإسراج لما غابت الشمس فلا يحتاج إليه أحد. يقال في سوء الحظ.
+  source: akwa
+  page: 981
+  volume: ج٢
+  status: draft
+
+- id: s0290
+  kind: saying
+  prompt: امشي يوم ولا تطلع ___
+  answer: كوم
+  others: [جبل, سلم, سور]
+  note: السير يوما في طريق سهل خير من صعود كوم واحد؛ أي لا تجازف وخذ الطريق الآمن.
+  source: taymur
+  page: 70
+  status: draft
+
+- id: s0291
+  kind: saying
+  prompt: اشرى جارك قبل ___
+  answer: دارك
+  others: [حوشك, زرعك, حصانك]
+  note: اختر جارك قبل أن تشتري البيت.
+  source: zanin
+  page: 22
+  status: draft
+
+- id: s0292
+  kind: saying
+  prompt: المناياه قبل ___
+  answer: المطر
+  others: [الحصاد, الصيف, الرحيل]
+  note: «المناياه» حفرة قليلة العمق تحاط بها الخيمة لتمنع تسرب ماء المطر إليها؛ الاستعداد للمشكلات يكون قبل حدوثها لا بعده.
+  source: mughniyya
+  page: 522
+  status: draft
+
+- id: s0293
+  kind: saying
+  prompt: دقّة بالمرزبّة ولا ألف ب___
+  answer: الشاكوش
+  others: [الإزميل, المنشار, المبرد]
+  note: المرزبة مطرقة كبيرة ثقيلة يستعملها الحداد؛ والمعنى أن الحل الحاسم مرة واحدة خير من حلول جزئية كثيرة.
+  source: shaalan
+  page: 396
+  volume: ج٤
+  status: draft
+
+- id: s0294
+  kind: saying
+  prompt: ما ينقر البيضة إلا ___
+  answer: ديك
+  others: [صوص, غراب, دجاجة]
+  note: لكل عمل من يقدر عليه ويحسنه بحسب طاقته.
+  source: adimi
+  page: 436
+  status: draft
+
+- id: s0295
+  kind: saying
+  prompt: لا قدرك بغلي ولا مقلايتك بتقلي وأنا عدّيت عليكي من قلّة ___
+  answer: عقلي
+  others: [حظّي, وقتي, خبزي]
+  note: يُقال في زيارة من لا يُرجى عنده ضيافة ولا نفع.
+  source: asadi
+  line: 121274
+  halab: p1310
+  status: draft
+
+- id: s0296
+  kind: saying
+  prompt: هَذَا حَالْ الدُّنْيَا، وَاحَدْ كَيْقَلَّبْ عْلَى الْعَزْ، وَاحَدْ تَابَعْ ___
+  answer: الْخُبْزْ
+  others: [الْجَّاهْ, الشّْهْرَه, الْكُرْسِي]
+  note: 'هكذا الدنيا: أحدهم يبحث عن الجاه والشهرة، وآخر يسعى وراء لقمة تسدّ رمقه.'
+  source: dadoun
+  page: 367
+  status: draft
+
+- id: s0297
+  kind: saying
+  prompt: الغدا الجيّد ___
+  answer: يعشّي
+  others: [يشبّع, يقوّي, يكفّي]
+  note: الغداء الجيد في نوعه ومقداره يكفي صاحبه عن العشاء إذا اضطر إلى تركه.
+  source: abboudi_amthal
+  page: 894
+  volume: ج٣
+  status: draft
+
+- id: s0298
+  kind: saying
+  prompt: دبس بلادي، ولا ___ الأغيار
+  answer: سكر
+  others: [عسل, خبز, ذهب]
+  note: القليل من خير الوطن أحب إلى المرء من كثير الغرباء.
+  source: sahli
+  page: 146
+  status: draft
+
+- id: s0299
+  kind: saying
+  prompt: ما ضاع من مالك ما ___
+  answer: وعظك
+  others: [أبكاك, أتعبك, أغضبك]
+  note: المال الذي يضيع ويعلّمك درسا لم يضع حقا، فالتجربة تنفعك بقية حياتك.
+  source: juhayman
+  page: 80
+  volume: ج٧
+  status: draft
+
+- id: s0300
+  kind: saying
+  prompt: من حيرك يا ثعيل؟ قال ___
+  answer: سبلتي
+  others: [ظِلّي, اخويه, جاري]
+  note: الثعيل الثعلب والسبلة الذيل؛ فشاهد الثعلب ذيله، أي من يشهد لنفسه بما يخصّه.
+  source: iryani
+  page: 218
+  status: draft
+
+- id: s0301
+  kind: saying
+  prompt: عمر الطمع ما ___
+  answer: جمع
+  others: [دام, خسر, فرق]
+  note: 'في ذم الطمع، فالطامع لا يجمع شيئا، وفي معناه: الطمع يقل ما جمع.'
+  source: taymur
+  page: 233
+  status: draft
+
+- id: s0302
+  kind: saying
+  prompt: الصيت للنورة والفعل ___
+  answer: للزرنيخ
+  others: [للحنة, للصابون, للدلّاك]
+  note: «دواء الحمّام» مزيج من النورة والزرنيخ لإزالة الشعر، والنورة يُذكر اسمها لكن الزرنيخ هو الذي يعمل، فيُضرب المثل لمن يأخذ الشهرة وغيره صاحب الفضل.
+  source: hijiyya
+  page: 94
+  status: draft
+
+- id: s0303
+  kind: saying
+  prompt: مطره في ___
+  answer: شتا
+  others: [صيف, خريف, ربيع]
+  note: لأن اليمن لا تمطر في الشتاء إلا قليلاً، ويقال أيضاً في الشيء يأتي حين لا حاجة إليه.
+  source: akwa
+  page: 1141
+  volume: ج٢
+  status: draft
+
+- id: s0304
+  kind: saying
+  prompt: العلم في الصغر كالنقش ___
+  answer: بالحجر
+  others: [بالرمل, بالميّ, بالتلج]
+  note: ما يتعلّمه المرء صغيراً يثبت ولا يُنسى.
+  source: asadi
+  line: 117149
+  halab: p1094
+  status: draft
+
+- id: s0305
+  kind: saying
+  prompt: القصير يموت وغداه في ___
+  answer: الطاقة
+  others: [القدر, السوق, الحقل]
+  note: الطاقة كوّة في الجدار تُحفظ فيها الأشياء؛ والكسول يحرمه كسله حتى من أقرب ما في يده.
+  source: adimi
+  page: 120
+  status: draft
+
+- id: s0306
+  kind: saying
+  prompt: العين واسعه و___ ضيقه
+  answer: الكيسه
+  others: [الدار, الطريق, الخيمه]
+  note: «الكيسة» كيس النقود؛ يقال سخرية من البخيل الطماع يشتهي متع الحياة ويتردد في نيلها حرصًا على ماله.
+  source: mughniyya
+  page: 385
+  status: draft
+
+- id: s0307
+  kind: saying
+  prompt: ما بطلع الزيت إلا من كثر ___
+  answer: العصر
+  others: [الزتون, الصبر, الدق]
+  note: الشدائد تُنضج الرجال كما يُخرج العصرُ الزيت.
+  source: sahli
+  page: 297
+  status: draft
+
+- id: s0308
+  kind: saying
+  prompt: ___ تْدُورْ عْلِيهْ غِيرْ مَرَّةْ وَحْدَهْ
+  answer: الذِّيبْ
+  others: [الْحْمَارْ, الْخْرُوفْ, الدّْجَاجَه]
+  note: الذئب لا يُخدع إلا مرة واحدة. يقال في أن العاقل لا ينبغي أن يُخدع مرتين من الموضع نفسه.
+  source: dadoun
+  page: 103
+  status: draft
+
+- id: s0309
+  kind: saying
+  prompt: طلع من نقره ___
+  answer: لدحديره
+  others: [لطلعه, لسلم, لقنطره]
+  note: الدحديرة هي المنحدر في الطريق. يقال لمن تتابع عليه العثرات واحدة بعد أخرى.
+  source: taymur
+  page: 232
+  status: draft
+
+- id: s0310
+  kind: saying
+  prompt: دوا الغالي ___
+  answer: تركه
+  others: [شراه, بيعه, خزنه]
+  note: إذا تعدى الشيء حدّه في الغلاء فالأحسن مقاطعته حتى يعود إلى حاله الطبيعي.
+  source: juhayman
+  page: 106
+  volume: ج٣
+  status: draft
+
+- id: s0311
+  kind: saying
+  prompt: قال لا تبيع رخيص، قال لا توصّي ___
+  answer: حريص
+  others: [بخيل, تاجر, غريب]
+  note: 'قال أحدهم: لا تبع متاعك رخيصا، فأجابه الآخر: لا توصِ الحريص، فحرصه يكفيه عن الوصية.'
+  source: abboudi_amthal
+  page: 938
+  volume: ج٣
+  status: draft
+
+- id: s0312
+  kind: saying
+  prompt: الذل فى ضعف النفوس وقلة ___
+  answer: الفلوس
+  others: [الرؤوس, الكؤوس, الدروس]
+  note: يرى المثل أن قلة المال قد تذل الإنسان وتضطره إلى قبول ما لا يرضاه، مع ضعف النفس.
+  source: shaalan
+  page: 276
+  volume: ج٢
+  status: draft
+
+- id: s0313
+  kind: saying
+  prompt: بياكل قضامة وبيحكي في ___
+  answer: اللاهوت
+  others: [الطبخ, السوق, الحارة]
+  note: يُقال فيمن حاله بسيطة ويخوض في أعلى المسائل وأعوصها.
+  source: asadi
+  line: 134279
+  halab: p1316
+  status: draft
+
+- id: s0314
+  kind: saying
+  prompt: السر اليا فات ___ انشار
+  answer: أثنين
+  others: [الباب, الدار, الحيط]
+  note: «اليا» إذا؛ السرّ إذا عرفه اثنان انتشر.
+  source: zanin
+  page: 176
+  status: draft
+
+- id: s0315
+  kind: saying
+  prompt: كل من في مهرته ___
+  answer: سلطان
+  others: [فقير, غريب, تاجر]
+  note: المهرة الحرفة؛ فكل صاحب مهنة لا يُنازَع في ميدانه.
+  source: akwa
+  page: 861
+  volume: ج٢
+  status: draft
+
+- id: s0316
+  kind: saying
+  prompt: بتلة على ثور زاحف خير لي من ___
+  answer: تجارة
+  others: [وظيفة, سفر, غنيمة]
+  note: إشادة بالحراثة؛ فحرث الأرض على ثور بطيء أنفع وأضمن من التجارة.
+  source: adimi
+  page: 151
+  status: draft
+
+- id: s0317
+  kind: saying
+  prompt: لعب ___ بعبه
+  answer: الفار
+  others: [القط, الديك, الصوص]
+  note: لمن يرتاب ويقلق من أمر غامض.
+  source: sahli
+  page: 286
+  status: draft
+
+- id: s0318
+  kind: saying
+  prompt: رجعت ريمه لعادتها ___
+  answer: القديمه
+  others: [الوحشه, الغريبه, الردية]
+  note: يقال لمن ترك عادة أو تظاهر بتركها ثم عاد إليها، وأكثر ما يقال في العادات المذمومة.
+  source: taymur
+  page: 174
+  status: draft
+
+- id: s0319
+  kind: saying
+  prompt: النَّاسْ كَيْتْعَرْفُوا بَالْعْرُوقْ، مَاشِي ___
+  answer: بَالْخْرُوقْ
+  others: [بَالْفْلُوسْ, بَالدّْيُورْ, بَالسّْمِيَّاتْ]
+  note: العروق هي الأصول، والخروق هي الثياب. فالناس يُعرفون بأصلهم وتربيتهم لا بما يلبسون.
+  source: dadoun
+  page: 343
+  status: draft
+
+- id: s0320
+  kind: saying
+  prompt: أهلك ولا ___
+  answer: تهلك
+  others: [تتركن, تزعل, تسافر]
+  note: الحق بأهلك والزمهم ففيهم نجاتك.
+  source: asadi
+  line: 172901
+  halab: p849
+  status: draft
+
+- id: s0321
+  kind: saying
+  prompt: إذا كنت كذاب فكن ___
+  answer: حقّاد
+  others: [شاطر, حذر, ساكت]
+  note: الحقد في لهجاتهم بمعنى الذكر والتذكّر، فالمثل كقولهم «إذا كنت كذوبًا فكن ذكورًا».
+  source: iryani
+  page: 186
+  status: draft
+
+- id: s0322
+  kind: saying
+  prompt: خل بلاش أحسن من ___ بفلوس
+  answer: العسل
+  others: [السمن, الزيت, اللحم]
+  note: «بلاش» مجانًا؛ يقال في الشيء الذي يُنال دون جهد أو ثمن.
+  source: mughniyya
+  page: 253
+  status: draft
+
+- id: s0323
+  kind: saying
+  prompt: نجمع جمع ___ ويفرق بالزبيل
+  answer: النملة
+  others: [الذيب, الجمل, الريح]
+  note: الزبيل وعاء من خوص النخل. نجمع المال قليلا قليلا ثم يأتي من لم يتعب فيه فيبدده بالجملة.
+  source: juhayman
+  page: 311
+  volume: ج٨
+  status: draft
+
+- id: s0324
+  kind: saying
+  prompt: يجوز العيد بلا ___
+  answer: حنا
+  others: [كحل, عطر, ذهب]
+  note: من أمثال النساء؛ كانت عادتهن الاختضاب بالحناء للعيد، فإذا قلن إن العيد يمضي بلا حناء أردن الاستغناء عن الشيء.
+  source: abboudi_amthal
+  page: 1684
+  volume: ج٥
+  status: draft
+
+- id: s0325
+  kind: saying
+  prompt: وفى الراس ___
+  answer: الرقبه
+  others: [الرجلين, الظهر, اليدين]
+  note: أي بعد أن ذهب الرأس لحقته الرقبة، فالمصيبة تتبعها أخرى.
+  source: akwa
+  page: 1341
+  volume: ج٢
+  status: draft
+
+- id: s0326
+  kind: saying
+  prompt: الإنسان لازم ينطر ___
+  answer: قفاه
+  others: [رزقو, بيتو, كرمو]
+  note: على المرء ألّا يترك مجالاً لكلام الناس عنه في غيابه.
+  source: asadi
+  line: 148055
+  halab: p1110
+  status: draft
+
+- id: s0327
+  kind: saying
+  prompt: وأنا أقول ليش حماري ___
+  answer: يعرج
+  others: [يبرك, يتعب, ينهق]
+  note: يقولها من اكتشف فجأة سبب أمر كان يجهله.
+  source: adimi
+  page: 458
+  status: draft
+
+- id: s0328
+  kind: saying
+  prompt: زى الديك المالطى ___ على مافيش
+  answer: ريش
+  others: [لحم, بيض, دهن]
+  note: الديك المالطي له ريش كثير وجسم ضئيل؛ ويقال لمن مظهره لا يدل على مخبره، ومثله «منفوخ على الفاضي».
+  source: shaalan
+  page: 183
+  volume: ج٥
+  status: draft
+
+- id: s0329
+  kind: saying
+  prompt: في الوش مرايه وفي القفا ___
+  answer: سلايه
+  others: [نبوت, عصايه, حجر]
+  note: السلاية هي الشوكة. يقال لمن يجامل في الحضور ويؤذي في الغياب.
+  source: taymur
+  page: 273
+  status: draft
+
+- id: s0330
+  kind: saying
+  prompt: بارة على بارة، بتعمل ___
+  answer: تجارة
+  others: [سيارة, خسارة, حارة]
+  note: يحث على الادخار، فالقرش على القرش يصير مالا. والبارة عملة صغيرة قديمة.
+  source: sahli
+  page: 78
+  status: draft
+
+- id: s0331
+  kind: saying
+  prompt: اللِّي خَمَّمْ يْحْمَاقْ، وَاللِّي حَطْ لَحْمَلْ ___
+  answer: يْرْتَاحْ
+  others: [يْطِيحْ, يْنْدَمْ, يْتْعَبْ]
+  note: من أطال التفكير في مشاكل الحياة جنّ، ومن وضع الحمل استراح. دعوة إلى بذل الجهد ثم التوكل وترك الهمّ.
+  source: dadoun
+  page: 255
+  status: draft
+
+- id: s0332
+  kind: saying
+  prompt: ما هان أوله كاد ___
+  answer: تاليه
+  others: [صاحبه, طالبه, حامله]
+  note: كاد أي صعب. ما كان أوله سهلا قد يكون آخره شاقا، فخذ للأمور عدتها ولا تغتر بسهولة البدايات.
+  source: juhayman
+  page: 174
+  volume: ج٧
+  status: draft
+
+- id: s0333
+  kind: saying
+  prompt: اللى ما عندهم جرح يلوموا فيك على ___
+  answer: البكا
+  others: [الضحك, السهر, الكلام]
+  note: لا يشعر بالمشكلة إلا صاحبها، أما الآخرون فيستسهلون اللوم.
+  source: zanin
+  page: 48
+  status: draft
+
+- id: s0334
+  kind: saying
+  prompt: ___ يشيل الزريعه
+  answer: الجحش
+  others: [الجمل, البغل, الحصان]
+  note: «يشيل» يحمل، و«الزريعة» البذور؛ الجحش الصغير لا يقوى إلا على حمل البذور، وهي تتكاثر بعد زرعها، فيضرب للواشي ينقل الأخبار فتكبر.
+  source: mughniyya
+  page: 218
+  status: draft
+
+- id: s0335
+  kind: saying
+  prompt: بياكل اش ما كان وبضيّق ___
+  answer: المكان
+  others: [الدرب, الباب, السفرة]
+  note: يُقال في الثقيل الذي لا نفع منه، يأكل ما يجد ويزاحم أهل البيت.
+  source: asadi
+  line: 139192
+  halab: p1319
+  status: draft
+
+- id: s0336
+  kind: saying
+  prompt: وجه امكرمش چنه گشر ___
+  answer: رگي
+  others: [رمان, برتقال, خيار]
+  note: تشبيه للوجه المجعّد بقشر الرگّي (البطيخ الأحمر) اليابس.
+  source: hijiyya
+  page: 118
+  status: draft
+
+- id: s0337
+  kind: saying
+  prompt: ما على الصفا ___
+  answer: مبارك
+  others: [مراعي, منازل, مشارب]
+  note: «الصفا» الحجارة الصلدة، و«مبارك» جمع مبرك؛ الإبل لا تستطيع البروك على الصخر. يقال في عدم الصبر على المقام في المواطن المؤذية.
+  source: abboudi_amthal
+  page: 1216
+  volume: ج٣
+  status: draft
+
+- id: s0338
+  kind: saying
+  prompt: سبع مناخل و___ داخل
+  answer: القش
+  others: [الرمل, التراب, الحصى]
+  note: سبعة مناخل ولا تزال النخالة في الدقيق؛ كثرة العمل بلا إتقان لا تفيد.
+  source: taymur
+  page: 206
+  status: draft
+
+- id: s0339
+  kind: saying
+  prompt: جوهرة في يد ___
+  answer: فحّام
+  others: [تاجر, صائغ, ملك]
+  note: الشيء الثمين عند من لا يعرف قيمته ولا يستحقه.
+  source: adimi
+  page: 177
+  status: draft
+
+- id: s0340
+  kind: saying
+  prompt: الكذب يحتاج ___، والصدق فلت ورح لك
+  answer: محراس
+  others: [معلم, شهود, ميزان]
+  note: المحراس المراقبة؛ فالكاذب يحترس حتى لا ينسى ما قاله، أما الصادق فيقول ويمضي.
+  source: akwa
+  page: 841
+  volume: ج٢
+  status: draft
+
+- id: s0341
+  kind: saying
+  prompt: لا توخذ منه غير ___
+  answer: الحكي
+  others: [الخبز, الدين, السلام]
+  note: يقال فيمن يعد ولا يفي، فلا تنال منه إلا الكلام.
+  source: sahli
+  page: 281
+  status: draft
+
+- id: s0342
+  kind: saying
+  prompt: مجنون تلم في الجبا، مجنون من ___
+  answer: كاوفه
+  others: [صاحبه, تبعه, جاوره]
+  note: كاوف فلان فلانًا أي شاركه في العمل بثوره تحت نير واحد؛ فإن كان الأول مجنونًا فشريكه مجنون أيضًا.
+  source: iryani
+  page: 786
+  status: draft
+
+- id: s0343
+  kind: saying
+  prompt: الفقع يرخص ___
+  answer: اللحم
+  others: [الخبز, التمر, الرز]
+  note: الفقع هو الكمأة، وفيه طعم اللحم، فإذا كثر انصرف الناس إليه فرخص اللحم؛ يقال للشيء تهبط قيمته بوجود ما ينافسه.
+  source: juhayman
+  page: 73
+  volume: ج٥
+  status: draft
+
+- id: s0344
+  kind: saying
+  prompt: إبْرَه بْلاَ ___
+  answer: عَيْنْ
+  others: [خِيطْ, رَاسْ, ثَمَنْ]
+  note: إبرة بلا ثقب لا يدخلها خيط، فلا نفع فيها. يقال في الشيء الذي لا فائدة منه لأنه يفقد ما يجعله صالحًا للاستعمال.
+  source: dadoun
+  page: 21
+  status: draft
+
+- id: s0345
+  kind: saying
+  prompt: بحكي لك يا كنّة تتسمعي يا ___
+  answer: جارة
+  others: [حماة, بنت, خالة]
+  note: يُوجَّه الكلام إلى شخص والمقصود به غيره.
+  source: asadi
+  line: 145635
+  halab: p809
+  status: draft
+
+- id: s0346
+  kind: saying
+  prompt: تراعينى قيراط أراعيك ___
+  answer: قيراطين
+  others: [فدانين, شبرين, ذراعين]
+  note: يحث المثل على حسن المعاملة وتبادل المصالح؛ فمن يرعاك قليلًا ترعاه أكثر. وقد دخل في أغنية لمحمد عبد الوهاب.
+  source: shaalan
+  page: 96
+  volume: ج٢
+  status: draft
+
+- id: s0347
+  kind: saying
+  prompt: ما تخشش لبيتك إلا القمح و___
+  answer: الشعير
+  others: [الفول, العدس, الحمص]
+  note: القمح والشعير يصلحان للتخزين، أما الحبوب الأخرى كالفول والعدس فيصيبها السوس إذا خُزنت طويلًا.
+  source: mughniyya
+  page: 480
+  status: draft
+
+- id: s0348
+  kind: saying
+  prompt: جفن العين جراب ما يملاه إلا ___
+  answer: التراب
+  others: [الدهب, الكحل, المال]
+  note: لا يملأ عين ابن آدم إلا التراب؛ في الحرص المركّب في طبع الإنسان.
+  source: taymur
+  page: 128
+  status: draft
+
+- id: s0349
+  kind: saying
+  prompt: ما حد يربي له حنش بالجيب يصبح له ___
+  answer: غريم
+  others: [صاحب, حارس, خادم]
+  note: الحنش الثعبان؛ تحذير من أن بعض من تحسن إليهم قد يصبحون أعداءك.
+  source: adimi
+  page: 403
+  status: draft
+
+- id: s0350
+  kind: saying
+  prompt: أجت عنزة الثنية تعلم إمها ___
+  answer: الرعية
+  others: [المشية, النطاح, الحلبة]
+  note: يقال حين يحاول قليل الخبرة أن يعلّم من سبقه بالتجربة؛ فالعنزة الصغيرة لا تعلّم أمها الرعي.
+  source: sahli
+  page: 20
+  status: draft
+
+- id: s0351
+  kind: saying
+  prompt: كنّه على ___
+  answer: جمر
+  others: [شوك, ثلج, رمل]
+  note: «كنّه» أي كأنه؛ يقال للمستعجل الذي لا يقرّ له قرار، كأنه جالس على الجمر.
+  source: abboudi_amthal
+  page: 1071
+  volume: ج٣
+  status: draft
+
+- id: s0352
+  kind: saying
+  prompt: اللى ما عنده ___ كذاب
+  answer: شاهد
+  others: [مال, أهل, ولد]
+  note: يضرب في تقديم تصديق من له شاهد على من لا شاهد له.
+  source: zanin
+  page: 47
+  status: draft
+
+- id: s0353
+  kind: saying
+  prompt: ما خبز في الديمه بدا على ___
+  answer: الضيفان
+  others: [الصبيان, الحيطان, الدجاج]
+  note: الديمة المطبخ؛ أي إن ما يحدث داخل البيت ينتشر بين الناس.
+  source: akwa
+  page: 1031
+  volume: ج٢
+  status: draft
+
+- id: s0354
+  kind: saying
+  prompt: لا أكل إلا أكل اللحم ولا نار إلا نار ___
+  answer: الفحم
+  others: [الحطب, الشمع, التبن]
+  note: خير الطعام اللحم وخير النار نار الفحم.
+  source: asadi
+  line: 166181
+  halab: p836
+  status: draft
+
+- id: s0355
+  kind: saying
+  prompt: مثل التمر غذا و___
+  answer: فاكهه
+  others: [لحم, شراب, عشا]
+  note: التمر لذيذ سهل الهضم لا يحتاج إلى طبخ، فهو طعام وفاكهة معا، بل ويُتداوى به.
+  source: juhayman
+  page: 306
+  volume: ج١٠
+  status: draft
+
+- id: s0356
+  kind: saying
+  prompt: مْنَايَنْ كَتْشْبَعْ الْكَرْشْ كَتْقُولْ لَلرَّاسْ ___
+  answer: غَنِّ
+  others: [نْعَسْ, فَكَّرْ, اخْدَمْ]
+  note: 'إذا شبعت البطن قالت للرأس: غنِّ. فالجائع ضيق النفس، فإذا أكل انشرح صدره وطرب.'
+  source: dadoun
+  page: 319
+  status: draft
+
+- id: s0357
+  kind: saying
+  prompt: الطينه من الطينه واللته من ___
+  answer: العجينه
+  others: [الدقيق, الفرن, الخميره]
+  note: اللتة قطعة من العجين. يقال في شبه الشيء بأصله، والأبناء بأهلهم.
+  source: taymur
+  page: 235
+  status: draft
+
+- id: s0358
+  kind: saying
+  prompt: تاجر و___ ما بيصير
+  answer: منجّم
+  others: [معلّم, شاطر, غني]
+  note: التاجر لا يعلم الغيب، فالربح والخسارة لا يُعرفان سلفاً.
+  source: asadi
+  line: 164003
+  halab: p831
+  status: draft
+
+- id: s0359
+  kind: saying
+  prompt: اللقف المبتم ما يدخلوش ___
+  answer: الذباب
+  others: [الطعام, الماء, الهواء]
+  note: اللقف هو الفم والمبتم المطبق؛ فالفم المغلق لا يدخله الذباب، أي في الصمت سلامة.
+  source: adimi
+  page: 133
+  status: draft
+
+- id: s0360
+  kind: saying
+  prompt: كثرة الجراد يرخص ___
+  answer: اللحم
+  others: [الخبز, التمر, الزيت]
+  note: كثرة عرض سلعة ولو رديئة يرخص سعر نظيرتها الجيدة.
+  source: mughniyya
+  page: 432
+  status: draft
+
+- id: s0361
+  kind: saying
+  prompt: الشط أكبر من ___
+  answer: الرقعه
+  others: [الثوب, الخيط, الإبره]
+  note: الشطّ الخرق في الثوب؛ يقال حين يتفاقم الأمر فلا يكفي إصلاحه.
+  source: iryani
+  page: 491
+  status: draft
+
+- id: s0362
+  kind: saying
+  prompt: سلاح الضعيف ___
+  answer: الشكاية
+  others: [العصا, الحجر, الهرب]
+  note: الضعيف لا يقدر إلا على الشكوى.
+  source: sahli
+  page: 177
+  status: draft
+
+- id: s0363
+  kind: saying
+  prompt: الشُّكك ممنوع والزعل ___ والرزق على الله
+  answer: مرفوع
+  others: [مدفوع, موجود, مسموح]
+  note: عبارة يكتبها أصحاب الدكاكين الصغيرة على محلاتهم؛ والشكك هو البيع بالأجل، فلا بيع إلا نقدًا ولا داعي للزعل.
+  source: shaalan
+  page: 118
+  volume: ج٦
+  status: draft
+
+- id: s0364
+  kind: saying
+  prompt: مال البخيل ياكله ___
+  answer: العيار
+  others: [الضيف, الجار, الطير]
+  note: العيار هو المحتال المتملق. البخيل يجمع ماله بالقليل وبالمشقة، ثم يذهب جملة إلى المحتالين.
+  source: juhayman
+  page: 138
+  volume: ج٧
+  status: draft
+
+- id: s0365
+  kind: saying
+  prompt: الدهر ___، وابن آدم معلمي
+  answer: فقيه
+  others: [قاضي, شيخ, والد]
+  note: الفقيه هنا معلم الصبيان والمعلمي تلميذه؛ أي إن الزمان معلم والإنسان تلميذ عنده.
+  source: akwa
+  page: 497
+  volume: ج١
+  status: draft
+
+- id: s0366
+  kind: saying
+  prompt: اللِّي نْفَخْ فَى اللّْبَنْ ___
+  answer: يْشْتَاقُه
+  others: [يْشْرْبُه, يْبَرْدُه, يْكْبُّه]
+  note: من نفخ في اللبن متأففًا منه حين كثر سيشتاق إليه. من أمثال البادية فيمن لا يعرف قيمة الشيء حتى يفقده.
+  source: dadoun
+  page: 295
+  status: draft
+
+- id: s0367
+  kind: saying
+  prompt: الياس ___
+  answer: رحمه
+  others: [هلاك, عذاب, عيب]
+  note: اليأس يريح صاحبه من تعب الانتظار وعناء التطلع؛ والمثل قديم الأصل.
+  source: abboudi_amthal
+  page: 1640
+  volume: ج٥
+  status: draft
+
+- id: s0368
+  kind: saying
+  prompt: على قد ___ مد رجلك
+  answer: حجلك
+  others: [جيبك, بيتك, شبرك]
+  note: 'الحجل هنا الخلخال، ويروى أيضا: على قد لحافك. في النهي عن تجاوز المرء حده.'
+  source: taymur
+  page: 247
+  status: draft
+
+- id: s0369
+  kind: saying
+  prompt: شافوا القبّة من بعيد حسبوا ___
+  answer: مزار
+  others: [جبل, خيمة, بطّيخة]
+  note: يُقال فيمن ينخدع بالمظهر فيظنّ بالشيء العاديّ الجلال والبركة.
+  source: asadi
+  line: 156719
+  halab: p1315
+  status: draft
+
+- id: s0370
+  kind: saying
+  prompt: أوله شرط آخره ___
+  answer: سلامة
+  others: [ربح, خسارة, عتاب]
+  note: يضرب في الحث على توضيح الشروط في العقود منذ البداية.
+  source: zanin
+  page: 71
+  status: draft
+
+- id: s0371
+  kind: saying
+  prompt: أوّل العصيد ___
+  answer: ماء
+  others: [دقيق, سمن, نار]
+  note: العصيد طبخة يمنية تبدأ بماء يغلي ثم يضاف إليه الدقيق؛ فكل شيء كبير يبدأ صغيرا.
+  source: adimi
+  page: 75
+  status: draft
+
+- id: s0372
+  kind: saying
+  prompt: دبر ___ قبل الغنم
+  answer: الراعي
+  others: [الكلب, الحلاب, الجزار]
+  note: أعدّ للأمر عدته قبل أن تبدأ به، وابدأ بالأهم.
+  source: sahli
+  page: 146
+  status: draft
+
+- id: s0373
+  kind: saying
+  prompt: ما كل حمرا ___
+  answer: لحمه
+  others: [ورده, جمره, خوخه]
+  note: ليس كل ما لونه أحمر لحما، فالأشياء قد تتشابه في الشكل وتختلف في حقيقتها ونفعها.
+  source: juhayman
+  page: 123
+  volume: ج٧
+  status: draft
+
+- id: s0374
+  kind: saying
+  prompt: وين خلاك بوك خلاه ___
+  answer: جدك
+  others: [خوك, عمك, ولدك]
+  note: «خلاك» تركك؛ يرى المثل أن الإنسان يبقى عبر الأجيال في المنزلة الاجتماعية التي كان فيها أبوه وجده.
+  source: mughniyya
+  page: 546
+  status: draft
+
+- id: s0375
+  kind: saying
+  prompt: يمّه المره عرگ ___
+  answer: ثيّل
+  others: [نخل, ورد, شوك]
+  note: الثيّل عشب تمتد جذوره وتتشعب، والمعنى أن الزوجة توسّع دائرة الأقارب والأنساب.
+  source: hijiyya
+  page: 33
+  status: draft
+
+- id: s0376
+  kind: saying
+  prompt: غير نصيبك ما ___
+  answer: بيصيبك
+  others: [بيعيبك, بيجيبك, بيطيبك]
+  note: لن ينالك إلا ما قُسم لك.
+  source: asadi
+  line: 168941
+  halab: p842
+  status: draft
+
+- id: s0377
+  kind: saying
+  prompt: ديل الكلب عمره ما ___
+  answer: ينعدل
+  others: [يتقطع, يطول, يقصر]
+  note: 'من طُبع على الاعوجاج لا يستقيم، ويزيد أهل الريف: ولو علّقت فيه قالبا.'
+  source: taymur
+  page: 169
+  status: draft
+
+- id: s0378
+  kind: saying
+  prompt: راس الشيبه أوكى ___
+  answer: للنطاح
+  others: [للحمل, للكلام, للصبر]
+  note: أوكى أي أصلب؛ فالكبير بخبرته يغلب الشاب الغر في الحجة.
+  source: akwa
+  page: 517
+  volume: ج١
+  status: draft
+
+- id: s0379
+  kind: saying
+  prompt: لَبْحَرْ الدَّاخْلُه مَفْقُودْ، وَالْخَارْجُه ___
+  answer: مَوْلُودْ
+  others: [مَحْظُوظْ, مَبْلُولْ, مَسْعُودْ]
+  note: الداخل إلى البحر كالمفقود، والخارج منه كأنه ولد من جديد. يقال في خطر البحر عند هيجان أمواجه.
+  source: dadoun
+  page: 279
+  status: draft
+
+- id: s0380
+  kind: saying
+  prompt: الفضيحة ___ مش فعل
+  answer: كلام
+  others: [صورة, نظرة, ورقة]
+  note: الفعل السيئ لا يصير فضيحة حتى يتناقله الناس؛ فأساس الفضيحة هو انتقال الكلام من مكان إلى آخر.
+  source: shaalan
+  page: 390
+  volume: ج١
+  status: draft
+
+- id: s0381
+  kind: saying
+  prompt: هوا في ___
+  answer: شبك
+  others: [قربه, جرّه, كيس]
+  note: أي كالهواء في الشبكة لا تمسك منه شيئا؛ يقال لما يذهب هباء ولا حاصل له.
+  source: abboudi_amthal
+  page: 1607
+  volume: ج٤
+  status: draft
+
+- id: s0382
+  kind: saying
+  prompt: تدبير ديمه ولا تاجر ___
+  answer: عدن
+  others: [صنعا, الهند, مكه]
+  note: الدّيمة المطبخ؛ فحسن تدبير المرأة في مطبخها خير من حال تاجر غني كان يستورد من عدن.
+  source: iryani
+  page: 321
+  status: draft
+
+- id: s0383
+  kind: saying
+  prompt: تكلّمه رطل ما يفهمش ___
+  answer: وقية
+  others: [مثقال, كلمة, حبة]
+  note: الوقية جزء صغير من الرطل؛ يقال لمن لا يعير الكلام اهتماما مهما أطلت عليه.
+  source: adimi
+  page: 161
+  status: draft
+
+- id: s0384
+  kind: saying
+  prompt: خبز و___، ولا المنية
+  answer: دقة
+  others: [جبنة, زيتون, لبنة]
+  note: الخبز مع الدقة، وهي خلطة الزعتر، مع العزة خير من ذل الحاجة إلى الناس.
+  source: sahli
+  page: 137
+  status: draft
+
+- id: s0385
+  kind: saying
+  prompt: كل عند أمه رجال مير الخلا ___
+  answer: غرباله
+  others: [ميزانه, مرآته, شاهده]
+  note: كل ابن رجل في عين أمه، لكن السفر والصحراء ومخاطرها هي التي تغربل الرجال فتكشف الشجاع من الجبان.
+  source: juhayman
+  page: 103
+  volume: ج٦
+  status: draft
+
+- id: s0386
+  kind: saying
+  prompt: أبو كشكول ما بحبّ أبو ___
+  answer: مخلاية
+  others: [طربوش, سيف, دكّان]
+  note: صاحب الحرفة يكره من ينافسه فيها، فالشحّاد حامل الكشكول لا يحبّ الشحّاد حامل المخلاة.
+  source: asadi
+  line: 142940
+  halab: p1322
+  status: draft
+
+- id: s0387
+  kind: saying
+  prompt: بالوعد أسقيك يا ___
+  answer: كمون
+  others: [ريحان, نعناع, ورد]
+  note: زعموا أن الكمون يكتفي بالوعد بالسقي؛ يقال لمن يكثر الوعود ولا يفي بها.
+  source: taymur
+  page: 113
+  status: draft
+
+- id: s0388
+  kind: saying
+  prompt: الشعير يدور يدوز ويولي لقلب ___
+  answer: الرحى
+  others: [السوق, الشوال, الجره]
+  note: «يولي» يعود؛ مهما دار الشعير فمصيره الطاحونة، كما أن الظالم مهما تجبر فمصيره إلى زوال.
+  source: mughniyya
+  page: 325
+  status: draft
+
+- id: s0389
+  kind: saying
+  prompt: مَا تْقُولْ عَشْرَه حَتَّى يْكُونُوا فَى ___
+  answer: التَّلِّيسْ
+  others: [الْيَدّْ, الدَّارْ, السُّوقْ]
+  note: 'التليس كيس من صوف خشن يحمل فيه البدو مؤونتهم. لا تقل عشرة حتى تصير في كيسك. ويروى أيضًا: حتى يكونوا في الكف.'
+  source: dadoun
+  page: 319
+  status: draft
+
+- id: s0390
+  kind: saying
+  prompt: العز واسقوني نقيع ___
+  answer: الحنظل
+  others: [الزبيب, الصبر, البن]
+  note: من أمثال صرواح؛ يقال في إباء الضيم، فالمرارة مع العز خير من الحلاوة مع الذل.
+  source: akwa
+  page: 711
+  volume: ج٢
+  status: draft
+
+- id: s0391
+  kind: saying
+  prompt: اللى قارصاته لفعى يتخايل من ___
+  answer: الحبال
+  others: [الحجر, الريح, الدخان]
+  note: من لدغته أفعى صار يخاف كلّ ما يشبهها.
+  source: zanin
+  page: 45
+  status: draft
+
+- id: s0392
+  kind: saying
+  prompt: العمر بيخلص و___ ما بيخلص
+  answer: الشغل
+  others: [الصيف, العيد, المال]
+  note: مشاغل الدنيا لا تنتهي، فلا تُفنِ عمرك فيها.
+  source: asadi
+  line: 64698
+  halab: p1116
+  status: draft
+
+- id: s0393
+  kind: saying
+  prompt: إذا كثر اللحم قالوا لحم ___
+  answer: حمار
+  others: [كلب, ثعلب, غراب]
+  note: إذا كثر الشيء وتوفر بلا مقابل استخف به الناس وزهدوا فيه.
+  source: adimi
+  page: 91
+  status: draft
+
+- id: s0394
+  kind: saying
+  prompt: تقديم الأجره من بطلان ___
+  answer: العمل
+  others: [الحق, الوعد, الكسب]
+  note: نهي عن إعطاء الأجير أجره قبل إتمام عمله، لأن ذلك قد يذهب بما يحفزه على إتقانه.
+  source: abboudi_amthal
+  page: 319
+  volume: ج١
+  status: draft
+
+- id: s0395
+  kind: saying
+  prompt: ما بطلع من دار المطبلين غير ___
+  answer: المزمرين
+  others: [الراقصين, النايمين, الشحادين]
+  note: الأبناء يكونون على شاكلة أهلهم.
+  source: sahli
+  page: 298
+  status: draft
+
+- id: s0396
+  kind: saying
+  prompt: لا تشرب من بير وترمي فيه ___
+  answer: حجر
+  others: [ملح, عظم, عود]
+  note: لا تسئ إلى من أحسن إليك، فمقابلة المعروف بالأذى من أخس الطباع.
+  source: juhayman
+  page: 212
+  volume: ج٦
+  status: draft
+
+- id: s0397
+  kind: saying
+  prompt: إن عوى ___ إدّى له ظهرك
+  answer: الكلب
+  others: [الديب, الغراب, الحمار]
+  note: لا تنشغل بمن يسيء إليك، بل أعرض عنه وامضِ؛ وفي معناه «ابعد عن الشر وغنّي له».
+  source: shaalan
+  page: 242
+  volume: ج٢
+  status: draft
+
+- id: s0398
+  kind: saying
+  prompt: كل مصه ما تجي إلا ___
+  answer: بغصه
+  others: [بعضه, بقرصه, بلقمه]
+  note: لا ينال الإنسان لذة إلا مشوبة بشيء من الكدر.
+  source: taymur
+  page: 305
+  status: draft
+
+- id: s0399
+  kind: saying
+  prompt: كُلْ زْبِيبَه فِى رَاسْهَا ___
+  answer: عُودْ
+  others: [حْلاَوَه, نْوَاه, عْسَلْ]
+  note: لكل زبيبة عود في رأسها. أي لا يخلو إنسان من عيب أو نقص أو مشكلة، وإن اختلفت بحسب ظروفه.
+  source: dadoun
+  page: 231
+  status: draft
+
+- id: s0400
+  kind: saying
+  prompt: قال له بوك شنو عقبلك؟ قال له ___ وماتت
+  answer: عنزه
+  others: [ناقه, بقره, فرس]
+  note: «شنو عقبلك» ماذا ترك لك؛ يقال سخرية من الفقير الذي لا يُرتجى منه خير ولا نفع.
+  source: mughniyya
+  page: 408
+  status: draft
+
+- id: s0401
+  kind: saying
+  prompt: مكّة على عاشقا ماهي ___
+  answer: بعيدة
+  others: [غالية, صعبة, حامية]
+  note: المحبّ لا يستبعد الطريق إلى ما يحبّ.
+  source: asadi
+  line: 162621
+  halab: p828
+  status: draft
+
+- id: s0402
+  kind: saying
+  prompt: السراج المطفطف ولا ___
+  answer: الغدره
+  others: [الشمعه, القمره, النار]
+  note: طفطفة السراج اضطراب شعلته وتقطّع ضوئه، والغدرة الظلمة؛ فالضوء الضعيف خير من الظلام.
+  source: iryani
+  page: 588
+  status: draft
+
+- id: s0403
+  kind: saying
+  prompt: ما خبزته ___
+  answer: خديته
+  others: [بعته, نسيته, رميته]
+  note: خدى الخبز أخذه من جدار التنور؛ فالمرء يجد نتائج عمله خيراً كان أو شراً.
+  source: akwa
+  page: 1031
+  volume: ج٢
+  status: draft
+
+- id: s0404
+  kind: saying
+  prompt: قد قرصك بين ___
+  answer: السمن
+  others: [الطحين, الماء, الرماد]
+  note: القرص رغيف الخبز؛ يقال لمن نشأ في سعة وغنى فلا يعرف التعب في تحصيل حاجته.
+  source: adimi
+  page: 308
+  status: draft
+
+- id: s0405
+  kind: saying
+  prompt: عدل ___ قبل ما تنزل البحر
+  answer: سفينتك
+  others: [ثيابك, شبكتك, مجدافك]
+  note: استعد للأمر قبل أن تدخل فيه.
+  source: sahli
+  page: 214
+  status: draft
+
+- id: s0406
+  kind: saying
+  prompt: هدية القرفان ___
+  answer: لمونه
+  others: [سكر, نعناع, قهوه]
+  note: القرفان من يعاف الطعام فيتداوى بالليمون، فإذا أهدى أهدى الليمون؛ الهدية على قدر ما يراه المهدي.
+  source: taymur
+  page: 374
+  status: draft
+
+- id: s0407
+  kind: saying
+  prompt: فر من المطر ووقف تحت ___
+  answer: المرزام
+  others: [الخيمة, الشجرة, الجدار]
+  note: المرزام هو الميزاب؛ يقال لمن يهرب من شدة فيقع فيما هو أشد منها.
+  source: juhayman
+  page: 61
+  volume: ج٥
+  status: draft
+
+- id: s0408
+  kind: saying
+  prompt: إكنسي بيتك ___، واغسلي رجلك تصغر
+  answer: يكبر
+  others: [يلمع, يضحك, يطيب]
+  note: 'من وصايا العجائز لبناتهن: البيت الصغير إذا كُنس ورُتّب بدا واسعا، والقدم الكبيرة إذا نُظّفت بدت صغيرة لطيفة.'
+  source: abboudi_amthal
+  page: 132
+  volume: ج١
+  status: draft
+
+- id: s0409
+  kind: saying
+  prompt: 'قلنا لك: قمّرو، ما قلنا لك: ___'
+  answer: احرقو
+  others: [عجنو, بلّو, قطّعو]
+  note: يُقال فيمن يُطلب منه الشيء باعتدال فيبالغ فيه حتى يفسده، والتقمير تحميص الخبز.
+  source: asadi
+  line: 136386
+  halab: p1317
+  status: draft
+
+- id: s0410
+  kind: saying
+  prompt: أن كنت ___ تبّع الغرزة
+  answer: خياط
+  others: [نجار, حداد, بنّاي]
+  note: يضرب في الحث على التكيّف مع الأحوال.
+  source: zanin
+  page: 67
+  status: draft
+
+- id: s0411
+  kind: saying
+  prompt: خبصه عبالك حمّام ___
+  answer: نسوان
+  others: [رجال, السوق, عرس]
+  note: يُقال للمكان الصاخب المضطرب كثير الضجيج، تشبيهًا بحمّام النساء الذي يمتلئ بالأصوات والحركة.
+  source: hijiyya
+  page: 118
+  status: draft
+
+- id: s0412
+  kind: saying
+  prompt: هْبِيرَه فِيهَا ___
+  answer: عْظَمْ
+  others: [شْحَمْ, مْلَحْ, دْهَنْ]
+  note: الهبيرة قطعة لحم صافية، وفيها مع ذلك عظم. يقال لمن نال ما يحبه لكنه لا يخلو من نقص أو عيب.
+  source: dadoun
+  page: 367
+  status: draft
+
+- id: s0413
+  kind: saying
+  prompt: الأقارب ___
+  answer: كالعقارب
+  others: [كالسحايب, كالكواكب, كالحبايب]
+  note: مثل مسجوع يقوله من يشكو أذى أقاربه؛ فهم في رأيه يلدغون كما تلدغ العقارب.
+  source: shaalan
+  page: 110
+  volume: ج١
+  status: draft
+
+- id: s0414
+  kind: saying
+  prompt: بين السترة والكشفة محط ___
+  answer: صبعين
+  others: [ذراع, ميل, يوم]
+  note: «صبعين» إصبعين؛ المسافة بين الستر والفضيحة، أو بين النجاح والفشل، قصيرة جدًّا.
+  source: mughniyya
+  page: 194
+  status: draft
+
+- id: s0415
+  kind: saying
+  prompt: الجار جار، ولو راجمك ___
+  answer: بالحجار
+  others: [بالكلام, بالعصا, بالتراب]
+  note: يحث على احتمال أذى الجار والصبر على إساءته.
+  source: akwa
+  page: 357
+  volume: ج١
+  status: draft
+
+- id: s0416
+  kind: saying
+  prompt: بكرة يدوب التلج ويبان ___
+  answer: المرج
+  others: [الطين, الزرع, الطريق]
+  note: كل مستور سيظهر حين يزول ما يغطيه، كما يظهر المرج بعد ذوبان الثلج.
+  source: taymur
+  page: 109
+  status: draft
+
+- id: s0417
+  kind: saying
+  prompt: خلّي من شبعك ___
+  answer: لجوعك
+  others: [لضيفك, لجارك, لعيالك]
+  note: لا ترمِ ما زاد عن حاجتك، بل احفظه لوقت تحتاج إليه.
+  source: adimi
+  page: 205
+  status: draft
+
+- id: s0418
+  kind: saying
+  prompt: إلضيف أول ليلة قنديل، ثاني ليلة منديل، ثالث ليلة ___
+  answer: رزيل
+  others: [جليل, قليل, دليل]
+  note: الضيف عزيز في أول أيامه، ثم يثقل كلما طالت إقامته.
+  source: sahli
+  page: 201
+  status: draft
+
+- id: s0419
+  kind: saying
+  prompt: من كثر النار على قرصه ___
+  answer: احترق
+  others: [انتفخ, طاب, لان]
+  note: القرص هو رغيف الخبز. الإفراط كالتفريط كلاهما مضر، والعجلة والطمع يفسدان ما يُراد إصلاحه.
+  source: juhayman
+  page: 221
+  volume: ج٨
+  status: draft
+
+- id: s0420
+  kind: saying
+  prompt: 'وقت الشوي واليخني ما قلت: يا خيّو ___'
+  answer: الحقني
+  others: [اسمعني, سامحني, علّمني]
+  note: يُقال لمن ينساك في الرخاء ولا يتذكّرك إلا في الشدّة.
+  source: asadi
+  line: 148941
+  halab: p1324
+  status: draft
+
+- id: s0421
+  kind: saying
+  prompt: النوم ___
+  answer: عافيه
+  others: [راحه, سلطان, غنيمه]
+  note: النوم دليل على العافية؛ يقال للمريض إذا منعه مرضه من النوم ثم نام.
+  source: abboudi_amthal
+  page: 1533
+  volume: ج٤
+  status: draft
+
+- id: s0422
+  kind: saying
+  prompt: خلوفة الحيه ___
+  answer: عقارب
+  others: [ثعابين, حنشان, جراد]
+  note: ليس المراد أن الحية تلد عقارب، بل أن سيئًا حلّ محل سيئ.
+  source: iryani
+  page: 245
+  status: draft
+
+- id: s0423
+  kind: saying
+  prompt: يَا مْسْتَرْخَصْ اللّْحَمْ، عَنْدْ ___ تَنْدَمْ
+  answer: لَمْرَقْ
+  others: [الْجَّزَّارْ, الْبَابْ, الصّْبَاحْ]
+  note: يا من اشترى اللحم الرخيص، ستندم حين تذوق المرق. ينبغي اختيار الجودة في كل ما تشتريه.
+  source: dadoun
+  page: 391
+  status: draft
+
+- id: s0424
+  kind: saying
+  prompt: القفه اللي لها ودنين يشيلوها ___
+  answer: اتنين
+  others: [تلاته, عيلين, رجالة]
+  note: القفة ذات المقبضين يحملها اثنان بسهولة؛ يقال للأمر المتقن الذي فيه ما يعين على القيام به.
+  source: taymur
+  page: 290
+  status: draft
+
+- id: s0425
+  kind: saying
+  prompt: الغضب أوّلو جنون وآخرو ___
+  answer: ندامة
+  others: [سلامة, كرامة, شهامة]
+  note: الغضب يبدأ بفقدان الصواب وينتهي بالندم.
+  source: asadi
+  line: 121049
+  halab: p1097
+  status: draft
+
+- id: s0426
+  kind: saying
+  prompt: جودة الراي، أحسن من مضاوة ___
+  answer: السيف
+  others: [الرمح, الخنجر, الفاس]
+  note: الرأي السديد أنفع من القوة وحدة السلاح.
+  source: sahli
+  page: 121
+  status: draft
+
+- id: s0427
+  kind: saying
+  prompt: قطع الراس ولا قطع ___
+  answer: المعاش
+  others: [الرحم, الطريق, الكلام]
+  note: قطع الرزق أشد من الموت عند صاحبه؛ ويقال لمن يسعى في قطع أرزاق الناس.
+  source: adimi
+  page: 305
+  status: draft
+
+- id: s0428
+  kind: saying
+  prompt: قال يا جود الصقر قال نطيحه ___
+  answer: أرنب
+  others: [ذيب, نسر, عقاب]
+  note: النطيح هو الخصم، وشجاعة الصقر على الأرنب الضعيف ليست شجاعة؛ فالشجاعة الحقيقية على الأنداد.
+  source: juhayman
+  page: 268
+  volume: ج٥
+  status: draft
+
+- id: s0429
+  kind: saying
+  prompt: الشيب ولا ___
+  answer: العيب
+  others: [الشباب, السواد, الصبا]
+  note: من أمثال صرواح؛ أي إن الشيب أخف ضرراً من العيب.
+  source: akwa
+  page: 627
+  volume: ج١
+  status: draft
+
+- id: s0430
+  kind: saying
+  prompt: إلي إيده في ___ موش كيف إلي إيده في الما
+  answer: النار
+  others: [الطين, العجين, الصابون]
+  note: «الما» الماء؛ من يكابد المشقة ليس كمن يتفرج عليها مرتاحًا.
+  source: mughniyya
+  page: 104
+  status: draft
+
+- id: s0431
+  kind: saying
+  prompt: خيخة وسكينة ما تقطعش ___
+  answer: بطيخة
+  others: [عيش, جبنة, لحمة]
+  note: الخيخة هو ضعيف الشخصية؛ والمثل يسخر ممن لا يصلح لأي شيء كالسكين التي لا تقطع.
+  source: shaalan
+  page: 182
+  volume: ج٥
+  status: draft
+
+- id: s0432
+  kind: saying
+  prompt: أنا أمير وانت أمير ومن يسوق ___
+  answer: الحمير
+  others: [الجمال, الغنم, الخيل]
+  note: إذا ادّعى الجميع الإمارة فمن يقوم بالعمل؟
+  source: zanin
+  page: 67
+  status: draft
+
+- id: s0433
+  kind: saying
+  prompt: النقطة الدايمة بتعلّم في ___
+  answer: الحجر
+  others: [البحر, الورق, الرمل]
+  note: المثابرة تؤثّر في أصلب الأشياء.
+  source: asadi
+  line: 170200
+  halab: p845
+  status: draft
+
+- id: s0434
+  kind: saying
+  prompt: زي الطبل صوت عالي وجوف ___
+  answer: خالي
+  others: [واسع, غالي, ضيق]
+  note: يقال للثرثار الذي يكثر الكلام ولا شيء وراءه.
+  source: taymur
+  page: 193
+  status: draft
+
+- id: s0435
+  kind: saying
+  prompt: دخّانها ولا هبوب ___
+  answer: شمالها
+  others: [مطرها, بردها, ليلها]
+  note: 'كانوا يوقدون النار في الشتاء اتقاء برد ريح الشمال، فإذا تضايق أحدهم من الدخان قيل له: الدخان أهون من البرد.'
+  source: abboudi_amthal
+  page: 505
+  volume: ج٢
+  status: draft
+
+- id: s0436
+  kind: saying
+  prompt: كُلْ كَنْزْ عْلِيهْ ___
+  answer: عَفْرِيتْ
+  others: [قْفَلْ, حَارَسْ, سَارَقْ]
+  note: لكل كنز عفريت يحرسه. يقال لمن يريد مشروعًا مربحًا فيجد غيره قد سبقه إليه، فليتوقع المنافسة قبل أن يبدأ.
+  source: dadoun
+  page: 231
+  status: draft
+
+- id: s0437
+  kind: saying
+  prompt: لابس ثوب ___ عريان
+  answer: الريا
+  others: [الحرير, العيد, الصوف]
+  note: المرائي وإن تجمل بالظاهر فهو مكشوف.
+  source: sahli
+  page: 278
+  status: draft
+
+- id: s0438
+  kind: saying
+  prompt: صلح أعوج ولا ___ سابر
+  answer: شريعة
+  others: [صحبة, بيعة, ضيفة]
+  note: سابر أي صالح؛ صلح فيه عوج خير من خصومة في المحاكم ولو كانت عادلة.
+  source: adimi
+  page: 261
+  status: draft
+
+- id: s0439
+  kind: saying
+  prompt: وش علم الحمير أكل ___
+  answer: الزنجبيل
+  others: [الشعير, التبن, البرسيم]
+  note: وش علم أي من علّم. الزنجبيل شيء طيب لم يُخلق للحمير؛ يقال لمن يُعطى شيئا لا يستحقه ولا يحسن التصرف فيه.
+  source: juhayman
+  page: 39
+  volume: ج٩
+  status: draft
+
+- id: s0440
+  kind: saying
+  prompt: افتح بابك واشتهر، والا اقفله ___
+  answer: واستتر
+  others: [واختفي, وانتظر, واصبر]
+  note: إن فتحت بيتك لضيافة الناس فلا تبخل عليهم بشيء، وإن عجزت فإغلاق الباب أسلم ولا لوم عليك.
+  source: akwa
+  page: 191
+  volume: ج١
+  status: draft
+
+- id: s0441
+  kind: saying
+  prompt: زاد الطين بله والمريض ___
+  answer: عله
+  others: [دوا, صحه, نوم]
+  note: يقال حين تتعقد الأمور فتصبح معالجتها أصعب مما كانت.
+  source: mughniyya
+  page: 295
+  status: draft
+
+- id: s0442
+  kind: saying
+  prompt: مستريح وكعكة ولا عشرة ألوان و___
+  answer: دعكة
+  others: [بركة, سهرة, شبعة]
+  note: القليل مع راحة البال خير من الكثير مع التعب.
+  source: asadi
+  line: 143252
+  halab: p806
+  status: draft
+
+- id: s0443
+  kind: saying
+  prompt: عريج حير مية ___
+  answer: كلب
+  others: [ذيب, تيس, ثعيل]
+  note: العريج هو الضبع، ويقال لمن لا يُخشى عليه في الموقف لقوته، فهو كفء لمئة.
+  source: iryani
+  page: 217
+  status: draft
+
+- id: s0444
+  kind: saying
+  prompt: حلم القطط كله ___
+  answer: فيران
+  others: [سمك, لبن, لحمه]
+  note: كل إنسان مشغول البال بما يهمه، كالقطط لا تحلم إلا بالفئران.
+  source: taymur
+  page: 147
+  status: draft
+
+- id: s0445
+  kind: saying
+  prompt: ما كان إتعذّر ولا باع ___
+  answer: جزر
+  others: [بصل, ليمون, فول]
+  note: «اتعذّر» أي احتاج إلى المال؛ وبائع الجزر عند العامة رمز للعدم، فمن لم يحتج لم يكن ليبيعه.
+  source: shaalan
+  page: 366
+  volume: ج٦
+  status: draft
+
+- id: s0446
+  kind: saying
+  prompt: دِيرْ كُلْ شِي فَى ___ شِي يْطِيحْ، وْشِي يْتْكَّى
+  answer: الشَّبْكَه
+  others: [الصَّنْدُوقْ, الْجَّيْبْ, الْخَابْيَه]
+  note: ضع كل همومك في الشبكة، بعضها يسقط من ثقوبها وبعضها يبقى. نصيحة للمكتئب بأن يتغاضى عن المشاكل ولا يحملها كلها.
+  source: dadoun
+  page: 103
+  status: draft
+
+- id: s0447
+  kind: saying
+  prompt: إذا عملت معروف أستره، وإذا نلت معروف ___
+  answer: أنشره
+  others: [أرده, أنساه, اطلبه]
+  note: يحث على كتمان المعروف الذي تصنعه، وعلى ذكر المعروف الذي يصنعه غيرك معك.
+  source: sahli
+  page: 24
+  status: draft
+
+- id: s0448
+  kind: saying
+  prompt: ما بتلة إلا بعد ___
+  answer: صراب
+  others: [مطر, زرع, سيل]
+  note: البتلة الحراثة والصراب الحصاد؛ لكل شيء أوانه، فلا تجديد إلا بعد انقضاء ما قبله.
+  source: adimi
+  page: 402
+  status: draft
+
+- id: s0449
+  kind: saying
+  prompt: المال السايب يعلم ___
+  answer: السرقه
+  others: [الكرم, الكسل, الحسد]
+  note: السايب هو المهمل الذي لا يحفظه صاحبه، فإهماله يغري ضعاف النفوس بأخذه.
+  source: juhayman
+  page: 141
+  volume: ج٧
+  status: draft
+
+- id: s0450
+  kind: saying
+  prompt: يرجف مثل ___
+  answer: السعفة
+  others: [الورقة, العصفور, القصبة]
+  note: تشبيه بغدادي لمن يرتجف من البرد أو الخوف، كما تهتزّ سعفة النخل في الريح.
+  source: hijiyya
+  page: 118
+  status: draft
+
+- id: s0451
+  kind: saying
+  prompt: عيال القريه، كلٍّ يعرف ___
+  answer: اخيّه
+  others: [بيته, ابوه, ربعه]
+  note: «القريّة» تصغير القرية، و«أخيّه» تصغير أخيه أي رفيقه؛ نحن أبناء قرية صغيرة يعرف كل منا صاحبه على حقيقته.
+  source: abboudi_amthal
+  page: 878
+  volume: ج٢
+  status: draft
+
+- id: s0452
+  kind: saying
+  prompt: السانية للعمار والمركب ___
+  answer: للرايس
+  others: [للتاجر, للراكب, للحمّال]
+  note: «السانية» المزرعة؛ لكل عمل أهله ولكل شخص تخصّصه.
+  source: zanin
+  page: 175
+  status: draft
+
+- id: s0453
+  kind: saying
+  prompt: إذا تصالحوا القطاط والفيران يا تعس ___
+  answer: العطّار
+  others: [الخيّاط, الحلّاق, السقّا]
+  note: إذا اتّفق الحارس واللصّ ضاع صاحب المال.
+  source: asadi
+  line: 177033
+  halab: p1333
+  status: draft
+
+- id: s0454
+  kind: saying
+  prompt: من تجاسر أبسر، ومن هاب ___
+  answer: خاب
+  others: [غاب, طاب, هرب]
+  note: تجاسر أي أقدم بجرأة؛ فالجريء ينال ما يريد والهائب يخسر.
+  source: akwa
+  page: 1181
+  volume: ج٢
+  status: draft
+
+- id: s0455
+  kind: saying
+  prompt: قعده على قعده راح النهار يا ___
+  answer: سعده
+  others: [ستي, خالتي, جارتي]
+  note: سعدة اسم امرأة لا يقصدون به أحدا بعينه. يقال في سرعة مضي الوقت.
+  source: taymur
+  page: 290
+  status: draft
+
+- id: s0456
+  kind: saying
+  prompt: شبح العين ما يجبر خاطر والعطشان ما يرويه ___
+  answer: قاطر
+  others: [نهر, جره, سيل]
+  note: «قاطر» قطرات الماء؛ الاكتفاء بالنظر إلى المصاب لا ينفعه، كما لا تروي القطرات الظمآن، ولا بد من عون حقيقي.
+  source: mughniyya
+  page: 319
+  status: draft
+
+- id: s0457
+  kind: saying
+  prompt: ما معوقنا عن السفر غير ___
+  answer: الطفر
+  others: [المطر, الشغل, الولاد]
+  note: لا ينفذ الأمر بلا وسائله؛ والطفر هو الفقر وقلة المال.
+  source: sahli
+  page: 306
+  status: draft
+
+- id: s0458
+  kind: saying
+  prompt: مال ___ ما بيثمر
+  answer: الحرام
+  others: [التعب, الحلال, الجدّ]
+  note: المال المكتسب بغير حقّ لا بركة فيه.
+  source: asadi
+  line: 153096
+  halab: p816
+  status: draft
+
+- id: s0459
+  kind: saying
+  prompt: سِيدِي مْلِيحْ، وْضَرْبُه ___
+  answer: الرِّيحْ
+  others: [الْخْيْرْ, الشّْمْسْ, الزّْهَرْ]
+  note: يقال لمن يمرض لأدنى سبب لضعف بنيته، فأي نسمة ريح تصيبه وتؤذيه.
+  source: dadoun
+  page: 135
+  status: draft
+
+- id: s0460
+  kind: saying
+  prompt: بعير مكفوف ولا ___ يشوف
+  answer: حمار
+  others: [كلب, تيس, خروف]
+  note: البعير الأعمى خير من حمار يبصر؛ فالشيء القوي يُفضَّل على غيره مهما كانت عيوبه.
+  source: juhayman
+  page: 41
+  volume: ج٢
+  status: draft
+
+- id: s0461
+  kind: saying
+  prompt: حبل الدوام يقطع ___
+  answer: الحجر
+  others: [الشجر, الحديد, الصخر]
+  note: الحبل باحتكاكه المستمر يحفر في الحجر؛ فالمواظبة تصنع ما لا تصنعه القوة.
+  source: adimi
+  page: 187
+  status: draft
+
+- id: s0462
+  kind: saying
+  prompt: ساعة المحبّ ___
+  answer: قصيره
+  others: [طويله, سعيده, ثقيله]
+  note: الوقت الذي يقضيه المحب مع من يحب يمضي سريعا فيبدو قصيرا.
+  source: abboudi_amthal
+  page: 627
+  volume: ج٢
+  status: draft
+
+- id: s0463
+  kind: saying
+  prompt: ___ تخلّى الصبية كركوبة
+  answer: طوبة
+  others: [بؤونة, مسرى, بابة]
+  note: طوبة أبرد شهور السنة القبطية؛ والكركوبة هي الهزيلة الضعيفة التي فقدت وزنها من شدة البرد.
+  source: shaalan
+  page: 159
+  volume: ج٦
+  status: draft
+
+- id: s0464
+  kind: saying
+  prompt: رجعت الميه ___
+  answer: لمجاريها
+  others: [لزيرها, لنهرها, لترعتها]
+  note: 'يقال عند عودة الأمور إلى ما كانت عليه بعد انقطاعها، وتقول العرب: عاد الأمر إلى نصابه.'
+  source: taymur
+  page: 175
+  status: draft
+
+- id: s0465
+  kind: saying
+  prompt: ما بش حب. قال لحّوا لي ___
+  answer: لحوح
+  others: [كعك, عصيد, فتّه]
+  note: اللحوح خبز رقيق يُصنع من الحبوب، فمن قيل له لا حبّ في البيت فطلب لحوحًا لم يفهم شيئًا؛ وهو قريب مما يُنسب إلى ماري أنطوانيت.
+  source: iryani
+  page: 799
+  status: draft
+
+- id: s0466
+  kind: saying
+  prompt: ما تقنع النفس الا من ___
+  answer: التراب
+  others: [الذهب, الكلام, السفر]
+  note: كناية عن طمع الإنسان وحبه للمال، فلا تنتهي مطامعه إلا حين يموت.
+  source: akwa
+  page: 1021
+  volume: ج٢
+  status: draft
+
+- id: s0467
+  kind: saying
+  prompt: الرجال منهدّيا والنار منطفّيا، أمّا ___ وين منروح فيا
+  answer: المي
+  others: [الشمس, الأرض, العتمة]
+  note: الماء إذا طغى لا حيلة فيه.
+  source: asadi
+  line: 151701
+  halab: p815
+  status: draft
+
+- id: s0468
+  kind: saying
+  prompt: الديك قال البركه في ___
+  answer: الاجتماع
+  others: [الصياح, الحب, النوم]
+  note: يُنسب القول إلى الديك، ويضرب في فضل التعاون واجتماع الناس على الخير.
+  source: mughniyya
+  page: 271
+  status: draft
+
+- id: s0469
+  kind: saying
+  prompt: اعطينى دحية اليوم ولا ___ غدوة
+  answer: دجاجة
+  others: [عنزة, نعجة, حمامة]
+  note: «دحية» بيضة و«غدوة» غدًا؛ يضرب لمن يفضّل الفائدة السريعة القليلة على الكبيرة المتأخرة.
+  source: zanin
+  page: 26
+  status: draft
+
+- id: s0470
+  kind: saying
+  prompt: تغيير الهوا أحسن من ___
+  answer: الدوا
+  others: [الغذا, الغنى, الشفا]
+  note: النزهة وتبديل المكان بين حين وآخر نافعان للصحة.
+  source: sahli
+  page: 110
+  status: draft
+
+- id: s0471
+  kind: saying
+  prompt: هوشة الاثنين من بخت ___
+  answer: الثالث
+  others: [الجار, القاضي, الصغير]
+  note: الهوشة هي الخصام والمضاربة، والبخت هو الحظ؛ فخلاف اثنين قد يكون فرصة يستفيد منها طرف ثالث.
+  source: juhayman
+  page: 114
+  volume: ج٩
+  status: draft
+
+- id: s0472
+  kind: saying
+  prompt: من القطر تسيل ___
+  answer: الأودية
+  others: [الأنهار, البحار, الجبال]
+  note: القليل يتجمع فيصير كثيرا؛ يقال لمن يحتقر الشيء الصغير.
+  source: adimi
+  page: 373
+  status: draft
+
+- id: s0473
+  kind: saying
+  prompt: يَالشَّارِي فَكَّرْ إِنْ ___
+  answer: تْبِيعْ
+  others: [تْخْسَرْ, تْرْبَحْ, تْشْرِي]
+  note: 'إن تبيع أي حين تبيع. مثل صحراوي: اختر الأجود عند الشراء كي لا تخسر ثمنه إذا أردت بيعه.'
+  source: dadoun
+  page: 383
+  status: draft
+
+- id: s0474
+  kind: saying
+  prompt: خير تعمل شر ___
+  answer: تلقى
+  others: [تنسى, تبيع, تخاف]
+  note: يقال حين يقابَل الإحسان بالإساءة.
+  source: taymur
+  page: 160
+  status: draft
+
+- id: s0475
+  kind: saying
+  prompt: 'مو كل من لبس قميص فرنجي قال: أنا ___'
+  answer: أفندي
+  others: [شيخ, قبضاي, حكيم]
+  note: ليس كل من لبس لباس الوجهاء صار واحداً منهم.
+  source: asadi
+  line: 124795
+  halab: p1312
+  status: draft
+
+- id: s0476
+  kind: saying
+  prompt: ما عمر شجرة وصلت ___
+  answer: السما
+  others: [الغيم, الجبل, القمر]
+  note: لم يُعرف أن شجرة طالت حتى بلغت السماء؛ يقال في رد الدعوى المبالغ فيها.
+  source: abboudi_amthal
+  page: 1219
+  volume: ج٣
+  status: draft
+
+- id: s0477
+  kind: saying
+  prompt: يعرج قبلما ___
+  answer: يشوك
+  others: [يمشي, يقوم, يتعب]
+  note: من أمثال إبّ؛ يعرج قبل أن تدخل الشوكة في قدمه.
+  source: akwa
+  page: 1381
+  volume: ج٢
+  status: draft
+
+- id: s0478
+  kind: saying
+  prompt: ___ يقول للزرع سير ويلحق بالطويل القصير
+  answer: أمشير
+  others: [طوبة, كيهك, هاتور]
+  note: أمشير شهر قبطي يأتي بعد طوبة، ويكثر فيه الدفء فينمو الزرع الضعيف حتى يلحق بالطويل؛ وقد ذكره المقريزي.
+  source: shaalan
+  page: 157
+  volume: ج٦
+  status: draft
+
+- id: s0479
+  kind: saying
+  prompt: إلهم كثير في الدنيا، بس ___
+  answer: مفرق
+  others: [مخبى, قليل, ساكت]
+  note: الهموم كثيرة، لكنها موزعة على الناس فلا يخلو منها أحد.
+  source: sahli
+  page: 345
+  status: draft
+
+- id: s0480
+  kind: saying
+  prompt: الرزق يبي نطة و___
+  answer: نطيطه
+  others: [قعده, نومه, ضحكه]
+  note: يبي أي يطلب؛ والنطة والنطيطة كناية عن السعي والحركة، فالرزق لا يأتيك وأنت جالس.
+  source: juhayman
+  page: 192
+  volume: ج٣
+  status: draft
+
+- id: s0481
+  kind: saying
+  prompt: لا ثور للبتلة ولا لحم ___
+  answer: للشركة
+  others: [للعيد, للضيف, للبيع]
+  note: البتلة الحراثة؛ ثور لا يصلح للحرث ولا للذبح، أي شيء فاسد لا ينفع على أي حال.
+  source: adimi
+  page: 358
+  status: draft
+
+- id: s0482
+  kind: saying
+  prompt: اللحم مرق والفجل ___
+  answer: ورق
+  others: [بذر, قشر, زهر]
+  note: أنفع ما في اللحم مرقه، وأنفع ما في الفجل ورقه؛ ويُروى أن رجلًا قويًا سُئل عن سر قوته فقال ذلك.
+  source: mughniyya
+  page: 468
+  status: draft
+
+- id: s0483
+  kind: saying
+  prompt: حْمَارْ بْدِينَارْ، مَا يْتْعَرَّضْ ___
+  answer: لَلْبِيطَارْ
+  others: [لَلسَّرَّاجْ, لَلْحَدَّادْ, لَلْقَاضِي]
+  note: البيطار هو من يفحص الدواب في الأسواق ويطبّبها. والحمار الذي ثمنه دينار لا يستحق أن يُعرض عليه، فالرخيص لا يستحق كثير العناية.
+  source: dadoun
+  page: 79
+  status: draft
+
+- id: s0484
+  kind: saying
+  prompt: اركب الديك وانظر فين ___
+  answer: يوديك
+  others: [يوصلك, يرميك, يجيبك]
+  note: من جعل الديك مطيته فلينظر إلى أين يقوده؛ أي تخيّر من تسترشد به، فكل دليل يأخذك إلى غايته.
+  source: taymur
+  page: 16
+  status: draft
+
+- id: s0485
+  kind: saying
+  prompt: الستّ مو بسوارا، ___
+  answer: بمقدارا
+  others: [بخلخالا, بفستانا, بمراياتا]
+  note: قيمة المرأة بقدرها لا بحليّها.
+  source: asadi
+  line: 161727
+  halab: p827
+  status: draft
+
+- id: s0486
+  kind: saying
+  prompt: سبعة جبب وقتلت ___
+  answer: جمل
+  others: [ثور, حصان, ذيب]
+  note: الجُبَب هي الدبابير، ولسعها الجماعي قاتل، فالصغار إذا اجتمعوا غلبوا الكبير.
+  source: iryani
+  page: 117
+  status: draft
+
+- id: s0487
+  kind: saying
+  prompt: واگف مثل شمعة ___
+  answer: الفگر
+  others: [العرس, الجامع, البيت]
+  note: يُقال لمن يقف منتصبًا ثابتًا لا يتحرك، ويقولون كذلك «واگف مثل السبع».
+  source: hijiyya
+  page: 118
+  status: draft
+
+- id: s0488
+  kind: saying
+  prompt: بيع الفحم وكول ___
+  answer: اللحم
+  others: [الخبز, العسل, التمر]
+  note: يضرب في الحث على العمل لتوفير ما يحتاجه الإنسان، ولو كان عملًا متواضعًا.
+  source: zanin
+  page: 90
+  status: draft
+
+- id: s0489
+  kind: saying
+  prompt: بين جمادين و___، ترى عجب العجب
+  answer: رجب
+  others: [شعبان, رمضان, محرم]
+  note: أي لا تستعجل الأحداث، فبين نهاية جمادى وأول رجب تظهر العجائب؛ وأصله قول عربي قديم.
+  source: akwa
+  page: 317
+  volume: ج١
+  status: draft
+
+- id: s0490
+  kind: saying
+  prompt: الكلمة اللي تستحي منها بدّها ___
+  answer: الأوله
+  others: [بالسرّ, بالعجل, بالعذر]
+  note: «بدّها» أي ابدأ بها، و«الأوله» الأولى؛ فالكلام الذي تستحي منه قدّمه أول الحديث وتخلّص منه.
+  source: abboudi_amthal
+  page: 1057
+  volume: ج٣
+  status: draft
+
+- id: s0491
+  kind: saying
+  prompt: إلضمانة أولها شهامة، وثانيها غرامة، وثالثها ___
+  answer: ندامة
+  others: [سلامة, كرامة, إقامة]
+  note: الكفالة المالية تبدأ بالمروءة وتنتهي بالغرم والندم.
+  source: sahli
+  page: 200
+  status: draft
+
+- id: s0492
+  kind: saying
+  prompt: وجع ضرس في ليلة ___
+  answer: عرس
+  others: [سفر, صيف, برد]
+  note: ألم متواصل في وقت يحتاج فيه المرء إلى الفرح ومجاملة الناس. يقال للمنغّص الذي يأتي في مناسبة سعيدة لا تتكرر.
+  source: juhayman
+  page: 16
+  volume: ج٩
+  status: draft
+
+- id: s0493
+  kind: saying
+  prompt: عيد التجلّي بيقول للصيف ___
+  answer: ولّي
+  others: [طوّل, أهلا, هلّي]
+  note: بعد عيد التجلّي في آب يبدأ الحرّ بالانكسار.
+  source: asadi
+  line: 176442
+  halab: p859
+  status: draft
+
+- id: s0494
+  kind: saying
+  prompt: فسحوا لها تتفرج قامت ___
+  answer: ترقص
+  others: [تغني, تأكل, تنام]
+  note: يقال لمن يُعطى فرصة صغيرة فيستغلها بأكثر مما سُمح له.
+  source: adimi
+  page: 298
+  status: draft
+
+- id: s0495
+  kind: saying
+  prompt: جراده في الكف ولا ألف في ___
+  answer: الهوا
+  others: [الغيط, الشجر, السوق]
+  note: جرادة في يدك خير من ألف طائرة لا تصل إليها؛ في تفضيل القليل القريب على الكثير البعيد.
+  source: taymur
+  page: 127
+  status: draft
+
+- id: s0496
+  kind: saying
+  prompt: خَالَطْ الْمَزْيَانْ تَبْقَى مَزْيَانْ، خَالَطْ لَمْفَلَّسْ ___
+  answer: تْفَلَّسْ
+  others: [تَغْنَى, تْعَلَّمْ, تَرْبَحْ]
+  note: المزيان هو الحسن. الصاحب يؤثر في صاحبه، فمخالطة الصالح تكسبك خصاله، ومخالطة السيئ تجرّ عليك سوءه.
+  source: dadoun
+  page: 95
+  status: draft
+
+- id: s0497
+  kind: saying
+  prompt: كل حد يدني في النار ل___
+  answer: خبزته
+  others: [جاره, ضيفه, عدوه]
+  note: «يدني» يقرّب؛ كل إنسان يقرّب النار من رغيفه، أي يهتم بمصلحته الخاصة قبل غيره.
+  source: mughniyya
+  page: 438
+  status: draft
+
+- id: s0498
+  kind: saying
+  prompt: فى وسط الزحمة تتوه ___
+  answer: اللحمة
+  others: [الشنطة, الطرحة, الكلمة]
+  note: في الموالد تُقدَّم اللحمة فيكثر الحاضرون وتختفي سريعًا، فلا يبقى منها شيء.
+  source: shaalan
+  page: 51
+  volume: ج٥
+  status: draft
+
+- id: s0499
+  kind: saying
+  prompt: من كترة اشغالو برك ___
+  answer: بطّال
+  others: [شغّال, ركّاض, مستعجل]
+  note: يُقال فيمن يدّعي كثرة المشاغل وهو في الحقيقة بلا عمل.
+  source: asadi
+  line: 140602
+  halab: p1320
+  status: draft
+
+- id: s0500
+  kind: saying
+  prompt: سق حمارك جاك ___
+  answer: الليل
+  others: [العيد, الضيف, الصبح]
+  note: للحث على بذل الجهد، فأمام الإنسان وقت محدود من الأمان يتبعه وقت فيه الخطر على النفس أو المال.
+  source: juhayman
+  page: 266
+  volume: ج٣
+  status: draft
+
+- id: s0501
+  kind: saying
+  prompt: إن كنت كداب ___
+  answer: افتكر
+  others: [احلف, اسكت, اتكلم]
+  note: يقال لمن يكذب ثم ينسى ما قاله فيروي خلافه؛ فالكاذب يحتاج إلى ذاكرة قوية.
+  source: taymur
+  page: 86
+  status: draft
+
+- id: s0502
+  kind: saying
+  prompt: ارمي الحب وتوكل ع ___
+  answer: الرب
+  others: [الدرب, القلب, الصحب]
+  note: على الفلاح أن يبذر الحب ويتعب، ثم يترك الثمر لله.
+  source: sahli
+  page: 26
+  status: draft
+
+- id: s0503
+  kind: saying
+  prompt: لا تقل لصاحب الطين يا ___
+  answer: مسكين
+  others: [جاهل, غريب, بخيل]
+  note: من أمثال إبّ؛ صاحب الطين من يملك أرضاً يستثمرها، فالمسكين هو من لا يملك ما يسد حاجته.
+  source: akwa
+  page: 931
+  volume: ج٢
+  status: draft
+
+- id: s0504
+  kind: saying
+  prompt: مثل أم الحريوة ___ مشغولة
+  answer: فارحة
+  others: [تعبانة, حزينة, خايفة]
+  note: الحريوة العروس؛ يقال لمن يفرح بالشيء فرحا زائدا وهو منهمك فيه.
+  source: adimi
+  page: 425
+  status: draft
+
+- id: s0505
+  kind: saying
+  prompt: وكّف حطبك وماك، وعلى الله ___
+  answer: غداك
+  others: [رزقك, عشاك, شفاك]
+  note: وكّف أي أعدّ وهيّأ؛ يقال في التوكل، أعدّ ما بيدك من حطب وماء، والطعام على الله.
+  source: iryani
+  page: 923
+  status: draft
+
+- id: s0506
+  kind: saying
+  prompt: نتفة حظ ولا شكبان ___
+  answer: مرجله
+  others: [ذهب, تمر, شعير]
+  note: «الشكبان» شبكة يُنقل فيها التبن والعشب، و«المرجلة» الرجولة؛ أي قليل من الحظ خير من كثير من الرجولة.
+  source: abboudi_amthal
+  page: 1498
+  volume: ج٤
+  status: draft
+
+- id: s0507
+  kind: saying
+  prompt: هَذِي دْجَاجَه ___
+  answer: بْكَمُّونْهَا
+  others: [بْرِيشْهَا, بْفْرَاخْهَا, بْقَفَصْهَا]
+  note: 'دجاجة جاءت ومعها توابلها جاهزة للطبخ. يقال فيمن عثر على ما تمناه كاملًا، ومثله: هذي خبزة بدوازها.'
+  source: dadoun
+  page: 367
+  status: draft
+
+- id: s0508
+  kind: saying
+  prompt: اللى ما قرا مادرى واللى ما ___ ما جرى
+  answer: سافر
+  others: [تعب, خدم, حرث]
+  note: يضرب في الحث على طلب العلم والسفر.
+  source: zanin
+  page: 48
+  status: draft
+
+- id: s0509
+  kind: saying
+  prompt: اللي بتلدغو ___ بيخاف من مسحالا
+  answer: الحيّة
+  others: [العقربة, النحلة, الدبّورة]
+  note: من لدغته الحيّة صار يخاف حتى من جلدها الذي سلخته.
+  source: asadi
+  line: 149300
+  halab: p813
+  status: draft
+
+- id: s0510
+  kind: saying
+  prompt: ما يقعد في الوادي إلا ___
+  answer: حجره
+  others: [سيله, ماه, طيره]
+  note: لا يستقر في المكان إلا من ارتبط به برباط وثيق، كالحجارة التي تبقى في الوادي بعد أن يمضي السيل.
+  source: mughniyya
+  page: 498
+  status: draft
+
+- id: s0511
+  kind: saying
+  prompt: خد من التل ___
+  answer: يختل
+  others: [يقل, يميل, يخلص]
+  note: الأخذ المستمر يفني الشيء ولو كان كثيرا كتراب التل؛ في ذم الإسراف.
+  source: taymur
+  page: 153
+  status: draft
+
+- id: s0512
+  kind: saying
+  prompt: طعم اللحم يبين في ___
+  answer: المرق
+  others: [الخبز, الصحن, الرز]
+  note: للأمر الواضح الذي يُدرك وجوده ولو لم تره بعينك، كما يُعرف اللحم من طعم مرقه.
+  source: juhayman
+  page: 242
+  volume: ج٤
+  status: draft
+
+- id: s0513
+  kind: saying
+  prompt: يا ويل من جمل قايده ___
+  answer: حمار
+  others: [ولد, كلب, راعي]
+  note: يقال في الكبير يقوده صغير جاهل.
+  source: sahli
+  page: 365
+  status: draft
+
+- id: s0514
+  kind: saying
+  prompt: يضربنى فى جرن ويصالحنى فى ___
+  answer: فرن
+  others: [بيت, سوق, غيط]
+  note: الجرن مكان واسع يجتمع فيه الناس، والفرن مكان ضيق؛ فهو يهينني أمام الملأ ويصالحني في السر.
+  source: shaalan
+  page: 214
+  volume: ج٦
+  status: draft
+
+- id: s0515
+  kind: saying
+  prompt: دابتي ولا حصان ___
+  answer: الإمام
+  others: [السلطان, الجيران, الشيخ]
+  note: الدابة الضعيفة التي تملكها خير من الحصان العظيم في يد غيرك ولا تناله.
+  source: adimi
+  page: 214
+  status: draft
+
+- id: s0516
+  kind: saying
+  prompt: ميز من اكبر منك ___
+  answer: بيوم
+  others: [بمال, بقدر, بعلم]
+  note: ميّز من الميزة وهي الإجلال؛ يحث على احترام من يكبرك في السن ولو قليلاً.
+  source: akwa
+  page: 1301
+  volume: ج٢
+  status: draft
+
+- id: s0517
+  kind: saying
+  prompt: الله ما شافوه، ___ عرفوه
+  answer: بالعقل
+  others: [بالعين, بالكتب, بالحكي]
+  note: تُدرَك الحقائق بالعقل وإن لم ترها العين.
+  source: asadi
+  line: 116414
+  halab: p1115
+  status: draft
+
+- id: s0518
+  kind: saying
+  prompt: خَلّْهَا فِى جْوَاهَا حَتَّى يَظْهَرْ ___
+  answer: مُولاَهَا
+  others: [صَاحْبَكْ, الشّْتَا, السُّوقْ]
+  note: الجوا هو الغلاف الذي يحفظ الشيء. يقال في الشيء الثمين يُحفظ حتى يأتي من يقدّره ويشتريه بأغلى الأثمان.
+  source: dadoun
+  page: 95
+  status: draft
+
+- id: s0519
+  kind: saying
+  prompt: شورك، خلّه في ___
+  answer: زورك
+  others: [جيبك, بيتك, راسك]
+  note: «الزور» الصدر؛ أي احتفظ بمشورتك في صدرك ولا تبدها. يقال في ردّ المشورة.
+  source: abboudi_amthal
+  page: 696
+  volume: ج٢
+  status: draft
+
+- id: s0520
+  kind: saying
+  prompt: أعز الولد ولد ___
+  answer: الولد
+  others: [الجار, الأخ, العم]
+  note: يقال في محبة الأجداد لأحفادهم، فهم أعز عليهم من أبنائهم.
+  source: taymur
+  page: 23
+  status: draft
+
+- id: s0521
+  kind: saying
+  prompt: قال له بيش عشت يا قديده؟ قالت له بالمي و___
+  answer: الملح
+  others: [السكر, العسل, السمن]
+  note: «القديدة» قطعة من اللحم المجفف، و«بيش» بماذا؛ إنجاز الأمور يتطلب توفير ما تحتاج إليه من لوازم.
+  source: mughniyya
+  page: 408
+  status: draft
+
+- id: s0522
+  kind: saying
+  prompt: فلان مثل لحمة ___ مسكوت عنها
+  answer: الغراب
+  others: [الحمار, الجمل, الخروف]
+  note: يقال إن لحم الغراب لم يأتِ فيه تحريم ولا تحليل؛ فيشبَّه به الرجل الذي لا محاسن له تُمدح ولا مساوئ تُذم.
+  source: juhayman
+  page: 158
+  volume: ج٥
+  status: draft
+
+- id: s0523
+  kind: saying
+  prompt: گاعد عبالك ___
+  answer: صنم
+  others: [ملك, باشا, عريس]
+  note: يُقال لمن يجلس جامدًا صامتًا لا يتكلم ولا يتحرك.
+  source: hijiyya
+  page: 118
+  status: draft
+
+- id: s0524
+  kind: saying
+  prompt: زي إم ___، فاضيه مشغولة
+  answer: العروس
+  others: [الولد, الدار, الحارة]
+  note: لمن يكثر الحركة والانشغال ولا ينجز شيئا.
+  source: sahli
+  page: 169
+  status: draft
+
+- id: s0525
+  kind: saying
+  prompt: إن كان صاحبك عسل لا تلحسو ___
+  answer: كلّو
+  others: [هلّق, بإيدك, وحدك]
+  note: لا تستغلّ طيبة من يحبّك حتى آخرها.
+  source: asadi
+  line: 148884
+  halab: p812
+  status: draft
+
+- id: s0526
+  kind: saying
+  prompt: العصفور يلتقط منها وهو ___
+  answer: متكي
+  others: [طاير, نايم, واقف]
+  note: يقال تفكّهًا عن ذرة «الجذارة» القصيرة جدًّا، حتى إن العصفور يلتقط حبّها وهو متكئ على الأرض.
+  source: iryani
+  page: 128
+  status: draft
+
+- id: s0527
+  kind: saying
+  prompt: لكل مقام مقال ولكل دقة ___
+  answer: براع
+  others: [رقصة, غنوة, زفة]
+  note: الدقة ضربة الطبل والبراع رقصة البرع اليمنية؛ فلكل حال ما يناسبها من قول وفعل.
+  source: adimi
+  page: 329
+  status: draft
+
+- id: s0528
+  kind: saying
+  prompt: اللي ما ليش في العسل لوكان أمه ___
+  answer: نحلة
+  others: [نملة, دبورة, حمامة]
+  note: «ما ليش» ليس له نصيب؛ يضرب لبيان أثر الحظّ في حياة الإنسان.
+  source: zanin
+  page: 48
+  status: draft
+
+- id: s0529
+  kind: saying
+  prompt: إذا ابصرك ما تكره فارقت ما ___
+  answer: تحب
+  others: [تملك, تعرف, ترجو]
+  note: من أمثال عُتْمة؛ إذا وجدت ما يسوءك في مكان أو شخص ففارقه ولو كان عزيزاً عليك.
+  source: akwa
+  page: 81
+  volume: ج١
+  status: draft
+
+- id: s0530
+  kind: saying
+  prompt: خَشْبَه بْلاَ ___
+  answer: نْجَارَه
+  others: [مْسَامَرْ, صْبَاغَه, عْرُوقْ]
+  note: خشبة لم يهذّبها النجار. يقال فيمن لا يحذق أي عمل يتولاه، فلا يتوفق أينما توجه.
+  source: dadoun
+  page: 87
+  status: draft
+
+- id: s0531
+  kind: saying
+  prompt: صام وفطر على ___
+  answer: بصله
+  others: [تمره, فوله, لقمه]
+  note: يقال لمن يمتنع عن شيء مدة طويلة ثم يقبل على أردأ ما فيه.
+  source: taymur
+  page: 223
+  status: draft
+
+- id: s0532
+  kind: saying
+  prompt: حبيبك القريب ___ والبعيد عسل
+  answer: بصل
+  others: [ملح, فجل, لفت]
+  note: القرب اليومي يولد المشاكل، أما البعيد فتبقى صورته حلوة؛ وفي معناه «إبعدوا حبة تزيدوا محبة».
+  source: shaalan
+  page: 177
+  volume: ج٢
+  status: draft
+
+- id: s0533
+  kind: saying
+  prompt: المركب اللي ما فيه شي لله ___
+  answer: بيغرق
+  others: [بيوصل, بيطير, بيرجع]
+  note: العمل الذي لا نصيب فيه للخير لا يُكتب له النجاح.
+  source: asadi
+  line: 156382
+  halab: p1095
+  status: draft
+
+- id: s0534
+  kind: saying
+  prompt: من كثر هذره، قلّ ___
+  answer: قدره
+  others: [نومه, رزقه, صحبه]
+  note: حثّ على الصمت ونهي عن كثرة الكلام بلا حاجة؛ فالثرثار يهون على الناس.
+  source: abboudi_amthal
+  page: 1449
+  volume: ج٤
+  status: draft
+
+- id: s0535
+  kind: saying
+  prompt: من زعل من لا شيء ___ بلا شيء
+  answer: رضي
+  others: [نام, راح, مات]
+  note: زعل أي غضب وهجر. من يغضب دون أن يسيء إليه أحد فليرض دون أن يعتذر إليه أحد. يقال للحساس الذي يتوهم الإساءة.
+  source: juhayman
+  page: 321
+  volume: ج١٠
+  status: draft
+
+- id: s0536
+  kind: saying
+  prompt: نقطة دم، ولا ألف ___
+  answer: صاحب
+  others: [قرش, خروف, دينار]
+  note: القريب ولو بعُد أقرب من الأصدقاء الكثيرين.
+  source: sahli
+  page: 339
+  status: draft
+
+- id: s0537
+  kind: saying
+  prompt: جا يطيب فيها ___
+  answer: عماها
+  others: [شفاها, كحلها, داواها]
+  note: «يطيب» يداوي؛ أراد أن يعالجها فأفقدها بصرها، فيمن يريد الإصلاح فيلحق الضرر.
+  source: mughniyya
+  page: 213
+  status: draft
+
+- id: s0538
+  kind: saying
+  prompt: ما يقطع بالسيف اقطعه ___
+  answer: بالشعرة
+  others: [بالسكين, بالحبل, بالكلمة]
+  note: ما يمكن إنجازه باللين لا تلجأ فيه إلى العنف.
+  source: adimi
+  page: 405
+  status: draft
+
+- id: s0539
+  kind: saying
+  prompt: ايلاَ قْلْتْ لَكْ سِيدِي، لاَ تْزَيَّدْنِي لَلسُّوقْ ___
+  answer: تْبَعْنِي
+  others: [تْشْرِينِي, تْسَوَّقْنِي, تْعَرَّضْنِي]
+  note: إن ناديتك بسيدي احترامًا فلا تأخذني إلى السوق لتبيعني. يقال لمن يظن الاحترام ضعفًا فيريد استغلالك.
+  source: dadoun
+  page: 375
+  status: draft
+
+- id: s0540
+  kind: saying
+  prompt: جور القط ولا عدل ___
+  answer: الفار
+  others: [الكلب, الديب, الديك]
+  note: قد يُفضَّل ظلم من له مزايا على إنصاف من له سيئات، وهو مثل قديم أورده الأبشيهي.
+  source: taymur
+  page: 132
+  status: draft
+
+- id: s0541
+  kind: saying
+  prompt: ليالي العشر تبان من ___
+  answer: العصر
+  others: [الفجر, الظهر, القمر]
+  note: ليالي العشر هي عشر ذي الحجة، وتبان أي تُعرف؛ يقال في معرفة الشيء من مقدماته.
+  source: akwa
+  page: 991
+  volume: ج٢
+  status: draft
+
+- id: s0542
+  kind: saying
+  prompt: أجا ليكحّلا ___
+  answer: عماها
+  others: [زيّنها, فرّحها, جوّزها]
+  note: يُقال فيمن أراد الإصلاح فأفسد.
+  source: asadi
+  line: 117536
+  halab: p1308
+  status: draft
+
+- id: s0543
+  kind: saying
+  prompt: ودع ___ شاته
+  answer: الذيب
+  others: [الجار, الحمار, الولد]
+  note: ودع أي أودع. يقال لمن يأتمن غير أمين ويضع ماله عند من يُخاف منه.
+  source: juhayman
+  page: 26
+  volume: ج٩
+  status: draft
+
+- id: s0544
+  kind: saying
+  prompt: إلعافية بتيجي من خرم ___، والمرض بدفق دفق
+  answer: الإبرة
+  others: [الباب, الشباك, الحيطة]
+  note: المرض يهجم دفعة واحدة، أما الشفاء فيعود قليلا قليلا.
+  source: sahli
+  page: 212
+  status: draft
+
+- id: s0545
+  kind: saying
+  prompt: ثنتين جراد وشططين ___
+  answer: غراره
+  others: [ثوب, زرع, جربه]
+  note: الغرارة الكيس الكبير؛ جرادتان فقط مزّقتاه، يقال في الصغير يكون فعله المؤذي كبيرًا.
+  source: iryani
+  page: 491
+  status: draft
+
+- id: s0546
+  kind: saying
+  prompt: الهون ___
+  answer: بركه
+  others: [راحه, سلامه, غنيمه]
+  note: «الهون» السهولة واليسر؛ يقال في مدح التيسير وترك التشدد في الأمور.
+  source: abboudi_amthal
+  page: 1613
+  volume: ج٤
+  status: draft
+
+- id: s0547
+  kind: saying
+  prompt: اللى سبق حاز ___
+  answer: النبق
+  others: [التمر, التين, العنب]
+  note: النبق ثمر شجر السدر؛ يضرب في فضل الحضور مبكرًا وعدم التكاسل.
+  source: zanin
+  page: 40
+  status: draft
+
+- id: s0548
+  kind: saying
+  prompt: المنظر منظر جمل والخبر خبر ___
+  answer: بكرة
+  others: [ناقة, حمار, عنزة]
+  note: البكرة الأنثى الصغيرة من الإبل؛ يقال لمن مظهره كبير وحقيقته أقل بكثير.
+  source: adimi
+  page: 47
+  status: draft
+
+- id: s0549
+  kind: saying
+  prompt: اللى يحوش الشرد يحوش ___
+  answer: البرد
+  others: [المطر, التراب, الريح]
+  note: الشرد هو حر الظهيرة في الصيف، و«يحوش» أي يمنع؛ فالثياب التي تحمي من الحر تحمي من البرد أيضًا.
+  source: shaalan
+  page: 157
+  volume: ج٦
+  status: draft
+
+- id: s0550
+  kind: saying
+  prompt: الغيظ كيف ___ غيب عليه ينسرح
+  answer: الغدير
+  others: [الجبل, الحجر, الشوك]
+  note: «كيف» مثل، و«ينسرح» يزول؛ الغضب كماء الغدير يتلاشى بمرور الوقت، فاكظم غيظك.
+  source: mughniyya
+  page: 391
+  status: draft
+
+- id: s0551
+  kind: saying
+  prompt: النضافة من ___
+  answer: الإيمان
+  others: [الصابون, الأمّ, العافية]
+  note: النظافة من خصال المؤمن.
+  source: asadi
+  line: 168988
+  halab: p843
+  status: draft
+
+- id: s0552
+  kind: saying
+  prompt: زي يوم الشتا قصير و___
+  answer: نكد
+  others: [بارد, مطير, ضلمه]
+  note: يقال للحال المكدّرة وإن كانت قصيرة المدة.
+  source: taymur
+  page: 204
+  status: draft
+
+- id: s0553
+  kind: saying
+  prompt: بْعَدْ مَ اللّْبْلاَ لاَ ___
+  answer: يْبْلِيكْ
+  others: [يْجِيكْ, يْعَادِيكْ, يْنَادِيكْ]
+  note: ابتعد عن البلاء كي لا يصيبك. يقال في الحث على اجتناب الأشرار ومخالطتهم لأنها تجرّ المصائب.
+  source: dadoun
+  page: 23
+  status: draft
+
+- id: s0554
+  kind: saying
+  prompt: لا تقل للدم بس، والضيف فوق ___
+  answer: الفراش
+  others: [الباب, الطريق, السطح]
+  note: الدم القط وبسّ كلمة لزجره؛ يقال في مراعاة شعور الضيف حتى لا يظن أنه يُلمَّح له بالرحيل.
+  source: akwa
+  page: 931
+  volume: ج٢
+  status: draft
+
+- id: s0555
+  kind: saying
+  prompt: أمست جمر وأصبحت ___
+  answer: رماد
+  others: [دخان, حطب, فحم]
+  note: يقال في الفتنة أو الأمر يشتعل مساءً ثم يخمد بالصباح، فأمور الدنيا لا تدوم.
+  source: juhayman
+  page: 358
+  volume: ج١
+  status: draft
+
+- id: s0556
+  kind: saying
+  prompt: زينة البنت حسن ___، مش لبس الذهب
+  answer: الأدب
+  others: [الوجه, الصوت, الشعر]
+  note: جمال الفتاة في أدبها وخلقها لا في حليها.
+  source: sahli
+  page: 172
+  status: draft
+
+- id: s0557
+  kind: saying
+  prompt: الحاجة اللي ما بتهمّك وصّي عليها ___
+  answer: جوز أمّك
+  others: [ابن عمّك, أعزّ صاحب, شيخ الحارة]
+  note: ما لا يهمّك أمره كلّف به من لا يهتمّ بك.
+  source: asadi
+  line: 175616
+  halab: p854
+  status: draft
+
+- id: s0558
+  kind: saying
+  prompt: ما همني مأكل الذئب إلا من شماتة ___
+  answer: الراعي
+  others: [الكلب, الجار, الصياد]
+  note: المصيبة نفسها أهون من شماتة الأعداء بها.
+  source: adimi
+  page: 382
+  status: draft
+
+- id: s0559
+  kind: saying
+  prompt: الفرح الدايم يعلم ___
+  answer: الرقص
+  others: [الغنا, الضحك, الزغاريط]
+  note: من يعيش في فرح دائم يتعلم الرقص؛ أي أن الأحوال تطبع أصحابها بطابعها.
+  source: taymur
+  page: 268
+  status: draft
+
+- id: s0560
+  kind: saying
+  prompt: ايخاف خوفة ___
+  answer: الحيّة
+  others: [البزّونة, الفارة, الغراب]
+  note: من تشبيهات البغداديين التي حُذفت منها أداة التشبيه، تُقال لمن يخاف خوفًا شديدًا.
+  source: hijiyya
+  page: 119
+  status: draft
+
+- id: s0561
+  kind: saying
+  prompt: يوجعه بطنه وعينه ___
+  answer: بعشاه
+  others: [بغداه, بماله, بجاره]
+  note: يشتهي العشاء الذي ينظر إليه ووجع بطنه يمنعه؛ يقال لمن يحول مانع بينه وبين شيء يحبه وهو قريب منه.
+  source: abboudi_amthal
+  page: 1792
+  volume: ج٥
+  status: draft
+
+- id: s0562
+  kind: saying
+  prompt: بات دجاجي واصبح ___
+  answer: نعاجي
+  others: [قطاطي, غزالي, ذيابي]
+  note: نم باكرًا مع الدجاج واصحُ باكرًا مع النعاج، تعش قويًا سعيدًا.
+  source: mughniyya
+  page: 170
+  status: draft
+
+- id: s0563
+  kind: saying
+  prompt: بْقَى مَاشِي مَاجِي بْحَالْ ___
+  answer: الدّلْو
+  others: [الْبَابْ, الْمَوْجْ, الرّْحَى]
+  note: الدلو ينزل إلى البئر ويصعد بلا انقطاع. يقال فيمن يماطله غيره فيظل يذهب ويجيء دون أن تُقضى حاجته.
+  source: dadoun
+  page: 39
+  status: draft
+
+- id: s0564
+  kind: saying
+  prompt: بيت ___ يخرب قبل بيت الظالم
+  answer: المهمل
+  others: [الغنى, الكريم, الغريب]
+  note: المهمل يفرط في كل ما بيده فيخرب بيته سريعًا، أما الظالم فقد يمهله الله زمنًا لعله يتوب.
+  source: shaalan
+  page: 208
+  volume: ج٢
+  status: draft
+
+- id: s0565
+  kind: saying
+  prompt: الأقربون أولى ___
+  answer: بالمعروف
+  others: [بالميراث, بالعتب, بالزيارة]
+  note: أهلك أحقّ الناس بإحسانك.
+  source: asadi
+  line: 160516
+  halab: p822
+  status: draft
+
+- id: s0566
+  kind: saying
+  prompt: من سابل عاش وأكل لحم ___
+  answer: الكباش
+  others: [الحمام, الدجاج, الغزلان]
+  note: من أمثال عدن؛ سابل أي فرض رغبته، فالرغبات لا تتحقق إلا للجريء المقدام.
+  source: akwa
+  page: 1221
+  volume: ج٢
+  status: draft
+
+- id: s0567
+  kind: saying
+  prompt: من أتعب أطرافه شبع ___
+  answer: وسطه
+  others: [راسه, ظهره, قلبه]
+  note: الأطراف هي اليدان والرجلان، والوسط هو البطن. من عمل بيديه ورجليه أكل وشبع.
+  source: juhayman
+  page: 109
+  volume: ج٨
+  status: draft
+
+- id: s0568
+  kind: saying
+  prompt: إذا استدّ البس والفار فيا خراب ___
+  answer: الدار
+  others: [السوق, البلاد, المخزن]
+  note: البسّ القط، واستدّ أي تصالح؛ يقال حين يتفق خصمان على ما فيه ضرر لغيرهما.
+  source: iryani
+  page: 430
+  status: draft
+
+- id: s0569
+  kind: saying
+  prompt: اللى عشاه ___ إيبكر لها بالغزاز
+  answer: قلية
+  others: [عصيدة, بازين, كسكسي]
+  note: «الغزاز» الأكل؛ من كان عشاؤه حبّات قلية خفيفة فليتعشَّ مبكرًا.
+  source: zanin
+  page: 41
+  status: draft
+
+- id: s0570
+  kind: saying
+  prompt: بيضة اليوم، ولا ___ بكرة
+  answer: جاجة
+  others: [ديك, صوص, خروف]
+  note: القليل الحاضر خير من الكثير الموعود، فاغتنم ما بين يديك.
+  source: sahli
+  page: 105
+  status: draft
+
+- id: s0571
+  kind: saying
+  prompt: الجيعان يأكل ___
+  answer: حطب
+  others: [تراب, شوك, حصى]
+  note: الجائع لا يدقق في رداءة الطعام، فالجوع يدفعه إلى أكل أي شيء يقدَّم له.
+  source: adimi
+  page: 19
+  status: draft
+
+- id: s0572
+  kind: saying
+  prompt: الجعان يحلم بسوق ___
+  answer: العيش
+  others: [الدهب, القماش, الغنم]
+  note: العيش في مصر هو الخبز. يقال في أن كل إنسان يشغل باله بما يحتاج إليه.
+  source: taymur
+  page: 128
+  status: draft
+
+- id: s0573
+  kind: saying
+  prompt: لو بدّا تمطر زلابية كانت غيّمت ___
+  answer: عجين
+  others: [سكّر, عسل, زيت]
+  note: يُقال في أن الأمر المرجوّ لو كان آتياً لظهرت بوادره.
+  source: asadi
+  line: 159800
+  halab: p1311
+  status: draft
+
+- id: s0574
+  kind: saying
+  prompt: تكفى عليهم ___
+  answer: المنخل
+  others: [القدر, الصحفه, الطاسه]
+  note: «تكفى» أي يُقلب؛ يقال للأطفال الصغار الضعاف، كأن منخلا مقلوبا يكفي لتغطيتهم.
+  source: abboudi_amthal
+  page: 319
+  volume: ج١
+  status: draft
+
+- id: s0575
+  kind: saying
+  prompt: السَّمْ مَا يْدَاوِيهْ غِيرْ ___ بْحَالُه
+  answer: السَّمْ
+  others: [الْعْسَلْ, الطّْبِيبْ, الصّْبَرْ]
+  note: لا يعالج السمّ إلا سمّ مثله. يقال في القاسي السيئ المعاملة، فلا ينفع معه إلا أن يُعامل بمثل فعله.
+  source: dadoun
+  page: 135
+  status: draft
+
+- id: s0576
+  kind: saying
+  prompt: يا رافع التمر ل___
+  answer: فزان
+  others: [بنغازي, درنه, طرابلس]
+  note: فزان منطقة ليبية مشهورة بكثرة نخيلها وجودة تمورها؛ يقال لمن يقدم العون إلى من لا يحتاج إليه.
+  source: mughniyya
+  page: 552
+  status: draft
+
+- id: s0577
+  kind: saying
+  prompt: يكده الكادود وياكله ___
+  answer: الراقود
+  others: [الضيف, الجار, الفقير]
+  note: الكادود هو العامل النشيط، والراقود هو الكسول النائم؛ فثمرة الجهد قد يجنيها غير من تعب فيها.
+  source: juhayman
+  page: 294
+  volume: ج٩
+  status: draft
+
+- id: s0578
+  kind: saying
+  prompt: ضاق صدر اللي ضاقت ___
+  answer: إيده
+  others: [عينه, خطوته, ساعته]
+  note: الفقير يضيق صدره كما ضاق رزقه.
+  source: sahli
+  page: 199
+  status: draft
+
+- id: s0579
+  kind: saying
+  prompt: لا تقل للجمل دور وعينه اكبر من ___
+  answer: عينك
+  others: [راسك, بيتك, قلبك]
+  note: أي لا تنصح أحداً بأمر هو أعرف به منك.
+  source: akwa
+  page: 931
+  volume: ج٢
+  status: draft
+
+- id: s0580
+  kind: saying
+  prompt: زي روايح أمشير كل ساعه في ___
+  answer: حال
+  others: [لون, طريق, مكان]
+  note: أمشير شهر قبطي تتقلب رياحه؛ يقال للمتقلب الطباع أو الأحوال.
+  source: taymur
+  page: 189
+  status: draft
+
+- id: s0581
+  kind: saying
+  prompt: لا بد من صنعاء ولو طال ___
+  answer: السفر
+  others: [الطريق, الزمان, الغياب]
+  note: يقال للمصمم على بلوغ غايته مهما بعدت المشقة.
+  source: adimi
+  page: 331
+  status: draft
+
+- id: s0582
+  kind: saying
+  prompt: ما زاد عالشحّادين غير القهوة و___
+  answer: الفناجين
+  others: [الأراكيل, السكّر, الكراسي]
+  note: يُقال في المعدم الذي يتطلّع إلى مظاهر الترف والوجاهة.
+  source: asadi
+  line: 127588
+  halab: p1314
+  status: draft
+
+- id: s0583
+  kind: saying
+  prompt: الجير ملطّع على الحيطان و___ الأسود بالوقية
+  answer: الفلفل
+  others: [الكحل, البن, الصابون]
+  note: الجير مبذول يملأ الجدران، أما الفلفل الأسود فيوزن بالوقية لغلائه؛ والمثل يقارن بين الكثير الرخيص والقليل الثمين.
+  source: shaalan
+  page: 136
+  volume: ج٣
+  status: draft
+
+- id: s0584
+  kind: saying
+  prompt: اللى ما تعرفش ترقص تقول الوطا ___
+  answer: عوجا
+  others: [زلقة, سخونة, ضيقة]
+  note: «الوطا» الأرض؛ يضرب لمن يبرّر فشله بأعذار غير منطقية.
+  source: zanin
+  page: 47
+  status: draft
+
+- id: s0585
+  kind: saying
+  prompt: وسّح على قدر ___
+  answer: الفراش
+  others: [اللحاف, البيت, المال]
+  note: وسّح أي مدّ رجليه واسترخى؛ فهو كالمثل المشهور «على قدر فراشك مدّ رجليك».
+  source: iryani
+  page: 909
+  status: draft
+
+- id: s0586
+  kind: saying
+  prompt: اطْلَعْ مْسَارِي، وَاهْبَطْ ___
+  answer: شَارِي
+  others: [بَايَعْ, رَابَحْ, خَاسَرْ]
+  note: ادخل السوق متجولًا واخرج منه مشتريًا. نصيحة لمن يدخل السوق ألا يتسرع، بل يطوف فيه ليعرف الجيد والرديء والأسعار ثم يختار.
+  source: dadoun
+  page: 175
+  status: draft
+
+- id: s0587
+  kind: saying
+  prompt: من عصا رفيقه ظل ___
+  answer: طريقه
+  others: [رزقه, بيته, صاحبه]
+  note: من لا يسمع نصيحة صديقه الشفيق يبقى في ضلاله حتى يقع في سوء عمله، ثم يندم حين لا ينفع الندم.
+  source: juhayman
+  page: 198
+  volume: ج٨
+  status: draft
+
+- id: s0588
+  kind: saying
+  prompt: ما على العمر ___
+  answer: خطر
+  others: [عتب, حساب, ندم]
+  note: يقال في الحث على الإنفاق والإقدام على الأمور التي لا خطر فيها؛ فما دون عمر المرء سهل.
+  source: abboudi_amthal
+  page: 1216
+  volume: ج٣
+  status: draft
+
+- id: s0589
+  kind: saying
+  prompt: صحن كنافه وجنبه ___
+  answer: آفه
+  others: [نمله, قطه, دبانه]
+  note: الآفة هنا الثعبان العظيم. يقال للشيء الطيب تحيط به المخاطر.
+  source: taymur
+  page: 224
+  status: draft
+
+- id: s0590
+  kind: saying
+  prompt: نيال اللي ___ فاضي
+  answer: باله
+  others: [جيبه, بيته, بطنه]
+  note: هنيئا لمن خلا باله من الهموم.
+  source: sahli
+  page: 341
+  status: draft
+
+- id: s0591
+  kind: saying
+  prompt: ارتاح يا بركه دق ___
+  answer: النوى
+  others: [القمح, الشعير, البن]
+  note: «بركه» خادم يشقى طول النهار، فإذا طلب الراحة كلّفه سيده بدق النوى؛ يقال لمن لا ينال راحة بعد التعب أو يُنقل من عمل شاق إلى أشق.
+  source: mughniyya
+  page: 80
+  status: draft
+
+- id: s0592
+  kind: saying
+  prompt: الفقير منين لك؟ والزنگين ___
+  answer: مبارك
+  others: [مسافر, مشغول, مديون]
+  note: إذا اقتنى الفقير شيئاً سألوه من أين، وإذا اقتناه الغنيّ هنّؤوه.
+  source: asadi
+  line: 164418
+  halab: p833
+  status: draft
+
+- id: s0593
+  kind: saying
+  prompt: إذا ضحى ثوبه المسكين ___
+  answer: غيمت
+  others: [أشرقت, صفت, حمت]
+  note: ضحّى الثوب أي نشره للشمس ليجف، فإذا فعل ذلك المسكين غطّى السحاب الشمس. يقال في سوء حظ الفقير.
+  source: akwa
+  page: 111
+  volume: ج١
+  status: draft
+
+- id: s0594
+  kind: saying
+  prompt: ما حد يرد على عين الشمس ___
+  answer: منخل
+  others: [غربال, ستار, ثوب]
+  note: المنخل لا يحجب الشمس؛ يقال لمن يحاول إخفاء أمر واضح للناس.
+  source: adimi
+  page: 396
+  status: draft
+
+- id: s0595
+  kind: saying
+  prompt: المن أخذ؟ بنت نص ___
+  answer: الدنيه
+  others: [الطرف, بغداد, السوق]
+  note: مدح للزوجة كثيرة الأهل والأقارب، كأن نصف الدنيا أهلها.
+  source: hijiyya
+  page: 33
+  status: draft
+
+- id: s0596
+  kind: saying
+  prompt: كدر الما ولا كدر ___
+  answer: الرجال
+  others: [السما, الدار, الزمان]
+  note: الماء العكر يمكن تصفيته أو شربه دون ضرر كبير، أما تعكّر ما بينك وبين الناس فلا يُحتمل.
+  source: juhayman
+  page: 31
+  volume: ج٦
+  status: draft
+
+- id: s0597
+  kind: saying
+  prompt: صباح الفوال ولا صباح ___
+  answer: العطار
+  others: [الحلاق, الخباز, اللبان]
+  note: حاجة الناس صباحا إلى الطعام أشد من حاجتهم إلى العطر؛ يقال في تفضيل الشيء بحسب الحاجة إليه.
+  source: taymur
+  page: 223
+  status: draft
+
+- id: s0598
+  kind: saying
+  prompt: ياما الجمل كسر ___
+  answer: بطّيخ
+  others: [فخّار, بيض, قزاز]
+  note: يقال لمن يستكثر خطأً صغيراً، فكم وقع أكبر منه.
+  source: asadi
+  line: 142396
+  halab: p805
+  status: draft
+
+- id: s0599
+  kind: saying
+  prompt: حُوتَه مَطْلِيَه ___
+  answer: بَالصَّابُونْ
+  others: [بَالْحَنَّا, بَالْجِيرْ, بَالطِّينْ]
+  note: سمكة مدهونة بالصابون تفلت من كل يد. يقال فيمن لا تنال منه شيئًا ولا يفي بوعوده ويصعب عليك الإمساك به.
+  source: dadoun
+  page: 71
+  status: draft
+
+- id: s0600
+  kind: saying
+  prompt: إبعدوا حبة تزيدوا ___
+  answer: محبة
+  others: [هيبة, شيبة, رغبة]
+  note: «حبة» أي قليلًا؛ فالإكثار من الزيارة يسبب الضيق، والبعد القليل يحيي الشوق والمودة.
+  source: shaalan
+  page: 221
+  volume: ج٦
+  status: draft
+
+- id: s0601
+  kind: saying
+  prompt: جسم بغل، وعقل ___
+  answer: عصفور
+  others: [حمامة, نملة, ديك]
+  note: لمن كان ضخم الجثة قليل الفهم.
+  source: sahli
+  page: 119
+  status: draft
+
+- id: s0602
+  kind: saying
+  prompt: جاءت النقيلة تقلع ___
+  answer: الأصيلة
+  others: [الشجرة, القديمة, الجذور]
+  note: النقيلة الوافدة تقلع الأصيلة؛ يقال حين يستأثر الغريب بمصالح ابن البلد ويحرمه منها.
+  source: adimi
+  page: 174
+  status: draft
+
+- id: s0603
+  kind: saying
+  prompt: راح الجمل، وما ___
+  answer: حمل
+  others: [أكل, ملك, شرب]
+  note: يقال للشيء يضيع كله دفعة واحدة؛ ذهب الجمل وذهب معه حمله.
+  source: abboudi_amthal
+  page: 557
+  volume: ج٢
+  status: draft
+
+- id: s0604
+  kind: saying
+  prompt: لو يمشي البحر يلقاه ___
+  answer: نازح
+  others: [هايج, مالح, بارد]
+  note: «نازح» جاف قد غارت مياهه؛ يقال لمن يلازمه النحس وسوء الطالع أينما ذهب.
+  source: mughniyya
+  page: 474
+  status: draft
+
+- id: s0605
+  kind: saying
+  prompt: الجار جار، كما جلس ___
+  answer: سار
+  others: [قام, نام, دار]
+  note: الجار هنا من ينزل في حمى القبيلة؛ فلا داعي لضيق الصدر به لأنه سيرحل يوماً.
+  source: akwa
+  page: 357
+  volume: ج١
+  status: draft
+
+- id: s0606
+  kind: saying
+  prompt: بيت الصيودة ما يدخلوه ___
+  answer: الذياب
+  others: [الكلاب, الثعالب, الضباع]
+  note: «الصيودة» الأسود؛ يضرب للعظيم الذي يُهاب جانبه.
+  source: zanin
+  page: 89
+  status: draft
+
+- id: s0607
+  kind: saying
+  prompt: لكل مقام ___
+  answer: مقال
+  others: [رجال, سؤال, مجال]
+  note: لكلّ موقف كلام يناسبه.
+  source: asadi
+  line: 161626
+  halab: p826
+  status: draft
+
+- id: s0608
+  kind: saying
+  prompt: من جا أسيناه، ومن جزع ___
+  answer: نسيناه
+  others: [لقيناه, سألناه, رجيناه]
+  note: أسى في لهجتهم بمعنى وجد ولقي؛ فمن حضر وجدناه وعددناه، ومن غاب عنا نسيناه.
+  source: iryani
+  page: 35
+  status: draft
+
+- id: s0609
+  kind: saying
+  prompt: عند الإبره تتوه ___
+  answer: السلوك
+  others: [العيون, الإيدين, الصوابع]
+  note: السلوك هي الخيوط. يقال للأمر إذا تهيأ بعض أسبابه تعذّر بعضها الآخر.
+  source: taymur
+  page: 253
+  status: draft
+
+- id: s0610
+  kind: saying
+  prompt: قطع العقده أهون من ___
+  answer: فكها
+  others: [لبسها, شراها, حملها]
+  note: للحسم في الأمور وعدم إضاعة الوقت في الصغائر، فالوقت أثمن منها.
+  source: juhayman
+  page: 301
+  volume: ج٥
+  status: draft
+
+- id: s0611
+  kind: saying
+  prompt: الْبَرَّانِي لَلْبَرَّانِي ___
+  answer: رَحْمَه
+  others: [عْدُو, غْرِيبْ, خْطَرْ]
+  note: البراني هو الغريب. قد تجد عند الغريب شفقة ورحمة لا تجدها عند أقاربك، فلا تتردد في طلب عونه.
+  source: dadoun
+  page: 311
+  status: draft
+
+- id: s0612
+  kind: saying
+  prompt: قيس قبل ما ___
+  answer: تغيص
+  others: [تبيع, تحكي, تنام]
+  note: قِس عمق الماء قبل أن تغوص فيه، أي تدبر الأمر قبل الإقدام عليه.
+  source: sahli
+  page: 258
+  status: draft
+
+- id: s0613
+  kind: saying
+  prompt: كل ضاحة ولها ___
+  answer: رباح
+  others: [طير, ذيب, نسر]
+  note: الضاحة الجرف والرباح القرد؛ أي لكل أمر أهله الذين يقومون به.
+  source: adimi
+  page: 317
+  status: draft
+
+- id: s0614
+  kind: saying
+  prompt: نجّار وبابو ___
+  answer: مخلوع
+  others: [مدهون, منقوش, جديد]
+  note: يُقال في صاحب الصنعة الذي يُهمل بيته فيما يُتقنه للناس.
+  source: asadi
+  line: 167171
+  halab: p1329
+  status: draft
+
+- id: s0615
+  kind: saying
+  prompt: إصطلح الفار و___ ونسيوا الهتيكة والجرسة
+  answer: العروسة
+  others: [الكلب, الديك, الأرنب]
+  note: العروسة هي ابن عرس، حيوان يشبه الفار في حجمه؛ والمثل يسخر من خصمين تصالحا ونسيا ما كان بينهما من فضائح.
+  source: shaalan
+  page: 388
+  volume: ج٦
+  status: draft
+
+- id: s0616
+  kind: saying
+  prompt: زامق ويده في ___
+  answer: القصعه
+  others: [الكيس, الجيب, الصندوق]
+  note: «زامق» ممتنع عن الأكل، و«القصعة» وعاء الطعام؛ يدّعي الشبع ويده غارقة في الطعام، فيمن يُظهر الزهد في شيء وهو راغب فيه.
+  source: mughniyya
+  page: 295
+  status: draft
+
+- id: s0617
+  kind: saying
+  prompt: ندور عليها في السما، وجدتها في ___
+  answer: الأرض
+  others: [البيت, الجيب, البحر]
+  note: يقال لمن يبحث عن شيء بعيد ثم يجده قريباً منه في متناول يده.
+  source: akwa
+  page: 1311
+  volume: ج٢
+  status: draft
+
+- id: s0618
+  kind: saying
+  prompt: كن نسيب ولا تكون ابن ___
+  answer: عم
+  others: [خال, جار, اخت]
+  note: «النسيب» عندهم الصهر؛ ويريدون أن رابطة المصاهرة أقوى من رابطة القرابة بالنسب.
+  source: abboudi_amthal
+  page: 1070
+  volume: ج٣
+  status: draft
+
+- id: s0619
+  kind: saying
+  prompt: دبر غداك تلقى ___
+  answer: عشاك
+  others: [فطورك, سحورك, ضيفك]
+  note: في الحث على حسن التدبير والتفكير في الغد.
+  source: taymur
+  page: 163
+  status: draft
+
+- id: s0620
+  kind: saying
+  prompt: ما كل من يركب على الخيل ___
+  answer: خيال
+  others: [شيخ, غني, بدوي]
+  note: الخيال هو الفارس الذي يقارع الشجعان. ركوب الخيل سهل حتى على الجبان، أما الفروسية فتحتاج إلى قلب وإقدام.
+  source: juhayman
+  page: 131
+  volume: ج٧
+  status: draft
+
+- id: s0621
+  kind: saying
+  prompt: إللي الدراهم دراهمه، ___ بلاده
+  answer: البلاد
+  others: [الناس, الخيل, الأرض]
+  note: يذكر سلطان المال، فصاحبه يملك الكلمة في البلد كله.
+  source: sahli
+  page: 51
+  status: draft
+
+- id: s0622
+  kind: saying
+  prompt: اللِّي مَكْرُوهْ، مَكْرُوهْ، وَلَوْ يَشْوِي لَخْمِيرَه عْلَى ___
+  answer: اظْفَارُه
+  others: [الْجّْمْرْ, رَاسُه, الشّْمْسْ]
+  note: شيّ الخميرة على الأظافر كناية عن الصبر المتعب. يقال فيمن لا يجد القبول عند غيره مهما بذل من جهد لإرضائه.
+  source: dadoun
+  page: 303
+  status: draft
+
+- id: s0623
+  kind: saying
+  prompt: اللي بيطالع الجحش عالمادنة ___
+  answer: بينزّلو
+  others: [بيركّبو, بيعلّفو, بيشتريه]
+  note: من أوقع نفسه في ورطة فعليه أن يخرج منها.
+  source: asadi
+  line: 168004
+  halab: p839
+  status: draft
+
+- id: s0624
+  kind: saying
+  prompt: قرش دوّار ولا ألف ___
+  answer: خوّار
+  others: [دينار, صندوق, حمّال]
+  note: المال الذي يدور في التجارة خير من مال كثير واقف لا يتحرك.
+  source: adimi
+  page: 310
+  status: draft
+
+- id: s0625
+  kind: saying
+  prompt: ارحم من زار و___
+  answer: خفف
+  others: [سلّم, هدّى, رجع]
+  note: خير الزائرين من لا يطيل زيارته فيثقل على أهل البيت.
+  source: zanin
+  page: 19
+  status: draft
+
+- id: s0626
+  kind: saying
+  prompt: زي حمير العنب تشيله ولا ___
+  answer: تدوقه
+  others: [تبيعه, تشمه, تشوفه]
+  note: يقال لمن يُسخَّر في عمل لا ينال منه شيئا.
+  source: taymur
+  page: 187
+  status: draft
+
+- id: s0627
+  kind: saying
+  prompt: إذا أظلمت ___
+  answer: فقف
+  others: [فنم, فارجع, فاسأل]
+  note: أي إذا دخل الظلام فتوقف عن السير، ويرويه بعضهم «إذا أظلمت فسنّب» والسنوب الوقوف.
+  source: iryani
+  page: 448
+  status: draft
+
+- id: s0628
+  kind: saying
+  prompt: من قبص الحنش يفزع من ___
+  answer: الخيط
+  others: [الماء, النار, الريح]
+  note: من أمثال عدن؛ قبصه أي لدغه، والحنش الحية. فمن أصابه الشر مرة خاف مما يشبهه.
+  source: akwa
+  page: 1261
+  volume: ج٢
+  status: draft
+
+- id: s0629
+  kind: saying
+  prompt: زي غناي ___
+  answer: جربه
+  others: [مصراته, بنغازي, القيروان]
+  note: «جربة» جزيرة بتونس؛ يقال لمن يتكلم أو يغني فيطيل على السامعين حتى يزعجهم.
+  source: mughniyya
+  page: 301
+  status: draft
+
+- id: s0630
+  kind: saying
+  prompt: خزام العير من ___
+  answer: ذنبه
+  others: [رجله, ظهره, بطنه]
+  note: الشرير يُقاد بشرير مثله، كما يُقاد هذا الحمار بشعرات من ذنبه؛ فأهل الشر يُقابَلون بأمثالهم.
+  source: juhayman
+  page: 31
+  volume: ج٣
+  status: draft
+
+- id: s0631
+  kind: saying
+  prompt: ساعة من الغني ___
+  answer: تغني
+  others: [تكفي, تشفي, تنجّي]
+  note: «الغني» هو الله تعالى؛ ساعة من مطر يأمر به تغني الناس بعد فقرهم. يقال عند هطول المطر بعد احتباسه.
+  source: abboudi_amthal
+  page: 628
+  volume: ج٢
+  status: draft
+
+- id: s0632
+  kind: saying
+  prompt: الورد ما بصير منتور والجحش ما بصير ___
+  answer: غندور
+  others: [تاجر, شاعر, خيّاط]
+  note: يُقال في أن الطبع لا يتبدّل، فالغليظ لا يصير ظريفاً أنيقاً.
+  source: asadi
+  line: 175039
+  halab: p1331
+  status: draft
+
+- id: s0633
+  kind: saying
+  prompt: رمضة الصيف بتشوي ___
+  answer: البيض
+  others: [اللحم, الخبز, السمك]
+  note: الرمضاء حر الأرض، وهي في الصيف شديدة تكاد تشوي البيض.
+  source: sahli
+  page: 162
+  status: draft
+
+- id: s0634
+  kind: saying
+  prompt: خيبة الأمل راكبة ___
+  answer: جمل
+  others: [حمار, حصان, عربية]
+  note: من يركب الجمل يراه كل الناس لعلوّه؛ فالمثل يسخر من فشل ظاهر للجميع لا يمكن إخفاؤه.
+  source: shaalan
+  page: 369
+  volume: ج٦
+  status: draft
+
+- id: s0635
+  kind: saying
+  prompt: عْلَى وَجَهْ لَكْتَابْ كَتْبَاسْ ___
+  answer: الْجَّلْدَه
+  others: [الْيَدّْ, الرَّاسْ, الْوْرَقَه]
+  note: من أجل الكتاب يُقبَّل غلافه. يقال في الصبر على هفوات شخص إكرامًا لمن نحبه ويتصل به.
+  source: dadoun
+  page: 183
+  status: draft
+
+- id: s0636
+  kind: saying
+  prompt: يا عين اذا خير رفّي واذا شر ___
+  answer: عفّي
+  others: [نامي, غمّضي, دمعي]
+  note: تقوله المرأة البغدادية حين ترفّ عينها، فالبغداديون يتشاءمون من رفّة العين اليمنى ويتفاءلون بالعين اليسرى.
+  source: hijiyya
+  page: 115
+  status: draft
+
+- id: s0637
+  kind: saying
+  prompt: ما يصيح الطير إلا من ___
+  answer: حنش
+  others: [جوع, برد, صقر]
+  note: الحنش الثعبان؛ لكل شيء سبب، كما لا دخان بلا نار.
+  source: adimi
+  page: 428
+  status: draft
+
+- id: s0638
+  kind: saying
+  prompt: ما يهرش لك إلا ___
+  answer: إيدك
+  others: [أخوك, جارك, ابنك]
+  note: 'في ترك الاتكال على الناس، كقول العرب: ما حك جلدك مثل ظفرك.'
+  source: taymur
+  page: 342
+  status: draft
+
+- id: s0639
+  kind: saying
+  prompt: لا تبيع برخيص ولا توصّي ___
+  answer: حريص
+  others: [بخيل, غريب, تاجر]
+  note: الحريص لا يحتاج إلى من يوصيه.
+  source: asadi
+  line: 175615
+  halab: p853
+  status: draft
+
+- id: s0640
+  kind: saying
+  prompt: ويش دخلك يا صعلوك بين ___
+  answer: الملوك
+  others: [الفقرا, الجيران, العمال]
+  note: الصعلوك هو الفقير المتواضع الحال. يقال لمن يتدخل في أمور أكبر منه ومن قدرته.
+  source: juhayman
+  page: 64
+  volume: ج٩
+  status: draft
+
+- id: s0641
+  kind: saying
+  prompt: سفرة في بيتي، ولا مفرشة في بيت ___
+  answer: الناس
+  others: [السلطان, القاضي, التاجر]
+  note: السفرة جلد ضأن، والمفرشة سجاد فاخر؛ فالمتواضع في البيت خير من الثمين عند الآخرين.
+  source: akwa
+  page: 577
+  volume: ج١
+  status: draft
+
+- id: s0642
+  kind: saying
+  prompt: كرمال ___، بشرب العليق
+  answer: الورد
+  others: [الياسمين, الزرع, الشجر]
+  note: قد يُكرم السيئ إكراما لقريب طيب، كما يُسقى العليق من أجل الورد.
+  source: sahli
+  page: 263
+  status: draft
+
+- id: s0643
+  kind: saying
+  prompt: الحمار العثار ب___ يتقي
+  answer: خشمه
+  others: [ذيله, ودنه, ظهره]
+  note: «العثّار» كثير السقوط، و«بخشمه يتقي» يسقط على أنفه؛ الجاهل يجني على نفسه، والشرير يؤخذ بسوء فعله.
+  source: mughniyya
+  page: 241
+  status: draft
+
+- id: s0644
+  kind: saying
+  prompt: الصعب يرجع ___
+  answer: ذلول
+  others: [سهل, شارد, هزيل]
+  note: البعير الصعب الذي لا ينقاد قد يصير ذلولا سهل الركوب؛ فلا ييأس المرء من تبدّل الحال.
+  source: abboudi_amthal
+  page: 725
+  volume: ج٢
+  status: draft
+
+- id: s0645
+  kind: saying
+  prompt: اللى حوشه من ___ ما يحذفش الناس بالرشاد
+  answer: القزاز
+  others: [الطين, القصب, الحلفة]
+  note: «حوشه» بيته و«القزاز» الزجاج؛ يضرب في تحذير الضعيف من مواجهة من هو أقوى منه.
+  source: zanin
+  page: 37
+  status: draft
+
+- id: s0646
+  kind: saying
+  prompt: تِيعْرَفْ امْنَايَنْ يَاكُلْ ___
+  answer: لَكْتَفْ
+  others: [لَخْبْزْ, الرّْغِيفْ, اللّْحَمْ]
+  note: يعرف من أين تؤكل الكتف. يقال فيمن يحسن الوصول إلى غرضه بلطف وبراعة في التأثير على الناس.
+  source: dadoun
+  page: 55
+  status: draft
+
+- id: s0647
+  kind: saying
+  prompt: عسل في رأس ___
+  answer: موسى
+  others: [قدر, جرة, صحن]
+  note: الموسى شفرة حادة؛ أي مال وفير لا يمكن الوصول إليه لشدة حرص صاحبه عليه.
+  source: adimi
+  page: 285
+  status: draft
+
+- id: s0648
+  kind: saying
+  prompt: حبه تتقل ___
+  answer: الميزان
+  others: [القفه, الشوال, الجراب]
+  note: الحبة الصغيرة ترجّح كفة الميزان؛ لكل شيء أثر وإن صغر.
+  source: taymur
+  page: 138
+  status: draft
+
+- id: s0649
+  kind: saying
+  prompt: المركب بين ___ بيغرق
+  answer: ريّسين
+  others: [موجتين, بحرين, مينتين]
+  note: تعدّد القادة في الأمر الواحد يفسده.
+  source: asadi
+  line: 156383
+  halab: p1096
+  status: draft
+
+- id: s0650
+  kind: saying
+  prompt: قعس في يدي ولا ضمير في ___
+  answer: يد الناس
+  others: [السوق, الشجره, بيت الجار]
+  note: القعس الفاكهة الفجّة، والضمير الناضجة؛ فالفجّ الذي تملكه خير من الناضج في يد غيرك.
+  source: iryani
+  page: 729
+  status: draft
+
+- id: s0651
+  kind: saying
+  prompt: السبع لما يشيّخ تركبه ___
+  answer: القرود
+  others: [الفيران, العصافير, الحمير]
+  note: انقلاب الأحوال إلى الأسوأ يجرّئ الضعفاء على التطاول على أسيادهم؛ وورد المثل في مسلسل «السيرة العاشورية».
+  source: shaalan
+  page: 484
+  volume: ج٦
+  status: draft
+
+- id: s0652
+  kind: saying
+  prompt: كثر التمني راس مال ___
+  answer: المفاليس
+  others: [التجار, الشعراء, الكسالى]
+  note: الأماني والأحلام لا تثمر شيئا، وهي كل ما يملكه الفقير الذي يعيش على الخيال.
+  source: juhayman
+  page: 25
+  volume: ج٦
+  status: draft
+
+- id: s0653
+  kind: saying
+  prompt: إلشي اللي ببلاش، ___ منه
+  answer: كثر
+  others: [خاف, اهرب, قلل]
+  note: 'يقال مزاحا: ما كان مجانا فأكثر منه.'
+  source: sahli
+  page: 190
+  status: draft
+
+- id: s0654
+  kind: saying
+  prompt: جعفاره في مصر، غبارها في ___
+  answer: دقنك
+  others: [جيبك, قلبك, سوقك]
+  note: الجعفارة هي الزوبعة المثيرة للتراب؛ والمعنى أن الفتنة البعيدة قد يصلك شيء من شرها.
+  source: akwa
+  page: 377
+  volume: ج١
+  status: draft
+
+- id: s0655
+  kind: saying
+  prompt: المكتوب ما منّو ___
+  answer: مهروب
+  others: [مكتوب, مطلوب, محسوب]
+  note: ما قُدّر على المرء لا مفرّ منه.
+  source: asadi
+  line: 172339
+  halab: p1114
+  status: draft
+
+- id: s0656
+  kind: saying
+  prompt: كل واحد ينام على الجنب اللي ___
+  answer: يريحه
+  others: [يوجعه, يتعبه, يشيله]
+  note: لا تعترض على من اختار لنفسه طريقة يرى فيها راحته.
+  source: taymur
+  page: 307
+  status: draft
+
+- id: s0657
+  kind: saying
+  prompt: الضيف وجهه ___
+  answer: أبيض
+  others: [أحمر, أسمر, أصفر]
+  note: الضيف يأتي في النهار لا في الليل، لأن المضيف قد يعجز عن القيام بواجب قِراه في الظلام.
+  source: mughniyya
+  page: 349
+  status: draft
+
+- id: s0658
+  kind: saying
+  prompt: النَّبْتَه لَمْقَلْعَه مَا تْنَبَّتْ ___
+  answer: رْبِيعْ
+  others: [شُوكْ, وْرَاقْ, عْرُوقْ]
+  note: النبتة المقلوعة لا تنبت عشبًا. يقال فيمن يترك مهنة بعد مدة طويلة إلى أخرى فلا ينجح، وفي التلميذ يُنقل من مدرسة إلى أخرى.
+  source: dadoun
+  page: 343
+  status: draft
+
+- id: s0659
+  kind: saying
+  prompt: ابن مهرة ولا ___ سنة
+  answer: معلّم
+  others: [تلميذ, صانع, عامل]
+  note: ابن الحِرفيّ الذي نشأ على صنعة أبيه أمهر من متعلم لم يتقنها بعد.
+  source: adimi
+  page: 72
+  status: draft
+
+- id: s0660
+  kind: saying
+  prompt: مال الناس ___
+  answer: عاريّه
+  others: [أمانه, غنيمه, هديّه]
+  note: ما في يدك من مال غيرك إنما هو كالشيء المستعار، لا بد أن يعود إلى صاحبه.
+  source: abboudi_amthal
+  page: 1238
+  volume: ج٣
+  status: draft
+
+- id: s0661
+  kind: saying
+  prompt: نور الدار ب___
+  answer: سكانها
+  others: [فرشها, سقفها, حوشها]
+  note: أهل الدار وأحبابها هم الذين يجعلونها مضيئة سعيدة، فقرب الحبيب يجعل الضيق سعة.
+  source: juhayman
+  page: 340
+  volume: ج١٠
+  status: draft
+
+- id: s0662
+  kind: saying
+  prompt: اكثر ___ أحلى زميتة
+  answer: زيت
+  others: [سكر, عسل, سمن]
+  note: «الزميتة» أكلة من الدقيق والماء مع الزيت؛ يضرب للأمر الذي كلما زدت فيه زاد حُسنًا.
+  source: zanin
+  page: 29
+  status: draft
+
+- id: s0663
+  kind: saying
+  prompt: مال المي ___
+  answer: للمي
+  others: [للبير, للسقي, للغسيل]
+  note: ما كُسب بالغشّ يذهب كما جاء، قيل في من كان يغشّ حليبه بالماء فغرقت بقرته.
+  source: asadi
+  line: 165533
+  halab: p835
+  status: draft
+
+- id: s0664
+  kind: saying
+  prompt: إللي بده يوكل عسل، يصبر على قرص ___
+  answer: النحل
+  others: [النمل, البرد, الجوع]
+  note: حلاوة الحياة لا تأتي إلا مع شيء من مرارتها، فمن أراد العسل احتمل اللسع.
+  source: sahli
+  page: 44
+  status: draft
+
+- id: s0665
+  kind: saying
+  prompt: كلمه تجيبه وكلمه ___
+  answer: توديه
+  others: [ترجعه, تزعله, تسكته]
+  note: يقال للضعيف الرأي المتقلب الذي يتأثر بكل ما يسمعه.
+  source: taymur
+  page: 310
+  status: draft
+
+- id: s0666
+  kind: saying
+  prompt: أنين جارك ___
+  answer: يسهرك
+  others: [يضحكك, يغنيك, يرضيك]
+  note: ما يصيب جارك من سوء يؤثر عليك، فساعده يرتح بالك.
+  source: akwa
+  page: 241
+  volume: ج١
+  status: draft
+
+- id: s0667
+  kind: saying
+  prompt: فى الغطاس مصّ القصب والطبيخ ___
+  answer: قلقاس
+  others: [بامية, فاصوليا, بسلة]
+  note: عيد الغطاس في يناير، ومن عادات المصريين فيه أكل القلقاس ومص القصب، وهي عادة قديمة.
+  source: shaalan
+  page: 159
+  volume: ج٦
+  status: draft
+
+- id: s0668
+  kind: saying
+  prompt: الحيلة ما تربّي ___
+  answer: عيال
+  others: [غنم, دجاج, زرع]
+  note: المكر يعود على صاحبه بالخسارة، ولا يمكن أن يُبنى عليه بيت أو يُعال منه أولاد.
+  source: adimi
+  page: 66
+  status: draft
+
+- id: s0669
+  kind: saying
+  prompt: مَا يَحْرَثْ الاَرْضْ غِيرْ ___
+  answer: عْجُولْهَا
+  others: [خْدَّامْهَا, جِيرَانْهَا, فْلاَّحْهَا]
+  note: لا يحرث الأرض إلا عجولها. أي لا يعتني بأمرك إلا أهلك الذين يعنيهم شأنك.
+  source: dadoun
+  page: 335
+  status: draft
+
+- id: s0670
+  kind: saying
+  prompt: من كدّد ___
+  answer: كسر
+  others: [شبع, سلم, فاز]
+  note: الكِداد كشط ما يلصق بالإناء من طعام، ومن بالغ في كشطه كسره؛ فالمبالغة تأتي بعكس المراد.
+  source: iryani
+  page: 761
+  status: draft
+
+- id: s0671
+  kind: saying
+  prompt: ما هناكش ___ يصطاد لله
+  answer: قطوس
+  others: [ذيب, ثعلب, نسر]
+  note: «القطّوس» القط؛ المصالح الخاصة تحرّك الناس في كل ما يعملون.
+  source: mughniyya
+  page: 492
+  status: draft
+
+- id: s0672
+  kind: saying
+  prompt: القرش الابيض ينفع في اليوم ___
+  answer: الاسود
+  others: [الحار, الطويل, الثقيل]
+  note: دعوة إلى الادخار، يرددها البغداديون وهم يعوّدون أطفالهم على جمع العيديات في «قوطية التجميع».
+  source: hijiyya
+  page: 108
+  status: draft
+
+- id: s0673
+  kind: saying
+  prompt: أطهر من حمام ___
+  answer: مكه
+  others: [الشام, البحر, العراق]
+  note: حمام الحرم المكي يعيش في أطهر البقاع ويقتات من الحبوب الطاهرة، فصار مضرب المثل في الطهارة.
+  source: abboudi_amthal
+  page: 110
+  volume: ج١
+  status: draft
+
+- id: s0674
+  kind: saying
+  prompt: الهزيمة تلتين ___
+  answer: المرجلة
+  others: [الخسارة, الفضيحة, الطريق]
+  note: الفرار في وقته من حسن التدبير.
+  source: asadi
+  line: 172589
+  halab: p848
+  status: draft
+
+- id: s0675
+  kind: saying
+  prompt: كل ديرة عند أهلها ___
+  answer: مصر
+  others: [الشام, بغداد, اليمن]
+  note: الديرة هي البلد. كان لمصر في نفوس أهل الجزيرة مكانة خيالية بوصفها أجمل البلاد، وكل قوم يرون بلدهم كذلك.
+  source: juhayman
+  page: 80
+  volume: ج٦
+  status: draft
+
+- id: s0676
+  kind: saying
+  prompt: بات كلب، واصبح ___
+  answer: سبع
+  others: [ديب, جمل, حصان]
+  note: احتمل تعب العمل ومذلته ليلة تصبح عزيزا مستغنيا عن الناس؛ في تفضيل العمل على السؤال.
+  source: taymur
+  page: 97
+  status: draft
+
+- id: s0677
+  kind: saying
+  prompt: ثلثين ___ خوف
+  answer: الحيا
+  others: [الصبر, الكرم, العقل]
+  note: معظم ما يبدو من الحياء عند الناس سببه الخوف.
+  source: sahli
+  page: 113
+  status: draft
+
+- id: s0678
+  kind: saying
+  prompt: حقّه حق وحق الناس ___
+  answer: مرق
+  others: [ماء, هواء, تراب]
+  note: يقال لمن يتشدد في حقه ويستهين بحقوق الآخرين.
+  source: adimi
+  page: 191
+  status: draft
+
+- id: s0679
+  kind: saying
+  prompt: بقصه في ظهر ___
+  answer: جمل
+  others: [حمار, ثور, حصان]
+  note: البقصة هي القرصة؛ يقال في العظيم الذي لا يضره كلام الصغير.
+  source: akwa
+  page: 291
+  volume: ج١
+  status: draft
+
+- id: s0680
+  kind: saying
+  prompt: لَمْصِيبَه حْلاَلْ، وِيلاَ ظْهَرْ مُولاَهَا ___
+  answer: حْرَامْ
+  others: [حْلاَلْ, غَالْيَه, رْخِيصَه]
+  note: المصيبة في الدارجة ما يعثر عليه المرء في طريقه صدفة. هو حلال له ما لم يظهر صاحبه، فإن ظهر وجب ردّه إليه.
+  source: dadoun
+  page: 255
+  status: draft
+
+- id: s0681
+  kind: saying
+  prompt: قالوا لجحا، منين تعلّمت الكرم؟ قال لن، بحسب الشي ___
+  answer: ما كان
+  others: [إلو تمن, من غيري, رح يرجع]
+  note: الكريم يعدّ ما أعطاه كأنه لم يكن عنده.
+  source: asadi
+  line: 141828
+  halab: p802
+  status: draft
+
+- id: s0682
+  kind: saying
+  prompt: اطلق عبستك وشدّ ___
+  answer: خبزتك
+  others: [عصاتك, جملك, بابك]
+  note: «اطلق عبستك» ابسط وجهك؛ يضرب في الحث على البشاشة في وجه الضيف والاهتمام به.
+  source: zanin
+  page: 25
+  status: draft
+
+- id: s0683
+  kind: saying
+  prompt: الخيل هي والبل ___
+  answer: رفاق
+  others: [أعداء, أشكال, أثمان]
+  note: «البل» الإبل؛ الخيل والإبل رفيقان في المبيت والمرعى وفي الرحيل والغزو.
+  source: mughniyya
+  page: 259
+  status: draft
+
+- id: s0684
+  kind: saying
+  prompt: ما في القدر تطلعه ___
+  answer: المغرفه
+  others: [السكين, النار, الصحن]
+  note: ما في القدر محفوظ تخرجه المغرفة متى شئت، وإنما الخوف على ما كان خارجه. يقال للشيء المأمون الذي لا خطر عليه.
+  source: juhayman
+  page: 107
+  volume: ج٧
+  status: draft
+
+- id: s0685
+  kind: saying
+  prompt: بيدهن الهوا ___
+  answer: دوكو
+  others: [زيت, جاز, عسل]
+  note: الدوكو طلاء السيارات؛ ويقال على سبيل السخرية عن الفهلوي الذي يغرر بمن حوله ويبيع لهم الوهم.
+  source: shaalan
+  page: 382
+  volume: ج٦
+  status: draft
+
+- id: s0686
+  kind: saying
+  prompt: عيش يا كديش لما يطلع ___
+  answer: الحشيش
+  others: [القمح, الشعير, الفول]
+  note: الكديش هو الحصان غير الأصيل. يقال لمن يُحال على أمر لم يقع بعد.
+  source: taymur
+  page: 257
+  status: draft
+
+- id: s0687
+  kind: saying
+  prompt: عجاج يتبعه ___
+  answer: مطر
+  others: [ريح, ظلام, برد]
+  note: كالغبار الذي يعقبه المطر؛ يقال للرجل الذي يسيء ثم يحسن.
+  source: abboudi_amthal
+  page: 805
+  volume: ج٢
+  status: draft
+
+- id: s0688
+  kind: saying
+  prompt: إلديك الفصيح، من ___ بصيح
+  answer: البيضة
+  others: [القن, الصبح, العش]
+  note: علامات النجابة تظهر على الطفل منذ صغره.
+  source: sahli
+  page: 152
+  status: draft
+
+- id: s0689
+  kind: saying
+  prompt: كلّ شي قسمة و___
+  answer: نصيب
+  others: [حبيب, غريب, ترتيب]
+  note: كلّ ما يناله المرء مقدّر له.
+  source: asadi
+  line: 133182
+  halab: p1104
+  status: draft
+
+- id: s0690
+  kind: saying
+  prompt: دمّه بسبع ___
+  answer: انفس
+  others: [عيون, رجول, بيوت]
+  note: الدِّمّة القطة، ويقال لمن يصبر ويتجلّد، كلما ظُنّ أنه انتهى بقي ثابتًا.
+  source: iryani
+  page: 309
+  status: draft
+
+- id: s0691
+  kind: saying
+  prompt: جمل يحمل زبيب ويأكل ___
+  answer: سنف
+  others: [لوز, عسل, سكر]
+  note: السنف علف البهائم الرديء؛ يقال لمن يحوز الخير ولا ينتفع منه.
+  source: adimi
+  page: 178
+  status: draft
+
+- id: s0692
+  kind: saying
+  prompt: ايلاَ تْعَلَّمْنَا شِي حَاجَه فِى لَمْهَدْ كَتْبْقَى حَتَّى ___
+  answer: لَلَّحْدْ
+  others: [لَلْكْبَرْ, لَلصّْبَاحْ, لَلْعِيدْ]
+  note: 'ما نتعلمه في المهد يبقى حتى اللحد. كما يقال: التعلم في الصغر كالنقش في الحجر.'
+  source: dadoun
+  page: 391
+  status: draft
+
+- id: s0693
+  kind: saying
+  prompt: إذا تحاكرت الحمير يا فرحة ___
+  answer: الركاب
+  others: [الجمال, البياع, الرعيان]
+  note: تحاكرت أي تنافست؛ فإذا تسابقت الحمير في السير ارتاح راكبوها، فتنافس قوم ينفع غيرهم.
+  source: akwa
+  page: 91
+  volume: ج١
+  status: draft
+
+- id: s0694
+  kind: saying
+  prompt: كل شي إذا تديول نقص إلا ___
+  answer: الحكي
+  others: [الماء, الذهب, الزاد]
+  note: الأشياء إذا تداولتها الأيدي نقصت، أما الكلام فيزيد لأن كل ناقل يضيف إليه من عنده.
+  source: juhayman
+  page: 89
+  volume: ج٦
+  status: draft
+
+- id: s0695
+  kind: saying
+  prompt: زي الإبره تكسي الناس وهي ___
+  answer: عريانه
+  others: [جعانه, تعبانه, حزينه]
+  note: يقال لمن يعمل لنفع غيره ولا يعود عليه من عمله شيء.
+  source: taymur
+  page: 181
+  status: draft
+
+- id: s0696
+  kind: saying
+  prompt: العينه تقتل ___
+  answer: الصيد
+  others: [الذيب, الحنش, الجوع]
+  note: «العينة» التعاون، و«الصيد» الأسد؛ التعاون يمكّن الناس من التغلب على عدوهم مهما كان قويًا.
+  source: mughniyya
+  page: 385
+  status: draft
+
+- id: s0697
+  kind: saying
+  prompt: ما بيجي من الناس غير وجع ___
+  answer: الراس
+  others: [القلب, الضرس, الضهر]
+  note: مخالطة الناس لا تأتي إلا بالمتاعب.
+  source: asadi
+  line: 174429
+  halab: p852
+  status: draft
+
+- id: s0698
+  kind: saying
+  prompt: كل مين يقلع ___ بإيده
+  answer: شوكه
+  others: [ضرسه, زرعه, حطبه]
+  note: على المرء أن يحل بنفسه المشكلات التي تسبب فيها.
+  source: sahli
+  page: 270
+  status: draft
+
+- id: s0699
+  kind: saying
+  prompt: حرّك قدم، يبدي ___
+  answer: نجم
+  others: [رزق, درب, باب]
+  note: من أمثال البادية في جنوب نجد؛ «يبدي نجم» أي يظهر لك خير وارتفاع. حثّ على الحركة والسعي في طلب الرزق.
+  source: abboudi_amthal
+  page: 397
+  volume: ج١
+  status: draft
+
+- id: s0700
+  kind: saying
+  prompt: اللى ياكل لوحده ___
+  answer: يزوّر
+  others: [يشبع, يسمن, ينام]
+  note: «يزوّر» أي يغصّ باللقمة؛ ويقال على سبيل المزاح لمن يأكل وحده، تلميحًا إلى الرغبة في المشاركة.
+  source: shaalan
+  page: 366
+  volume: ج٦
+  status: draft
+
+- id: s0701
+  kind: saying
+  prompt: كلٌّ بمهرته ___
+  answer: سلطان
+  others: [غني, فرحان, تاجر]
+  note: المهرة الصنعة؛ صاحب الحرفة أمير في صنعته يتحكم فيها.
+  source: adimi
+  page: 317
+  status: draft
+
+- id: s0702
+  kind: saying
+  prompt: إذا عاداك جارك حوّل ___ دارك
+  answer: باب
+  others: [سور, حيط, شباك]
+  note: يورده الكتاب في الحثّ على الإحسان إلى الجار، فعداوته تجعل البيت نفسه لا يُطاق.
+  source: zanin
+  page: 18
+  status: draft
+
+- id: s0703
+  kind: saying
+  prompt: اسْبَابْ بْلاَكْ ___
+  answer: لْسَانَكْ
+  others: [يْدِّيكْ, عِينِيكْ, رَجْلِيكْ]
+  note: سبب بلائك لسانك. في معنى قول الشاعر إن البلاء موكل بالمنطق، فاحفظ لسانك تسلم.
+  source: dadoun
+  page: 143
+  status: draft
+
+- id: s0704
+  kind: saying
+  prompt: لاجل الورد ينسقي ___
+  answer: العليق
+  others: [الصبار, الحلفا, الحنضل]
+  note: العليق نبات شائك ينبت مع الورد. يقال لمن يُكرم إكراما لغيره لا لنفسه.
+  source: taymur
+  page: 315
+  status: draft
+
+- id: s0705
+  kind: saying
+  prompt: الكلام كثير، ومقطعه ___
+  answer: قليل
+  others: [طويل, صعب, ثقيل]
+  note: من أمثال صرواح؛ المقطع المقنع، فالكلام لا حد له ولكن المقنع منه قليل.
+  source: akwa
+  page: 871
+  volume: ج٢
+  status: draft
+
+- id: s0706
+  kind: saying
+  prompt: مثل النخل أوله طنز وآخره ___
+  answer: كنز
+  others: [خبز, لغز, حرز]
+  note: الطنز هو الاستهزاء. غارس النخل يُسخر منه في البداية، ثم يصير النخل مصدر رزق دائم له. يقال للأمر الذي تبدو بدايته غير مشجعة وعاقبته حميدة.
+  source: juhayman
+  page: 23
+  volume: ج٨
+  status: draft
+
+- id: s0707
+  kind: saying
+  prompt: لو كان الشي بكبر الشوارب كانوا ___ ملوك
+  answer: الجرادين
+  others: [الحلّاقين, الجمال, الديوك]
+  note: القيمة ليست بالمظهر ولا بطول الشوارب.
+  source: asadi
+  line: 163369
+  halab: p830
+  status: draft
+
+- id: s0708
+  kind: saying
+  prompt: جار الكريم مثل مجاور النهر، ما بخاف من ___
+  answer: العطش
+  others: [الجوع, البرد, الغرق]
+  note: جار الكريم لا يحتاج، كما لا يعطش من سكن بجانب النهر.
+  source: sahli
+  page: 117
+  status: draft
+
+- id: s0709
+  kind: saying
+  prompt: خبزته جوّه ___
+  answer: النجانه
+  others: [التنور, الصينية, السلة]
+  note: النجّانة إناء نحاسي يُغطّى به طبق الخبز، والمثل يُقال في الأمن والاطمئنان وكثرة الخير، ومن فائض الخبز كانت أم البيت تنقّع الباقلاء.
+  source: hijiyya
+  page: 80
+  status: draft
+
+- id: s0710
+  kind: saying
+  prompt: الشور لمن رآه، لا لمن ___
+  answer: تلاه
+  others: [سمعه, قراه, نساه]
+  note: الشّور في لهجاتهم الرأي والمشورة؛ فالرأي في الحادثة لمن شهدها حاضرًا لا لمن جاء بعدها.
+  source: iryani
+  page: 524
+  status: draft
+
+- id: s0711
+  kind: saying
+  prompt: إلي مش كاتبتلك تطيح ما بين إيدك و___
+  answer: فمك
+  others: [عينك, رجلك, صدرك]
+  note: اللقمة التي لم تُكتب لك تسقط ولو كانت بين يدك وفمك؛ ليس للإنسان إلا ما قسمه الله له.
+  source: mughniyya
+  page: 134
+  status: draft
+
+- id: s0712
+  kind: saying
+  prompt: ما عمرتش صنعاء ___
+  answer: بيوم
+  others: [بحجر, بيد, بليلة]
+  note: صنعاء لم تُبنَ في يوم واحد؛ يقال ردا على من يستعجل في أموره.
+  source: adimi
+  page: 433
+  status: draft
+
+- id: s0713
+  kind: saying
+  prompt: حبّ وداري واكراه و___
+  answer: داري
+  others: [جافي, عادي, نادي]
+  note: اكتم حبّك وبغضك ولا تجاهر بأيّ منهما.
+  source: asadi
+  line: 141935
+  halab: p1109
+  status: draft
+
+- id: s0714
+  kind: saying
+  prompt: الجار جار وإن ___
+  answer: جار
+  others: [غاب, مال, بعد]
+  note: يدعو المثل إلى احتمال أذى الجار والصبر عليه، فالجار أقرب الناس بعد الأهل.
+  source: taymur
+  page: 124
+  status: draft
+
+- id: s0715
+  kind: saying
+  prompt: جراده تأكل ولا ___
+  answer: تشبع
+  others: [تطير, تسمن, تنام]
+  note: يقال للأكول النحيل الذي لا يظهر أثر الأكل على جسمه، كالجرادة التي تأكل كثيرا.
+  source: abboudi_amthal
+  page: 349
+  volume: ج١
+  status: draft
+
+- id: s0716
+  kind: saying
+  prompt: الصَّحْبَة وَحْدَه، وَالْعَيْشْ ___
+  answer: خْلاَفْ
+  others: [وَحْدَه, بْنِينْ, مْرَارْ]
+  note: يقال في صديقين اتحدا في الصحبة وانسجما، مع أن أحدهما فقير والآخر غني، فالود واحد والمعيشة مختلفة.
+  source: dadoun
+  page: 167
+  status: draft
+
+- id: s0717
+  kind: saying
+  prompt: كل طير يشبعه ___
+  answer: منقاره
+  others: [جناحه, عشه, ريشه]
+  note: الطير الصغير منقاره صغير، وما يحمله يكفي جسمه الصغير. يقال في الاكتفاء بما عند المرء من قدرة.
+  source: juhayman
+  page: 99
+  volume: ج٦
+  status: draft
+
+- id: s0718
+  kind: saying
+  prompt: لا تطلب العلم غالي يأتيك ___
+  answer: رخيص
+  others: [بطيء, ناقص, كاذب]
+  note: من أمثال عُتْمة؛ والعلم هنا الخبر، أي لا تجهد نفسك في طلب الأخبار فستأتيك دون عناء.
+  source: akwa
+  page: 921
+  volume: ج٢
+  status: draft
+
+- id: s0719
+  kind: saying
+  prompt: الكلام ما عليهوش ___
+  answer: جمرك
+  others: [غطا, قفل, ختم]
+  note: الجمرك هنا بمعنى الحاجز أو الرسوم؛ فالكلام يقال بلا ثمن ولا قيد، ولذلك يكثر.
+  source: shaalan
+  page: 80
+  volume: ج٥
+  status: draft
+
+- id: s0720
+  kind: saying
+  prompt: ظلم الظالم ما بخليه ___
+  answer: سالم
+  others: [نايم, غني, قاعد]
+  note: عاقبة الظلم وخيمة على صاحبه.
+  source: sahli
+  page: 209
+  status: draft
+
+- id: s0721
+  kind: saying
+  prompt: اللي ما عندو في البيت كبير يحطّ لو ___ كبير
+  answer: حجر
+  others: [كرسي, قفل, سرير]
+  note: لا بدّ للبيت من كبير يُرجع إليه ويُهاب.
+  source: asadi
+  line: 140287
+  halab: p799
+  status: draft
+
+- id: s0722
+  kind: saying
+  prompt: اخدم تكرم اقعد ___
+  answer: تندم
+  others: [تسلم, تشبع, تنام]
+  note: من يعمل يُكرَم، ومن يقعد عن العمل يندم.
+  source: zanin
+  page: 16
+  status: draft
+
+- id: s0723
+  kind: saying
+  prompt: ينزل البرد على قدر ___
+  answer: الدفاء
+  others: [الكساء, الشتاء, النار]
+  note: الله يقسم البلاء على قدر الطاقة؛ يقال لمن يعيش بالقليل ويتدبر أمره.
+  source: adimi
+  page: 472
+  status: draft
+
+- id: s0724
+  kind: saying
+  prompt: شوف حاله قبل ان ___
+  answer: تساله
+  others: [تزوره, تكلمه, تلومه]
+  note: حال الإنسان تغنيك عن سؤاله، وكثيرا ما يقال عند السؤال عن مريض اشتد مرضه.
+  source: taymur
+  page: 220
+  status: draft
+
+- id: s0725
+  kind: saying
+  prompt: ما يفرح بالهديه إلا ولد ___
+  answer: الرعيه
+  others: [السلطان, الباشا, التاجر]
+  note: «ولد الرعية» ابن عامة الناس؛ الهدية تسعد الفقير أكثر من الغني لما يعانيه من حرمان.
+  source: mughniyya
+  page: 498
+  status: draft
+
+- id: s0726
+  kind: saying
+  prompt: رفيقك من توحي جرة ___
+  answer: ناقته
+  others: [فرسه, حماره, كلبه]
+  note: توحي أي تسمع، والجرة صوت الدابة وهي تجترّ طعامها؛ فالصديق الحق قريب منك تجده متى احتجت إليه.
+  source: juhayman
+  page: 199
+  volume: ج٣
+  status: draft
+
+- id: s0727
+  kind: saying
+  prompt: لَحْوِيَّطْ ___ اللِّي جَا يَطْلَعْ عْلِيهْ
+  answer: لَقْصِيرْ
+  others: [لَعْوَجْ, لَجْدِيدْ, لَبْيَضْ]
+  note: الحائط القصير يتسلقه كل عابر. يقال فيمن يستضعفه الناس ويتخذونه مطية لقضاء مصالحهم بلا احترام.
+  source: dadoun
+  page: 311
+  status: draft
+
+- id: s0728
+  kind: saying
+  prompt: من ميل الى ميل ___
+  answer: فرج
+  others: [رزق, نصر, شفا]
+  note: «الميل» مرود المكحلة؛ فبين أن يضعه المرء في عينه مرة وأن يعيده ثانية يأتي الله بالفرج. يقال في انتظار الفرج القريب.
+  source: abboudi_amthal
+  page: 1454
+  volume: ج٤
+  status: draft
+
+- id: s0729
+  kind: saying
+  prompt: ميه إبره ما تقع ___
+  answer: شريم
+  others: [مخيط, سكين, رمح]
+  note: الشريم المنجل؛ فمئة إبرة لا تصلح أن تكون منجلاً واحداً.
+  source: akwa
+  page: 1301
+  volume: ج٢
+  status: draft
+
+- id: s0730
+  kind: saying
+  prompt: إلطاقة اللي بجيك منها الريح، سدها و___
+  answer: استريح
+  others: [نام, روح, اقعد]
+  note: ابتعد عن مصدر الأذى وأغلقه، ترتح.
+  source: sahli
+  page: 203
+  status: draft
+
+- id: s0731
+  kind: saying
+  prompt: كلّ من بيقدح ___
+  answer: بزندو
+  others: [بكبريتو, بحجرو, بجارو]
+  note: كلّ امرئ يعتمد على نفسه وما عنده.
+  source: asadi
+  line: 130852
+  halab: p1103
+  status: draft
+
+- id: s0732
+  kind: saying
+  prompt: أصبحت اللقيه ___
+  answer: سود
+  others: [تراب, حجار, رماد]
+  note: اللقية كنز يدلّ عليه هاتف في المنام بشرط أن يُذبح عليه، فإن لم يفعل انقلب الكنز سُودًا أي فحمًا؛ يقال في خيبة الأمل.
+  source: iryani
+  page: 451
+  status: draft
+
+- id: s0733
+  kind: saying
+  prompt: ولا سجره إلا وهزها ___
+  answer: الريح
+  others: [المطر, الطير, الفاس]
+  note: كل من في الدنيا أصابته الحوادث، فلا أحد يعيش سالما منها.
+  source: taymur
+  page: 379
+  status: draft
+
+- id: s0734
+  kind: saying
+  prompt: إذا غاب الدم تنبع ___
+  answer: الفار
+  others: [الكلب, الديك, الصوص]
+  note: الدُّمّ في لهجة اليمن هو القط، وتنبّع أي قفز؛ يقال لمن يسيء الأدب حين يغيب من يضبطه.
+  source: adimi
+  page: 83
+  status: draft
+
+- id: s0735
+  kind: saying
+  prompt: أنشف من لسان ___
+  answer: العطشان
+  others: [البخيل, الساكت, التاجر]
+  note: من صيغ المبالغة في وصف شدة الجفاف؛ فلا شيء أجف من لسان العطشان.
+  source: shaalan
+  page: 236
+  volume: ج٤
+  status: draft
+
+- id: s0736
+  kind: saying
+  prompt: فلان أثقل من حصاة ___
+  answer: القفان
+  others: [الوادي, الدرب, المقلاع]
+  note: القفان ميزان من خشبة يُعلّق في طرفها حجر ثقيل؛ يقال للثقيل الظل الذي يكره الناس مجالسته.
+  source: juhayman
+  page: 76
+  volume: ج٥
+  status: draft
+
+- id: s0737
+  kind: saying
+  prompt: متكسره على راسه ___
+  answer: القلال
+  others: [العمايم, الطواقي, الشواشي]
+  note: «القلال» أوانٍ فخارية للشرب؛ تكسرت على رأسه جرار كثيرة، فيقال للداهية الذي جرّب حلو الحياة ومرّها فاكتسب المعرفة والدهاء.
+  source: mughniyya
+  page: 504
+  status: draft
+
+- id: s0738
+  kind: saying
+  prompt: نحنه بالتفكير والله ___
+  answer: بالتدبير
+  others: [بالتأخير, بالتغيير, بالتصوير]
+  note: الإنسان يفكّر ويخطّط، والله هو المدبّر.
+  source: asadi
+  line: 126860
+  halab: p1101
+  status: draft
+
+- id: s0739
+  kind: saying
+  prompt: عَقْلُه خَاوِي كَيْعَشَّشْ فِيهْ ___
+  answer: بْلاَرَجْ
+  others: [لَحْمَامْ, الْبُومْ, الزَّاوْشْ]
+  note: بلارج هو اللقلاق. عقل فارغ إلى حد أن اللقلاق يبني فيه عشه! يقال فيمن لا يفكر في عواقب الأمور.
+  source: dadoun
+  page: 191
+  status: draft
+
+- id: s0740
+  kind: saying
+  prompt: طلعنا من المولد بلا ___
+  answer: حمص
+  others: [حلاوة, ملبس, فول]
+  note: يقال لمن يعود من سعيه بلا فائدة.
+  source: sahli
+  page: 206
+  status: draft
+
+- id: s0741
+  kind: saying
+  prompt: وسّع المقطع يجيك ___
+  answer: العود
+  others: [الحطب, الماء, الرزق]
+  note: 'من أمثال الحطابين: إذا وسّعت موضع قطع العود الكبير بالضرب يمينا وشمالا جاءك سريعا سهلا.'
+  source: abboudi_amthal
+  page: 1556
+  volume: ج٤
+  status: draft
+
+- id: s0742
+  kind: saying
+  prompt: زي نخلة الوادي لا تمر لا ___
+  answer: ظل
+  others: [جريد, سعف, ماء]
+  note: يضرب للشخص الذي لا فائدة منه.
+  source: zanin
+  page: 165
+  status: draft
+
+- id: s0743
+  kind: saying
+  prompt: لا في حياتك اكتسينا جديد، ولا في مماتك اكلنا ___
+  answer: عصيد
+  others: [لحم, رز, خبز]
+  note: اكتسينا من الكساء، والعصيد طعام يمني معروف؛ يقال لمن لا يُنتفع به حياً ولا ميتاً.
+  source: akwa
+  page: 951
+  volume: ج٢
+  status: draft
+
+- id: s0744
+  kind: saying
+  prompt: عصفوره في اليد ولا عشره في ___
+  answer: السجر
+  others: [العش, الغيط, البرج]
+  note: السجر هو الشجر. القليل الذي في يدك خير من الكثير البعيد عنها.
+  source: taymur
+  page: 244
+  status: draft
+
+- id: s0745
+  kind: saying
+  prompt: من عاش مداري مات ___
+  answer: مستور
+  others: [مرتاح, غني, سعيد]
+  note: من عالج الأمور بالحكمة والحلم وتغاضى عن بعض حقه عاش وانتهى بعيدا عن الفضائح.
+  source: adimi
+  page: 363
+  status: draft
+
+- id: s0746
+  kind: saying
+  prompt: يا رايح كتّر ___
+  answer: ملايح
+  others: [فضايح, نصايح, روايح]
+  note: من كان راحلاً فليترك وراءه ذكراً طيباً.
+  source: asadi
+  line: 177086
+  halab: p860
+  status: draft
+
+- id: s0747
+  kind: saying
+  prompt: صافي مثل عين ___
+  answer: الوزّة
+  others: [الحمامة, الغزال, البزّونة]
+  note: هكذا وصف البغداديون الماء المترشّح من حِبّ الفخار في شدة صفائه، وكانوا يفضّلونه لتخدير الشاي.
+  source: hijiyya
+  page: 67
+  status: draft
+
+- id: s0748
+  kind: saying
+  prompt: نعد الليالي ___
+  answer: تعدنا
+  others: [تنسانا, تضحك لنا, ترحمنا]
+  note: نحن نحسب الأيام كم مضى منها، وهي في الوقت نفسه تحسب أعمارنا وتفنينا واحدا بعد آخر.
+  source: juhayman
+  page: 327
+  volume: ج٨
+  status: draft
+
+- id: s0749
+  kind: saying
+  prompt: الْفُولْ الاَخْضَرْ فِى مَارْسْ تُوجْدُه، وَفِى ___ تَفْقْدُه
+  answer: أَبْرِيلْ
+  others: [يَنَايَرْ, فَبْرَايَرْ, دُجَنْبَرْ]
+  note: الفول الأخضر يكثر في مارس ويختفي في أبريل. يقال في الشيء لا يُتمتع به إلا في أوقات معينة.
+  source: dadoun
+  page: 303
+  status: draft
+
+- id: s0750
+  kind: saying
+  prompt: الصحبه في ___
+  answer: البحر
+  others: [السوق, العرس, الدار]
+  note: يتعرض البحّارة لأخطار البحر فيظهر بينهم الصديق الحق من المزيف؛ الصاحب يُعرف في الشدائد.
+  source: mughniyya
+  page: 337
+  status: draft
+
+- id: s0751
+  kind: saying
+  prompt: حسبتك سديره وانت ___
+  answer: ناقه
+  others: [عنزه, نعجه, بقره]
+  note: السديرة فحل القافلة وأكبر جمالها وأقواها، يكون في مقدمتها ويقودها.
+  source: iryani
+  page: 430
+  status: draft
+
+- id: s0752
+  kind: saying
+  prompt: زعل الخيات مثل ___ بالديات
+  answer: الحنا
+  others: [الكحل, الصابون, العطر]
+  note: خصام الأخوات لا يدوم، يزول كما يزول الحناء عن اليدين.
+  source: sahli
+  page: 166
+  status: draft
+
+- id: s0753
+  kind: saying
+  prompt: الضيف أول يوم قمر منوّر وتانى يوم رغيف مقوّر وتالت يوم ___ مصوّر
+  answer: عفريت
+  others: [ديب, قرد, تعبان]
+  note: يعبر عن ضيق أهل البيت بطول إقامة الضيف، مع أنهم استقبلوه أحسن استقبال في يومه الأول.
+  source: shaalan
+  page: 178
+  volume: ج٢
+  status: draft
+
+- id: s0754
+  kind: saying
+  prompt: يعوم ويحرس ___
+  answer: ثيابه
+  others: [غنمه, بيته, ولاده]
+  note: يقال للمتيقظ لا يشغله شيء عن شيء؛ يسبح ولا يغفل عن ثيابه على الشط.
+  source: taymur
+  page: 398
+  status: draft
+
+- id: s0755
+  kind: saying
+  prompt: كول لحم إيدك ولا تعتاز ___
+  answer: القصّاب
+  others: [الطبّاخ, الخبّاز, الجيران]
+  note: اصبر على الحرمان ولا تحتج إلى منّة أحد.
+  source: asadi
+  line: 18197
+  halab: p1117
+  status: draft
+
+- id: s0756
+  kind: saying
+  prompt: في القلب ما ينضج اللحم ___
+  answer: النيه
+  others: [الجديد, البارد, الكثير]
+  note: النيّه أي النيء؛ أي في القلب من الهموم ما يكفي حرّه لإنضاج اللحم النيء.
+  source: akwa
+  page: 781
+  volume: ج٢
+  status: draft
+
+- id: s0757
+  kind: saying
+  prompt: ملا اثمك، ولا ملا ___
+  answer: بطنك
+  others: [كيسك, بيتك, يدك]
+  note: «الاثم» الفم؛ ملء فمك من الطعام الجيد خير من ملء بطنك من الرديء. يقال في تفضيل القليل الجيد.
+  source: abboudi_amthal
+  page: 1383
+  volume: ج٤
+  status: draft
+
+- id: s0758
+  kind: saying
+  prompt: من أكل باليدين ___
+  answer: اختنق
+  others: [شبع, تعب, سمن]
+  note: من استعجل والتهم بكلتا يديه شرق بالطعام؛ أي الطمع يضر صاحبه.
+  source: adimi
+  page: 379
+  status: draft
+
+- id: s0759
+  kind: saying
+  prompt: من زرع شعير ما حصد ___
+  answer: بر
+  others: [رز, عسل, ورد]
+  note: البر هو القمح وهو أفضل من الشعير. فمن عمل السوء لا يجني إلا مثله، والجزاء من جنس العمل.
+  source: juhayman
+  page: 321
+  volume: ج١٠
+  status: draft
+
+- id: s0760
+  kind: saying
+  prompt: ادبارة الفار على أهل الدار يبيعوا القطوس ويشروا ___
+  answer: جبنة
+  others: [حليب, لحمة, سمكة]
+  note: الفأر ينصح أهل البيت أن يبيعوا القط ويشتروا الجبن؛ يضرب لمن ينصح نصيحة تخدم مصلحته.
+  source: zanin
+  page: 17
+  status: draft
+
+- id: s0761
+  kind: saying
+  prompt: بْحَالْ اللِّي ضْرَبْ الْكَلْبْ ___
+  answer: بَسْفَنْجَه
+  others: [بَحْجَرْ, بَعْصَا, بَبَلْغَه]
+  note: السفنج كعكة مقلية محبوبة في المغرب، فمن ضرب الكلب بها أعطاه ما يشتهي. يقال فيمن ينال ما يتمناه دون أن يتوقعه.
+  source: dadoun
+  page: 39
+  status: draft
+
+- id: s0762
+  kind: saying
+  prompt: زي الشعير موكول ___
+  answer: مذموم
+  others: [مرغوب, مطحون, مخزون]
+  note: يقال لمن ينتفع الناس به ثم يذمونه، كالشعير يؤكل ويُعاب.
+  source: taymur
+  page: 192
+  status: draft
+
+- id: s0763
+  kind: saying
+  prompt: وسعنا له، دخل هو و___
+  answer: حماره
+  others: [ولاده, جاره, كلبه]
+  note: لمن تفسح له فيتمادى ويطمع.
+  source: sahli
+  page: 352
+  status: draft
+
+- id: s0764
+  kind: saying
+  prompt: الجرح ما بيمضّ إلا ___
+  answer: صاحبو
+  others: [طبيبو, جارو, عدوّو]
+  note: لا يحسّ بالألم إلا صاحبه.
+  source: asadi
+  line: 159424
+  halab: p819
+  status: draft
+
+- id: s0765
+  kind: saying
+  prompt: لو ما تخالف الأنظار ما يمرقن ___
+  answer: السلع
+  others: [القوافل, الأيام, الخيول]
+  note: «يمرقن» يروجن وينفدن؛ لولا اختلاف الأذواق لما راجت السلع المختلفة في شكلها وجودتها.
+  source: mughniyya
+  page: 474
+  status: draft
+
+- id: s0766
+  kind: saying
+  prompt: لو من أتى نجر ما بقي في الدنيا ___
+  answer: شجر
+  others: [خشب, حطب, غابات]
+  note: ليس كل من حمل أداة صار نجّارا؛ ويقال لمن يتصدى لعمل لا يحسنه.
+  source: adimi
+  page: 350
+  status: draft
+
+- id: s0767
+  kind: saying
+  prompt: اترك فعل الخير ما ترى ___
+  answer: شر
+  others: [خير, فقر, ضيم]
+  note: أي قد يكون إحسانك إلى أحدهم سبباً في أن يسيء إليك، فاحذر من تحسن إليه.
+  source: akwa
+  page: 51
+  volume: ج١
+  status: draft
+
+- id: s0768
+  kind: saying
+  prompt: إشتغل يوم ___ ولا تمد إيدك لأخوك السعيد
+  answer: العيد
+  others: [الجمعة, الوقفة, الخميس]
+  note: يحث المثل على العمل وحفظ كرامة النفس، ولو اضطر المرء إلى العمل في يوم الراحة، بدل انتظار المساعدة.
+  source: shaalan
+  page: 289
+  volume: ج٦
+  status: draft
+
+- id: s0769
+  kind: saying
+  prompt: يبيع الما في حارة ___
+  answer: السقايين
+  others: [الخبازين, الحدادين, النجارين]
+  note: السقاؤون هم باعة الماء. يقال لمن يعرض بضاعة على من يصنعها ويعرفها، فلن يشتروها أو يدفعوا فيها أبخس الأثمان.
+  source: juhayman
+  page: 202
+  volume: ج٩
+  status: draft
+
+- id: s0770
+  kind: saying
+  prompt: سرح ___
+  answer: جرذي
+  others: [ذيب, غزال, نعامه]
+  note: الجرذ الصحراوي لا يتباعد عن جحره في طلب الرزق؛ يقال لمن لا يبتعد عن منزله كثيرا.
+  source: abboudi_amthal
+  page: 634
+  volume: ج٢
+  status: draft
+
+- id: s0771
+  kind: saying
+  prompt: المال بيجرّ المال والقمل بيجرّ ___
+  answer: الصيبان
+  others: [الجيران, الديدان, الفيران]
+  note: الغنى يجلب الغنى والفقر يجلب الفقر.
+  source: asadi
+  line: 136569
+  halab: p796
+  status: draft
+
+- id: s0772
+  kind: saying
+  prompt: برمة ___ ما تخمد
+  answer: الشراكة
+  others: [الجيران, الضيوف, العزّاب]
+  note: البرمة قدر الطبخ، و«تخمد» في لهجة اليمن تعني تنضج؛ فالطبخة التي يتولاها طبّاخون كثيرون لا تنضج، وكذلك العمل الذي تتزاحم عليه الأيدي بلا حاجة.
+  source: iryani
+  page: 246
+  status: draft
+
+- id: s0773
+  kind: saying
+  prompt: البحر ما ينفد فيه ___
+  answer: السحر
+  others: [الحجر, المطر, الملح]
+  note: يقال لكبير الهمة الذي لا يؤثر فيه كلام النمامين ولا يغيّر رأيه.
+  source: taymur
+  page: 99
+  status: draft
+
+- id: s0774
+  kind: saying
+  prompt: شتوة ___ بتحيي كل عرق فان
+  answer: نيسان
+  others: [آذار, شباط, كانون]
+  note: مطر شهر نيسان يعيد الحياة إلى كل عرق ذابل.
+  source: sahli
+  page: 183
+  status: draft
+
+- id: s0775
+  kind: saying
+  prompt: تِينْجِيبْ لَبْحِيرَه عْلَى ظْهُورْ ___
+  answer: الْجْمَالْ
+  others: [الْبْغَالْ, الْحْمِيرْ, الْخِيلْ]
+  note: البحيرة في المغرب بستان الخضر، ومن يزعم أنه يحمله على ظهور الجمال يحلّق في الخيال. يقال لمن يكثر الكذب والأوهام.
+  source: dadoun
+  page: 55
+  status: draft
+
+- id: s0776
+  kind: saying
+  prompt: ما تحن ناقه على غير ___
+  answer: حوارها
+  others: [ضيفها, جارتها, حبلها]
+  note: «الحوار» ولد الناقة؛ لا يتعاطف أحد مع غيره إلا إذا ربطته به قرابة أو نسب.
+  source: mughniyya
+  page: 480
+  status: draft
+
+- id: s0777
+  kind: saying
+  prompt: من لم يكن لأمه كيف يكون ___
+  answer: لخالته
+  others: [لجاره, لعمه, لأخته]
+  note: من ساءت أخلاقه مع أقرب الناس إليه فكيف يحسن إلى غيرهم.
+  source: adimi
+  page: 386
+  status: draft
+
+- id: s0778
+  kind: saying
+  prompt: الحكي ما عليه ___
+  answer: كمرك
+  others: [ملح, قفل, ميزان]
+  note: يُقال فيمن يطلق الكلام والوعود جزافاً لأن الكلام لا يكلّفه شيئاً.
+  source: asadi
+  line: 147532
+  halab: p1323
+  status: draft
+
+- id: s0779
+  kind: saying
+  prompt: قلل طعامك تحمد ___
+  answer: منامك
+  others: [عيالك, صحابك, ربعك]
+  note: للنهي عن الإسراف حتى في النافع، فالإسراف يقلب اللذيذ إلى شيء مقلق.
+  source: juhayman
+  page: 317
+  volume: ج٥
+  status: draft
+
+- id: s0780
+  kind: saying
+  prompt: راس مال الدلال ___
+  answer: الكذب
+  others: [اللسان, الصبر, الحيلة]
+  note: أي إن الكذاب ليس له رصيد في حياته غير الكذب والتدليس.
+  source: akwa
+  page: 517
+  volume: ج١
+  status: draft
