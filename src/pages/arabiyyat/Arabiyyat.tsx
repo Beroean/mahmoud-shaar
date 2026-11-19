@@ -7,16 +7,19 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import { DallahIcon, HelpIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
+import { markIntroSeen, shouldPlayIntro } from "../../lib/introOnce";
 import { type SaveData, currentStreak, load as loadSave, recordDay, save as writeSave } from "../halab/core/storage";
 import { toArabicDigits } from "../shakkil/core/share";
 import { Modal } from "../shakkil/ui/Modals";
 import { isLaunched, msUntilNext, previewNumber, todayNumber } from "./core/daily";
 import { GAME_NAME, KIND_LABEL, KIND_QUESTION, STORAGE_KEY, placeLine, shareText } from "./core/share";
 import { BLANK, type Day, type Round, type Source } from "./core/types";
-import { MiniMap } from "./ui/MiniMap";
+import { MapIntro } from "./ui/MapIntro";
+import { type MapPin, MiniMap } from "./ui/MiniMap";
 
 const load = () => loadSave(undefined, STORAGE_KEY);
 const save = (d: SaveData) => writeSave(d, undefined, STORAGE_KEY);
+const INTRO_KEY = "arabiyyat:intro";
 
 interface Session {
   day: Day;
@@ -453,6 +456,13 @@ export default function Arabiyyat() {
   const [help, setHelp] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const closeHelp = useCallback(() => setHelp(false), []);
+  const [intro, setIntro] = useState(() => shouldPlayIntro(INTRO_KEY, "intro"));
+  const closeIntro = useCallback(() => setIntro(false), []);
+  const miniMap = useRef<HTMLDivElement>(null);
+  const findMiniMap = useCallback(() => miniMap.current?.querySelector("svg") ?? null, []);
+  useEffect(() => {
+    if (intro) markIntroSeen(INTRO_KEY);
+  }, [intro]);
 
   useEffect(() => {
     import("virtual:arabiyyat-days")
@@ -500,6 +510,11 @@ export default function Arabiyyat() {
   const dayDone = session?.picks.every((p) => p !== null) ?? false;
 
   const round = session && session.round < session.day.rounds.length ? session.day.rounds[session.round] : null;
+  const pins: MapPin[] | null = !session
+    ? null
+    : round
+      ? [{ lat: round.source.lat, lon: round.source.lon }]
+      : session.day.rounds.map((r, i) => ({ lat: r.source.lat, lon: r.source.lon, label: i + 1 }));
 
   return (
     <div className="font-[system-ui,'Segoe_UI',Tahoma,sans-serif]">
@@ -545,16 +560,13 @@ export default function Arabiyyat() {
 
           <div ref={playRef} className="scroll-mt-4" />
           {session && <Steps session={session} onOpen={openRound} />}
-          {session && (
-            <div className="-mt-4 mb-6">
-              {round ? (
-                <MiniMap pins={[{ lat: round.source.lat, lon: round.source.lon }]} title={`خريطة: ${round.source.place}`} />
-              ) : (
-                <MiniMap
-                  pins={session.day.rounds.map((r, i) => ({ lat: r.source.lat, lon: r.source.lon, label: i + 1 }))}
-                  title={`خريطة: ${session.day.rounds.map((r) => r.source.place).join("، ")}`}
-                />
-              )}
+          {session && pins && (
+            // Hidden, not removed, during the opening scene: it lands exactly here.
+            <div ref={miniMap} className="-mt-4 mb-6" style={intro ? { visibility: "hidden" } : undefined}>
+              <MiniMap
+                pins={pins}
+                title={`خريطة: ${round ? round.source.place : session.day.rounds.map((r) => r.source.place).join("، ")}`}
+              />
             </div>
           )}
           {session && round && (
@@ -582,7 +594,8 @@ export default function Arabiyyat() {
 
           {sources.length > 0 && <Credits sources={sources} />}
 
-          {help && <HelpModal onClose={closeHelp} />}
+          {help && !intro && <HelpModal onClose={closeHelp} />}
+          {intro && <MapIntro books={sources} pins={pins} target={findMiniMap} onDone={closeIntro} />}
           {toast && (
             <div role="status" className="fixed top-6 inset-x-0 mx-auto w-fit z-50 px-4 py-2 rounded-md bg-paper text-ink text-sm">
               {toast}

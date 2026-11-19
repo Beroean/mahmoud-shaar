@@ -1,0 +1,143 @@
+/*
+ * The opening scene of عربيّات (MapIntro.tsx). The landing (2.9 s on) is driven from MapIntro.tsx
+ * because it needs the mini map's position on the page:
+ *
+ *   0.0 – 1.6   the coastline traces itself; the land and the name fade in
+ *   0.9 – 1.9   a dot rises on every book's place, west to east
+ *   2.1 – 2.6   the dots settle, the name goes, today's pin drops
+ *   2.9 – 3.75  the map flies into the mini map and the dark lifts (MapIntro.tsx)
+ *
+ * Every animation runs on transform, opacity or stroke-dashoffset only.
+ */
+
+.mi-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  background: #0a0a0a;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.mi-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.mi-map {
+  display: block;
+  width: min(92vw, 860px, calc(62vh * 600 / 263));
+  height: auto;
+  animation: mi-map-in 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* The coast: pathLength = 1, so a dash of 1 traces the whole outline. */
+.mi-coast {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  stroke-opacity: 0.9;
+  animation: mi-draw 1.6s cubic-bezier(0.45, 0, 0.25, 1) forwards;
+  transition: stroke-opacity 0.85s ease;
+}
+
+.mi-landing .mi-coast {
+  stroke-opacity: var(--mi-rest);
+}
+
+.mi-fill {
+  opacity: 0;
+  animation: mi-fade 0.9s ease-out 0.6s forwards;
+}
+
+/* Book dots: rise, then settle away before today's pin drops (delays inline, per dot). */
+.mi-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: mi-dot 0.45s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+
+.mi-books {
+  animation: mi-fade-out 0.45s ease-in 2.1s forwards;
+}
+
+.mi-pins {
+  opacity: 0;
+  animation: mi-drop 0.5s cubic-bezier(0.3, 1.4, 0.5, 1) both;
+}
+
+.mi-name {
+  color: rgb(186 230 253);
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1;
+  opacity: 0;
+  animation:
+    mi-fade 0.8s ease-out 0.5s forwards,
+    mi-fade-out 0.4s ease-in 2.5s forwards;
+}
+
+.mi-skip {
+  position: absolute;
+  bottom: 1.5rem;
+  inset-inline: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgb(232 228 220 / 0.3);
+  opacity: 0;
+  animation:
+    mi-fade 0.6s ease 0.8s forwards,
+    mi-fade-out 0.3s ease 2.7s forwards;
+}
+
+@keyframes mi-map-in {
+  from {
+    transform: scale(0.94);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes mi-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes mi-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mi-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mi-dot {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+}
+
+@keyframes mi-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
