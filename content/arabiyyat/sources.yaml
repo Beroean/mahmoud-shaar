@@ -4,148 +4,197 @@
 # title:  the book's title
 # author: its author
 # place:  the place the book records. Shown above each question as context ("من أمثال مصر"), never asked.
+# lat/lon: where the mini map's pin goes for this book: its city, or a central point of its country
 # url:    where the book can be read (the edition the page numbers come from)
 
 - id: asadi
   title: موسوعة حلب المقارنة
   author: محمد خير الدين الأسدي
   place: حلب
+  lat: 36.2
+  lon: 37.16
   url: https://archive.org/details/20191220_20191220_1403
 
 - id: taymur
   title: الأمثال العامية
   author: أحمد تيمور باشا
   place: مصر
+  lat: 30.04
+  lon: 31.24
   url: https://archive.org/details/wuquf-openiti-1348ahmadtaymurbasha.amthalcammiyya-75ae374d4eee
 
 - id: taymur_kinayat
   title: الكنايات العامية
   author: أحمد تيمور باشا
   place: مصر
+  lat: 30.04
+  lon: 31.24
   url: https://www.hindawi.org/books/93047907/
 
 - id: amin
   title: قاموس العادات والتقاليد والتعابير المصرية
   author: أحمد أمين
   place: مصر
+  lat: 30.04
+  lon: 31.24
   url: https://archive.org/details/dictionaries00006
 
 - id: juhayman
   title: الأمثال الشعبية في قلب جزيرة العرب
   author: عبد الكريم الجهيمان
   place: نجد
+  lat: 24.71
+  lon: 46.68
   url: https://archive.org/details/4-11360
 
 - id: hijiyya
   title: بغداديات
   author: عزيز جاسم الحجية
   place: بغداد
+  lat: 33.31
+  lon: 44.36
   url: https://archive.org/details/1-1387-1967
 
 - id: iryani
   title: المعجم اليمني في اللغة والتراث
   author: مطهر علي الإرياني
   place: اليمن
+  lat: 15.37
+  lon: 44.19
   url: https://archive.org/details/1996_20200131
 
 - id: sahli
   title: موسوعة الأمثال الشعبية الفلسطينية
   author: محمد توفيق السهلي
   place: فلسطين
+  lat: 31.78
+  lon: 35.22
   url: https://www.hindawi.org/books/19363759/
 
 - id: alloub
   title: معجم الدخيل في العامية المصرية
   author: عبد الوهاب علوب
   place: مصر
+  lat: 30.04
+  lon: 31.24
   url: https://archive.org/details/elshandawily5688
 
 - id: hanafi
   title: معجم الألفاظ الكويتية
   author: جلال الحنفي
   place: الكويت
+  lat: 29.37
+  lon: 47.98
   url: https://archive.org/details/1-1383-1964
 
 - id: chafik
   title: الدارجة المغربية مجال توارد بين الأمازيغية والعربية
   author: محمد شفيق
   place: المغرب
+  lat: 32.0
+  lon: -6.5
   url: https://archive.org/details/darija-maghribiya
 
 - id: qasim
   title: قاموس اللهجة العامية في السودان
   author: عون الشريف قاسم
   place: السودان
+  lat: 15.5
+  lon: 32.56
   url: https://archive.org/details/20230522_20230522_0502
 
 - id: abboudi
   title: معجم الأصول الفصيحة للألفاظ الدارجة
   author: محمد بن ناصر العبودي
   place: نجد
+  lat: 24.71
+  lon: 46.68
   url: https://archive.org/search?query=%D9%85%D8%B9%D8%AC%D9%85+%D8%A7%D9%84%D8%A3%D8%B5%D9%88%D9%84+%D8%A7%D9%84%D9%81%D8%B5%D9%8A%D8%AD%D8%A9+%D9%84%D9%84%D8%A3%D9%84%D9%81%D8%A7%D8%B8+%D8%A7%D9%84%D8%AF%D8%A7%D8%B1%D8%AC%D8%A9
 
 - id: bensalah_souf
   title: الألغاز الشعبية في وادي سوف
   author: بن علي محمد الصالح
   place: وادي سوف (الجزائر)
+  lat: 33.37
+  lon: 6.86
   url: https://archive.org/details/20250504_20250504_2223
 
 - id: dadoun
   title: الأمثال الشعبية المغربية
   author: إدريس دادون
   place: المغرب
+  lat: 32.0
+  lon: -6.5
   url: https://archive.org/details/amthal_maghribiya
 
 - id: zanin
   title: معجم الأمثال والتعابير الشعبية الليبية
   author: موسى محمد زنين وعبد المجيد الشتيوي علي شتل
   place: ليبيا
+  lat: 31.0
+  lon: 16.0
   url: https://archive.org/details/moajam-alamtal
 
 - id: mughniyya
   title: معجم الأمثال الشعبية الليبية
   author: حبيب يوسف مغنية
   place: ليبيا
+  lat: 31.0
+  lon: 16.0
   url: https://archive.org/details/Libyan-Proverbs
 
 - id: akwa
   title: الأمثال اليمانية
   author: إسماعيل بن علي الأكوع
   place: اليمن
+  lat: 15.37
+  lon: 44.19
   url: https://archive.org/details/20044-2
 
 - id: abboudi_amthal
   title: الأمثال العامية في نجد
   author: محمد بن ناصر العبودي
   place: نجد
+  lat: 24.71
+  lon: 46.68
   url: https://archive.org/details/ALamthalAl3ameeh1
 
 - id: adimi
   title: الثروة اليمنية من الأمثال الشعبية
   author: محمد عثمان ثابت الأديمي
   place: اليمن
+  lat: 15.37
+  lon: 44.19
   url: https://archive.org/details/hm4445
 
 - id: khadousi
   title: موسوعة الألغاز الشعبية
   author: رابح خدوسي وجميلة جرطي
   place: الجزائر
+  lat: 35.6
+  lon: 2.8
   url: https://archive.org/details/yoooooofs_gmail_20180127_1435
 
 - id: hamoudi
   title: عادات وتقاليد الحياة الشعبية العراقية
   author: باسم عبد الحميد حمودي (إعداد)
   place: العراق
+  lat: 34.6
+  lon: 42.8
   url: https://archive.org/details/1_20221126_20221126_1222
 
 - id: shaalan
   title: موسوعة الأمثال الشعبية المصرية والتعبيرات السائرة
   author: إبراهيم أحمد شعلان
   place: مصر
+  lat: 30.04
+  lon: 31.24
   url: https://archive.org/details/1-6_20221211
 
 - id: qasimi
   title: قاموس الصناعات الشامية
   author: محمد سعيد القاسمي وجمال الدين القاسمي وخليل العظم
   place: دمشق
+  lat: 33.51
+  lon: 36.29
   url: https://archive.org/details/qamoos_al-sana3at_al-shameyah
