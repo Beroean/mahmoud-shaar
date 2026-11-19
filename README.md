@@ -20,7 +20,7 @@ src/components/                            shared layout (SiteLayout, Overline, 
 src/lib/                                   small shared helpers
 src/styles/base.css                        Tailwind + fonts + base styles
 site.config.ts                             site URL and analytics code
-public/                                    copied verbatim (CNAME, robots.txt, sitemap.xml, favicon)
+public/                                    copied verbatim (CNAME, robots.txt, sitemap.xml, icons from `npm run favicon`)
 ```
 
 ### Adding a page

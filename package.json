@@ -18,6 +18,7 @@
     "queue:check": "tsx tools/shakkil/queue.ts",
     "schedule": "tsx tools/shakkil/schedule.ts",
     "og": "tsx tools/og.ts",
+    "favicon": "tsx tools/favicon.ts",
     "pattern": "tsx tools/pattern.ts",
     "wdi": "tsx tools/wdi/build.ts",
     "harakat-glyphs": "tsx tools/harakat-glyphs.ts"
