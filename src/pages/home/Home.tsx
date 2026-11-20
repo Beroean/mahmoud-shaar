@@ -79,9 +79,9 @@ const EXPERIMENTS: Experiment[] = [
     href: "/explore/",
     icon: <BarsIcon />,
     kicker: "Data Explorer",
-    title: "World Bank WDI",
+    title: "World Bank Data",
     blurb:
-      "Browse and visualize 1,400+ World Development Indicators across every country. Pick a metric, see the world ranked.",
+      "Browse 1,400+ World Development Indicators and the Worldwide Governance Indicators across every country. Pick a metric, see the world ranked or follow it over time.",
     cta: "Open Explorer",
   },
 ];
