@@ -52,6 +52,7 @@ npm run puzzle:check                                   # validate everything, pr
 npm run puzzle:check -- --text "هٰذَا كِتَابٌ"            # try a sentence without a file
 npm run review                                         # local review page for the queue (dev only)
 npm run queue:check                                    # validate queued candidates
+npm run queue:approve -- batch-08-modern.yaml          # approve a whole queue file (after its sample was reviewed)
 npm run schedule                                       # list the run order with dates
 npm run schedule -- next 0042 0057                     # run these next, right after today
 npm run schedule -- author "Name"                      # run all upcoming puzzles by Name next

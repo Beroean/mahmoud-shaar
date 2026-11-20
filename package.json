@@ -16,6 +16,7 @@
     "review": "vite --open /review/",
     "review:halab": "vite --open /halab/review/",
     "queue:check": "tsx tools/shakkil/queue.ts",
+    "queue:approve": "tsx tools/shakkil/approve.ts",
     "schedule": "tsx tools/shakkil/schedule.ts",
     "og": "tsx tools/og.ts",
     "favicon": "tsx tools/favicon.ts",
