@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   # Nightly rebuild at 20:30 UTC, 30 minutes before Shakkil's daily rollover (midnight Mecca time =
   # 21:00 UTC). Each build ships puzzles only up to the next day (vite.config.ts), so future answers
-  # never sit on the site; it also refreshes the WDI explorer data.
+  # never sit on the site; it also refreshes the data explorer's World Bank data.
   schedule:
     - cron: "30 20 * * *"
 
@@ -31,8 +31,9 @@ jobs:
       - run: npm run lint
       - run: npm run puzzle:check -- --quiet
       - run: npm test
-      # WDI explorer data: built from the World Bank bulk zip (282 MB). The zip is cached and only
-      # re-downloaded when the World Bank publishes a new one (keyed on its Last-Modified header).
+      # Data explorer: built from World Bank bulk zips (tools/wdi/build.ts). The WDI zip (282 MB) is
+      # cached and only re-downloaded when the World Bank publishes a new one (keyed on its
+      # Last-Modified header). The WGI zip (3 MB) isn't cached: it's fetched fresh on every build.
       - name: WDI source version
         id: wdi
         if: github.event_name != 'pull_request'
@@ -44,7 +45,7 @@ jobs:
         with:
           path: .cache/wdi
           key: ${{ steps.wdi.outputs.key }}
-      - name: Build WDI data
+      - name: Build explorer data (WDI, WGI)
         if: github.event_name != 'pull_request'
         run: npm run wdi
       - run: npm run build

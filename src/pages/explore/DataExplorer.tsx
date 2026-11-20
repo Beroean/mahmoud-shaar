@@ -42,7 +42,7 @@ interface WBDataPoint {
 
 type ViewMode = "bar" | "time" | "table";
 
-/** public/data/wdi/meta.json */
+/** public/data/<dataset>/meta.json */
 interface WdiMeta {
   sourceDate: string;
   builtAt: string;
@@ -50,47 +50,88 @@ interface WdiMeta {
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
-// Static files built from the World Bank's WDI bulk download (tools/wdi/build.ts, refreshed nightly
-// in CI). The live API at api.worldbank.org often takes 60s+ or fails for uncached data requests,
-// so the page never calls it.
+// Static files built from the World Bank's bulk downloads (tools/wdi/build.ts, refreshed nightly in
+// CI), one folder per dataset. The live API at api.worldbank.org often takes 60s+ or fails for
+// uncached data requests, so the page never calls it.
 
-const DATA = "/data/wdi";
+interface Dataset {
+  /** Folder under /data/ (DATASETS in tools/wdi/build.ts). */
+  key: string;
+  /** Full name, and the title split over two lines (the second in gold italics). */
+  name: string;
+  title: [string, string];
+  short: string;
+  blurb: string;
+  /** Shown after "Source: World Bank, <name>". */
+  license?: string;
+}
 
-async function getJson<T>(path: string): Promise<T> {
-  const res = await fetch(`${DATA}/${path}`);
+const DATASETS: Dataset[] = [
+  {
+    key: "wdi",
+    name: "World Development Indicators",
+    title: ["World Development", "Indicators"],
+    short: "WDI",
+    blurb: "Economy, people, health, education, environment and more: the World Bank's main collection of development data.",
+    license: "CC BY 4.0",
+  },
+  {
+    key: "wgi",
+    name: "Worldwide Governance Indicators",
+    title: ["Worldwide Governance", "Indicators"],
+    short: "WGI",
+    blurb:
+      "Six dimensions of governance (corruption, government effectiveness, political stability, regulatory quality, rule of law, voice and accountability), each as a score from 0 to 100 and an estimate from about -2.5 to 2.5.",
+  },
+];
+
+/** The dataset named by ?dataset=, or the first. */
+function initialDataset(): Dataset {
+  const key = new URLSearchParams(location.search).get("dataset");
+  return DATASETS.find((d) => d.key === key) ?? DATASETS[0];
+}
+
+async function getJson<T>(ds: string, path: string): Promise<T> {
+  const res = await fetch(`/data/${ds}/${path}`);
   if (!res.ok) throw new Error(`Status ${res.status}`);
   return res.json() as Promise<T>;
 }
 
 type CountryRow = { id: string; name: string; agg: boolean };
-let countriesPromise: Promise<CountryRow[]> | null = null;
-const loadCountries = () => (countriesPromise ??= getJson<CountryRow[]>("countries.json"));
+const countriesPromises = new Map<string, Promise<CountryRow[]>>();
+function loadCountries(ds: string): Promise<CountryRow[]> {
+  let p = countriesPromises.get(ds);
+  if (!p) countriesPromises.set(ds, (p = getJson<CountryRow[]>(ds, "countries.json")));
+  return p;
+}
 
 /** Display names for every country and aggregate code. */
-const fetchCountryNames = async () => new Map((await loadCountries()).map((c) => [c.id, c.name]));
+const fetchCountryNames = async (ds: string) => new Map((await loadCountries(ds)).map((c) => [c.id, c.name]));
 
 /** Every year's value per country/aggregate, for the "over time" chart. */
-const fetchTimeSeries = (indicatorId: string) => getJson<TimeSeries>(`ts/${encodeURIComponent(indicatorId)}.json`);
+const fetchTimeSeries = (ds: string, indicatorId: string) =>
+  getJson<TimeSeries>(ds, `ts/${encodeURIComponent(indicatorId)}.json`);
 
 /** ISO3 codes of real countries (aggregates such as "World" or "High income" excluded). */
-async function fetchCountryCodes(): Promise<Set<string>> {
-  const countries = await loadCountries();
+async function fetchCountryCodes(ds: string): Promise<Set<string>> {
+  const countries = await loadCountries(ds);
   return new Set(countries.filter((c) => !c.agg).map((c) => c.id));
 }
 
-async function fetchIndicators(): Promise<Indicator[]> {
-  return getJson<Indicator[]>("indicators.json");
+async function fetchIndicators(ds: string): Promise<Indicator[]> {
+  return getJson<Indicator[]>(ds, "indicators.json");
 }
 
-const fetchMeta = () => getJson<WdiMeta>("meta.json");
+const fetchMeta = (ds: string) => getJson<WdiMeta>(ds, "meta.json");
 
 /** Most recent value per country/aggregate, sorted descending. */
-async function fetchIndicatorData(indicatorId: string): Promise<WBDataPoint[]> {
+async function fetchIndicatorData(ds: string, indicatorId: string): Promise<WBDataPoint[]> {
   const [doc, countries] = await Promise.all([
     getJson<{ id: string; name: string; rows: [string, number, number][] }>(
+      ds,
       `ind/${encodeURIComponent(indicatorId)}.json`,
     ),
-    loadCountries(),
+    loadCountries(ds),
   ]);
   const names = new Map(countries.map((c) => [c.id, c.name]));
   return doc.rows.map(([code, value, year]) => ({
@@ -117,7 +158,26 @@ function Spinner() {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
+/**
+ * The page. Switching dataset remounts the explorer, so every choice (indicator, view, countries)
+ * starts fresh for the new dataset. The choice is kept in the URL (?dataset=) for sharing.
+ */
 export default function DataExplorer() {
+  const [dataset, setDataset] = useState(initialDataset);
+  const choose = (key: string) => {
+    const next = DATASETS.find((d) => d.key === key);
+    if (!next) return;
+    const url = new URL(location.href);
+    if (next === DATASETS[0]) url.searchParams.delete("dataset");
+    else url.searchParams.set("dataset", next.key);
+    history.replaceState(null, "", url);
+    setDataset(next);
+  };
+  return <Explorer key={dataset.key} dataset={dataset} onDataset={choose} />;
+}
+
+function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: string) => void }) {
+  const ds = dataset.key;
   const [indicators, setIndicators] = useState<Indicator[]>([]);
   const [loadingIndicators, setLoadingIndicators] = useState(true);
   const [search, setSearch] = useState("");
@@ -147,7 +207,7 @@ export default function DataExplorer() {
     let cancelled = false;
     async function load() {
       try {
-        const data = await fetchIndicators();
+        const data = await fetchIndicators(ds);
         if (!cancelled) setIndicators(data);
       } catch (e) {
         if (!cancelled)
@@ -160,20 +220,20 @@ export default function DataExplorer() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [ds]);
 
   // Fetch real country codes and the data date once on mount
   useEffect(() => {
-    fetchCountryCodes()
+    fetchCountryCodes(ds)
       .then(setCountryCodes)
       .catch(() => {});
-    fetchMeta()
+    fetchMeta(ds)
       .then(setMeta)
       .catch(() => {});
-    fetchCountryNames()
+    fetchCountryNames(ds)
       .then(setNames)
       .catch(() => {});
-  }, []);
+  }, [ds]);
 
   // Load the time series when the "over time" view is open for an indicator not loaded yet.
   const tsId = viewMode === "time" ? selectedIndicator?.id : undefined;
@@ -184,7 +244,7 @@ export default function DataExplorer() {
     async function load(id: string) {
       try {
         setTsError(null);
-        const data = await fetchTimeSeries(id);
+        const data = await fetchTimeSeries(ds, id);
         if (!cancelled) setTs({ id, data });
       } catch (e) {
         if (!cancelled) setTsError("Failed to fetch the time series. " + (e as Error).message);
@@ -194,7 +254,7 @@ export default function DataExplorer() {
     return () => {
       cancelled = true;
     };
-  }, [tsId, tsLoaded]);
+  }, [ds, tsId, tsLoaded]);
 
   // Close dropdown on outside click — use pointerdown so it doesn't race with
   // the item's onClick (which fires on pointerup/click, after this handler)
@@ -220,7 +280,7 @@ export default function DataExplorer() {
         setRawData([]);
         setError(null);
         setLoadingData(true);
-        const data = await fetchIndicatorData(selectedIndicator!.id);
+        const data = await fetchIndicatorData(ds, selectedIndicator!.id);
         if (!cancelled) setRawData(data);
       } catch (e) {
         if (!cancelled)
@@ -233,7 +293,7 @@ export default function DataExplorer() {
     return () => {
       cancelled = true;
     };
-  }, [selectedIndicator]);
+  }, [ds, selectedIndicator]);
 
   const filtered = useMemo(
     () =>
@@ -355,7 +415,7 @@ export default function DataExplorer() {
       headerStart={<HomeLink />}
       headerEnd={
         <span className="text-xs tracking-[0.3em] uppercase text-paper/20">
-          World Bank · WDI Explorer
+          World Bank · Data Explorer
         </span>
       }
     >
@@ -365,15 +425,42 @@ export default function DataExplorer() {
           <Overline center>Data Explorer</Overline>
         </div>
         <h1 className="font-serif text-[clamp(2rem,5vw,4rem)] leading-[1.1] mb-3">
-          World Development
+          {dataset.title[0]}
           <br />
-          <span className="italic text-gold">Indicators</span>
+          <span className="italic text-gold">{dataset.title[1]}</span>
         </h1>
         <p className="text-sm text-paper/40 mb-12 max-w-lg mx-auto leading-relaxed">
-          Select any indicator from the World Bank WDI dataset to visualize a
-          cross-country comparison using the most recent available data for
-          each country.
+          Pick a World Bank dataset and one of its indicators to compare
+          countries on their most recent values, or follow them over the years.
         </p>
+
+        {/* ── Dataset Selector ───────────────────────────────────────────── */}
+        <div className="mb-6 max-w-2xl mx-auto text-left">
+          <label
+            htmlFor="dataset"
+            className="block text-xs tracking-widest uppercase text-paper/40 mb-3"
+          >
+            Dataset
+          </label>
+          <div className="relative">
+            <select
+              id="dataset"
+              value={ds}
+              onChange={(e) => onDataset(e.target.value)}
+              className="w-full appearance-none border border-paper/20 hover:border-gold/50 transition-colors duration-200 cursor-pointer bg-ink-1 px-4 py-3 pr-12 text-sm text-paper outline-none"
+            >
+              {DATASETS.map((d) => (
+                <option key={d.key} value={d.key}>
+                  {d.name} ({d.short})
+                </option>
+              ))}
+            </select>
+            <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-paper/40">
+              <ChevronIcon className="w-4 h-4" />
+            </span>
+          </div>
+          <p className="mt-2 text-xs text-paper/30 leading-relaxed">{dataset.blurb}</p>
+        </div>
 
         {/* ── Indicator Selector ─────────────────────────────────────────── */}
         <div className="mb-10 max-w-2xl mx-auto text-left" ref={dropdownRef}>
@@ -660,7 +747,8 @@ export default function DataExplorer() {
             )}
 
             <p className="text-xs text-paper/20 mt-4">
-              Source: World Bank, World Development Indicators (CC BY 4.0)
+              Source: World Bank, {dataset.name}
+              {dataset.license && ` (${dataset.license})`}
               {meta &&
                 ` · data as of ${new Date(meta.sourceDate).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" })}`}
             </p>
@@ -675,7 +763,7 @@ export default function DataExplorer() {
             </div>
             <p className="text-xs text-paper/20 leading-relaxed">
               Choose from {indicators.length.toLocaleString()} indicators in the
-              World Bank World Development Indicators dataset.
+              World Bank {dataset.name} dataset.
             </p>
           </div>
         )}

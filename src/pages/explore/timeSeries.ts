@@ -1,6 +1,6 @@
 /** Shapes and colours for the explorer's "over time" chart (TimeSeriesView.tsx). */
 
-/** public/data/wdi/ts/<id>.json: one value per year from `from` to `to`, null where missing. */
+/** public/data/<dataset>/ts/<id>.json: one value per year from `from` to `to`, null where missing. */
 export interface TimeSeries {
   from: number;
   to: number;
