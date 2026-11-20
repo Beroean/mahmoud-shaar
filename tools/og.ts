@@ -13,6 +13,8 @@ import { basename, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { inflateSync } from "node:zlib";
 import { Resvg } from "@resvg/resvg-js";
+import { INTRO_SERIES } from "../src/pages/explore/introData";
+import { COLORS } from "../src/pages/explore/timeSeries";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const OUT = resolve(ROOT, "public/og");
@@ -131,6 +133,9 @@ const DALLAH = `
   <path d="M8.4 16.3C6.1 15.7 4.5 13.2 3.5 9.7L2.3 8.9"/>
   <path d="M14.9 16.2c2.3-.8 3.4-2.5 3.2-4.5-.2-1.6-1.6-2.4-3.4-2.2l-2.4.9"/>
   <path d="M18.3 19h3.4l-.6 2h-2.2z"/>`;
+const BARS = `
+  <path d="M4 3v18"/>
+  <path d="M4 6h15M4 10h12M4 14h8M4 18h5"/>`;
 
 /** Draws one of the icons above at (x, y), `size` px square, with a stroke `stroke` px wide. */
 const icon = (paths: string, x: number, y: number, size: number, color: string, stroke: number) => {
@@ -139,31 +144,59 @@ const icon = (paths: string, x: number, y: number, size: number, color: string, 
   </g>`;
 };
 
+/**
+ * The explorer's opening-scene chart (life expectancy 1960–2024, src/pages/explore/introData.ts),
+ * small, in the box (x0, y0)–(x1, y1): faint gridlines, a line per country, a dot at each end.
+ */
+function lifeChart(x0: number, y0: number, x1: number, y1: number): string {
+  const [min, max] = [30, 90];
+  const n = INTRO_SERIES[0].values.length;
+  const x = (i: number) => x0 + (i / (n - 1)) * (x1 - x0);
+  const y = (v: number) => y1 - ((v - min) / (max - min)) * (y1 - y0);
+  const r = (v: number) => Math.round(v * 10) / 10;
+  const grid = [30, 50, 70, 90]
+    .map((v) => `<line x1="${x0}" x2="${x1}" y1="${y(v)}" y2="${y(v)}" stroke="${PAPER}" stroke-opacity="0.1"/>`)
+    .join("");
+  const lines = INTRO_SERIES.map((s, slot) => {
+    const d = "M" + s.values.map((v, i) => `${r(x(i))} ${r(y(v))}`).join("L");
+    const end = s.values[n - 1];
+    return `<path d="${d}" fill="none" stroke="${COLORS[slot]}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${x1}" cy="${r(y(end))}" r="6" fill="${COLORS[slot]}" stroke="${INK}" stroke-width="2.5"/>`;
+  }).join("");
+  return `${grid}${lines}
+  <text x="${x0}" y="${y1 + 34}" font-family="${MONO}" font-size="18" fill="${PAPER}" fill-opacity="0.4">1960</text>
+  <text x="${x1}" y="${y1 + 34}" text-anchor="end" font-family="${MONO}" font-size="18" fill="${PAPER}" fill-opacity="0.4">2024</text>`;
+}
+
 const IMAGES: Record<string, string> = {
-  // The three daily games' icons, as on the home page cards.
+  // The home page cards' icons: the three daily games and the data explorer.
   home: frame(`
   ${overline("MAHMOUD SHAAR")}
   <text x="80" y="285" font-family="${SERIF}" font-size="92" fill="${PAPER}">Things I make</text>
   <text x="80" y="395" font-family="${SERIF}" font-style="italic" font-size="92" fill="${GOLD}">after hours.</text>
-  <text x="80" y="470" font-family="${MONO}" font-size="26" fill="${PAPER}" fill-opacity="0.6">Arabic games · data tools · what's next</text>
+  <text x="80" y="470" font-family="${MONO}" font-size="26" fill="${PAPER}" fill-opacity="0.6">Three Arabic word games · a World Bank data explorer</text>
   ${[
     { paths: HARAKA, name: "شَكِّل", color: GOLD },
     { paths: CITADEL, name: "حلبيّات", color: GOLD },
     { paths: DALLAH, name: "عربيّات", color: SKY },
+    { paths: BARS, name: "Data", color: GOLD, latin: true },
   ]
     .map(
-      (g, i) => `${icon(g.paths, 785 + i * 120, 220, 90, g.color, 2.4)}
-  <text x="${830 + i * 120}" y="375" text-anchor="middle" font-family="Amiri" font-weight="700" font-size="36" fill="${g.color}">${g.name}</text>`,
+      (g, i) => `${icon(g.paths, 700 + i * 112, 226, 80, g.color, 2.4)}
+  <text x="${740 + i * 112}" y="370" text-anchor="middle" font-family="${g.latin ? SERIF : "Amiri"}" ${g.latin ? 'font-style="italic" font-size="34"' : 'font-weight="700" font-size="34"'} fill="${g.color}">${g.name}</text>`,
     )
     .join("\n  ")}
   ${footer("mahmoudshaar.com", "Houston, TX · Software Engineer")}`),
 
+  // The chart is the page's opening scene: life expectancy, 1960–2024, five countries.
   explore: frame(`
   ${overline("DATA EXPLORER")}
-  <text x="80" y="290" font-family="${SERIF}" font-size="100" fill="${PAPER}">World Development</text>
-  <text x="80" y="400" font-family="${SERIF}" font-style="italic" font-size="100" fill="${GOLD}">Indicators</text>
-  <text x="80" y="480" font-family="${MONO}" font-size="26" fill="${PAPER}" fill-opacity="0.6">1,400+ World Bank indicators · every country ranked</text>
-  ${footer("mahmoudshaar.com/explore", "World Bank WDI")}`),
+  <text x="80" y="290" font-family="${SERIF}" font-size="100" fill="${PAPER}">World Bank</text>
+  <text x="80" y="400" font-family="${SERIF}" font-style="italic" font-size="100" fill="${GOLD}">Data Explorer</text>
+  <text x="80" y="470" font-family="${MONO}" font-size="24" fill="${PAPER}" fill-opacity="0.6">Development &amp; governance indicators</text>
+  <text x="80" y="506" font-family="${MONO}" font-size="24" fill="${PAPER}" fill-opacity="0.6">every country, ranked or over time</text>
+  ${lifeChart(800, 205, 1110, 455)}
+  ${footer("mahmoudshaar.com/explore", "World Bank · WDI · WGI")}`),
 
   // The sample line must never be a real puzzle (it would spoil it); it is reserved in
   // content/shakkil/rejected.yaml.
