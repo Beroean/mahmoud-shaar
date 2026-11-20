@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { HomeLink, Overline, SiteLayout } from "../../components/SiteLayout";
 import { ChevronIcon, GlobeIcon, LayersIcon } from "../../components/icons";
 import {
@@ -14,6 +14,8 @@ import {
 import { Bar } from "react-chartjs-2";
 import { type ChartLine, DEFAULT_LINES, MAX_LINES, type TimeSeries, nextSlot } from "./timeSeries";
 import { TimeSeriesView } from "./TimeSeriesView";
+import { ExploreIntro } from "./ExploreIntro";
+import { markIntroSeen, shouldPlayIntro } from "../../lib/introOnce";
 
 ChartJS.register(
   CategoryScale,
@@ -173,8 +175,21 @@ export default function DataExplorer() {
     history.replaceState(null, "", url);
     setDataset(next);
   };
-  return <Explorer key={dataset.key} dataset={dataset} onDataset={choose} />;
+  // The opening scene plays over the page (once per session), not again on a dataset switch.
+  const [intro, setIntro] = useState(() => shouldPlayIntro(INTRO_KEY, "intro"));
+  const closeIntro = useCallback(() => setIntro(false), []);
+  useEffect(() => {
+    if (intro) markIntroSeen(INTRO_KEY);
+  }, [intro]);
+  return (
+    <>
+      <Explorer key={dataset.key} dataset={dataset} onDataset={choose} />
+      {intro && <ExploreIntro onDone={closeIntro} />}
+    </>
+  );
 }
+
+const INTRO_KEY = "explore:intro";
 
 function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: string) => void }) {
   const ds = dataset.key;
