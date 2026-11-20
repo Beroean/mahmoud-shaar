@@ -12,6 +12,8 @@ import {
   type ChartOptions,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import { type ChartLine, DEFAULT_LINES, MAX_LINES, type TimeSeries, nextSlot } from "./timeSeries";
+import { TimeSeriesView } from "./TimeSeriesView";
 
 ChartJS.register(
   CategoryScale,
@@ -38,7 +40,7 @@ interface WBDataPoint {
   indicator: { id: string; value: string };
 }
 
-type ViewMode = "bar" | "table";
+type ViewMode = "bar" | "time" | "table";
 
 /** public/data/wdi/meta.json */
 interface WdiMeta {
@@ -48,7 +50,7 @@ interface WdiMeta {
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
-// Static files built from the World Bank's WDI bulk download (tools/wdi/build.ts, refreshed weekly
+// Static files built from the World Bank's WDI bulk download (tools/wdi/build.ts, refreshed nightly
 // in CI). The live API at api.worldbank.org often takes 60s+ or fails for uncached data requests,
 // so the page never calls it.
 
@@ -63,6 +65,12 @@ async function getJson<T>(path: string): Promise<T> {
 type CountryRow = { id: string; name: string; agg: boolean };
 let countriesPromise: Promise<CountryRow[]> | null = null;
 const loadCountries = () => (countriesPromise ??= getJson<CountryRow[]>("countries.json"));
+
+/** Display names for every country and aggregate code. */
+const fetchCountryNames = async () => new Map((await loadCountries()).map((c) => [c.id, c.name]));
+
+/** Every year's value per country/aggregate, for the "over time" chart. */
+const fetchTimeSeries = (indicatorId: string) => getJson<TimeSeries>(`ts/${encodeURIComponent(indicatorId)}.json`);
 
 /** ISO3 codes of real countries (aggregates such as "World" or "High income" excluded). */
 async function fetchCountryCodes(): Promise<Set<string>> {
@@ -126,6 +134,12 @@ export default function DataExplorer() {
   const [countriesOnly, setCountriesOnly] = useState(true);
   const [countryCodes, setCountryCodes] = useState<Set<string>>(new Set());
   const [meta, setMeta] = useState<WdiMeta | null>(null);
+  const [names, setNames] = useState<Map<string, string>>(new Map());
+  /** Time series of the selected indicator (loaded on first use of the "over time" view). */
+  const [ts, setTs] = useState<{ id: string; data: TimeSeries } | null>(null);
+  const [tsError, setTsError] = useState<string | null>(null);
+  /** Countries on the time chart; null until the user changes them (then the top of the ranking). */
+  const [picked, setPicked] = useState<ChartLine[] | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Load indicator list on mount
@@ -156,7 +170,31 @@ export default function DataExplorer() {
     fetchMeta()
       .then(setMeta)
       .catch(() => {});
+    fetchCountryNames()
+      .then(setNames)
+      .catch(() => {});
   }, []);
+
+  // Load the time series when the "over time" view is open for an indicator not loaded yet.
+  const tsId = viewMode === "time" ? selectedIndicator?.id : undefined;
+  const tsLoaded = ts?.id === tsId;
+  useEffect(() => {
+    if (!tsId || tsLoaded) return;
+    let cancelled = false;
+    async function load(id: string) {
+      try {
+        setTsError(null);
+        const data = await fetchTimeSeries(id);
+        if (!cancelled) setTs({ id, data });
+      } catch (e) {
+        if (!cancelled) setTsError("Failed to fetch the time series. " + (e as Error).message);
+      }
+    }
+    load(tsId);
+    return () => {
+      cancelled = true;
+    };
+  }, [tsId, tsLoaded]);
 
   // Close dropdown on outside click — use pointerdown so it doesn't race with
   // the item's onClick (which fires on pointerup/click, after this handler)
@@ -287,6 +325,31 @@ export default function DataExplorer() {
 
   const chartHeight = Math.max(400, chartData.length * 28);
 
+  // Time chart: the user's countries, or by default the top of the current ranking (with its sort
+  // and countries filter), each keeping its colour slot.
+  const tsData = ts && ts.id === selectedIndicator?.id ? ts.data : null;
+  const allowed = (code: string) => !countriesOnly || countryCodes.size === 0 || countryCodes.has(code);
+  const lines: ChartLine[] = useMemo(() => {
+    if (picked) return picked;
+    if (!tsData) return [];
+    return chartData
+      .filter((d) => tsData.series[d.countryiso3code])
+      .slice(0, DEFAULT_LINES)
+      .map((d, slot) => ({ code: d.countryiso3code, slot }));
+  }, [picked, tsData, chartData]);
+  const choices = useMemo(() => {
+    if (!tsData) return [];
+    const on = new Set(lines.map((l) => l.code));
+    return Object.keys(tsData.series).filter((c) => !on.has(c) && allowed(c));
+    // allowed() depends only on countriesOnly and countryCodes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tsData, lines, countriesOnly, countryCodes]);
+  const addLine = (code: string) => {
+    if (lines.length >= MAX_LINES) return;
+    setPicked([...lines, { code, slot: nextSlot(lines) }]);
+  };
+  const removeLine = (code: string) => setPicked(lines.filter((l) => l.code !== code));
+
   return (
     <SiteLayout
       headerStart={<HomeLink />}
@@ -377,6 +440,7 @@ export default function DataExplorer() {
                         }`}
                         onClick={() => {
                           setSelectedIndicator(ind);
+                          setPicked(null);
                           setSearch("");
                           setDropdownOpen(false);
                           setTopN(30);
@@ -411,43 +475,60 @@ export default function DataExplorer() {
                 <h2 className="font-serif text-xl text-paper mb-1">
                   {indicatorLabel}
                 </h2>
-                <p className="text-xs text-paper/30 tracking-wider">
-                  {countriesOnly && countryCodes.size > 0
-                    ? rawData.filter((d) => countryCodes.has(d.countryiso3code))
-                        .length
-                    : rawData.length}{" "}
-                  {countriesOnly ? "countries" : "entries"} · Most recent value
-                  (<span className="text-gold">{latestYear}</span>) ·{" "}
-                  {selectedIndicator?.id}
-                </p>
+                {viewMode === "time" ? (
+                  <p className="text-xs text-paper/30 tracking-wider">
+                    Every year
+                    {tsData && (
+                      <>
+                        {" "}
+                        (<span className="text-gold">{tsData.from}–{tsData.to}</span>)
+                      </>
+                    )}{" "}
+                    · up to {MAX_LINES} countries · {selectedIndicator?.id}
+                  </p>
+                ) : (
+                  <p className="text-xs text-paper/30 tracking-wider">
+                    {countriesOnly && countryCodes.size > 0
+                      ? rawData.filter((d) => countryCodes.has(d.countryiso3code))
+                          .length
+                      : rawData.length}{" "}
+                    {countriesOnly ? "countries" : "entries"} · Most recent value
+                    (<span className="text-gold">{latestYear}</span>) ·{" "}
+                    {selectedIndicator?.id}
+                  </p>
+                )}
               </div>
 
               <div className="flex items-center justify-center gap-3 flex-wrap">
-                <div className="flex items-center gap-2 border border-paper/10 px-3 py-2">
-                  <span className="text-xs text-paper/30 tracking-widest uppercase">
-                    Top
-                  </span>
-                  {[20, 30, 50, 100].map((n) => (
+                {viewMode !== "time" && (
+                  <>
+                    <div className="flex items-center gap-2 border border-paper/10 px-3 py-2">
+                      <span className="text-xs text-paper/30 tracking-widest uppercase">
+                        Top
+                      </span>
+                      {[20, 30, 50, 100].map((n) => (
+                        <button
+                          key={n}
+                          onClick={() => setTopN(n)}
+                          className={`text-xs px-2 py-1 transition-colors duration-150 ${
+                            topN === n
+                              ? "bg-gold text-ink"
+                              : "text-paper/40 hover:text-paper"
+                          }`}
+                        >
+                          {n}
+                        </button>
+                      ))}
+                    </div>
+    
                     <button
-                      key={n}
-                      onClick={() => setTopN(n)}
-                      className={`text-xs px-2 py-1 transition-colors duration-150 ${
-                        topN === n
-                          ? "bg-gold text-ink"
-                          : "text-paper/40 hover:text-paper"
-                      }`}
+                      onClick={() => setSortAsc((a) => !a)}
+                      className="flex items-center gap-2 border border-paper/10 px-3 py-2 text-xs text-paper/40 hover:text-paper hover:border-paper/30 transition-colors duration-150 tracking-widest uppercase"
                     >
-                      {n}
+                      {sortAsc ? "↑ Asc" : "↓ Desc"}
                     </button>
-                  ))}
-                </div>
-
-                <button
-                  onClick={() => setSortAsc((a) => !a)}
-                  className="flex items-center gap-2 border border-paper/10 px-3 py-2 text-xs text-paper/40 hover:text-paper hover:border-paper/30 transition-colors duration-150 tracking-widest uppercase"
-                >
-                  {sortAsc ? "↑ Asc" : "↓ Desc"}
-                </button>
+                  </>
+                )}
 
                 <button
                   onClick={() => setCountriesOnly((v) => !v)}
@@ -480,6 +561,16 @@ export default function DataExplorer() {
                     Chart
                   </button>
                   <button
+                    onClick={() => setViewMode("time")}
+                    className={`text-xs px-4 py-2 tracking-widest uppercase transition-colors duration-150 border-l border-paper/10 ${
+                      viewMode === "time"
+                        ? "bg-gold/10 text-gold"
+                        : "text-paper/30 hover:text-paper"
+                    }`}
+                  >
+                    Over time
+                  </button>
+                  <button
                     onClick={() => setViewMode("table")}
                     className={`text-xs px-4 py-2 tracking-widest uppercase transition-colors duration-150 border-l border-paper/10 ${
                       viewMode === "table"
@@ -501,6 +592,22 @@ export default function DataExplorer() {
                 <Bar data={chartJsData} options={chartOptions} />
               </div>
             )}
+
+            {viewMode === "time" &&
+              (tsError ? (
+                <div className="border border-red-800/50 bg-red-900/10 px-6 py-4 text-sm text-red-400">{tsError}</div>
+              ) : tsData ? (
+                <TimeSeriesView
+                  ts={tsData}
+                  lines={lines}
+                  names={names}
+                  choices={choices}
+                  onAdd={addLine}
+                  onRemove={removeLine}
+                />
+              ) : (
+                <Spinner />
+              ))}
 
             {viewMode === "table" && (
               <div className="border border-paper/10 overflow-auto">
