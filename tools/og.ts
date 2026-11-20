@@ -131,6 +131,9 @@ const DALLAH = `
   <path d="M8.4 16.3C6.1 15.7 4.5 13.2 3.5 9.7L2.3 8.9"/>
   <path d="M14.9 16.2c2.3-.8 3.4-2.5 3.2-4.5-.2-1.6-1.6-2.4-3.4-2.2l-2.4.9"/>
   <path d="M18.3 19h3.4l-.6 2h-2.2z"/>`;
+const BARS = `
+  <path d="M4 3v18"/>
+  <path d="M4 6h15M4 10h12M4 14h8M4 18h5"/>`;
 
 /** Draws one of the icons above at (x, y), `size` px square, with a stroke `stroke` px wide. */
 const icon = (paths: string, x: number, y: number, size: number, color: string, stroke: number) => {
@@ -140,20 +143,21 @@ const icon = (paths: string, x: number, y: number, size: number, color: string, 
 };
 
 const IMAGES: Record<string, string> = {
-  // The three daily games' icons, as on the home page cards.
+  // The home page cards' icons: the three daily games and the data explorer.
   home: frame(`
   ${overline("MAHMOUD SHAAR")}
   <text x="80" y="285" font-family="${SERIF}" font-size="92" fill="${PAPER}">Things I make</text>
   <text x="80" y="395" font-family="${SERIF}" font-style="italic" font-size="92" fill="${GOLD}">after hours.</text>
-  <text x="80" y="470" font-family="${MONO}" font-size="26" fill="${PAPER}" fill-opacity="0.6">Arabic games · data tools · what's next</text>
+  <text x="80" y="470" font-family="${MONO}" font-size="26" fill="${PAPER}" fill-opacity="0.6">Three Arabic word games · a World Bank data explorer</text>
   ${[
     { paths: HARAKA, name: "شَكِّل", color: GOLD },
     { paths: CITADEL, name: "حلبيّات", color: GOLD },
     { paths: DALLAH, name: "عربيّات", color: SKY },
+    { paths: BARS, name: "Data", color: GOLD, latin: true },
   ]
     .map(
-      (g, i) => `${icon(g.paths, 785 + i * 120, 220, 90, g.color, 2.4)}
-  <text x="${830 + i * 120}" y="375" text-anchor="middle" font-family="Amiri" font-weight="700" font-size="36" fill="${g.color}">${g.name}</text>`,
+      (g, i) => `${icon(g.paths, 700 + i * 112, 226, 80, g.color, 2.4)}
+  <text x="${740 + i * 112}" y="370" text-anchor="middle" font-family="${g.latin ? SERIF : "Amiri"}" ${g.latin ? 'font-style="italic" font-size="34"' : 'font-weight="700" font-size="34"'} fill="${g.color}">${g.name}</text>`,
     )
     .join("\n  ")}
   ${footer("mahmoudshaar.com", "Houston, TX · Software Engineer")}`),
