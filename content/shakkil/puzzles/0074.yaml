@@ -6,4 +6,3 @@ alts: []
 vary:
   - [رَأَيْتُ, رَأَيْتَ, رَأَيْتِ]
 source: llm-reviewed
-level: 2
