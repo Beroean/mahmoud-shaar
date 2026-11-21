@@ -210,6 +210,9 @@ function RoundCard({
           </p>
           {round.note && <p className="text-paper/75 leading-loose">{round.note}</p>}
           <SourceLine round={round} />
+          {round.note && (
+            <p className="text-xs text-paper/45">الشرح من إعداد اللعبة بمساعدة الذكاء الاصطناعي، وقد يقع فيه خطأ.</p>
+          )}
           <div className="pt-2 flex flex-wrap justify-end gap-3">
             {onSummary && !isLast && (
               <button
@@ -429,7 +432,7 @@ function Credits({ sources }: { sources: Source[] }) {
         ))}
       </ul>
       <p className="text-paper/45">
-        الأمثال والكلمات منقولة كما وردت في الكتب، والشروح القصيرة والخيارات من إعداد اللعبة. إن وجدت خطأ فأخبرني.
+        الأمثال والكلمات منقولة كما وردت في الكتب. الشروح القصيرة والخيارات من إعداد اللعبة بمساعدة الذكاء الاصطناعي، وقد روجعت الشروح على الكتب، لكن بعضها لم يمكن التحقق منه. إن وجدت خطأ فأخبرني.
       </p>
     </aside>
   );
