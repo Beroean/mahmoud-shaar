@@ -95,12 +95,13 @@ function PromptText({ round, picked }: { round: Round; picked: string | null }) 
   );
 }
 
+/** Same size and weight as Shakkil's credit line: small grey print was easy to miss. */
 function SourceLine({ round }: { round: Round }) {
   const { source, page, volume } = round;
   return (
-    <p className="text-xs text-paper/40">
+    <p className="text-base font-bold text-paper/80 leading-relaxed">
       من{" "}
-      <a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-paper/20 hover:text-sky-200">
+      <a href={source.url} target="_blank" rel="noreferrer" className="underline hover:text-sky-200">
         «{source.title}»
       </a>
       ، {source.author}
