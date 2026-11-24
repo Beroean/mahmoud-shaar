@@ -57,6 +57,7 @@ source: original
 - **لا تُشكَّل**: الألف (ا آ ى ٱ)، وحرفا المد الواو والياء بعد الضمة والكسرة، وألف «ال»، واللام الشمسية (الشَّمس)، والحرف الذي فوقه ألف خنجرية (هٰذا).
 - **اختياري للاعب**: السكون داخل الكلمة، والحركة التي قبل حرف المد (فتحة «كِتَاب»). لكن اكتبها في الملف كاملة.
 - **مطلوب من اللاعب**: الشدة، وعلامة آخر الكلمة، بما فيها السكون في آخر الكلمة (لم يذهبْ، مِنْ).
+- **التقاء الساكنين**: إذا حُرّك آخر الكلمة قبل همزة وصل (لَمْ يَكُنِ الطُّلَّابُ، كَتَبَتِ الْبِنْتُ، مِنَ الْبَيْتِ) فاكتب الحركة في الملف، ويُقبل من اللاعب السكون أيضًا. يكفي أن يقول الإعراب «وحُرّك بالكسر لالتقاء الساكنين» (أو بالفتح أو بالضم).
 - **تنوين الفتح** قبل الألف يُكتب على الحرف (كِتَابًا) أو على الألف (كِتَاباً)، والاثنان سواء.
 - علامات الترقيم في أول الكلمة وآخرها مسموحة (، . ؟ ! « »).
 
@@ -118,6 +119,7 @@ Puzzles that have already been played are locked: the check fails if a PR delete
 
 - Diacritize every letter, including shadda and the case ending. Bare letters are rejected except: alif forms (ا آ ى ٱ), long-vowel و/ي after damma/kasra, the alif of ال, the sun-letter lam, and a letter carrying a dagger alif.
 - The player may leave out a word-internal sukun and the vowel before a long-vowel letter. Shadda and every word ending (including a final sukun) are required.
+- A final sukun that turns into a vowel before a hamzat wasl (لَمْ يَكُنِ الطُّلَّابُ) is written with the vowel, and the player's sukun is accepted too, when the i'rab note says «وحُرّك بالكسر/بالفتح/بالضم لالتقاء الساكنين». This applies from day 13 (`MOVED_SUKUN_FROM_DAY` in `rules.ts`).
 - Tanween fath before a final alif can be written on the letter or on the alif.
 - `alts` lists other fully valid diacritizations; a guess matching any of them wins.
 - Difficulty: `src/pages/shakkil/core/difficulty.ts` scores each puzzle (marks the player must enter, plus points for grammar rules named in the i'rab notes, such as ممنوع من الصرف, تمييز, جزم, شرط). `npm run schedule -- relevel` sets every unplayed puzzle's `level` from that score (easiest third easy, hardest third hard) and re-plans the days; CI fails if an upcoming day's medium scores above its hard. `npm run puzzle:check` shows each score. Name the rule in the i'rab note so it counts.

@@ -23,13 +23,52 @@ export const RULES = {
   sukunOptional: true,
   /** A vowel right before its matching long vowel letter (fatha+ا/ى, damma+و, kasra+ي) may be left out. */
   vowelBeforeMaddOptional: true,
+  /**
+   * A word-final sukun that turns into a vowel before a hamzat wasl (لَمْ يَكُنِ الطُّلَّابُ، كَتَبَتِ
+   * الْبِنْتُ، مِنَ الْبَيْتِ) may also be written as the sukun. The vowel is only there for the
+   * pronunciation (التقاء الساكنين); the word's own ending is still the sukun. Applies to the words
+   * whose i'rab note says so, from {@link MOVED_SUKUN_FROM_DAY} on.
+   */
+  movedSukun: true,
 };
+
+/**
+ * First day graded with {@link RULES.movedSukun}. Days already played (and tomorrow, already on the
+ * site) keep the grading they were played with.
+ */
+export const MOVED_SUKUN_FROM_DAY = 13;
+
+/** An i'rab note saying the word's final sukun was moved: «وحُرّك بالكسر لالتقاء الساكنين». */
+const MOVED_NOTE = /(?:حُر[ِّ]+كت?|كُسرت|ضُمّت)(?: ال[^\s،]+)?(?: بال(?:كسر|فتح|ضم))? لالتقاء الساكنين/;
+
+/**
+ * Indices of the words whose final vowel is a moved sukun, from the i'rab notes. The word must end
+ * in a plain short vowel and the next word must start with a hamzat wasl, so a note about another
+ * letter (يَوْمَئِذٍ، لَا يُغَرَّ) doesn't count.
+ */
+export function movedSukunWords(words: Word[], irab: string[]): Set<number> {
+  const out = new Set<number>();
+  words.forEach((word, w) => {
+    const last = word.letters[word.letters.length - 1];
+    const next = words[w + 1];
+    if (
+      MOVED_NOTE.test(irab[w] ?? "") &&
+      next?.letters[0]?.char === "ا" &&
+      !last.mark.shadda &&
+      (last.mark.vowel === "a" || last.mark.vowel === "u" || last.mark.vowel === "i")
+    ) {
+      out.add(w);
+    }
+  });
+  return out;
+}
 
 export type RuleId =
   | "required"
   | "sukun"
   | "before-madd"
   | "pausal"
+  | "moved-sukun"
   | "fixed-alif"
   | "fixed-madd"
   | "fixed-dagger"
@@ -89,9 +128,10 @@ function bareReason(word: Word, i: number): RuleId | null {
 
 /**
  * Computes the grading spec for every letter of a reference sentence.
+ * `movedSukun`: words (see {@link movedSukunWords}) whose final vowel may also be written as sukun.
  * Throws {@link ArabicParseError} when the reference is not fully diacritized.
  */
-export function specsFor(words: Word[]): Spec[][] {
+export function specsFor(words: Word[], movedSukun: ReadonlySet<number> = new Set()): Spec[][] {
   return words.map((word, w) => {
     const isLastWord = w === words.length - 1;
     return word.letters.map((l, i): Spec => {
@@ -116,6 +156,15 @@ export function specsFor(words: Word[]): Spec[][] {
         };
       }
       const isWordFinal = i === word.letters.length - 1;
+      if (isWordFinal && RULES.movedSukun && movedSukun.has(w)) {
+        return {
+          graded: true,
+          expected: l.mark,
+          emptyOk: false,
+          alsoAccept: [{ shadda: false, vowel: "o" }],
+          rule: "moved-sukun",
+        };
+      }
       if (l.mark.vowel === "o" && !l.mark.shadda && RULES.sukunOptional && !isWordFinal) {
         return { graded: true, expected: l.mark, emptyOk: true, alsoAccept: [], rule: "sukun" };
       }
@@ -141,6 +190,7 @@ export const RULE_LABELS: Record<RuleId, { ar: string; en: string }> = {
   sukun: { ar: "سكون (اختياري)", en: "sukun (optional)" },
   "before-madd": { ar: "قبل حرف مد (اختياري)", en: "before long vowel (optional)" },
   pausal: { ar: "وقف (يقبل السكون)", en: "pausal (sukun accepted)" },
+  "moved-sukun": { ar: "التقاء الساكنين (يقبل السكون)", en: "moved sukun (sukun accepted)" },
   "fixed-alif": { ar: "ألف (لا يُشكَّل)", en: "alif (not graded)" },
   "fixed-madd": { ar: "حرف مد (لا يُشكَّل)", en: "long vowel (not graded)" },
   "fixed-dagger": { ar: "ألف خنجرية (لا تُشكَّل)", en: "dagger alif (not graded)" },

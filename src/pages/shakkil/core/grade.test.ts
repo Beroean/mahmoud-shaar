@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { type Mark, parseSentence } from "./arabic";
 import { type Guess, emptyGuess, grade, gradeLetter } from "./grade";
 import { compilePuzzle } from "./puzzle";
-import { RULES, type Spec, specsFor } from "./rules";
+import { MOVED_SUKUN_FROM_DAY, RULES, type Spec, movedSukunWords, specsFor } from "./rules";
 
 const m = (vowel: Mark["vowel"], shadda = false): Mark => ({ shadda, vowel });
 const E = m(null);
@@ -191,5 +191,48 @@ describe("compilePuzzle", () => {
   it("rejects an unknown source", () => {
     const r = compilePuzzle({ number: 1, text: "ذَهَبَ الْوَلَدُ", irab: ["x", "y"], source: "web" });
     expect(r.errors.join()).toMatch(/unknown source/);
+  });
+});
+
+describe("moved sukun (التقاء الساكنين)", () => {
+  const text = "لَمْ يَكُنِ الطُّلَّابُ حَاضِرِينَ";
+  const irab = [
+    "حرف نفي وجزم وقلب مبني على السكون",
+    "فعل مضارع ناقص مجزوم بـ«لم» وعلامة جزمه السكون، وحُرّك بالكسر لالتقاء الساكنين",
+    "اسم «يكن» مرفوع وعلامة رفعه الضمة الظاهرة",
+    "خبر «يكن» منصوب وعلامة نصبه الياء",
+  ];
+  const gradeOn = (number: number, guess: string) => {
+    const { puzzle, errors } = compilePuzzle({ number, text, irab });
+    expect(errors).toEqual([]);
+    return grade(guessOf(guess), puzzle!.variants);
+  };
+
+  it("accepts the sukun as well as the vowel, from MOVED_SUKUN_FROM_DAY on", () => {
+    expect(gradeOn(MOVED_SUKUN_FROM_DAY, text).solved).toBe(true);
+    expect(gradeOn(MOVED_SUKUN_FROM_DAY, "لَمْ يَكُنْ الطُّلَّابُ حَاضِرِينَ").solved).toBe(true);
+    // Still a mark: bare or another vowel is wrong.
+    expect(gradeOn(MOVED_SUKUN_FROM_DAY, "لَمْ يَكُنَ الطُّلَّابُ حَاضِرِينَ").solved).toBe(false);
+    const bare = compilePuzzle({ number: MOVED_SUKUN_FROM_DAY, text, irab }).puzzle!.variants[0].specs[1][2];
+    expect(bare).toMatchObject({ emptyOk: false, rule: "moved-sukun" });
+    expect(gradeLetter(E, bare)).toBe("wrong");
+  });
+
+  it("keeps the old grading on earlier days", () => {
+    expect(gradeOn(MOVED_SUKUN_FROM_DAY - 1, "لَمْ يَكُنْ الطُّلَّابُ حَاضِرِينَ").solved).toBe(false);
+  });
+
+  it("only applies to words the i'rab note marks, before a hamzat wasl", () => {
+    const words = parseSentence("كَتَبَتِ الْبِنْتُ مِنَ الْبَيْتِ وَيَوْمَئِذٍ ذَهَبَ الْوَلَدُ");
+    const notes = [
+      "فعل ماضٍ مبني على الفتح، والتاء للتأنيث وحُرّكت بالكسر لالتقاء الساكنين",
+      "فاعل",
+      "حرف جر مبني على السكون، وحُرّك بالفتح لالتقاء الساكنين",
+      "اسم مجرور",
+      "«إذ» ظرف مبني على السكون، وحُرّك بالكسر لالتقاء الساكنين، والتنوين عوض عن جملة محذوفة",
+      "فعل ماضٍ مبني على الفتح",
+      "فاعل",
+    ];
+    expect([...movedSukunWords(words, notes)]).toEqual([0, 2]);
   });
 });
