@@ -13,5 +13,5 @@ The site has three daily games: Shakkil (`src/pages/shakkil`, content in `conten
 
 - Never change content for days already played, today or tomorrow.
 - حلبيّات: ask before changing the credits or dedication wording.
-- Shakkil's schedule runs out on 2028-07-25 and does not wrap around. From about 2028-07-11 the runway test fails, which stops deploys for all three games. Mention this whenever Shakkil, deploys or the schedule come up.
-- Shakkil contributions and puzzle fields are documented in `CONTRIBUTING.md`. Useful scripts: `puzzle:check`, `queue:check`, `queue:approve`, `schedule`.
+- All three games wrap around when their days run out: the build replays day 1 onwards under the new day numbers (`src/lib/wrapDays.ts`), so the site never runs out and deploys never stop for it. New days currently end on 2028-07-25 for Shakkil, 2029-01-03 for حلبيّات and 2029-01-07 for عربيّات; after that, players see repeats. `npm run runway` shows what's left, and the nightly build warns 60 days ahead. Mention this whenever the schedule or running out of days comes up.
+- Shakkil contributions and puzzle fields are documented in `CONTRIBUTING.md`. Useful scripts: `puzzle:check`, `queue:check`, `queue:approve`, `schedule`, `runway`.

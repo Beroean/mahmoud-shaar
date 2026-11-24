@@ -1,16 +1,14 @@
 /**
- * Data test: every committed puzzle must be valid, and the schedule must not be about to run out.
+ * Data test: every committed puzzle must be valid, and days must keep coming after the schedule ends
+ * (they wrap around; `npm run runway` warns ahead).
  * This is what blocks a bad contribution from being merged/deployed.
  */
 import { describe, expect, it } from "vitest";
-import { LAUNCH_DAY, dayIndex, puzzleNumber } from "../../src/pages/shakkil/core/daily";
 import { difficulty } from "../../src/pages/shakkil/core/difficulty";
 import { loadAll } from "./content";
 import { lockedDays } from "./schedule";
 import { loadTanzil, quranProblems } from "./tanzil";
-
-/** Fail CI when fewer than this many future days are covered. */
-const MIN_RUNWAY_DAYS = 14;
+import { shippedDays } from "../../src/lib/wrapDays";
 
 describe("content/shakkil/puzzles", () => {
   const { results, pool, setErrors } = loadAll();
@@ -49,13 +47,15 @@ describe("content/shakkil/puzzles", () => {
     expect(wrong, "run npm run schedule -- relevel, or fix the levels by hand").toEqual([]);
   });
 
-  it(`covers at least ${MIN_RUNWAY_DAYS} days ahead (after launch)`, () => {
-    if (dayIndex() < LAUNCH_DAY) return; // pre-launch: nothing scheduled yet
-    const lastDay = Math.max(...results.map((r) => r.number));
-    const remaining = lastDay - puzzleNumber();
-    expect(
-      remaining,
-      `only ${remaining} day(s) left in the schedule; add puzzles and run npm run schedule -- plan`,
-    ).toBeGreaterThanOrEqual(MIN_RUNWAY_DAYS);
+  // Running out no longer breaks the site: the days wrap around. `npm run runway` warns ahead.
+  it("keeps serving days after the schedule runs out (wraps around)", () => {
+    const sources = results.map((r) => r.source!);
+    const count = Math.max(...sources.map((s) => s.number));
+    const shipped = shippedDays(sources, count + 3);
+    for (let k = 1; k <= 3; k++) {
+      const ids = (n: number) => shipped.filter((s) => s.number === n).map((s) => s.id);
+      expect(ids(count + k)).toEqual(ids(k));
+    }
+    expect(Math.max(...shipped.map((s) => s.number))).toBe(count + 3);
   });
 });

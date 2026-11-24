@@ -5,6 +5,7 @@ import babel from "@rolldown/plugin-babel";
 import { GOATCOUNTER_CODE } from "./site.config";
 import { PUZZLE_DIR, SCHEDULE_FILE, loadAll } from "./tools/shakkil/content";
 import { puzzleNumber } from "./src/pages/shakkil/core/daily";
+import { shippedDays } from "./src/lib/wrapDays";
 
 /**
  * Shakkil ships only puzzles up to this many days after the build day, so future answers aren't
@@ -76,8 +77,9 @@ function halabDays(): Plugin {
       if (id !== RESOLVED) return;
       const { days, errors } = loadDays();
       if (errors.length) this.error(`Invalid حلبيّات content:\n${errors.join("\n")}`);
+      // Past the last day the list wraps around (src/lib/wrapDays.ts).
       const lastDay = halabToday() + HALAB_DAYS_AHEAD;
-      return `export default ${JSON.stringify(dev ? days : days.filter((d) => d.number <= lastDay))};`;
+      return `export default ${JSON.stringify(shippedDays(days, lastDay, dev))};`;
     },
     configureServer(server) {
       server.watcher.add(HALAB_DIR);
@@ -110,12 +112,13 @@ function arabiyyatDays(): Plugin {
       if (id !== RESOLVED) return;
       const { days, errors, sources } = loadArabiyyatDays();
       if (errors.length) this.error(`Invalid عربيّات content:\n${errors.join("\n")}`);
+      // Past the last day the list wraps around (src/lib/wrapDays.ts).
       const lastDay = arabiyyatToday() + HALAB_DAYS_AHEAD;
       // Every book, for the credits: the shipped days alone name only a few of them.
       const used = new Set(days.flatMap((d) => d.rounds.map((r) => r.source.id)));
       return [
         `export const sources = ${JSON.stringify(sources.filter((s) => used.has(s.id)))};`,
-        `export default ${JSON.stringify(dev ? days : days.filter((d) => d.number <= lastDay))};`,
+        `export default ${JSON.stringify(shippedDays(days, lastDay, dev))};`,
       ].join("\n");
     },
     configureServer(server) {
@@ -198,8 +201,9 @@ function shakkilPuzzles(): Plugin {
         ...results.flatMap((r) => r.errors.map((e) => `${r.file}: ${e}`)),
       ];
       if (errors.length) this.error(`Invalid Shakkil puzzles:\n${errors.join("\n")}`);
-      const lastDay = serveAll ? Infinity : puzzleNumber() + SHAKKIL_DAYS_AHEAD;
-      const shipped = results.filter((r) => r.number <= lastDay).map((r) => r.source);
+      // Past the end of the schedule the days wrap around (src/lib/wrapDays.ts).
+      const lastDay = puzzleNumber() + SHAKKIL_DAYS_AHEAD;
+      const shipped = shippedDays(results.map((r) => r.source!), lastDay, serveAll);
       return `export default ${JSON.stringify(shipped)};`;
     },
     configureServer(server) {

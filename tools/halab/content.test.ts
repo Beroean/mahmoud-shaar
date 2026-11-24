@@ -1,13 +1,10 @@
 /**
- * Data test: every حلبيّات item must be valid, each day must have its three rounds, and the content
- * must not be about to run out (this fails CI, and the nightly build, two weeks ahead).
+ * Data test: every حلبيّات item must be valid, each day must have its three rounds, and the days
+ * must keep coming after the last one (they wrap around; `npm run runway` warns ahead).
  */
 import { describe, expect, it } from "vitest";
-import { todayNumber } from "../../src/pages/halab/core/daily";
+import { shippedDays } from "../../src/lib/wrapDays";
 import { loadDays, shuffledChoices } from "./content";
-
-/** Fail CI when fewer than this many future days are covered. */
-const MIN_RUNWAY_DAYS = 14;
 
 describe("content/halab", () => {
   const { days, errors, counts } = loadDays();
@@ -29,12 +26,13 @@ describe("content/halab", () => {
     expect(days.length).toBe(Math.min(...Object.values(counts)));
   });
 
-  it(`covers at least ${MIN_RUNWAY_DAYS} days ahead`, () => {
-    const remaining = days.length - todayNumber();
-    expect(
-      remaining,
-      `Only ${remaining} حلبيّات days left after today: add items to content/halab before the game runs out.`,
-    ).toBeGreaterThanOrEqual(MIN_RUNWAY_DAYS);
+  // Running out no longer breaks the site: the days wrap around. `npm run runway` warns ahead.
+  it("keeps serving days after the last one (wraps around)", () => {
+    const shipped = shippedDays(days, days.length + 3);
+    for (let k = 1; k <= 3; k++) {
+      const ids = (n: number) => shipped.find((d) => d.number === n)?.rounds.map((r) => r.id);
+      expect(ids(days.length + k)).toEqual(ids(k));
+    }
   });
 
   it("offers four distinct choices including the answer", () => {

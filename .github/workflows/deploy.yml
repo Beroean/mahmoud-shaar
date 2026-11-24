@@ -31,6 +31,8 @@ jobs:
       - run: npm run lint
       - run: npm run puzzle:check -- --quiet
       - run: npm test
+      # Days left before each game starts repeating. Only warns: past the end the days wrap around.
+      - run: npm run runway -- --ci
       # Data explorer: built from World Bank bulk zips (tools/wdi/build.ts). The WDI zip (282 MB) is
       # cached and only re-downloaded when the World Bank publishes a new one (keyed on its
       # Last-Modified header). The WGI zip (3 MB) isn't cached: it's fetched fresh on every build.
