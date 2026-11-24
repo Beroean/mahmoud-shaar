@@ -350,13 +350,16 @@ function Summary({
         ))}
       </ul>
 
-      <button
-        type="button"
-        onClick={() => onShare(shareText(day.number, results))}
-        className="px-6 py-3 rounded-md bg-sky-200 text-ink font-bold hover:bg-sky-100"
-      >
-        شارك النتيجة
-      </button>
+      {/* Sharing is for today's result, so past days don't offer it (Shakkil hides it too). */}
+      {mode !== "archive" && (
+        <button
+          type="button"
+          onClick={() => onShare(shareText(day.number, results))}
+          className="px-6 py-3 rounded-md bg-sky-200 text-ink font-bold hover:bg-sky-100"
+        >
+          شارك النتيجة
+        </button>
+      )}
 
       {mode !== "daily" ? (
         <PreviewNav number={day.number} count={count} archive={mode === "archive"} />
