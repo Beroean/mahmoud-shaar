@@ -10,15 +10,22 @@ const OFFSET_MS = UTC_OFFSET_HOURS * 3_600_000;
 const ms = (now: Date | number) => (typeof now === "number" ? now : now.getTime());
 
 /**
- * Dev server only: `?day=N` in the URL makes the game act as if today were puzzle N. In a
+ * Dev server only: `?today=N` in the URL makes the game act as if today were puzzle N. In a
  * production build `import.meta.env.DEV` is replaced with false, so this always returns null.
+ * (`?day=N` opens a past day from the archive: archiveNumber.)
  */
 export function devDay(): number | null {
   // Cast: this file is also loaded by vite.config.ts in Node, which has no Vite client types.
   const env = (import.meta as { env?: { DEV?: boolean } }).env;
   if (!env?.DEV || typeof location === "undefined") return null;
-  const n = Number(new URLSearchParams(location.search).get("day"));
+  const n = Number(new URLSearchParams(location.search).get("today"));
   return Number.isInteger(n) && n >= 1 ? n : null;
+}
+
+/** A past day to play from the archive (`?day=N`), or null: only days before today, so it can't spoil one. */
+export function archiveNumber(search: string, today: number): number | null {
+  const n = Number(new URLSearchParams(search).get("day"));
+  return Number.isInteger(n) && n >= 1 && n < today ? n : null;
 }
 
 /** The game's "now": the real time, shifted by whole days when {@link devDay} is set. */

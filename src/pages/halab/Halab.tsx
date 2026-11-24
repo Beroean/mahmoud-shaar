@@ -3,9 +3,12 @@ import { HelpIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
 import { type DayStore, dayStore } from "../../lib/dayStore";
+import { loadArchive } from "../../lib/archive";
+import { ArchiveModal } from "../../components/ArchiveModal";
+import { archivePicks, archivedPicks, dayMode, type DayMode } from "./core/pastDays";
 import { toArabicDigits } from "../shakkil/core/share";
 import { Modal } from "../shakkil/ui/Modals";
-import { isLaunched, msUntilNext, previewNumber, todayNumber } from "./core/daily";
+import { LAUNCH_DATE, isLaunched, msUntilNext, previewNumber, todayNumber } from "./core/daily";
 import { GAME_NAME, KIND_LABEL, KIND_QUESTION, shareText } from "./core/share";
 import { type SaveData, currentStreak, load, recordDay, save } from "./core/storage";
 import { BLANK, type Day, type Round } from "./core/types";
@@ -18,27 +21,34 @@ interface Session {
   picks: (string | null)[];
   /** Round being shown (3 = the day's summary). */
   round: number;
-  /** Preview days (before launch, or ?day=N) are never saved or counted. */
-  preview: boolean;
+  /** Past days (?day=N) are saved apart and never counted; preview days are never saved (pastDays.ts). */
+  mode: DayMode;
 }
 
+const GAME = "halab";
+
 async function startSession(store: DayStore<Day>): Promise<Session | null> {
-  const preview = previewNumber(location.search, store.last, import.meta.env.DEV);
-  const number = preview ?? todayNumber();
+  const requested = previewNumber(location.search, store.last, import.meta.env.DEV);
+  const mode = dayMode(requested, todayNumber(), isLaunched());
+  const number = requested ?? todayNumber();
   const day = (await store.day(number))[0] ?? (isLaunched() ? null : ((await store.day(1))[0] ?? null));
   if (!day) return null;
-  const isPreview = preview !== null || !isLaunched();
   let picks: (string | null)[] = day.rounds.map(() => null);
-  if (!isPreview) {
+  if (mode === "daily") {
     const saved = load().daily;
     if (saved?.day === day.number && saved.ids.join() === day.rounds.map((r) => r.id).join()) picks = saved.picks;
+  } else if (mode === "archive") {
+    picks = archivedPicks(GAME, day) ?? picks;
   }
   const open = picks.findIndex((p) => p === null);
-  return { day, picks, round: open === -1 ? day.rounds.length : open, preview: isPreview };
+  return { day, picks, round: open === -1 ? day.rounds.length : open, mode };
 }
 
 function persist(s: Session) {
-  if (s.preview) return;
+  if (s.mode === "preview") return;
+  // Past days go to the archive only; a daily day goes there too, so the archive shows it as played.
+  archivePicks(GAME, s.day, s.picks);
+  if (s.mode === "archive") return;
   const data: SaveData = load();
   const ids = s.day.rounds.map((r) => r.id);
   const done = s.picks.every((p) => p !== null);
@@ -236,13 +246,15 @@ function Summary({
   count,
   onShare,
   onReview,
+  onArchive,
 }: {
   session: Session;
   count: number;
   onShare: (text: string) => void;
   onReview: (index: number) => void;
+  onArchive: () => void;
 }) {
-  const { day, picks, preview } = session;
+  const { day, picks, mode } = session;
   const results = day.rounds.map((r, i) => ({ kind: r.kind, correct: picks[i] === r.answer }));
   const score = results.filter((r) => r.correct).length;
   const countdown = useCountdown();
@@ -284,8 +296,8 @@ function Summary({
         شارك النتيجة
       </button>
 
-      {preview ? (
-        <PreviewNav number={day.number} count={count} />
+      {mode !== "daily" ? (
+        <PreviewNav number={day.number} count={count} archive={mode === "archive"} />
       ) : (
         <div className="flex justify-center gap-10 text-sm text-paper/60">
           <div>
@@ -298,24 +310,34 @@ function Summary({
           </div>
         </div>
       )}
+
+      {mode !== "preview" && (
+        <button type="button" onClick={onArchive} className="text-sm text-paper/60 underline underline-offset-4 hover:text-gold">
+          العب الأيام السابقة
+        </button>
+      )}
     </section>
   );
 }
 
-/** Review aid: step through every day of the prototype. */
-function PreviewNav({ number, count }: { number: number; count: number }) {
-  const link = (n: number) => `?day=${n}`;
+/**
+ * Step to the day before or after. Past days (`archive`) stop at today, whose link is the plain
+ * page; previews (before launch, or dev) step through every day.
+ */
+function PreviewNav({ number, count, archive }: { number: number; count: number; archive: boolean }) {
+  const link = (n: number) => (archive && n === todayNumber() ? "./" : `?day=${n}`);
+  const last = archive ? todayNumber() : count;
   return (
-    <nav className="flex items-center justify-center gap-4 text-sm text-paper/60" aria-label="معاينة الأيام">
+    <nav className="flex items-center justify-center gap-4 text-sm text-paper/60" aria-label={archive ? "الأيام السابقة" : "معاينة الأيام"}>
       {number > 1 && (
         <a className="hover:text-gold" href={link(number - 1)}>
           → اليوم {toArabicDigits(number - 1)}
         </a>
       )}
       <span className="text-paper/35">
-        معاينة · {toArabicDigits(number)} من {toArabicDigits(count)}
+        {archive ? "يوم سابق" : "معاينة"} · {toArabicDigits(number)} من {toArabicDigits(last)}
       </span>
-      {number < count && (
+      {number < last && (
         <a className="hover:text-gold" href={link(number + 1)}>
           اليوم {toArabicDigits(number + 1)} ←
         </a>
@@ -368,6 +390,8 @@ export default function Halab() {
   const [session, setSession] = useState<Session | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [help, setHelp] = useState(false);
+  const [archiveOpen, setArchiveOpen] = useState(false);
+  const closeArchive = useCallback(() => setArchiveOpen(false), []);
   const [toast, setToast] = useState<string | null>(null);
   const [gate, setGate] = useState(shouldShowGate);
   const closeGate = useCallback(() => setGate(false), []);
@@ -379,7 +403,7 @@ export default function Halab() {
         const s = await startSession(days);
         setStore(days);
         setSession(s);
-        if (s && !s.preview && !load().stats.played && s.picks.every((p) => p === null)) setHelp(true);
+        if (s?.mode === "daily" && !load().stats.played && s.picks.every((p) => p === null)) setHelp(true);
       })
       .catch((e: Error) => setError(e.message));
   }, []);
@@ -394,7 +418,7 @@ export default function Halab() {
     setSession((s) => {
       if (!s || s.picks[s.round] !== null) return s;
       const next = { ...s, picks: s.picks.map((p, i) => (i === s.round ? choice : p)) };
-      if (s.round === 0) trackEvent(s.preview ? "halab/preview" : "halab/start");
+      if (s.round === 0) trackEvent(s.mode === "daily" ? "halab/start" : `halab/${s.mode}`);
       persist(next);
       return next;
     });
@@ -434,19 +458,44 @@ export default function Halab() {
               <h1 className="font-naskh text-4xl text-gold leading-tight">{GAME_NAME}</h1>
               <p className="text-sm text-paper/50">
                 ثلاث جولات كل يوم
-                {session && <> · {session.preview ? "معاينة" : "اليوم"} #{toArabicDigits(session.day.number)}</>}
+                {session && (
+                  <>
+                    {" "}
+                    · {session.mode === "daily" ? "اليوم" : session.mode === "archive" ? "يوم سابق" : "معاينة"} #
+                    {toArabicDigits(session.day.number)}
+                    {session.mode === "archive" && (
+                      <>
+                        {" · "}
+                        <a href="./" className="underline underline-offset-4 hover:text-paper">
+                          العودة إلى اليوم
+                        </a>
+                      </>
+                    )}
+                  </>
+                )}
               </p>
               <Dedication />
             </div>
-            <button
-              type="button"
-              onClick={() => setHelp(true)}
-              title="كيف تلعب"
-              aria-label="كيف تلعب"
-              className="w-10 h-10 grid place-items-center rounded-md border border-paper/15 text-paper/70 hover:text-gold hover:border-gold/50 transition-colors"
-            >
-              <HelpIcon className="w-5 h-5" />
-            </button>
+            <div className="flex items-center gap-2">
+              {isLaunched() && (
+                <button
+                  type="button"
+                  onClick={() => setArchiveOpen(true)}
+                  className="h-10 px-3 rounded-md border border-paper/15 text-sm text-paper/70 hover:text-gold hover:border-gold/50 transition-colors"
+                >
+                  الأرشيف
+                </button>
+              )}
+              <button
+                type="button"
+                onClick={() => setHelp(true)}
+                title="كيف تلعب"
+                aria-label="كيف تلعب"
+                className="w-10 h-10 grid place-items-center rounded-md border border-paper/15 text-paper/70 hover:text-gold hover:border-gold/50 transition-colors"
+              >
+                <HelpIcon className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
           {error && <p className="text-rose-300">تعذّر تحميل اللعبة: {error}</p>}
@@ -472,6 +521,7 @@ export default function Halab() {
               session={session}
               count={store.last}
               onReview={openRound}
+              onArchive={() => setArchiveOpen(true)}
               onShare={async (text) => {
                 if (await share(text)) setToast("نُسخت النتيجة");
               }}
@@ -482,6 +532,9 @@ export default function Halab() {
 
           {help && !gate && <HelpModal onClose={() => setHelp(false)} />}
           {gate && <GateIntro onDone={closeGate} />}
+          {archiveOpen && LAUNCH_DATE && (
+            <ArchiveModal today={todayNumber()} launchDate={LAUNCH_DATE} archive={loadArchive(GAME)} accent="gold" onClose={closeArchive} />
+          )}
           {toast && (
             <div role="status" className="fixed top-6 inset-x-0 mx-auto w-fit z-50 px-4 py-2 rounded-md bg-paper text-ink text-sm">
               {toast}

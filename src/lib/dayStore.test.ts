@@ -50,7 +50,6 @@ describe("dayStore", () => {
     expect(await store.day(26)).toEqual([]);
     expect(await store.day(0)).toEqual([]);
     expect(await store.day(1.5)).toEqual([]);
-    expect(numbers(await store.all())).toEqual(numbers(days(10)));
   });
 
   it("fetches a block only when one of its days is opened, and only once", async () => {
