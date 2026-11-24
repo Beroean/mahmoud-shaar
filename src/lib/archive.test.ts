@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { type KV, dateOfDay, loadArchive, randomPastDay, saveArchiveDay } from "./archive";
+import { type KV, dateOfDay, loadArchive, randomPastDay, recordArchiveDay, saveArchiveDay } from "./archive";
 import { archivePicks, archivedPicks, dayMode } from "../pages/halab/core/pastDays";
 import { archiveNumber } from "../pages/shakkil/core/daily";
 
@@ -24,6 +24,25 @@ describe("archive storage", () => {
     expect(loadArchive("halab", undefined)).toEqual({});
     const full: KV = { getItem: () => null, setItem: () => { throw new Error("quota"); } };
     expect(() => saveArchiveDay("halab", 1, { progress: 1 }, full)).not.toThrow();
+  });
+});
+
+describe("recordArchiveDay (replays)", () => {
+  it("keeps the best score when a day is replayed, and clears only the progress", () => {
+    const kv = fakeKV();
+    recordArchiveDay("g", 2, "first", { got: 2, of: 3 }, kv);
+    recordArchiveDay("g", 2, "replaying", undefined, kv);
+    expect(loadArchive("g", kv)[2]).toEqual({ progress: "replaying", score: { got: 2, of: 3 } });
+    recordArchiveDay("g", 2, "worse", { got: 1, of: 3 }, kv);
+    expect(loadArchive("g", kv)[2].score).toEqual({ got: 2, of: 3 });
+    recordArchiveDay("g", 2, "better", { got: 3, of: 3 }, kv);
+    expect(loadArchive("g", kv)[2]).toEqual({ progress: "better", score: { got: 3, of: 3 } });
+  });
+
+  it("has no score until a play is finished", () => {
+    const kv = fakeKV();
+    recordArchiveDay("g", 5, "started", undefined, kv);
+    expect(loadArchive("g", kv)[5]).toEqual({ progress: "started" });
   });
 });
 
@@ -63,6 +82,13 @@ describe("archivePicks / archivedPicks", () => {
     expect(loadArchive("test-picks")[4]).toEqual({ progress: { ids: ["a", "b", "c"], picks: ["x", null, null] } });
     expect(archivedPicks("test-picks", day)).toEqual(["x", null, null]);
     archivePicks("test-picks", day, ["x", "n", "z"]);
+    expect(loadArchive("test-picks")[4].score).toEqual({ got: 2, of: 3 });
+  });
+
+  it("starts a replay with every answer cleared and keeps the best score", () => {
+    archivePicks("test-picks", day, ["x", "y", "n"]);
+    archivePicks("test-picks", day, [null, null, null]);
+    expect(archivedPicks("test-picks", day)).toEqual([null, null, null]);
     expect(loadArchive("test-picks")[4].score).toEqual({ got: 2, of: 3 });
   });
 

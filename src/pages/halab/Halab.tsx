@@ -247,12 +247,15 @@ function Summary({
   onShare,
   onReview,
   onArchive,
+  onReplay,
 }: {
   session: Session;
   count: number;
   onShare: (text: string) => void;
   onReview: (index: number) => void;
   onArchive: () => void;
+  /** Past days only: clear the answers and play the day again. */
+  onReplay: () => void;
 }) {
   const { day, picks, mode } = session;
   const results = day.rounds.map((r, i) => ({ kind: r.kind, correct: picks[i] === r.answer }));
@@ -289,7 +292,11 @@ function Summary({
       </ul>
 
       {/* Sharing is for today's result, so past days don't offer it (Shakkil hides it too). */}
-      {mode !== "archive" && (
+      {mode === "archive" ? (
+        <button type="button" onClick={onReplay} className="px-6 py-3 rounded-md bg-gold text-ink font-bold hover:bg-gold/90">
+          العب مرة أخرى
+        </button>
+      ) : (
         <button
           type="button"
           onClick={() => onShare(shareText(day.number, results))}
@@ -437,6 +444,15 @@ export default function Halab() {
     const el = playRef.current;
     if (moved && el && el.getBoundingClientRect().top < 0) el.scrollIntoView({ block: "start" });
   }, [shownRound]);
+  // Past days can be played again any number of times; the archive keeps the best score.
+  const replay = () =>
+    setSession((s) => {
+      if (!s || s.mode !== "archive") return s;
+      const next = { ...s, picks: s.picks.map(() => null), round: 0 };
+      trackEvent("halab/replay");
+      persist(next);
+      return next;
+    });
   const nextRound = () => setSession((s) => (s ? { ...s, round: Math.min(s.round + 1, s.day.rounds.length) } : s));
   // Reopen an answered round (read-only, since it already has a pick), or the summary once all are answered.
   const openRound = (i: number) =>
@@ -530,6 +546,7 @@ export default function Halab() {
               count={store.last}
               onReview={openRound}
               onArchive={() => setArchiveOpen(true)}
+              onReplay={replay}
               onShare={async (text) => {
                 if (await share(text)) setToast("نُسخت النتيجة");
               }}

@@ -139,6 +139,7 @@ export function ResultModal({
   daily,
   onShare,
   onArchive,
+  onReplay,
   onClose,
 }: {
   state: GameState;
@@ -146,6 +147,8 @@ export function ResultModal({
   daily: boolean;
   onShare: (text: string) => void;
   onArchive: () => void;
+  /** Past days: play the day again. */
+  onReplay: () => void;
   onClose: () => void;
 }) {
   const { puzzle, results, status } = state;
@@ -173,6 +176,11 @@ export function ResultModal({
       </dl>
       <Credit puzzle={puzzle} />
       <div className="flex flex-wrap gap-3 items-center">
+        {!daily && (
+          <button type="button" onClick={onReplay} className="px-5 py-3 rounded-md bg-gold text-ink font-bold hover:bg-gold/90">
+            العب مرة أخرى
+          </button>
+        )}
         {daily && (
           <button
             type="button"
@@ -240,6 +248,7 @@ export function DayResultModal({
   daily,
   onShare,
   onArchive,
+  onReplay,
   onClose,
 }: {
   rounds: Puzzle[];
@@ -249,6 +258,8 @@ export function DayResultModal({
   daily: boolean;
   onShare: (text: string) => void;
   onArchive: () => void;
+  /** Past days: play the day again. */
+  onReplay: () => void;
   onClose: () => void;
 }) {
   const states = rounds.map((p, i) => initGame(p, progress[i]?.attempts ?? []));
@@ -303,6 +314,11 @@ export function DayResultModal({
         })}
       </ol>
       <div className="flex flex-wrap gap-3 items-center">
+        {!daily && done && (
+          <button type="button" onClick={onReplay} className="px-5 py-3 rounded-md bg-gold text-ink font-bold hover:bg-gold/90">
+            العب مرة أخرى
+          </button>
+        )}
         {daily && done && (
           <button
             type="button"

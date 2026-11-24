@@ -2,7 +2,7 @@
  * Past days for حلبيّات and عربيّات (same shape: rounds answered by picking a choice). Opened with
  * ?day=N, saved in the archive (src/lib/archive.ts), never counted in the stats.
  */
-import { loadArchive, saveArchiveDay } from "../../../lib/archive";
+import { loadArchive, recordArchiveDay } from "../../../lib/archive";
 
 /**
  * daily: today's day, saved and counted. archive: a past day, saved apart and not counted.
@@ -35,12 +35,12 @@ export function archivedPicks(game: string, day: PickDay): (string | null)[] | n
   return saved && saved.ids.join() === ids(day).join() && saved.picks.length === day.rounds.length ? saved.picks : null;
 }
 
-/** Saves a day's answers to the archive, with its score once every round is answered. */
+/**
+ * Saves a day's answers to the archive, with this play's score once every round is answered (the
+ * day keeps its best score across replays). Replaying a day saves it with every answer cleared.
+ */
 export function archivePicks(game: string, day: PickDay, picks: (string | null)[]): void {
   const done = picks.every((p) => p !== null);
   const got = day.rounds.filter((r, i) => picks[i] === r.answer).length;
-  saveArchiveDay<PicksProgress>(game, day.number, {
-    progress: { ids: ids(day), picks },
-    ...(done && { score: { got, of: day.rounds.length } }),
-  });
+  recordArchiveDay<PicksProgress>(game, day.number, { ids: ids(day), picks }, done ? { got, of: day.rounds.length } : undefined);
 }

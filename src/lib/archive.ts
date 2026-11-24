@@ -1,7 +1,8 @@
 /**
  * Past days a player has played, for the daily games' archive. Kept apart from each game's save
  * (today's progress and the stats): archive plays never count toward stats or streaks. A daily day
- * is copied here once it's finished, so the archive shows it as played too.
+ * is copied here as it's played, so the archive shows it as played too. Past days can be replayed
+ * any number of times: replaying clears the progress and keeps the best score.
  *
  * Never throws: blocked or corrupt storage starts empty.
  */
@@ -15,7 +16,7 @@ export interface Score {
 export interface PastDay<P> {
   /** The game's own progress for the day (answers so far), to restore it when reopened. */
   progress: P;
-  /** Set once every round is finished. */
+  /** The best finished play of the day (set once every round of a play is finished). */
   score?: Score;
 }
 
@@ -52,6 +53,16 @@ export function saveArchiveDay<P>(game: string, day: number, entry: PastDay<P>, 
   } catch {
     // Storage full or blocked: the day just isn't remembered.
   }
+}
+
+/**
+ * Saves a day's progress. `score` is this play's result once it's finished; the day keeps its best
+ * score across replays, so starting again (or doing worse) never loses a better result.
+ */
+export function recordArchiveDay<P>(game: string, day: number, progress: P, score?: Score, kv: KV | undefined = defaultKV()): void {
+  const prev = loadArchive<P>(game, kv)[day]?.score;
+  const best = !score ? prev : !prev || score.got * prev.of > prev.got * score.of ? score : prev;
+  saveArchiveDay<P>(game, day, { progress, ...(best && { score: best }) }, kv);
 }
 
 const DAY_MS = 86_400_000;
