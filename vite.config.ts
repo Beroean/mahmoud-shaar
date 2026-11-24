@@ -5,14 +5,8 @@ import babel from "@rolldown/plugin-babel";
 import { GOATCOUNTER_CODE } from "./site.config";
 import { PUZZLE_DIR, SCHEDULE_FILE, loadAll } from "./tools/shakkil/content";
 import { puzzleNumber } from "./src/pages/shakkil/core/daily";
-import { shippedDays } from "./src/lib/wrapDays";
+import { splitDays, type DaySplit } from "./src/lib/dayStore";
 
-/**
- * Shakkil ships only puzzles up to this many days after the build day, so future answers aren't
- * readable from the site. 1 = tomorrow's is included, so the midnight rollover works even if the
- * nightly rebuild (deploy.yml) runs late. The full set is still validated.
- */
-const SHAKKIL_DAYS_AHEAD = 1;
 import { approve, loadQueue, reject } from "./tools/shakkil/queue";
 import { CONTENT_DIR as HALAB_DIR, loadDays } from "./tools/halab/content";
 import { todayNumber as halabToday } from "./src/pages/halab/core/daily";
@@ -56,82 +50,97 @@ function halabReviewApi(): Plugin {
 }
 
 /**
- * Compiles content/halab/*.yaml into `virtual:halab-days` (a list of Day). Invalid items fail the
- * build. Like Shakkil, a build ships only days up to tomorrow (HALAB_DAYS_AHEAD), so future answers
- * aren't readable from the site; the nightly rebuild (deploy.yml) adds the next one. The dev server
- * ships every day so ?day=N can preview any of them.
+ * Compiles a daily game's content into `virtual:<name>-days` (src/lib/dayStore.ts): a small module
+ * with today's and tomorrow's days, plus one lazily loaded chunk per block of past days, so a visit
+ * downloads only what it plays. Invalid content fails the build. A build ships nothing after
+ * tomorrow (DAYS_AHEAD), so future answers aren't readable from the site; the nightly rebuild
+ * (deploy.yml) adds the next day. The dev server ships every day so ?day=N can preview any of them.
  */
-const HALAB_DAYS_AHEAD = 1;
+const DAYS_AHEAD = 1;
 
-function halabDays(): Plugin {
-  const ID = "virtual:halab-days";
+function gameDays<T extends { number: number }>(game: {
+  name: string;
+  /** Content folders and files; a change reloads `page` in dev. */
+  watch: string[];
+  page: string;
+  /** The game's days, or an error message. `extra` is more module code (e.g. `export const …`). */
+  load: () => { entries: T[]; errors: string[]; extra?: string };
+  today: () => number;
+}): Plugin {
+  const ID = `virtual:${game.name}-days`;
   const RESOLVED = "\0" + ID;
   let dev = false;
+  let split: DaySplit<T> | null = null;
+  const compile = (fail: (msg: string) => never) => {
+    const { entries, errors, extra = "" } = game.load();
+    if (errors.length) fail(`Invalid ${game.name} content:\n${errors.join("\n")}`);
+    // Past the last day the list wraps around (src/lib/wrapDays.ts).
+    split = splitDays(entries, game.today() + DAYS_AHEAD, dev);
+    return extra;
+  };
   return {
-    name: "halab-days",
+    name: `${game.name}-days`,
     configResolved(config) {
       dev = config.command === "serve";
     },
-    resolveId: (id) => (id === ID ? RESOLVED : undefined),
+    resolveId: (id) => (id === ID || id.startsWith(`${ID}-block-`) ? "\0" + id : undefined),
     load(id) {
-      if (id !== RESOLVED) return;
-      const { days, errors } = loadDays();
-      if (errors.length) this.error(`Invalid حلبيّات content:\n${errors.join("\n")}`);
-      // Past the last day the list wraps around (src/lib/wrapDays.ts).
-      const lastDay = halabToday() + HALAB_DAYS_AHEAD;
-      return `export default ${JSON.stringify(shippedDays(days, lastDay, dev))};`;
+      if (id === RESOLVED) {
+        const extra = compile((msg) => this.error(msg));
+        const { recent, count, last, blockDays, blocks } = split!;
+        return [
+          extra,
+          `export const recent = ${JSON.stringify(recent)};`,
+          `export const count = ${count}, last = ${last}, blockDays = ${blockDays};`,
+          `export const blocks = [${blocks.map((_, k) => `() => import(${JSON.stringify(`${ID}-block-${k}`)})`).join(", ")}];`,
+        ].join("\n");
+      }
+      if (!id.startsWith(`${RESOLVED}-block-`)) return;
+      if (!split) compile((msg) => this.error(msg));
+      return `export default ${JSON.stringify(split!.blocks[Number(id.slice(`${RESOLVED}-block-`.length))] ?? [])};`;
     },
     configureServer(server) {
-      server.watcher.add(HALAB_DIR);
+      server.watcher.add(game.watch);
       server.watcher.on("all", (_, file) => {
-        if (!file.startsWith(HALAB_DIR)) return;
-        const mod = server.moduleGraph.getModuleById(RESOLVED);
-        if (mod) server.moduleGraph.invalidateModule(mod);
-        // Only the game reloads; the review page keeps its place.
-        server.ws.send({ type: "full-reload", path: "/halab/index.html" });
+        if (!game.watch.some((w) => file.startsWith(w))) return;
+        for (const k of [-1, ...(split?.blocks.keys() ?? [])]) {
+          const mod = server.moduleGraph.getModuleById(k < 0 ? RESOLVED : `${RESOLVED}-block-${k}`);
+          if (mod) server.moduleGraph.invalidateModule(mod);
+        }
+        split = null;
+        // Only the game reloads; the review pages keep their place.
+        server.ws.send({ type: "full-reload", path: game.page });
       });
     },
   };
 }
 
-/**
- * Compiles content/arabiyyat/*.yaml into `virtual:arabiyyat-days`, the same way as halabDays():
- * invalid items fail the build, and a build ships only days up to tomorrow (the dev server ships all).
- */
-function arabiyyatDays(): Plugin {
-  const ID = "virtual:arabiyyat-days";
-  const RESOLVED = "\0" + ID;
-  let dev = false;
-  return {
-    name: "arabiyyat-days",
-    configResolved(config) {
-      dev = config.command === "serve";
+const halabDays = () =>
+  gameDays({
+    name: "halab",
+    watch: [HALAB_DIR],
+    page: "/halab/index.html",
+    today: halabToday,
+    load: () => {
+      const { days, errors } = loadDays();
+      return { entries: days, errors };
     },
-    resolveId: (id) => (id === ID ? RESOLVED : undefined),
-    load(id) {
-      if (id !== RESOLVED) return;
+  });
+
+const arabiyyatDays = () =>
+  gameDays({
+    name: "arabiyyat",
+    watch: [ARABIYYAT_DIR],
+    page: "/arabiyyat/index.html",
+    today: arabiyyatToday,
+    load: () => {
       const { days, errors, sources } = loadArabiyyatDays();
-      if (errors.length) this.error(`Invalid عربيّات content:\n${errors.join("\n")}`);
-      // Past the last day the list wraps around (src/lib/wrapDays.ts).
-      const lastDay = arabiyyatToday() + HALAB_DAYS_AHEAD;
       // Every book, for the credits: the shipped days alone name only a few of them.
       const used = new Set(days.flatMap((d) => d.rounds.map((r) => r.source.id)));
-      return [
-        `export const sources = ${JSON.stringify(sources.filter((s) => used.has(s.id)))};`,
-        `export default ${JSON.stringify(shippedDays(days, lastDay, dev))};`,
-      ].join("\n");
+      const extra = `export const sources = ${JSON.stringify(sources.filter((s) => used.has(s.id)))};`;
+      return { entries: days, errors, extra };
     },
-    configureServer(server) {
-      server.watcher.add(ARABIYYAT_DIR);
-      server.watcher.on("all", (_, file) => {
-        if (!file.startsWith(ARABIYYAT_DIR)) return;
-        const mod = server.moduleGraph.getModuleById(RESOLVED);
-        if (mod) server.moduleGraph.invalidateModule(mod);
-        server.ws.send({ type: "full-reload", path: "/arabiyyat/index.html" });
-      });
-    },
-  };
-}
+  });
 
 /** Injects tags every page shares (favicon, analytics) so each HTML entry stays small. */
 function sharedHead(): Plugin {
@@ -178,46 +187,22 @@ function sharedHead(): Plugin {
 }
 
 /**
- * Compiles content/shakkil/puzzles/*.yaml, in content/shakkil/schedule.yaml order, into
- * `virtual:shakkil-puzzles` (a list of PuzzleSource; index = day - 1).
- * Invalid puzzles fail the build with the same messages `npm run puzzle:check` prints.
+ * Shakkil's puzzles (content/shakkil/puzzles/*.yaml, in content/shakkil/schedule.yaml order) as
+ * `virtual:shakkil-days`, the same way as the other games (gameDays). Invalid puzzles fail the
+ * build with the same messages `npm run puzzle:check` prints.
  */
-function shakkilPuzzles(): Plugin {
-  const ID = "virtual:shakkil-puzzles";
-  const RESOLVED = "\0" + ID;
-  // The dev server serves every day so `/shakkil/?day=N` can preview future days locally.
-  let serveAll = false;
-  return {
-    name: "shakkil-puzzles",
-    configResolved(config) {
-      serveAll = config.command === "serve";
-    },
-    resolveId: (id) => (id === ID ? RESOLVED : undefined),
-    load(id) {
-      if (id !== RESOLVED) return;
+const shakkilDays = () =>
+  gameDays({
+    name: "shakkil",
+    watch: [PUZZLE_DIR, SCHEDULE_FILE],
+    page: "/shakkil/index.html",
+    today: () => puzzleNumber(),
+    load: () => {
       const { results, setErrors } = loadAll();
-      const errors = [
-        ...setErrors,
-        ...results.flatMap((r) => r.errors.map((e) => `${r.file}: ${e}`)),
-      ];
-      if (errors.length) this.error(`Invalid Shakkil puzzles:\n${errors.join("\n")}`);
-      // Past the end of the schedule the days wrap around (src/lib/wrapDays.ts).
-      const lastDay = puzzleNumber() + SHAKKIL_DAYS_AHEAD;
-      const shipped = shippedDays(results.map((r) => r.source!), lastDay, serveAll);
-      return `export default ${JSON.stringify(shipped)};`;
+      const errors = [...setErrors, ...results.flatMap((r) => r.errors.map((e) => `${r.file}: ${e}`))];
+      return { entries: errors.length ? [] : results.map((r) => r.source!), errors };
     },
-    configureServer(server) {
-      server.watcher.add([PUZZLE_DIR, SCHEDULE_FILE]);
-      server.watcher.on("all", (_, file) => {
-        if (!file.startsWith(PUZZLE_DIR) && file !== SCHEDULE_FILE) return;
-        const mod = server.moduleGraph.getModuleById(RESOLVED);
-        if (mod) server.moduleGraph.invalidateModule(mod);
-        // Only the game page uses puzzles; the review page must keep its state.
-        server.ws.send({ type: "full-reload", path: "/shakkil/index.html" });
-      });
-    },
-  };
-}
+  });
 
 /**
  * Dev-only JSON API for the puzzle review page (review/index.html). Never part of the build:
@@ -265,7 +250,7 @@ const pages = {
 };
 
 export default defineConfig({
-  plugins: [react(), babel({ presets: [reactCompilerPreset()] }), sharedHead(), shakkilPuzzles(), halabDays(), arabiyyatDays(), halabReviewApi(), reviewApi()],
+  plugins: [react(), babel({ presets: [reactCompilerPreset()] }), sharedHead(), shakkilDays(), halabDays(), arabiyyatDays(), halabReviewApi(), reviewApi()],
   build: {
     rollupOptions: {
       input: Object.fromEntries(

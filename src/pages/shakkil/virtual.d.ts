@@ -1,5 +1,7 @@
-declare module "virtual:shakkil-puzzles" {
+declare module "virtual:shakkil-days" {
   import type { PuzzleSource } from "./core/puzzle";
-  const puzzles: PuzzleSource[];
-  export default puzzles;
+  import type { DayModule } from "../../lib/dayStore";
+  export const recent: DayModule<PuzzleSource>["recent"];
+  export const count: number, last: number, blockDays: number;
+  export const blocks: DayModule<PuzzleSource>["blocks"];
 }

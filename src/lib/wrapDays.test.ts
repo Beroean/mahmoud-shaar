@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { shippedDays, sourceDay, wrapDays } from "./wrapDays";
+import { sourceDay, wrapDays } from "./wrapDays";
 
 const day = (number: number, id = `d${number}`) => ({ number, id });
 
@@ -52,16 +52,3 @@ describe("sourceDay", () => {
   });
 });
 
-describe("shippedDays", () => {
-  const days = [day(1), day(2), day(3)];
-
-  it("ships only up to lastDay, so later answers stay off the site", () => {
-    expect(shippedDays(days, 2).map((d) => d.number)).toEqual([1, 2]);
-    expect(shippedDays(days, 5).map((d) => d.number)).toEqual([1, 2, 3, 4, 5]);
-  });
-
-  it("ships every day to the dev server, wrapped up to lastDay", () => {
-    expect(shippedDays(days, 2, true).map((d) => d.number)).toEqual([1, 2, 3]);
-    expect(shippedDays(days, 5, true).map((d) => d.number)).toEqual([1, 2, 3, 4, 5]);
-  });
-});

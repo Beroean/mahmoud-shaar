@@ -21,12 +21,3 @@ export function wrapDays<T extends { number: number }>(entries: T[], lastDay: nu
 export function sourceDay(n: number, count: number): number {
   return ((n - 1) % count) + 1;
 }
-
-/**
- * The days a build ships: every day up to `lastDay`, wrapped past the end. The dev server
- * (`all`) also gets the future days so ?day=N can preview any of them.
- */
-export function shippedDays<T extends { number: number }>(entries: T[], lastDay: number, all = false): T[] {
-  const wrapped = wrapDays(entries, lastDay);
-  return all ? wrapped : wrapped.filter((e) => e.number <= lastDay);
-}

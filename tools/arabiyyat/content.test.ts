@@ -4,7 +4,7 @@
  * coming after the last one (they wrap around; `npm run runway` warns ahead).
  */
 import { describe, expect, it } from "vitest";
-import { shippedDays } from "../../src/lib/wrapDays";
+import { splitDays, storeOf } from "../../src/lib/dayStore";
 import { loadDays as loadHalab } from "../halab/content";
 import { loadDays } from "./content";
 
@@ -26,11 +26,11 @@ describe("content/arabiyyat", () => {
   });
 
   // Running out no longer breaks the site: the days wrap around. `npm run runway` warns ahead.
-  it("keeps serving days after the last one (wraps around)", () => {
-    const shipped = shippedDays(days, days.length + 3);
+  it("keeps serving days after the last one (wraps around)", async () => {
+    const store = storeOf(splitDays(days, days.length + 3));
     for (let k = 1; k <= 3; k++) {
-      const ids = (n: number) => shipped.find((d) => d.number === n)?.rounds.map((r) => r.id);
-      expect(ids(days.length + k)).toEqual(ids(k));
+      const ids = async (n: number) => (await store.day(n))[0]?.rounds.map((r) => r.id);
+      expect(await ids(days.length + k)).toEqual(await ids(k));
     }
   });
 
