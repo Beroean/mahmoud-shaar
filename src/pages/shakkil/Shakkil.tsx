@@ -3,7 +3,7 @@ import { FlagIcon, HelpIcon, StatsIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
 import { type DayStore, dayStore } from "../../lib/dayStore";
-import { loadArchive, saveArchiveDay } from "../../lib/archive";
+import { loadArchive, recordArchiveDay } from "../../lib/archive";
 import { ArchiveModal } from "../../components/ArchiveModal";
 import { markIntroSeen, shouldPlayIntro } from "../../lib/introOnce";
 import { sentenceToString } from "./core/arabic";
@@ -92,10 +92,8 @@ function daySession(mode: Mode, number: number, day: PuzzleSource[]): Session | 
 function persistDay(s: Session, progress: RoundRecord[]) {
   const done = progress.every((r) => r.status !== "playing");
   const solved = progress.filter((r) => r.status === "won").length;
-  saveArchiveDay<RoundRecord[]>(GAME, s.number, {
-    progress,
-    ...(done && { score: { got: solved, of: progress.length } }),
-  });
+  // The archive keeps the day's best score across replays (src/lib/archive.ts).
+  recordArchiveDay<RoundRecord[]>(GAME, s.number, progress, done ? { got: solved, of: progress.length } : undefined);
   if (s.mode === "archive") {
     if (done) trackEvent(`shakkil/archive-solved-${solved}`);
     return;
@@ -140,6 +138,7 @@ function Game({
   onNext,
   onDayResult,
   onArchive,
+  onReplay,
   onToast,
 }: {
   session: Session;
@@ -147,6 +146,8 @@ function Game({
   onNext: () => void;
   onDayResult: () => void;
   onArchive: () => void;
+  /** Past days: clear the day and play it again. */
+  onReplay: () => void;
   onToast: (text: string) => void;
 }) {
   const { mode, number, rounds, round } = session;
@@ -256,7 +257,7 @@ function Game({
       )}
 
       {finished && (!multi || isLast) && (
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <button
             type="button"
             onClick={() => (multi ? onDayResult() : setDialog("result"))}
@@ -264,6 +265,11 @@ function Game({
           >
             {multi ? "عرض نتيجة اليوم" : state.status === "won" ? "أحسنت! عرض النتيجة" : "عرض الإجابة"}
           </button>
+          {!daily && (
+            <button type="button" onClick={onReplay} className="px-5 py-3 rounded-md border border-paper/20 hover:border-paper/50">
+              العب مرة أخرى
+            </button>
+          )}
         </div>
       )}
 
@@ -286,6 +292,10 @@ function Game({
           onArchive={() => {
             setDialog(null);
             onArchive();
+          }}
+          onReplay={() => {
+            setDialog(null);
+            onReplay();
           }}
           onClose={() => setDialog(null)}
         />
@@ -384,6 +394,18 @@ export default function Shakkil() {
     });
   }
 
+  /** Past days can be played again any number of times; the archive keeps the best score. */
+  const replay = () => {
+    setDayResult(false);
+    setSession((s) => {
+      if (!s || s.mode !== "archive") return s;
+      const progress = s.rounds.map(freshRound);
+      trackEvent("shakkil/replay");
+      persistDay(s, progress);
+      return { ...s, id: ++sessionIds, progress, round: 0 };
+    });
+  };
+
   const openArchive = () => {
     setDayResult(false);
     setArchiveOpen(true);
@@ -427,6 +449,7 @@ export default function Shakkil() {
               onNext={() => setSession((s) => (s ? { ...s, round: Math.min(s.round + 1, s.rounds.length - 1) } : s))}
               onDayResult={() => setDayResult(true)}
               onArchive={openArchive}
+              onReplay={replay}
               onToast={setToast}
             />
           )}
@@ -440,6 +463,7 @@ export default function Shakkil() {
                 if (await shareText(text)) setToast("نُسخت النتيجة");
               }}
               onArchive={openArchive}
+              onReplay={replay}
               onClose={() => setDayResult(false)}
             />
           )}
