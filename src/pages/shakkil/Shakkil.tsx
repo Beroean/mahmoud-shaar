@@ -4,6 +4,7 @@ import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
 import { type DayStore, dayStore } from "../../lib/dayStore";
 import { loadArchive, recordArchiveDay } from "../../lib/archive";
+import { ArchiveBanner } from "../../components/ArchiveBanner";
 import { ArchiveModal } from "../../components/ArchiveModal";
 import { markIntroSeen, shouldPlayIntro } from "../../lib/introOnce";
 import { sentenceToString } from "./core/arabic";
@@ -211,23 +212,19 @@ function Game({
               <FlagIcon className="w-5 h-5 rtl:-scale-x-100" />
             </IconButton>
           )}
-          {daily ? (
-            isLaunched() && (
-              <button
-                type="button"
-                onClick={onArchive}
-                className="ms-2 px-3 py-2 rounded-md border border-paper/15 text-sm hover:border-paper/40"
-              >
-                الأرشيف
-              </button>
-            )
-          ) : (
-            <a href="./" className="ms-2 px-3 py-2 rounded-md border border-paper/15 text-sm hover:border-paper/40">
-              جملة اليوم
-            </a>
+          {isLaunched() && (
+            <button
+              type="button"
+              onClick={onArchive}
+              className="ms-2 px-3 py-2 rounded-md border border-paper/15 text-sm hover:border-paper/40"
+            >
+              الأرشيف
+            </button>
           )}
         </nav>
       </div>
+
+      {!daily && <ArchiveBanner number={number} launchDate={LAUNCH_DATE} accent="gold" todayLabel="جملة اليوم" />}
 
       {multi && <RoundSteps session={session} current={state.status} />}
 

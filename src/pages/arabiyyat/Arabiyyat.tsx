@@ -9,6 +9,7 @@ import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
 import { type DayStore, dayStore } from "../../lib/dayStore";
 import { loadArchive } from "../../lib/archive";
+import { ArchiveBanner } from "../../components/ArchiveBanner";
 import { ArchiveModal } from "../../components/ArchiveModal";
 import { archivePicks, archivedPicks, dayMode, type DayMode } from "../halab/core/pastDays";
 import { markIntroSeen, shouldPlayIntro } from "../../lib/introOnce";
@@ -590,17 +591,6 @@ export default function Arabiyyat() {
                         · {session.mode === "daily" ? "اليوم" : session.mode === "archive" ? "يوم سابق" : "معاينة"} #
                         {toArabicDigits(session.day.number)}
                       </span>
-                      {session.mode === "archive" && (
-                        <>
-                          {" "}
-                          <span className="whitespace-nowrap">
-                            ·{" "}
-                            <a href="./" className="underline underline-offset-4 hover:text-paper">
-                              العودة إلى اليوم
-                            </a>
-                          </span>
-                        </>
-                      )}
                     </>
                   )}
                 </p>
@@ -628,6 +618,9 @@ export default function Arabiyyat() {
             </div>
           </div>
 
+          {session?.mode === "archive" && (
+            <ArchiveBanner number={session.day.number} launchDate={LAUNCH_DATE} accent="sky" todayLabel="أسئلة اليوم" />
+          )}
           {error && <p className="text-rose-300">تعذّر تحميل اللعبة: {error}</p>}
           {!store && !error && <p className="text-paper/40 py-24 text-center">جارٍ التحميل…</p>}
           {store && !session && <p className="text-paper/70 py-24 text-center">أسئلة اليوم في الطريق. حدّث الصفحة بعد قليل.</p>}

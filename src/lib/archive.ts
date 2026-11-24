@@ -72,6 +72,13 @@ export function dateOfDay(launchDate: string, n: number): Date {
   return new Date(Date.parse(`${launchDate}T00:00:00Z`) + (n - 1) * DAY_MS);
 }
 
+const DATE = new Intl.DateTimeFormat("ar", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC", calendar: "gregory", numberingSystem: "arab" });
+
+/** Day `n`'s date in Arabic, e.g. «٢٤ نوفمبر ٢٠٢٦». */
+export function formatDayDate(launchDate: string, n: number): string {
+  return DATE.format(dateOfDay(launchDate, n));
+}
+
 /** A random past day, preferring ones not played yet. */
 export function randomPastDay(today: number, archive: Archive<unknown>, random = Math.random): number | null {
   const past = Array.from({ length: Math.max(0, today - 1) }, (_, i) => i + 1);
