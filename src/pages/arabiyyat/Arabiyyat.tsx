@@ -566,14 +566,20 @@ export default function Arabiyyat() {
                   ثلاثة أسئلة كل يوم من أمثال العرب وكلامهم
                   {session && (
                     <>
-                      {" "}
-                      · {session.mode === "daily" ? "اليوم" : session.mode === "archive" ? "يوم سابق" : "معاينة"} #{toArabicDigits(session.day.number)}
+                      {/* Each piece stays on one line; a narrow screen wraps between them. */}{" "}
+                      <span className="whitespace-nowrap">
+                        · {session.mode === "daily" ? "اليوم" : session.mode === "archive" ? "يوم سابق" : "معاينة"} #
+                        {toArabicDigits(session.day.number)}
+                      </span>
                       {session.mode === "archive" && (
                         <>
-                          {" · "}
-                          <a href="./" className="underline underline-offset-4 hover:text-paper">
-                            العودة إلى اليوم
-                          </a>
+                          {" "}
+                          <span className="whitespace-nowrap">
+                            ·{" "}
+                            <a href="./" className="underline underline-offset-4 hover:text-paper">
+                              العودة إلى اليوم
+                            </a>
+                          </span>
                         </>
                       )}
                     </>
