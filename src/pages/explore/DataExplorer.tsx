@@ -14,6 +14,7 @@ import {
 import { Bar } from "react-chartjs-2";
 import { type ChartLine, DEFAULT_LINES, MAX_LINES, type TimeSeries, nextSlot } from "./timeSeries";
 import { TimeSeriesView } from "./TimeSeriesView";
+import { type IndicatorAbout, IndicatorNotes } from "./IndicatorNotes";
 import { ExploreIntro } from "./ExploreIntro";
 import { markIntroSeen, shouldPlayIntro } from "../../lib/introOnce";
 
@@ -66,6 +67,8 @@ interface Dataset {
   blurb: string;
   /** Shown after "Source: World Bank, <name>". */
   license?: string;
+  /** The World Bank's page about an indicator, linked under its notes. */
+  docsUrl: (id: string) => string;
 }
 
 const DATASETS: Dataset[] = [
@@ -76,6 +79,7 @@ const DATASETS: Dataset[] = [
     short: "WDI",
     blurb: "Economy, people, health, education, environment and more: the World Bank's main collection of development data.",
     license: "CC BY 4.0",
+    docsUrl: (id) => `https://data.worldbank.org/indicator/${encodeURIComponent(id)}`,
   },
   {
     key: "wgi",
@@ -84,6 +88,8 @@ const DATASETS: Dataset[] = [
     short: "WGI",
     blurb:
       "Six dimensions of governance (corruption, government effectiveness, political stability, regulatory quality, rule of law, voice and accountability), each as a score from 0 to 100 and an estimate from about -2.5 to 2.5.",
+    // The WGI has no page per indicator; its documentation covers all six.
+    docsUrl: () => "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
   },
 ];
 
@@ -126,23 +132,28 @@ async function fetchIndicators(ds: string): Promise<Indicator[]> {
 
 const fetchMeta = (ds: string) => getJson<WdiMeta>(ds, "meta.json");
 
-/** Most recent value per country/aggregate, sorted descending. */
-async function fetchIndicatorData(ds: string, indicatorId: string): Promise<WBDataPoint[]> {
+/** Most recent value per country/aggregate, sorted descending, and what the indicator measures. */
+async function fetchIndicatorData(
+  ds: string,
+  indicatorId: string,
+): Promise<{ points: WBDataPoint[]; info: IndicatorAbout }> {
   const [doc, countries] = await Promise.all([
-    getJson<{ id: string; name: string; rows: [string, number, number][] }>(
+    getJson<{ id: string; name: string; rows: [string, number, number][] } & Partial<IndicatorAbout>>(
       ds,
       `ind/${encodeURIComponent(indicatorId)}.json`,
     ),
     loadCountries(ds),
   ]);
   const names = new Map(countries.map((c) => [c.id, c.name]));
-  return doc.rows.map(([code, value, year]) => ({
+  const points = doc.rows.map(([code, value, year]) => ({
     countryiso3code: code,
     country: { id: code, value: names.get(code) ?? code },
     date: String(year),
     value,
     indicator: { id: doc.id, value: doc.name },
   }));
+  const info = { unit: doc.unit ?? "", def: doc.def ?? "", source: doc.source ?? "", about: doc.about ?? [] };
+  return { points, info };
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -201,6 +212,7 @@ function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: s
     null,
   );
   const [rawData, setRawData] = useState<WBDataPoint[]>([]);
+  const [info, setInfo] = useState<IndicatorAbout | null>(null);
   const [loadingData, setLoadingData] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("bar");
@@ -293,10 +305,14 @@ function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: s
     async function load() {
       try {
         setRawData([]);
+        setInfo(null);
         setError(null);
         setLoadingData(true);
-        const data = await fetchIndicatorData(ds, selectedIndicator!.id);
-        if (!cancelled) setRawData(data);
+        const { points, info } = await fetchIndicatorData(ds, selectedIndicator!.id);
+        if (!cancelled) {
+          setRawData(points);
+          setInfo(info);
+        }
       } catch (e) {
         if (!cancelled)
           setError("Failed to fetch data. " + (e as Error).message);
@@ -572,7 +588,7 @@ function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: s
         {/* ── Chart / Table ──────────────────────────────────────────────── */}
         {!loadingData && chartData.length > 0 && (
           <div className="animate-fade-in">
-            <div className="flex flex-col items-center gap-4 mb-6">
+            <div className="flex flex-col items-center gap-4 mb-5">
               <div>
                 <h2 className="font-serif text-xl text-paper mb-1">
                   {indicatorLabel}
@@ -600,7 +616,17 @@ function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: s
                   </p>
                 )}
               </div>
+            </div>
 
+            {info && selectedIndicator && (
+              <IndicatorNotes
+                key={selectedIndicator.id}
+                info={info}
+                docsUrl={dataset.docsUrl(selectedIndicator.id)}
+              />
+            )}
+
+            <div className="flex flex-col items-center gap-4 mb-6">
               <div className="flex items-center justify-center gap-3 flex-wrap">
                 {viewMode !== "time" && (
                   <>

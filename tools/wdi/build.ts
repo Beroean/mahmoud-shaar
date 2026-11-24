@@ -11,8 +11,9 @@
  *   meta.json         source date, build date, counts
  *   indicators.json   [{ id, name, topic }]                 indicators with at least one value
  *   countries.json    [{ id, name, region, income, agg }]   agg = aggregate (region/income group)
- *   ind/<id>.json     { id, name, unit, def, source, rows: [[code, value, year], …] }
- *                     the most recent value per country/aggregate, sorted descending
+ *   ind/<id>.json     { id, name, unit, def, source, about, rows: [[code, value, year], …] }
+ *                     the most recent value per country/aggregate, sorted descending; `about` is
+ *                     the longer notes from Series.csv as [heading, text] pairs (~3 KB on average)
  *   ts/<id>.json      { from, to, series: { <code>: [value | null, …] } }
  *                     every year from `from` to `to` (the indicator's span) per country/aggregate,
  *                     for the "over time" chart. ~100 MB in all, ~65 KB per indicator on average
@@ -114,6 +115,29 @@ async function readEntries(path: string, handlers: Record<string, (row: Row) => 
 /** 6 significant digits keeps files small without visible loss in a chart or table. */
 const round = (v: number) => Number(v.toPrecision(6));
 
+/** Series.csv columns shown under "More about this indicator", with their headings. */
+const ABOUT: [column: string, heading: string][] = [
+  ["Development relevance", "Why it matters"],
+  ["Statistical concept and methodology", "How it is measured"],
+  ["Limitations and exceptions", "Limitations"],
+  ["Aggregation method", "Aggregation"],
+  ["Other notes", "Notes"],
+];
+
+/** Tidies a Series.csv text: trimmed lines, at most one blank line in a row. */
+export const tidy = (s: string | undefined) =>
+  (s ?? "")
+    .split("\n")
+    .map((l) => l.trim())
+    .join("\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+
+/** The longer notes on an indicator, as [heading, text] pairs, skipping empty columns. */
+export function about(row: Record<string, string>): [string, string][] {
+  return ABOUT.map(([col, heading]): [string, string] => [heading, tidy(row[col])]).filter(([, text]) => text);
+}
+
 /** One dense array per country over the indicator's whole span, null where a year is missing. */
 export function timeSeries(byCountry: Map<string, [number, number][]>) {
   let from = Infinity;
@@ -141,7 +165,10 @@ export async function build(ds: Dataset, { fresh = false } = {}) {
     : statSync(zip).mtime.toISOString();
 
   const countries: { id: string; name: string; region: string; income: string; agg: boolean }[] = [];
-  const series = new Map<string, { topic: string; unit: string; def: string; source: string }>();
+  const series = new Map<
+    string,
+    { topic: string; unit: string; def: string; source: string; about: [string, string][] }
+  >();
   const latest = new Map<string, { name: string; rows: [string, number, number][] }>();
   /** Per indicator: each country's [year, value] pairs, oldest first. */
   const history = new Map<string, Map<string, [number, number][]>>();
@@ -158,9 +185,10 @@ export async function build(ds: Dataset, { fresh = false } = {}) {
     [`${prefix}Series.csv`]: (r) =>
       series.set(r["Series Code"], {
         topic: r["Topic"] ?? "",
-        unit: r["Unit of measure"] ?? "",
-        def: r["Short definition"] || r["Long definition"] || "",
-        source: r["Source"] ?? "",
+        unit: tidy(r["Unit of measure"]),
+        def: tidy(r["Short definition"] || r["Long definition"]),
+        source: tidy(r["Source"]),
+        about: about(r),
       }),
     [`${prefix}CSV.csv`]: (r) => {
       const id = r["Indicator Code"];
@@ -198,7 +226,15 @@ export async function build(ds: Dataset, { fresh = false } = {}) {
   for (const [id, ind] of latest) {
     const s = series.get(id);
     ind.rows.sort((a, b) => b[1] - a[1]);
-    const doc = { id, name: ind.name, unit: s?.unit ?? "", def: s?.def ?? "", source: s?.source ?? "", rows: ind.rows };
+    const doc = {
+      id,
+      name: ind.name,
+      unit: s?.unit ?? "",
+      def: s?.def ?? "",
+      source: s?.source ?? "",
+      about: s?.about ?? [],
+      rows: ind.rows,
+    };
     writeFileSync(resolve(out, "ind", `${id}.json`), JSON.stringify(doc));
     writeFileSync(resolve(out, "ts", `${id}.json`), JSON.stringify(timeSeries(history.get(id)!)));
   }

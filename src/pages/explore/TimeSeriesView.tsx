@@ -1,12 +1,31 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Chart as ChartJS, LineElement, PointElement, type ChartOptions } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { COLORS, type ChartLine, MAX_LINES, type TimeSeries } from "./timeSeries";
+import { endLabels, gutterWidth } from "./endLabels";
 
 ChartJS.register(LineElement, PointElement);
 
 const MONO = "'IBM Plex Mono', monospace";
 const fmt = (v: number) => v.toLocaleString(undefined, { maximumFractionDigits: 2 });
+const LABEL_FONT = `11px ${MONO}`;
+/** Below this chart width the end labels are country codes, not names. */
+const NARROW = 560;
+const PLUGINS = [endLabels];
+
+/** Width of the element, kept current. */
+function useWidth() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([e]) => setWidth(e.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  return [ref, width] as const;
+}
 
 export function TimeSeriesView({
   ts,
@@ -61,15 +80,26 @@ export function TimeSeriesView({
     [ts, lines, names, lo, hi],
   );
 
+  // Names at the end of each line; codes on a narrow chart, where names would squeeze the plot.
+  const [boxRef, width] = useWidth();
+  const narrow = width > 0 && width < NARROW;
+  const labels = useMemo(
+    () => lines.map(({ code }) => (narrow ? code : (names.get(code) ?? code))),
+    [lines, names, narrow],
+  );
+  const gutter = useMemo(() => gutterWidth(labels, LABEL_FONT, narrow ? 64 : 170), [labels, narrow]);
+
   const options: ChartOptions<"line"> = useMemo(
     () => ({
       responsive: true,
       maintainAspectRatio: false,
       animation: { duration: 300 },
       interaction: { mode: "index", intersect: false },
+      layout: { padding: { right: gutter } },
       plugins: {
-        // The country chips above the chart are the legend (swatch + name).
+        // The labels at the line ends and the country chips above the chart are the legend.
         legend: { display: false },
+        endLabels: { labels, font: LABEL_FONT, color: "rgba(232,228,220,0.8)" },
         tooltip: {
           backgroundColor: "#111",
           borderColor: "rgba(201,169,110,0.3)",
@@ -103,7 +133,7 @@ export function TimeSeriesView({
         },
       },
     }),
-    [],
+    [labels, gutter],
   );
 
   const sortedChoices = useMemo(
@@ -112,7 +142,7 @@ export function TimeSeriesView({
   );
 
   return (
-    <div>
+    <div ref={boxRef}>
       <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
         {lines.map(({ code, slot }) => (
           <span key={code} className="inline-flex items-center gap-2 border border-paper/15 pl-3 pr-1 py-1 text-xs text-paper/80">
@@ -146,7 +176,7 @@ export function TimeSeriesView({
 
       {lines.length ? (
         <div className="border border-paper/10 bg-ink-1 p-4 sm:p-6 h-[420px] sm:h-[480px]">
-          <Line data={data} options={options} />
+          <Line data={data} options={options} plugins={PLUGINS} />
         </div>
       ) : (
         <div className="border border-paper/10 bg-ink-1 px-6 py-16 text-xs text-paper/30">Add a country to draw its line.</div>
