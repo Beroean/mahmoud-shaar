@@ -54,8 +54,6 @@ export interface DayStore<T> {
   last: number;
   /** Day `n`'s entries (empty if it isn't in this build). Fetches its block the first time. */
   day(n: number): Promise<T[]>;
-  /** Every original day this build ships (fetches every block). */
-  all(): Promise<T[]>;
 }
 
 /** The module a game's `virtual:*-days` compiles to: the index plus one loader per block. */
@@ -86,9 +84,6 @@ export function dayStore<T extends { number: number }>(m: DayModule<T>): DayStor
       const source = sourceDay(n, m.count);
       const list = await block(Math.floor((source - 1) / m.blockDays));
       return list.filter((e) => e.number === source).map((e) => (source === n ? e : { ...e, number: n }));
-    },
-    async all() {
-      return (await Promise.all(m.blocks.map((_, k) => block(k)))).flat();
     },
   };
 }

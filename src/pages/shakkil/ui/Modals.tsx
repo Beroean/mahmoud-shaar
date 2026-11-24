@@ -138,14 +138,14 @@ export function ResultModal({
   number,
   daily,
   onShare,
-  onPractice,
+  onArchive,
   onClose,
 }: {
   state: GameState;
   number: number;
   daily: boolean;
   onShare: (text: string) => void;
-  onPractice: () => void;
+  onArchive: () => void;
   onClose: () => void;
 }) {
   const { puzzle, results, status } = state;
@@ -184,10 +184,10 @@ export function ResultModal({
         )}
         <button
           type="button"
-          onClick={onPractice}
+          onClick={onArchive}
           className="px-5 py-3 rounded-md border border-paper/20 hover:border-paper/50"
         >
-          جملة للتدريب
+          الأيام السابقة
         </button>
       </div>
       {daily && (
@@ -237,15 +237,18 @@ export function DayResultModal({
   rounds,
   progress,
   number,
+  daily,
   onShare,
-  onPractice,
+  onArchive,
   onClose,
 }: {
   rounds: Puzzle[];
   progress: RoundRecord[];
   number: number;
+  /** False for a past day from the archive: no sharing or countdown. */
+  daily: boolean;
   onShare: (text: string) => void;
-  onPractice: () => void;
+  onArchive: () => void;
   onClose: () => void;
 }) {
   const states = rounds.map((p, i) => initGame(p, progress[i]?.attempts ?? []));
@@ -300,7 +303,7 @@ export function DayResultModal({
         })}
       </ol>
       <div className="flex flex-wrap gap-3 items-center">
-        {done && (
+        {daily && done && (
           <button
             type="button"
             onClick={() => onShare(text)}
@@ -309,13 +312,15 @@ export function DayResultModal({
             شارك النتيجة
           </button>
         )}
-        <button type="button" onClick={onPractice} className="px-5 py-3 rounded-md border border-paper/20 hover:border-paper/50">
-          جملة للتدريب
+        <button type="button" onClick={onArchive} className="px-5 py-3 rounded-md border border-paper/20 hover:border-paper/50">
+          الأيام السابقة
         </button>
       </div>
-      <p className="text-sm text-paper/50 mt-5">
-        {isLaunched() ? "الجمل التالية بعد" : "تبدأ اللعبة رسميًا بعد"} <Countdown />
-      </p>
+      {daily && (
+        <p className="text-sm text-paper/50 mt-5">
+          {isLaunched() ? "الجمل التالية بعد" : "تبدأ اللعبة رسميًا بعد"} <Countdown />
+        </p>
+      )}
     </Modal>
   );
 }
