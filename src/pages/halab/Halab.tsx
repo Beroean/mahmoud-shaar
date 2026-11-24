@@ -2,6 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import { HelpIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
+import { type DayStore, dayStore } from "../../lib/dayStore";
 import { toArabicDigits } from "../shakkil/core/share";
 import { Modal } from "../shakkil/ui/Modals";
 import { isLaunched, msUntilNext, previewNumber, todayNumber } from "./core/daily";
@@ -21,10 +22,10 @@ interface Session {
   preview: boolean;
 }
 
-function startSession(days: Day[]): Session | null {
-  const preview = previewNumber(location.search, days.length, import.meta.env.DEV);
+async function startSession(store: DayStore<Day>): Promise<Session | null> {
+  const preview = previewNumber(location.search, store.last, import.meta.env.DEV);
   const number = preview ?? todayNumber();
-  const day = days.find((d) => d.number === number) ?? (isLaunched() ? null : days[0]);
+  const day = (await store.day(number))[0] ?? (isLaunched() ? null : ((await store.day(1))[0] ?? null));
   if (!day) return null;
   const isPreview = preview !== null || !isLaunched();
   let picks: (string | null)[] = day.rounds.map(() => null);
@@ -363,7 +364,7 @@ async function share(text: string): Promise<boolean> {
 }
 
 export default function Halab() {
-  const [days, setDays] = useState<Day[] | null>(null);
+  const [store, setStore] = useState<DayStore<Day> | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [help, setHelp] = useState(false);
@@ -373,9 +374,10 @@ export default function Halab() {
 
   useEffect(() => {
     import("virtual:halab-days")
-      .then((m) => {
-        setDays(m.default);
-        const s = startSession(m.default);
+      .then(async (m) => {
+        const days = dayStore<Day>(m);
+        const s = await startSession(days);
+        setStore(days);
         setSession(s);
         if (s && !s.preview && !load().stats.played && s.picks.every((p) => p === null)) setHelp(true);
       })
@@ -448,8 +450,8 @@ export default function Halab() {
           </div>
 
           {error && <p className="text-rose-300">تعذّر تحميل اللعبة: {error}</p>}
-          {!days && !error && <p className="text-paper/40 py-24 text-center">جارٍ التحميل…</p>}
-          {days && !session && <p className="text-paper/70 py-24 text-center">أسئلة اليوم في الطريق. حدّث الصفحة بعد قليل.</p>}
+          {!store && !error && <p className="text-paper/40 py-24 text-center">جارٍ التحميل…</p>}
+          {store && !session && <p className="text-paper/70 py-24 text-center">أسئلة اليوم في الطريق. حدّث الصفحة بعد قليل.</p>}
 
           <div ref={playRef} className="scroll-mt-4" />
           {session && <Steps session={session} onOpen={openRound} />}
@@ -465,10 +467,10 @@ export default function Halab() {
               isLast={session.round === session.day.rounds.length - 1}
             />
           )}
-          {session && days && !round && (
+          {session && store && !round && (
             <Summary
               session={session}
-              count={days.length}
+              count={store.last}
               onReview={openRound}
               onShare={async (text) => {
                 if (await share(text)) setToast("نُسخت النتيجة");

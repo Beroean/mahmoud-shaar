@@ -8,7 +8,7 @@ import { difficulty } from "../../src/pages/shakkil/core/difficulty";
 import { loadAll } from "./content";
 import { lockedDays } from "./schedule";
 import { loadTanzil, quranProblems } from "./tanzil";
-import { shippedDays } from "../../src/lib/wrapDays";
+import { splitDays, storeOf } from "../../src/lib/dayStore";
 
 describe("content/shakkil/puzzles", () => {
   const { results, pool, setErrors } = loadAll();
@@ -48,14 +48,15 @@ describe("content/shakkil/puzzles", () => {
   });
 
   // Running out no longer breaks the site: the days wrap around. `npm run runway` warns ahead.
-  it("keeps serving days after the schedule runs out (wraps around)", () => {
+  it("keeps serving days after the schedule runs out (wraps around)", async () => {
     const sources = results.map((r) => r.source!);
     const count = Math.max(...sources.map((s) => s.number));
-    const shipped = shippedDays(sources, count + 3);
+    const store = storeOf(splitDays(sources, count + 3));
     for (let k = 1; k <= 3; k++) {
-      const ids = (n: number) => shipped.filter((s) => s.number === n).map((s) => s.id);
-      expect(ids(count + k)).toEqual(ids(k));
+      const ids = async (n: number) => (await store.day(n)).map((s) => s.id);
+      expect(await ids(count + k)).toEqual(await ids(k));
+      expect(await ids(count + k)).not.toEqual([]);
     }
-    expect(Math.max(...shipped.map((s) => s.number))).toBe(count + 3);
+    expect(store.last).toBe(count + 3);
   });
 });

@@ -2,6 +2,7 @@ import { type ReactNode, useCallback, useEffect, useReducer, useState } from "re
 import { FlagIcon, HelpIcon, StatsIcon } from "../../components/icons";
 import { SiteLayout } from "../../components/SiteLayout";
 import { trackEvent } from "../../lib/analytics";
+import { type DayStore, dayStore } from "../../lib/dayStore";
 import { markIntroSeen, shouldPlayIntro } from "../../lib/introOnce";
 import { sentenceToString } from "./core/arabic";
 import { devDay, isLaunched, puzzleNumber } from "./core/daily";
@@ -54,9 +55,9 @@ const freshRound = (p: Puzzle): RoundRecord => ({ id: p.id ?? "", attempts: [], 
  * Today's sentences, or null if this build doesn't include them yet. The site only ships puzzles up
  * to tomorrow (rebuilt nightly), so this only happens if the nightly deploy is late.
  */
-function dailySession(all: PuzzleSource[]): Session | null {
+function dailySession(day: PuzzleSource[]): Session | null {
   const number = puzzleNumber();
-  const sources = all.filter((p) => p.number === number).sort((a, b) => (a.slot ?? 0) - (b.slot ?? 0));
+  const sources = day.filter((p) => p.number === number).sort((a, b) => (a.slot ?? 0) - (b.slot ?? 0));
   if (!sources.length) return null;
   const rounds = sources.map(compile);
   let progress = rounds.map(freshRound);
@@ -73,12 +74,15 @@ function dailySession(all: PuzzleSource[]): Session | null {
   return { id: ++sessionIds, mode: "daily", number, rounds, progress, round: open === -1 ? rounds.length - 1 : open };
 }
 
-/** A random past puzzle (never today's or a future one, so practice can't spoil a daily). */
-function practiceSession(all: PuzzleSource[], exclude?: string): Session {
+/**
+ * A random past puzzle (never today's or a future one, so practice can't spoil a daily). `all` is
+ * every original day (DayStore.all), `todays` today's sentences.
+ */
+function practiceSession(all: PuzzleSource[], todays: PuzzleSource[], exclude?: string): Session {
   const today = puzzleNumber();
   // Once the schedule wraps around (src/lib/wrapDays.ts) a sentence comes back under a new day:
   // keep only its first day, and never today's sentences under their old number.
-  const onToday = new Set(all.filter((p) => p.number === today).map((p) => p.id));
+  const onToday = new Set(todays.map((p) => p.id));
   const seen = new Set<string | undefined>();
   const unique = all.filter((p) => !seen.has(p.id) && !!seen.add(p.id));
   let pool = unique.filter((p) => p.number < today && p.id !== exclude && !onToday.has(p.id));
@@ -322,7 +326,7 @@ function IconButton({ label, onClick, children }: { label: string; onClick: () =
 }
 
 export default function Shakkil() {
-  const [all, setAll] = useState<PuzzleSource[] | null>(null);
+  const [store, setStore] = useState<DayStore<PuzzleSource> | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [error, setError] = useState<string | null>(null);
   /** Today's puzzle isn't in this build yet (nightly deploy pending). */
@@ -335,19 +339,17 @@ export default function Shakkil() {
     if (intro) markIntroSeen(INTRO_KEY);
   }, [intro]);
 
-  function showDaily(list: PuzzleSource[]) {
-    const s = dailySession(list);
+  async function showDaily(days: DayStore<PuzzleSource>) {
+    const s = dailySession(await days.day(puzzleNumber()));
+    setStore(days);
     setSession(s);
     setWaiting(!s);
     setDayResult(false);
   }
 
   useEffect(() => {
-    import("virtual:shakkil-puzzles")
-      .then((m) => {
-        setAll(m.default);
-        showDaily(m.default);
-      })
+    import("virtual:shakkil-days")
+      .then((m) => showDaily(dayStore(m)))
       .catch((e: Error) => setError(e.message));
   }, []);
 
@@ -367,9 +369,15 @@ export default function Shakkil() {
   }
 
   const practice = () => {
-    if (!all) return;
-    setDayResult(false);
-    setSession(practiceSession(all, session?.mode === "practice" ? session.rounds[0].id : undefined));
+    if (!store) return;
+    const exclude = session?.mode === "practice" ? session.rounds[0].id : undefined;
+    // Past days are fetched on demand (src/lib/dayStore.ts), so this can fail offline.
+    Promise.all([store.all(), store.day(puzzleNumber())])
+      .then(([all, todays]) => {
+        setDayResult(false);
+        setSession(practiceSession(all, todays, exclude));
+      })
+      .catch(() => setToast("تعذّر التحميل، حاول مرة أخرى"));
   };
 
   return (
@@ -390,7 +398,7 @@ export default function Shakkil() {
           )}
           {error && <p className="text-rose-300">تعذّر تحميل اللعبة: {error}</p>}
           {!session && !error && !waiting && <p className="text-paper/40 py-24 text-center">جارٍ التحميل…</p>}
-          {waiting && !session && all && (
+          {waiting && !session && store && (
             <div className="py-24 text-center space-y-6">
               <p className="text-paper/70">جملة اليوم في الطريق. حدّث الصفحة بعد قليل.</p>
               <button
@@ -402,7 +410,7 @@ export default function Shakkil() {
               </button>
             </div>
           )}
-          {session && all && (
+          {session && store && (
             <Game
               key={`${session.id}-${session.round}`}
               session={session}
@@ -410,7 +418,7 @@ export default function Shakkil() {
               onNext={() => setSession((s) => (s ? { ...s, round: Math.min(s.round + 1, s.rounds.length - 1) } : s))}
               onDayResult={() => setDayResult(true)}
               onPractice={practice}
-              onDaily={() => showDaily(all)}
+              onDaily={() => showDaily(store)}
               onToast={setToast}
             />
           )}
