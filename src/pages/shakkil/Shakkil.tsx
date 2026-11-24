@@ -257,16 +257,18 @@ function Game({
       )}
 
       {finished && (!multi || isLast) && (
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <button
-            type="button"
-            onClick={() => (multi ? onDayResult() : setDialog("result"))}
-            className="px-5 py-3 rounded-md bg-gold text-ink font-bold hover:bg-gold/90"
-          >
-            {multi ? "عرض نتيجة اليوم" : state.status === "won" ? "أحسنت! عرض النتيجة" : "عرض الإجابة"}
-          </button>
-          {!daily && (
-            <button type="button" onClick={onReplay} className="px-5 py-3 rounded-md border border-paper/20 hover:border-paper/50">
+        <div className="mt-8 flex justify-center">
+          {/* A finished past day offers a replay; its result stays one tap away (the flag in the header). */}
+          {daily ? (
+            <button
+              type="button"
+              onClick={() => (multi ? onDayResult() : setDialog("result"))}
+              className="px-5 py-3 rounded-md bg-gold text-ink font-bold hover:bg-gold/90"
+            >
+              {multi ? "عرض نتيجة اليوم" : state.status === "won" ? "أحسنت! عرض النتيجة" : "عرض الإجابة"}
+            </button>
+          ) : (
+            <button type="button" onClick={onReplay} className="px-5 py-3 rounded-md bg-gold text-ink font-bold hover:bg-gold/90">
               العب مرة أخرى
             </button>
           )}
