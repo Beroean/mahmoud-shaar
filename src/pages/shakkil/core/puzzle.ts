@@ -1,6 +1,6 @@
 import { ArabicParseError, type Word, letterToString, parseSentence, skeleton } from "./arabic";
 import type { Variant } from "./grade";
-import { specsFor } from "./rules";
+import { MOVED_SUKUN_FROM_DAY, movedSukunWords, specsFor } from "./rules";
 
 /** A puzzle as authored in content/shakkil/puzzles/NNNN.yaml (plus its number). */
 export interface PuzzleSource {
@@ -211,7 +211,10 @@ export function compilePuzzle(src: PuzzleSource): { puzzle?: Puzzle; errors: str
       `${expanded.length} accepted variants; at most ${MAX_VARIANTS}`,
     );
   }
-  const variants: Variant[] = [main, ...expanded.slice(1).map((words) => ({ words, specs: specsFor(words) }))];
+  // Sukun accepted for a moved final vowel (لَمْ يَكُنِ / يَكُنْ), on upcoming days only.
+  const moved = (words: Word[]) =>
+    src.number >= MOVED_SUKUN_FROM_DAY && Array.isArray(src.irab) ? movedSukunWords(words, src.irab) : new Set<number>();
+  const variants: Variant[] = expanded.map((words) => ({ words, specs: specsFor(words, moved(words)) }));
   if (src.context !== undefined && (typeof src.context !== "string" || !src.context.trim())) {
     err("الحقل context يجب أن يكون نصًا", "`context` must be a non-empty string");
   }
