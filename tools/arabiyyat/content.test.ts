@@ -1,15 +1,12 @@
 /**
  * Data test: every عربيّات item must be valid, every day must have its three rounds, and Aleppo items
- * borrowed from حلبيّات' spares must never be played in Halab too, and the content must not be about
- * to run out (this fails CI, and the nightly build, two weeks ahead).
+ * borrowed from حلبيّات' spares must never be played in Halab too, and the days must keep
+ * coming after the last one (they wrap around; `npm run runway` warns ahead).
  */
 import { describe, expect, it } from "vitest";
-import { todayNumber } from "../../src/pages/arabiyyat/core/daily";
+import { shippedDays } from "../../src/lib/wrapDays";
 import { loadDays as loadHalab } from "../halab/content";
 import { loadDays } from "./content";
-
-/** Fail CI when fewer than this many future days are covered. */
-const MIN_RUNWAY_DAYS = 14;
 
 describe("content/arabiyyat", () => {
   const { days, errors, counts, halabIds } = loadDays();
@@ -28,12 +25,13 @@ describe("content/arabiyyat", () => {
     }
   });
 
-  it(`covers at least ${MIN_RUNWAY_DAYS} days ahead`, () => {
-    const remaining = days.length - todayNumber();
-    expect(
-      remaining,
-      `Only ${remaining} عربيّات days left after today: move items from content/arabiyyat/spares.yaml into the lists.`,
-    ).toBeGreaterThanOrEqual(MIN_RUNWAY_DAYS);
+  // Running out no longer breaks the site: the days wrap around. `npm run runway` warns ahead.
+  it("keeps serving days after the last one (wraps around)", () => {
+    const shipped = shippedDays(days, days.length + 3);
+    for (let k = 1; k <= 3; k++) {
+      const ids = (n: number) => shipped.find((d) => d.number === n)?.rounds.map((r) => r.id);
+      expect(ids(days.length + k)).toEqual(ids(k));
+    }
   });
 
   it("offers four distinct choices including the answer", () => {

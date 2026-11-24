@@ -51,8 +51,8 @@ export function puzzleNumber(now: Date | number = clock()): number {
 }
 
 /**
- * Which puzzle (0-based index) to serve for a number. If the schedule runs out it wraps around
- * rather than breaking; the data test fails CI well before that happens.
+ * Which puzzle (0-based index) to serve for a number. Past the end of the schedule the days wrap
+ * around (the build does this for all three games, src/lib/wrapDays.ts).
  */
 export function scheduledIndex(number: number, count: number): number {
   return (number - 1) % count;

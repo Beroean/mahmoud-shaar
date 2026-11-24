@@ -18,6 +18,7 @@
     "queue:check": "tsx tools/shakkil/queue.ts",
     "queue:approve": "tsx tools/shakkil/approve.ts",
     "schedule": "tsx tools/shakkil/schedule.ts",
+    "runway": "tsx tools/runway.ts",
     "og": "tsx tools/og.ts",
     "favicon": "tsx tools/favicon.ts",
     "pattern": "tsx tools/pattern.ts",

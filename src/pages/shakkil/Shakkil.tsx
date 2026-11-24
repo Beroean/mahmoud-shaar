@@ -76,7 +76,12 @@ function dailySession(all: PuzzleSource[]): Session | null {
 /** A random past puzzle (never today's or a future one, so practice can't spoil a daily). */
 function practiceSession(all: PuzzleSource[], exclude?: string): Session {
   const today = puzzleNumber();
-  let pool = all.filter((p) => p.number < today && p.id !== exclude);
+  // Once the schedule wraps around (src/lib/wrapDays.ts) a sentence comes back under a new day:
+  // keep only its first day, and never today's sentences under their old number.
+  const onToday = new Set(all.filter((p) => p.number === today).map((p) => p.id));
+  const seen = new Set<string | undefined>();
+  const unique = all.filter((p) => !seen.has(p.id) && !!seen.add(p.id));
+  let pool = unique.filter((p) => p.number < today && p.id !== exclude && !onToday.has(p.id));
   if (!pool.length) pool = all.filter((p) => p.number !== today && p.id !== exclude);
   if (!pool.length) pool = all;
   const puzzle = compile(pool[Math.floor(Math.random() * pool.length)]);
