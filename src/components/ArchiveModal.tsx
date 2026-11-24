@@ -1,4 +1,4 @@
-import { type Archive, dateOfDay, dayHref, randomPastDay } from "../lib/archive";
+import { type Archive, dateOfDay, dayHref, formatDayDate, randomPastDay } from "../lib/archive";
 import { toArabicDigits } from "../pages/shakkil/core/share";
 import { Modal } from "../pages/shakkil/ui/Modals";
 
@@ -9,7 +9,6 @@ const ACCENT = {
 };
 
 const MONTH = new Intl.DateTimeFormat("ar", { month: "long", year: "numeric", timeZone: "UTC", calendar: "gregory", numberingSystem: "arab" });
-const DATE = new Intl.DateTimeFormat("ar", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC", calendar: "gregory", numberingSystem: "arab" });
 
 /**
  * Every past day of a daily game, newest first and grouped by month, with how each one went.
@@ -62,7 +61,7 @@ export function ArchiveModal({
                 <ol className="grid grid-cols-5 sm:grid-cols-6 gap-2">
                   {m.days.map((n) => (
                     <li key={n}>
-                      <DayTile n={n} entry={archive[n]} date={DATE.format(dateOfDay(launchDate, n))} hover={a.hover} />
+                      <DayTile n={n} entry={archive[n]} date={formatDayDate(launchDate, n)} hover={a.hover} />
                     </li>
                   ))}
                 </ol>
