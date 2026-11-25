@@ -243,6 +243,7 @@ function reviewApi(): Plugin {
 const pages = {
   home: "index.html",
   explore: "explore/index.html",
+  country: "country/index.html",
   shakkil: "shakkil/index.html",
   halab: "halab/index.html",
   arabiyyat: "arabiyyat/index.html",

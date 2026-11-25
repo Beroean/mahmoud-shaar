@@ -17,6 +17,7 @@
  *   ts/<id>.json      { from, to, series: { <code>: [value | null, …] } }
  *                     every year from `from` to `to` (the indicator's span) per country/aggregate,
  *                     for the "over time" chart. ~100 MB in all, ~65 KB per indicator on average
+ * and public/data/country/ for the country profiles (country.ts).
  */
 import { createWriteStream, existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -25,6 +26,7 @@ import { pipeline } from "node:stream/promises";
 import { pathToFileURL } from "node:url";
 import { parse } from "csv-parse";
 import yauzl from "yauzl";
+import { buildCountries } from "./country";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 
@@ -261,6 +263,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   (async () => {
     if (!chosen.length) throw new Error(`unknown dataset ${only}; known: ${DATASETS.map((d) => d.key).join(", ")}`);
     for (const ds of chosen) await build(ds, { fresh });
+    // The country profiles are cut from every dataset's files, so they are rebuilt each time.
+    buildCountries();
   })().catch((e) => {
     console.error(e);
     process.exit(1);

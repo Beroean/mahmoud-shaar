@@ -93,6 +93,21 @@ const DATASETS: Dataset[] = [
   },
 ];
 
+/**
+ * A link into the explorer can also name an indicator, the view and the countries on the time
+ * chart: ?indicator=SP.DYN.LE00.IN&view=time&countries=SYR,EGY (the country profiles link this way).
+ */
+function initialChoice() {
+  const p = new URLSearchParams(location.search);
+  const view = p.get("view");
+  const codes = (p.get("countries") ?? "").split(",").filter(Boolean).slice(0, MAX_LINES);
+  return {
+    indicator: p.get("indicator"),
+    view: (view === "time" || view === "table" ? view : "bar") as ViewMode,
+    lines: codes.length ? codes.map((code, slot) => ({ code, slot })) : null,
+  };
+}
+
 /** The dataset named by ?dataset=, or the first. */
 function initialDataset(): Dataset {
   const key = new URLSearchParams(location.search).get("dataset");
@@ -183,11 +198,14 @@ export default function DataExplorer() {
     const url = new URL(location.href);
     if (next === DATASETS[0]) url.searchParams.delete("dataset");
     else url.searchParams.set("dataset", next.key);
+    // A linked indicator belongs to the dataset the page opened on.
+    for (const k of ["indicator", "view", "countries"]) url.searchParams.delete(k);
     history.replaceState(null, "", url);
     setDataset(next);
   };
   // The opening scene plays over the page (once per session), not again on a dataset switch.
-  const [intro, setIntro] = useState(() => shouldPlayIntro(INTRO_KEY, "intro"));
+  // A link to one indicator (from a country profile) goes straight to it.
+  const [intro, setIntro] = useState(() => !initialChoice().indicator && shouldPlayIntro(INTRO_KEY, "intro"));
   const closeIntro = useCallback(() => setIntro(false), []);
   useEffect(() => {
     if (intro) markIntroSeen(INTRO_KEY);
@@ -215,7 +233,9 @@ function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: s
   const [info, setInfo] = useState<IndicatorAbout | null>(null);
   const [loadingData, setLoadingData] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<ViewMode>("bar");
+  // What the link asked for; used once, for the dataset the page opened on.
+  const [linked] = useState(initialChoice);
+  const [viewMode, setViewMode] = useState<ViewMode>(linked.view);
   const [topN, setTopN] = useState(30);
   const [sortAsc, setSortAsc] = useState(false);
   const [countriesOnly, setCountriesOnly] = useState(true);
@@ -226,7 +246,7 @@ function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: s
   const [ts, setTs] = useState<{ id: string; data: TimeSeries } | null>(null);
   const [tsError, setTsError] = useState<string | null>(null);
   /** Countries on the time chart; null until the user changes them (then the top of the ranking). */
-  const [picked, setPicked] = useState<ChartLine[] | null>(null);
+  const [picked, setPicked] = useState<ChartLine[] | null>(linked.lines);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Load indicator list on mount
@@ -235,7 +255,11 @@ function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: s
     async function load() {
       try {
         const data = await fetchIndicators(ds);
-        if (!cancelled) setIndicators(data);
+        if (!cancelled) {
+          setIndicators(data);
+          const wanted = data.find((i) => i.id === linked.indicator);
+          if (wanted) setSelectedIndicator(wanted);
+        }
       } catch (e) {
         if (!cancelled)
           setError("Failed to load indicators. " + (e as Error).message);
@@ -247,7 +271,7 @@ function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: s
     return () => {
       cancelled = true;
     };
-  }, [ds]);
+  }, [ds, linked]);
 
   // Fetch real country codes and the data date once on mount
   useEffect(() => {
@@ -463,6 +487,11 @@ function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: s
         <p className="text-sm text-paper/40 mb-12 max-w-lg mx-auto leading-relaxed">
           Pick a World Bank dataset and one of its indicators to compare
           countries on their most recent values, or follow them over the years.
+          <br />
+          Interested in one country?{" "}
+          <a href="/country/" className="text-gold/70 hover:text-gold underline">
+            Open its profile
+          </a>
         </p>
 
         {/* ── Dataset Selector ───────────────────────────────────────────── */}
@@ -767,7 +796,17 @@ function Explorer({ dataset, onDataset }: { dataset: Dataset; onDataset: (key: s
                       >
                         <td className="px-5 py-3 text-paper/20">{i + 1}</td>
                         <td className="px-5 py-3 text-paper/80">
-                          {d.country.value}
+                          {countryCodes.has(d.countryiso3code) ? (
+                            <a
+                              href={`/country/?c=${d.countryiso3code}`}
+                              title={`${d.country.value}: country profile`}
+                              className="hover:text-gold underline decoration-paper/20 underline-offset-4"
+                            >
+                              {d.country.value}
+                            </a>
+                          ) : (
+                            d.country.value
+                          )}
                         </td>
                         <td className="px-5 py-3 text-gold">
                           {d.countryiso3code}

@@ -86,6 +86,18 @@ export function BarsIcon({ className }: IconProps) {
   );
 }
 
+/** One line rising over a baseline, its two ends marked. The country profiles. */
+export function TrendIcon({ className }: IconProps) {
+  return (
+    <LineIcon className={className}>
+      <path d="M2.5 21h19" />
+      <path d="m4 16 5-5.5 4 3L20 6" />
+      <circle cx="4" cy="16" r="1.1" fill="currentColor" stroke="none" />
+      <circle cx="20" cy="6" r="1.1" fill="currentColor" stroke="none" />
+    </LineIcon>
+  );
+}
+
 /** بَ: a letter bowl with its dot and a fatha. The tashkeel game. */
 export function HarakaIcon({ className }: IconProps) {
   return (

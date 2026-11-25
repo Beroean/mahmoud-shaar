@@ -10,7 +10,7 @@ export interface IndicatorAbout {
 }
 
 /** Text with its http(s) URLs as links. The notes are plain text with line breaks. */
-function Linked({ text }: { text: string }) {
+export function Linked({ text }: { text: string }) {
   return text.split(/(https?:\/\/[^\s)]+)/).map((part, i) =>
     i % 2 ? (
       <a key={i} href={part} target="_blank" rel="noreferrer" className="text-gold/70 hover:text-gold underline break-all">

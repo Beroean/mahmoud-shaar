@@ -12,6 +12,7 @@ import {
   GitHubIcon,
   HarakaIcon,
   LinkedInIcon,
+  TrendIcon,
 } from "../../components/icons";
 
 const LINKEDIN = "https://www.linkedin.com/in/mahmoud-shaar/";
@@ -83,6 +84,15 @@ const EXPERIMENTS: Experiment[] = [
     blurb:
       "Browse 1,400+ World Development Indicators and the Worldwide Governance Indicators across every country. Pick a metric, see the world ranked or follow it over time.",
     cta: "Open Explorer",
+  },
+  {
+    href: "/country/",
+    icon: <TrendIcon />,
+    kicker: "Country Profiles",
+    title: "Better or Worse?",
+    blurb:
+      "Pick a country and see which World Bank measures of health, living standards, education and governance are better or worse than when records began, with the source and the rule shown for each.",
+    cta: "Open a profile",
   },
 ];
 
