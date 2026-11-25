@@ -28,3 +28,4 @@ dist-ssr
 # Generated at build time by npm run wdi
 public/data/wdi
 public/data/wgi
+public/data/country
