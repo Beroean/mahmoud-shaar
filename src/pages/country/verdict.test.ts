@@ -10,38 +10,43 @@ const pop = m("SP.POP.TOTL"); // context
 describe("readChange", () => {
   it("reads the latest figure against the first", () => {
     const up: Point[] = [[1960, 50], [1990, 60], [2024, 72]];
-    expect(readChange(life, up, "all", 2024)).toMatchObject({ verdict: "better", first: [1960, 50], last: [2024, 72], diff: 22 });
-    expect(readChange(child, up, "all", 2024).verdict).toBe("worse");
-    expect(readChange(child, [[1960, 200], [2024, 20]], "all", 2024)).toMatchObject({ verdict: "better", percent: -90 });
+    expect(readChange(life, up, {}, 2024)).toMatchObject({ verdict: "better", first: [1960, 50], last: [2024, 72], diff: 22 });
+    expect(readChange(child, up, {}, 2024).verdict).toBe("worse");
+    expect(readChange(child, [[1960, 200], [2024, 20]], {}, 2024)).toMatchObject({ verdict: "better", percent: -90 });
   });
 
   it("ignores what happened in between", () => {
-    expect(readChange(life, [[1960, 50], [1990, 30], [2024, 52]], "all", 2024).verdict).toBe("better");
+    expect(readChange(life, [[1960, 50], [1990, 30], [2024, 52]], {}, 2024).verdict).toBe("better");
   });
 
   it("calls a change inside the rule little change", () => {
-    expect(readChange(life, [[1960, 70], [2024, 70.9]], "all", 2024).verdict).toBe("flat");
-    expect(readChange(life, [[1960, 70], [2024, 69]], "all", 2024).verdict).toBe("worse");
-    expect(readChange(child, [[1960, 100], [2024, 96]], "all", 2024).verdict).toBe("flat");
-    expect(readChange(child, [[1960, 100], [2024, 95]], "all", 2024).verdict).toBe("better");
+    expect(readChange(life, [[1960, 70], [2024, 70.9]], {}, 2024).verdict).toBe("flat");
+    expect(readChange(life, [[1960, 70], [2024, 69]], {}, 2024).verdict).toBe("worse");
+    expect(readChange(child, [[1960, 100], [2024, 96]], {}, 2024).verdict).toBe("flat");
+    expect(readChange(child, [[1960, 100], [2024, 95]], {}, 2024).verdict).toBe("better");
   });
 
-  it("the recent period starts ten years before the country's latest figure", () => {
+  it("compares within the years the reader chose", () => {
     const pts: Point[] = [[1960, 50], [2005, 75], [2012, 74], [2020, 70]];
-    expect(readChange(life, pts, "all", 2024).verdict).toBe("better");
-    expect(readChange(life, pts, "recent", 2024)).toMatchObject({ verdict: "worse", first: [2012, 74], last: [2020, 70] });
+    expect(readChange(life, pts, {}, 2024).verdict).toBe("better");
+    expect(readChange(life, pts, { from: 2010 }, 2024)).toMatchObject({ verdict: "worse", first: [2012, 74], last: [2020, 70] });
+    expect(readChange(life, pts, { from: 1950, to: 2006 }, 2024)).toMatchObject({ verdict: "better", first: [1960, 50], last: [2005, 75] });
+    // Too old is judged against the end of the chosen years.
+    expect(readChange(life, pts, { to: 2019 }, 2024).last).toEqual([2012, 74]);
+    expect(readChange(life, [[1960, 50], [1970, 60]], { to: 1985 }, 2024).verdict).toBe("stale");
+    expect(readChange(life, pts, { from: 2021 }, 2024)).toMatchObject({ verdict: "short", first: null, last: null });
   });
 
   it("gives no reading without enough years or with an old latest figure", () => {
-    expect(readChange(life, [], "all", 2024).verdict).toBe("short");
-    expect(readChange(life, [[2020, 70]], "all", 2024).verdict).toBe("short");
-    expect(readChange(life, [[2020, 70], [2024, 75]], "all", 2024).verdict).toBe("short");
-    expect(readChange(life, [[1997, 60], [2010, 75]], "all", 2024).verdict).toBe("stale");
-    expect(readChange(life, [[1997, 60], [2014, 75]], "all", 2024).verdict).toBe("better");
+    expect(readChange(life, [], {}, 2024).verdict).toBe("short");
+    expect(readChange(life, [[2020, 70]], {}, 2024).verdict).toBe("short");
+    expect(readChange(life, [[2020, 70], [2024, 75]], {}, 2024).verdict).toBe("short");
+    expect(readChange(life, [[1997, 60], [2010, 75]], {}, 2024).verdict).toBe("stale");
+    expect(readChange(life, [[1997, 60], [2014, 75]], {}, 2024).verdict).toBe("better");
   });
 
   it("never reads a context measure", () => {
-    expect(readChange(pop, [[1960, 1e6], [2024, 9e6]], "all", 2024)).toMatchObject({ verdict: "context", percent: 800 });
+    expect(readChange(pop, [[1960, 1e6], [2024, 9e6]], {}, 2024)).toMatchObject({ verdict: "context", percent: 800 });
   });
 });
 

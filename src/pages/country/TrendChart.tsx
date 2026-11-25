@@ -21,8 +21,8 @@ function extent(points: Point[]): [number, number] {
 
 /**
  * A measure's whole record in a row, about a thumb wide: every figure joined by a line (survey
- * years are joined across their gaps), with the two compared figures marked. The part before the
- * compared period is dimmed.
+ * years are joined across their gaps), with the two compared figures marked. Figures outside the
+ * compared years are dimmed.
  */
 export function Sparkline({ points, first, last }: { points: Point[]; first: Point | null; last: Point | null }) {
   const W = 112;
@@ -33,7 +33,7 @@ export function Sparkline({ points, first, last }: { points: Point[]; first: Poi
   const y1 = points[points.length - 1][0];
   const x = (yr: number) => 3 + ((yr - y0) / (y1 - y0 || 1)) * (W - 6);
   const y = (v: number) => H - 3 - ((v - lo) / (hi - lo)) * (H - 6);
-  const compared = first ? points.filter(([yr]) => yr >= first[0]) : points;
+  const compared = first && last ? points.filter(([yr]) => yr >= first[0] && yr <= last[0]) : [];
   return (
     <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-hidden className="shrink-0">
       <path d={path(points, x, y)} fill="none" stroke={`${INK}0.22)`} strokeWidth={1.5} strokeLinejoin="round" />
@@ -83,8 +83,8 @@ export function TrendChart({
   const y1 = points[points.length - 1][0];
   const x = (yr: number) => L + ((yr - y0) / (y1 - y0 || 1)) * (W - L - R);
   const y = (v: number) => H - B - ((v - lo) / (hi - lo)) * (H - T - B);
-  const compared = first ? points.filter(([yr]) => yr >= first[0]) : points;
-  const shown = at !== null ? points[at] : last;
+  const compared = first && last ? points.filter(([yr]) => yr >= first[0] && yr <= last[0]) : [];
+  const shown = at !== null ? points[at] : (last ?? points[points.length - 1]);
 
   const onMove = (e: React.PointerEvent) => {
     const px = e.clientX - e.currentTarget.getBoundingClientRect().left;

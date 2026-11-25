@@ -5,11 +5,10 @@ import { Linked } from "../explore/IndicatorNotes";
 import { DATASET_NAMES, GROUPS, MEASURES, type DatasetKey, type Measure, formatValue, worldBankUrl } from "./basket";
 import {
   MIN_SPAN,
-  RECENT_YEARS,
   STALE_AFTER,
   type Change,
-  type Period,
   type Point,
+  type Range,
   type Tally,
   type Verdict,
   flatRuleText,
@@ -90,10 +89,13 @@ function changeText(m: Measure, c: Change): string {
 }
 
 /** Why a measure has no reading, for this country. */
-function noReadingText(c: Change, newest: number): string {
-  if (!c.last) return "The World Bank has no figure for this country.";
-  if (c.verdict === "stale")
-    return `The latest figure is from ${c.last[0]}, more than ${STALE_AFTER} years before the newest year in the data (${newest}). It says how things were, not how they are, so it is not read.`;
+function noReadingText(c: Change, points: Point[], range: Range, newest: number): string {
+  if (!points.length) return "The World Bank has no figure for this country.";
+  if (!c.last) return "The World Bank has no figure for this country in the years chosen.";
+  if (c.verdict === "stale") {
+    const end = Math.min(newest, range.to ?? Infinity);
+    return `The latest figure in the years chosen is from ${c.last[0]}, more than ${STALE_AFTER} years before ${end}. It says how things were long before the end of the period, so it is not read.`;
+  }
   return c.first && c.first[0] !== c.last[0]
     ? `The figures here are only ${c.last[0] - c.first[0]} years apart. This page needs at least ${MIN_SPAN} years between them to read a change.`
     : `There is only one figure (${c.last[0]}), so there is no change to read.`;
@@ -106,12 +108,14 @@ function Row({
   notes,
   points,
   change: c,
+  range,
   country,
 }: {
   measure: Measure;
   notes: WbNotes | undefined;
   points: Point[];
   change: Change;
+  range: Range;
   country: Country;
 }) {
   const [open, setOpen] = useState(false);
@@ -145,7 +149,9 @@ function Row({
                 <span className="text-paper/90">{fmt(c.last[1])}</span> <span className="text-paper/30">({c.last[0]})</span>
               </>
             ) : (
-              <span className="text-paper/30">No figures from the World Bank</span>
+              <span className="text-paper/30">
+                {points.length ? "No figures in the years chosen" : "No figures from the World Bank"}
+              </span>
             )}
           </span>
         </span>
@@ -179,14 +185,14 @@ function Row({
                   A {m.reading === "higher" ? "higher" : "lower"} figure is read as better. {m.basis}
                 </p>
                 <p className="mt-2">
-                  The latest figure is compared with the first one in the period. A difference of {flatRuleText(m)} counts
+                  The latest figure in the years chosen is compared with the first one. A difference of {flatRuleText(m)} counts
                   as little change. What happened in between does not affect the reading; the chart shows it.
                 </p>
               </>
             )}
             <p className="mt-2 text-paper/80">
               {c.verdict === "short" || c.verdict === "stale" ? (
-                noReadingText(c, notes?.newest ?? 0)
+                noReadingText(c, points, range, notes?.newest ?? Infinity)
               ) : (
                 <>
                   {country.name}: {fmt(c.first![1])} in {c.first![0]}, {fmt(c.last![1])} in {c.last![0]} ({changeText(m, c)}
@@ -326,16 +332,38 @@ function groupSummary(t: Tally): string {
 
 const SCORED = MEASURES.filter((m) => m.reading !== "context");
 
+/** ?c=SYR&from=2000&to=2020; a missing year means that end of the record. */
 function params() {
   const p = new URLSearchParams(location.search);
-  return { c: (p.get("c") ?? "").toUpperCase(), period: (p.get("period") === "recent" ? "recent" : "all") as Period };
+  const year = (k: string) => (/^\d{4}$/.test(p.get(k) ?? "") ? Number(p.get(k)) : undefined);
+  return { c: (p.get("c") ?? "").toUpperCase(), range: { from: year("from"), to: year("to") } as Range };
+}
+
+function YearSelect({ id, label, value, years, onChange }: { id: string; label: string; value: number; years: number[]; onChange: (y: number) => void }) {
+  return (
+    <label htmlFor={id} className="flex items-center gap-2 text-xs tracking-widest uppercase text-paper/40">
+      {label}
+      <select
+        id={id}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="appearance-none border border-paper/20 hover:border-gold/50 bg-ink-1 px-3 py-2 text-sm tracking-normal text-paper tabular-nums cursor-pointer outline-none"
+      >
+        {years.map((y) => (
+          <option key={y} value={y}>
+            {y}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
 }
 
 export default function CountryProfile() {
   const [index, setIndex] = useState<Index | null>(null);
   const [notes, setNotes] = useState<Record<string, WbNotes>>({});
   const [code, setCode] = useState(() => params().c);
-  const [period, setPeriod] = useState<Period>(() => params().period);
+  const [chosen, setChosen] = useState<Range>(() => params().range);
   const [loaded, setLoaded] = useState<{ id: string; series: Series } | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -370,18 +398,39 @@ export default function CountryProfile() {
   useEffect(() => {
     const url = new URL(location.href);
     if (country) url.searchParams.set("c", country.id);
-    if (period === "recent") url.searchParams.set("period", "recent");
-    else url.searchParams.delete("period");
+    for (const k of ["from", "to"] as const) {
+      const y = chosen[k];
+      if (y === undefined) url.searchParams.delete(k);
+      else url.searchParams.set(k, String(y));
+    }
     history.replaceState(null, "", url);
     document.title = country ? `${country.name} · Country Profile · Mahmoud Shaar` : "Country Profiles · Mahmoud Shaar";
-  }, [country, period]);
+  }, [country, chosen]);
 
   const series = loaded && loaded.id === country?.id ? loaded.series : null;
+  // The country's whole record: the years its figures span, over every measure.
+  const [lo, hi] = useMemo(() => {
+    let a = Infinity;
+    let b = -Infinity;
+    for (const points of Object.values(series ?? {})) {
+      if (!points.length) continue;
+      a = Math.min(a, points[0][0]);
+      b = Math.max(b, points[points.length - 1][0]);
+    }
+    return [a, b];
+  }, [series]);
+  // The reader's years, kept inside the record and at least MIN_SPAN apart.
+  const from = Math.min(Math.max(chosen.from ?? lo, lo), hi - MIN_SPAN);
+  const to = Math.max(Math.min(chosen.to ?? hi, hi), from + MIN_SPAN);
+  const whole = from === lo && to === hi;
   const changes = useMemo(() => {
     const map = new Map<string, Change>();
-    if (series) for (const m of MEASURES) map.set(m.id, readChange(m, series[m.id] ?? [], period, notes[m.id]?.newest ?? -Infinity));
+    const range = whole ? {} : { from, to };
+    if (series) for (const m of MEASURES) map.set(m.id, readChange(m, series[m.id] ?? [], range, notes[m.id]?.newest ?? Infinity));
     return map;
-  }, [series, period, notes]);
+  }, [series, whole, from, to, notes]);
+  const range: Range = whole ? {} : { from, to };
+  const years = (a: number, b: number) => Array.from({ length: Math.max(0, b - a + 1) }, (_, i) => a + i);
   const total = tally(SCORED.map((m) => changes.get(m.id)?.verdict ?? "short"));
 
   return (
@@ -464,36 +513,23 @@ export default function CountryProfile() {
         {country && series && (
           <div className="animate-fade-in">
             <section className="mb-12">
-              <div className="flex flex-wrap items-end justify-between gap-4 mb-5">
-                <h2 className="font-serif text-xl text-paper">
-                  {SCORED.length} measures, {period === "all" ? "first figure to latest" : `the last ${RECENT_YEARS} years`}
-                </h2>
-                <div className="flex border border-paper/10" role="group" aria-label="Period compared">
-                  {(
-                    [
-                      ["all", "Whole record"],
-                      ["recent", `Last ${RECENT_YEARS} years`],
-                    ] as const
-                  ).map(([key, label], i) => (
-                    <button
-                      key={key}
-                      type="button"
-                      aria-pressed={period === key}
-                      onClick={() => setPeriod(key)}
-                      className={`text-xs px-3 py-2 tracking-widest uppercase transition-colors duration-150 ${i ? "border-l border-paper/10" : ""} ${
-                        period === key ? "bg-gold/10 text-gold" : "text-paper/40 hover:text-paper"
-                      }`}
-                    >
-                      {label}
-                    </button>
-                  ))}
-                </div>
+              <h2 className="font-serif text-xl text-paper mb-4">
+                {SCORED.length} measures, {whole ? "first figure to latest" : `${from} to ${to}`}
+              </h2>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mb-6">
+                <YearSelect id="from" label="From" value={from} years={years(lo, to - MIN_SPAN)} onChange={(y) => setChosen({ from: y === lo ? undefined : y, to: chosen.to })} />
+                <YearSelect id="to" label="To" value={to} years={years(from + MIN_SPAN, hi)} onChange={(y) => setChosen({ from: chosen.from, to: y === hi ? undefined : y })} />
+                {!whole && (
+                  <button type="button" onClick={() => setChosen({})} className="text-xs tracking-widest uppercase text-gold/70 hover:text-gold underline underline-offset-4">
+                    Whole record
+                  </button>
+                )}
               </div>
               <TallyBar t={total} />
               <p className="mt-5 text-xs text-paper/40 leading-relaxed">
-                {period === "all"
-                  ? `Each measure is compared from the first year the World Bank has a figure for ${country.name} to the latest. Records start in different years for different measures, so the periods differ; each row shows its own.`
-                  : `Each measure is compared over the ${RECENT_YEARS} years up to its latest figure for ${country.name}. A long record can hide a recent turn; this view shows it.`}{" "}
+                {whole
+                  ? `Each measure is compared from the first year the World Bank has a figure for ${country.name} to the latest (${lo} to ${hi} at the widest). Records start in different years for different measures, so the periods differ; each row shows its own. Choose other years above to compare within them.`
+                  : `Each measure is compared from its first figure in or after ${from} to its latest in or before ${to}. Where a measure has no figure for exactly those years, the nearest ones inside them are used; each row shows which.`}{" "}
                 The count is a count: it does not weigh one measure against another, and it is not a score.
               </p>
             </section>
@@ -522,6 +558,7 @@ export default function CountryProfile() {
                         notes={notes[m.id]}
                         points={series[m.id] ?? []}
                         change={changes.get(m.id)!}
+                        range={range}
                         country={country}
                       />
                     ))}
@@ -582,8 +619,9 @@ function Method({ index }: { index: Index | null }) {
         </Step>
 
         <Step n="3" title="The reading compares two figures">
-          For each measure, the country's latest figure is compared with its first: the first on record, or the first
-          within the last {RECENT_YEARS} years if you choose that view. If the difference is on the better side it is
+          For each measure, the country's latest figure is compared with its first. By default that is the whole record,
+          from the first year the World Bank has a figure to the latest. You can choose any other years, at least{" "}
+          {MIN_SPAN} apart; the page then uses each measure's first and latest figures inside them. If the difference is on the better side it is
           read as better, on the other side as worse, and inside a small margin as little change (under 1 percentage
           point for shares of a population, under 1 year for life expectancy, under 3 points for governance scores, and
           under 5% of the first figure for everything else). Nothing else enters the reading: no trend line, no
@@ -592,8 +630,8 @@ function Method({ index }: { index: Index | null }) {
 
         <Step n="4" title="When there is no reading">
           A measure is left unread when the first and latest figures are less than {MIN_SPAN} years apart, or when the
-          latest figure is more than {STALE_AFTER} years older than the newest year the World Bank has for that measure
-          anywhere. Missing data is common where it matters most, in countries at war or in crisis, so "no reading" is
+          latest figure is more than {STALE_AFTER} years older than the end of the years compared (or than the newest
+          year the World Bank has for that measure anywhere, if that is earlier). Missing data is common where it matters most, in countries at war or in crisis, so "no reading" is
           counted and shown rather than hidden.
         </Step>
 
@@ -604,8 +642,8 @@ function Method({ index }: { index: Index | null }) {
               expectancy each count as one.
             </li>
             <li>
-              What happened in between. A country can be better than in 1960 and far below its own peak. Use the last{" "}
-              {RECENT_YEARS} years view and open each chart.
+              What happened in between. A country can be better than in 1960 and far below its own peak. Change the
+              years compared and open each chart.
             </li>
             <li>
               How it compares with others. Most of the world improved on most of these measures, so "better" does not
