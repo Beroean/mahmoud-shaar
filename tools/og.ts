@@ -13,7 +13,7 @@ import { basename, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { inflateSync } from "node:zlib";
 import { Resvg } from "@resvg/resvg-js";
-import { INTRO_SERIES } from "../src/pages/explore/introData";
+import { INTRO_FROM, INTRO_SERIES } from "../src/pages/explore/introData";
 import { COLORS } from "../src/pages/explore/timeSeries";
 
 const ROOT = resolve(import.meta.dirname, "..");
@@ -168,6 +168,30 @@ function lifeChart(x0: number, y0: number, x1: number, y1: number): string {
   <text x="${x1}" y="${y1 + 34}" text-anchor="end" font-family="${MONO}" font-size="18" fill="${PAPER}" fill-opacity="0.4">2024</text>`;
 }
 
+/**
+ * A measure's row from the country profile, at (x, y), `w` wide: the name, the record as a line
+ * with both compared figures marked in gold, the two figures and the reading.
+ */
+function profileRow(x: number, y: number, w: number): string {
+  const egypt = INTRO_SERIES.find((s) => s.name === "Egypt")!.values;
+  const [lo, hi] = [Math.min(...egypt), Math.max(...egypt)];
+  const [top, bottom] = [y + 60, y + 180];
+  const px = (i: number) => x + (i / (egypt.length - 1)) * w;
+  const py = (v: number) => bottom - ((v - lo) / (hi - lo)) * (bottom - top);
+  const r = (v: number) => Math.round(v * 10) / 10;
+  const d = "M" + egypt.map((v, i) => `${r(px(i))} ${r(py(v))}`).join("L");
+  const last = egypt[egypt.length - 1];
+  return `<text x="${x}" y="${y}" font-family="${MONO}" font-size="20" letter-spacing="4" fill="${GOLD}">EGYPT</text>
+  <text x="${x}" y="${y + 32}" font-family="${MONO}" font-size="20" fill="${PAPER}" fill-opacity="0.85">Life expectancy at birth</text>
+  <path d="${d}" fill="none" stroke="${PAPER}" stroke-opacity="0.8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="${x}" cy="${r(py(egypt[0]))}" r="7" fill="${GOLD}" stroke="${INK}" stroke-width="2.5"/>
+  <circle cx="${x + w}" cy="${r(py(last))}" r="7" fill="${GOLD}" stroke="${INK}" stroke-width="2.5"/>
+  <text x="${x}" y="${bottom + 44}" font-family="${MONO}" font-size="20" fill="${PAPER}" fill-opacity="0.5">${egypt[0]} yrs (${INTRO_FROM})</text>
+  <text x="${x}" y="${bottom + 74}" font-family="${MONO}" font-size="20" fill="${PAPER}">${last} yrs (${INTRO_FROM + egypt.length - 1})</text>
+  <circle cx="${x + w - 88}" cy="${bottom + 67}" r="7" fill="#199e70"/>
+  <text x="${x + w}" y="${bottom + 74}" text-anchor="end" font-family="${MONO}" font-size="20" fill="${PAPER}" fill-opacity="0.85">Better</text>`;
+}
+
 const IMAGES: Record<string, string> = {
   // The home page cards' icons: the three daily games and the data explorer.
   home: frame(`
@@ -197,6 +221,16 @@ const IMAGES: Record<string, string> = {
   <text x="80" y="506" font-family="${MONO}" font-size="24" fill="${PAPER}" fill-opacity="0.6">every country, ranked or over time</text>
   ${lifeChart(800, 205, 1110, 455)}
   ${footer("mahmoudshaar.com/explore", "World Bank · WDI · WGI")}`),
+
+  // One row of the page, with real figures: Egypt's life expectancy (introData.ts), 1960 and 2024.
+  country: frame(`
+  ${overline("COUNTRY PROFILES")}
+  <text x="80" y="290" font-family="${SERIF}" font-size="100" fill="${PAPER}">Better or worse,</text>
+  <text x="80" y="400" font-family="${SERIF}" font-style="italic" font-size="100" fill="${GOLD}">by the record</text>
+  <text x="80" y="470" font-family="${MONO}" font-size="24" fill="${PAPER}" fill-opacity="0.6">One country, its World Bank measures,</text>
+  <text x="80" y="506" font-family="${MONO}" font-size="24" fill="${PAPER}" fill-opacity="0.6">each from its first figure to its latest</text>
+  ${profileRow(820, 180, 300)}
+  ${footer("mahmoudshaar.com/country", "World Bank · WDI · WGI")}`),
 
   // The sample line must never be a real puzzle (it would spoil it); it is reserved in
   // content/shakkil/rejected.yaml.

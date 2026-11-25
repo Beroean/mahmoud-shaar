@@ -14,7 +14,7 @@ My personal site and a place for side experiments. Live at <https://mahmoudshaar
 ## Layout
 
 ```
-index.html, explore/index.html, 404.html   HTML entries (one per page, each with its own <head>)
+index.html, explore/index.html, 404.html   HTML entries, among others (one per page, each with its own <head>)
 src/pages/<page>/main.tsx                  page entry points
 src/components/                            shared layout (SiteLayout, Overline, SectionDivider, icons)
 src/lib/                                   small shared helpers
@@ -105,6 +105,8 @@ The explorer (`/explore/`) never calls the World Bank API at runtime (its uncach
 npm run wdi              # uses .cache/wdi/WDI_CSV.zip, downloading it if missing
 npm run wdi -- --fresh   # force a fresh download
 ```
+
+The same command then cuts the country profiles' data (`/country/`, `tools/wdi/country.ts`) out of those files into `public/data/country/` (gitignored): one small file per country with every year's figure for the profile's measures, and the World Bank's notes on each. The measures, and the rule by which each is read as better or worse, are in `src/pages/country/basket.ts`; a series the World Bank renames or drops fails the build.
 
 CI builds this before every deploy (the zip is cached until the World Bank publishes a new one) and redeploys every Monday so new data shows up.
 

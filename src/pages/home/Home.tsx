@@ -12,6 +12,7 @@ import {
   GitHubIcon,
   HarakaIcon,
   LinkedInIcon,
+  TrendIcon,
 } from "../../components/icons";
 
 const LINKEDIN = "https://www.linkedin.com/in/mahmoud-shaar/";
@@ -86,7 +87,7 @@ const EXPERIMENTS: Experiment[] = [
   },
   {
     href: "/country/",
-    icon: <BarsIcon />,
+    icon: <TrendIcon />,
     kicker: "Country Profiles",
     title: "Better or Worse?",
     blurb:
